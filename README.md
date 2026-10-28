@@ -16,6 +16,7 @@ filter and line change is instant.
 | **Games** | Each day's slate with money line, spread and total. Each side shows a last-10 strip and a head-to-head rate against *tonight's* number. |
 | **Game** | Odds tab: game lines plus player props, with L5 / L10 / L20 / season hit rates and an alt-line ladder for every player. Matchup tab: records (home/away, conference, division, by division), ATS, O/U, quarter and half records, last 5 games, injuries. Box score once final, with each stat colored against that day's prop line. |
 | **Player** | Bar chart of any stat (points, rebounds, assists, threes, PRA and combos, stocks, attempts) against an adjustable line, over or under. Hit rates for H2H / L5 / L10 / L20 / this season / last season. Filters: home/away, days of rest, starter/bench, team result, final margin, minimum minutes, regular season only, and **with / without any teammate**. Supporting stats (minutes, FGA, 3PA, FTA, fouls) for the same games, plus the full game log. |
+| **Trends** | The slate's strongest trends written as sentences ("The Indiana Pacers are 10-2 (83.3%) against the spread in their last 12 games as an underdog"), filterable by player/team, market and game. The same feed is the Insights tab on each game page. |
 | **Props** | Today's sportsbook props ranked by recent hit rate, best side or overs/unders only. Players ruled out sink to the bottom. |
 
 ## How it works
@@ -33,6 +34,9 @@ The Odds API ───┘                                   └── store/ ─
 - **Credit budgeting:** The Odds API's free tier allows 500 credits a month and charges one per game per market.
   `plan_markets()` spreads the month's remaining credits evenly over the days left, then adds markets in priority
   order (points, rebounds, assists, threes) while they fit, so props never run dry mid-month.
+- **The trend finder** (`site/assets/insights.js`) runs every player prop and team line through situational splits
+  (recent form, home/away, vs opponent, rest, without an injured teammate, as favorite/underdog, after a loss), keeps
+  sides that hit 75%+ over 5+ games, and ranks them by the Wilson lower bound so 18-of-20 beats 5-of-5.
 - **The site** (`site/`) is plain HTML/CSS/JS with no framework or build step. `site/assets/common.js` holds the
   shared logic: stat definitions, filters, window hit rates, team trends, records and quarter splits.
   Trends for a game line are judged against *that game's* number (e.g. "would the 76ers' last 10 games have
@@ -70,7 +74,7 @@ describe the past, not the future.
 
 ## Roadmap
 
-- Insights: automatically written trends ("X has cleared 2.5 threes in 8 of his last 9 vs bottom-10 3PT defenses")
+- More Insight rules, e.g. splits against bottom-10 defenses at a position
 - Defense vs position and opponent ranks on prop rows
 - Shot charts and play-type matchups
 - Team totals chart with opponent pace / defense filters
