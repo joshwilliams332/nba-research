@@ -19,8 +19,12 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - ESPN site API (no key): scoreboard per ET day (games, records, quarter scores, DraftKings game lines),
   summary per final game (box score; `pickcenter` as a line fallback), injuries. Our abbreviations are the
   standard ones (GSW, NYK, NOP, SAS, UTA, WAS); `ALIASES` maps ESPN's.
-- The Odds API (`ODDS_API_KEY` repo secret, free tier 500 credits/month): props only, pulled once per ET day after
-  10:00 ET. 1 credit per game per market; `plan_markets()` budgets markets over the rest of the month.
+- The Odds API (`ODDS_API_KEY` repo secret, free tier 500 credits/month): props only. Two pulls per ET day:
+  the morning "open" pull after 10:00 ET (`store/odds/props/YYYY-MM-DD.json`) and a points-only "close" pull for
+  games tipping within 100 minutes (`YYYY-MM-DD-close.json`; `close_due` skips games already captured, so extra
+  cron runs are free). 1 credit per game per market. `daily_budget()` spreads what's left (minus a reserve) over the
+  days left in the month; `plan_markets()` sets aside 1 credit/game for the close pull when the share allows,
+  `plan_close()` caps the close pull at the share. Busy days can borrow from later days but never overspend.
   Limiting to one sportsbook doesn't save credits (up to 10 books = 1 region), so all US books are pulled and
   DraftKings is shown first.
 - Seasons are named by their ending year like ESPN (2026-27 = 2027). Last season + this season are loaded.
@@ -44,6 +48,14 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   played (avoids double counting), negative binomial for the chances. `scripts/backtest.js` (workflow step) writes
   `site/data/model.json` for `model.html`. Node loads the helpers via `Object.assign(globalThis, require(...))`;
   never declare common.js names with `var`/`const` in other asset files (they share one global scope in the browser).
+- Line movement / CLV (`site/assets/lines.js`, tested in `tests/lines.test.js`): props.json props carry `open` and
+  `close` as `[line, over, under, book]` (shown line = close once it exists); `closelines.json` is the close history
+  (player -> game -> stat). Games keep `open` (first line seen) next to `line`. CLV = your line vs the close, in
+  points and in no-vig probability (`clv()`); movement tags only show when the line or no-vig price moved.
+- Picks tracker (`site/assets/picks.js`, `site/picks.html`, tested in `tests/picks.test.js`): localStorage key
+  `hooplab.picks`, graded from logs.json box scores (`gradePick`), units/ROI from American odds, CLV from
+  closelines when present, JSON export/import, canvas share cards. "My picks" is the 5th bottom-nav item;
+  Standings lives behind the trophy button in the header.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)
@@ -51,6 +63,8 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   traces warnings to their cause.
 - `mobile-reviewer`: screenshots pages at 390px and 1280px and reports layout problems. Run it before merging UI work.
 - `trend-finder`: proposes and tests new Insight rules for `site/assets/insights.js` against real data.
+- Josh asked to stop using subagents for now because of token cost (Phase 4's last three pieces were finished
+  one at a time in the main session). Don't spawn agents unless he asks again.
 - Phase 2 was built by parallel agents, each in its own git worktree and PR (dvp, insights, teams/polish), merged
   one at a time. Keep that pattern for independent features; give each agent its own CSS section and new files.
 
