@@ -13,6 +13,7 @@
 <main><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
+<script src="assets/context.js"></script>
 <script>
 shell('players');
 
@@ -94,7 +95,8 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
           <div class="seg"><button data-side="o" class="${st.side === 'o' ? 'on' : ''}">Over</button><button data-side="u" class="${st.side === 'u' ? 'on' : ''}">Under</button></div></div>
         <span class="grow"></span>
         <button class="step" data-step="-1" aria-label="Lower line">−</button><span class="val">${st.line}</span><button class="step" data-step="1" aria-label="Raise line">+</button>
-      </div><p class="note">${esc(src)}${prop && prop.l !== st.line ? ` · <a href="#" data-reset="1" style="color:var(--accent)">use it</a>` : ''}</p>`;
+      </div><p class="note">${esc(src)}${prop && prop.l !== st.line ? ` · <a href="#" data-reset="1" style="color:var(--accent)">use it</a>` : ''}</p>
+      ${prop && prop.l === st.line ? fairPriceHTML(prop) : ''}${next ? teamContext(L, next, p.t) : ''}`;
   }
 
   function renderWindows(rates) {
