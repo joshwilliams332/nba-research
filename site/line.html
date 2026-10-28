@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Line breakdown</title>
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hoop Lab">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script src="assets/pbp.js"></script>
+<script src="assets/insights.js"></script>
+<script src="assets/gameline.js"></script>
+<script>
+shell('games');
+lab(['players', 'logs', 'injuries']).then(async L => {
+  await loadOptional(L, ['shots']);
+  footer(L);
+  const P = params();
+  const g = L.byId.get(P.get('id'));
+  const main = document.querySelector('main');
+  if (!g) { main.innerHTML = `<div class="card empty">Game not found. <a href="index.html">Back to games</a></div>`; return; }
+  const line = g.line || {};
+  const st = {
+    m: MARKETS_GL[P.get('m')] ? P.get('m') : 'ml',
+    side: P.get('s') || 'a',
+    win: 'l10', loc: '', team: null, shot: { season: null, zone: null },
+  };
+  if (st.m === 'total' && !['o', 'u'].includes(st.side)) st.side = 'o';
+  if (st.m !== 'total' && !['a', 'h'].includes(st.side)) st.side = 'a';
+  const A = L.teams[g.a], H = L.teams[g.h];
+  const est = gameEstimate(L, g);
+
+  const sideLabel = (m, s) => {
+    if (m === 'total') return `${s === 'o' ? 'Over' : 'Under'} ${line.tot ?? ''}`;
+    const team = s === 'h' ? g.h : g.a;
+    if (m === 'spread') return `${team} ${signed(s === 'h' ? line.sp : -line.sp)}`;
+    return `${team} money line`;
+  };
+  const price = (m, s) => m === 'ml' ? (s === 'h' ? line.mlh : line.mla) : m === 'spread' ? (s === 'h' ? line.sph : line.spa) : (s === 'o' ? line.ov : line.un);
+  const hasMarket = m => m === 'ml' ? (line.mlh != null || line.mla != null) : m === 'spread' ? line.sp != null : line.tot != null;
+
+  main.innerHTML = `
+    <section class="hero" style="--c1:${A.color}aa;--c2:${H.color}aa">
+      <div class="row"><a class="back" href="game.html?id=${g.id}" aria-label="Back to the game">‹</a>
+        <span class="grow" style="text-align:center;color:var(--muted);font-size:13px">${esc(g.a)} @ ${esc(g.h)} · ${g.state === 'pre' ? `${fmtDay(g.d, { weekday: 'short' })} ${fmtTime(g.t)}` : esc(g.detail || '')}</span><span style="width:32px"></span></div>
+      <div class="lbhead">${logo(L, g.a, 36)}<div class="grow" style="text-align:center"><h1 id="title"></h1><div class="muted" id="subtitle"></div></div>${logo(L, g.h, 36)}</div>
+    </section>
+    <div class="tabs" id="mkts"></div>
+    <div class="seg wide" id="sides" style="margin-bottom:10px"></div>
+    <nav class="secbar" id="secbar" aria-label="Sections"></nav>
+    <div class="card" id="est" data-sec="Estimate"></div>
+    <div class="windows" id="windows"></div>
+    <div class="card" id="stats" data-sec="Stats"></div>
+    <div class="card" id="ins" data-sec="Insights"></div>
+    <div class="card" id="shots" data-sec="Shot chart"></div>
+    <div class="card" id="lineup" data-sec="Lineup"></div>
+    <div class="card" id="moves" data-sec="Line movement"></div>`;
+
+  function renderTop() {
+    document.title = `Hoop Lab · ${sideLabel(st.m, st.side)}`;
+    const pr = price(st.m, st.side);
+    document.getElementById('title').textContent = sideLabel(st.m, st.side);
+    document.getElementById('subtitle').innerHTML = `${esc(MARKETS_GL[st.m])}${pr != null ? ` · <b style="color:var(--text)">${odds(pr)}</b>` : ''}${line.bk ? ` · ${esc(line.bk)}` : ''}`;
+    document.getElementById('mkts').innerHTML = Object.entries(MARKETS_GL).filter(([m]) => hasMarket(m))
+      .map(([m, l]) => `<button data-m="${m}" class="${m === st.m ? 'on' : ''}">${l}</button>`).join('');
+    const opts = st.m === 'total' ? [['o', `Over ${line.tot}`], ['u', `Under ${line.tot}`]] : [['a', sideLabel(st.m, 'a')], ['h', sideLabel(st.m, 'h')]];
+    document.getElementById('sides').innerHTML = opts.map(([k, l]) => `<button data-side="${k}" class="${k === st.side ? 'on' : ''}">${esc(l)}</button>`).join('');
+  }
+
+  // The team whose history is shown: the side's team, or for totals, the team picked under the windows.
+  const team = () => st.m === 'total' ? (st.team || g.a) : (st.side === 'h' ? g.h : g.a);
+  const num = () => sideNumber(g, st.m, st.side);
+
+  function renderEstimate() {
+    const el = document.getElementById('est');
+    if (!est) { el.innerHTML = '<h2>Hoop Lab estimate</h2><p class="muted" style="margin:0">Not enough games yet for an estimate.</p>'; return; }
+    const fav = est.margin >= 0 ? g.h : g.a;
+    let read = '';
+    if (st.m === 'ml') {
+      const c = sideChance(est, line, 'ml', st.side), pr = price('ml', st.side);
+      const implied = pr != null ? (pr < 0 ? -pr / (-pr + 100) : 100 / (pr + 100)) : null;
+      read = `<div class="estbig"><b>${Math.round(c * 100)}%</b> chance ${esc(st.side === 'h' ? g.h : g.a)} wins${implied != null ? ` <small class="muted">· price implies ${Math.round(implied * 100)}%</small>` : ''}</div>`;
+    } else if (st.m === 'spread' && line.sp != null) {
+      const diff = est.margin + line.sp;  // > 0: estimate leans home
+      read = `<div class="estbig">Estimate <b>${esc(fav)} by ${fmt1(Math.abs(est.margin))}</b> vs line ${esc(g.h)} ${signed(line.sp)}</div>
+        <p class="muted" style="margin:4px 0 0">That's ${fmt1(Math.abs(diff))} point${Math.abs(diff) === 1 ? '' : 's'} toward ${esc(diff >= 0 ? g.h : g.a)}.</p>`;
+    } else if (st.m === 'total' && line.tot != null) {
+      const diff = est.total - line.tot;
+      read = `<div class="estbig">Estimate <b>${fmt1(est.total)}</b> vs total ${line.tot}</div>
+        <p class="muted" style="margin:4px 0 0">${fmt1(Math.abs(diff))} point${Math.abs(diff) === 1 ? '' : 's'} ${diff >= 0 ? 'above' : 'below'} the line.</p>`;
+    }
+    el.innerHTML = `<h2>Hoop Lab estimate</h2>
+      <div class="estscore">${logo(L, g.a, 22)}<b>${esc(g.a)} ${Math.round(est.away)}</b><span class="muted">–</span><b>${Math.round(est.home)} ${esc(g.h)}</b>${logo(L, g.h, 22)}</div>
+      ${read}
+      <p class="note">Each team's points = the average of what it scores and what the other team allows over their last ${GL.games} games, plus a small home edge.
+        Tested on all of 2025-26: win chances were well calibrated, but its spread and total leans hit only about 49% and 47% against the closing lines, so read it as context, not an edge. <a href="model.html" style="color:var(--accent2)">About our models</a></p>`;
+  }
+
+  function renderWindows() {
+    const w = sideWindows(L, g, team(), { loc: st.loc });
+    const n = num();
+    document.getElementById('windows').innerHTML = GL_WINDOWS.map(([k, l]) => {
+      const t = tally(sideResults(w[k], st.m, st.side, n));
+      return `<button data-win="${k}" class="${k === st.win ? 'on' : ''}">${l === 'Last season' ? 'Last szn' : l}${rateTag(t)}</button>`;
+    }).join('');
+    return w;
+  }
+
+  function renderStats(w) {
+    const rows = w[st.win], n = num(), res = sideResults(rows, st.m, st.side, n), t = tally(res);
+    const tm = team();
+    const resultCell = (s, r) => {
+      if (st.m === 'ml') return `${s.win ? 'W' : 'L'} ${s.pts}-${s.oppPts}`;
+      if (st.m === 'spread') return `${signed(s.margin, 0)} vs ${signed(n)}`;
+      return `${s.total} vs ${n}`;
+    };
+    const what = st.m === 'ml' ? 'won' : st.m === 'spread' ? `covered ${signed(n)}` : `went ${st.side === 'o' ? 'over' : 'under'} ${n}`;
+    document.getElementById('stats').innerHTML = `
+      <div class="row" style="flex-wrap:wrap;gap:8px"><h2 class="grow">${esc(tm)} · ${esc(GL_WINDOWS.find(x => x[0] === st.win)[1])}</h2>
+        ${st.m === 'total' ? `<div class="seg">${[g.a, g.h].map(x => `<button data-team="${x}" class="${x === tm ? 'on' : ''}">${x}</button>`).join('')}</div>` : ''}
+        <div class="seg">${[['', 'All'], ['home', 'Home'], ['away', 'Away']].map(([k, l]) => `<button data-loc="${k}" class="${k === st.loc ? 'on' : ''}">${l}</button>`).join('')}</div></div>
+      <p class="summary"><span>${esc(tm)} ${what} in <b>${t.hits} of ${t.n}</b>${t.pushes ? ` (${t.pushes} push)` : ''}</span>${t.n ? `<span>${rateTag(t)}</span>` : ''}</p>
+      ${strip(res, rows.map(s => `${shortDate(s.g.d)} ${s.home ? 'vs' : '@'} ${s.opp}`))}
+      ${rows.length ? `<div class="tablewrap"><table class="data"><tr><th class="l">Game</th><th>Score</th><th>${st.m === 'ml' ? 'Result' : st.m === 'spread' ? 'Margin' : 'Total'}</th>${st.m === 'ml' ? '' : '<th>Line then</th>'}</tr>
+        ${rows.slice().reverse().map((s, i) => {
+          const r = res[rows.length - 1 - i];
+          const then = st.m === 'total' ? (s.tot != null ? s.tot : '-') : st.m === 'spread' ? (s.spread != null ? signed(s.spread) : '-') : '';
+          return `<tr><td class="l"><a href="game.html?id=${s.g.id}">${shortDate(s.g.d)} ${s.home ? 'vs' : '@'} ${s.opp}</a></td><td>${s.pts}-${s.oppPts}</td>
+            <td class="${r === 'push' ? '' : r}">${resultCell(s, r)}</td>${st.m === 'ml' ? '' : `<td>${then}</td>`}</tr>`;
+        }).join('')}</table></div>
+        <p class="note">${st.m === 'ml' ? 'Wins and losses in each game.' : 'Each game is judged against tonight\'s number. "Line then" is that game\'s own closing line.'}</p>`
+        : '<p class="muted">No games in this window.</p>'}`;
+  }
+
+  function renderInsights() {
+    const el = document.getElementById('ins');
+    const want = st.m;
+    let list = [];
+    try { list = [g.a, g.h].flatMap(t => teamInsights(L, g, t)).filter(x => x.market === want); } catch (e) { list = []; }
+    el.innerHTML = `<h2>Insights</h2>${list.length ? `<div class="insights" style="margin-top:8px">${list.slice(0, 4).map(x => insightCard(L, x)).join('')}</div>`
+      : `<p class="muted" style="margin:0">No strong ${esc(MARKETS_GL[want].toLowerCase())} trends for this game (we only show ones that hit 75%+ over 5+ games).</p>`}`;
+  }
+
+  function renderShots() {
+    const el = document.getElementById('shots');
+    el.innerHTML = teamShotCard(L, g, team(), st.shot) || '<h2>Shot chart</h2><p class="muted" style="margin:0">No shot data yet.</p>';
+  }
+
+  function renderMoves() {
+    const pts = lineMoves(g);
+    const el = document.getElementById('moves');
+    if (pts.length < 2) {
+      el.innerHTML = `<h2>Line movement</h2><p class="muted" style="margin:0">${pts.length ? 'No change yet since we first saw this line.' : 'No line posted yet.'} We check about 8 times a day.</p>`;
+      return;
+    }
+    const key = st.m === 'ml' ? (st.side === 'h' ? 'mlh' : 'mla') : st.m === 'spread' ? 'sp' : 'tot';
+    const show = v => v == null ? '-' : st.m === 'spread' ? `${g.h} ${signed(v)}` : st.m === 'ml' ? odds(v) : v;
+    const first = pts[0][key], last = pts[pts.length - 1][key];
+    const changes = pts.filter((p, i) => i === 0 || p[key] !== pts[i - 1][key]);
+    el.innerHTML = `<h2>Line movement</h2>
+      <p class="estbig" style="margin:6px 0">Opened <b>${show(first)}</b> → now <b>${show(last)}</b></p>
+      <div class="tablewrap"><table class="data"><tr><th class="l">When</th><th>${esc(MARKETS_GL[st.m])}</th></tr>
+        ${changes.slice().reverse().map(p => `<tr><td class="l">${p.t ? new Date(p.t).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }) : '-'}</td><td>${show(p[key])}</td></tr>`).join('')}</table></div>
+      <p class="note">ESPN's line (${esc(line.bk || 'DraftKings')}), checked about 8 times a day.</p>`;
+  }
+
+  function renderSecbar() {
+    document.getElementById('secbar').innerHTML = [...document.querySelectorAll('[data-sec]')]
+      .map(x => `<a href="#${x.id}" data-jump="${x.id}">${esc(x.dataset.sec)}</a>`).join('');
+  }
+
+  function render() {
+    renderTop();
+    renderEstimate();
+    renderStats(renderWindows());
+    renderInsights();
+    renderShots();
+    document.getElementById('lineup').innerHTML = lineupHTML(L, g);
+    renderMoves();
+    renderSecbar();
+    const url = new URL(location);
+    url.searchParams.set('m', st.m);
+    url.searchParams.set('s', st.side);
+    history.replaceState(null, '', url);
+  }
+
+  main.addEventListener('click', e => {
+    const j = e.target.closest('[data-jump]');
+    if (j) { e.preventDefault(); document.getElementById(j.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    const t = e.target.closest('[data-m],[data-side],[data-win],[data-team],[data-loc],[data-zone],[data-shotseason]');
+    if (!t) return;
+    const d = t.dataset;
+    if (d.m) { st.m = d.m; st.side = d.m === 'total' ? 'o' : (st.side === 'h' ? 'h' : 'a'); }
+    else if (d.side) st.side = d.side;
+    else if (d.win) st.win = d.win;
+    else if (d.team) st.team = d.team;
+    else if (d.loc !== undefined) st.loc = d.loc;
+    else if (d.zone) st.shot.zone = d.zone;
+    else if (d.shotseason) st.shot.season = +d.shotseason;
+    render();
+  });
+  render();
+}).catch(fail);
+</script>
+</body>
+</html>

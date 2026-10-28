@@ -2,7 +2,7 @@
 
 import sys
 import unittest
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
@@ -138,6 +138,21 @@ class PropsTests(unittest.TestCase):
         g = {"state": "post"}
         b.keep_open_line(g, {"line": {"sp": 2}})                     # ESPN dropped the odds: keep ours
         self.assertEqual((g["line"], g["open"]), ({"sp": 2}, {"sp": 2}))
+
+    def test_line_history_records_changes_before_tip(self):
+        t1, t2 = datetime(2026, 10, 28, 15, 37, tzinfo=timezone.utc), datetime(2026, 10, 28, 21, 37, tzinfo=timezone.utc)
+        g = {"state": "pre", "line": {"sp": -4.5, "tot": 236.5, "mlh": -190, "mla": 160}}
+        b.keep_open_line(g, None, t1)
+        self.assertEqual(g["lh"], [["2026-10-28T15:37Z", -4.5, 236.5, -190, 160]])
+        same = {"state": "pre", "line": dict(g["line"])}
+        b.keep_open_line(same, g, t2)                                 # unchanged: no new point
+        self.assertEqual(len(same["lh"]), 1)
+        moved = {"state": "pre", "line": {"sp": -5.5, "tot": 236.5, "mlh": -210, "mla": 175}}
+        b.keep_open_line(moved, same, t2)
+        self.assertEqual(moved["lh"][-1], ["2026-10-28T21:37Z", -5.5, 236.5, -210, 175])
+        final = {"state": "post", "line": {"sp": -6}}
+        b.keep_open_line(final, moved, t2)                            # after tip: history kept, not extended
+        self.assertEqual(len(final["lh"]), 2)
 
     def test_name_key(self):
         self.assertEqual(b.name_key("Dennis Schröder"), "dennis schroder")

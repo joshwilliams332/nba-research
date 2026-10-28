@@ -581,3 +581,16 @@ a, button, input, select, label, summary, .proprow > .head, [data-step] { touch-
   .mkt { padding: 0 12px 10px; }
   .price { padding: 3px 8px; font-size: 13px; }
 }
+
+/* ---------- line breakdown (Update 1) */
+.golink { cursor: pointer; border-radius: 10px; }
+.golink:hover .side b { text-decoration: underline; }
+.gochev { color: var(--muted); font-weight: 800; margin-left: 4px; }
+.lbhead { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.lbhead h1 { font-size: 22px; }
+.seg.wide { display: flex; width: 100%; }
+.seg.wide button { flex: 1; }
+.estscore { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 18px; margin: 4px 0 8px; }
+.estbig { font-size: 15px; margin: 0; }
+.estbig b { font-size: 18px; }
+@media (max-width: 520px) { .lbhead h1 { font-size: 18px; } .estscore { font-size: 16px; } }

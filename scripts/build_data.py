@@ -305,9 +305,13 @@ def parse_event(ev, day):
     return g
 
 
-def keep_open_line(g, old):
+LINE_KEYS = ("sp", "tot", "mlh", "mla")
+
+
+def keep_open_line(g, old, now=None):
     """`line` is always ESPN's latest (its closing line once the game starts); `open` keeps the first line we saw
-    before tip. If ESPN drops a game's odds later, the last line we had is kept."""
+    before tip. If ESPN drops a game's odds later, the last line we had is kept. `lh` is the line's history before
+    tip: [time, spread, total, home ML, away ML], one entry each time a run sees it change (for line movement)."""
     old = old or {}
     if "line" not in g and old.get("line"):
         g["line"] = old["line"]
@@ -316,6 +320,14 @@ def keep_open_line(g, old):
         g["open"] = first
     elif g.get("line") and g["state"] == "pre":
         g["open"] = g["line"]
+    hist = list(old.get("lh") or [])
+    if g.get("line") and g["state"] == "pre":
+        point = [g["line"].get(k) for k in LINE_KEYS]
+        if not hist or hist[-1][1:] != point:
+            stamp = (now or datetime.now(timezone.utc)).isoformat(timespec="minutes").replace("+00:00", "Z")
+            hist.append([stamp] + point)
+    if hist:
+        g["lh"] = hist[-40:]
 
 
 def build_schedule(store, today, offline):
@@ -563,10 +575,11 @@ def first_basket(pbp):
 def build_pbp_data(store, games, boxes):
     """Period stats, shot zones (players and team defenses) and first baskets from the stored play-by-play.
     Also writes a small site/data/wp/<game id>.json (win probability, season series) per game."""
-    periods, shots = defaultdict(dict), {"zones": ZONES, "league": {}, "players": {}, "def": {}}
+    periods, shots = defaultdict(dict), {"zones": ZONES, "league": {}, "players": {}, "def": {}, "off": {}}
     zi = {z: i for i, z in enumerate(ZONES)}
     blank = lambda: [0] * (2 * len(ZONES))  # noqa: E731  attempts, makes per zone
-    league, players, defense = defaultdict(blank), defaultdict(lambda: defaultdict(blank)), defaultdict(lambda: defaultdict(blank))
+    league, players = defaultdict(blank), defaultdict(lambda: defaultdict(blank))
+    defense, offense = defaultdict(lambda: defaultdict(blank)), defaultdict(lambda: defaultdict(blank))
     pgames, tgames = defaultdict(Counter), defaultdict(Counter)
     wp_dir = OUT_DIR / "wp"
     have = 0
@@ -591,9 +604,12 @@ def build_pbp_data(store, games, boxes):
             if z is None:
                 continue
             i, made = 2 * zi[z], r[5]
-            offense = r[2] or team_of.get(r[3])
-            opp = g["a"] if offense == g["h"] else g["h"]
-            for bucket in (league[season], players[r[3]][season], defense[opp][season]):
+            shooter_team = r[2] or team_of.get(r[3])
+            opp = g["a"] if shooter_team == g["h"] else g["h"]
+            buckets = [league[season], players[r[3]][season], defense[opp][season]]
+            if shooter_team:
+                buckets.append(offense[shooter_team][season])
+            for bucket in buckets:
                 bucket[i] += 1
                 bucket[i + 1] += made
         fb = first_basket(pbp)
@@ -603,17 +619,17 @@ def build_pbp_data(store, games, boxes):
             write_json(wp_dir / f"{g['id']}.json", {"wp": pbp.get("wp") or [], "ss": pbp.get("ss")})
     shots["league"] = dict(league)
     shots["players"] = {pid: {s: v + [pgames[pid][s]] for s, v in by.items()} for pid, by in players.items()}
-    # Team defense: shots allowed per zone per season + games, and a 1-30 rank per zone by points allowed
-    # per game there (1 = allows the most, the best matchup for a shooter).
-    for team, by in defense.items():
-        shots["def"][team] = {s: v + [tgames[team][s]] for s, v in by.items()}
-    for season in {s for by in defense.values() for s in by}:
-        for k, z in enumerate(ZONES):
-            value = 3 if z.endswith("3") else 2
-            per_game = {t: by[season][2 * k + 1] * value / max(1, tgames[t][season])
-                        for t, by in defense.items() if season in by}
-            for rank, t in enumerate(sorted(per_game, key=lambda t: -per_game[t]), 1):
-                shots["def"][t][season].append(rank)
+    # Team defense (shots allowed) and offense (shots taken) per zone per season + games, with a 1-30 rank per
+    # zone by points per game there (1 = allows / scores the most).
+    for key, table in (("def", defense), ("off", offense)):
+        shots[key] = {team: {s: v + [tgames[team][s]] for s, v in by.items()} for team, by in table.items()}
+        for season in {s for by in table.values() for s in by}:
+            for k, z in enumerate(ZONES):
+                value = 3 if z.endswith("3") else 2
+                per_game = {t: by[season][2 * k + 1] * value / max(1, tgames[t][season])
+                            for t, by in table.items() if season in by}
+                for rank, t in enumerate(sorted(per_game, key=lambda t: -per_game[t]), 1):
+                    shots[key][t][season].append(rank)
     log(f"Play-by-play: {have} games")
     return periods, shots
 

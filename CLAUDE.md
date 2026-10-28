@@ -84,7 +84,13 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   2. Second, small pre-tip props pull (budgeted in `plan_markets`) for closing line value and line movement.
   3. Saved picks tracker (localStorage, no backend): auto-graded from box scores, record / units / CLV, share cards.
   4. PWA: manifest, icons, offline shell; later opt-in push alerts (needs VAPID keys in Actions secrets).
-- **Update 1 (planned, Josh approved the plan; build when he says so): line breakdown page.** Tapping a game line
+- **Update 1 (done): line breakdown page** (`site/line.html`, logic in `site/assets/gameline.js`, tests in
+  `tests/gameline.test.js`). Game-line sides on the Games list and game page carry `data-go` (followed by a capture
+  click handler in `shell()`, so they work inside the game card's link). Data: games keep `lh` (line history before
+  tip, one entry per change) and shots.json has team offense zones under `off`. The team estimate (each side =
+  average of its scoring and the opponent's allowing, last 20 games, +/-0.8 home edge) was backtested on 2025-26:
+  win chances calibrated well, but spread / total leans hit only ~49% / 47% vs closing lines, so the page shows win %
+  and the estimated score only, never a cover / over %, and says so. Original plan: Tapping a game line
   (money line, spread or total side) on the Games list / game page opens a breakdown for that bet, inspired by
   Outlier but with our own layout and branding (ideas are fine to borrow; never their name, logo, look-alike design,
   text, or licensed data such as RotoWire lineups). Sections:
