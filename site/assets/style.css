@@ -291,3 +291,16 @@ td .logo { vertical-align: middle; margin-right: 4px; }
 
 /* players list */
 .plist .tm { display: inline-flex; align-items: center; gap: 4px; }
+
+/* ---------- defense vs position */
+.rates.r5 { grid-template-columns: 1.25fr repeat(4, 1fr); }
+.opprank b { font-variant-numeric: tabular-nums; }
+.opprank.soft b, .dvp .soft { color: var(--hit); }
+.opprank.tough b, .dvp .tough { color: var(--miss); }
+.opprank.mid b, .dvp .mid { color: var(--warm); }
+.dvp .big { font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.dvp .big small { font-size: 15px; font-weight: 600; }
+.dvp .heads { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 6px 0 12px; }
+.dvp .heads > div { background: var(--card2); border-radius: 12px; padding: 10px 12px; min-width: 0; }
+.dvp tr.me td { background: var(--card2); }
+@media (max-width: 420px) { .rates.r5 > div { font-size: 12px; } .rates.r5 small { font-size: 9px; letter-spacing: .02em; } }

@@ -79,3 +79,36 @@ test('standings: games behind, streaks and conference order', () => {
   assert.deepStrictEqual(S.East.map(r => [r.team, r.rank, r.w, r.l, r.gb]), [['AAA', 1, 2, 1, 0], ['BBB', 2, 1, 3, 1.5]]);
   assert.deepStrictEqual(S.West.map(r => [r.team, r.home, r.away]), [['CCC', '0-0', '1-0']]);
 });
+
+test('position buckets', () => {
+  assert.deepStrictEqual(['PG', 'SG', 'G', 'SF', 'PF', 'F', 'C', 'F-C', 'G-F', '', null].map(C.posBucket),
+    ['G', 'G', 'G', 'F', 'F', 'F', 'C', 'C', 'G', null, null]);
+});
+
+test('defense vs position sums opponents by position and ranks most allowed first', () => {
+  const games = [
+    game('1', '2026-10-20', 'AAA', 'BBB', 110, 100),
+    game('2', '2026-10-22', 'CCC', 'AAA', 120, 118),
+    game('3', '2026-10-24', 'BBB', 'CCC', 101, 99),
+  ];
+  const L = C.indexLab(meta, teams, games);
+  L.players = { g1: { p: 'PG' }, c1: { p: 'C' }, g2: { p: 'G' } };
+  const row = (gid, team, pts, reb) => [gid, team, 1, 30, pts, reb, 2, 1, 3, 5, 10, 1, 2, 1, 2, 1, 0, 2, 3, 0];
+  // AAA's guard g1 scores 30 on BBB and 20 on CCC; BBB's center c1 has 15 vs AAA, 9 vs CCC; CCC's guard g2 has 25 vs AAA, 10 vs BBB.
+  L.logs = { g1: [row('1', 'AAA', 30, 4), row('2', 'AAA', 20, 3)], c1: [row('1', 'BBB', 15, 12), row('3', 'BBB', 9, 8)], g2: [row('2', 'CCC', 25, 5), row('3', 'CCC', 10, 2)] };
+  const d = C.defenseVsPosition(L, 2027);
+  assert.strictEqual(d.BBB.G.games, 2);
+  assert.strictEqual(d.BBB.G.per.pts, 20);   // (30 + 10) / 2
+  assert.strictEqual(d.AAA.G.per.pts, 12.5); // 25 / 2
+  assert.strictEqual(d.CCC.G.per.pts, 10);   // 20 / 2
+  assert.deepStrictEqual([d.BBB.G.rank.pts, d.AAA.G.rank.pts, d.CCC.G.rank.pts], [1, 2, 3]);
+  assert.strictEqual(d.AAA.C.per.reb, 6);    // 12 / 2
+  assert.strictEqual(d.AAA.ALL.per.pts, 20); // (15 + 25) / 2
+  assert.strictEqual(d.AAA.G.per.pra, 12.5 + 2.5 + 1);
+  const last1 = C.defenseVsPosition(L, 2027, { last: 1 });
+  assert.strictEqual(last1.BBB.G.per.pts, 10);  // only BBB's latest game (3)
+  assert.strictEqual(C.defenseVsPosition(L, 2027), d); // memoized
+  assert.strictEqual(C.rankClass(3), 'soft');
+  assert.strictEqual(C.rankClass(25), 'tough');
+  assert.strictEqual(C.rankClass(15), 'mid');
+});

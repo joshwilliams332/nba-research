@@ -124,7 +124,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
           <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}</div></div>
         ${priceTag}<span class="chev">⌄</span></div>
       <div style="padding:0 14px">${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
-      <div class="rates">${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(rates[k])}</div>`).join('')}</div>
+      <div class="rates r5">${oppRankCell(L, opp, p.p, stat)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(rates[k])}</div>`).join('')}</div>
       ${ladder}</div>`;
   }
 

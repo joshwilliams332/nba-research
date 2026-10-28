@@ -37,7 +37,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   const st = {
     stat: STATS[P.get('stat')] ? P.get('stat') : (props[0] ? props[0].s : 'pts'),
     side: P.get('side') === 'u' ? 'u' : 'o',
-    win: 'l10', support: 'min', f: {}, line: null,
+    win: 'l10', support: 'min', f: {}, line: null, dvpPos: posBucket(p.p) || 'ALL',
   };
   const propFor = s => props.find(x => x.s === s);
   const defaultLine = s => (propFor(s) ? propFor(s).l : typicalLine(all, s));
@@ -64,6 +64,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     <div class="card" id="linecard"></div>
     <div class="windows" id="windows"></div>
     <div class="card" id="chart"></div>
+    ${opp ? '<div class="card dvp" id="dvp"></div>' : ''}
     <div class="card"><details class="filters" id="filters"></details></div>
     <div class="card" id="support"></div>
     <div class="card" id="log"></div>`;
@@ -180,6 +181,36 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       <p class="note">Colors compare each game to the line above. "Line" is that day's sportsbook line, when one was pulled.</p>`;
   }
 
+  // How tonight's defense handles this stat, by position (Outlier's "Key defense" card).
+  function renderDvp() {
+    const el = document.getElementById('dvp');
+    if (!el) return;
+    const s = st.stat, mine = posBucket(p.p);
+    const cur = L.meta.season, yy = x => `${String(x - 1).slice(2)}-${String(x).slice(2)}`;
+    const tables = [defenseVsPosition(L, cur), defenseVsPosition(L, cur, { last: 10 }), defenseVsPosition(L, cur - 1)];
+    const cell = (t, b) => ((t[opp] || {})[b]) || null;
+    const of = (t, b) => Object.values(t).filter(x => x[b].games).length;
+    const show = (t, b) => {
+      const c = cell(t, b);
+      if (!c || !c.games) return '<span class="muted">-</span>';
+      return `<b class="${rankClass(c.rank[s], of(t, b))}">#${c.rank[s]}</b> <small>${fmt1(c.per[s])}</small>`;
+    };
+    const head = (t, b, label) => {
+      const c = cell(t, b);
+      if (!c || !c.games) return `<div><small class="muted">${label}</small><div class="big">-</div></div>`;
+      return `<div><small class="muted">${label}</small><div class="big"><span class="${rankClass(c.rank[s], of(t, b))}">#${c.rank[s]}</span> <small class="muted">of ${of(t, b)}</small></div>
+        <small>${fmt1(c.per[s])} ${esc(STATS[s].short)} per game allowed · ${c.games} games</small></div>`;
+    };
+    const b = st.dvpPos, games = (cell(tables[0], 'ALL') || {}).games || 0;
+    el.innerHTML = `<div class="row"><h2 class="grow">vs ${esc(opp)} defense</h2>${logo(L, opp, 26)}</div>
+      <div class="tabs under" style="margin-top:8px">${[...POSITIONS, 'ALL'].map(x => `<button data-dvppos="${x}" class="${x === b ? 'on' : ''}">${x === 'ALL' ? 'Overall' : `vs ${x}`}</button>`).join('')}</div>
+      <div class="heads">${head(tables[0], b, `${yy(cur)} · ${STATS[s].label} to ${POS_LABEL[b]}`)}${head(tables[1], b, 'Last 10 games')}</div>
+      <div class="tablewrap"><table class="data"><tr><th class="l">${esc(STATS[s].short)} allowed to</th><th>${yy(cur)}</th><th>Last 10</th><th>${yy(cur - 1)}</th></tr>
+        ${[...POSITIONS, 'ALL'].map(x => `<tr class="${x === b ? 'me' : ''}"><td class="l">${x === 'ALL' ? 'Overall' : POS_LABEL[x][0].toUpperCase() + POS_LABEL[x].slice(1)}${x === mine ? ' <small>(this player)</small>' : ''}</td>
+          <td>${show(tables[0], x)}</td><td>${show(tables[1], x)}</td><td>${show(tables[2], x)}</td></tr>`).join('')}</table></div>
+      <p class="note">Rank among NBA defenses, regular season: #1 allows the most (best spot for an over), green = top 10, red = bottom 10. Small number = per game.${games < DVP_MIN_GAMES ? ` Only ${games} games this season so far, so last season is shown too.` : ''}</p>`;
+  }
+
   function render() {
     const rows = filtered();
     const rates = windowRates(rows, st.stat, st.line, st.side, opts());
@@ -188,6 +219,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     renderWindows(rates);
     renderChart(rates);
     renderSupport(rates);
+    renderDvp();
     renderLog(rates);
     const url = new URL(location);
     url.searchParams.set('stat', st.stat);
@@ -197,7 +229,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   }
 
   main.addEventListener('click', e => {
-    const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-reset],[data-clear],[data-unmate],[data-addmate]');
+    const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-dvppos],[data-reset],[data-clear],[data-unmate],[data-addmate]');
     if (!t) return;
     const d = t.dataset;
     if (d.stat) { st.stat = d.stat; st.line = defaultLine(d.stat); }
@@ -205,6 +237,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     else if (d.step) st.line = Math.max(0.5, st.line + +d.step);
     else if (d.win) st.win = d.win;
     else if (d.support) st.support = d.support;
+    else if (d.dvppos) st.dvpPos = d.dvppos;
     else if (d.reset) { e.preventDefault(); st.line = propFor(st.stat).l; }
     else if (d.clear) { e.preventDefault(); st.f = {}; renderFilters(); }
     else if (d.unmate) { const [k, id] = d.unmate.split(':'); st.f[k] = st.f[k].filter(x => x !== id); renderFilters(); }

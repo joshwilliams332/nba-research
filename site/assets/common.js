@@ -315,6 +315,111 @@ function skeleton(cards = 3, lines = 3) {
     `<div class="skel" style="width:${[70, 92, 55, 80][i % 4]}%"></div>`).join('')}</div>`).join('');
 }
 
+// ---------------------------------------------------------------- defense vs position
+
+const POSITIONS = ['G', 'F', 'C'];
+const POS_LABEL = { G: 'guards', F: 'forwards', C: 'centers', ALL: 'all players' };
+
+/* ESPN position -> 'G', 'F' or 'C'. PG/SG -> G, SF/PF -> F; any combo with a C ("F-C") counts as C. */
+function posBucket(pos) {
+  const parts = String(pos || '').toUpperCase().split(/[^A-Z]+/).filter(Boolean);
+  if (!parts.length) return null;
+  if (parts.includes('C')) return 'C';
+  const p = parts[0];
+  return p.endsWith('G') ? 'G' : p.endsWith('F') ? 'F' : null;
+}
+
+/* What each defense allows per game to each position, ranked 1-30 (1 = allows the most, the best spot for an over).
+   Uses final regular-season games of `season`; opts.last limits each team to its last N of them.
+   Returns {TEAM: {G|F|C|ALL: {games, per: {stat: value}, rank: {stat: rank}}}}. Memoized on L. */
+function defenseVsPosition(L, season, opts = {}) {
+  const key = `${season}|${opts.last || 0}`;
+  L.dvp = L.dvp || {};
+  if (L.dvp[key]) return L.dvp[key];
+  // Which games count for each defense.
+  const windowGames = {};
+  for (const team of Object.keys(L.teams)) {
+    let list = (L.teamGames[team] || []).filter(g => isFinal(g) && g.s === season && g.st === 2);
+    if (opts.last) list = list.slice(-opts.last);
+    windowGames[team] = new Set(list.map(g => g.id));
+  }
+  const buckets = [...POSITIONS, 'ALL'];
+  const sums = {};
+  for (const team of Object.keys(L.teams)) {
+    sums[team] = {};
+    for (const b of buckets) sums[team][b] = Object.fromEntries(STAT_ORDER.map(s => [s, 0]));
+  }
+  const cols = L.meta.cols;
+  for (const [pid, rows] of Object.entries(L.logs || {})) {
+    const bucket = posBucket((L.players[pid] || {}).p);
+    for (const r of rows) {
+      const g = L.byId.get(r[0]);
+      if (!g) continue;
+      const def = r[1] === g.h ? g.a : g.h;
+      if (!windowGames[def] || !windowGames[def].has(g.id)) continue;
+      const row = {};
+      cols.forEach((c, i) => { row[c] = r[3 + i]; });
+      for (const s of STAT_ORDER) {
+        const v = STATS[s].f(row);
+        sums[def].ALL[s] += v;
+        if (bucket) sums[def][bucket][s] += v;
+      }
+    }
+  }
+  const out = {};
+  for (const team of Object.keys(L.teams)) {
+    const n = windowGames[team].size;
+    out[team] = {};
+    for (const b of buckets) {
+      out[team][b] = { games: n, rank: {}, per: Object.fromEntries(STAT_ORDER.map(s => [s, n ? sums[team][b][s] / n : null])) };
+    }
+  }
+  // Rank within each bucket and stat; teams without games get no rank. Ties share the higher rank.
+  for (const b of buckets) {
+    for (const s of STAT_ORDER) {
+      const vals = Object.keys(out).filter(t => out[t][b].games).map(t => [t, out[t][b].per[s]]).sort((x, y) => y[1] - x[1]);
+      vals.forEach(([t, v], i) => {
+        out[t][b].rank[s] = i && v === vals[i - 1][1] ? out[vals[i - 1][0]][b].rank[s] : i + 1;
+      });
+    }
+  }
+  L.dvp[key] = out;
+  return out;
+}
+
+const DVP_MIN_GAMES = 5;
+
+/* A defense's rank vs one position for one stat, from this season once the team has DVP_MIN_GAMES games,
+   otherwise last season. {rank, per, games, season, of} or null. */
+function oppRank(L, team, bucket, stat) {
+  const b = bucket || 'ALL';
+  for (const season of [L.meta.season, L.meta.season - 1]) {
+    const table = defenseVsPosition(L, season), cell = (table[team] || {})[b];
+    const enough = season === L.meta.season ? DVP_MIN_GAMES : 1;
+    if (cell && cell.games >= enough) {
+      return { rank: cell.rank[stat], per: cell.per[stat], games: cell.games, season, of: Object.values(table).filter(x => x[b].games).length };
+    }
+  }
+  return null;
+}
+
+/* Green when the defense is among the 10 most generous for this stat and position, red among the 10 stingiest. */
+function rankClass(rank, of = 30) {
+  if (rank == null) return '';
+  return rank <= 10 ? 'soft' : rank > of - 10 ? 'tough' : 'mid';
+}
+
+/* "OPP RANK 3 TOR" cell for prop rows. */
+function oppRankCell(L, opp, pos, stat) {
+  const bucket = posBucket(pos);
+  const r = oppRank(L, opp, bucket, stat);
+  if (!r || r.rank == null) return `<div><small>OPP RANK</small><span class="rate none">-</span></div>`;
+  const who = POS_LABEL[bucket || 'ALL'];
+  const yrs = r.season === L.meta.season ? 'this season' : `last season (${opp} has under ${DVP_MIN_GAMES} games this year)`;
+  const tip = `${opp} allows ${fmt1(r.per)} ${STATS[stat].short} per game to ${who}, ${r.rank} of ${r.of}, ${yrs}. 1 = allows the most (best for an over).`;
+  return `<div class="opprank ${rankClass(r.rank, r.of)}" title="${esc(tip)}"><small>OPP RANK</small><b>${r.rank}</b> ${esc(opp)}</div>`;
+}
+
 // ---------------------------------------------------------------- formatting
 
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -484,5 +589,5 @@ function fail(err) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { STATS, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct };
+  module.exports = { STATS, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass };
 }
