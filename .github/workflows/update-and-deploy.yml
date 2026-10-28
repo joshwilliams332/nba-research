@@ -61,6 +61,10 @@ jobs:
       # the new HTML with the old script. Tagging the links (every assets/*.js and style.css) with this commit makes every deploy fetch fresh copies.
       - name: Tag asset links with this commit
         run: sed -i -E "s#assets/([a-z]+\.js|style\.css)\"#assets/\1?v=${GITHUB_SHA::8}\"#g" site/*.html
+      # The service worker precaches those same ?v= URLs and names its cache after the commit, so each deploy
+      # installs fresh caches and drops the old ones.
+      - name: Stamp the service worker with this commit
+        run: sed -i "s/^const VERSION = 'dev';/const VERSION = '${GITHUB_SHA::8}';/" site/sw.js
       - uses: actions/upload-pages-artifact@v4
         if: github.ref == 'refs/heads/main'
         with:
