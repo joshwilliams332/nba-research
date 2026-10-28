@@ -13,6 +13,7 @@
 <main></main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
+<script src="assets/context.js"></script>
 <script src="assets/pbp.js"></script>
 <script>
 shell('standings');
@@ -44,6 +45,14 @@ lab(['players', 'logs', 'injuries']).then(L => {
         <small>${next.state === 'in' ? `${next.as}-${next.hs} · ${esc(next.detail || '')}` : `${fmtDay(next.d)} · ${fmtTime(next.t)}`}${lines ? ` · ${esc(lines)}` : ''}</small></div><span class="chev">›</span></a>`;
   }
 
+  // "Pace 101.8 (4th) last 10 · 99.6 (12th) this season": possessions per 48, 1st = fastest.
+  function paceNote() {
+    const l10 = teamPace(L, { last: 10 })[team], ss = teamPace(L)[team];
+    if (!l10 || l10.pace == null) return '';
+    const yy = s => `${String(s - 1).slice(2)}-${String(s).slice(2)}`;
+    return `<p class="note" title="Possessions per 48 minutes; 1st = fastest">Pace <b>${fmt1(l10.pace)}</b> (${ordinal(l10.rank)}) last 10${ss && ss.pace != null ? ` · ${fmt1(ss.pace)} (${ordinal(ss.rank)}) in ${yy(ss.season)}` : ''}</p>`;
+  }
+
   main.innerHTML = `
     <section class="hero" style="--c1:${T.color}cc;--c2:#14171c">
       <div class="row"><a class="back" href="javascript:history.length>1?history.back():location.assign('standings.html')" aria-label="Back">‹</a></div>
@@ -56,6 +65,7 @@ lab(['players', 'logs', 'injuries']).then(L => {
         <div><b>${me.streak}</b><small>Streak</small></div>
         <div><b>${me.w + me.l ? signed(+me.diff.toFixed(1)) : '-'}</b><small>Avg margin</small></div>
       </div>
+      ${paceNote()}
       ${nextCard}
     </section>
     <div class="tabs" id="tabs"></div>

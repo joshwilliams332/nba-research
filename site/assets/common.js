@@ -176,13 +176,17 @@ function applyFilters(L, rows, f) {
   });
 }
 
-/* Hit rates in every window for one stat / line / side. opts: {opp, season}. */
+/* Hit rates in every window for one stat / line / side. opts: {opp, season, base}.
+   Each window also gets `adj` (confidence-adjusted rate) and `small` (fewer than SMALL_SAMPLE games),
+   pulled toward the player's longer-run rate at this line over `base` rows (default: all rows given). */
 function windowRates(rows, stat, line, side, opts) {
   const f = STATS[stat].f;
+  const prior = priorRate(tally((opts.base || rows).map(r => outcome(f(r), line, side))));
   const out = {};
   for (const w of WINDOWS) {
     const picked = w.pick(rows, opts);
-    out[w.key] = { rows: picked, ...tally(picked.map(r => outcome(f(r), line, side))) };
+    const t = tally(picked.map(r => outcome(f(r), line, side)));
+    out[w.key] = { rows: picked, ...t, adj: adjustedRate(t, prior), small: t.n > 0 && t.n < SMALL_SAMPLE, prior };
   }
   return out;
 }
@@ -420,6 +424,101 @@ function oppRankCell(L, opp, pos, stat) {
   return `<div class="opprank ${rankClass(r.rank, r.of)}" title="${esc(tip)}"><small>OPP RANK</small><b>${r.rank}</b> ${esc(opp)}</div>`;
 }
 
+// ---------------------------------------------------------------- teammate boost and confidence
+
+/* Confidence-adjusted hit rates. A raw rate from a few games swings wildly (5 for 5 is "100%"), so we blend it
+   with what we'd expect anyway: adj = (hits + K * prior) / (n + K). K = 10 means the window is weighed as if
+   10 typical games were added to it. The prior is the player's own longer-run rate at this line, itself pulled
+   toward 50% by the same amount so a thin career sample can't dominate. A 5-for-5 streak from a player who
+   clears this line 55% of the time comes out near 70%, not 100%; a 40-for-50 season barely moves. */
+const SHRINK_K = 10;
+const SMALL_SAMPLE = 10;
+
+function priorRate(longRun) {
+  return (longRun.hits + SHRINK_K * 0.5) / (longRun.n + SHRINK_K);
+}
+
+function adjustedRate(t, prior = 0.5) {
+  if (!t || !t.n) return null;
+  return (t.hits + SHRINK_K * prior) / (t.n + SHRINK_K);
+}
+
+const OUT_STATUS = /^(out|doubt)/i;
+const KEY_MATE_MIN = 20;     // a teammate averaging this many minutes counts as a key absence
+const BOOST_MIN_GAMES = 3;   // games without him needed before we show a boost
+
+/* Was `mate` on `team` for game row r? Between his first and last game for that team that season, or the whole
+   season when it's the current one and he's still on the roster (e.g. hurt since opening night). */
+function onTeamFor(L, mate, team) {
+  const ranges = {};
+  for (const r of playerRows(L, mate)) {
+    if (r.team !== team) continue;
+    const x = ranges[r.g.s] = ranges[r.g.s] || { first: r.g.t, last: r.g.t };
+    if (r.g.t < x.first) x.first = r.g.t;
+    if (r.g.t > x.last) x.last = r.g.t;
+  }
+  const current = (L.players[mate] || {}).t === team;
+  return r => {
+    if (current && r.g.s === L.meta.season) return true;
+    const x = ranges[r.g.s];
+    return !!x && r.g.t >= x.first && r.g.t <= x.last;
+  };
+}
+
+/* Per-game averages for a set of rows: minutes, FGA, usage (FGA + 0.44 FTA + TOV) and one stat. */
+function boostLine(rows, stat) {
+  const avg = f => rows.length ? mean(rows.map(f)) : null;
+  return { n: rows.length, min: avg(r => r.min), fga: avg(r => r.fga), use: avg(r => r.fga + 0.44 * r.fta + r.tov), stat: avg(STATS[stat].f) };
+}
+
+/* How a player's numbers change without a teammate: games on the player's current team, this season and last,
+   split by whether the teammate played (while he was on the team). rows: the player's rows (default: all). */
+function teammateBoost(L, pid, mate, stat, rows) {
+  const team = (L.players[pid] || {}).t;
+  const played = playedIndex(L);
+  const onTeam = onTeamFor(L, mate, team);
+  const pool = (rows || playerRows(L, pid)).filter(r => r.team === team && r.g.s >= L.meta.season - 1 && onTeam(r));
+  const withRows = pool.filter(r => (played.get(r.gid) || new Set()).has(mate));
+  const withoutRows = pool.filter(r => !(played.get(r.gid) || new Set()).has(mate));
+  const w = boostLine(withRows, stat), wo = boostLine(withoutRows, stat);
+  const d = k => (w[k] != null && wo[k] != null ? wo[k] - w[k] : null);
+  return { mate, with: w, without: wo, withoutRows, delta: { min: d('min'), fga: d('fga'), use: d('use'), stat: d('stat') },
+    meaningful: wo.n >= BOOST_MIN_GAMES && w.n >= BOOST_MIN_GAMES };
+}
+
+/* Teammates ruled out (or doubtful) today who play real minutes alongside this player, most minutes first. */
+function outMates(L, pid) {
+  const team = (L.players[pid] || {}).t;
+  if (!team) return [];
+  const played = playedIndex(L);
+  return (L.injuries || []).filter(i => i.id && i.id !== pid && i.t === team && OUT_STATUS.test(i.st || '') && L.players[i.id])
+    .map(i => {
+      const rows = playerRows(L, i.id).filter(r => r.team === team && r.g.s >= L.meta.season - 1);
+      const together = rows.filter(r => (played.get(r.gid) || new Set()).has(pid)).length;
+      return { id: i.id, n: L.players[i.id].n, st: i.st, min: mean(rows.map(r => r.min)) || 0, together };
+    })
+    .filter(m => m.min >= KEY_MATE_MIN && m.together >= BOOST_MIN_GAMES)
+    .sort((a, b) => b.min - a.min);
+}
+
+/* Typical line from the games without today's key absence(s), when there are enough of them.
+   Returns {line, without: [names]} or null to fall back to the normal typical line. */
+function boostedTypicalLine(L, pid, stat, rows, mates) {
+  if (!mates || !mates.length) return null;
+  const played = playedIndex(L);
+  const team = (L.players[pid] || {}).t;
+  const ons = mates.map(m => onTeamFor(L, m.id, team));
+  const without = rows.filter(r => r.team === team && mates.every((m, i) => ons[i](r) && !(played.get(r.gid) || new Set()).has(m.id)));
+  if (without.length < BOOST_MIN_GAMES) return null;
+  return { line: typicalLine(without, stat), without: mates.map(m => m.n), n: without.length };
+}
+
+/* Short last name for chips: "Joel Embiid" -> "Embiid", "Kelly Oubre Jr." -> "Oubre". */
+function lastName(name) {
+  const parts = String(name || '').split(' ').filter(w => !/^(jr\.?|sr\.?|ii|iii|iv)$/i.test(w));
+  return parts[parts.length - 1] || name;
+}
+
 // ---------------------------------------------------------------- formatting
 
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -464,7 +563,15 @@ function strip(results, titles = []) {
 function rateTag(t, opts = {}) {
   if (!t || !t.n) return `<span class="rate none">-</span>`;
   const cls = t.rate >= 0.7 ? 'hot' : t.rate >= 0.55 ? 'warm' : t.rate <= 0.3 ? 'cold' : '';
-  return `<span class="rate ${cls}">${pct(t.rate)}${opts.count ? ` <small>${t.hits}/${t.n}</small>` : ''}</span>`;
+  const adj = opts.adj && t.adj != null ? adjTag(t) : '';
+  return `<span class="rate ${cls}">${pct(t.rate)}${opts.count ? ` <small>${t.hits}/${t.n}</small>` : ''}${adj}</span>`;
+}
+
+/* The confidence-adjusted rate under a raw one: "≈64%", amber when the window has fewer than 10 games. */
+function adjTag(t) {
+  const why = `Adjusted for sample size: ${pct(t.adj)}. Raw ${t.hits} of ${t.n}${t.small ? ' is a small sample' : ''}; `
+    + `blended with this player's longer-run rate at this line (${pct(t.prior)}) as if ${SHRINK_K} typical games were added.`;
+  return `<em class="adj${t.small ? ' small' : ''}" title="${esc(why)}">≈${pct(t.adj)}</em>`;
 }
 
 function injuryTag(inj) {
@@ -590,5 +697,5 @@ function fail(err) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { STATS, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass };
+  module.exports = { STATS, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, boostedTypicalLine, lastName, SHRINK_K };
 }
