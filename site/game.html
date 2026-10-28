@@ -20,6 +20,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
+<script src="assets/model.js"></script>
 <script src="assets/lines.js"></script>
 <script src="assets/insights.js"></script>
 <script src="assets/picks.js"></script>
@@ -158,7 +159,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
         <div class="grow"><div class="name">${esc(p.n)}${injuryTag(inj.get(pid))}</div>
           <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}${moveTag(prop)}</div></div>
         ${evTag(prop)}${priceTag}${g.state === 'pre' ? pickButton({ gid: g.id, pid, name: p.n, stat, side: 'o', line, price: prop ? prop.o : null, book: prop ? prop.bk : null }, saved.has(pickKey({ gid: g.id, pid, stat, side: 'o', line }))) : ''}<span class="chev">⌄</span></div>
-      <div style="padding:0 14px">${teamContext(L, g, p.t)}${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
+      <div style="padding:0 14px">${teamContext(L, g, p.t)}${projTag(L, pid, stat, line, g, 'o', x.rows)}${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
       ${boost ? `<span class="boostchip${boost.b.delta.stat < 0 ? ' down' : ''}" title="${esc(`${p.n} averages ${fmt1(boost.b.without.stat)} ${STATS[stat].short} in ${boost.b.without.n} games without ${boost.m.n} vs ${fmt1(boost.b.with.stat)} in ${boost.b.with.n} with him (this season and last)`)}">${signed(Math.round(boost.b.delta.stat * 10) / 10)} ${esc(STATS[stat].short)} w/o ${esc(lastName(boost.m.n))}</span>` : ''}
       <div class="rates r5">${oppRankCell(L, opp, p.p, stat)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(rates[k], { adj: true })}</div>`).join('')}</div>
       ${ladder}</div>`;

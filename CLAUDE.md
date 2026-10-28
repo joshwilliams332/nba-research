@@ -39,6 +39,11 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   (pages and data network-first with cached fallback + "Offline · data from …" banner; assets cache-first by
   their ?v= URL; the deploy stamps sw.js's VERSION with the commit). When adding a page or a script, add it to
   `PAGES` / `ASSETS` in sw.js so it works offline from the first visit.
+- Projection model (`site/assets/model.js`, tested in `tests/model.test.js`): minutes x per-minute rate x opponent
+  (DvP, half strength, capped) x pace, teammate-out adjustment weighted by the share of recent games the teammate
+  played (avoids double counting), negative binomial for the chances. `scripts/backtest.js` (workflow step) writes
+  `site/data/model.json` for `model.html`. Node loads the helpers via `Object.assign(globalThis, require(...))`;
+  never declare common.js names with `var`/`const` in other asset files (they share one global scope in the browser).
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)
@@ -59,7 +64,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - Open checks from Phase 3: confirm real props drive EV+ / fair price / insights; verify shot-chart left vs right
   corner orientation; demote money-line insights on heavy favorites; shot-zone ranks include playoffs while DvP is
   regular season only.
-- Phase 4 "Prove it" (next, from the research report):
+- Phase 4 "Prove it" (done: installable app, picks tracker, pre-tip pull / CLV, projection model):
   1. Projection model (minutes x per-minute rate, adjusted for DvP and pace) with a backtest on last season, a
      calibration chart and a methodology page; projections and gap to the line on prop rows.
   2. Second, small pre-tip props pull (budgeted in `plan_markets`) for closing line value and line movement.

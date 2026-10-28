@@ -754,7 +754,7 @@ function footer(L) {
   if (!el) return;
   const built = L && L.meta ? new Date(L.meta.built).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
   el.innerHTML = `<p>Data: ESPN (scores, box scores, game lines, injuries) and The Odds API (player props).${built ? ` Updated ${esc(built)}.` : ''}</p>
-    <p>Hit rates describe the past, not the future. For research and fun; bet responsibly.</p>`;
+    <p>Hit rates describe the past, not the future. For research and fun; bet responsibly. <a href="model.html" style="text-decoration:underline">How projections work</a>.</p>`;
 }
 
 function fail(err) {
@@ -764,5 +764,5 @@ function fail(err) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { STATS, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, boostedTypicalLine, lastName, SHRINK_K };
+  module.exports = { STATS, STAT_ORDER, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, boostedTypicalLine, lastName, SHRINK_K };
 }

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Projection model</title>
+<meta name="description" content="How Hoop Lab projects player stats, and how accurate the projections have been on past games.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hoop Lab">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main>
+  <section class="pagehead"><h1>Projection model</h1><p>How the "Proj" numbers on props are built, and how they've held up on past games.</p></section>
+  <div id="body"></div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script>
+shell('');
+document.getElementById('body').innerHTML = skeleton(3, 3);
+Promise.all([lab(), load('model')]).then(([L, [M]]) => {
+  footer(L);
+  const S = { pts: 'Points', reb: 'Rebounds', ast: 'Assists', fg3m: 'Threes', pra: 'Pts + Reb + Ast' };
+  const pctx = x => x == null ? '-' : `${(x * 100).toFixed(1)}%`;
+  const t = M.typical || {};
+  const leans = t.leans || {};
+  const seasons = (M.seasons || []).map(s => `${s - 1}-${String(s).slice(2)}`).join(' and ');
+
+  // Calibration chart: predicted chance (x) vs how often it happened (y); dots sized by how many predictions.
+  function calibChart(rows) {
+    const W = 330, H = 240, pad = 42, X = v => pad + v * (W - pad - 10), Y = v => H - pad - v * (H - pad - 10);
+    const maxN = Math.max(...rows.map(r => r.n), 1);
+    const grid = [0, 0.25, 0.5, 0.75, 1].map(v => `<line x1="${X(v)}" y1="${Y(0)}" x2="${X(v)}" y2="${Y(1)}" stroke="var(--line)"/>
+      <line x1="${X(0)}" y1="${Y(v)}" x2="${X(1)}" y2="${Y(v)}" stroke="var(--line)"/>
+      <text x="${X(v)}" y="${H - 12}" text-anchor="middle">${v * 100}%</text><text x="${pad - 6}" y="${Y(v) + 4}" text-anchor="end">${v * 100}%</text>`).join('');
+    const pts = rows.filter(r => r.n && r.pred != null);
+    const path = pts.map((r, i) => `${i ? 'L' : 'M'}${X(r.pred).toFixed(1)},${Y(r.actual).toFixed(1)}`).join(' ');
+    const dots = pts.map(r => `<circle cx="${X(r.pred)}" cy="${Y(r.actual)}" r="${3 + 6 * Math.sqrt(r.n / maxN)}" fill="var(--accent)" fill-opacity=".85">
+      <title>Predicted ${pctx(r.pred)}, happened ${pctx(r.actual)} (${r.n.toLocaleString()} predictions)</title></circle>`).join('');
+    return `<svg class="calib" viewBox="0 0 ${W} ${H}" role="img" aria-label="Calibration chart">${grid}
+      <line x1="${X(0)}" y1="${Y(0)}" x2="${X(1)}" y2="${Y(1)}" stroke="var(--muted)" stroke-dasharray="4 4"/>
+      <path d="${path}" fill="none" stroke="var(--accent)" stroke-width="2"/>${dots}</svg>`;
+  }
+
+  const acc = Object.entries(M.accuracy || {}).map(([s, a]) => {
+    const better = (a.baseline - a.mae) / a.baseline;
+    return `<tr><td class="l">${esc(S[s] || s)}</td><td>${a.mae}</td><td>${a.baseline}</td>
+      <td class="${better > 0.005 ? 'hit' : better < -0.005 ? 'miss' : ''}">${better >= 0 ? '' : '−'}${Math.abs(better * 100).toFixed(1)}%</td></tr>`;
+  }).join('');
+  const byStat = Object.entries(M.typicalByStat || {}).map(([s, x]) => `<tr><td class="l">${esc(S[s] || s)}</td>
+    <td>${x.brier}</td><td>${pctx((x.leans || {}).over && x.leans.over.hit)} <small>${((x.leans || {}).over || {}).n || 0}</small></td>
+    <td>${pctx((x.leans || {}).under && x.leans.under.hit)} <small>${((x.leans || {}).under || {}).n || 0}</small></td></tr>`).join('');
+  const real = M.real || {};
+
+  document.getElementById('body').innerHTML = `
+    <div class="card"><h2>Track record</h2>
+      <p class="muted" style="margin-top:0">Every rotation player's game in ${esc(seasons)} with 10+ earlier games, replayed using only what was known before tip-off.</p>
+      <div class="metric">
+        <div><small>Predictions scored</small><b>${(t.n || 0).toLocaleString()}</b></div>
+        <div><small>Over leans (60%+) hit</small><b>${pctx(leans.over && leans.over.hit)}</b><small>${((leans.over || {}).n || 0).toLocaleString()} leans</small></div>
+        <div><small>Under leans (40% or less) hit</small><b>${pctx(leans.under && leans.under.hit)}</b><small>${((leans.under || {}).n || 0).toLocaleString()} leans</small></div>
+        <div><small>Brier score</small><b>${t.brier ?? '-'}</b><small>lower is better; a coin flip scores 0.25</small></div>
+      </div>
+      <p class="note">Leans are graded against the "typical" line (the half point above the floor of his last-10 average). ${real.n
+        ? `Against real sportsbook lines: ${real.n.toLocaleString()} graded${real.brier != null ? `, Brier ${real.brier}` : ''}.`
+        : 'Results against real sportsbook lines will appear here as daily prop pulls build up.'}</p></div>
+
+    <div class="grid2">
+      <div class="card"><h2>Is 60% really 60%?</h2>${calibChart(t.calibration || [])}
+        <p class="note">Each dot groups predictions by the chance the model gave the over (x) and shows how often the over actually hit (y).
+          On the dashed line means honest percentages. Bigger dots = more predictions. The model is a little overconfident at the extremes:
+          its 80%+ calls have hit somewhat less often than it said.</p></div>
+      <div class="card"><h2>Projection error</h2>
+        <div class="tablewrap"><table class="data"><tr><th class="l">Stat</th><th>Model</th><th>Last-10 avg</th><th>Better by</th></tr>${acc}</table></div>
+        <p class="note">Average miss (mean absolute error) of the projected number vs simply using his last-10 average. Small gains are normal: the last-10 average is a strong baseline, and the model's edge is mostly in the percentages.</p>
+        <h3 style="margin-top:14px">By stat</h3>
+        <div class="tablewrap"><table class="data"><tr><th class="l">Stat</th><th>Brier</th><th>Over leans</th><th>Under leans</th></tr>${byStat}</table></div></div>
+    </div>
+
+    <div class="card"><h2>How it works</h2>
+      <p><b>Projection = minutes × production per minute × opponent × pace.</b></p>
+      <ul>
+        <li><b>Minutes:</b> his recent minutes, weighted so the last few games count most.</li>
+        <li><b>Per minute:</b> his production per minute over this season and last, recent games weighted more, padded with the average for his position so a hot week can't swing it.</li>
+        <li><b>Teammates out:</b> when a key teammate is ruled out, part of the change in his minutes and production in past games without that teammate is added, but only for the share of recent games the teammate actually played, so it isn't counted twice.</li>
+        <li><b>Opponent:</b> what tonight's defense allows to his position compared with the league, applied at half strength and capped at ±15%.</li>
+        <li><b>Pace:</b> tonight's expected pace compared with his team's usual pace, half strength, capped at ±6%.</li>
+        <li><b>The percentages:</b> the projection is spread into a range of outcomes (a negative binomial, since stat lines vary more than a simple coin model), using how much his own numbers have bounced around lately.</li>
+      </ul>
+      <p class="note">Settings were picked on last season's games and then left alone. The code is the same one the site runs live (<code>site/assets/model.js</code>), and <code>scripts/backtest.js</code> rebuilds this page after every data update.
+        Last run: ${esc(M.generated || '')}.</p>
+      <p class="note">This is a research tool, not betting advice. Past accuracy doesn't guarantee future results; lines also reflect information the model doesn't see.</p></div>`;
+}).catch(fail);
+</script>
+</body>
+</html>

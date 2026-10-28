@@ -33,6 +33,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
+<script src="assets/model.js"></script>
 <script src="assets/lines.js"></script>
 <script src="assets/picks.js"></script>
 <script>
@@ -76,7 +77,7 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
         <div class="grow"><div class="name">${esc(x.p.n)} <small>(${esc(x.p.t)})</small>${injuryTag(inj.get(pr.id))}</div>
           <div class="sub">${side === 'o' ? 'Over' : 'Under'} ${pr.l} ${esc(STATS[pr.s].label)} · ${x.p.t === x.g.h ? 'vs' : '@'} ${esc(x.opp)} ${x.g.state === 'pre' ? fmtTime(x.g.t) : ''}${moveTag(pr)}</div></div>
         ${evTag(pr, side)}${price != null ? `<span class="price">${odds(price)} <small>${bookName(pr.bk)}</small></span>` : ''}${x.g.state === 'pre' ? pickButton({ gid: x.g.id, pid: pr.id, name: x.p.n, stat: pr.s, side, line: pr.l, price, book: pr.bk }, saved.has(pickKey({ gid: x.g.id, pid: pr.id, stat: pr.s, side, line: pr.l }))) : ''}</div>
-      <div style="padding:0 14px">${teamContext(L, x.g, x.p.t)}${strip(results)}</div>
+      <div style="padding:0 14px">${teamContext(L, x.g, x.p.t)}${projTag(L, pr.id, pr.s, pr.l, x.g, side)}${strip(results)}</div>
       <div class="rates r5">${oppRankCell(L, x.opp, x.p.p, pr.s)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(r[k], { adj: true })}</div>`).join('')}</div></div></a>`;
   }
 

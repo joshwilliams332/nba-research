@@ -20,6 +20,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
+<script src="assets/model.js"></script>
 <script src="assets/lines.js"></script>
 <script src="assets/pbp.js"></script>
 <script src="assets/picks.js"></script>
@@ -128,7 +129,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
         <button class="step" data-step="-1" aria-label="Lower line">−</button><span class="val">${st.line}</span><button class="step" data-step="1" aria-label="Raise line">+</button>
         ${savePickBtn(prop)}
       </div><p class="note">${esc(src)}${prop && moveTag(prop) ? ` · Since this morning: ${moveTag(prop)}` : ''}${prop && prop.l !== st.line ? ` · <a href="#" data-reset="1" style="color:var(--accent)">use it</a>` : ''}</p>
-      ${prop && prop.l === st.line ? fairPriceHTML(prop) : ''}${next ? teamContext(L, next, p.t) : ''}`;
+      ${prop && prop.l === st.line ? fairPriceHTML(prop) : ''}${next && next.state === 'pre' ? projBoxHTML(L, pid, st.stat, st.line, next, all) : ''}${next ? teamContext(L, next, p.t) : ''}`;
   }
 
   function renderWindows(rates) {
