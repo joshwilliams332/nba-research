@@ -697,5 +697,5 @@ function fail(err) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { STATS, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, boostedTypicalLine, lastName, SHRINK_K };
+  module.exports = { STATS, STAT_ORDER, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, boostedTypicalLine, lastName, SHRINK_K };
 }
