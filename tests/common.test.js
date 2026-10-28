@@ -112,3 +112,57 @@ test('defense vs position sums opponents by position and ranks most allowed firs
   assert.strictEqual(C.rankClass(25), 'tough');
   assert.strictEqual(C.rankClass(15), 'mid');
 });
+
+test('confidence-adjusted rates pull small samples toward the longer-run rate', () => {
+  // No history: prior is 50%. 5 for 5 with K = 10 -> (5 + 5) / 15.
+  assert.strictEqual(C.priorRate({ hits: 0, n: 0 }), 0.5);
+  assert.ok(Math.abs(C.adjustedRate({ hits: 5, n: 5 }, 0.5) - 10 / 15) < 1e-9);
+  // A big sample barely moves: 40 of 50 against a 50% prior -> 45 / 60 = 75%.
+  assert.strictEqual(C.adjustedRate({ hits: 40, n: 50 }, 0.5), 0.75);
+  assert.strictEqual(C.adjustedRate({ hits: 0, n: 0 }), null);
+  // Longer-run 30 of 50 shrinks to (30 + 5) / 60.
+  assert.ok(Math.abs(C.priorRate({ hits: 30, n: 50 }) - 35 / 60) < 1e-9);
+});
+
+test('windowRates attaches adjusted rates and small-sample flags', () => {
+  const games = Array.from({ length: 12 }, (_, i) => game(String(i + 1), `2026-10-${String(10 + i).padStart(2, '0')}`, 'AAA', 'BBB', 110, 100));
+  const L = C.indexLab(meta, teams, games);
+  // 20 points in the first 7 games, 30 in the last 5: over 24.5 hits only lately.
+  L.logs = { p1: games.map((g, i) => [g.id, 'AAA', 1, 30, i < 7 ? 20 : 30, 5, 3, 1, 4, 6, 12, 2, 2, 1, 4, 1, 0, 2, 3, 5]) };
+  const rows = C.playerRows(L, 'p1');
+  const w = C.windowRates(rows, 'pts', 24.5, 'o', { season: 2027 });
+  assert.strictEqual(w.l5.rate, 1);
+  assert.strictEqual(w.l5.small, true);
+  assert.strictEqual(w.l10.small, false);
+  const prior = (5 + 5) / (12 + 10);           // 5 of 12 overall, shrunk toward 50%
+  assert.ok(Math.abs(w.l5.prior - prior) < 1e-9);
+  assert.ok(Math.abs(w.l5.adj - (5 + 10 * prior) / 15) < 1e-9);
+  assert.ok(w.l5.adj < 0.7 && w.l5.adj > 0.5);
+  assert.strictEqual(w.last.adj, null);        // no games last season
+});
+
+test('teammate boost compares games with and without a teammate on the same team', () => {
+  const games = Array.from({ length: 8 }, (_, i) => game(String(i + 1), `2026-10-${String(10 + i * 2).padStart(2, '0')}`, 'AAA', 'BBB', 110, 100));
+  const L = C.indexLab(meta, teams, games);
+  const row = (gid, team, min, pts, fga) => [gid, team, 1, min, pts, 5, 3, 1, 4, 6, fga, 2, 2, 1, 4, 1, 0, 2, 3, 5];
+  // star plays games 1-5, then is hurt; p1 scores 18 with him and 26 without.
+  L.players = { p1: { n: 'Role Player', t: 'AAA' }, star: { n: 'Joel Star Jr.', t: 'AAA' }, bench: { n: 'Deep Bench', t: 'AAA' } };
+  L.logs = {
+    p1: games.map((g, i) => row(g.id, 'AAA', i < 5 ? 30 : 36, i < 5 ? 18 : 26, i < 5 ? 14 : 20)),
+    star: games.slice(0, 5).map(g => row(g.id, 'AAA', 34, 28, 20)),
+    bench: games.slice(0, 2).map(g => row(g.id, 'AAA', 8, 2, 2)),
+  };
+  L.injuries = [{ id: 'star', t: 'AAA', st: 'Out' }, { id: 'bench', t: 'AAA', st: 'Out' }, { id: 'p1', t: 'AAA', st: 'Questionable' }];
+  const b = C.teammateBoost(L, 'p1', 'star', 'pts');
+  assert.deepStrictEqual([b.with.n, b.without.n], [5, 3]);
+  assert.deepStrictEqual([b.with.stat, b.without.stat, b.delta.stat], [18, 26, 8]);
+  assert.strictEqual(b.delta.min, 6);
+  assert.strictEqual(b.delta.fga, 6);
+  assert.strictEqual(b.meaningful, true);
+  // Only key absences (20+ minutes, 3+ games together) count; the bench player doesn't.
+  assert.deepStrictEqual(C.outMates(L, 'p1').map(m => m.id), ['star']);
+  // Typical line from the 3 games without him: floor(26) + 0.5.
+  const t = C.boostedTypicalLine(L, 'p1', 'pts', C.playerRows(L, 'p1'), C.outMates(L, 'p1'));
+  assert.deepStrictEqual([t.line, t.n, t.without], [26.5, 3, ['Joel Star Jr.']]);
+  assert.strictEqual(C.lastName('Joel Star Jr.'), 'Star');
+});

@@ -76,7 +76,9 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       const recent = rows.filter(r => r.team === p.t).slice(-10);
       const teamRecent = new Set(teamFinals(L, p.t, g.t).slice(-10).map(s => s.g.id));
       const inRotation = recent.filter(r => teamRecent.has(r.gid)).length >= 1 && mean(recent.map(r => r.min)) >= 12;
-      if (inRotation || withProp.has(pid)) list.push({ pid, p, rows });
+      // Key teammates ruled out today (injury report is current, so only for games not yet final).
+      const outs = g.state === 'post' ? [] : outMates(L, pid);
+      if (inRotation || withProp.has(pid)) list.push({ pid, p, rows, outs });
     }
     return list;
   }
@@ -90,21 +92,27 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     const f = STATS[stat].f;
     const items = cachedPlayers.filter(x => !term || (x.p.n || '').toLowerCase().includes(term)).map(x => {
       const prop = props.find(p => p.id === x.pid && p.s === stat);
-      const line = prop ? prop.l : typicalLine(x.rows, stat);
+      const boostedLine = prop ? null : boostedTypicalLine(L, x.pid, stat, x.rows, x.outs);
+      const line = prop ? prop.l : boostedLine ? boostedLine.line : typicalLine(x.rows, stat);
       const rates = windowRates(x.rows, stat, line, 'o', { opp: x.p.t === g.h ? g.a : g.h, season: L.meta.season });
-      return { ...x, prop, line, rates, avg: mean(x.rows.slice(-10).map(f)) || 0 };
+      // The biggest change in this stat without a teammate who's out today, when there are enough games to say.
+      const boost = x.outs.slice(0, 2).map(m => ({ m, b: teammateBoost(L, x.pid, m.id, stat, x.rows) }))
+        .filter(y => y.b.meaningful && Math.abs(y.b.delta.stat) >= 1)
+        .sort((a, b) => Math.abs(b.b.delta.stat) - Math.abs(a.b.delta.stat))[0];
+      return { ...x, prop, line, boostedLine, boost, rates, avg: mean(x.rows.slice(-10).map(f)) || 0 };
     }).sort((a, b) => (!!b.prop - !!a.prop) || b.avg - a.avg);
     if (!items.length) return pills + search + `<div class="card empty">No players found.</div>`;
     const anyProp = props.some(p => p.s === stat);
     const note = anyProp ? '' : `<p class="note" style="margin:-4px 0 10px">No sportsbook ${STATS[stat].label.toLowerCase()} lines for this game${(L.props.markets || []).length ? '' : ' yet'}, so each player gets a typical line (the half point above their last-10 average floor).</p>`;
-    return pills + search + note + `<div class="card flush">${items.map(propRow).join('')}</div>`;
+    const conf = `<p class="confnote">Big number = raw hit rate. <b>≈</b> = adjusted for sample size; <span class="amber">amber</span> = fewer than ${SMALL_SAMPLE} games.</p>`;
+    return pills + search + note + conf + `<div class="card flush">${items.map(propRow).join('')}</div>`;
   }
 
   function propRow(x) {
-    const { pid, p, prop, line, rates } = x;
+    const { pid, p, prop, line, rates, boostedLine, boost } = x;
     const l10 = rates.l10;
     const results = l10.rows.map(r => outcome(STATS[stat].f(r), line, 'o'));
-    const priceTag = prop ? `<span class="price">${odds(prop.o)} <small>${bookName(prop.bk)}</small></span>` : `<span class="tag">typical</span>`;
+    const priceTag = prop ? `<span class="price">${odds(prop.o)} <small>${bookName(prop.bk)}</small></span>` : `<span class="tag" title="${esc(boostedLine ? `Typical line from his games without ${boostedLine.without.join(' and ')}` : 'No sportsbook line: half point above the last-10 average floor')}">typical${boostedLine ? ' w/o' : ''}</span>`;
     const isOpen = open.has(pid);
     const opp = p.t === g.h ? g.a : g.h;
     let ladder = '';
@@ -124,7 +132,8 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
           <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}</div></div>
         ${priceTag}<span class="chev">⌄</span></div>
       <div style="padding:0 14px">${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
-      <div class="rates r5">${oppRankCell(L, opp, p.p, stat)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(rates[k])}</div>`).join('')}</div>
+      ${boost ? `<span class="boostchip${boost.b.delta.stat < 0 ? ' down' : ''}" title="${esc(`${p.n} averages ${fmt1(boost.b.without.stat)} ${STATS[stat].short} in ${boost.b.without.n} games without ${boost.m.n} vs ${fmt1(boost.b.with.stat)} in ${boost.b.with.n} with him (this season and last)`)}">${signed(Math.round(boost.b.delta.stat * 10) / 10)} ${esc(STATS[stat].short)} w/o ${esc(lastName(boost.m.n))}</span>` : ''}
+      <div class="rates r5">${oppRankCell(L, opp, p.p, stat)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(rates[k], { adj: true })}</div>`).join('')}</div>
       ${ladder}</div>`;
   }
 

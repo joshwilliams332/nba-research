@@ -40,7 +40,10 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     win: 'l10', support: 'min', f: {}, line: null, dvpPos: posBucket(p.p) || 'ALL',
   };
   const propFor = s => props.find(x => x.s === s);
-  const defaultLine = s => (propFor(s) ? propFor(s).l : typicalLine(all, s));
+  // Key teammates ruled out for the next game: their absence moves the typical line and gets its own card.
+  const outs = next ? outMates(L, pid) : [];
+  const boosted = s => (propFor(s) ? null : boostedTypicalLine(L, pid, s, all, outs));
+  const defaultLine = s => (propFor(s) ? propFor(s).l : (boosted(s) || {}).line ?? typicalLine(all, s));
   st.line = P.get('line') != null && !isNaN(+P.get('line')) ? +P.get('line') : defaultLine(st.stat);
 
   // Teammates who have played for this team, most minutes first (for with / without filters).
@@ -63,14 +66,17 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     <div class="tabs" id="stats"></div>
     <div class="card" id="linecard"></div>
     <div class="windows" id="windows"></div>
+    <p class="confnote">Big number = raw hit rate. <b>≈</b> = adjusted for sample size, so short streaks count less;
+      <span class="amber">amber</span> = fewer than ${SMALL_SAMPLE} games.</p>
     <div class="card" id="chart"></div>
+    ${outs.length ? '<div class="card boost" id="boost"></div>' : ''}
     ${opp ? '<div class="card dvp" id="dvp"></div>' : ''}
     <div class="card"><details class="filters" id="filters"></details></div>
     <div class="card" id="support"></div>
     <div class="card" id="log"></div>`;
 
   function filtered() { return applyFilters(L, all, st.f); }
-  function opts() { return { opp, season: L.meta.season }; }
+  function opts() { return { opp, season: L.meta.season, base: all }; }
 
   function renderStats() {
     document.getElementById('stats').innerHTML = STAT_ORDER.map(s =>
@@ -81,7 +87,9 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     const prop = propFor(st.stat);
     const src = prop && prop.l === st.line
       ? `${bookName(prop.bk)} line: Over ${odds(prop.o)} / Under ${odds(prop.u)}`
-      : prop ? `Sportsbook line is ${prop.l} (${bookName(prop.bk)})` : 'Typical line (the half point above the last-10 average floor). No sportsbook line pulled.';
+      : prop ? `Sportsbook line is ${prop.l} (${bookName(prop.bk)})`
+      : boosted(st.stat) ? `Typical line without ${boosted(st.stat).without.join(' and ')} (from the last 10 of his ${boosted(st.stat).n} games without them). No sportsbook line pulled.`
+      : 'Typical line (the half point above the last-10 average floor). No sportsbook line pulled.';
     document.getElementById('linecard').innerHTML = `
       <div class="linectl">
         <div><div class="muted" style="font-size:12px">${esc(STATS[st.stat].label)}</div>
@@ -95,7 +103,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     document.getElementById('windows').innerHTML = WINDOWS.map(w => {
       const yy = s => `${String(s - 1).slice(2)}-${String(s).slice(2)}`;  // 2027 -> "26-27"
       const label = w.key === 'h2h' ? (opp ? `vs ${opp}` : 'H2H') : w.key === 'season' ? yy(L.meta.season) : w.key === 'last' ? yy(L.meta.season - 1) : w.label;
-      return `<button data-win="${w.key}" class="${w.key === st.win ? 'on' : ''}">${esc(label)}${rateTag(rates[w.key])}</button>`;
+      return `<button data-win="${w.key}" class="${w.key === st.win ? 'on' : ''}">${esc(label)}${rateTag(rates[w.key], { adj: true })}</button>`;
     }).join('');
   }
 
@@ -120,7 +128,8 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     document.getElementById('chart').innerHTML = `
       <div class="row"><h2 class="grow">${esc(STATS[st.stat].label)} · ${esc(st.win === 'h2h' ? `vs ${opp || ''}` : name)}</h2>${rateTag(w, { count: true })}</div>
       <div class="summary"><span>Average <b>${fmt1(mean(vals))}</b></span><span>Median <b>${fmt1(median(vals))}</b></span>
-        <span>${st.side === 'o' ? 'Over' : 'Under'} ${st.line}: <b>${w.hits} of ${w.n}</b>${w.pushes ? ` (${w.pushes} push)` : ''}</span></div>
+        <span>${st.side === 'o' ? 'Over' : 'Under'} ${st.line}: <b>${w.hits} of ${w.n}</b>${w.pushes ? ` (${w.pushes} push)` : ''}</span>
+        ${w.adj != null ? `<span class="adjline" title="${esc(`Blended with his longer-run ${pct(w.prior)} at this line as if ${SHRINK_K} typical games were added`)}">Adjusted <b>${pct(w.adj)}</b>${w.small ? ' · <span class="amber">small sample</span>' : ''}</span>` : ''}</div>
       ${bars(w.rows, f, st.line, st.side)}
       ${Object.keys(st.f).length ? `<p class="note">Filters on: ${countFilters()} active (see below).</p>` : ''}`;
   }
@@ -211,6 +220,28 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       <p class="note">Rank among NBA defenses, regular season: #1 allows the most (best spot for an over), green = top 10, red = bottom 10. Small number = per game.${games < DVP_MIN_GAMES ? ` Only ${games} games this season so far, so last season is shown too.` : ''}</p>`;
   }
 
+  // "Without {teammate}" cards: how minutes, shots, usage and this stat change when a key teammate sits.
+  function renderBoost() {
+    const el = document.getElementById('boost');
+    if (!el) return;
+    const s = STATS[st.stat];
+    el.innerHTML = outs.slice(0, 2).map(m => {
+      const b = teammateBoost(L, pid, m.id, st.stat, all);
+      const row = (label, k, d = 1) => {
+        const dv = b.delta[k];
+        const cls = dv == null || Math.abs(dv) < 0.5 ? '' : dv > 0 ? 'up' : 'down';
+        return `<tr><td class="l">${label}</td><td>${fmt1(b.with[k])}</td><td>${fmt1(b.without[k])}</td><td class="${cls}">${dv == null ? '-' : signed(Math.round(dv * 10) / 10, d)}</td></tr>`;
+      };
+      const applied = (st.f.without || []).includes(m.id);
+      return `<div class="row" style="margin-bottom:8px"><h2 class="grow">Without ${esc(m.n)}</h2><span class="inj inj-o">${esc(m.st)}</span></div>
+        ${b.without.n ? `<div class="tablewrap"><table class="data"><tr><th class="l">Per game</th><th>With <small>(${b.with.n})</small></th><th>Without <small>(${b.without.n})</small></th><th>Change</th></tr>
+          ${row('Minutes', 'min')}${row('FG attempts', 'fga')}${row('Usage', 'use')}${row(esc(s.label), 'stat')}</table></div>
+          <p class="note">${b.meaningful ? '' : `Only ${b.without.n} game${b.without.n === 1 ? '' : 's'} without him on this team, so read this loosely. `}Usage = FGA + 0.44 × FTA + turnovers per game. Games on ${esc(p.t)} this season and last, while ${esc(lastName(m.n))} was on the team.</p>
+          <div class="row" style="margin-top:8px"><button class="btn" data-addmate="without:${m.id}" data-scroll="1"${applied ? ' disabled' : ''}>${applied ? 'Filter applied' : `Show only games without ${esc(lastName(m.n))}`}</button></div>`
+        : `<p class="muted" style="margin:0">No games on ${esc(p.t)} without him since last season, so there's nothing to compare yet.</p>`}`;
+    }).join('<div class="sep"></div>');
+  }
+
   function render() {
     const rows = filtered();
     const rates = windowRates(rows, st.stat, st.line, st.side, opts());
@@ -220,6 +251,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     renderChart(rates);
     renderSupport(rates);
     renderDvp();
+    renderBoost();
     renderLog(rates);
     const url = new URL(location);
     url.searchParams.set('stat', st.stat);
@@ -241,7 +273,12 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     else if (d.reset) { e.preventDefault(); st.line = propFor(st.stat).l; }
     else if (d.clear) { e.preventDefault(); st.f = {}; renderFilters(); }
     else if (d.unmate) { const [k, id] = d.unmate.split(':'); st.f[k] = st.f[k].filter(x => x !== id); renderFilters(); }
-    else if (d.addmate) { const [k, id] = d.addmate.split(':'); st.f[k] = [...(st.f[k] || []), id]; renderFilters(); }
+    else if (d.addmate) {
+      const [k, id] = d.addmate.split(':');
+      if (!(st.f[k] || []).includes(id)) st.f[k] = [...(st.f[k] || []), id];
+      renderFilters();
+      if (d.scroll) document.getElementById('chart').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     render();
   });
   main.addEventListener('change', e => {
