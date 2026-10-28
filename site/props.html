@@ -66,7 +66,7 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
           <div class="sub">${side === 'o' ? 'Over' : 'Under'} ${pr.l} ${esc(STATS[pr.s].label)} · ${x.p.t === x.g.h ? 'vs' : '@'} ${esc(x.opp)} ${x.g.state === 'pre' ? fmtTime(x.g.t) : ''}</div></div>
         ${price != null ? `<span class="price">${odds(price)} <small>${bookName(pr.bk)}</small></span>` : ''}</div>
       <div style="padding:0 14px">${strip(results)}</div>
-      <div class="rates">${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(r[k])}</div>`).join('')}</div></div></a>`;
+      <div class="rates r5">${oppRankCell(L, x.opp, x.p.p, pr.s)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(r[k])}</div>`).join('')}</div></div></a>`;
   }
 
   function render() {
