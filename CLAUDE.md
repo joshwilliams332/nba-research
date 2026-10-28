@@ -102,10 +102,14 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
      chips or rates until tapped.
   2. Tap a row: it expands to a line ladder for that stat (Over 4.5, 5.5, ...), each with an L10 strip, hit % and
      price (prices only where we have that line; alt lines aren't pulled because they cost credits).
-  3. Tap a line's chart button: player.html opens on that stat and line. Keep OUR stat tabs (no FGA/FTM/etc.). Add a
-     bottom section bar to jump between: Statistics (windows + chart), Supporting stats, "{Stat} vs {OPP}" (how
-     players at his position did vs this opponent, game by game, with that day's line where stored, else typical),
-     Shot chart vs defense, Key defense ranks, Probable starters + injuries, Line movement (morning -> pre-tip).
+  3. Open the deep page from a line with our OWN control, not Outlier's bar-chart icon: each ladder line ends in a
+     "›" arrow / "Breakdown" pill (tapping the line's hit % works too). player.html opens on that stat and line. Keep
+     OUR stat tabs (no FGA/FTM/etc.). Add a bottom section bar to jump between: Statistics (windows + chart),
+     Supporting stats, "vs {OPP} {position}" = how this defense does against his position (allowed per game + rank,
+     season and last 10, from defenseVsPosition; G/F/C buckets since ESPN rarely gives PG/SG/SF/PF) - NOT a
+     game-by-game list of other players and whether they hit their lines (Josh doesn't want that), Shot chart vs
+     defense, Key defense ranks, Probable starters + injuries, and line movement as one simple line of text
+     ("Opened 10.5 -> now 11.5 ↑", morning vs pre-tip pull), no chart.
   Build directly, no subagents. Pairs with Update 1 (same "tap the bar for the deep page" pattern for game lines).
 - Later ideas: correlation finder for same-game parlays, expected starters from ESPN depth charts, a `model-auditor`
   agent that reruns the backtest weekly, re-running the research agent monthly.
