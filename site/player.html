@@ -15,6 +15,7 @@
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
 <script src="assets/pbp.js"></script>
+<script src="assets/picks.js"></script>
 <script>
 shell('players');
 
@@ -96,6 +97,15 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
       `<button data-stat="${s}" class="${s === st.stat ? 'on' : ''}">${STATS[s].short}${propFor(s) ? ' •' : ''}</button>`).join('');
   }
 
+  // Save the current stat / side / line for the next game (only before tip-off).
+  function savePickBtn(prop) {
+    if (!next || next.state !== 'pre') return '';
+    const atBook = prop && prop.l === st.line;
+    const fields = { gid: next.id, pid, name: p.n, stat: st.stat, side: st.side, line: st.line,
+      price: atBook ? (st.side === 'o' ? prop.o : prop.u) : null, book: atBook ? prop.bk : null };
+    return pickButton(fields, savedKeys().has(pickKey(fields)));
+  }
+
   function renderLine() {
     const prop = propFor(st.stat);
     const src = prop && prop.l === st.line
@@ -109,6 +119,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
           <div class="seg"><button data-side="o" class="${st.side === 'o' ? 'on' : ''}">Over</button><button data-side="u" class="${st.side === 'u' ? 'on' : ''}">Under</button></div></div>
         <span class="grow"></span>
         <button class="step" data-step="-1" aria-label="Lower line">−</button><span class="val">${st.line}</span><button class="step" data-step="1" aria-label="Raise line">+</button>
+        ${savePickBtn(prop)}
       </div><p class="note">${esc(src)}${prop && prop.l !== st.line ? ` · <a href="#" data-reset="1" style="color:var(--accent)">use it</a>` : ''}</p>
       ${prop && prop.l === st.line ? fairPriceHTML(prop) : ''}${next ? teamContext(L, next, p.t) : ''}`;
   }
@@ -276,6 +287,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     history.replaceState(null, '', url);
   }
 
+  bindPickButtons(main);
   main.addEventListener('click', e => {
     const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-dvppos],[data-zone],[data-shotseason],[data-reset],[data-clear],[data-unmate],[data-addmate]');
     if (!t) return;
