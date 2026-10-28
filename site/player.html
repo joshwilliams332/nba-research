@@ -83,17 +83,20 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
       ${inj ? `<p class="note"><b style="color:var(--warm)">${esc(inj.st)}</b>: ${esc(inj.det || '')}</p>` : ''}
     </section>
     <div class="tabs" id="stats"></div>
+    <nav class="secbar" id="secbar" aria-label="Sections"></nav>
     <div class="card" id="linecard"></div>
     <div class="windows" id="windows"></div>
     <p class="confnote">Big number = raw hit rate. <b>≈</b> = adjusted for sample size, so short streaks count less;
       <span class="amber">amber</span> = fewer than ${SMALL_SAMPLE} games.</p>
-    <div class="card" id="chart"></div>
-    ${outs.length ? '<div class="card boost" id="boost"></div>' : ''}
-    ${opp ? '<div class="card dvp" id="dvp"></div>' : ''}
-    <div class="card" id="shots"></div>
+    <div class="card" id="chart" data-sec="Stats"></div>
     <div class="card"><details class="filters" id="filters"></details></div>
-    <div class="card" id="support"></div>
-    <div class="card" id="log"></div>`;
+    <div class="card" id="support" data-sec="Supporting"></div>
+    ${outs.length ? '<div class="card boost" id="boost" data-sec="Teammates out"></div>' : ''}
+    ${opp ? '<div class="card dvp" id="dvp" data-sec="vs opponent"></div>' : ''}
+    <div class="card" id="shots" data-sec="Shot chart"></div>
+    ${opp ? '<div class="card" id="keydef" data-sec="Defense"></div>' : ''}
+    ${next ? '<div class="card" id="lineup" data-sec="Lineup"></div>' : ''}
+    <div class="card" id="log" data-sec="Game log"></div>`;
 
   function filtered() { return forStat(applyFilters(L, all, st.f), st.stat); }
   const shotState = { season: null, zone: null };
@@ -128,8 +131,8 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
         <span class="grow"></span>
         <button class="step" data-step="-1" aria-label="Lower line">−</button><span class="val">${st.line}</span><button class="step" data-step="1" aria-label="Raise line">+</button>
         ${savePickBtn(prop)}
-      </div><p class="note">${esc(src)}${prop && moveTag(prop) ? ` · Since this morning: ${moveTag(prop)}` : ''}${prop && prop.l !== st.line ? ` · <a href="#" data-reset="1" style="color:var(--accent)">use it</a>` : ''}</p>
-      ${prop && prop.l === st.line ? fairPriceHTML(prop) : ''}${next && next.state === 'pre' ? projBoxHTML(L, pid, st.stat, st.line, next, all) : ''}${next ? teamContext(L, next, p.t) : ''}`;
+      </div><p class="note">${esc(src)}${moveText(prop)}${prop && prop.l !== st.line ? ` · <a href="#" data-reset="1" style="color:var(--accent)">use it</a>` : ''}</p>
+      ${prop && prop.l === st.line ? fairPriceHTML(prop) : ''}${projLabel(propFor(st.stat))}${next ? teamContext(L, next, p.t) : ''}`;
   }
 
   function renderWindows(rates) {
@@ -245,13 +248,112 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
         <small>${fmt1(c.per[s])} ${esc(STATS[s].short)} per game allowed · ${c.games} games</small></div>`;
     };
     const b = st.dvpPos, games = (cell(tables[0], 'ALL') || {}).games || 0;
-    el.innerHTML = `<div class="row"><h2 class="grow">vs ${esc(opp)} defense</h2>${logo(L, opp, 26)}</div>
+    el.innerHTML = `<div class="row"><h2 class="grow">${esc(STATS[s].label)} vs ${esc(opp)}</h2>${logo(L, opp, 26)}</div>
       <div class="tabs under" style="margin-top:8px">${[...POSITIONS, 'ALL'].map(x => `<button data-dvppos="${x}" class="${x === b ? 'on' : ''}">${x === 'ALL' ? 'Overall' : `vs ${x}`}</button>`).join('')}</div>
       <div class="heads">${head(tables[0], b, `${yy(cur)} · ${STATS[s].label} to ${POS_LABEL[b]}`)}${head(tables[1], b, 'Last 10 games')}</div>
       <div class="tablewrap"><table class="data"><tr><th class="l">${esc(STATS[s].short)} allowed to</th><th>${yy(cur)}</th><th>Last 10</th><th>${yy(cur - 1)}</th></tr>
         ${[...POSITIONS, 'ALL'].map(x => `<tr class="${x === b ? 'me' : ''}"><td class="l">${x === 'ALL' ? 'Overall' : POS_LABEL[x][0].toUpperCase() + POS_LABEL[x].slice(1)}${x === mine ? ' <small>(this player)</small>' : ''}</td>
           <td>${show(tables[0], x)}</td><td>${show(tables[1], x)}</td><td>${show(tables[2], x)}</td></tr>`).join('')}</table></div>
-      <p class="note">Rank among NBA defenses, regular season: #1 allows the most (best spot for an over), green = top 10, red = bottom 10. Small number = per game.${games < DVP_MIN_GAMES ? ` Only ${games} games this season so far, so last season is shown too.` : ''}</p>`;
+      <p class="note">Rank among NBA defenses, regular season: #1 allows the most (best spot for an over), green = top 10, red = bottom 10. Small number = per game.${games < DVP_MIN_GAMES ? ` Only ${games} games this season so far, so last season is shown too.` : ''}</p>${vsOppList(b)}`;
+  }
+
+
+  // "Opened 10.5 -> now 11.5" (morning pull vs pre-tip pull), or a price-only move; nothing when it didn't move.
+  function moveText(prop) {
+    const m = prop && typeof propMove === 'function' ? propMove(prop) : null;
+    if (!m) return '';
+    if (m.dl) return ` · Opened ${m.from} → now ${m.to} ${m.dl > 0 ? '↑' : '↓'}`;
+    return Math.abs(m.dp) >= 0.015 ? ` · Price moved: Over ${odds(m.openO)} → ${odds(m.closeO)}` : '';
+  }
+
+  // The model's number, kept apart from the sportsbook line so it can't be mistaken for it.
+  function projLabel(prop) {
+    if (!next || next.state !== 'pre' || typeof project !== 'function' || STATS[st.stat].period) return '';
+    const pr = project(L, pid, st.stat, next, { rows: all });
+    if (!pr) return '';
+    const ch = st.side === 'u' ? pr.under(st.line) : pr.over(st.line);
+    const book = prop ? `Sportsbook line <b>${prop.l}</b> (${esc(bookName(prop.bk))})` : `Line <b>${st.line}</b> (typical, no sportsbook line)`;
+    const why = `${pr.minutes.toFixed(1)} projected minutes, opponent ×${pr.opp.toFixed(2)}, pace ×${pr.pace.toFixed(2)}${pr.absent.length ? `, adjusted for ${pr.absent.map(id => lastName((L.players[id] || {}).n || id)).join(', ')} out` : ''}`;
+    return `<div class="projlabel" title="${esc(why)}"><span>${book}</span><span>Hoop Lab projection <b>${pr.mean.toFixed(1)}</b></span>
+      <span><b>${Math.round(ch * 100)}%</b> chance of the ${st.side === 'u' ? 'under' : 'over'} ${st.line}</span>
+      <a href="model.html" style="color:var(--accent2)">what's this?</a></div>`;
+  }
+
+  // Box-score rows by game, built once: game id -> [{pid, team, starter, min, ...cols}].
+  let byGameIdx = null;
+  function byGame() {
+    if (byGameIdx) return byGameIdx;
+    byGameIdx = new Map();
+    const cols = L.meta.cols;
+    for (const [id, list] of Object.entries(L.logs)) {
+      for (const r of list) {
+        const o = { pid: id, team: r[1], starter: !!r[2] };
+        cols.forEach((c, i) => { o[c] = r[3 + i]; });
+        if (!byGameIdx.has(r[0])) byGameIdx.set(r[0], []);
+        byGameIdx.get(r[0]).push(o);
+      }
+    }
+    return byGameIdx;
+  }
+
+  // Recent players at the chosen position who faced this opponent, with just what they did (no lines).
+  function vsOppList(bucket) {
+    if (STATS[st.stat].period) return '';
+    const f = STATS[st.stat].f, idx = byGame(), out = [];
+    for (const side of teamFinals(L, opp).slice(-10).reverse()) {
+      const g = side.g;
+      for (const r of idx.get(g.id) || []) {
+        if (r.team === opp || r.min < 10) continue;
+        const pl = L.players[r.pid] || {};
+        if (bucket !== 'ALL' && posBucket(pl.p) !== bucket) continue;
+        out.push({ r, pl, g, v: f(r) });
+      }
+    }
+    const rows = out.slice(0, 14);
+    if (!rows.length) return '';
+    return `<h3 style="margin-top:14px">Recent ${bucket === 'ALL' ? 'players' : POS_LABEL[bucket]} vs ${esc(opp)}</h3>
+      <div class="tablewrap"><table class="data vslist"><tr><th class="l">Player</th><th class="l">Game</th><th>${esc(STATS[st.stat].short)}</th></tr>
+      ${rows.map(x => `<tr><td class="l"><a href="player.html?id=${x.r.pid}&stat=${st.stat}">${esc(x.pl.n || x.r.pid)}</a> <small>${esc(x.pl.p || '')}</small></td>
+        <td class="l"><small>${esc(x.g.a)} @ ${esc(x.g.h)} · ${shortDate(x.g.d)}</small></td><td class="res">${fmt1(x.v)}</td></tr>`).join('')}</table></div>
+      <p class="note">Their result that night, most recent first (players with 10+ minutes).</p>`;
+  }
+
+  // "Key PHI points defense": what the opponent allows per game (all positions) for each part of the stat, ranked.
+  const PARTS = { pra: ['pts', 'reb', 'ast'], pr: ['pts', 'reb'], pa: ['pts', 'ast'], ra: ['reb', 'ast'], sb: ['stl', 'blk'] };
+  function renderKeyDef() {
+    const el = document.getElementById('keydef');
+    if (!el) return;
+    const base = STATS[st.stat].period ? st.stat.replace(/^(q1|h1)_?/, '') : st.stat;
+    const parts = (PARTS[base] || [STATS[base] ? base : 'pts']).filter(c => STATS[c]);
+    const rows = parts.map(c => ({ c, r: oppRank(L, opp, 'ALL', c) })).filter(x => x.r && x.r.rank != null);
+    el.innerHTML = `<div class="row"><h2 class="grow">Key ${esc(opp)} ${esc(STATS[base] ? STATS[base].label : '')} defense</h2>${logo(L, opp, 26)}</div>
+      ${rows.length ? `<div class="tablewrap"><table class="data"><tr><th class="l">Per game, all positions</th><th>Rank</th><th>Allowed</th></tr>
+        ${rows.map(x => `<tr><td class="l">${esc(STATS[x.c].label)} allowed</td><td><b class="${rankClass(x.r.rank, x.r.of)}">#${x.r.rank}</b></td><td>${fmt1(x.r.per)}</td></tr>`).join('')}</table></div>
+        <p class="note">#1 allows the most (best for an over). ${rows[0].r.season === L.meta.season ? 'This season.' : 'Last season (too few games this season so far).'}</p>`
+        : '<p class="muted" style="margin:0">No defense numbers yet.</p>'}`;
+  }
+
+  // Probable starters (who started each team's last game) and the injury report, for the next game.
+  function renderLineup() {
+    const el = document.getElementById('lineup');
+    if (!el || !next) return;
+    const injAll = injuryMap(L);
+    const col = team => {
+      const last = teamFinals(L, team).slice(-1)[0];
+      const starters = last ? (byGame().get(last.g.id) || []).filter(r => r.team === team && r.starter) : [];
+      const injs = (L.injuries || []).filter(i => i.t === team);
+      return `<div><div class="row" style="margin-bottom:4px">${logo(L, team, 20)}<b>${esc(team)}</b></div>
+        ${starters.map(r => `<a href="player.html?id=${r.pid}">${headshot(r.pid, 26)}<span>${esc((L.players[r.pid] || {}).n || r.pid)}</span>${injuryTag(injAll.get(r.pid))}</a>`).join('') || '<p class="muted">No games yet.</p>'}
+        ${injs.length ? `<p class="note" style="margin-top:8px"><b>Injuries:</b> ${injs.map(i => `${esc(i.n)} <span class="inj ${String(i.st).toLowerCase().startsWith('out') ? 'inj-o' : ''}">${esc(i.st)}</span>`).join(' · ')}</p>` : '<p class="note">No injuries reported.</p>'}</div>`;
+    };
+    el.innerHTML = `<h2>Lineup</h2><p class="muted" style="margin:0 0 8px;font-size:13px">Probable starters = who started each team's last game.</p>
+      <div class="starters">${col(next.a)}${col(next.h)}</div>`;
+  }
+
+  function renderSecbar() {
+    const el = document.getElementById('secbar');
+    el.innerHTML = [...document.querySelectorAll('[data-sec]')].filter(x => !x.hidden)
+      .map(x => `<a href="#${x.id}" data-jump="${x.id}">${esc(x.dataset.sec === 'vs opponent' ? `${STATS[st.stat].short} vs ${opp}` : x.dataset.sec)}</a>`).join('');
   }
 
   // "Without {teammate}" cards: how minutes, shots, usage and this stat change when a key teammate sits.
@@ -288,6 +390,9 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     renderBoost();
     renderLog(rates);
     renderShots();
+    renderKeyDef();
+    renderLineup();
+    renderSecbar();
     const url = new URL(location);
     url.searchParams.set('stat', st.stat);
     url.searchParams.set('line', st.line);
@@ -297,6 +402,13 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
 
   bindPickButtons(main);
   main.addEventListener('click', e => {
+    const j = e.target.closest('[data-jump]');
+    if (j) {
+      e.preventDefault();
+      document.getElementById(j.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('#secbar a').forEach(a => a.classList.toggle('on', a === j));
+      return;
+    }
     const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-dvppos],[data-zone],[data-shotseason],[data-reset],[data-clear],[data-unmate],[data-addmate]');
     if (!t) return;
     const d = t.dataset;

@@ -97,7 +97,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   5. Line movement: save an ESPN game-line snapshot on every workflow run (~8/day, free) and chart open -> now.
   6. Our extra: the model's win / cover / over chance next to the line.
   Cost: no new data or credits. Build directly, no subagents.
-- **Update 2 (planned, Josh approved; build when he says so): layered player props.** Less on screen, more on tap.
+- **Update 2 (done): layered player props.** Less on screen, more on tap.
   1. Game page Player props: compact rows only ("Aaron Nesmith - Points"), stat chips kept as they are; no strips,
      chips or rates until tapped.
   Also: tapping a player's headshot or name anywhere in a prop list must open their player page (today on the game
@@ -118,7 +118,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
      its own clearly labeled box next to the real line, e.g. "Sportsbook line 10.5 (DK) · Hoop Lab projection 12.8 ·
      58% over", with a "what's this?" link to model.html.
   Build directly, no subagents. Pairs with Update 1 (same "tap the bar for the deep page" pattern for game lines).
-- **Update 3 (planned, Josh approved; build when he says so): Props page sorting and filters.** Own design, not a clone.
+- **Update 3 (done): Props page sorting and filters.** Sort and filters persist in localStorage (`hooplab.props.filters`, saved setups in `hooplab.props.setups`). Own design, not a clone.
   1. Sticky sort bar above the bottom nav: Opp Rank · L5 · L10 · L20 · H2H · This season · Last season. Picking one
      re-sorts the list by that hit rate (best first) and switches the chips under each card to match.
   2. Cards: player, line, price, strip, OPP RANK, IP (implied % from the odds), and a specific teammate-out note

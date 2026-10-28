@@ -135,34 +135,42 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     return pills + search + note + conf + `<div class="card flush">${items.map(propRow).join('')}</div>`;
   }
 
+  // Compact row: picture, name (both open the player page), stat and line. Tapping the row opens a ladder of lines,
+  // each with its last-10 strip and a "Breakdown ›" link to the player page on that stat and line.
   function propRow(x) {
-    const { pid, p, prop, line, rates, boostedLine, boost } = x;
+    const { pid, p, prop, line, boostedLine, boost } = x;
     const saved = savedKeys();
-    const l10 = rates.l10;
-    const results = l10.rows.map(r => outcome(STATS[stat].f(r), line, 'o'));
-    const priceTag = prop ? `<span class="price">${odds(prop.o)} <small>${bookName(prop.bk)}</small></span>` : `<span class="tag" title="${esc(boostedLine ? `Typical line from his games without ${boostedLine.without.join(' and ')}` : 'No sportsbook line: half point above the last-10 average floor')}">typical${boostedLine ? ' w/o' : ''}</span>`;
     const isOpen = open.has(pid);
     const opp = p.t === g.h ? g.a : g.h;
-    let ladder = '';
+    const deep = ln => `player.html?id=${pid}&stat=${stat}&line=${ln}&opp=${opp}`;
+    const lineTag = prop ? `<span class="linepill">O ${line} <small>${odds(prop.o)}</small></span>`
+      : `<span class="linepill typical" title="${esc(boostedLine ? `Typical line from his games without ${boostedLine.without.join(' and ')}` : 'No sportsbook line: half point above the last-10 average floor')}">O ${line} <small>typical${boostedLine ? ' w/o' : ''}</small></span>`;
+    let body = '';
     if (isOpen) {
       const lines = [];
-      for (let d = -3; d <= 3; d++) if (line + d > 0) lines.push(line + d);
-      ladder = `<div class="ladder"><table class="data"><tr><th class="l">Over</th><th>L5</th><th>L10</th><th>L20</th><th>Season</th><th>H2H</th></tr>
+      for (let d = -2; d <= 3; d++) if (line + d > 0) lines.push(line + d);
+      const f = STATS[stat].f;
+      body = `<div class="ladderwrap">
+        <div class="ladderctx">${teamContext(L, g, p.t)}${boost ? `<span class="boostchip${boost.b.delta.stat < 0 ? ' down' : ''}" title="${esc(`${p.n} averages ${fmt1(boost.b.without.stat)} ${STATS[stat].short} in ${boost.b.without.n} games without ${boost.m.n} vs ${fmt1(boost.b.with.stat)} in ${boost.b.with.n} with him (this season and last)`)}">${signed(Math.round(boost.b.delta.stat * 10) / 10)} ${esc(STATS[stat].short)} w/o ${esc(lastName(boost.m.n))}</span>` : ''}</div>
+        <div class="rates r1">${oppRankCell(L, opp, p.p, stat)}</div>
         ${lines.map(ln => {
           const r = windowRates(x.rows, stat, ln, 'o', { opp, season: L.meta.season });
-          return `<tr${ln === line ? ' style="background:var(--card2)"' : ''}><td class="l"><b>${ln}</b></td>${['l5', 'l10', 'l20', 'season', 'h2h'].map(k => `<td>${rateTag(r[k])}</td>`).join('')}</tr>`;
-        }).join('')}</table>
-        <p class="note"><a href="player.html?id=${pid}&stat=${stat}&line=${line}&opp=${opp}" style="color:var(--accent);font-weight:700">Full breakdown, chart and filters →</a></p></div>`;
+          const results = r.l10.rows.map(row => outcome(f(row), ln, 'o'));
+          const main = ln === line;
+          const price = main && prop ? `${evTag(prop)}<span class="price">${odds(prop.o)} <small>${bookName(prop.bk)}</small></span>` : '';
+          const pick = main && g.state === 'pre' ? pickButton({ gid: g.id, pid, name: p.n, stat, side: 'o', line, price: prop ? prop.o : null, book: prop ? prop.bk : null }, saved.has(pickKey({ gid: g.id, pid, stat, side: 'o', line }))) : '';
+          return `<div class="lrow${main ? ' main' : ''}">
+            <div class="lhead"><b>Over ${ln}</b>${main ? `${moveTag(prop)}` : ''}<span class="grow"></span>${price}${pick}<a class="brk" href="${deep(ln)}">Breakdown ›</a></div>
+            ${strip(results, r.l10.rows.map(row => `${shortDate(row.g.d)} ${row.home ? 'vs' : '@'} ${row.opp}: ${f(row)}`))}
+            <div class="lfoot"><span><span class="tag">L10</span> ${rateTag(r.l10, { adj: true })}</span><span><span class="tag">L20</span> ${rateTag(r.l20)}</span><span><span class="tag">SEASON</span> ${rateTag(r.season)}</span></div></div>`;
+        }).join('')}</div>`;
     }
-    return `<div class="proprow ${isOpen ? 'open' : ''}" data-pid="${pid}">
-      <div class="head">${headshot(pid, 40)}
-        <div class="grow"><div class="name">${esc(p.n)}${injuryTag(inj.get(pid))}</div>
-          <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}${moveTag(prop)}</div></div>
-        ${evTag(prop)}${priceTag}${g.state === 'pre' ? pickButton({ gid: g.id, pid, name: p.n, stat, side: 'o', line, price: prop ? prop.o : null, book: prop ? prop.bk : null }, saved.has(pickKey({ gid: g.id, pid, stat, side: 'o', line }))) : ''}<span class="chev">⌄</span></div>
-      <div style="padding:0 14px">${teamContext(L, g, p.t)}${projTag(L, pid, stat, line, g, 'o', x.rows)}${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
-      ${boost ? `<span class="boostchip${boost.b.delta.stat < 0 ? ' down' : ''}" title="${esc(`${p.n} averages ${fmt1(boost.b.without.stat)} ${STATS[stat].short} in ${boost.b.without.n} games without ${boost.m.n} vs ${fmt1(boost.b.with.stat)} in ${boost.b.with.n} with him (this season and last)`)}">${signed(Math.round(boost.b.delta.stat * 10) / 10)} ${esc(STATS[stat].short)} w/o ${esc(lastName(boost.m.n))}</span>` : ''}
-      <div class="rates r5">${oppRankCell(L, opp, p.p, stat)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(rates[k], { adj: true })}</div>`).join('')}</div>
-      ${ladder}</div>`;
+    return `<div class="proprow compact ${isOpen ? 'open' : ''}" data-pid="${pid}">
+      <div class="head"><a class="plink" href="player.html?id=${pid}&stat=${stat}&opp=${opp}" aria-label="${esc(p.n)}">${headshot(pid, 40)}</a>
+        <div class="grow"><a class="name" href="player.html?id=${pid}&stat=${stat}&opp=${opp}">${esc(p.n)}</a>${injuryTag(inj.get(pid))}
+          <div class="sub">${esc(p.t)} · ${esc(STATS[stat].label)}</div></div>
+        ${lineTag}<span class="chev">⌄</span></div>
+      ${body}</div>`;
   }
 
   // ---------- matchup tab
@@ -258,6 +266,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
 
   bindPickButtons(main);
   main.addEventListener('click', e => {
+    if (e.target.closest('a, .pickbtn, button.pick')) return;  // links (player page, Breakdown) and save buttons
     const t = e.target.closest('[data-tab],[data-sub],[data-stat],[data-season],[data-isort],[data-ikind],.proprow > .head');
     if (!t) return;
     if (t.dataset.tab) tab = t.dataset.tab;
