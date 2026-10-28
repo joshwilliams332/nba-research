@@ -84,6 +84,13 @@ def check():
     odds = meta.get("odds") or {}
     facts.append(f"Props for {props.get('date')}: {len(prop_list)} lines, markets {odds.get('markets') or []}, "
                  f"Odds API credits left {odds.get('remaining')}")
+    closed = props.get("closed") or {}
+    started = [g for g in slate if g["state"] != "pre" and g["id"] in (props.get("games") or {})]
+    facts.append(f"Closing (pre-tip) lines pulled for {len(closed)} game(s)")
+    missed = [g for g in started if g["id"] not in closed]
+    if missed:
+        warnings.append(f"{len(missed)} game(s) with props tipped without a closing pull (late workflow run?): "
+                        + ", ".join(f"{g['a']}@{g['h']}" for g in missed[:8]))
     if unmatched:
         warnings.append(f"{len(unmatched)} prop player(s) not matched to an ESPN id: " + ", ".join(unmatched[:10]))
     if odds.get("remaining") is not None and odds["remaining"] < 25:

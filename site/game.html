@@ -14,6 +14,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
+<script src="assets/lines.js"></script>
 <script src="assets/insights.js"></script>
 <script src="assets/pbp.js"></script>
 <script>
@@ -79,7 +80,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       <button data-sub="lines" class="${sub === 'lines' ? 'on' : ''}">Game lines</button>
       <button data-sub="props" class="${sub === 'props' ? 'on' : ''}">Player props</button></div>`;
     if (sub === 'lines') {
-      return head + `<div class="card flush" style="padding-top:8px">${gameLines(L, g)}</div>`;
+      return head + `<div class="card flush" style="padding-top:8px">${gameLines(L, g)}${gameMove(g)}</div>`;
     }
     return head + propsPane();
   }
@@ -147,7 +148,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     return `<div class="proprow ${isOpen ? 'open' : ''}" data-pid="${pid}">
       <div class="head">${headshot(pid, 40)}
         <div class="grow"><div class="name">${esc(p.n)}${injuryTag(inj.get(pid))}</div>
-          <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}</div></div>
+          <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}${moveTag(prop)}</div></div>
         ${evTag(prop)}${priceTag}<span class="chev">⌄</span></div>
       <div style="padding:0 14px">${teamContext(L, g, p.t)}${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
       ${boost ? `<span class="boostchip${boost.b.delta.stat < 0 ? ' down' : ''}" title="${esc(`${p.n} averages ${fmt1(boost.b.without.stat)} ${STATS[stat].short} in ${boost.b.without.n} games without ${boost.m.n} vs ${fmt1(boost.b.with.stat)} in ${boost.b.with.n} with him (this season and last)`)}">${signed(Math.round(boost.b.delta.stat * 10) / 10)} ${esc(STATS[stat].short)} w/o ${esc(lastName(boost.m.n))}</span>` : ''}

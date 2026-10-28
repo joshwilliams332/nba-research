@@ -75,8 +75,12 @@ class BoxTests(unittest.TestCase):
 
 class PropsTests(unittest.TestCase):
     def test_plan_spreads_credits_over_the_month(self):
-        # 400 credits, 10 days left in October, 8 games: 39/day -> 4 markets
-        self.assertEqual(b.plan_markets(400, 8, date(2026, 10, 22)), (4, 8))
+        # 400 credits, 10 days left in October, 8 games: 39/day, 8 set aside for closing lines -> 31 -> 3 markets
+        self.assertEqual(b.plan_markets(400, 8, date(2026, 10, 22)), (3, 8))
+        # 500 credits on Nov 1 (30 days), 8 games: 16/day -> 8 for closing lines, 8 for the morning (points only)
+        self.assertEqual(b.plan_markets(500, 8, date(2026, 11, 1)), (1, 8))
+        # A thin day (12/day for 8 games) keeps everything for the morning pull
+        self.assertEqual(b.plan_markets(370, 8, date(2026, 11, 1)), (1, 8))
         # 100 credits over 31 days: 2/day -> points only, for 2 games
         self.assertEqual(b.plan_markets(100, 8, date(2026, 12, 1)), (1, 2))
         self.assertEqual(b.plan_markets(5, 8, date(2026, 12, 1)), (0, 0))
@@ -92,6 +96,48 @@ class PropsTests(unittest.TestCase):
         p = props[0]
         self.assertEqual((p["id"], p["s"], p["l"], p["o"], p["bk"]), ("42", "pts", 14.5, -120, "draftkings"))
         self.assertEqual(p["books"]["fanduel"], [13.5, -105, -110])
+
+    def test_plan_close(self):
+        self.assertEqual(b.plan_close(480, 6, date(2026, 11, 1)), 6)   # 15/day covers all 6
+        self.assertEqual(b.plan_close(70, 6, date(2026, 11, 1)), 2)    # 2/day left
+        self.assertEqual(b.plan_close(None, 6, date(2026, 11, 1)), 0)
+        self.assertEqual(b.plan_close(480, 0, date(2026, 11, 1)), 0)
+
+    def test_close_due_window(self):
+        from datetime import datetime, timezone
+        now = datetime(2026, 10, 28, 22, 47, tzinfo=timezone.utc)
+        games = [{"id": "a", "state": "pre", "t": "2026-10-28T23:00Z"},   # 13 min away: due
+                 {"id": "b", "state": "pre", "t": "2026-10-29T02:00Z"},   # 3 h away: not yet
+                 {"id": "c", "state": "in", "t": "2026-10-28T22:30Z"},    # already started
+                 {"id": "d", "state": "pre", "t": "2026-10-28T23:30Z"}]   # due but already captured
+        self.assertEqual([g["id"] for g in b.close_due(games, now, {"d": []})], ["a"])
+
+    def test_merge_props_open_and_close(self):
+        prop = lambda l, o, bk="draftkings": {"id": "1", "n": "A B", "s": "pts", "l": l, "o": o, "u": -110,  # noqa: E731
+                                              "bk": bk, "books": {bk: [l, o, -110]}}
+        reb = dict(prop(7.5, -120), s="reb")
+        merged = b.merge_props({"fetched": "t1", "markets": ["pts", "reb"], "games": {"g": [prop(24.5, -110), reb]}},
+                               {"markets": ["pts"], "fetched": {"g": "t2"}, "games": {"g": [prop(25.5, -125)]}},
+                               date(2026, 10, 28))
+        pts, r = merged["games"]["g"]
+        self.assertEqual((pts["l"], pts["o"]), (25.5, -125))          # latest numbers up front
+        self.assertEqual(pts["open"], [24.5, -110, -110, "draftkings"])
+        self.assertEqual(pts["close"], [25.5, -125, -110, "draftkings"])
+        self.assertEqual(r["open"][0], 7.5)
+        self.assertNotIn("close", r)
+        self.assertEqual(merged["closed"], {"g": "t2"})
+        self.assertEqual(b.merge_props(None, None, date(2026, 10, 28))["games"], {})
+
+    def test_keep_open_line(self):
+        g = {"state": "pre", "line": {"sp": -5.5}}
+        b.keep_open_line(g, {"open": {"sp": -4.5}, "line": {"sp": -5}})
+        self.assertEqual((g["open"], g["line"]), ({"sp": -4.5}, {"sp": -5.5}))
+        g = {"state": "pre", "line": {"sp": -3}}
+        b.keep_open_line(g, None)
+        self.assertEqual(g["open"], {"sp": -3})
+        g = {"state": "post"}
+        b.keep_open_line(g, {"line": {"sp": 2}})                     # ESPN dropped the odds: keep ours
+        self.assertEqual((g["line"], g["open"]), ({"sp": 2}, {"sp": 2}))
 
     def test_name_key(self):
         self.assertEqual(b.name_key("Dennis Schröder"), "dennis schroder")
