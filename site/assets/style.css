@@ -305,6 +305,24 @@ td .logo { vertical-align: middle; margin-right: 4px; }
 .dvp tr.me td { background: var(--card2); }
 @media (max-width: 420px) { .rates.r5 > div { font-size: 12px; } .rates.r5 small { font-size: 9px; letter-spacing: .02em; } }
 
+/* ---------- teammate boost and confidence */
+.rate em.adj { display: block; font-style: normal; font-size: 10px; font-weight: 600; color: var(--muted); line-height: 1.2; margin-top: 1px; cursor: help; }
+.rate em.adj.small { color: var(--warm); }
+.windows button .rate em.adj { font-size: 11px; }
+.confnote { font-size: 12px; color: var(--muted); margin: -4px 2px 12px; }
+.confnote b { color: var(--text); font-weight: 650; }
+.confnote .amber { color: var(--warm); font-weight: 650; }
+.adjline { font-size: 13px; color: var(--muted); }
+.adjline b { color: var(--text); }
+.adjline .amber { color: var(--warm); font-weight: 650; }
+.boostchip { display: inline-block; margin: 0 14px 8px; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px;
+  background: rgba(42, 211, 139, .12); color: var(--hit); border: 1px solid rgba(42, 211, 139, .3); }
+.boostchip.down { background: rgba(255, 92, 108, .12); color: var(--miss); border-color: rgba(255, 92, 108, .3); }
+.boost table { width: 100%; }
+.boost td.up { color: var(--hit); font-weight: 700; }
+.boost td.down { color: var(--miss); font-weight: 700; }
+.boost .row { flex-wrap: wrap; }
+
 /* ---------- pace, totals and prices */
 .ctxline { display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: 12px; color: var(--muted); margin: 6px 0 0; }
 .ctxline b { color: var(--text); font-weight: 650; }

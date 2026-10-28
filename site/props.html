@@ -18,9 +18,10 @@
   <div class="row" style="margin-bottom:12px;flex-wrap:wrap">
     <div class="seg" id="side"></div><span class="grow"></span>
     <label class="row" style="gap:6px;font-size:13px;color:var(--muted)">Sort <select id="sort" style="width:auto">
-      <option value="l10">L10 hit rate</option><option value="l5">L5 hit rate</option><option value="l20">L20 hit rate</option>
+      <option value="adj">L10, sample-adjusted</option><option value="l10">L10 hit rate</option><option value="l5">L5 hit rate</option><option value="l20">L20 hit rate</option>
       <option value="season">Season hit rate</option><option value="h2h">vs opponent</option><option value="time">Tip-off</option><option value="price">Best price vs fair</option></select></label>
   </div>
+  <p class="confnote">Big number = raw hit rate. <b>≈</b> = adjusted for sample size, so short streaks count less; <span class="amber">amber</span> = fewer than 10 games.</p>
   <div id="list"><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></div>
 </main>
 <footer id="foot"></footer>
@@ -31,7 +32,7 @@ shell('props');
 lab(['players', 'logs', 'props', 'injuries']).then(L => {
   footer(L);
   const inj = injuryMap(L);
-  const st = { mkt: 'all', side: 'best', sort: 'l10', q: '' };
+  const st = { mkt: 'all', side: 'best', sort: 'adj', q: '' };
   const games = L.props.games || {};
 
   // One entry per player prop, with hit rates for both sides from games before tip-off.
@@ -67,7 +68,7 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
           <div class="sub">${side === 'o' ? 'Over' : 'Under'} ${pr.l} ${esc(STATS[pr.s].label)} · ${x.p.t === x.g.h ? 'vs' : '@'} ${esc(x.opp)} ${x.g.state === 'pre' ? fmtTime(x.g.t) : ''}</div></div>
         ${evTag(pr, side)}${price != null ? `<span class="price">${odds(price)} <small>${bookName(pr.bk)}</small></span>` : ''}</div>
       <div style="padding:0 14px">${teamContext(L, x.g, x.p.t)}${strip(results)}</div>
-      <div class="rates r5">${oppRankCell(L, x.opp, x.p.p, pr.s)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(r[k])}</div>`).join('')}</div></div></a>`;
+      <div class="rates r5">${oppRankCell(L, x.opp, x.p.p, pr.s)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(r[k], { adj: true })}</div>`).join('')}</div></div></a>`;
   }
 
   function render() {
@@ -89,6 +90,7 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
     // Ruled-out players sink to the bottom; then by the chosen window, ties broken by L20.
     const edge = y => { const f = fairPrice(y.x.pr); return f ? (y.side === 'o' ? f.bestO.ev : f.bestU.ev) : -1; };
     rows.sort((a, b) => (out(a) - out(b)) || (key === 'time' ? (a.x.g.t < b.x.g.t ? -1 : 1) : key === 'price' ? edge(b) - edge(a)
+      : key === 'adj' ? ((b.r.l10.adj ?? -1) - (a.r.l10.adj ?? -1)) || ((b.r.l20.adj ?? -1) - (a.r.l20.adj ?? -1))
       : ((b.r[key].rate ?? -1) - (a.r[key].rate ?? -1)) || ((b.r.l20.rate ?? -1) - (a.r.l20.rate ?? -1))));
     list.innerHTML = rows.length ? rows.slice(0, 150).map(y => card(y.x, y.side)).join('')
       : `<div class="card empty">No props match.</div>`;
