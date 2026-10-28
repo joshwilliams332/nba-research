@@ -304,3 +304,23 @@ td .logo { vertical-align: middle; margin-right: 4px; }
 .dvp .heads > div { background: var(--card2); border-radius: 12px; padding: 10px 12px; min-width: 0; }
 .dvp tr.me td { background: var(--card2); }
 @media (max-width: 420px) { .rates.r5 > div { font-size: 12px; } .rates.r5 small { font-size: 9px; letter-spacing: .02em; } }
+
+/* ---------- play-by-play */
+.shotwrap { max-width: 420px; margin: 8px auto 0; }
+.court { display: block; width: 100%; height: auto; border-radius: 10px; background: #12151a; cursor: pointer; }
+.court text { font-family: var(--font); }
+.zonecard { margin-top: 12px; background: var(--card2); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.zgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.zgrid > div { min-width: 0; font-size: 13px; }
+.zgrid .big { font-size: 24px; font-weight: 800; margin: 2px 0 6px; }
+.zgrid .big small { font-size: 13px; font-weight: 600; color: var(--muted); }
+.zgrid .kv { display: flex; justify-content: space-between; gap: 6px; padding: 4px 0; border-top: 1px solid var(--line); }
+.zgrid .dot { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; }
+.zrank.hit { color: var(--hit); }
+.zrank.miss { color: var(--miss); }
+.zrank.mid { color: var(--warm); }
+.wp { position: relative; padding-left: 36px; }
+.wp svg { display: block; width: 100%; height: 120px; background: var(--card2); border-radius: 8px; }
+.wpteam { position: absolute; left: 0; font-size: 11px; font-weight: 700; color: var(--muted); }
+.wpteam.top { top: 2px; }
+.wpteam.bot { bottom: 2px; }
