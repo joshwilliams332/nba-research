@@ -1,0 +1,64 @@
+// Tests for the hit-rate and team-trend math in site/assets/common.js. Run with: node --test tests/*.test.js
+const test = require('node:test');
+const assert = require('node:assert');
+const C = require('../site/assets/common.js');
+
+const meta = { cols: ['min', 'pts', 'reb', 'ast', 'fg3m', 'fg3a', 'fgm', 'fga', 'ftm', 'fta', 'oreb', 'dreb', 'stl', 'blk', 'tov', 'pf', 'pm'], season: 2027 };
+const teams = { AAA: { conf: 'East', div: 'Atlantic' }, BBB: { conf: 'East', div: 'Central' }, CCC: { conf: 'West', div: 'Pacific' } };
+const game = (id, d, h, a, hs, as, extra = {}) => ({ id, d, t: `${d}T23:00Z`, s: 2027, st: 2, h, a, state: 'post', hs, as, ...extra });
+
+test('outcome and tally', () => {
+  assert.strictEqual(C.outcome(25, 24.5), 'hit');
+  assert.strictEqual(C.outcome(24, 24.5), 'miss');
+  assert.strictEqual(C.outcome(24, 24.5, 'u'), 'hit');
+  assert.strictEqual(C.outcome(24, 24), 'push');
+  const t = C.tally(['hit', 'hit', 'miss', 'push']);
+  assert.deepStrictEqual([t.hits, t.misses, t.pushes, t.n, t.rate], [2, 1, 1, 4, 0.5]);
+});
+
+test('typical line sits on the half point above the last-10 average floor', () => {
+  const rows = [20, 22, 25, 30, 18, 24, 26, 21, 23, 24].map(pts => ({ pts }));
+  assert.strictEqual(C.typicalLine(rows, 'pts'), 23.5);
+});
+
+test('team lines are judged against the current number', () => {
+  const games = [
+    game('1', '2026-10-20', 'AAA', 'BBB', 110, 100, { line: { sp: -4.5, tot: 220 } }),
+    game('2', '2026-10-22', 'CCC', 'AAA', 120, 118, { line: { sp: -1.5, tot: 230 } }),
+    game('3', '2026-10-24', 'AAA', 'CCC', 105, 101),
+  ];
+  const L = C.indexLab(meta, teams, games);
+  const sides = C.teamFinals(L, 'AAA');
+  assert.deepStrictEqual(C.lineResults(sides, 'ml'), ['hit', 'miss', 'hit']);
+  // AAA -3.5 today: won by 10 (hit), lost by 2 (miss), won by 4 (hit)
+  assert.deepStrictEqual(C.lineResults(sides, 'spread', -3.5), ['hit', 'miss', 'hit']);
+  assert.deepStrictEqual(C.lineResults(sides, 'over', 215), ['miss', 'hit', 'miss']);
+  // Rest days: game 2 is two days after game 1 for AAA -> 1 day of rest
+  assert.strictEqual(L.rest['2|AAA'], 1);
+  const split = Object.fromEntries(C.teamSplits(L, 'AAA', 2027).rows);
+  assert.strictEqual(split.Overall, '2-1');
+  assert.strictEqual(split.Home, '2-0');
+  assert.strictEqual(split.Conference, '1-0');
+  // ATS uses each game's own line: -4.5 won by 10 (cover), +1.5 lost by 2 (miss)
+  assert.strictEqual(split['Against the spread'], '1-1-0');
+});
+
+test('player rows, filters and windows', () => {
+  const games = [
+    game('1', '2026-10-20', 'AAA', 'BBB', 110, 100),
+    game('2', '2026-10-21', 'BBB', 'AAA', 99, 101),
+    game('3', '2026-10-24', 'AAA', 'BBB', 90, 100),
+  ];
+  const L = C.indexLab(meta, teams, games);
+  const row = (gid, min, pts) => [gid, 'AAA', 1, min, pts, 5, 3, 1, 4, 6, 12, 2, 2, 1, 4, 1, 0, 2, 3, 5];
+  L.logs = { p1: [row('1', 30, 20), row('2', 34, 28), row('3', 12, 6)], p2: [row('1', 25, 10), row('3', 20, 8)] };
+  const rows = C.playerRows(L, 'p1');
+  assert.deepStrictEqual(rows.map(r => [r.home, r.opp, r.win, r.rest]), [[true, 'BBB', true, 9], [false, 'BBB', true, 0], [true, 'BBB', false, 2]]);
+  assert.strictEqual(C.applyFilters(L, rows, { loc: 'away' }).length, 1);
+  assert.strictEqual(C.applyFilters(L, rows, { rest: '0' }).length, 1);
+  assert.strictEqual(C.applyFilters(L, rows, { minMin: 20 }).length, 2);
+  assert.deepStrictEqual(C.applyFilters(L, rows, { without: ['p2'] }).map(r => r.gid), ['2']);
+  assert.deepStrictEqual(C.applyFilters(L, rows, { with: ['p2'], result: 'win' }).map(r => r.gid), ['1']);
+  const w = C.windowRates(rows, 'pts', 19.5, 'o', { opp: 'BBB', season: 2027 });
+  assert.deepStrictEqual([w.l5.hits, w.l5.n, w.h2h.n, w.last.n], [2, 3, 3, 0]);
+});

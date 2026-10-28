@@ -159,7 +159,7 @@ def num(v):
     if v is None:
         return None
     if isinstance(v, (int, float)):
-        return v
+        return int(v) if float(v).is_integer() else v
     s = str(v).strip()
     if not s or s in ("-", "--"):
         return None
@@ -555,7 +555,8 @@ def build_props(store, games, players, today, now_et, offline, key):
     matched = []
     for ev in events:
         g = by_teams.get((FULL_NAME.get(ev.get("home_team")), FULL_NAME.get(ev.get("away_team"))))
-        if g:
+        tip = datetime.fromisoformat(str(ev.get("commence_time", "")).replace("Z", "+00:00") or "1970-01-01T00:00+00:00")
+        if g and tip.astimezone(ET).date() == today:
             matched.append((ev, g))
     n_markets, n_events = plan_markets(usage.get("remaining"), len(matched), today)
     markets = [m for m, _ in MARKETS[:n_markets]]

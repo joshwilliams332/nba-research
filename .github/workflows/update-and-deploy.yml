@@ -26,8 +26,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       # Box scores, finished days and past prop lines live on the `data` branch, so each run only
@@ -58,7 +58,7 @@ jobs:
       # the new HTML with the old script. Tagging the links with this commit makes every deploy fetch fresh copies.
       - name: Tag asset links with this commit
         run: sed -i -E "s#assets/(common\.js|style\.css)\"#assets/\1?v=${GITHUB_SHA::8}\"#g" site/*.html
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         if: github.ref == 'refs/heads/main'
         with:
           path: site
