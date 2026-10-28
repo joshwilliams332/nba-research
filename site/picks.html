@@ -7,6 +7,12 @@
 <meta name="description" content="Props you saved, graded automatically from box scores: record, units, ROI and closing line value.">
 <meta name="theme-color" content="#0b0d10">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hoop Lab">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -146,7 +152,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
       + (open.length ? `<h2 class="psec">Open <small>${open.length}</small></h2>${open.map(pickCard).join('')}` : '')
       + (done.length ? `<h2 class="psec">Graded <small>${done.length}</small></h2>${done.map(pickCard).join('')}` : '')
       + (!rows.length ? `<div class="card empty">No picks in this date range.</div>` : '')
-      + `<div class="grid2">${breakdownTable('By market', breakdown(done, p => p.stat, marketLabel))}
+      + `<div class="grid2">${breakdownTable('By market', breakdown(done, p => p.stat, pickMarketLabel))}
         ${breakdownTable('By side', breakdown(done, p => p.side, k => ({ o: 'Overs', u: 'Unders', h: 'Home', a: 'Away' }[k] || k)))}</div>`
       + manageCard();
     root._rows = all;

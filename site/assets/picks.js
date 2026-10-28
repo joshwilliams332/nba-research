@@ -201,7 +201,7 @@ function clvPoints(pick, close) {
 
 // ---------------------------------------------------------------- describing picks
 
-function marketLabel(stat) {
+function pickMarketLabel(stat) {
   if (stat === 'ml') return 'Money line';
   if (stat === 'spread') return 'Spread';
   if (stat === 'total') return 'Total';
@@ -212,7 +212,7 @@ function marketLabel(stat) {
 function pickText(p) {
   if (p.stat === 'ml') return `${p.team} ML`;
   if (p.stat === 'spread') return `${p.team} ${signed(p.line)}`;
-  return `${p.side === 'o' ? 'Over' : 'Under'} ${p.line} ${marketLabel(p.stat)}`;
+  return `${p.side === 'o' ? 'Over' : 'Under'} ${p.line} ${pickMarketLabel(p.stat)}`;
 }
 
 /* Bookmark button for a pick. `fields` is stored as a data attribute and saved on tap by bindPickButtons. */

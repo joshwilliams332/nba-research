@@ -420,3 +420,17 @@ td .logo { vertical-align: middle; margin-right: 4px; }
 .iconbtn svg, .btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: -3px; }
 .btn.danger { color: var(--miss); }
 .pastebox { width: 100%; background: var(--card2); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: 12px/1.4 ui-monospace, monospace; resize: vertical; }
+
+/* ---------- app shell */
+/* Installed on iOS the page runs under the status bar (black-translucent), so the header pads for it. */
+#top { padding-top: max(10px, env(safe-area-inset-top)); }
+.offline { position: sticky; top: calc(50px + env(safe-area-inset-top)); z-index: 19; padding: 6px 16px; text-align: center;
+  font-size: 12px; font-weight: 650; color: #1a1205; background: var(--warm); }
+.installchip { position: fixed; z-index: 40; left: 12px; right: 12px; bottom: calc(max(10px, env(safe-area-inset-bottom)) + 76px);
+  display: flex; align-items: center; gap: 10px; padding: 10px 10px 10px 14px; border-radius: 16px; font-size: 13px;
+  background: var(--card2); border: 1px solid #3a414c; box-shadow: 0 10px 30px rgba(0, 0, 0, .5); }
+.installchip > svg { width: 22px; height: 22px; flex: none; }
+.installchip > span { flex: 1; min-width: 0; }
+.installchip .btn { flex: none; background: var(--accent); color: #1a0f05; border-color: var(--accent); }
+.installchip .x { flex: none; border: 0; background: none; color: var(--muted); font-size: 20px; line-height: 1; padding: 4px 6px; cursor: pointer; }
+@media (min-width: 760px) { .installchip { left: auto; right: 16px; bottom: 16px; max-width: 380px; } }
