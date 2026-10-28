@@ -305,6 +305,18 @@ td .logo { vertical-align: middle; margin-right: 4px; }
 .dvp tr.me td { background: var(--card2); }
 @media (max-width: 420px) { .rates.r5 > div { font-size: 12px; } .rates.r5 small { font-size: 9px; letter-spacing: .02em; } }
 
+/* ---------- insights and trends */
+.insights { display: grid; gap: 12px; }
+.insights > * { min-width: 0; }
+@media (min-width: 900px) { .insights { grid-template-columns: 1fr 1fr; } }
+.card.insight { display: block; margin: 0; }
+.card.insight:hover { border-color: #3a414c; }
+.insight .row b { overflow-wrap: anywhere; }
+.itext { margin: 12px 0; font-size: 17px; font-weight: 700; line-height: 1.35; }
+.ibet { display: flex; align-items: center; gap: 10px; padding-top: 10px; border-top: 1px solid var(--line); font-weight: 650; }
+.irate { font-size: 14px; color: var(--muted); }
+.irate .rate { font-size: 15px; }
+
 /* ---------- play-by-play */
 .shotwrap { max-width: 420px; margin: 8px auto 0; }
 .court { display: block; width: 100%; height: auto; border-radius: 10px; background: #12151a; cursor: pointer; }

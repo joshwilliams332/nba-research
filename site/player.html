@@ -42,6 +42,12 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     side: P.get('side') === 'u' ? 'u' : 'o',
     win: 'l10', support: 'min', f: {}, line: null, dvpPos: posBucket(p.p) || 'ALL',
   };
+  // Optional filters and window from the URL (links from Insights): loc, rest, role, without=id,id, win.
+  if (['home', 'away'].includes(P.get('loc'))) st.f.loc = P.get('loc');
+  if (['0', '1', '2'].includes(P.get('rest'))) st.f.rest = P.get('rest');
+  if (['starter', 'bench'].includes(P.get('role'))) st.f.role = P.get('role');
+  if (P.get('without')) st.f.without = P.get('without').split(',').filter(id => L.players[id]);
+  if (WINDOWS.some(w => w.key === P.get('win'))) st.win = P.get('win');
   const propFor = s => props.find(x => x.s === s);
   const defaultLine = s => (propFor(s) ? propFor(s).l : typicalLine(forStat(all, s), s));
   st.line = P.get('line') != null && !isNaN(+P.get('line')) ? +P.get('line') : defaultLine(st.stat);
