@@ -10,7 +10,7 @@
 </head>
 <body>
 <header id="top"></header>
-<main><div class="card empty">Loading player…</div></main>
+<main><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script>
@@ -61,7 +61,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       <div class="row"><a class="back" href="javascript:history.length>1?history.back():location.assign('players.html')" aria-label="Back">‹</a></div>
       <div class="phead">${headshot(pid, 72)}
         <div class="grow"><h1>${esc(p.n)}</h1>
-          <div class="muted">${logo(L, p.t, 16)} ${esc(T.city || '')} ${esc(T.name || p.t)} · ${esc(p.p || '')}${p.j ? ` · #${esc(p.j)}` : ''}${injuryTag(inj)}</div>
+          <div class="muted">${teamLink(p.t, `${logo(L, p.t, 16)} ${esc(T.city || '')} ${esc(T.name || p.t)}`)} · ${esc(p.p || '')}${p.j ? ` · #${esc(p.j)}` : ''}${injuryTag(inj)}</div>
           <div class="muted" style="font-size:13px">${next ? `<a href="game.html?id=${next.id}" style="text-decoration:underline">${esc(nextLine)}</a>` : esc(nextLine)}</div>
         </div></div>
       ${inj ? `<p class="note"><b style="color:var(--warm)">${esc(inj.st)}</b>: ${esc(inj.det || '')}</p>` : ''}

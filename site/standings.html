@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Standings</title>
+<meta name="description" content="NBA standings by conference with home/away, last 10, streak, ATS and over/under records.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main>
+  <section class="pagehead"><h1>Standings</h1><p id="sub">&nbsp;</p></section>
+  <div class="row" style="margin-bottom:12px;flex-wrap:wrap"><div class="pills" id="seasons"></div></div>
+  <div id="tables"></div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script>
+shell('standings');
+document.getElementById('tables').innerHTML = skeleton(2, 6);
+lab().then(L => {
+  footer(L);
+  let season = +params().get('season') || L.meta.season;
+  const yy = s => `${s - 1}-${String(s).slice(2)}`;
+
+  function table(conf, rows) {
+    const body = rows.map(r => {
+      // Below 6th is the play-in line, below 10th is out.
+      const cut = r.rank === 6 ? 'cut' : r.rank === 10 ? 'cut-hard' : '';
+      const st = r.streak.startsWith('W') ? 'res-w' : r.streak.startsWith('L') ? 'res-l' : '';
+      return `<tr class="${cut}"><td class="l">${teamLink(r.team, `<span class="rk">${r.rank}</span>${logo(L, r.team, 22)}${r.team}`)}</td>
+        <td>${r.w}</td><td>${r.l}</td><td>${(r.w + r.l) ? r.pct.toFixed(3).replace(/^0/, '') : '-'}</td><td>${r.gb ? r.gb : '-'}</td>
+        <td>${r.home}</td><td>${r.away}</td><td>${r.l10}</td><td class="${st}">${r.streak}</td><td>${signed(+r.diff.toFixed(1))}</td><td>${r.ats}</td><td>${r.ou}</td></tr>`;
+    }).join('');
+    return `<div class="card"><h2>${conf}ern Conference</h2>
+      <div class="tablewrap"><table class="data sticky standings"><tr><th class="l">Team</th><th>W</th><th>L</th><th>PCT</th><th>GB</th>
+        <th>Home</th><th>Away</th><th>L10</th><th>Strk</th><th>Diff</th><th>ATS</th><th>O/U</th></tr>${body}</table></div>
+      <div class="legend"><span><i class="dash"></i>Top 6: playoffs</span><span><i></i>7-10: play-in</span></div></div>`;
+  }
+
+  function render() {
+    document.getElementById('seasons').innerHTML = [L.meta.season, L.meta.season - 1]
+      .map(s => `<button class="pill ${s === season ? 'on' : ''}" data-season="${s}">${yy(s)}</button>`).join('');
+    const S = standings(L, season);
+    const played = S.East.concat(S.West).reduce((a, r) => a + r.w + r.l, 0) / 2;
+    document.getElementById('sub').textContent = `${yy(season)} regular season · ${played} games played · ties broken by win %, wins, then average margin`;
+    document.getElementById('tables').innerHTML = played
+      ? `${table('East', S.East)}${table('West', S.West)}
+         <p class="note">ATS and O/U are W-L-P against each game's closing line, when one is on record. Diff is average point margin.</p>`
+      : emptyState('No regular-season games yet for this season.');
+  }
+
+  document.getElementById('seasons').addEventListener('click', e => {
+    const b = e.target.closest('[data-season]');
+    if (!b) return;
+    season = +b.dataset.season;
+    history.replaceState(null, '', `?season=${season}`);
+    render();
+  });
+  render();
+}).catch(fail);
+</script>
+</body>
+</html>

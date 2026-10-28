@@ -10,7 +10,7 @@
 </head>
 <body>
 <header id="top"></header>
-<main><div class="card empty">Loading game…</div></main>
+<main><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/insights.js"></script>
@@ -37,9 +37,9 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       <div class="row"><a class="back" href="index.html?d=${g.d}" aria-label="Back to games">‹</a>
         <span class="grow" style="text-align:center;color:var(--muted);font-size:13px">${esc([g.v, g.tv].filter(Boolean).join(' · '))}</span><span style="width:38px"></span></div>
       <div class="matchup">
-        <div class="team">${logo(L, g.a, 52)}<div><b>${esc(A.name)}</b><small>${esc(g.ar || '')}</small></div></div>
+        ${teamLink(g.a, `${logo(L, g.a, 52)}<div><b>${esc(A.name)}</b><small>${esc(g.ar || '')}</small></div>`, 'team')}
         <div class="mid">${score}</div>
-        <div class="team home">${logo(L, g.h, 52)}<div><b>${esc(H.name)}</b><small>${esc(g.hr || '')}</small></div></div>
+        ${teamLink(g.h, `${logo(L, g.h, 52)}<div><b>${esc(H.name)}</b><small>${esc(g.hr || '')}</small></div>`, 'team home')}
       </div>
       ${final && lineResult(g) ? `<p class="note" style="text-align:center">${esc(lineResult(g))}</p>` : ''}
     </section>
@@ -168,7 +168,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       `<tr><td><a href="game.html?id=${s.g.id}">${shortDate(s.g.d)} ${s.home ? 'vs' : '@'} ${s.opp}</a></td><td class="${s.win ? 'hit' : 'miss'}">${s.win ? 'W' : 'L'} ${s.pts}-${s.oppPts}</td>
         <td>${s.spread != null ? signed(s.spread) : '-'}</td><td>${s.tot != null ? s.tot : '-'}</td></tr>`).join('');
     return `<div class="card">
-        <div class="row" style="margin-bottom:8px"><div class="row grow">${logo(L, g.a, 26)}<b>${g.a}</b></div><div class="pills">${seasons}</div><div class="row grow" style="justify-content:flex-end"><b>${g.h}</b>${logo(L, g.h, 26)}</div></div>
+        <div class="row" style="margin-bottom:8px">${teamLink(g.a, `${logo(L, g.a, 26)}<b>${g.a}</b>`, 'row grow')}<div class="pills">${seasons}</div><a class="row grow" style="justify-content:flex-end" href="team.html?t=${g.h}"><b>${g.h}</b>${logo(L, g.h, 26)}</a></div>
         ${a.games + h.games ? `<table class="vs">${rows}</table>` : `<p class="empty">No regular-season games yet.</p>`}
         <p class="note">Quarter and half records are W-L-T for that period alone. ATS and O/U use the closing lines on record.</p></div>
       <div class="grid2">
