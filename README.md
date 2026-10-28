@@ -47,6 +47,27 @@ The Odds API ───┘                                   └── store/ ─
 - **`.github/workflows/update-and-deploy.yml`** runs five times a day around the NBA schedule and on every merge
   to `main`. `tests.yml` runs the unit tests on every pull request.
 
+## Projection model
+
+Every prop shows a projection ("Proj 26.1 · 58% over"), built in `site/assets/model.js`:
+projected minutes × per-minute production × opponent (defense vs position) × pace, with an adjustment when a key
+teammate is out, spread into a negative-binomial range to get the chance of clearing the line.
+`scripts/backtest.js` replays every past game through the same code using only earlier games, and writes the
+results to the [Model page](https://joshwilliams332.github.io/nba-research/model.html) after each data update.
+
+On 2025-26 plus the start of 2026-27 (about 106,000 player-stat predictions):
+
+| | Model | Last-10 average |
+|---|---|---|
+| Points, mean absolute error | 4.84 | 4.91 |
+| Pts + Reb + Ast, mean absolute error | 6.20 | 6.35 |
+| Over leans (model 60%+) that hit | 64.1% | |
+| Under leans (model 40% or less) that hit | 65.1% | |
+
+Leans are graded against the typical line, because real sportsbook lines are only stored from the first prop
+pulls onward. The model is slightly overconfident at the extremes (its 80%+ calls hit about 76%), which the
+calibration chart on the Model page shows.
+
 ## Running it locally
 
 ```bash

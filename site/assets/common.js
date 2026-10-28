@@ -754,7 +754,7 @@ function footer(L) {
   if (!el) return;
   const built = L && L.meta ? new Date(L.meta.built).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
   el.innerHTML = `<p>Data: ESPN (scores, box scores, game lines, injuries) and The Odds API (player props).${built ? ` Updated ${esc(built)}.` : ''}</p>
-    <p>Hit rates describe the past, not the future. For research and fun; bet responsibly.</p>`;
+    <p>Hit rates describe the past, not the future. For research and fun; bet responsibly. <a href="model.html" style="text-decoration:underline">How projections work</a>.</p>`;
 }
 
 function fail(err) {

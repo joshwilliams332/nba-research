@@ -15,9 +15,9 @@
 'use strict';
 
 if (typeof module !== 'undefined' && typeof STATS === 'undefined') {
-  // In Node (tests, backtest), pull the helpers the browser gets as globals.
-  var { STATS, STAT_ORDER, mean, playerRows, posBucket, outMates, lastName, signed } = require('./common.js');  // eslint-disable-line no-var
-  var { teamBoxTotals } = require('./context.js');  // eslint-disable-line no-var
+  // In Node (tests, backtest), put the helpers the browser gets as globals on the global object. (Declaring them
+  // here with var would clash with common.js's own declarations when both load as browser scripts.)
+  Object.assign(globalThis, require('./common.js'), require('./context.js'));
 }
 
 // Tuning. Each was chosen on last season's games in scripts/backtest.js, then left alone.
