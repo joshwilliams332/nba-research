@@ -15,7 +15,7 @@ const VERSION = 'dev';
 const CACHE = `hooplab-${VERSION}`;
 const PAGES = ['./', 'index.html', 'game.html', 'player.html', 'players.html', 'props.html', 'standings.html',
   'team.html', 'trends.html', 'picks.html'];
-const ASSETS = ['assets/style.css', 'assets/common.js', 'assets/context.js', 'assets/insights.js', 'assets/pbp.js', 'assets/picks.js'];
+const ASSETS = ['assets/style.css', 'assets/common.js', 'assets/context.js', 'assets/insights.js', 'assets/pbp.js', 'assets/picks.js', 'assets/lines.js'];
 const STATIC = ['manifest.webmanifest', 'assets/icon.svg', 'assets/icons/icon-192.png', 'assets/icons/icon-512.png',
   'assets/icons/apple-touch-icon.png'];
 

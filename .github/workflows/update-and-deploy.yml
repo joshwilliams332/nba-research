@@ -2,13 +2,21 @@ name: Update data and deploy
 
 on:
   schedule:
-    # Times are UTC; GitHub often starts scheduled runs late. Prop lines are pulled once per day,
-    # on the first run after 10:00 ET, so the extra runs only refresh ESPN (free).
-    - cron: "37 15 * * *"   # 11:37 AM ET: lines, injuries and the day's props
-    - cron: "37 21 * * *"   # 5:37 PM ET: injury updates and line moves before tip-off
-    - cron: "52 23 * * *"   # 7:52 PM ET: final injury news around the first tips
-    - cron: "47 4 * * *"    # 12:47 AM ET: finals and box scores from the early games
-    - cron: "47 7 * * *"    # 3:47 AM ET: the late West Coast games
+    # Times are UTC (ET is UTC-4 until early November, UTC-5 after); GitHub often starts scheduled runs late.
+    # Morning props are pulled once per day, on the first run after 10:00 ET. Closing (pre-tip) points lines
+    # are pulled for each game on the first run within 100 minutes of its tip, so the extra evening runs are
+    # spaced 30 minutes apart to catch every tip time in both EDT and EST; runs with nothing due cost no credits.
+    - cron: "37 15 * * *"   # 11:37 AM EDT / 10:37 AM EST: lines, injuries and the day's props
+    - cron: "37 21 * * *"   # 5:37 PM EDT / 4:37 PM EST: injury updates and line moves
+    - cron: "17 22 * * *"   # 6:17 PM EDT / 5:17 PM EST: closing lines for 7:00-7:30 PM ET tips (EDT)
+    - cron: "47 22 * * *"   # 6:47 PM EDT / 5:47 PM EST
+    - cron: "22 23 * * *"   # 7:22 PM EDT / 6:22 PM EST: closing lines for 7:00-8:00 PM ET tips (EST)
+    - cron: "52 23 * * *"   # 7:52 PM EDT / 6:52 PM EST: final injury news, 8:00-8:30 PM tips
+    - cron: "17 1 * * *"    # 9:17 PM EDT / 8:17 PM EST: closing lines for 10:00-10:30 PM ET tips
+    - cron: "47 1 * * *"    # 9:47 PM EDT / 8:47 PM EST
+    - cron: "17 2 * * *"    # 10:17 PM EDT / 9:17 PM EST: late tips (EST)
+    - cron: "47 4 * * *"    # 12:47 AM EDT: finals and box scores from the early games
+    - cron: "47 7 * * *"    # 3:47 AM EDT: the late West Coast games
   workflow_dispatch:        # "Run workflow" button in the Actions tab
   push:
     branches: [main]

@@ -373,6 +373,13 @@ td .logo { vertical-align: middle; margin-right: 4px; }
 .wpteam.top { top: 2px; }
 .wpteam.bot { bottom: 2px; }
 
+/* ---------- line movement */
+.move { display: inline-block; margin-left: 6px; padding: 0 6px; border-radius: 6px; font-size: 11px; font-weight: 700;
+  white-space: nowrap; font-variant-numeric: tabular-nums; vertical-align: 1px; }
+.move.up { color: var(--accent2); background: rgba(43, 196, 180, .12); }
+.move.down { color: var(--accent); background: rgba(255, 138, 61, .12); }
+.movenote { padding: 0 14px 12px; margin: 0; }
+
 /* ---------- picks */
 .hdricon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-left: auto;
   border-radius: 50%; color: var(--muted); background: var(--card2); border: 1px solid var(--line); }
