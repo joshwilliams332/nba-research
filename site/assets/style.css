@@ -531,3 +531,53 @@ body:has(.sortbar) #foot { padding-bottom: 150px; }
 .sheetfoot .primary { margin-left: auto; background: var(--accent2); color: #062b28; border-color: var(--accent2); }
 .linkish { border: 0; background: none; color: var(--text); font-weight: 650; cursor: pointer; padding: 0; }
 body.noscroll { overflow: hidden; }
+
+/* ---------- phone fit and tap behavior */
+/* Fast taps on buttons (e.g. the line + / -) shouldn't trigger iPhone's double-tap zoom. */
+a, button, input, select, label, summary, .proprow > .head, [data-step] { touch-action: manipulation; }
+@media (max-width: 520px) {
+  body { font-size: 14px; padding-bottom: 76px; }
+  main { padding: 10px 10px 20px; }
+  #top { padding: 6px 12px; padding-top: max(6px, env(safe-area-inset-top)); gap: 10px; }
+  .brand { font-size: 16px; }
+  .brand svg { width: 22px; height: 22px; }
+  .hero { margin: -10px -10px 10px; padding: 10px 12px 10px; }
+  .pagehead { margin: -10px -10px 10px; padding: 14px 12px 10px; }
+  .days { margin: 0 -10px 10px; padding: 0 10px; }
+  .back { width: 32px; height: 32px; font-size: 17px; }
+  .phead { gap: 10px; margin-top: 6px; }
+  .phead h1 { font-size: 21px; }
+  .phead .hs { width: 52px !important; height: 52px !important; }
+  .pagehead h1 { font-size: 24px; }
+  .matchup .team b { font-size: 16px; }
+  .card { padding: 11px; margin-bottom: 10px; border-radius: 12px; }
+  .card.flush { padding: 0; }
+  h2 { font-size: 16px; }
+  .tabs { gap: 5px; margin-bottom: 10px; }
+  .tabs button, .tabs a { padding: 6px 11px; font-size: 13px; border-radius: 10px; }
+  .tabs.under button { padding: 6px 0 8px; }
+  .secbar { top: 44px; margin: 0 -10px 10px; padding: 6px 10px; }
+  .secbar a { padding: 5px 10px; font-size: 12px; }
+  .pill { padding: 5px 10px; font-size: 12px; }
+  .search { padding: 10px 14px; }
+  .linectl { gap: 6px; }
+  .linectl button.step { width: 32px; height: 32px; font-size: 16px; }
+  .linectl .val { font-size: 19px; min-width: 52px; }
+  .seg button { padding: 6px 10px; font-size: 13px; }
+  .windows { gap: 4px; margin-bottom: 10px; }
+  .windows button { padding: 6px 1px; font-size: 10px; border-radius: 10px; }
+  .windows button .rate { font-size: 14px; }
+  .projlabel { font-size: 12px; padding: 7px 9px; }
+  .note, .confnote { font-size: 11.5px; }
+  .bars { height: 190px; }
+  .bottomnav { padding: 4px; border-radius: 18px; left: 8px; right: 8px; }
+  .bottomnav a { padding: 5px 2px; font-size: 11px; }
+  .bottomnav svg { width: 20px; height: 20px; }
+  .sortbar { bottom: calc(max(10px, env(safe-area-inset-bottom)) + 62px); left: 8px; right: 8px; padding: 4px; }
+  .sortbar button { padding: 7px 10px; font-size: 12px; }
+  .proprow > .head { padding: 10px 12px; }
+  .rates { gap: 4px; padding: 0 12px 10px; }
+  .gamehead { padding: 10px 12px; }
+  .mkt { padding: 0 12px 10px; }
+  .price { padding: 3px 8px; font-size: 13px; }
+}
