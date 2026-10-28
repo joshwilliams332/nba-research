@@ -41,6 +41,9 @@ The Odds API ───┘                                   └── store/ ─
   shared logic: stat definitions, filters, window hit rates, team trends, records and quarter splits.
   Trends for a game line are judged against *that game's* number (e.g. "would the 76ers' last 10 games have
   covered -4.5?"), the same way player props are.
+- **Installable app:** a web app manifest and a service worker (`site/sw.js`) let it be added to a phone's home
+  screen and open offline with the last data it loaded (with an "Offline · data from …" banner). Each deploy
+  stamps the worker with the commit, so it never serves a stale script.
 - **`.github/workflows/update-and-deploy.yml`** runs five times a day around the NBA schedule and on every merge
   to `main`. `tests.yml` runs the unit tests on every pull request.
 

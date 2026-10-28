@@ -22,7 +22,8 @@ Output (site/data/):
     players.json   ESPN id -> name, position, current team
     logs.json      ESPN id -> game log rows (column order in meta.cols)
     props.json     today's prop lines by game
-    proplines.json past prop lines: player id -> game id -> stat -> line
+    proplines.json past morning prop lines: player id -> game id -> stat -> line
+    closelines.json closing (pre-tip) prop lines: player id -> game id -> stat -> [line, over, under, book]
     injuries.json  the current injury report
     periods.json   player id -> game id -> 1st-quarter / 1st-half pts, reb, ast, 3pm (from play-by-play)
     shots.json     shot zones: league, each player and each team defense (allowed), per season
@@ -116,6 +117,9 @@ SEASON_TYPES = {2, 3, 5}
 # The Odds API prop markets, in the order credits are spent on them.
 MARKETS = [("player_points", "pts"), ("player_rebounds", "reb"), ("player_assists", "ast"), ("player_threes", "fg3m")]
 CREDIT_RESERVE = 10        # never spend the last few credits of the month
+# The pre-tip "closing" pull: points only, for games tipping within this many minutes.
+CLOSE_MARKETS = [("player_points", "pts")]
+CLOSE_WINDOW_MIN = 100
 PROPS_EARLIEST_HOUR = 10   # ET; books post most NBA props by late morning
 
 
@@ -301,6 +305,19 @@ def parse_event(ev, day):
     return g
 
 
+def keep_open_line(g, old):
+    """`line` is always ESPN's latest (its closing line once the game starts); `open` keeps the first line we saw
+    before tip. If ESPN drops a game's odds later, the last line we had is kept."""
+    old = old or {}
+    if "line" not in g and old.get("line"):
+        g["line"] = old["line"]
+    first = old.get("open") or old.get("line")
+    if first:
+        g["open"] = first
+    elif g.get("line") and g["state"] == "pre":
+        g["open"] = g["line"]
+
+
 def build_schedule(store, today, offline):
     """Every game from last season through the next week. Finished days are cached in the store."""
     days_dir = store / "days"
@@ -327,6 +344,9 @@ def build_schedule(store, today, offline):
     with ThreadPoolExecutor(8) as pool:
         for d, games in pool.map(get, todo):
             if games is not None:
+                old = {g["id"]: g for g in read_json(days_dir / f"{d:%Y%m%d}.json", [])}
+                for g in games:
+                    keep_open_line(g, old.get(g["id"]))
                 write_json(days_dir / f"{d:%Y%m%d}.json", games)
 
     games = {}
@@ -685,23 +705,87 @@ def parse_props(event_odds, roster_keys):
     return out
 
 
-def plan_markets(remaining, n_events, today):
-    """How many prop markets (and events) today's credits can cover.
-
-    Each event costs 1 credit per market. The month's remaining credits (minus a reserve) are spread
-    evenly over the days left, then markets are added in MARKETS order while they fit."""
-    if remaining is None or n_events == 0:
-        return 0, 0
+def daily_budget(remaining, today):
+    """The credits today may use: what's left this month (minus a reserve), spread evenly over the days left."""
     next_month = date(today.year + (today.month == 12), today.month % 12 + 1, 1)
     days_left = (next_month - today).days
-    budget = int(max(0, remaining - CREDIT_RESERVE) / days_left)
+    return int(max(0, remaining - CREDIT_RESERVE) / days_left)
+
+
+def plan_markets(remaining, n_events, today):
+    """How many prop markets (and events) the morning pull can cover.
+
+    Each event costs 1 credit per market. Out of today's share (see daily_budget), one credit per game is set
+    aside for the pre-tip closing pull (points only) when the share covers at least two credits per game;
+    otherwise the morning pull, which matters more, gets everything. Markets are then added in MARKETS order
+    while they fit."""
+    if remaining is None or n_events == 0:
+        return 0, 0
+    budget = daily_budget(remaining, today)
+    if budget >= 2 * n_events:
+        budget -= n_events
     markets = min(len(MARKETS), budget // n_events)
     if markets:
         return markets, n_events
     return (1, budget) if budget else (0, 0)
 
 
+def plan_close(remaining, n_due, today):
+    """How many of the games due for a closing pull today's share of credits allows (1 credit each)."""
+    if remaining is None or n_due == 0:
+        return 0
+    return min(n_due, daily_budget(remaining, today))
+
+
+class OddsAPI:
+    """Calls to The Odds API that keep the account's credit usage (from the response headers) up to date."""
+
+    def __init__(self, key, usage):
+        self.key, self.usage = key, usage
+
+    def get(self, path, params=None):
+        hdr = {}
+        q = urllib.parse.urlencode({**(params or {}), "apiKey": self.key})
+        data = fetch_json(f"{ODDS}{path}?{q}", tries=2, headers_out=hdr)
+        if "x-requests-remaining" in hdr:
+            self.usage.update(remaining=num(hdr["x-requests-remaining"]), used=num(hdr.get("x-requests-used")),
+                              checked=datetime.now(timezone.utc).isoformat(timespec="seconds"))
+        return data
+
+    def match(self, games, today):
+        """Today's Odds API events paired with our games (by both teams and the ET tip date). /events is free."""
+        by_teams = {(g["h"], g["a"]): g for g in games}
+        out = []
+        for ev in self.get("/events"):
+            g = by_teams.get((FULL_NAME.get(ev.get("home_team")), FULL_NAME.get(ev.get("away_team"))))
+            tip = tip_time(ev.get("commence_time"))
+            if g and tip and tip.astimezone(ET).date() == today:
+                out.append((ev, g))
+        return out
+
+    def props(self, ev, markets, roster):
+        odds = self.get(f"/events/{ev['id']}/odds", {"regions": "us", "markets": ",".join(markets),
+                                                      "oddsFormat": "american"})
+        return parse_props(odds, roster)
+
+
+def tip_time(iso):
+    """'2026-10-28T23:00Z' -> aware datetime, or None."""
+    try:
+        return datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def roster_keys(games, players):
+    """Normalized name -> player id for everyone on the teams playing in `games` (to match prop names)."""
+    teams = {t for g in games for t in (g["h"], g["a"])}
+    return {name_key(p.get("n")): pid for pid, p in players.items() if p.get("t") in teams}
+
+
 def build_props(store, games, players, today, now_et, offline, key):
+    """The morning pull: once per ET day after PROPS_EARLIEST_HOUR, every market the budget allows.
+    Saved as store/odds/props/YYYY-MM-DD.json (the "open" lines)."""
     props_dir = store / "odds" / "props"
     usage_path = store / "odds" / "usage.json"
     usage = read_json(usage_path, {})
@@ -725,46 +809,24 @@ def build_props(store, games, players, today, now_et, offline, key):
         log(f"Props: {why}")
         return snap, status
 
-    def call(path_, params):
-        hdr = {}
-        q = urllib.parse.urlencode({**params, "apiKey": key})
-        data = fetch_json(f"{ODDS}{path_}?{q}", tries=2, headers_out=hdr)
-        if "x-requests-remaining" in hdr:
-            usage.update(remaining=num(hdr["x-requests-remaining"]), used=num(hdr.get("x-requests-used")),
-                         checked=datetime.now(timezone.utc).isoformat(timespec="seconds"))
-        return data
-
+    api = OddsAPI(key, usage)
     try:
-        events = call("/events", {})  # free: doesn't use credits
+        matched = api.match([g for g in todays if g["state"] == "pre"], today)
     except Exception as e:
         log(f"Props: events failed ({e})")
         return None, status
-    by_teams = {(g["h"], g["a"]): g for g in todays if g["state"] == "pre"}
-    matched = []
-    for ev in events:
-        g = by_teams.get((FULL_NAME.get(ev.get("home_team")), FULL_NAME.get(ev.get("away_team"))))
-        tip = datetime.fromisoformat(str(ev.get("commence_time", "")).replace("Z", "+00:00") or "1970-01-01T00:00+00:00")
-        if g and tip.astimezone(ET).date() == today:
-            matched.append((ev, g))
     n_markets, n_events = plan_markets(usage.get("remaining"), len(matched), today)
     markets = [m for m, _ in MARKETS[:n_markets]]
     log(f"Props: {len(matched)} games, credits left {usage.get('remaining')}, pulling {markets} for {n_events}")
 
-    roster = {}
-    for g in todays:
-        for pid, p in players.items():
-            if p.get("t") in (g["h"], g["a"]):
-                roster[name_key(p.get("n"))] = pid
+    roster = roster_keys(todays, players)
     snap = {"date": today.isoformat(), "fetched": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "markets": [s for m, s in MARKETS[:n_markets]], "games": {}}
     for ev, g in matched[:n_events]:
         try:
-            odds = call(f"/events/{ev['id']}/odds", {"regions": "us", "markets": ",".join(markets),
-                                                      "oddsFormat": "american"})
+            snap["games"][g["id"]] = api.props(ev, markets, roster)
         except Exception as e:
             log(f"  {g['a']}@{g['h']}: {e}")
-            continue
-        snap["games"][g["id"]] = parse_props(odds, roster)
     write_json(usage_path, usage, pretty=True)
     if snap["games"]:
         write_json(path, snap)
@@ -772,14 +834,102 @@ def build_props(store, games, players, today, now_et, offline, key):
     return snap, status
 
 
+def close_due(games, now_utc, captured):
+    """Games tipping within CLOSE_WINDOW_MIN minutes that don't have a closing pull yet."""
+    due = []
+    for g in games:
+        tip = tip_time(g.get("t"))
+        if g["state"] == "pre" and g["id"] not in captured and tip \
+                and timedelta(0) < tip - now_utc <= timedelta(minutes=CLOSE_WINDOW_MIN):
+            due.append(g)
+    return due
+
+
+def build_close(store, games, players, today, now_utc, offline, key):
+    """The pre-tip pull: points lines for each game shortly before it tips, so the site can show line movement
+    and picks can be graded on closing line value. Runs on every workflow run but only pulls games that are
+    due and not captured yet, so extra runs cost nothing. Saved as store/odds/props/YYYY-MM-DD-close.json:
+    {date, markets, games: {game id: [props]}, fetched: {game id: time}}."""
+    path = store / "odds" / "props" / f"{today.isoformat()}-close.json"
+    snap = read_json(path) or {"date": today.isoformat(), "markets": [s for _, s in CLOSE_MARKETS],
+                               "games": {}, "fetched": {}}
+    todays = [g for g in games if g["d"] == today.isoformat()]
+    due = close_due(todays, now_utc, snap["games"])
+    if offline or not key or not due:
+        if due:
+            log(f"Closing lines: {len(due)} game(s) due, skipped ({'offline' if offline else 'no ODDS_API_KEY'})")
+        return snap
+    usage_path = store / "odds" / "usage.json"
+    usage = read_json(usage_path, {})
+    api = OddsAPI(key, usage)
+    try:
+        matched = api.match(due, today)
+    except Exception as e:
+        log(f"Closing lines: events failed ({e})")
+        return snap
+    n = plan_close(usage.get("remaining"), len(matched), today)
+    log(f"Closing lines: {len(due)} game(s) due, credits left {usage.get('remaining')}, pulling {n}")
+    roster = roster_keys(todays, players)
+    for ev, g in matched[:n]:
+        try:
+            snap["games"][g["id"]] = api.props(ev, [m for m, _ in CLOSE_MARKETS], roster)
+            snap["fetched"][g["id"]] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        except Exception as e:
+            log(f"  {g['a']}@{g['h']}: {e}")
+    write_json(usage_path, usage, pretty=True)
+    if snap["games"]:
+        write_json(path, snap)
+    return snap
+
+
+def merge_props(open_snap, close_snap, today):
+    """props.json for the site. Each prop's l/o/u/bk/books are the latest numbers (closing pull if there was
+    one, else the morning pull). `open` and `close` are [line, over, under, book] for each pull that had it."""
+    open_snap, close_snap = open_snap or {}, close_snap or {}
+    out = {"date": today.isoformat(), "fetched": open_snap.get("fetched"),
+           "markets": sorted(set(open_snap.get("markets") or [])
+                             | set(close_snap.get("markets") or [] if close_snap.get("games") else [])),
+           "closed": close_snap.get("fetched") or {}, "games": {}}
+    keyof = lambda p: (p.get("id") or p["n"], p["s"])  # noqa: E731
+    snap4 = lambda p: [p["l"], p.get("o"), p.get("u"), p.get("bk")]  # noqa: E731
+    for gid in sorted(set(open_snap.get("games") or {}) | set(close_snap.get("games") or {})):
+        closes = {keyof(p): p for p in (close_snap.get("games") or {}).get(gid, [])}
+        merged = []
+        for p in (open_snap.get("games") or {}).get(gid, []):
+            q = dict(p, open=snap4(p))
+            c = closes.pop(keyof(p), None)
+            if c:
+                q.update(l=c["l"], o=c.get("o"), u=c.get("u"), bk=c.get("bk"), books=c.get("books", {}), close=snap4(c))
+            merged.append(q)
+        merged += [dict(c, close=snap4(c)) for c in closes.values()]
+        out["games"][gid] = merged
+    return out
+
+
+def prop_files(store, close=False):
+    files = sorted((store / "odds" / "props").glob("*.json"))
+    return [f for f in files if f.stem.endswith("-close") == close]
+
+
 def build_proplines(store):
-    """Every stored day's prop lines: player id -> game id -> stat -> line (for past games in logs)."""
+    """Every stored day's morning prop lines: player id -> game id -> stat -> line (for past games in logs)."""
     out = defaultdict(dict)
-    for f in sorted((store / "odds" / "props").glob("*.json")):
+    for f in prop_files(store):
         for gid, props in (read_json(f, {}).get("games") or {}).items():
             for p in props:
                 if p.get("id"):
                     out[p["id"]].setdefault(gid, {})[p["s"]] = p["l"]
+    return out
+
+
+def build_closelines(store):
+    """Every stored closing line: player id -> game id -> stat -> [line, over, under, book] (for CLV)."""
+    out = defaultdict(dict)
+    for f in prop_files(store, close=True):
+        for gid, props in (read_json(f, {}).get("games") or {}).items():
+            for p in props:
+                if p.get("id"):
+                    out[p["id"]].setdefault(gid, {})[p["s"]] = [p["l"], p.get("o"), p.get("u"), p.get("bk")]
     return out
 
 
@@ -809,15 +959,19 @@ def main():
         write_json(store / "injuries.json", injuries, pretty=True)
 
     key = None if args.no_odds else os.environ.get("ODDS_API_KEY", "").strip() or None
-    props, odds_status = build_props(store, games, players, today, now_et, args.offline, key)
+    open_snap, odds_status = build_props(store, games, players, today, now_et, args.offline, key)
+    close_snap = build_close(store, games, players, today, datetime.now(timezone.utc), args.offline, key)
+    props = merge_props(open_snap, close_snap, today)
+    odds_status = {**odds_status, **{k: v for k, v in read_json(store / "odds" / "usage.json", {}).items()
+                                     if k in ("remaining", "used", "checked")}}
 
     teams = {abbr: {"city": t[0], "name": t[1], "conf": t[2], "div": t[3], "color": t[4],
                     "logo": f"https://a.espncdn.com/i/teamlogos/nba/500/{t[5]}.png"}
              for abbr, t in TEAMS.items()}
     meta = {"built": datetime.now(timezone.utc).isoformat(timespec="seconds"), "today": today.isoformat(),
             "season": season, "label": f"{season - 1}-{str(season)[2:]}", "cols": COLS,
-            "odds": {**odds_status, "markets": (props or {}).get("markets", []),
-                     "fetched": (props or {}).get("fetched")}}
+            "odds": {**odds_status, "markets": props.get("markets", []), "fetched": props.get("fetched"),
+                     "closed": len(props.get("closed") or {})}}
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     write_json(OUT_DIR / "meta.json", meta)
     write_json(OUT_DIR / "teams.json", teams)
@@ -827,8 +981,9 @@ def main():
     write_json(OUT_DIR / "games.json", games)
     write_json(OUT_DIR / "players.json", players)
     write_json(OUT_DIR / "logs.json", logs)
-    write_json(OUT_DIR / "props.json", props or {"date": today.isoformat(), "games": {}})
+    write_json(OUT_DIR / "props.json", props)
     write_json(OUT_DIR / "proplines.json", build_proplines(store))
+    write_json(OUT_DIR / "closelines.json", build_closelines(store))
     write_json(OUT_DIR / "injuries.json", injuries)
     log(f"Wrote {OUT_DIR}")
     if not games:

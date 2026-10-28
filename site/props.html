@@ -7,6 +7,12 @@
 <meta name="description" content="Today's NBA player props ranked by how often each line has hit lately.">
 <meta name="theme-color" content="#0b0d10">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hoop Lab">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -19,7 +25,7 @@
     <div class="seg" id="side"></div><span class="grow"></span>
     <label class="row" style="gap:6px;font-size:13px;color:var(--muted)">Sort <select id="sort" style="width:auto">
       <option value="adj">L10, sample-adjusted</option><option value="l10">L10 hit rate</option><option value="l5">L5 hit rate</option><option value="l20">L20 hit rate</option>
-      <option value="season">Season hit rate</option><option value="h2h">vs opponent</option><option value="time">Tip-off</option><option value="price">Best price vs fair</option></select></label>
+      <option value="season">Season hit rate</option><option value="h2h">vs opponent</option><option value="time">Tip-off</option><option value="price">Best price vs fair</option><option value="move">Biggest movers</option></select></label>
   </div>
   <p class="confnote">Big number = raw hit rate. <b>≈</b> = adjusted for sample size, so short streaks count less; <span class="amber">amber</span> = fewer than 10 games.</p>
   <div id="list"><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></div>
@@ -27,6 +33,8 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
+<script src="assets/lines.js"></script>
+<script src="assets/picks.js"></script>
 <script>
 shell('props');
 lab(['players', 'logs', 'props', 'injuries']).then(L => {
@@ -56,6 +64,7 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
     document.getElementById('side').innerHTML = [['best', 'Best side'], ['o', 'Overs'], ['u', 'Unders']].map(([k, l]) => `<button data-side="${k}" class="${k === st.side ? 'on' : ''}">${l}</button>`).join('');
   }
 
+  let saved = savedKeys();
   function card(x, side) {
     const r = side === 'o' ? x.over : x.under, pr = x.pr;
     const price = side === 'o' ? pr.o : pr.u;
@@ -65,14 +74,15 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
     return `<a class="card flush" href="${href}" style="display:block">
       <div class="proprow"><div class="head" style="cursor:pointer">${headshot(pr.id, 42)}
         <div class="grow"><div class="name">${esc(x.p.n)} <small>(${esc(x.p.t)})</small>${injuryTag(inj.get(pr.id))}</div>
-          <div class="sub">${side === 'o' ? 'Over' : 'Under'} ${pr.l} ${esc(STATS[pr.s].label)} · ${x.p.t === x.g.h ? 'vs' : '@'} ${esc(x.opp)} ${x.g.state === 'pre' ? fmtTime(x.g.t) : ''}</div></div>
-        ${evTag(pr, side)}${price != null ? `<span class="price">${odds(price)} <small>${bookName(pr.bk)}</small></span>` : ''}</div>
+          <div class="sub">${side === 'o' ? 'Over' : 'Under'} ${pr.l} ${esc(STATS[pr.s].label)} · ${x.p.t === x.g.h ? 'vs' : '@'} ${esc(x.opp)} ${x.g.state === 'pre' ? fmtTime(x.g.t) : ''}${moveTag(pr)}</div></div>
+        ${evTag(pr, side)}${price != null ? `<span class="price">${odds(price)} <small>${bookName(pr.bk)}</small></span>` : ''}${x.g.state === 'pre' ? pickButton({ gid: x.g.id, pid: pr.id, name: x.p.n, stat: pr.s, side, line: pr.l, price, book: pr.bk }, saved.has(pickKey({ gid: x.g.id, pid: pr.id, stat: pr.s, side, line: pr.l }))) : ''}</div>
       <div style="padding:0 14px">${teamContext(L, x.g, x.p.t)}${strip(results)}</div>
       <div class="rates r5">${oppRankCell(L, x.opp, x.p.p, pr.s)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(r[k], { adj: true })}</div>`).join('')}</div></div></a>`;
   }
 
   function render() {
     controls();
+    saved = savedKeys();
     const list = document.getElementById('list');
     if (!items.length) {
       const o = L.meta.odds || {};
@@ -90,12 +100,14 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
     // Ruled-out players sink to the bottom; then by the chosen window, ties broken by L20.
     const edge = y => { const f = fairPrice(y.x.pr); return f ? (y.side === 'o' ? f.bestO.ev : f.bestU.ev) : -1; };
     rows.sort((a, b) => (out(a) - out(b)) || (key === 'time' ? (a.x.g.t < b.x.g.t ? -1 : 1) : key === 'price' ? edge(b) - edge(a)
+      : key === 'move' ? ((propMove(b.x.pr) || {}).size || 0) - ((propMove(a.x.pr) || {}).size || 0)
       : key === 'adj' ? ((b.r.l10.adj ?? -1) - (a.r.l10.adj ?? -1)) || ((b.r.l20.adj ?? -1) - (a.r.l20.adj ?? -1))
       : ((b.r[key].rate ?? -1) - (a.r[key].rate ?? -1)) || ((b.r.l20.rate ?? -1) - (a.r.l20.rate ?? -1))));
     list.innerHTML = rows.length ? rows.slice(0, 150).map(y => card(y.x, y.side)).join('')
       : `<div class="card empty">No props match.</div>`;
   }
 
+  bindPickButtons(document.querySelector('main'));
   document.querySelector('main').addEventListener('click', e => {
     const t = e.target.closest('[data-mkt],[data-side]');
     if (!t) return;

@@ -6,6 +6,12 @@
 <title>Hoop Lab · Game</title>
 <meta name="theme-color" content="#0b0d10">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hoop Lab">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -14,7 +20,9 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
+<script src="assets/lines.js"></script>
 <script src="assets/insights.js"></script>
+<script src="assets/picks.js"></script>
 <script src="assets/pbp.js"></script>
 <script>
 shell('games');
@@ -79,7 +87,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       <button data-sub="lines" class="${sub === 'lines' ? 'on' : ''}">Game lines</button>
       <button data-sub="props" class="${sub === 'props' ? 'on' : ''}">Player props</button></div>`;
     if (sub === 'lines') {
-      return head + `<div class="card flush" style="padding-top:8px">${gameLines(L, g)}</div>`;
+      return head + `<div class="card flush" style="padding-top:8px">${gameLines(L, g)}${gameMove(g)}</div>`;
     }
     return head + propsPane();
   }
@@ -128,6 +136,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
 
   function propRow(x) {
     const { pid, p, prop, line, rates, boostedLine, boost } = x;
+    const saved = savedKeys();
     const l10 = rates.l10;
     const results = l10.rows.map(r => outcome(STATS[stat].f(r), line, 'o'));
     const priceTag = prop ? `<span class="price">${odds(prop.o)} <small>${bookName(prop.bk)}</small></span>` : `<span class="tag" title="${esc(boostedLine ? `Typical line from his games without ${boostedLine.without.join(' and ')}` : 'No sportsbook line: half point above the last-10 average floor')}">typical${boostedLine ? ' w/o' : ''}</span>`;
@@ -147,8 +156,8 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     return `<div class="proprow ${isOpen ? 'open' : ''}" data-pid="${pid}">
       <div class="head">${headshot(pid, 40)}
         <div class="grow"><div class="name">${esc(p.n)}${injuryTag(inj.get(pid))}</div>
-          <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}</div></div>
-        ${evTag(prop)}${priceTag}<span class="chev">⌄</span></div>
+          <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}${moveTag(prop)}</div></div>
+        ${evTag(prop)}${priceTag}${g.state === 'pre' ? pickButton({ gid: g.id, pid, name: p.n, stat, side: 'o', line, price: prop ? prop.o : null, book: prop ? prop.bk : null }, saved.has(pickKey({ gid: g.id, pid, stat, side: 'o', line }))) : ''}<span class="chev">⌄</span></div>
       <div style="padding:0 14px">${teamContext(L, g, p.t)}${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
       ${boost ? `<span class="boostchip${boost.b.delta.stat < 0 ? ' down' : ''}" title="${esc(`${p.n} averages ${fmt1(boost.b.without.stat)} ${STATS[stat].short} in ${boost.b.without.n} games without ${boost.m.n} vs ${fmt1(boost.b.with.stat)} in ${boost.b.with.n} with him (this season and last)`)}">${signed(Math.round(boost.b.delta.stat * 10) / 10)} ${esc(STATS[stat].short)} w/o ${esc(lastName(boost.m.n))}</span>` : ''}
       <div class="rates r5">${oppRankCell(L, opp, p.p, stat)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(rates[k], { adj: true })}</div>`).join('')}</div>
@@ -246,6 +255,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     });
   }
 
+  bindPickButtons(main);
   main.addEventListener('click', e => {
     const t = e.target.closest('[data-tab],[data-sub],[data-stat],[data-season],[data-isort],[data-ikind],.proprow > .head');
     if (!t) return;
