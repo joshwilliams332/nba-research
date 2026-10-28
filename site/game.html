@@ -13,6 +13,7 @@
 <main><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
+<script src="assets/insights.js"></script>
 <script>
 shell('games');
 const PROP_STATS = ['pts', 'reb', 'ast', 'fg3m', 'pra', 'pr', 'pa', 'ra', 'stl', 'blk'];
@@ -45,11 +46,26 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     <div class="tabs" id="tabs"></div>
     <div id="pane"></div>`;
 
-  const tabs = [['odds', 'Odds'], ['matchup', 'Matchup']];
+  const tabs = [['odds', 'Odds'], ['insights', 'Insights'], ['matchup', 'Matchup']];
   if (final) tabs.push(['box', 'Box score']);
   let tab = params().get('tab') || (final ? 'box' : 'odds');
   let sub = 'lines', stat = 'pts', season = L.meta.season, term = '';
   const open = new Set();
+  let isort = 'date', ikind = 'all', insights;
+
+  // ---------- insights tab
+  function insightsPane() {
+    insights = insights || gameInsights(L, g);
+    const list = insights.filter(x => ikind === 'all' || x.type === ikind).sort(INSIGHT_SORTS[isort]);
+    const typical = insights.some(x => x.typical);
+    const controls = `<div class="row" style="margin-bottom:12px;flex-wrap:wrap">
+      <div class="seg">${[['all', 'All'], ['player', 'Players'], ['team', 'Teams']].map(([k, l]) => `<button data-ikind="${k}" class="${k === ikind ? 'on' : ''}">${l}</button>`).join('')}</div>
+      <span class="grow"></span>
+      <div class="seg">${[['date', 'Date'], ['rate', 'Hit rate']].map(([k, l]) => `<button data-isort="${k}" class="${k === isort ? 'on' : ''}">${l}</button>`).join('')}</div></div>`;
+    const note = typical ? `<p class="note" style="margin:-4px 0 10px">No sportsbook props pulled yet, so player trends use typical lines (the half point above the last-10 average floor).</p>` : '';
+    return controls + note + (list.length ? `<div class="insights">${list.map(x => insightCard(L, x)).join('')}</div>`
+      : `<div class="card empty">No strong trends for this game: nothing hits 75% or more over 5+ games.</div>`);
+  }
 
   function renderTabs() {
     document.getElementById('tabs').innerHTML = tabs.map(([k, l]) => `<button data-tab="${k}" class="${k === tab ? 'on' : ''}">${l}</button>`).join('');
@@ -203,7 +219,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   function render() {
     renderTabs();
     const pane = document.getElementById('pane');
-    pane.innerHTML = tab === 'odds' ? oddsPane() : tab === 'matchup' ? matchupPane() : boxPane();
+    pane.innerHTML = tab === 'odds' ? oddsPane() : tab === 'insights' ? insightsPane() : tab === 'matchup' ? matchupPane() : boxPane();
     const ps = document.getElementById('psearch');
     if (ps) ps.addEventListener('input', () => {
       term = ps.value.trim().toLowerCase();
@@ -216,12 +232,14 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   }
 
   main.addEventListener('click', e => {
-    const t = e.target.closest('[data-tab],[data-sub],[data-stat],[data-season],.proprow > .head');
+    const t = e.target.closest('[data-tab],[data-sub],[data-stat],[data-season],[data-isort],[data-ikind],.proprow > .head');
     if (!t) return;
     if (t.dataset.tab) tab = t.dataset.tab;
     else if (t.dataset.sub) sub = t.dataset.sub;
     else if (t.dataset.stat) stat = t.dataset.stat;
     else if (t.dataset.season) season = +t.dataset.season;
+    else if (t.dataset.isort) isort = t.dataset.isort;
+    else if (t.dataset.ikind) ikind = t.dataset.ikind;
     else {
       const pid = t.parentElement.dataset.pid;
       open.has(pid) ? open.delete(pid) : open.add(pid);

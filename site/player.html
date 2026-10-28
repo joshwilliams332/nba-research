@@ -39,6 +39,12 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     side: P.get('side') === 'u' ? 'u' : 'o',
     win: 'l10', support: 'min', f: {}, line: null, dvpPos: posBucket(p.p) || 'ALL',
   };
+  // Optional filters and window from the URL (links from Insights): loc, rest, role, without=id,id, win.
+  if (['home', 'away'].includes(P.get('loc'))) st.f.loc = P.get('loc');
+  if (['0', '1', '2'].includes(P.get('rest'))) st.f.rest = P.get('rest');
+  if (['starter', 'bench'].includes(P.get('role'))) st.f.role = P.get('role');
+  if (P.get('without')) st.f.without = P.get('without').split(',').filter(id => L.players[id]);
+  if (WINDOWS.some(w => w.key === P.get('win'))) st.win = P.get('win');
   const propFor = s => props.find(x => x.s === s);
   // Key teammates ruled out for the next game: their absence moves the typical line and gets its own card.
   const outs = next ? outMates(L, pid) : [];
