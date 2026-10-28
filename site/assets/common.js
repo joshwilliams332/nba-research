@@ -84,6 +84,7 @@ const DATA = {};
 function load(...names) {
   return Promise.all(names.map(n => DATA[n] || (DATA[n] = fetch(`data/${n}.json`).then(r => {
     if (!r.ok) throw new Error(`data/${n}.json: ${r.status}`);
+    if (r.headers.get('x-hooplab-cached')) APP.cached = true;  // the service worker answered from its cache
     return r.json();
   }))));
 }
@@ -666,23 +667,89 @@ const NAV = [
   ['props', 'props.html', 'Props', '<path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/>'],
   ['trends', 'trends.html', 'Trends', '<path d="M12 3c1 3.2 5 5.4 5 10.5a5 5 0 0 1-10 0c0-2.3 1.1-3.9 2.2-5 .3 1.8 1.2 2.8 2.1 2.8-.9-3.1-.1-6 .7-8.3Z"/>'],
   ['players', 'players.html', 'Players', '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>'],
+  ['picks', 'picks.html', 'My picks', '<path d="M6 3h12v18l-6-4.5L6 21V3Z"/>'],
   ['standings', 'standings.html', 'Standings', '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/>'],
 ];
+// The phone bottom nav holds five; Standings moves to an icon in the phone header (desktop shows everything).
+const HEADER_ONLY = new Set(['standings']);
 
 function shell(active) {
-  const links = NAV.map(([k, href, label, icon]) =>
-    `<a href="${href}" class="${k === active ? 'on' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg><span>${label}</span></a>`).join('');
+  const link = ([k, href, label, icon]) =>
+    `<a href="${href}" class="${k === active ? 'on' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg><span>${label}</span></a>`;
   const top = document.getElementById('top');
   if (top) {
-    top.innerHTML = `<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/><path d="M3 16h26M16 3v26M7 7c5 4 5 14 0 18M25 7c-5 4-5 14 0 18" stroke="#1a0f05" stroke-width="1.6" fill="none"/></svg>Hoop Lab</a><nav class="topnav">${links}</nav>`;
+    const extras = NAV.filter(([k]) => HEADER_ONLY.has(k)).map(([k, href, label, icon]) =>
+      `<a href="${href}" class="hdricon${k === active ? ' on' : ''}" aria-label="${label}" title="${label}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg></a>`).join('');
+    top.innerHTML = `<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/><path d="M3 16h26M16 3v26M7 7c5 4 5 14 0 18M25 7c-5 4-5 14 0 18" stroke="#1a0f05" stroke-width="1.6" fill="none"/></svg>Hoop Lab</a><nav class="topnav">${NAV.map(link).join('')}</nav>${extras}`;
   }
   const bottom = document.createElement('nav');
   bottom.className = 'bottomnav';
-  bottom.innerHTML = links;
+  bottom.innerHTML = NAV.filter(([k]) => !HEADER_ONLY.has(k)).map(link).join('');
   document.body.appendChild(bottom);
+  appShell();
+}
+
+// ---------------------------------------------------------------- installable app
+
+const APP = { cached: false, built: null, prompt: null };
+
+/* Register the service worker (sw.js) and offer to install: Chrome/Android hands us an install prompt;
+   iOS Safari has none, so it gets a one-time "Share, then Add to Home Screen" hint. */
+function appShell() {
+  if (typeof navigator === 'undefined' || !('serviceWorker' in navigator) || location.protocol === 'file:') return;
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+  const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  if (standalone || store('installHint')) return;
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    APP.prompt = e;
+    installChip('Install Hoop Lab for quick access from your home screen.', 'Install');
+  });
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (ios) installChip('Install Hoop Lab: tap <b>Share</b>, then <b>Add to Home Screen</b>.');
+  window.addEventListener('online', offlineBanner);
+  window.addEventListener('offline', offlineBanner);
+}
+
+function installChip(html, action) {
+  if (document.getElementById('install')) return;
+  const el = document.createElement('div');
+  el.id = 'install';
+  el.className = 'installchip';
+  el.innerHTML = `<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/></svg><span>${html}</span>
+    ${action ? `<button class="btn" data-install="1">${action}</button>` : ''}<button class="x" aria-label="Dismiss">×</button>`;
+  el.addEventListener('click', async e => {
+    if (e.target.closest('[data-install]') && APP.prompt) {
+      APP.prompt.prompt();
+      await APP.prompt.userChoice.catch(() => null);
+      APP.prompt = null;
+    } else if (!e.target.closest('.x')) return;
+    store('installHint', 1);
+    el.remove();
+  });
+  document.body.appendChild(el);
+}
+
+/* "Offline · data from Oct 28, 3:12 PM" under the header when the network is down or data came from the cache. */
+function offlineBanner() {
+  if (typeof document === 'undefined') return;
+  let el = document.getElementById('offline');
+  const off = APP.cached || (typeof navigator !== 'undefined' && navigator.onLine === false);
+  if (!off) { if (el) el.remove(); return; }
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'offline';
+    el.className = 'offline';
+    const top = document.getElementById('top');
+    top ? top.after(el) : document.body.prepend(el);
+  }
+  const when = APP.built ? new Date(APP.built).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
+  el.textContent = `Offline${when ? ` · data from ${when}` : ''}`;
 }
 
 function footer(L) {
+  if (L && L.meta) APP.built = L.meta.built;
+  offlineBanner();
   const el = document.getElementById('foot');
   if (!el) return;
   const built = L && L.meta ? new Date(L.meta.built).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';

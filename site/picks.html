@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · My picks</title>
+<meta name="description" content="Props you saved, graded automatically from box scores: record, units, ROI and closing line value.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hoop Lab">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main>
+  <section class="pagehead"><h1>My picks</h1><p>Saved on this device and graded from the box scores. For tracking only.</p></section>
+  <div id="picks"></div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script src="assets/picks.js"></script>
+<script>
+shell('picks');
+document.getElementById('picks').innerHTML = skeleton(3, 3);
+
+lab(['players', 'logs', 'props', 'proplines']).then(L => {
+  footer(L);
+  const root = document.getElementById('picks');
+  const RANGES = [['all', 'All'], ['7', 'Last 7 days'], ['30', 'Last 30 days'], ['season', 'This season'], ['custom', 'Dates']];
+  const st = { range: store('picksRange') || 'all', from: '', to: '', manage: false, msg: '' };
+
+  // A pick's date is its game's (ET) date; falls back to the day it was saved.
+  const pickDate = (p, g) => (g && g.d) || String(p.savedAt || '').slice(0, 10);
+
+  function inRange(p, g) {
+    const d = pickDate(p, g), today = L.meta.today;
+    if (st.range === '7') return dayDiff(d, today) < 7;
+    if (st.range === '30') return dayDiff(d, today) < 30;
+    if (st.range === 'season') return g ? g.s === L.meta.season : true;
+    if (st.range === 'custom') return (!st.from || d >= st.from) && (!st.to || d <= st.to);
+    return true;
+  }
+
+  function who(p) {
+    if (p.pid) {
+      const pl = L.players[p.pid] || {};
+      return { name: pl.n || p.name || 'Player', team: pl.t || '', img: headshot(p.pid, 40), href: `player.html?id=${p.pid}&stat=${p.stat}&line=${p.line}${p.side === 'u' ? '&side=u' : ''}` };
+    }
+    return { name: (L.teams[p.team] || {}).name || p.team, team: p.team, img: logo(L, p.team, 40), href: `game.html?id=${p.gid}` };
+  }
+
+  function statusChip(grade) {
+    const s = grade.status;
+    if (s === 'open') return `<span class="pstatus open">${grade.g ? esc(fmtTime(grade.g.t)) : 'Open'}</span>`;
+    if (s === 'live') return `<span class="pstatus live">${esc(grade.g.detail || 'Live')}</span>`;
+    const label = { win: 'Won', loss: 'Lost', push: 'Push', void: 'Void' }[s];
+    return `<span class="pstatus ${s}"${grade.why ? ` title="${esc(grade.why)}"` : ''}>${label}</span>`;
+  }
+
+  const units = n => `${n > 0 ? '+' : ''}${(Math.round(n * 100) / 100).toFixed(2)}u`;
+  const clvText = c => c == null ? '' : `CLV ${c > 0 ? '+' : ''}${fmt1(c)}`;
+
+  function pickCard({ pick, grade }) {
+    const w = who(pick), g = grade.g;
+    const game = g ? `${g.a} @ ${g.h} · ${fmtDay(g.d, { month: 'short', day: 'numeric' })}` : 'Game not found';
+    const price = pick.price != null ? `${odds(pick.price)}${pick.book ? ` ${bookName(pick.book)}` : ''}` : 'no price (−110 assumed)';
+    const decided = ['win', 'loss', 'push', 'void'].includes(grade.status);
+    const result = decided
+      ? `<span class="pres">${grade.actual != null ? `Actual <b>${fmt1(grade.actual)}</b> · ` : ''}<b class="${grade.profit > 0 ? 'up' : grade.profit < 0 ? 'down' : ''}">${units(grade.profit)}</b>${grade.why ? ` · ${esc(grade.why)}` : ''}</span>`
+      : `<label class="punits">Units <select data-units="${esc(pick.id)}">${[0.5, 1, 2, 3, 5].map(u => `<option value="${u}"${(pick.units || 1) === u ? ' selected' : ''}>${u}</option>`).join('')}</select></label>`;
+    const clv = grade.clv != null ? `<span class="pclv ${grade.clv > 0 ? 'up' : grade.clv < 0 ? 'down' : ''}" title="Closing line ${grade.close}: ${grade.clv > 0 ? 'the line moved your way after you saved it' : grade.clv < 0 ? 'the line moved against you' : 'no move'}">${clvText(grade.clv)}</span>` : '';
+    return `<div class="pickcard ${grade.status}">
+      <a class="row" href="${w.href}">${w.img}
+        <div class="grow"><div class="name">${esc(w.name)} ${w.team ? `<small>(${esc(w.team)})</small>` : ''}</div>
+          <div class="sub"><b>${esc(pickText(pick))}</b> · ${esc(price)}</div>
+          <div class="sub">${esc(game)}</div></div>
+        ${statusChip(grade)}</a>
+      <div class="pfoot">${result}${clv}<span class="grow"></span>
+        <button class="iconbtn" data-share="${esc(pick.id)}" aria-label="Share this pick" title="Share">${ICON_SHARE}</button>
+        <button class="iconbtn" data-remove="${esc(pick.id)}" aria-label="Remove this pick" title="Remove">×</button></div>
+    </div>`;
+  }
+
+  const ICON_SHARE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>';
+
+  function breakdown(rows, keyFn, labelFn) {
+    const groups = new Map();
+    for (const r of rows) {
+      const k = keyFn(r.pick);
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(r);
+    }
+    return [...groups.entries()].map(([k, list]) => ({ label: labelFn(k), s: summarize(list) }))
+      .filter(x => x.s.w + x.s.l + x.s.p)
+      .sort((a, b) => (b.s.w + b.s.l) - (a.s.w + a.s.l));
+  }
+
+  function breakdownTable(title, groups) {
+    if (!groups.length) return '';
+    return `<div class="card"><h3>${title}</h3><div class="tablewrap"><table class="data"><tr><th class="l"></th><th>Record</th><th>Units</th><th>ROI</th></tr>
+      ${groups.map(x => `<tr><td class="l">${esc(x.label)}</td><td>${x.s.w}-${x.s.l}${x.s.p ? `-${x.s.p}` : ''}</td>
+        <td class="${x.s.profit > 0 ? 'hit' : x.s.profit < 0 ? 'miss' : ''}">${units(x.s.profit)}</td><td>${x.s.roi == null ? '-' : pct(x.s.roi)}</td></tr>`).join('')}
+      </table></div></div>`;
+  }
+
+  function manageCard() {
+    if (!st.manage) return `<p class="note" style="text-align:center"><button class="btn" data-manage="1">Move picks to another device</button></p>`;
+    return `<div class="card" id="manage"><h3>Move picks between devices</h3>
+      <p class="note" style="margin-top:0">Picks live in this browser only. Export them here and import on your other phone or computer.</p>
+      <div class="row" style="flex-wrap:wrap;gap:8px;margin:10px 0">
+        <button class="btn" data-export="file">Download file</button><button class="btn" data-export="code">Copy code</button>
+        <label class="btn" style="cursor:pointer">Import file<input type="file" accept="application/json,.json,.txt" data-importfile="1" hidden></label></div>
+      <textarea id="importcode" rows="3" placeholder="Paste an export code here…" class="pastebox"></textarea>
+      <div class="row" style="gap:8px;margin-top:8px"><button class="btn" data-import="1">Import code</button><span class="grow"></span>
+        <button class="btn danger" data-clearall="1">Delete all picks</button></div>
+      ${st.msg ? `<p class="note">${esc(st.msg)}</p>` : ''}</div>`;
+  }
+
+  function render() {
+    const all = loadPicks().map(pick => ({ pick, grade: gradePick(L, pick) }));
+    if (!all.length) {
+      root.innerHTML = `<div class="card empty"><b>No saved picks yet.</b><br><small>Tap the bookmark on any player prop (on a game's Player props tab, the Props page or a player page) to track it here.
+        It grades itself after the game.</small></div>${manageCard()}`;
+      return;
+    }
+    const rows = all.filter(r => inRange(r.pick, r.grade.g));
+    const open = rows.filter(r => r.grade.status === 'open' || r.grade.status === 'live')
+      .sort((a, b) => ((a.grade.g || {}).t || '') < ((b.grade.g || {}).t || '') ? -1 : 1);
+    const done = rows.filter(r => !open.includes(r))
+      .sort((a, b) => pickDate(b.pick, b.grade.g) < pickDate(a.pick, a.grade.g) ? -1 : 1);
+    const s = summarize(done);
+    const ranges = `<div class="tabs">${RANGES.map(([k, l]) => `<button data-range="${k}" class="${k === st.range ? 'on' : ''}">${l}</button>`).join('')}</div>
+      ${st.range === 'custom' ? `<div class="row" style="gap:8px;margin:-4px 0 12px"><label class="field grow"><span>From</span><input type="date" data-from="1" value="${st.from}"></label>
+        <label class="field grow"><span>To</span><input type="date" data-to="1" value="${st.to}"></label></div>` : ''}`;
+    const record = `<div class="card precord">
+      <div class="pstats">
+        <div><small>RECORD</small><b>${s.w}-${s.l}${s.p ? `-${s.p}` : ''}</b></div>
+        <div><small>UNITS</small><b class="${s.profit > 0 ? 'up' : s.profit < 0 ? 'down' : ''}">${units(s.profit)}</b></div>
+        <div><small>ROI</small><b>${s.roi == null ? '-' : pct(s.roi)}</b></div>
+        <div><small>AVG CLV</small><b>${s.clv == null ? '-' : `${s.clv > 0 ? '+' : ''}${fmt1(s.clv)}`}</b></div>
+      </div>
+      <div class="row" style="margin-top:10px"><span class="note" style="margin:0">${done.length} graded${s.v ? ` (${s.v} void)` : ''} · ${open.length} open</span><span class="grow"></span>
+        <button class="btn" data-sharerecord="1">${ICON_SHARE} Share record</button></div>
+      ${s.clv == null ? '<p class="note">Closing line value appears once a pre-tip line is on record for your picks.</p>' : ''}
+    </div>`;
+    root.innerHTML = ranges + record
+      + (open.length ? `<h2 class="psec">Open <small>${open.length}</small></h2>${open.map(pickCard).join('')}` : '')
+      + (done.length ? `<h2 class="psec">Graded <small>${done.length}</small></h2>${done.map(pickCard).join('')}` : '')
+      + (!rows.length ? `<div class="card empty">No picks in this date range.</div>` : '')
+      + `<div class="grid2">${breakdownTable('By market', breakdown(done, p => p.stat, pickMarketLabel))}
+        ${breakdownTable('By side', breakdown(done, p => p.side, k => ({ o: 'Overs', u: 'Unders', h: 'Home', a: 'Away' }[k] || k)))}</div>`
+      + manageCard();
+    root._rows = all;
+    root._summary = s;
+  }
+
+  function setMsg(m) { st.msg = m; st.manage = true; render(); }
+
+  function download(name, text) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+
+  function importText(text) {
+    try {
+      const { picks, skipped } = parseImport(text);
+      const list = loadPicks(), added = mergePicks(list, picks);
+      savePicks(list);
+      setMsg(`Imported ${added} pick${added === 1 ? '' : 's'}${picks.length - added ? `, ${picks.length - added} already here` : ''}${skipped ? `, ${skipped} unreadable` : ''}.`);
+    } catch (e) { setMsg(e.message); }
+  }
+
+  root.addEventListener('click', async e => {
+    const t = e.target.closest('[data-range],[data-remove],[data-share],[data-sharerecord],[data-manage],[data-export],[data-import],[data-clearall]');
+    if (!t) return;
+    const d = t.dataset;
+    if (d.range) { st.range = d.range; store('picksRange', d.range); render(); }
+    else if (d.remove) { savePicks(loadPicks().filter(p => p.id !== d.remove)); render(); }
+    else if (d.manage) { st.manage = true; render(); }
+    else if (d.export === 'file') download(`hooplab-picks-${L.meta.today}.json`, exportPicks());
+    else if (d.export === 'code') {
+      const code = exportCode();
+      try { await navigator.clipboard.writeText(code); setMsg('Code copied. Paste it into "Import code" on your other device.'); }
+      catch (err) { document.getElementById('importcode').value = code; setMsg('Copy the code from the box above.'); }
+    }
+    else if (d.import) importText(document.getElementById('importcode').value);
+    else if (d.clearall) { if (confirm('Delete all saved picks on this device?')) { savePicks([]); setMsg('All picks deleted.'); } }
+    else if (d.share) {
+      const r = root._rows.find(x => x.pick.id === d.share);
+      if (!r) return;
+      const w = who(r.pick), g = r.grade.g, s = r.grade.status;
+      const big = { win: 'WON', loss: 'LOST', push: 'PUSH', void: 'VOID' }[s];
+      sharePNG(shareCanvas({
+        kicker: g ? `${g.a} @ ${g.h} · ${fmtDay(g.d, { month: 'short', day: 'numeric' })}` : 'My pick',
+        title: w.name, subtitle: `${pickText(r.pick)}${r.pick.price != null ? ` (${odds(r.pick.price)})` : ''}`,
+        big, bigColor: s === 'win' ? '#2ad38b' : s === 'loss' ? '#ff5c6c' : '#8d95a3',
+        lines: r.grade.actual != null ? [`Actual: ${fmt1(r.grade.actual)}${r.grade.clv != null ? ` · ${clvText(r.grade.clv)}` : ''}`] : [],
+      }), `hooplab-pick-${r.pick.id}.png`);
+    }
+    else if (d.sharerecord) {
+      const s = root._summary, label = RANGES.find(x => x[0] === st.range)[1];
+      sharePNG(shareCanvas({
+        kicker: `My picks · ${label}`, title: `${s.w}-${s.l}${s.p ? `-${s.p}` : ''} record`,
+        subtitle: `${s.roi == null ? '' : `ROI ${pct(s.roi)}`}${s.clv != null ? ` · avg CLV ${s.clv > 0 ? '+' : ''}${fmt1(s.clv)}` : ''}`,
+        big: units(s.profit), bigColor: s.profit >= 0 ? '#2ad38b' : '#ff5c6c',
+      }), 'hooplab-record.png');
+    }
+  });
+  root.addEventListener('change', e => {
+    const t = e.target, d = t.dataset;
+    if (d.units) {
+      const list = loadPicks(), p = list.find(x => x.id === d.units);
+      if (p) { p.units = +t.value; savePicks(list); render(); }
+    } else if (d.from || d.to) {
+      st[d.from ? 'from' : 'to'] = t.value;
+      render();
+    } else if (d.importfile && t.files[0]) {
+      t.files[0].text().then(importText);
+    }
+  });
+  render();
+}).catch(fail);
+</script>
+</body>
+</html>
