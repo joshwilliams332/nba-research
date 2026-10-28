@@ -15,6 +15,7 @@
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
 <script src="assets/insights.js"></script>
+<script src="assets/pbp.js"></script>
 <script>
 shell('games');
 const PROP_STATS = ['pts', 'reb', 'ast', 'fg3m', 'pra', 'pr', 'pa', 'ra', 'stl', 'blk'];
@@ -224,7 +225,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     };
     const q = (side, label) => `<tr><td class="l">${label}</td>${(side || []).map(v => `<td>${v}</td>`).join('')}</tr>`;
     const nq = Math.max((g.aq || []).length, 4);
-    return `<div class="card"><div class="tablewrap"><table class="data"><tr><th class="l"></th>${Array.from({ length: nq }, (_, i) => `<th>${i < 4 ? `Q${i + 1}` : `OT${i > 4 ? i - 3 : ''}`}</th>`).join('')}</tr>
+    return `<div id="wpcard"></div><div class="card"><div class="tablewrap"><table class="data"><tr><th class="l"></th>${Array.from({ length: nq }, (_, i) => `<th>${i < 4 ? `Q${i + 1}` : `OT${i > 4 ? i - 3 : ''}`}</th>`).join('')}</tr>
       ${q(g.aq, g.a)}${q(g.hq, g.h)}</table></div><p class="note">Green / red stat = cleared / missed that day's prop line, when one was pulled.</p></div>
       ${table(g.a)}${table(g.h)}`;
   }
@@ -233,6 +234,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     renderTabs();
     const pane = document.getElementById('pane');
     pane.innerHTML = tab === 'odds' ? oddsPane() : tab === 'insights' ? insightsPane() : tab === 'matchup' ? matchupPane() : boxPane();
+    if (tab === 'box') winProbCard(L, g);
     const ps = document.getElementById('psearch');
     if (ps) ps.addEventListener('input', () => {
       term = ps.value.trim().toLowerCase();

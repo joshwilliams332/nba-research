@@ -24,6 +24,9 @@ Output (site/data/):
     props.json     today's prop lines by game
     proplines.json past prop lines: player id -> game id -> stat -> line
     injuries.json  the current injury report
+    periods.json   player id -> game id -> 1st-quarter / 1st-half pts, reb, ast, 3pm (from play-by-play)
+    shots.json     shot zones: league, each player and each team defense (allowed), per season
+    wp/<id>.json   win probability and season series for each final game
 """
 
 import argparse
@@ -383,8 +386,11 @@ def parse_box(summary, gid):
 
 
 def build_boxes(store, games, offline):
-    box_dir = store / "box"
-    todo = [g for g in games if g["state"] == "post" and not (box_dir / f"{g['id']}.json").exists()]
+    """Box scores and play-by-play for final games. Both come from the same ESPN summary; games that already
+    have a box score but no play-by-play (saved before play-by-play was kept) are fetched again for it."""
+    box_dir, pbp_dir = store / "box", store / "pbp"
+    finals = [g for g in games if g["state"] == "post"]
+    todo = [g for g in finals if not (box_dir / f"{g['id']}.json").exists() or not (pbp_dir / f"{g['id']}.json").exists()]
     if offline:
         todo = []
 
@@ -393,21 +399,203 @@ def build_boxes(store, games, offline):
             data = fetch_json(f"{ESPN}/summary?event={g['id']}")
         except Exception as e:
             log(f"  summary {g['id']}: {e}")
-            return g, None
+            return g, None, None
         if not (store / "samples" / "summary.json").exists():
             write_json(store / "samples" / "summary.json", data, pretty=True)
-        return g, parse_box(data, g["id"])
+        return g, parse_box(data, g["id"]), parse_pbp(data, g["id"])
 
-    log(f"Box scores: fetching {len(todo)}")
-    done = 0
+    log(f"Box scores / play-by-play: fetching {len(todo)}")
+    boxes_done = pbp_done = 0
     with ThreadPoolExecutor(8) as pool:
-        for g, box in pool.map(get, todo):
+        for g, box, pbp in pool.map(get, todo):
             # A summary right after the buzzer can come back without player stats; try again next run.
-            if box and box["rows"]:
+            # An existing box file is never rewritten, so its format and contents stay as first saved.
+            if box and box["rows"] and not (box_dir / f"{g['id']}.json").exists():
                 write_json(box_dir / f"{g['id']}.json", box)
-                done += 1
-    log(f"  saved {done}")
-    return {g["id"]: read_json(box_dir / f"{g['id']}.json") for g in games if g["state"] == "post"}
+                boxes_done += 1
+            if pbp and pbp["plays"] and (box_dir / f"{g['id']}.json").exists():
+                write_json(pbp_dir / f"{g['id']}.json", pbp)
+                pbp_done += 1
+    log(f"  saved {boxes_done} box scores, {pbp_done} play-by-play")
+    return {g["id"]: read_json(box_dir / f"{g['id']}.json") for g in finals}
+
+
+# ---------------------------------------------------------------- play-by-play
+
+REBOUND_TYPES = {"155", "156"}  # defensive, offensive
+# Shot zones, in the order the site stores them.
+ZONES = ["ra", "paint", "mid", "lc3", "rc3", "atb3"]
+# Period stats kept per player per game (1st quarter, then 1st half), in this order.
+PERIOD_COLS = ["q1pts", "q1reb", "q1ast", "q1fg3m", "h1pts", "h1reb", "h1ast", "h1fg3m"]
+
+
+def clock_sec(text):
+    """'11:26' -> 686, '45.2' -> 45.2 (ESPN shows tenths in the last minute)."""
+    s = str(text or "").strip()
+    if ":" in s:
+        m, _, sec = s.partition(":")
+        return int(m) * 60 + float(sec)
+    try:
+        return float(s)
+    except ValueError:
+        return 0.0
+
+
+def elapsed(period, clock):
+    """Seconds since tip-off at a play: four 12-minute quarters, then 5-minute overtimes."""
+    if period <= 4:
+        return round((period - 1) * 720 + 720 - clock)
+    return round(2880 + (period - 5) * 300 + 300 - clock)
+
+
+def coord(play):
+    """Shot location in feet, hoop at (25, 0): x across the court 0-50, y out from the hoop.
+    ESPN marks plays without a location with huge negative numbers."""
+    c = play.get("coordinate") or {}
+    x, y = c.get("x"), c.get("y")
+    if not isinstance(x, (int, float)) or not isinstance(y, (int, float)) or x < -100 or y < -100:
+        return None, None
+    return x, y
+
+
+def shot_zone(x, y, value):
+    """Zone for a field goal attempt worth `value` (2 or 3). Corner threes are below the break (y <= 9)."""
+    if x is None or value not in (2, 3):
+        return None
+    if value == 3:
+        if y <= 9:
+            return "lc3" if x < 25 else "rc3"
+        return "atb3"
+    if ((x - 25) ** 2 + y ** 2) ** 0.5 <= 4:
+        return "ra"
+    if abs(x - 25) <= 8 and y <= 14:
+        return "paint"
+    return "mid"
+
+
+def parse_pbp(summary, gid):
+    """ESPN summary -> compact play-by-play.
+
+    plays: shots as [period, clock, team, shooter, "s", made, value, x, y, assister] and rebounds as
+    [period, clock, team, rebounder, "r"]; wp: thinned [seconds elapsed, home win %]; ss: season series line."""
+    comps = dig(summary, "header", "competitions") or [{}]
+    team_of = {str(dig(c, "team", "id")): team_abbr(c.get("team")) for c in comps[0].get("competitors", [])}
+    rows, at = [], {}
+    for p in summary.get("plays") or []:
+        period = num(dig(p, "period", "number")) or 0
+        clock = clock_sec(dig(p, "clock", "displayValue"))
+        at[str(p.get("id"))] = elapsed(period, clock)
+        ids = [str(dig(a, "athlete", "id") or "") for a in p.get("participants") or []]
+        team = team_of.get(str(dig(p, "team", "id")))
+        if p.get("shootingPlay") and ids and ids[0]:
+            value = num(p.get("pointsAttempted"))
+            if value is None:
+                value = 1 if "free throw" in str(dig(p, "type", "text")).lower() else 2
+            made = 1 if p.get("scoringPlay") else 0
+            x, y = coord(p) if value > 1 else (None, None)
+            rows.append([period, clock, team, ids[0], "s", made, value, x, y, ids[1] if made and len(ids) > 1 else ""])
+        elif str(dig(p, "type", "id")) in REBOUND_TYPES and ids and ids[0]:
+            rows.append([period, clock, team, ids[0], "r"])
+    wp = [[at[str(w.get("playId"))], round(w["homeWinPercentage"], 3)] for w in summary.get("winprobability") or []
+          if str(w.get("playId")) in at and isinstance(w.get("homeWinPercentage"), (int, float))]
+    wp.sort(key=lambda p: p[0])  # ESPN's list isn't always in game order
+    if len(wp) > 90:  # ~90 points is plenty for a small chart
+        step = len(wp) / 90
+        wp = [wp[int(i * step)] for i in range(90)] + [wp[-1]]
+    series = next((s.get("summary") for s in summary.get("seasonseries") or [] if s.get("type") == "season"), None)
+    return {"id": gid, "plays": rows, "wp": wp, "ss": series}
+
+
+def period_stats(pbp, pids):
+    """{player id: [q1 pts, reb, ast, 3pm, 1st-half pts, reb, ast, 3pm]} for one game; pids start at zeros."""
+    out = {pid: [0] * len(PERIOD_COLS) for pid in pids}
+    for r in pbp["plays"]:
+        period = r[0]
+        if period > 2:
+            continue
+        slots = (0, 4) if period == 1 else (4,)
+        if r[4] == "r":
+            if r[3] in out:
+                for s in slots:
+                    out[r[3]][s + 1] += 1
+            continue
+        _, _, _, shooter, _, made, value, *_rest = r
+        assister = r[9]
+        if made and shooter in out:
+            for s in slots:
+                out[shooter][s] += value
+                if value == 3:
+                    out[shooter][s + 3] += 1
+        if made and assister in out:
+            for s in slots:
+                out[assister][s + 2] += 1
+    return out
+
+
+def first_basket(pbp):
+    """[player id, team] of the first made field goal (how sportsbooks settle first basket)."""
+    for r in pbp["plays"]:
+        if r[4] == "s" and r[5] and r[6] >= 2:
+            return [r[3], r[2]]
+    return None
+
+
+def build_pbp_data(store, games, boxes):
+    """Period stats, shot zones (players and team defenses) and first baskets from the stored play-by-play.
+    Also writes a small site/data/wp/<game id>.json (win probability, season series) per game."""
+    periods, shots = defaultdict(dict), {"zones": ZONES, "league": {}, "players": {}, "def": {}}
+    zi = {z: i for i, z in enumerate(ZONES)}
+    blank = lambda: [0] * (2 * len(ZONES))  # noqa: E731  attempts, makes per zone
+    league, players, defense = defaultdict(blank), defaultdict(lambda: defaultdict(blank)), defaultdict(lambda: defaultdict(blank))
+    pgames, tgames = defaultdict(Counter), defaultdict(Counter)
+    wp_dir = OUT_DIR / "wp"
+    have = 0
+    for g in games:
+        box = boxes.get(g["id"])
+        pbp = read_json(store / "pbp" / f"{g['id']}.json") if box else None
+        if not pbp:
+            continue
+        have += 1
+        season, team_of = str(g["s"]), {}
+        for row in box["rows"]:
+            team_of[row[0]] = row[1]
+            pgames[row[0]][season] += 1
+        for t in (g["h"], g["a"]):
+            tgames[t][season] += 1
+        for pid, vals in period_stats(pbp, list(team_of)).items():
+            periods[pid][g["id"]] = vals
+        for r in pbp["plays"]:
+            if r[4] != "s":
+                continue
+            z = shot_zone(r[7], r[8], r[6])
+            if z is None:
+                continue
+            i, made = 2 * zi[z], r[5]
+            offense = r[2] or team_of.get(r[3])
+            opp = g["a"] if offense == g["h"] else g["h"]
+            for bucket in (league[season], players[r[3]][season], defense[opp][season]):
+                bucket[i] += 1
+                bucket[i + 1] += made
+        fb = first_basket(pbp)
+        if fb:
+            g["fb"] = fb
+        if pbp.get("wp") or pbp.get("ss"):
+            write_json(wp_dir / f"{g['id']}.json", {"wp": pbp.get("wp") or [], "ss": pbp.get("ss")})
+    shots["league"] = dict(league)
+    shots["players"] = {pid: {s: v + [pgames[pid][s]] for s, v in by.items()} for pid, by in players.items()}
+    # Team defense: shots allowed per zone per season + games, and a 1-30 rank per zone by points allowed
+    # per game there (1 = allows the most, the best matchup for a shooter).
+    for team, by in defense.items():
+        shots["def"][team] = {s: v + [tgames[team][s]] for s, v in by.items()}
+    for season in {s for by in defense.values() for s in by}:
+        for k, z in enumerate(ZONES):
+            value = 3 if z.endswith("3") else 2
+            per_game = {t: by[season][2 * k + 1] * value / max(1, tgames[t][season])
+                        for t, by in defense.items() if season in by}
+            for rank, t in enumerate(sorted(per_game, key=lambda t: -per_game[t]), 1):
+                shots["def"][t][season].append(rank)
+    log(f"Play-by-play: {have} games")
+    return periods, shots
 
 
 def build_players(games, boxes):
@@ -633,6 +821,9 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     write_json(OUT_DIR / "meta.json", meta)
     write_json(OUT_DIR / "teams.json", teams)
+    periods, shots = build_pbp_data(store, games, boxes)  # also adds first baskets (g["fb"]) to games
+    write_json(OUT_DIR / "periods.json", {"cols": PERIOD_COLS, "games": periods})
+    write_json(OUT_DIR / "shots.json", shots)
     write_json(OUT_DIR / "games.json", games)
     write_json(OUT_DIR / "players.json", players)
     write_json(OUT_DIR / "logs.json", logs)

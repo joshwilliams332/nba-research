@@ -14,10 +14,12 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
+<script src="assets/pbp.js"></script>
 <script>
 shell('players');
 
-lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
+lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
+  await loadOptional(L, ['periods', 'shots']);
   footer(L);
   const P = params();
   const pid = P.get('id');
@@ -26,7 +28,8 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   if (!p) { main.innerHTML = `<div class="card empty">Player not found. <a href="players.html">Search players</a></div>`; return; }
   document.title = `Hoop Lab · ${p.n}`;
   const T = L.teams[p.t] || {};
-  const all = playerRows(L, pid);
+  const all = attachPeriods(L, pid, playerRows(L, pid));
+  const forStat = (rows, s) => (STATS[s].period ? rows.filter(r => r.per) : rows);  // 1Q/1H need play-by-play
   const inj = injuryMap(L).get(pid);
   const lines = L.proplines[pid] || {};
 
@@ -49,8 +52,8 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   const propFor = s => props.find(x => x.s === s);
   // Key teammates ruled out for the next game: their absence moves the typical line and gets its own card.
   const outs = next ? outMates(L, pid) : [];
-  const boosted = s => (propFor(s) ? null : boostedTypicalLine(L, pid, s, all, outs));
-  const defaultLine = s => (propFor(s) ? propFor(s).l : (boosted(s) || {}).line ?? typicalLine(all, s));
+  const boosted = s => (propFor(s) || STATS[s].period ? null : boostedTypicalLine(L, pid, s, all, outs));
+  const defaultLine = s => (propFor(s) ? propFor(s).l : (boosted(s) || {}).line ?? typicalLine(forStat(all, s), s));
   st.line = P.get('line') != null && !isNaN(+P.get('line')) ? +P.get('line') : defaultLine(st.stat);
 
   // Teammates who have played for this team, most minutes first (for with / without filters).
@@ -78,15 +81,18 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     <div class="card" id="chart"></div>
     ${outs.length ? '<div class="card boost" id="boost"></div>' : ''}
     ${opp ? '<div class="card dvp" id="dvp"></div>' : ''}
+    <div class="card" id="shots"></div>
     <div class="card"><details class="filters" id="filters"></details></div>
     <div class="card" id="support"></div>
     <div class="card" id="log"></div>`;
 
-  function filtered() { return applyFilters(L, all, st.f); }
-  function opts() { return { opp, season: L.meta.season, base: all }; }
+  function filtered() { return forStat(applyFilters(L, all, st.f), st.stat); }
+  const shotState = { season: null, zone: null };
+  function renderShots() { document.getElementById('shots').innerHTML = shotCard(L, pid, opp, shotState) || ''; document.getElementById('shots').hidden = !L.shots; }
+  function opts() { return { opp, season: L.meta.season, base: forStat(all, st.stat) }; }
 
   function renderStats() {
-    document.getElementById('stats').innerHTML = STAT_ORDER.map(s =>
+    document.getElementById('stats').innerHTML = STAT_ORDER.filter(s => !STATS[s].period || L.periods).map(s =>
       `<button data-stat="${s}" class="${s === st.stat ? 'on' : ''}">${STATS[s].short}${propFor(s) ? ' •' : ''}</button>`).join('');
   }
 
@@ -202,6 +208,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   function renderDvp() {
     const el = document.getElementById('dvp');
     if (!el) return;
+    if (STATS[st.stat].period) { el.innerHTML = `<h2>vs ${esc(opp)} defense</h2><p class="muted" style="margin:0">Defense ranks cover full-game stats; pick a full-game stat to see them.</p>`; return; }
     const s = st.stat, mine = posBucket(p.p);
     const cur = L.meta.season, yy = x => `${String(x - 1).slice(2)}-${String(x).slice(2)}`;
     const tables = [defenseVsPosition(L, cur), defenseVsPosition(L, cur, { last: 10 }), defenseVsPosition(L, cur - 1)];
@@ -261,6 +268,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     renderDvp();
     renderBoost();
     renderLog(rates);
+    renderShots();
     const url = new URL(location);
     url.searchParams.set('stat', st.stat);
     url.searchParams.set('line', st.line);
@@ -269,7 +277,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   }
 
   main.addEventListener('click', e => {
-    const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-dvppos],[data-reset],[data-clear],[data-unmate],[data-addmate]');
+    const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-dvppos],[data-zone],[data-shotseason],[data-reset],[data-clear],[data-unmate],[data-addmate]');
     if (!t) return;
     const d = t.dataset;
     if (d.stat) { st.stat = d.stat; st.line = defaultLine(d.stat); }
@@ -278,6 +286,8 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     else if (d.win) st.win = d.win;
     else if (d.support) st.support = d.support;
     else if (d.dvppos) st.dvpPos = d.dvppos;
+    else if (d.zone) shotState.zone = d.zone;
+    else if (d.shotseason) { shotState.season = +d.shotseason; }
     else if (d.reset) { e.preventDefault(); st.line = propFor(st.stat).l; }
     else if (d.clear) { e.preventDefault(); st.f = {}; renderFilters(); }
     else if (d.unmate) { const [k, id] = d.unmate.split(':'); st.f[k] = st.f[k].filter(x => x !== id); renderFilters(); }

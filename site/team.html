@@ -14,6 +14,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
+<script src="assets/pbp.js"></script>
 <script>
 shell('standings');
 document.querySelector('main').innerHTML = skeleton(3, 4);
@@ -122,7 +123,7 @@ lab(['players', 'logs', 'injuries']).then(L => {
     if (!sp.games) return seasonPills() + emptyState('No regular-season games yet for this season.');
     return seasonPills() + `<div class="card"><table class="data">${sp.rows.map(([k, v]) =>
       `<tr><td class="l">${esc(k)}</td><td><b>${esc(v)}</b></td></tr>`).join('')}</table>
-      <p class="note">Regular season, ${sp.games} games. Quarter and half records are W-L-T for that period alone.</p></div>`;
+      <p class="note">Regular season, ${sp.games} games. Quarter and half records are W-L-T for that period alone.</p></div>${firstBasketCard(L, team, season)}`;
   }
 
   function injuriesPane() {
