@@ -46,7 +46,22 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   one at a time. Keep that pattern for independent features; give each agent its own CSS section and new files.
 
 ## Roadmap (agreed phases)
-- Phase 2: Insights (auto-written trends), defense vs position + opponent ranks on props, Trends page.
-- Phase 3: shot charts / play types (NBA.com stats, may be blocked from Actions), team totals chart with
-  opponent filters, correlation finder.
-- Agents Josh may want later: trend finder (writes Insights), data checker after each run, phone-layout reviewer.
+- Phase 1 (done): games, game, player, props, players pages; data pipeline + `data` branch store.
+- Phase 2 (done): Insights + Trends page, defense vs position / OPP RANK, team pages, standings, visual pass,
+  the three agents and `scripts/check_data.py`.
+- Phase 3 "Context" (done): ESPN play-by-play kept in the store -> shot charts with zone-vs-defense, 1Q/1H stats,
+  win probability, first basket (`pbp.js`); teammate-out boost + sample-adjusted hit rates; pace, implied team
+  totals, no-vig fair price / best line / EV+ (`context.js`).
+- Open checks from Phase 3: confirm real props drive EV+ / fair price / insights; verify shot-chart left vs right
+  corner orientation; demote money-line insights on heavy favorites; shot-zone ranks include playoffs while DvP is
+  regular season only.
+- Phase 4 "Prove it" (next, from the research report):
+  1. Projection model (minutes x per-minute rate, adjusted for DvP and pace) with a backtest on last season, a
+     calibration chart and a methodology page; projections and gap to the line on prop rows.
+  2. Second, small pre-tip props pull (budgeted in `plan_markets`) for closing line value and line movement.
+  3. Saved picks tracker (localStorage, no backend): auto-graded from box scores, record / units / CLV, share cards.
+  4. PWA: manifest, icons, offline shell; later opt-in push alerts (needs VAPID keys in Actions secrets).
+- Later ideas: correlation finder for same-game parlays, expected starters from ESPN depth charts, a `model-auditor`
+  agent that reruns the backtest weekly, re-running the research agent monthly.
+- Out of reach for now: NBA.com stats (play types, tracking) are blocked from cloud servers; The Odds API historical
+  odds are paid-only, so our own daily prop snapshots on `data` are the line history.
