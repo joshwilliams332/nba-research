@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Team</title>
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main></main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script>
+shell('standings');
+document.querySelector('main').innerHTML = skeleton(3, 4);
+const ordinal = n => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th'));
+
+lab(['players', 'logs', 'injuries']).then(L => {
+  footer(L);
+  const team = (params().get('t') || '').toUpperCase();
+  const T = L.teams[team];
+  const main = document.querySelector('main');
+  if (!T) { main.innerHTML = emptyState('Team not found.', '<a href="standings.html" style="color:var(--accent)">See all teams in the standings</a>'); return; }
+  document.title = `Hoop Lab · ${T.city} ${T.name}`;
+  const inj = injuryMap(L);
+  const yy = s => `${s - 1}-${String(s).slice(2)}`;
+  const cur = L.meta.season;
+
+  const S = standings(L, cur)[T.conf];
+  const me = S.find(r => r.team === team);
+  const next = (L.teamGames[team] || []).find(g => g.state !== 'post');
+  let nextCard = '';
+  if (next) {
+    const home = next.h === team, opp = home ? next.a : next.h;
+    const sp = next.line && next.line.sp != null ? (home ? next.line.sp : -next.line.sp) : null;
+    const lines = [sp != null ? `${team} ${signed(sp)}` : '', next.line && next.line.tot != null ? `O/U ${next.line.tot}` : ''].filter(Boolean).join(' · ');
+    nextCard = `<a class="nextgame" href="game.html?id=${next.id}">${logo(L, opp, 34)}
+      <div class="grow"><div class="lbl">${next.state === 'in' ? 'Live now' : 'Next game'}</div>
+        <b>${home ? 'vs' : '@'} ${esc(L.teams[opp].city)} ${esc(L.teams[opp].name)}</b><br>
+        <small>${next.state === 'in' ? `${next.as}-${next.hs} · ${esc(next.detail || '')}` : `${fmtDay(next.d)} · ${fmtTime(next.t)}`}${lines ? ` · ${esc(lines)}` : ''}</small></div><span class="chev">›</span></a>`;
+  }
+
+  main.innerHTML = `
+    <section class="hero" style="--c1:${T.color}cc;--c2:#14171c">
+      <div class="row"><a class="back" href="javascript:history.length>1?history.back():location.assign('standings.html')" aria-label="Back">‹</a></div>
+      <div class="teamhead">${logo(L, team, 64)}
+        <div class="grow"><h1>${esc(T.city)} ${esc(T.name)}</h1>
+          <div class="meta">${esc(T.conf)}ern Conference · ${esc(T.div)}</div></div></div>
+      <div class="statline">
+        <div><b>${me.w}-${me.l}</b><small>Record</small></div>
+        <div><b>${me.w + me.l ? ordinal(me.rank) : '-'}</b><small>in ${esc(T.conf)}</small></div>
+        <div><b>${me.streak}</b><small>Streak</small></div>
+        <div><b>${me.w + me.l ? signed(+me.diff.toFixed(1)) : '-'}</b><small>Avg margin</small></div>
+      </div>
+      ${nextCard}
+    </section>
+    <div class="tabs" id="tabs"></div>
+    <div id="pane"></div>`;
+
+  const TABS = [['schedule', 'Schedule'], ['roster', 'Roster'], ['splits', 'Splits'], ['injuries', 'Injuries']];
+  let tab = TABS.some(t => t[0] === params().get('tab')) ? params().get('tab') : 'schedule';
+  let season = cur;
+
+  const seasonPills = () => `<div class="pills" style="margin-bottom:12px">${[cur, cur - 1].map(s =>
+    `<button class="pill ${s === season ? 'on' : ''}" data-season="${s}">${yy(s)}</button>`).join('')}</div>`;
+
+  function schedulePane() {
+    const games = (L.teamGames[team] || []).filter(g => g.s === season);
+    const upcoming = games.filter(g => g.state !== 'post');
+    const done = games.filter(isFinal).map(g => teamSide(g, team)).reverse();
+    const oppCell = (g, home, opp) => `<a href="game.html?id=${g.id}">${shortDate(g.d)} ${home ? 'vs' : '@'} ${logo(L, opp, 18)}${opp}</a>`;
+    const up = upcoming.length ? `<div class="card"><div class="sectiontitle">Upcoming</div><div class="tablewrap"><table class="data sticky">
+        <tr><th class="l">Game</th><th>Time</th><th>Spread</th><th>Total</th></tr>
+        ${upcoming.map(g => {
+          const home = g.h === team, opp = home ? g.a : g.h;
+          const sp = g.line && g.line.sp != null ? signed(home ? g.line.sp : -g.line.sp) : '-';
+          return `<tr><td class="l">${oppCell(g, home, opp)}</td><td>${g.state === 'in' ? gameStatus(g) : fmtTime(g.t)}</td><td>${sp}</td><td>${g.line && g.line.tot != null ? g.line.tot : '-'}</td></tr>`;
+        }).join('')}</table></div></div>` : '';
+    const res = s => {
+      const ats = s.spread == null ? '' : outcome(s.margin + s.spread, 0);
+      const ou = s.tot == null ? '' : outcome(s.total, s.tot);
+      const mark = o => o === 'hit' ? 'res-w' : o === 'miss' ? 'res-l' : '';
+      return `<tr><td class="l">${oppCell(s.g, s.home, s.opp)}</td><td class="${s.win ? 'res-w' : 'res-l'}">${s.win ? 'W' : 'L'} ${s.pts}-${s.oppPts}</td>
+        <td class="${mark(ats)}">${s.spread == null ? '-' : `${signed(s.spread)} ${ats === 'hit' ? '✓' : ats === 'miss' ? '✗' : 'P'}`}</td>
+        <td class="${mark(ou)}">${s.tot == null ? '-' : `${s.total > s.tot ? 'O' : s.total < s.tot ? 'U' : 'P'} ${s.tot}`}</td></tr>`;
+    };
+    const past = done.length ? `<div class="card"><div class="sectiontitle">Results</div><div class="tablewrap"><table class="data sticky">
+        <tr><th class="l">Game</th><th>Result</th><th>Spread</th><th>Total</th></tr>${done.map(res).join('')}</table></div>
+        <p class="note">Spread ✓ = covered the closing line. Total shows over (O) or under (U) the closing number.</p></div>` : '';
+    return seasonPills() + (up + past || emptyState('No games for this season yet.'));
+  }
+
+  function rosterPane() {
+    const rows = Object.entries(L.players).filter(([, p]) => p.t === team).map(([id, p]) => {
+      const list = playerRows(L, id).filter(r => r.g.s === season && r.team === team);
+      const avg = k => list.length ? mean(list.map(r => r[k])) : null;
+      return { id, p, gp: list.length, min: avg('min'), pts: avg('pts'), reb: avg('reb'), ast: avg('ast'), fg3m: avg('fg3m') };
+    }).sort((a, b) => (b.gp > 0) - (a.gp > 0) || (b.min || 0) - (a.min || 0));
+    if (!rows.length) return seasonPills() + emptyState('No roster data yet.');
+    return seasonPills() + `<div class="card"><div class="tablewrap"><table class="data sticky">
+      <tr><th class="l">Player</th><th>GP</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th><th>3PM</th></tr>
+      ${rows.map(x => `<tr><td class="l"><a href="player.html?id=${x.id}">${esc(x.p.n)}</a> <small>${esc(x.p.p || '')}</small>${injuryTag(inj.get(x.id))}</td>
+        <td>${x.gp}</td><td>${fmt1(x.min)}</td><td>${fmt1(x.pts)}</td><td>${fmt1(x.reb)}</td><td>${fmt1(x.ast)}</td><td>${fmt1(x.fg3m)}</td></tr>`).join('')}
+      </table></div><p class="note">Per-game averages for ${yy(season)} with ${esc(T.name)}. Current roster only.</p></div>`;
+  }
+
+  function splitsPane() {
+    const sp = teamSplits(L, team, season);
+    if (!sp.games) return seasonPills() + emptyState('No regular-season games yet for this season.');
+    return seasonPills() + `<div class="card"><table class="data">${sp.rows.map(([k, v]) =>
+      `<tr><td class="l">${esc(k)}</td><td><b>${esc(v)}</b></td></tr>`).join('')}</table>
+      <p class="note">Regular season, ${sp.games} games. Quarter and half records are W-L-T for that period alone.</p></div>`;
+  }
+
+  function injuriesPane() {
+    const list = (L.injuries || []).filter(i => i.t === team);
+    if (!list.length) return emptyState('No injuries reported.');
+    return `<div class="card">${list.map(i => `<div class="row" style="padding:10px 0;border-top:1px solid var(--line)">
+      ${i.id ? headshot(i.id, 36) : ''}<div class="grow"><b>${i.id ? `<a href="player.html?id=${i.id}">${esc(i.n)}</a>` : esc(i.n)}</b><br>
+      <small>${esc(i.det || '')}${i.ret ? ` Expected back ${esc(fmtDay(i.ret))}.` : ''}</small></div>
+      <span class="inj ${String(i.st).toLowerCase().startsWith('out') ? 'inj-o' : ''}">${esc(i.st)}</span></div>`).join('')}</div>`;
+  }
+
+  function render() {
+    document.getElementById('tabs').innerHTML = TABS.map(([k, l]) => `<button data-tab="${k}" class="${k === tab ? 'on' : ''}">${l}</button>`).join('');
+    document.getElementById('pane').innerHTML = { schedule: schedulePane, roster: rosterPane, splits: splitsPane, injuries: injuriesPane }[tab]();
+  }
+
+  main.addEventListener('click', e => {
+    const t = e.target.closest('[data-tab],[data-season]');
+    if (!t) return;
+    if (t.dataset.tab) tab = t.dataset.tab;
+    if (t.dataset.season) season = +t.dataset.season;
+    render();
+  });
+  render();
+}).catch(fail);
+</script>
+</body>
+</html>

@@ -62,3 +62,20 @@ test('player rows, filters and windows', () => {
   const w = C.windowRates(rows, 'pts', 19.5, 'o', { opp: 'BBB', season: 2027 });
   assert.deepStrictEqual([w.l5.hits, w.l5.n, w.h2h.n, w.last.n], [2, 3, 3, 0]);
 });
+
+test('standings: games behind, streaks and conference order', () => {
+  const games = [
+    game('1', '2026-10-20', 'AAA', 'BBB', 110, 100),
+    game('2', '2026-10-21', 'BBB', 'AAA', 99, 101),
+    game('3', '2026-10-23', 'BBB', 'CCC', 90, 100),
+    game('4', '2026-10-25', 'AAA', 'BBB', 95, 100),
+  ];
+  const L = C.indexLab(meta, teams, games);
+  assert.strictEqual(C.streakOf(C.teamFinals(L, 'AAA')), 'L1');
+  assert.strictEqual(C.streakOf(C.teamFinals(L, 'BBB')), 'W1');
+  assert.strictEqual(C.streakOf([]), '-');
+  assert.strictEqual(C.gamesBehind({ w: 10, l: 2 }, { w: 7, l: 4 }), 2.5);
+  const S = C.standings(L, 2027);
+  assert.deepStrictEqual(S.East.map(r => [r.team, r.rank, r.w, r.l, r.gb]), [['AAA', 1, 2, 1, 0], ['BBB', 2, 1, 3, 1.5]]);
+  assert.deepStrictEqual(S.West.map(r => [r.team, r.home, r.away]), [['CCC', '0-0', '1-0']]);
+});

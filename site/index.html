@@ -12,14 +12,16 @@
 <body>
 <header id="top"></header>
 <main>
+  <section class="pagehead"><h1>Games</h1><p id="slate">&nbsp;</p></section>
   <div class="days" id="days"></div>
   <input class="search" id="q" type="search" placeholder="Search teams…" autocomplete="off" style="margin-bottom:12px">
-  <div id="list"><div class="card empty">Loading games…</div></div>
+  <div id="list"></div>
 </main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script>
 shell('games');
+document.getElementById('list').innerHTML = skeleton(3, 4);
 lab().then(L => {
   footer(L);
   const dates = [...new Set(L.games.map(g => g.d))].sort();
@@ -42,18 +44,20 @@ lab().then(L => {
 
   function card(g) {
     const A = L.teams[g.a], H = L.teams[g.h];
-    const final = g.state !== 'pre';
-    const mid = final
-      ? `<b>${g.as ?? ''} - ${g.hs ?? ''}</b><br>${gameStatus(g)}`
-      : `${gameStatus(g)}<br><small>${esc(g.tv || '')}</small>`;
-    const body = g.state === 'post'
-      ? `<p class="note" style="padding:0 14px 12px;margin:0;text-align:center">${esc(lineResult(g)) || 'No lines on record'}</p>`
+    const started = g.state !== 'pre', final = g.state === 'post';
+    const mid = started
+      ? `<b class="score">${g.as ?? ''} - ${g.hs ?? ''}</b><br>${gameStatus(g)}`
+      : `<b>${gameStatus(g)}</b><br><small>${esc(g.tv || '')}</small>`;
+    const lost = side => final && (side === 'a' ? g.as < g.hs : g.hs < g.as) ? ' class="lose"' : '';
+    const results = final ? lineResult(g).split(' · ').filter(Boolean) : [];
+    const body = final
+      ? `<div class="resultline">${results.length ? results.map(r => `<span>${esc(r)}</span>`).join('') : '<span>No lines on record</span>'}</div>`
       : gameLines(L, g);
-    return `<a class="card gamecard" href="game.html?id=${g.id}">
+    return `<a class="card gamecard" href="game.html?id=${g.id}" style="--ca:${A.color}33;--ch:${H.color}33">
       <div class="gamehead">
-        <div class="t">${logo(L, g.a, 34)}<div><b>${esc(A.name)}</b><small>${esc(g.ar || '')}</small></div></div>
+        <div class="t">${logo(L, g.a, 34)}<div><b${lost('a')}>${esc(A.name)}</b><small>${esc(g.ar || '')}</small></div></div>
         <div class="mid">${mid}</div>
-        <div class="t home">${logo(L, g.h, 34)}<div><b>${esc(H.name)}</b><small>${esc(g.hr || '')}</small></div></div>
+        <div class="t home">${logo(L, g.h, 34)}<div><b${lost('h')}>${esc(H.name)}</b><small>${esc(g.hr || '')}</small></div></div>
       </div>${body}</a>`;
   }
 
@@ -64,7 +68,19 @@ lab().then(L => {
       return `${t} ${T.city} ${T.name}`.toLowerCase().includes(term);
     }));
     document.getElementById('list').innerHTML = games.length ? games.map(card).join('')
-      : `<div class="card empty">${term ? 'No games match that search.' : 'No games this day.'}</div>`;
+      : emptyState(term ? 'No games match that search.' : 'No games this day.', term ? '' : 'Pick another day above.');
+    renderSlate();
+  }
+
+  // "Wed, Oct 28 · 12 games · lines from DraftKings · updated 3:12 PM"
+  function renderSlate() {
+    const games = L.games.filter(g => g.d === day);
+    const books = [...new Set(games.map(g => g.line && g.line.bk).filter(Boolean))];
+    const live = games.filter(g => g.state === 'in').length;
+    const built = new Date(L.meta.built).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    document.getElementById('slate').textContent = [fmtDay(day, { weekday: 'long', month: 'short', day: 'numeric' }),
+      `${games.length} game${games.length === 1 ? '' : 's'}`, live ? `${live} live` : '',
+      books.length ? `lines from ${books.join(', ')}` : '', `updated ${built}`].filter(Boolean).join(' · ');
   }
 
   document.getElementById('days').addEventListener('click', e => {
