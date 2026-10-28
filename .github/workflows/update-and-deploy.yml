@@ -1,0 +1,75 @@
+name: Update data and deploy
+
+on:
+  schedule:
+    # Times are UTC; GitHub often starts scheduled runs late. Prop lines are pulled once per day,
+    # on the first run after 10:00 ET, so the extra runs only refresh ESPN (free).
+    - cron: "37 15 * * *"   # 11:37 AM ET: lines, injuries and the day's props
+    - cron: "37 21 * * *"   # 5:37 PM ET: injury updates and line moves before tip-off
+    - cron: "52 23 * * *"   # 7:52 PM ET: final injury news around the first tips
+    - cron: "47 4 * * *"    # 12:47 AM ET: finals and box scores from the early games
+    - cron: "47 7 * * *"    # 3:47 AM ET: the late West Coast games
+  workflow_dispatch:        # "Run workflow" button in the Actions tab
+  push:
+    branches: [main]
+
+permissions:
+  contents: write   # push the data store to the `data` branch
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Box scores, finished days and past prop lines live on the `data` branch, so each run only
+      # downloads what's new and prop line history survives between runs.
+      - name: Check out the data store
+        env:
+          REMOTE: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
+        run: |
+          if git ls-remote --exit-code --heads "$REMOTE" data >/dev/null; then
+            git clone --quiet --depth 1 --branch data "$REMOTE" store
+          else
+            git init --quiet -b data store && git -C store remote add origin "$REMOTE"
+          fi
+      - name: Download NBA data
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python3 scripts/build_data.py --store store
+      - name: Save the data store
+        run: |
+          cd store
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "No store changes"; exit 0; fi
+          git commit --quiet -m "Data update $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --quiet origin data
+      # Browsers keep style.css and common.js cached for a while, so after a deploy a page could load
+      # the new HTML with the old script. Tagging the links with this commit makes every deploy fetch fresh copies.
+      - name: Tag asset links with this commit
+        run: sed -i -E "s#assets/(common\.js|style\.css)\"#assets/\1?v=${GITHUB_SHA::8}\"#g" site/*.html
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          path: site
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
