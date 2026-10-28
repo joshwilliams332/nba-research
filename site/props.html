@@ -19,13 +19,14 @@
     <div class="seg" id="side"></div><span class="grow"></span>
     <label class="row" style="gap:6px;font-size:13px;color:var(--muted)">Sort <select id="sort" style="width:auto">
       <option value="adj">L10, sample-adjusted</option><option value="l10">L10 hit rate</option><option value="l5">L5 hit rate</option><option value="l20">L20 hit rate</option>
-      <option value="season">Season hit rate</option><option value="h2h">vs opponent</option><option value="time">Tip-off</option></select></label>
+      <option value="season">Season hit rate</option><option value="h2h">vs opponent</option><option value="time">Tip-off</option><option value="price">Best price vs fair</option></select></label>
   </div>
   <p class="confnote">Big number = raw hit rate. <b>≈</b> = adjusted for sample size, so short streaks count less; <span class="amber">amber</span> = fewer than 10 games.</p>
   <div id="list"><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></div>
 </main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
+<script src="assets/context.js"></script>
 <script>
 shell('props');
 lab(['players', 'logs', 'props', 'injuries']).then(L => {
@@ -65,8 +66,8 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
       <div class="proprow"><div class="head" style="cursor:pointer">${headshot(pr.id, 42)}
         <div class="grow"><div class="name">${esc(x.p.n)} <small>(${esc(x.p.t)})</small>${injuryTag(inj.get(pr.id))}</div>
           <div class="sub">${side === 'o' ? 'Over' : 'Under'} ${pr.l} ${esc(STATS[pr.s].label)} · ${x.p.t === x.g.h ? 'vs' : '@'} ${esc(x.opp)} ${x.g.state === 'pre' ? fmtTime(x.g.t) : ''}</div></div>
-        ${price != null ? `<span class="price">${odds(price)} <small>${bookName(pr.bk)}</small></span>` : ''}</div>
-      <div style="padding:0 14px">${strip(results)}</div>
+        ${evTag(pr, side)}${price != null ? `<span class="price">${odds(price)} <small>${bookName(pr.bk)}</small></span>` : ''}</div>
+      <div style="padding:0 14px">${teamContext(L, x.g, x.p.t)}${strip(results)}</div>
       <div class="rates r5">${oppRankCell(L, x.opp, x.p.p, pr.s)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(r[k], { adj: true })}</div>`).join('')}</div></div></a>`;
   }
 
@@ -87,7 +88,8 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
     const key = st.sort;
     const out = y => String((inj.get(y.x.pr.id) || {}).st || '').toLowerCase().startsWith('out') ? 1 : 0;
     // Ruled-out players sink to the bottom; then by the chosen window, ties broken by L20.
-    rows.sort((a, b) => (out(a) - out(b)) || (key === 'time' ? (a.x.g.t < b.x.g.t ? -1 : 1)
+    const edge = y => { const f = fairPrice(y.x.pr); return f ? (y.side === 'o' ? f.bestO.ev : f.bestU.ev) : -1; };
+    rows.sort((a, b) => (out(a) - out(b)) || (key === 'time' ? (a.x.g.t < b.x.g.t ? -1 : 1) : key === 'price' ? edge(b) - edge(a)
       : key === 'adj' ? ((b.r.l10.adj ?? -1) - (a.r.l10.adj ?? -1)) || ((b.r.l20.adj ?? -1) - (a.r.l20.adj ?? -1))
       : ((b.r[key].rate ?? -1) - (a.r[key].rate ?? -1)) || ((b.r.l20.rate ?? -1) - (a.r.l20.rate ?? -1))));
     list.innerHTML = rows.length ? rows.slice(0, 150).map(y => card(y.x, y.side)).join('')

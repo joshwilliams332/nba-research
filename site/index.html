@@ -19,6 +19,7 @@
 </main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
+<script src="assets/context.js"></script>
 <script>
 shell('games');
 document.getElementById('list').innerHTML = skeleton(3, 4);
@@ -58,7 +59,7 @@ lab().then(L => {
         <div class="t">${logo(L, g.a, 34)}<div><b${lost('a')}>${esc(A.name)}</b><small>${esc(g.ar || '')}</small></div></div>
         <div class="mid">${mid}</div>
         <div class="t home">${logo(L, g.h, 34)}<div><b${lost('h')}>${esc(H.name)}</b><small>${esc(g.hr || '')}</small></div></div>
-      </div>${body}</a>`;
+      </div>${final ? '' : impliedRow(L, g)}${body}</a>`;
   }
 
   function renderList() {
