@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Players</title>
+<meta name="description" content="Search NBA players for hit rates, game logs and splits.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main>
+  <h1 style="font-size:26px;margin:4px 0 12px">Players</h1>
+  <input class="search" id="q" type="search" placeholder="Search players…" autocomplete="off" style="margin-bottom:10px">
+  <select id="team" style="margin-bottom:12px"></select>
+  <div id="list" class="card flush plist"><div class="empty">Loading players…</div></div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script>
+shell('players');
+lab(['players', 'logs', 'injuries']).then(L => {
+  footer(L);
+  const inj = injuryMap(L);
+  const season = L.meta.season;
+  // Per-game averages for the current season (or last season for anyone who hasn't played yet).
+  const list = Object.entries(L.players).map(([id, p]) => {
+    const rows = playerRows(L, id);
+    const cur = rows.filter(r => r.g.s === season);
+    const use = cur.length ? cur : rows.filter(r => r.g.s === season - 1);
+    const avg = k => mean(use.map(r => r[k])) || 0;
+    return { id, p, gp: use.length, cur: cur.length > 0, min: avg('min'), pts: avg('pts'), reb: avg('reb'), ast: avg('ast') };
+  }).filter(x => x.gp);
+  const teamSel = document.getElementById('team');
+  teamSel.innerHTML = `<option value="">All teams</option>` + Object.entries(L.teams).sort((a, b) => a[1].city.localeCompare(b[1].city))
+    .map(([k, t]) => `<option value="${k}">${esc(t.city)} ${esc(t.name)}</option>`).join('');
+  const q = document.getElementById('q');
+
+  function render() {
+    const term = q.value.trim().toLowerCase(), team = teamSel.value;
+    const rows = list.filter(x => (!team || x.p.t === team) && (!term || (x.p.n || '').toLowerCase().includes(term)))
+      .sort((a, b) => (b.cur - a.cur) || (b.min * b.gp) - (a.min * a.gp));
+    const shown = term || team ? rows.slice(0, 80) : rows.slice(0, 40);
+    document.getElementById('list').innerHTML = shown.map(x => `<a href="player.html?id=${x.id}">${headshot(x.id, 40)}
+      <div class="grow"><b>${esc(x.p.n)}</b>${injuryTag(inj.get(x.id))}<br><small>${esc(x.p.t)} · ${esc(x.p.p || '')} · ${x.gp} GP${x.cur ? '' : ' last season'}</small></div>
+      <div class="right" style="font-size:13px;font-variant-numeric:tabular-nums"><b>${fmt1(x.pts)}</b> <small>PTS</small><br><small>${fmt1(x.reb)} REB · ${fmt1(x.ast)} AST</small></div></a>`).join('')
+      || `<div class="empty">No players match.</div>`;
+  }
+  q.addEventListener('input', render);
+  teamSel.addEventListener('change', render);
+  render();
+}).catch(fail);
+</script>
+</body>
+</html>

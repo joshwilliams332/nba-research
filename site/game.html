@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Game</title>
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main><div class="card empty">Loading game…</div></main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script>
+shell('games');
+const PROP_STATS = ['pts', 'reb', 'ast', 'fg3m', 'pra', 'pr', 'pa', 'ra', 'stl', 'blk'];
+
+lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
+  footer(L);
+  const g = L.byId.get(params().get('id'));
+  const main = document.querySelector('main');
+  if (!g) { main.innerHTML = `<div class="card empty">Game not found. <a href="index.html">Back to games</a></div>`; return; }
+  const A = L.teams[g.a], H = L.teams[g.h];
+  const inj = injuryMap(L);
+  const props = ((L.props.games || {})[g.id]) || [];
+  document.title = `Hoop Lab · ${g.a} @ ${g.h}`;
+
+  const final = g.state === 'post';
+  const score = g.state !== 'pre'
+    ? `<div class="score"><span class="${g.as < g.hs && final ? 'lose' : ''}">${g.as}</span> - <span class="${g.hs < g.as && final ? 'lose' : ''}">${g.hs}</span></div>${gameStatus(g)}`
+    : `<b style="color:var(--text);font-size:16px">${fmtTime(g.t)}</b><br>${fmtDay(g.d)}`;
+  main.innerHTML = `
+    <section class="hero" style="--c1:${A.color}aa;--c2:${H.color}aa">
+      <div class="row"><a class="back" href="index.html?d=${g.d}" aria-label="Back to games">‹</a>
+        <span class="grow" style="text-align:center;color:var(--muted);font-size:13px">${esc([g.v, g.tv].filter(Boolean).join(' · '))}</span><span style="width:38px"></span></div>
+      <div class="matchup">
+        <div class="team">${logo(L, g.a, 52)}<div><b>${esc(A.name)}</b><small>${esc(g.ar || '')}</small></div></div>
+        <div class="mid">${score}</div>
+        <div class="team home">${logo(L, g.h, 52)}<div><b>${esc(H.name)}</b><small>${esc(g.hr || '')}</small></div></div>
+      </div>
+      ${final && lineResult(g) ? `<p class="note" style="text-align:center">${esc(lineResult(g))}</p>` : ''}
+    </section>
+    <div class="tabs" id="tabs"></div>
+    <div id="pane"></div>`;
+
+  const tabs = [['odds', 'Odds'], ['matchup', 'Matchup']];
+  if (final) tabs.push(['box', 'Box score']);
+  let tab = params().get('tab') || (final ? 'box' : 'odds');
+  let sub = 'lines', stat = 'pts', season = L.meta.season, term = '';
+  const open = new Set();
+
+  function renderTabs() {
+    document.getElementById('tabs').innerHTML = tabs.map(([k, l]) => `<button data-tab="${k}" class="${k === tab ? 'on' : ''}">${l}</button>`).join('');
+  }
+
+  // ---------- odds tab
+  function oddsPane() {
+    const head = `<div class="tabs under" id="sub">
+      <button data-sub="lines" class="${sub === 'lines' ? 'on' : ''}">Game lines</button>
+      <button data-sub="props" class="${sub === 'props' ? 'on' : ''}">Player props</button></div>`;
+    if (sub === 'lines') {
+      return head + `<div class="card flush" style="padding-top:8px">${gameLines(L, g)}</div>`;
+    }
+    return head + propsPane();
+  }
+
+  // Players likely to play: on either roster now, and in the rotation over the team's last 10 games (or with a prop).
+  function propPlayers() {
+    const withProp = new Set(props.map(p => p.id).filter(Boolean));
+    const list = [];
+    for (const [pid, p] of Object.entries(L.players)) {
+      if (p.t !== g.a && p.t !== g.h) continue;
+      const rows = playerRows(L, pid).filter(r => r.g.t < g.t);
+      const recent = rows.filter(r => r.team === p.t).slice(-10);
+      const teamRecent = new Set(teamFinals(L, p.t, g.t).slice(-10).map(s => s.g.id));
+      const inRotation = recent.filter(r => teamRecent.has(r.gid)).length >= 1 && mean(recent.map(r => r.min)) >= 12;
+      if (inRotation || withProp.has(pid)) list.push({ pid, p, rows });
+    }
+    return list;
+  }
+  let cachedPlayers;
+
+  function propsPane() {
+    const avail = PROP_STATS.filter(s => STATS[s]);
+    const pills = `<div class="tabs">${avail.map(s => `<button data-stat="${s}" class="${s === stat ? 'on' : ''}">${STATS[s].label}</button>`).join('')}</div>`;
+    const search = `<input class="search" id="psearch" type="search" placeholder="Search players…" value="${esc(term)}" style="margin-bottom:12px">`;
+    cachedPlayers = cachedPlayers || propPlayers();
+    const f = STATS[stat].f;
+    const items = cachedPlayers.filter(x => !term || (x.p.n || '').toLowerCase().includes(term)).map(x => {
+      const prop = props.find(p => p.id === x.pid && p.s === stat);
+      const line = prop ? prop.l : typicalLine(x.rows, stat);
+      const rates = windowRates(x.rows, stat, line, 'o', { opp: x.p.t === g.h ? g.a : g.h, season: L.meta.season });
+      return { ...x, prop, line, rates, avg: mean(x.rows.slice(-10).map(f)) || 0 };
+    }).sort((a, b) => (!!b.prop - !!a.prop) || b.avg - a.avg);
+    if (!items.length) return pills + search + `<div class="card empty">No players found.</div>`;
+    const anyProp = props.some(p => p.s === stat);
+    const note = anyProp ? '' : `<p class="note" style="margin:-4px 0 10px">No sportsbook ${STATS[stat].label.toLowerCase()} lines for this game${(L.props.markets || []).length ? '' : ' yet'}, so each player gets a typical line (the half point above their last-10 average floor).</p>`;
+    return pills + search + note + `<div class="card flush">${items.map(propRow).join('')}</div>`;
+  }
+
+  function propRow(x) {
+    const { pid, p, prop, line, rates } = x;
+    const l10 = rates.l10;
+    const results = l10.rows.map(r => outcome(STATS[stat].f(r), line, 'o'));
+    const priceTag = prop ? `<span class="price">${odds(prop.o)} <small>${bookName(prop.bk)}</small></span>` : `<span class="tag">typical</span>`;
+    const isOpen = open.has(pid);
+    const opp = p.t === g.h ? g.a : g.h;
+    let ladder = '';
+    if (isOpen) {
+      const lines = [];
+      for (let d = -3; d <= 3; d++) if (line + d > 0) lines.push(line + d);
+      ladder = `<div class="ladder"><table class="data"><tr><th class="l">Over</th><th>L5</th><th>L10</th><th>L20</th><th>Season</th><th>H2H</th></tr>
+        ${lines.map(ln => {
+          const r = windowRates(x.rows, stat, ln, 'o', { opp, season: L.meta.season });
+          return `<tr${ln === line ? ' style="background:var(--card2)"' : ''}><td class="l"><b>${ln}</b></td>${['l5', 'l10', 'l20', 'season', 'h2h'].map(k => `<td>${rateTag(r[k])}</td>`).join('')}</tr>`;
+        }).join('')}</table>
+        <p class="note"><a href="player.html?id=${pid}&stat=${stat}&line=${line}&opp=${opp}" style="color:var(--accent);font-weight:700">Full breakdown, chart and filters →</a></p></div>`;
+    }
+    return `<div class="proprow ${isOpen ? 'open' : ''}" data-pid="${pid}">
+      <div class="head">${headshot(pid, 40)}
+        <div class="grow"><div class="name">${esc(p.n)}${injuryTag(inj.get(pid))}</div>
+          <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}</div></div>
+        ${priceTag}<span class="chev">⌄</span></div>
+      <div style="padding:0 14px">${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
+      <div class="rates">${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(rates[k])}</div>`).join('')}</div>
+      ${ladder}</div>`;
+  }
+
+  // ---------- matchup tab
+  function matchupPane() {
+    const a = teamSplits(L, g.a, season), h = teamSplits(L, g.h, season);
+    const better = (label, x, y) => {
+      if (/^(Points per game|Avg margin)$/.test(label)) return [+x > +y, +y > +x];
+      if (label === 'Allowed per game') return [+x < +y, +y < +x];
+      return [false, false];
+    };
+    const rows = a.rows.map(([label, x], i) => {
+      const y = h.rows[i][1], [bx, by] = better(label, x, y);
+      return `<tr><td class="${bx ? 'better' : ''}">${esc(x)}</td><td>${esc(label)}</td><td class="${by ? 'better' : ''}">${esc(y)}</td></tr>`;
+    }).join('');
+    const seasons = [L.meta.season, L.meta.season - 1].map(s => `<button class="pill ${s === season ? 'on' : ''}" data-season="${s}">${s - 1}-${String(s).slice(2)}</button>`).join('');
+    const injList = team => {
+      const list = (L.injuries || []).filter(i => i.t === team);
+      if (!list.length) return `<p class="muted" style="margin:0">None reported.</p>`;
+      return list.map(i => `<div class="row" style="padding:6px 0;border-top:1px solid var(--line)">
+        <div class="grow"><b>${i.id ? `<a href="player.html?id=${i.id}">${esc(i.n)}</a>` : esc(i.n)}</b><br><small>${esc(i.det || '')}</small></div>
+        <span class="inj ${String(i.st).toLowerCase().startsWith('out') ? 'inj-o' : ''}">${esc(i.st)}</span></div>`).join('');
+    };
+    const last5 = team => teamFinals(L, team, g.t).slice(-5).reverse().map(s =>
+      `<tr><td><a href="game.html?id=${s.g.id}">${shortDate(s.g.d)} ${s.home ? 'vs' : '@'} ${s.opp}</a></td><td class="${s.win ? 'hit' : 'miss'}">${s.win ? 'W' : 'L'} ${s.pts}-${s.oppPts}</td>
+        <td>${s.spread != null ? signed(s.spread) : '-'}</td><td>${s.tot != null ? s.tot : '-'}</td></tr>`).join('');
+    return `<div class="card">
+        <div class="row" style="margin-bottom:8px"><div class="row grow">${logo(L, g.a, 26)}<b>${g.a}</b></div><div class="pills">${seasons}</div><div class="row grow" style="justify-content:flex-end"><b>${g.h}</b>${logo(L, g.h, 26)}</div></div>
+        ${a.games + h.games ? `<table class="vs">${rows}</table>` : `<p class="empty">No regular-season games yet.</p>`}
+        <p class="note">Quarter and half records are W-L-T for that period alone. ATS and O/U use the closing lines on record.</p></div>
+      <div class="grid2">
+        ${[g.a, g.h].map(t => `<div class="card"><h3>${esc(L.teams[t].name)} last 5</h3><div class="tablewrap"><table class="data"><tr><th class="l">Game</th><th>Result</th><th>Spread</th><th>Total</th></tr>${last5(t) || '<tr><td colspan="4">No games yet</td></tr>'}</table></div></div>`).join('')}
+        ${[g.a, g.h].map(t => `<div class="card"><h3>${esc(L.teams[t].name)} injuries</h3>${injList(t)}</div>`).join('')}
+      </div>`;
+  }
+
+  // ---------- box score tab
+  function boxPane() {
+    const rows = [];
+    for (const [pid, list] of Object.entries(L.logs)) {
+      if (!list.some(x => x[0] === g.id)) continue;
+      const r = playerRows(L, pid).find(x => x.gid === g.id);
+      if (r) rows.push({ pid, r });
+    }
+    const cell = (x, s, val) => {
+      const line = ((L.proplines[x.pid] || {})[g.id] || {})[s];
+      if (line == null) return `<td>${val}</td>`;
+      const o = outcome(STATS[s].f(x.r), line);
+      return `<td class="${o === 'push' ? '' : o}" title="Prop line ${line}">${val}</td>`;
+    };
+    const table = team => {
+      const list = rows.filter(x => x.r.team === team).sort((a, b) => (b.r.starter - a.r.starter) || b.r.min - a.r.min);
+      return `<div class="card"><div class="row" style="margin-bottom:8px">${logo(L, team, 24)}<h3>${esc(L.teams[team].name)}</h3></div>
+        <div class="tablewrap"><table class="data sticky"><tr><th class="l">Player</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th><th>3PM</th><th>FG</th><th>FT</th><th>STL</th><th>BLK</th><th>TO</th><th>+/-</th></tr>
+        ${list.map(x => `<tr><td class="l"><a href="player.html?id=${x.pid}">${esc((L.players[x.pid] || {}).s || x.pid)}</a>${x.r.starter ? '' : ' <small>bench</small>'}</td>
+          <td>${x.r.min}</td>${cell(x, 'pts', x.r.pts)}${cell(x, 'reb', x.r.reb)}${cell(x, 'ast', x.r.ast)}${cell(x, 'fg3m', x.r.fg3m)}
+          <td>${x.r.fgm}-${x.r.fga}</td><td>${x.r.ftm}-${x.r.fta}</td><td>${x.r.stl}</td><td>${x.r.blk}</td><td>${x.r.tov}</td><td>${signed(x.r.pm, 0)}</td></tr>`).join('')}
+        </table></div></div>`;
+    };
+    const q = (side, label) => `<tr><td class="l">${label}</td>${(side || []).map(v => `<td>${v}</td>`).join('')}</tr>`;
+    const nq = Math.max((g.aq || []).length, 4);
+    return `<div class="card"><div class="tablewrap"><table class="data"><tr><th class="l"></th>${Array.from({ length: nq }, (_, i) => `<th>${i < 4 ? `Q${i + 1}` : `OT${i > 4 ? i - 3 : ''}`}</th>`).join('')}</tr>
+      ${q(g.aq, g.a)}${q(g.hq, g.h)}</table></div><p class="note">Green / red stat = cleared / missed that day's prop line, when one was pulled.</p></div>
+      ${table(g.a)}${table(g.h)}`;
+  }
+
+  function render() {
+    renderTabs();
+    const pane = document.getElementById('pane');
+    pane.innerHTML = tab === 'odds' ? oddsPane() : tab === 'matchup' ? matchupPane() : boxPane();
+    const ps = document.getElementById('psearch');
+    if (ps) ps.addEventListener('input', () => {
+      term = ps.value.trim().toLowerCase();
+      const pos = ps.selectionStart;
+      render();
+      const again = document.getElementById('psearch');
+      again.focus();
+      again.setSelectionRange(pos, pos);
+    });
+  }
+
+  main.addEventListener('click', e => {
+    const t = e.target.closest('[data-tab],[data-sub],[data-stat],[data-season],.proprow > .head');
+    if (!t) return;
+    if (t.dataset.tab) tab = t.dataset.tab;
+    else if (t.dataset.sub) sub = t.dataset.sub;
+    else if (t.dataset.stat) stat = t.dataset.stat;
+    else if (t.dataset.season) season = +t.dataset.season;
+    else {
+      const pid = t.parentElement.dataset.pid;
+      open.has(pid) ? open.delete(pid) : open.add(pid);
+    }
+    render();
+  });
+  render();
+}).catch(fail);
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Games</title>
+<meta name="description" content="NBA games with money line, spread and total trends: last 10 and head-to-head hit rates.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main>
+  <div class="days" id="days"></div>
+  <input class="search" id="q" type="search" placeholder="Search teams…" autocomplete="off" style="margin-bottom:12px">
+  <div id="list"><div class="card empty">Loading games…</div></div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script>
+shell('games');
+lab().then(L => {
+  footer(L);
+  const dates = [...new Set(L.games.map(g => g.d))].sort();
+  const today = L.meta.today;
+  // Three days back through the next week, only days with games.
+  const shown = dates.filter(d => dayDiff(today, d) >= -3 && dayDiff(today, d) <= 7);
+  let day = params().get('d');
+  if (!shown.includes(day)) day = shown.find(d => d >= today) || shown[shown.length - 1];
+  const q = document.getElementById('q');
+
+  function renderDays() {
+    document.getElementById('days').innerHTML = shown.map(d => {
+      const diff = dayDiff(today, d);
+      const top = diff === 0 ? 'Today' : diff === -1 ? 'Yesterday' : diff === 1 ? 'Tomorrow' : fmtDay(d, { month: 'short', day: 'numeric' });
+      return `<button data-d="${d}" class="${d === day ? 'on' : ''}"><b>${top}</b><small>${fmtDay(d, { weekday: 'short' })}</small></button>`;
+    }).join('');
+    const on = document.querySelector('#days .on');
+    if (on) on.scrollIntoView({ inline: 'center', block: 'nearest' });
+  }
+
+  function card(g) {
+    const A = L.teams[g.a], H = L.teams[g.h];
+    const final = g.state !== 'pre';
+    const mid = final
+      ? `<b>${g.as ?? ''} - ${g.hs ?? ''}</b><br>${gameStatus(g)}`
+      : `${gameStatus(g)}<br><small>${esc(g.tv || '')}</small>`;
+    const body = g.state === 'post'
+      ? `<p class="note" style="padding:0 14px 12px;margin:0;text-align:center">${esc(lineResult(g)) || 'No lines on record'}</p>`
+      : gameLines(L, g);
+    return `<a class="card gamecard" href="game.html?id=${g.id}">
+      <div class="gamehead">
+        <div class="t">${logo(L, g.a, 34)}<div><b>${esc(A.name)}</b><small>${esc(g.ar || '')}</small></div></div>
+        <div class="mid">${mid}</div>
+        <div class="t home">${logo(L, g.h, 34)}<div><b>${esc(H.name)}</b><small>${esc(g.hr || '')}</small></div></div>
+      </div>${body}</a>`;
+  }
+
+  function renderList() {
+    const term = q.value.trim().toLowerCase();
+    const games = L.games.filter(g => g.d === day).filter(g => !term || [g.h, g.a].some(t => {
+      const T = L.teams[t];
+      return `${t} ${T.city} ${T.name}`.toLowerCase().includes(term);
+    }));
+    document.getElementById('list').innerHTML = games.length ? games.map(card).join('')
+      : `<div class="card empty">${term ? 'No games match that search.' : 'No games this day.'}</div>`;
+  }
+
+  document.getElementById('days').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    day = b.dataset.d;
+    history.replaceState(null, '', `?d=${day}`);
+    renderDays();
+    renderList();
+  });
+  q.addEventListener('input', renderList);
+  renderDays();
+  renderList();
+}).catch(fail);
+</script>
+</body>
+</html>

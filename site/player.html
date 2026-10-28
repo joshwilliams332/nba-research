@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Player</title>
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main><div class="card empty">Loading player…</div></main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script>
+shell('players');
+
+lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
+  footer(L);
+  const P = params();
+  const pid = P.get('id');
+  const p = L.players[pid];
+  const main = document.querySelector('main');
+  if (!p) { main.innerHTML = `<div class="card empty">Player not found. <a href="players.html">Search players</a></div>`; return; }
+  document.title = `Hoop Lab · ${p.n}`;
+  const T = L.teams[p.t] || {};
+  const all = playerRows(L, pid);
+  const inj = injuryMap(L).get(pid);
+  const lines = L.proplines[pid] || {};
+
+  // Next (or live) game for the player's team, for the default opponent and today's prop line.
+  const next = (L.teamGames[p.t] || []).find(g => g.state !== 'post');
+  const opp = P.get('opp') || (next ? (next.h === p.t ? next.a : next.h) : null);
+  const props = next ? (((L.props.games || {})[next.id]) || []).filter(x => x.id === pid) : [];
+
+  const st = {
+    stat: STATS[P.get('stat')] ? P.get('stat') : (props[0] ? props[0].s : 'pts'),
+    side: P.get('side') === 'u' ? 'u' : 'o',
+    win: 'l10', support: 'min', f: {}, line: null,
+  };
+  const propFor = s => props.find(x => x.s === s);
+  const defaultLine = s => (propFor(s) ? propFor(s).l : typicalLine(all, s));
+  st.line = P.get('line') != null && !isNaN(+P.get('line')) ? +P.get('line') : defaultLine(st.stat);
+
+  // Teammates who have played for this team, most minutes first (for with / without filters).
+  const mates = Object.entries(L.players).filter(([id, x]) => id !== pid && x.t === p.t).map(([id, x]) => {
+    const rows = (L.logs[id] || []).filter(r => r[1] === p.t);
+    return { id, n: x.n, min: rows.reduce((a, r) => a + r[3], 0) };
+  }).filter(x => x.min > 0).sort((a, b) => b.min - a.min);
+
+  const nextLine = next ? `${next.h === p.t ? 'vs' : '@'} ${next.h === p.t ? next.a : next.h} · ${next.state === 'in' ? 'Live' : `${fmtDay(next.d, { weekday: 'short' })} ${fmtTime(next.t)}`}` : 'No upcoming game';
+  main.innerHTML = `
+    <section class="hero" style="--c1:${T.color || '#333'}bb;--c2:#2a1a10">
+      <div class="row"><a class="back" href="javascript:history.length>1?history.back():location.assign('players.html')" aria-label="Back">‹</a></div>
+      <div class="phead">${headshot(pid, 72)}
+        <div class="grow"><h1>${esc(p.n)}</h1>
+          <div class="muted">${logo(L, p.t, 16)} ${esc(T.city || '')} ${esc(T.name || p.t)} · ${esc(p.p || '')}${p.j ? ` · #${esc(p.j)}` : ''}${injuryTag(inj)}</div>
+          <div class="muted" style="font-size:13px">${next ? `<a href="game.html?id=${next.id}" style="text-decoration:underline">${esc(nextLine)}</a>` : esc(nextLine)}</div>
+        </div></div>
+      ${inj ? `<p class="note"><b style="color:var(--warm)">${esc(inj.st)}</b>: ${esc(inj.det || '')}</p>` : ''}
+    </section>
+    <div class="tabs" id="stats"></div>
+    <div class="card" id="linecard"></div>
+    <div class="windows" id="windows"></div>
+    <div class="card" id="chart"></div>
+    <div class="card"><details class="filters" id="filters"></details></div>
+    <div class="card" id="support"></div>
+    <div class="card" id="log"></div>`;
+
+  function filtered() { return applyFilters(L, all, st.f); }
+  function opts() { return { opp, season: L.meta.season }; }
+
+  function renderStats() {
+    document.getElementById('stats').innerHTML = STAT_ORDER.map(s =>
+      `<button data-stat="${s}" class="${s === st.stat ? 'on' : ''}">${STATS[s].short}${propFor(s) ? ' •' : ''}</button>`).join('');
+  }
+
+  function renderLine() {
+    const prop = propFor(st.stat);
+    const src = prop && prop.l === st.line
+      ? `${bookName(prop.bk)} line: Over ${odds(prop.o)} / Under ${odds(prop.u)}`
+      : prop ? `Sportsbook line is ${prop.l} (${bookName(prop.bk)})` : 'Typical line (the half point above the last-10 average floor). No sportsbook line pulled.';
+    document.getElementById('linecard').innerHTML = `
+      <div class="linectl">
+        <div><div class="muted" style="font-size:12px">${esc(STATS[st.stat].label)}</div>
+          <div class="seg"><button data-side="o" class="${st.side === 'o' ? 'on' : ''}">Over</button><button data-side="u" class="${st.side === 'u' ? 'on' : ''}">Under</button></div></div>
+        <span class="grow"></span>
+        <button class="step" data-step="-1" aria-label="Lower line">−</button><span class="val">${st.line}</span><button class="step" data-step="1" aria-label="Raise line">+</button>
+      </div><p class="note">${esc(src)}${prop && prop.l !== st.line ? ` · <a href="#" data-reset="1" style="color:var(--accent)">use it</a>` : ''}</p>`;
+  }
+
+  function renderWindows(rates) {
+    document.getElementById('windows').innerHTML = WINDOWS.map(w => {
+      const yy = s => `${String(s - 1).slice(2)}-${String(s).slice(2)}`;  // 2027 -> "26-27"
+      const label = w.key === 'h2h' ? (opp ? `vs ${opp}` : 'H2H') : w.key === 'season' ? yy(L.meta.season) : w.key === 'last' ? yy(L.meta.season - 1) : w.label;
+      return `<button data-win="${w.key}" class="${w.key === st.win ? 'on' : ''}">${esc(label)}${rateTag(rates[w.key])}</button>`;
+    }).join('');
+  }
+
+  function bars(rows, f, line, side, cls = '') {
+    if (!rows.length) return `<p class="empty">No games match.</p>`;
+    const vals = rows.map(f);
+    const max = Math.max(1, ...vals, line == null ? 0 : line) * 1.08;
+    const label = r => `${shortDate(r.g.d)}<br>${r.home ? 'vs' : '@'}<br>${r.opp}`;
+    const bar = (r, v) => {
+      const o = line == null ? 'neutral' : outcome(v, line, side);
+      return `<div class="bar ${o}" style="--h:${(v / max) * 100}%" title="${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${v}"><span>${fmt1(v)}</span></div>`;
+    };
+    const lineEl = line == null ? '' : `<div class="lineat" style="bottom:calc((100% - 18px) * ${line / max})"><span>${line}</span></div>`;
+    return `<div class="chart"><div style="min-width:${rows.length * 32}px"><div class="bars ${cls}">${lineEl}${rows.map((r, i) => bar(r, vals[i])).join('')}</div>
+      <div class="xlabels">${rows.map(r => `<span>${label(r)}</span>`).join('')}</div></div></div>`;
+  }
+
+  function renderChart(rates) {
+    const w = rates[st.win];
+    const f = STATS[st.stat].f, vals = w.rows.map(f);
+    const name = WINDOWS.find(x => x.key === st.win).label;
+    document.getElementById('chart').innerHTML = `
+      <div class="row"><h2 class="grow">${esc(STATS[st.stat].label)} · ${esc(st.win === 'h2h' ? `vs ${opp || ''}` : name)}</h2>${rateTag(w, { count: true })}</div>
+      <div class="summary"><span>Average <b>${fmt1(mean(vals))}</b></span><span>Median <b>${fmt1(median(vals))}</b></span>
+        <span>${st.side === 'o' ? 'Over' : 'Under'} ${st.line}: <b>${w.hits} of ${w.n}</b>${w.pushes ? ` (${w.pushes} push)` : ''}</span></div>
+      ${bars(w.rows, f, st.line, st.side)}
+      ${Object.keys(st.f).length ? `<p class="note">Filters on: ${countFilters()} active (see below).</p>` : ''}`;
+  }
+
+  function renderSupport(rates) {
+    const w = rates[st.win];
+    const s = SUPPORT[st.support];
+    const vals = w.rows.map(s.f);
+    document.getElementById('support').innerHTML = `
+      <div class="row" style="margin-bottom:8px"><h2 class="grow">Supporting stats</h2></div>
+      <div class="tabs under">${Object.entries(SUPPORT).map(([k, x]) => `<button data-support="${k}" class="${k === st.support ? 'on' : ''}">${x.label} <small>${fmt1(mean(w.rows.map(x.f)))}</small></button>`).join('')}</div>
+      ${bars(w.rows, s.f, null, 'o', 'small')}
+      <p class="note">Same games as the chart above. Average ${fmt1(mean(vals))}, median ${fmt1(median(vals))}.</p>`;
+  }
+
+  function countFilters() {
+    return Object.entries(st.f).filter(([, v]) => Array.isArray(v) ? v.length : v).length;
+  }
+
+  function renderFilters() {
+    const f = st.f;
+    const sel = (key, label, options) => `<label class="field"><span>${label}</span><select data-f="${key}">${options.map(([v, t]) => `<option value="${v}"${(f[key] || '') === v ? ' selected' : ''}>${t}</option>`).join('')}</select></label>`;
+    const mateOpts = mates.filter(m => !(f.with || []).includes(m.id) && !(f.without || []).includes(m.id)).map(m => `<option value="${m.id}">${esc(m.n)}</option>`).join('');
+    const chips = (key, label) => (f[key] || []).map(id => `<span class="chip">${label} ${esc((L.players[id] || {}).n || id)}<button data-unmate="${key}:${id}" aria-label="Remove">×</button></span>`).join('');
+    const n = countFilters();
+    const el = document.getElementById('filters');
+    const wasOpen = el.open;
+    el.innerHTML = `<summary>⚙️ Filters ${n ? `<span class="tag" style="background:var(--accent);color:#111">${n}</span>` : ''}<span class="grow"></span>${n ? '<button class="btn" data-clear="1">Reset</button>' : '<span class="muted" style="font-size:13px">Tap to open</span>'}</summary>
+      <div class="fgrid">
+        ${sel('loc', 'Location', [['', 'All games'], ['home', 'Home only'], ['away', 'Away only']])}
+        ${sel('rest', 'Days of rest', [['', 'Any'], ['0', 'Back-to-back'], ['1', '1 day'], ['2', '2+ days']])}
+        ${sel('role', 'Role', [['', 'Any'], ['starter', 'Started'], ['bench', 'Off the bench']])}
+        ${sel('result', 'Team result', [['', 'Any'], ['win', 'Wins'], ['loss', 'Losses']])}
+        ${sel('margin', 'Final margin', [['', 'Any'], ['close', 'Within 5'], ['ten', 'Within 10'], ['blowout', '15 or more']])}
+        ${sel('playoffs', 'Playoffs', [['', 'Include'], ['no', 'Regular season only']])}
+        <label class="field"><span>Minutes at least</span><input type="number" inputmode="numeric" min="0" max="48" data-f="minMin" value="${f.minMin || ''}" placeholder="0"></label>
+        <label class="field"><span>Teammate</span><select data-mate="1"><option value="">Add with / without…</option>${mateOpts}</select></label>
+      </div>
+      <div id="mateside" class="chips"></div>
+      <div class="chips">${chips('with', 'With')}${chips('without', 'Without')}</div>
+      <p class="note">Filters apply to every window above. "Without" keeps games the teammate didn't play (injury, rest or not on the team yet).</p>`;
+    el.open = wasOpen || n > 0;
+  }
+
+  function renderLog(rates) {
+    const w = rates[st.win];
+    const f = STATS[st.stat].f;
+    const rows = [...w.rows].reverse();
+    document.getElementById('log').innerHTML = `<h2>Game log</h2>
+      <div class="tablewrap"><table class="data sticky"><tr><th class="l">Game</th><th>Result</th><th>${esc(STATS[st.stat].short)}</th><th>Line</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th><th>3PM</th><th>FG</th><th>FT</th><th>STL</th><th>BLK</th><th>TO</th><th>+/-</th></tr>
+      ${rows.map(r => {
+        const v = f(r), o = outcome(v, st.line, st.side);
+        const past = (lines[r.gid] || {})[st.stat];
+        return `<tr><td class="l"><a href="game.html?id=${r.gid}">${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}</a></td>
+          <td>${r.win ? 'W' : 'L'} ${signed(r.margin, 0)}</td><td class="${o === 'push' ? '' : o}">${fmt1(v)}</td><td>${past != null ? past : '-'}</td>
+          <td>${r.min}</td><td>${r.pts}</td><td>${r.reb}</td><td>${r.ast}</td><td>${r.fg3m}</td><td>${r.fgm}-${r.fga}</td><td>${r.ftm}-${r.fta}</td><td>${r.stl}</td><td>${r.blk}</td><td>${r.tov}</td><td>${signed(r.pm, 0)}</td></tr>`;
+      }).join('') || '<tr><td colspan="15">No games match.</td></tr>'}</table></div>
+      <p class="note">Colors compare each game to the line above. "Line" is that day's sportsbook line, when one was pulled.</p>`;
+  }
+
+  function render() {
+    const rows = filtered();
+    const rates = windowRates(rows, st.stat, st.line, st.side, opts());
+    renderStats();
+    renderLine();
+    renderWindows(rates);
+    renderChart(rates);
+    renderSupport(rates);
+    renderLog(rates);
+    const url = new URL(location);
+    url.searchParams.set('stat', st.stat);
+    url.searchParams.set('line', st.line);
+    if (st.side === 'u') url.searchParams.set('side', 'u'); else url.searchParams.delete('side');
+    history.replaceState(null, '', url);
+  }
+
+  main.addEventListener('click', e => {
+    const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-reset],[data-clear],[data-unmate],[data-addmate]');
+    if (!t) return;
+    const d = t.dataset;
+    if (d.stat) { st.stat = d.stat; st.line = defaultLine(d.stat); }
+    else if (d.side) st.side = d.side;
+    else if (d.step) st.line = Math.max(0.5, st.line + +d.step);
+    else if (d.win) st.win = d.win;
+    else if (d.support) st.support = d.support;
+    else if (d.reset) { e.preventDefault(); st.line = propFor(st.stat).l; }
+    else if (d.clear) { e.preventDefault(); st.f = {}; renderFilters(); }
+    else if (d.unmate) { const [k, id] = d.unmate.split(':'); st.f[k] = st.f[k].filter(x => x !== id); renderFilters(); }
+    else if (d.addmate) { const [k, id] = d.addmate.split(':'); st.f[k] = [...(st.f[k] || []), id]; renderFilters(); }
+    render();
+  });
+  main.addEventListener('change', e => {
+    const t = e.target;
+    if (t.dataset.f) {
+      const v = t.dataset.f === 'minMin' ? +t.value || 0 : t.value;
+      if (v) st.f[t.dataset.f] = v; else delete st.f[t.dataset.f];
+      renderFilters();
+      render();
+    } else if (t.dataset.mate && t.value) {
+      const id = t.value, n = esc((L.players[id] || {}).n);
+      document.getElementById('mateside').innerHTML = `<span class="muted" style="font-size:13px">${n}:</span>
+        <button class="btn" data-addmate="with:${id}">Played</button><button class="btn" data-addmate="without:${id}">Didn't play</button>`;
+    }
+  });
+  renderFilters();
+  render();
+}).catch(fail);
+</script>
+</body>
+</html>
