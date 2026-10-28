@@ -118,6 +118,15 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
      its own clearly labeled box next to the real line, e.g. "Sportsbook line 10.5 (DK) · Hoop Lab projection 12.8 ·
      58% over", with a "what's this?" link to model.html.
   Build directly, no subagents. Pairs with Update 1 (same "tap the bar for the deep page" pattern for game lines).
+- **Update 3 (planned, Josh approved; build when he says so): Props page sorting and filters.** Own design, not a clone.
+  1. Sticky sort bar above the bottom nav: Opp Rank · L5 · L10 · L20 · H2H · This season · Last season. Picking one
+     re-sorts the list by that hit rate (best first) and switches the chips under each card to match.
+  2. Cards: player, line, price, strip, OPP RANK, IP (implied % from the odds), and a specific teammate-out note
+     ("Embiid OUT · +3.4 PTS without him", from outMates / teammateBoost) instead of a generic injury warning.
+     Tapping a card opens player.html on that stat and line.
+  3. Filters sheet: stat types (multi-select), only EV+, players, games, minimum hit rate (slider, chosen window),
+     odds range (slider, e.g. at least -300), opponent matchup Favorable / Neutral / Unfavorable (OPP RANK top 10 /
+     middle / bottom 10), over / under, and saved filter setups (localStorage). No alt lines (they cost credits).
 - Later ideas: correlation finder for same-game parlays, expected starters from ESPN depth charts, a `model-auditor`
   agent that reruns the backtest weekly, re-running the research agent monthly.
 - Out of reach for now: NBA.com stats (play types, tracking) are blocked from cloud servers; The Odds API historical
