@@ -45,6 +45,9 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python3 scripts/build_data.py --store store
+      # Errors (no games, no logs) fail the run before deploying; warnings go to the run's summary page.
+      - name: Check the data
+        run: python3 scripts/check_data.py
       - name: Save the data store
         run: |
           cd store

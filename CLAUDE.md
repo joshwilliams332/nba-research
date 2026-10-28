@@ -33,6 +33,14 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - With no sportsbook line, a player gets a "typical" line: floor(L10 average) + 0.5, always labeled as such.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
+## Agents (`.claude/agents/`)
+- `data-checker`: runs `scripts/check_data.py` (also a workflow step; report on each run's summary page) and
+  traces warnings to their cause.
+- `mobile-reviewer`: screenshots pages at 390px and 1280px and reports layout problems. Run it before merging UI work.
+- `trend-finder`: proposes and tests new Insight rules for `site/assets/insights.js` against real data.
+- Phase 2 was built by parallel agents, each in its own git worktree and PR (dvp, insights, teams/polish), merged
+  one at a time. Keep that pattern for independent features; give each agent its own CSS section and new files.
+
 ## Roadmap (agreed phases)
 - Phase 2: Insights (auto-written trends), defense vs position + opponent ranks on props, Trends page.
 - Phase 3: shot charts / play types (NBA.com stats, may be blocked from Actions), team totals chart with
