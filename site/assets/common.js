@@ -499,6 +499,7 @@ function store(key, val) {
 const NAV = [
   ['games', 'index.html', 'Games', '<path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 0v18M3 12h18M5.6 5.6c3 2.4 3 10.4 0 12.8M18.4 5.6c-3 2.4-3 10.4 0 12.8"/>'],
   ['props', 'props.html', 'Props', '<path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/>'],
+  ['trends', 'trends.html', 'Trends', '<path d="M12 3c1 3.2 5 5.4 5 10.5a5 5 0 0 1-10 0c0-2.3 1.1-3.9 2.2-5 .3 1.8 1.2 2.8 2.1 2.8-.9-3.1-.1-6 .7-8.3Z"/>'],
   ['players', 'players.html', 'Players', '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>'],
 ];
 

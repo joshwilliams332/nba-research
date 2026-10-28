@@ -31,6 +31,10 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - Game-line trends are judged against the current game's number (team's last 10 vs tonight's spread / total),
   matching how Outlier shows them. ATS / O/U records on the Matchup tab use each game's own closing line.
 - With no sportsbook line, a player gets a "typical" line: floor(L10 average) + 0.5, always labeled as such.
+- Insights (`site/assets/insights.js`, tested in `tests/insights.test.js`): kept when a side hits >= 75% over >= 5 games,
+  ranked by Wilson lower bound, best 2 per player stat / team market (one per split family). Player splits reuse
+  `applyFilters` + windows, and each card links to player.html with the same filters as URL params (loc, rest, role,
+  without, win) so the numbers match. Typical lines are only used when no props were pulled at all, and are marked.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)

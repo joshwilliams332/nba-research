@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Trends</title>
+<meta name="description" content="The strongest player and team trends for today's NBA slate.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main>
+  <h1 style="font-size:26px;margin:4px 0 2px">Trends</h1>
+  <p class="muted" id="sub" style="margin:0 0 12px;font-size:14px"></p>
+  <input class="search" id="q" type="search" placeholder="Search players or teams…" autocomplete="off" style="margin-bottom:10px">
+  <div class="row" style="margin-bottom:10px;flex-wrap:wrap">
+    <div class="seg" id="kind"></div><span class="grow"></span>
+    <label class="row" style="gap:6px;font-size:13px;color:var(--muted)">Sort <select id="sort" style="width:auto">
+      <option value="rate">Hit rate</option><option value="n">Sample size</option><option value="best">Strongest</option><option value="date">Tip-off</option></select></label>
+  </div>
+  <div class="tabs" id="mkts"></div>
+  <div class="tabs" id="games"></div>
+  <div id="list"><div class="card empty">Finding trends…</div></div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script src="assets/insights.js"></script>
+<script>
+shell('trends');
+lab(['players', 'logs', 'props', 'injuries']).then(L => {
+  footer(L);
+  // Today's slate, or the next day with games.
+  const today = L.meta.today;
+  const day = L.games.some(g => g.d === today) ? today : (L.games.map(g => g.d).filter(d => d > today).sort()[0]);
+  const slate = L.games.filter(g => g.d === day);
+  const sub = document.getElementById('sub');
+  if (!slate.length) {
+    sub.textContent = '';
+    document.getElementById('list').innerHTML = `<div class="card empty">No upcoming games on the schedule.</div>`;
+    return;
+  }
+  sub.textContent = `${day === today ? 'Today' : `No games today. Showing ${fmtDay(day)}`} · ${slate.length} game${slate.length === 1 ? '' : 's'} · trends that hit 75%+ over 5+ games`;
+
+  const all = slate.flatMap(g => gameInsights(L, g));
+  const st = { kind: 'all', mkt: 'all', gid: 'all', sort: 'rate', q: '' };
+  const mkts = [...new Set(all.map(x => x.market))];
+  const marketOrder = m => (STAT_ORDER.indexOf(m) + 1 || 100 + Object.keys(INSIGHT_MARKETS).indexOf(m));
+  mkts.sort((a, b) => marketOrder(a) - marketOrder(b));
+
+  function controls() {
+    document.getElementById('kind').innerHTML = [['all', 'All'], ['player', 'Players'], ['team', 'Teams']]
+      .map(([k, l]) => `<button data-kind="${k}" class="${k === st.kind ? 'on' : ''}">${l}</button>`).join('');
+    document.getElementById('mkts').innerHTML = ['all', ...mkts]
+      .map(m => `<button data-mkt="${m}" class="${m === st.mkt ? 'on' : ''}">${m === 'all' ? 'All markets' : esc(marketLabel(m))}</button>`).join('');
+    document.getElementById('games').innerHTML = [['all', 'All games'], ...slate.map(g => [g.id, `${g.a} @ ${g.h}`])]
+      .map(([k, l]) => `<button data-gid="${k}" class="${k === st.gid ? 'on' : ''}">${esc(l)}</button>`).join('');
+  }
+
+  function render() {
+    controls();
+    const list = all.filter(x => (st.kind === 'all' || x.type === st.kind) && (st.mkt === 'all' || x.market === st.mkt) &&
+      (st.gid === 'all' || x.gid === st.gid) &&
+      (!st.q || `${x.name || ''} ${x.team} ${x.opp} ${(L.teams[x.team] || {}).name}`.toLowerCase().includes(st.q)))
+      .sort(INSIGHT_SORTS[st.sort]);
+    const typical = list.some(x => x.typical);
+    const shown = list.slice(0, 150);
+    document.getElementById('list').innerHTML = (typical ? `<p class="note" style="margin:0 0 10px">No sportsbook props pulled yet, so player trends use typical lines (the half point above the last-10 average floor).</p>` : '') +
+      (shown.length ? `<div class="insights">${shown.map(x => insightCard(L, x, { showGame: true })).join('')}</div>` +
+        (list.length > shown.length ? `<p class="note">Showing ${shown.length} of ${list.length}. Narrow it down with the filters.</p>` : '')
+        : `<div class="card empty">No trends match.</div>`);
+  }
+
+  document.querySelector('main').addEventListener('click', e => {
+    const t = e.target.closest('[data-kind],[data-mkt],[data-gid]');
+    if (!t) return;
+    if (t.dataset.kind) st.kind = t.dataset.kind;
+    if (t.dataset.mkt) st.mkt = t.dataset.mkt;
+    if (t.dataset.gid) st.gid = t.dataset.gid;
+    render();
+  });
+  document.getElementById('sort').addEventListener('change', e => { st.sort = e.target.value; render(); });
+  document.getElementById('q').addEventListener('input', e => { st.q = e.target.value.trim().toLowerCase(); render(); });
+  render();
+}).catch(fail);
+</script>
+</body>
+</html>
