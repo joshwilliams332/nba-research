@@ -24,6 +24,7 @@
 <script src="assets/lines.js"></script>
 <script src="assets/pbp.js"></script>
 <script src="assets/picks.js"></script>
+<script src="assets/gameline.js"></script>
 <script>
 shell('players');
 
@@ -336,18 +337,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
   // Probable starters (who started each team's last game) and the injury report, for the next game.
   function renderLineup() {
     const el = document.getElementById('lineup');
-    if (!el || !next) return;
-    const injAll = injuryMap(L);
-    const col = team => {
-      const last = teamFinals(L, team).slice(-1)[0];
-      const starters = last ? (byGame().get(last.g.id) || []).filter(r => r.team === team && r.starter) : [];
-      const injs = (L.injuries || []).filter(i => i.t === team);
-      return `<div><div class="row" style="margin-bottom:4px">${logo(L, team, 20)}<b>${esc(team)}</b></div>
-        ${starters.map(r => `<a href="player.html?id=${r.pid}">${headshot(r.pid, 26)}<span>${esc((L.players[r.pid] || {}).n || r.pid)}</span>${injuryTag(injAll.get(r.pid))}</a>`).join('') || '<p class="muted">No games yet.</p>'}
-        ${injs.length ? `<p class="note" style="margin-top:8px"><b>Injuries:</b> ${injs.map(i => `${esc(i.n)} <span class="inj ${String(i.st).toLowerCase().startsWith('out') ? 'inj-o' : ''}">${esc(i.st)}</span>`).join(' · ')}</p>` : '<p class="note">No injuries reported.</p>'}</div>`;
-    };
-    el.innerHTML = `<h2>Lineup</h2><p class="muted" style="margin:0 0 8px;font-size:13px">Probable starters = who started each team's last game.</p>
-      <div class="starters">${col(next.a)}${col(next.h)}</div>`;
+    if (el && next) el.innerHTML = lineupHTML(L, next);
   }
 
   function renderSecbar() {

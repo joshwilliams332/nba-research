@@ -603,11 +603,14 @@ function gameLines(L, g) {
   const A = teamFinals(L, g.a, g.t).slice(-10), H = teamFinals(L, g.h, g.t).slice(-10);
   const hA = h2hSides(L, g.a, g.h, g.t), hH = h2hSides(L, g.h, g.a, g.t);
   const titles = sides => sides.map(s => `${shortDate(s.g.d)} ${s.home ? 'vs' : '@'} ${s.opp}: ${s.pts}-${s.oppPts}`);
+  // Each side opens its own breakdown (line.html); data-go is followed by shell()'s click handler, so it works inside
+  // the game card's link too.
+  const go = (m, s) => `data-go="line.html?id=${g.id}&m=${m}&s=${s}" role="link" tabindex="0"`;
   const side = (abbr, label, price, sides, h2h, kind, num, right) => {
     const r = lineResults(sides, kind, num), t = tally(r), th = tally(lineResults(h2h, kind, num));
     const lab = `<b>${esc(label)}</b>`, pr = price != null ? `<span class="price">${odds(price)}</span>` : '';
     const trend = [`<span><span class="tag">L${t.n}</span> ${rateTag(t)}</span>`, th.n ? `<span><span class="tag">H2H</span> ${rateTag(th)}</span>` : ''];
-    return `<div><div class="side">${lab}<span class="grow"></span>${pr}</div>${strip(right ? [...r].reverse() : r, right ? titles(sides).reverse() : titles(sides))}
+    return `<div class="golink" ${go(kind, abbr === g.h ? 'h' : 'a')}><div class="side">${lab}<span class="grow"></span>${pr}<span class="gochev">›</span></div>${strip(right ? [...r].reverse() : r, right ? titles(sides).reverse() : titles(sides))}
       <div class="trend">${(right ? trend.reverse() : trend).join('')}</div></div>`;
   };
   const parts = [];
@@ -625,12 +628,12 @@ function gameLines(L, g) {
       return `<div>${strip(right ? [...r].reverse() : r, right ? titles(sides).reverse() : titles(sides))}<div class="trend" style="justify-content:${right ? 'flex-end' : 'flex-start'}">${txt}</div></div>`;
     };
     parts.push(`<div class="mkt"><h4>Total</h4><div class="pair">
-      <div><div class="side"><b>O ${line.tot}</b><span class="grow"></span>${line.ov != null ? `<span class="price">${odds(line.ov)}</span>` : ''}</div></div>
-      <div><div class="side"><b>U ${line.tot}</b><span class="grow"></span>${line.un != null ? `<span class="price">${odds(line.un)}</span>` : ''}</div></div>
+      <div class="golink" ${go('total', 'o')}><div class="side"><b>O ${line.tot}</b><span class="grow"></span>${line.ov != null ? `<span class="price">${odds(line.ov)}</span>` : ''}<span class="gochev">›</span></div></div>
+      <div class="golink" ${go('total', 'u')}><div class="side"><b>U ${line.tot}</b><span class="grow"></span>${line.un != null ? `<span class="price">${odds(line.un)}</span>` : ''}<span class="gochev">›</span></div></div>
       ${ou(g.a, A)}${ou(g.h, H, true)}</div></div>`);
   }
   if (!parts.length) return `<p class="note" style="padding:0 14px 12px">No lines posted yet.</p>`;
-  return parts.join('') + (line.bk ? `<p class="note" style="padding:0 14px 12px;margin:0">Lines: ${esc(line.bk)}. Strips: each team's last games against this number, oldest on the left.</p>` : '');
+  return parts.join('') + (line.bk ? `<p class="note" style="padding:0 14px 12px;margin:0">Lines: ${esc(line.bk)}. Strips: each team's last games against this number, oldest on the left. Tap a side for its breakdown.</p>` : '');
 }
 
 /* How a final game's lines came out: "PHI covered -4.5 · Over 237.5 (241)". */
@@ -686,6 +689,17 @@ function shell(active) {
   bottom.className = 'bottomnav';
   bottom.innerHTML = NAV.filter(([k]) => !HEADER_ONLY.has(k)).map(link).join('');
   document.body.appendChild(bottom);
+  // Elements with data-go act as links even when they sit inside another link (game cards).
+  const follow = e => {
+    const t = e.target.closest('[data-go]');
+    if (!t || e.target.closest('button, input, select')) return false;
+    e.preventDefault();
+    e.stopPropagation();
+    location.href = t.dataset.go;
+    return true;
+  };
+  document.addEventListener('click', follow, true);
+  document.addEventListener('keydown', e => { if (e.key === 'Enter') follow(e); }, true);
   appShell();
 }
 
