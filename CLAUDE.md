@@ -100,6 +100,8 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - **Update 2 (planned, Josh approved; build when he says so): layered player props.** Less on screen, more on tap.
   1. Game page Player props: compact rows only ("Aaron Nesmith - Points"), stat chips kept as they are; no strips,
      chips or rates until tapped.
+  Also: tapping a player's headshot or name anywhere in a prop list must open their player page (today on the game
+  page the only way in is the "Full breakdown" link at the bottom of an expanded row, which Josh couldn't find).
   2. Tap a row: it expands to a line ladder for that stat (Over 4.5, 5.5, ...), each with an L10 strip, hit % and
      price (prices only where we have that line; alt lines aren't pulled because they cost credits).
   3. Open the deep page from a line with our OWN control, not Outlier's bar-chart icon: each ladder line ends in a
