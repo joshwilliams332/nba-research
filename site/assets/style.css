@@ -461,3 +461,73 @@ td .logo { vertical-align: middle; margin-right: 4px; }
 .metric > div { background: var(--card2); border-radius: 10px; padding: 10px; }
 .metric b { display: block; font-size: 22px; }
 .metric small { color: var(--muted); }
+
+/* ---------- layered props and props sorting (Updates 2 and 3) */
+.proprow.compact > .head { padding: 10px 14px; }
+.proprow .plink { display: inline-flex; flex: none; }
+.proprow a.name { color: var(--text); }
+.proprow a.name:hover { text-decoration: underline; }
+.linepill { flex: none; display: inline-flex; align-items: baseline; gap: 5px; padding: 4px 9px; border-radius: 9px; font-weight: 700;
+  font-size: 13px; background: var(--card2); border: 1px solid #343a45; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.linepill small { font-size: 11px; color: var(--muted); font-weight: 600; }
+.linepill.typical { border-style: dashed; }
+.ladderwrap { padding: 0 14px 12px; }
+.ladderctx { margin-bottom: 8px; }
+.rates.r1 { grid-template-columns: 1fr; padding: 0 0 8px; }
+.lrow { border: 1px solid var(--line); border-radius: 12px; padding: 9px 11px 8px; margin-top: 8px; background: rgba(255, 255, 255, .015); }
+.lrow.main { border-color: #3a414c; background: var(--card2); }
+.lhead { display: flex; align-items: center; gap: 8px; min-width: 0; flex-wrap: wrap; }
+.lhead > b { font-size: 15px; }
+.lfoot { display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.lfoot .tag { font-size: 10px; padding: 1px 5px; }
+a.brk { flex: none; font-size: 12px; font-weight: 750; color: var(--accent); padding: 5px 9px; border-radius: 999px;
+  border: 1px solid rgba(255, 138, 61, .45); white-space: nowrap; }
+a.brk:hover { background: rgba(255, 138, 61, .12); }
+.rates.r1 > div { display: flex; justify-content: center; align-items: baseline; gap: 8px; padding: 5px 8px; }
+.rates.r1 > div small { display: inline; }
+/* player page: section jump bar, opponent list, starters */
+.secbar { position: sticky; top: 52px; z-index: 15; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -12px 12px;
+  padding: 8px 12px; background: rgba(11, 13, 16, .92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.secbar::-webkit-scrollbar { display: none; }
+.secbar a { flex: none; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 650; color: var(--muted); background: var(--card); border: 1px solid var(--line); }
+.secbar a.on { color: var(--text); border-color: #3a414c; background: var(--card2); }
+[data-sec] { scroll-margin-top: 110px; }
+.vslist td { font-size: 13px; }
+.vslist td.res { font-weight: 800; font-size: 15px; }
+.starters { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; }
+.starters > div { min-width: 0; }
+.starters a { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); min-width: 0; font-weight: 600; font-size: 14px; }
+.starters a span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.projlabel { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; margin-top: 10px; padding: 8px 10px; border-radius: 10px;
+  background: rgba(43, 196, 180, .08); border: 1px solid rgba(43, 196, 180, .3); }
+.projlabel b { color: var(--text); }
+/* props page: sort bar, filters sheet, teammate-out note */
+.sortbar { position: fixed; z-index: 25; left: 12px; right: 12px; bottom: calc(max(10px, env(safe-area-inset-bottom)) + 74px); display: flex; gap: 6px;
+  overflow-x: auto; scrollbar-width: none; padding: 6px; border-radius: 16px; background: rgba(24, 27, 33, .94); backdrop-filter: blur(12px);
+  border: 1px solid var(--line); box-shadow: 0 8px 24px rgba(0, 0, 0, .45); }
+.sortbar::-webkit-scrollbar { display: none; }
+.sortbar button { flex: none; border: 0; background: none; color: var(--muted); font-weight: 700; font-size: 13px; padding: 8px 12px; border-radius: 11px; cursor: pointer; }
+.sortbar button.on { background: var(--text); color: #111; }
+@media (min-width: 760px) { .sortbar { bottom: 16px; left: 50%; right: auto; transform: translateX(-50%); width: max-content; max-width: calc(100% - 32px); } }
+body:has(.sortbar) #foot { padding-bottom: 150px; }
+#list { padding-bottom: 60px; }
+.filterbtn { flex: none; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--card); color: var(--text);
+  border-radius: 999px; padding: 11px 16px; font-weight: 700; cursor: pointer; }
+.filterbtn b { background: var(--accent); color: #111; border-radius: 999px; padding: 0 7px; font-size: 12px; }
+.propcard { display: block; }
+.matenote { padding: 7px 14px; font-size: 12px; font-weight: 650; color: var(--warm); background: rgba(242, 193, 78, .08); border-bottom: 1px solid var(--line); }
+.rates > div.sorted { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+.sheet { position: fixed; inset: 0; z-index: 60; background: rgba(0, 0, 0, .55); display: flex; align-items: flex-end; justify-content: center; }
+.sheet[hidden] { display: none; }
+.sheetbody { width: 100%; max-width: 640px; max-height: 88vh; overflow-y: auto; background: var(--card); border: 1px solid var(--line);
+  border-radius: 20px 20px 0 0; padding: 16px 16px calc(16px + env(safe-area-inset-bottom)); }
+.fsec { padding: 12px 0; border-top: 1px solid var(--line); }
+.fsec h3 { margin-bottom: 8px; display: flex; justify-content: space-between; gap: 8px; }
+.fsec h3 .muted { font-weight: 600; font-size: 13px; }
+.fsec input[type=range] { width: 100%; accent-color: var(--accent); }
+.toggles .toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0; font-weight: 600; }
+.toggles input { width: 22px; height: 22px; accent-color: var(--accent); }
+.sheetfoot { position: sticky; bottom: -16px; display: flex; gap: 8px; padding: 12px 0 4px; background: var(--card); border-top: 1px solid var(--line); }
+.sheetfoot .primary { margin-left: auto; background: var(--accent2); color: #062b28; border-color: var(--accent2); }
+.linkish { border: 0; background: none; color: var(--text); font-weight: 650; cursor: pointer; padding: 0; }
+body.noscroll { overflow: hidden; }

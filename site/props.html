@@ -19,16 +19,14 @@
 <header id="top"></header>
 <main>
   <section class="pagehead"><h1>Props</h1><p>Today's sportsbook lines, ranked by how often they've hit lately.</p></section>
-  <input class="search" id="q" type="search" placeholder="Search players or teams…" autocomplete="off" style="margin-bottom:10px">
-  <div class="tabs" id="mkts"></div>
-  <div class="row" style="margin-bottom:12px;flex-wrap:wrap">
-    <div class="seg" id="side"></div><span class="grow"></span>
-    <label class="row" style="gap:6px;font-size:13px;color:var(--muted)">Sort <select id="sort" style="width:auto">
-      <option value="adj">L10, sample-adjusted</option><option value="l10">L10 hit rate</option><option value="l5">L5 hit rate</option><option value="l20">L20 hit rate</option>
-      <option value="season">Season hit rate</option><option value="h2h">vs opponent</option><option value="time">Tip-off</option><option value="price">Best price vs fair</option><option value="move">Biggest movers</option></select></label>
+  <div class="row" style="gap:8px;margin-bottom:10px">
+    <input class="search grow" id="q" type="search" placeholder="Search players or teams…" autocomplete="off">
+    <button class="filterbtn" id="openFilters" type="button" aria-haspopup="dialog">Filters <span id="fcount"></span></button>
   </div>
-  <p class="confnote">Big number = raw hit rate. <b>≈</b> = adjusted for sample size, so short streaks count less; <span class="amber">amber</span> = fewer than 10 games.</p>
+  <p class="confnote">Big number = raw hit rate. <b>≈</b> = adjusted for sample size, so short streaks count less; <span class="amber">amber</span> = fewer than 10 games. IP = the chance the price implies.</p>
   <div id="list"><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></div>
+  <nav class="sortbar" id="sortbar" aria-label="Sort by"></nav>
+  <div class="sheet" id="sheet" hidden><div class="sheetbody" role="dialog" aria-label="Filters" id="sheetbody"></div></div>
 </main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
@@ -41,8 +39,14 @@ shell('props');
 lab(['players', 'logs', 'props', 'injuries']).then(L => {
   footer(L);
   const inj = injuryMap(L);
-  const st = { mkt: 'all', side: 'best', sort: 'adj', q: '' };
   const games = L.props.games || {};
+  // Sort keys: a hit-rate window, the opponent rank, best price vs fair, or the biggest line moves.
+  const SORTS = [['opp', 'Opp rank'], ['l5', 'L5'], ['l10', 'L10'], ['l20', 'L20'], ['h2h', 'H2H'], ['season', 'This season'], ['last', 'Last season'], ['price', 'Best price'], ['move', 'Movers']];
+  const WIN_KEYS = ['l5', 'l10', 'l20', 'h2h', 'season', 'last'];
+  const WIN_LABEL = { l5: 'L5', l10: 'L10', l20: 'L20', h2h: 'H2H', season: 'SEASON', last: 'LAST SZN' };
+  const DEFAULTS = { sort: 'l10', stats: [], side: 'best', ev: false, games: [], minRate: 0, minOdds: -1000, match: [], hideOut: false };
+  const st = Object.assign({}, DEFAULTS, store('props.filters') || {}, { q: '' });
+  let draft = null;
 
   // One entry per player prop, with hit rates for both sides from games before tip-off.
   const items = [];
@@ -55,68 +59,191 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
       const team = p.t, opp = team === g.h ? g.a : g.h;
       const rows = playerRows(L, pr.id).filter(r => r.g.t < g.t);
       const o = { opp, season: L.meta.season };
-      items.push({ g, pr, p, opp, over: windowRates(rows, pr.s, pr.l, 'o', o), under: windowRates(rows, pr.s, pr.l, 'u', o) });
+      const or = oppRank(L, opp, posBucket(p.p), pr.s);
+      // Key teammate ruled out today, and how this stat moved without him (for the card's note).
+      const outs = g.state === 'post' ? [] : outMates(L, pr.id);
+      const mate = outs[0] ? { m: outs[0], b: teammateBoost(L, pr.id, outs[0].id, pr.s, rows) } : null;
+      items.push({ g, pr, p, opp, or, mate, over: windowRates(rows, pr.s, pr.l, 'o', o), under: windowRates(rows, pr.s, pr.l, 'u', o) });
     }
   }
-
   const mkts = [...new Set(items.map(x => x.pr.s))];
-  function controls() {
-    document.getElementById('mkts').innerHTML = ['all', ...mkts].map(m => `<button data-mkt="${m}" class="${m === st.mkt ? 'on' : ''}">${m === 'all' ? 'All' : STATS[m].label}</button>`).join('');
-    document.getElementById('side').innerHTML = [['best', 'Best side'], ['o', 'Overs'], ['u', 'Unders']].map(([k, l]) => `<button data-side="${k}" class="${k === st.side ? 'on' : ''}">${l}</button>`).join('');
+  const slate = [...new Set(items.map(x => x.g.id))].map(id => L.byId.get(id)).sort((a, b) => (a.t < b.t ? -1 : 1));
+
+  // Matchup for the chosen side: a soft defense (top-10 rank) is favorable for an over and unfavorable for an under.
+  function matchup(x, side) {
+    const cls = x.or && x.or.rank != null ? rankClass(x.or.rank, x.or.of) : '';
+    if (!cls) return '';
+    if (cls === 'mid') return 'neutral';
+    return (cls === 'soft') === (side === 'o') ? 'favorable' : 'unfavorable';
+  }
+  const priceOf = (x, side) => (side === 'o' ? x.pr.o : x.pr.u);
+  const winKey = () => (WIN_KEYS.includes(st.sort) ? st.sort : 'l10');
+
+  // The three windows shown on each card: the chosen one and the two after it.
+  function cardWindows() {
+    const i = Math.min(WIN_KEYS.indexOf(winKey()), WIN_KEYS.length - 3);
+    return WIN_KEYS.slice(Math.max(0, i), Math.max(0, i) + 3);
   }
 
   let saved = savedKeys();
   function card(x, side) {
     const r = side === 'o' ? x.over : x.under, pr = x.pr;
-    const price = side === 'o' ? pr.o : pr.u;
+    const price = priceOf(x, side);
     const l10 = r.l10;
     const results = l10.rows.map(row => outcome(STATS[pr.s].f(row), pr.l, side));
     const href = `player.html?id=${pr.id}&stat=${pr.s}&line=${pr.l}&opp=${x.opp}${side === 'u' ? '&side=u' : ''}`;
-    return `<a class="card flush" href="${href}" style="display:block">
+    const ip = typeof oddsProb === 'function' && price != null ? oddsProb(price) : null;
+    const note = x.mate ? `<div class="matenote">${esc(lastName(x.mate.m.n))} OUT${x.mate.b && x.mate.b.meaningful
+      ? ` · ${signed(Math.round(x.mate.b.delta.stat * 10) / 10)} ${esc(STATS[pr.s].short)} without him (${x.mate.b.without.n} games)` : ''}</div>` : '';
+    return `<a class="card flush propcard" href="${href}">${note}
       <div class="proprow"><div class="head" style="cursor:pointer">${headshot(pr.id, 42)}
         <div class="grow"><div class="name">${esc(x.p.n)} <small>(${esc(x.p.t)})</small>${injuryTag(inj.get(pr.id))}</div>
           <div class="sub">${side === 'o' ? 'Over' : 'Under'} ${pr.l} ${esc(STATS[pr.s].label)} · ${x.p.t === x.g.h ? 'vs' : '@'} ${esc(x.opp)} ${x.g.state === 'pre' ? fmtTime(x.g.t) : ''}${moveTag(pr)}</div></div>
         ${evTag(pr, side)}${price != null ? `<span class="price">${odds(price)} <small>${bookName(pr.bk)}</small></span>` : ''}${x.g.state === 'pre' ? pickButton({ gid: x.g.id, pid: pr.id, name: x.p.n, stat: pr.s, side, line: pr.l, price, book: pr.bk }, saved.has(pickKey({ gid: x.g.id, pid: pr.id, stat: pr.s, side, line: pr.l }))) : ''}</div>
-      <div style="padding:0 14px">${teamContext(L, x.g, x.p.t)}${projTag(L, pr.id, pr.s, pr.l, x.g, side)}${strip(results)}</div>
-      <div class="rates r5">${oppRankCell(L, x.opp, x.p.p, pr.s)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(r[k], { adj: true })}</div>`).join('')}</div></div></a>`;
+      <div style="padding:0 14px">${strip(results)}</div>
+      <div class="rates r5">${oppRankCell(L, x.opp, x.p.p, pr.s)}<div title="Implied probability: the chance this price implies, including the book's margin"><small>IP</small>${ip != null ? `${Math.round(ip * 100)}%` : '-'}</div>
+        ${cardWindows().map(k => `<div class="${k === st.sort ? 'sorted' : ''}"><small>${WIN_LABEL[k]}</small>${rateTag(r[k], { adj: true })}</div>`).join('')}</div></div></a>`;
+  }
+
+  // Everything except the sort: search, stat types, side, EV+, games, minimum hit rate, odds, matchup.
+  function filtered(f) {
+    const q = st.q, wk = WIN_KEYS.includes(f.sort) ? f.sort : 'l10';
+    return items.filter(x => (!f.stats.length || f.stats.includes(x.pr.s)) && (!f.games.length || f.games.includes(x.g.id)) &&
+      (!q || `${x.p.n} ${x.p.t} ${x.opp}`.toLowerCase().includes(q)) &&
+      !(f.hideOut && String((inj.get(x.pr.id) || {}).st || '').toLowerCase().startsWith('out'))).map(x => {
+      const side = f.side !== 'best' ? f.side : ((x.under[wk].rate || 0) > (x.over[wk].rate || 0) ? 'u' : 'o');
+      return { x, side, r: side === 'o' ? x.over : x.under };
+    }).filter(y => (!f.ev || evTag(y.x.pr, y.side)) && (!f.minRate || (y.r[wk].rate || 0) * 100 >= f.minRate) &&
+      (f.minOdds <= -1000 || (priceOf(y.x, y.side) != null && priceOf(y.x, y.side) >= f.minOdds)) &&
+      (!f.match.length || f.match.includes(matchup(y.x, y.side))));
+  }
+
+  function sortRows(rows) {
+    const key = st.sort;
+    const out = y => String((inj.get(y.x.pr.id) || {}).st || '').toLowerCase().startsWith('out') ? 1 : 0;
+    const edge = y => { const f = fairPrice(y.x.pr); return f ? (y.side === 'o' ? f.bestO.ev : f.bestU.ev) : -1; };
+    // Opponent rank, best for the chosen side first: rank 1 allows the most, so overs want low ranks and unders high.
+    const oppScore = y => (y.x.or && y.x.or.rank != null ? (y.side === 'o' ? -y.x.or.rank : y.x.or.rank) : -99);
+    // Window sorts: hit rate first; windows with under 3 games sink; ties go to the sample-adjusted rate.
+    const win = y => { const w = y.r[key]; return w && w.n >= 3 ? w.rate : -1; };
+    rows.sort((a, b) => (out(a) - out(b)) || (key === 'opp' ? oppScore(b) - oppScore(a) || (b.r.l10.rate ?? -1) - (a.r.l10.rate ?? -1)
+      : key === 'price' ? edge(b) - edge(a)
+      : key === 'move' ? ((propMove(b.x.pr) || {}).size || 0) - ((propMove(a.x.pr) || {}).size || 0)
+      : (win(b) - win(a)) || ((b.r[key].adj ?? -1) - (a.r[key].adj ?? -1))));
+    return rows;
+  }
+
+  function activeCount(f) {
+    return ['stats', 'games', 'match'].filter(k => f[k].length).length + ['ev', 'hideOut'].filter(k => f[k]).length
+      + (f.side !== 'best') + (f.minRate > 0) + (f.minOdds > -1000);
+  }
+
+  function renderSortbar() {
+    document.getElementById('sortbar').innerHTML = SORTS.map(([k, l]) => `<button type="button" data-sort="${k}" class="${k === st.sort ? 'on' : ''}">${l}</button>`).join('');
+    const n = activeCount(st);
+    document.getElementById('fcount').innerHTML = n ? `<b>${n}</b>` : '';
   }
 
   function render() {
-    controls();
     saved = savedKeys();
+    renderSortbar();
     const list = document.getElementById('list');
     if (!items.length) {
       const o = L.meta.odds || {};
       list.innerHTML = `<div class="card empty">No sportsbook props pulled for today yet.<br><small>Lines are pulled once a day after 10 AM ET${o.remaining != null ? ` (${o.remaining} free API credits left this month)` : ''}. Meanwhile, every player page works with a typical line: <a href="players.html" style="color:var(--accent)">search players</a>.</small></div>`;
       return;
     }
-    const q = st.q;
-    const rows = items.filter(x => (st.mkt === 'all' || x.pr.s === st.mkt) &&
-      (!q || `${x.p.n} ${x.p.t} ${x.opp}`.toLowerCase().includes(q))).map(x => {
-      const side = st.side !== 'best' ? st.side : ((x.under.l10.rate || 0) > (x.over.l10.rate || 0) ? 'u' : 'o');
-      return { x, side, r: side === 'o' ? x.over : x.under };
-    });
-    const key = st.sort;
-    const out = y => String((inj.get(y.x.pr.id) || {}).st || '').toLowerCase().startsWith('out') ? 1 : 0;
-    // Ruled-out players sink to the bottom; then by the chosen window, ties broken by L20.
-    const edge = y => { const f = fairPrice(y.x.pr); return f ? (y.side === 'o' ? f.bestO.ev : f.bestU.ev) : -1; };
-    rows.sort((a, b) => (out(a) - out(b)) || (key === 'time' ? (a.x.g.t < b.x.g.t ? -1 : 1) : key === 'price' ? edge(b) - edge(a)
-      : key === 'move' ? ((propMove(b.x.pr) || {}).size || 0) - ((propMove(a.x.pr) || {}).size || 0)
-      : key === 'adj' ? ((b.r.l10.adj ?? -1) - (a.r.l10.adj ?? -1)) || ((b.r.l20.adj ?? -1) - (a.r.l20.adj ?? -1))
-      : ((b.r[key].rate ?? -1) - (a.r[key].rate ?? -1)) || ((b.r.l20.rate ?? -1) - (a.r.l20.rate ?? -1))));
+    const rows = sortRows(filtered(st));
     list.innerHTML = rows.length ? rows.slice(0, 150).map(y => card(y.x, y.side)).join('')
-      : `<div class="card empty">No props match.</div>`;
+      : `<div class="card empty">No props match these filters. <a href="#" data-resetall="1" style="color:var(--accent)">Reset filters</a></div>`;
+  }
+
+  // ---------- filters sheet (edits a draft; "Show N results" applies it)
+  const SAVED_KEY = 'props.setups';
+  function sheet() {
+    const f = draft;
+    const chip = (group, val, label, on) => `<button type="button" class="pill ${on ? 'on' : ''}" data-fchip="${group}" data-val="${esc(val)}">${esc(label)}</button>`;
+    const setups = store(SAVED_KEY) || [];
+    const n = filtered(f).length;
+    const oddsLabel = f.minOdds <= -1000 ? 'Any price' : `At least ${odds(f.minOdds)}`;
+    document.getElementById('sheetbody').innerHTML = `
+      <div class="row" style="margin-bottom:6px"><h2 class="grow">Filters</h2><button class="btn" type="button" data-fclose="1">Close</button></div>
+      ${setups.length ? `<div class="fsec"><h3>Saved setups</h3><div class="pills">${setups.map((x, i) => `<span class="chip"><button type="button" class="linkish" data-fload="${i}">${esc(x.name)}</button><button type="button" data-fdel="${i}" aria-label="Delete">×</button></span>`).join('')}</div></div>` : ''}
+      <div class="fsec"><h3>Stat types</h3><div class="pills">${mkts.map(m => chip('stats', m, STATS[m].label, f.stats.includes(m))).join('')}</div></div>
+      <div class="fsec"><h3>Side</h3><div class="pills">${[['best', 'Best side'], ['o', 'Overs'], ['u', 'Unders']].map(([k, l]) => chip('side', k, l, f.side === k)).join('')}</div></div>
+      <div class="fsec"><h3>Opponent matchup</h3><div class="pills">${[['favorable', 'Favorable'], ['neutral', 'Neutral'], ['unfavorable', 'Unfavorable']].map(([k, l]) => chip('match', k, l, f.match.includes(k))).join('')}</div>
+        <p class="note">From OPP RANK for the side you're on: a defense that allows a lot is favorable for an over, unfavorable for an under.</p></div>
+      <div class="fsec"><h3>Minimum hit rate <span class="muted" id="fminv">${f.minRate ? `${f.minRate}%+` : 'Any'} in ${WIN_LABEL[WIN_KEYS.includes(f.sort) ? f.sort : 'l10']}</span></h3>
+        <input type="range" min="0" max="100" step="5" value="${f.minRate}" data-frange="minRate" aria-label="Minimum hit rate"></div>
+      <div class="fsec"><h3>Odds <span class="muted" id="foddsv">${oddsLabel}</span></h3>
+        <input type="range" min="-1000" max="200" step="25" value="${f.minOdds}" data-frange="minOdds" aria-label="Shortest price allowed">
+        <p class="note">Hide prices shorter than this (e.g. at least -300 hides -400 and -1000).</p></div>
+      <div class="fsec"><h3>Games</h3><div class="pills">${slate.map(g => chip('games', g.id, `${g.a} @ ${g.h}`, f.games.includes(g.id))).join('')}</div></div>
+      <div class="fsec toggles">
+        <label class="toggle"><span>Only EV+ (best price beats the fair price)</span><input type="checkbox" data-ftoggle="ev"${f.ev ? ' checked' : ''}></label>
+        <label class="toggle"><span>Hide players ruled out</span><input type="checkbox" data-ftoggle="hideOut"${f.hideOut ? ' checked' : ''}></label>
+      </div>
+      <div class="sheetfoot"><button class="btn" type="button" data-freset="1">Reset</button><button class="btn" type="button" data-fsave="1">Save setup</button>
+        <button class="btn primary" type="button" data-fapply="1">Show ${n} result${n === 1 ? '' : 's'}</button></div>`;
+  }
+  function openSheet() {
+    draft = JSON.parse(JSON.stringify(Object.assign({}, st, { q: undefined })));
+    document.getElementById('sheet').hidden = false;
+    document.body.classList.add('noscroll');
+    sheet();
+  }
+  function closeSheet() {
+    document.getElementById('sheet').hidden = true;
+    document.body.classList.remove('noscroll');
+  }
+  function apply(f) {
+    Object.keys(DEFAULTS).forEach(k => { st[k] = f[k]; });
+    store('props.filters', Object.fromEntries(Object.keys(DEFAULTS).map(k => [k, st[k]])));
+    render();
   }
 
   bindPickButtons(document.querySelector('main'));
+  document.getElementById('openFilters').addEventListener('click', openSheet);
   document.querySelector('main').addEventListener('click', e => {
-    const t = e.target.closest('[data-mkt],[data-side]');
+    const t = e.target.closest('[data-sort],[data-resetall],[data-fclose],[data-fchip],[data-freset],[data-fsave],[data-fapply],[data-fload],[data-fdel]');
+    if (!t && e.target.id === 'sheet') return closeSheet();
     if (!t) return;
-    if (t.dataset.mkt) st.mkt = t.dataset.mkt;
-    if (t.dataset.side) st.side = t.dataset.side;
-    render();
+    const d = t.dataset;
+    if (d.sort) { apply(Object.assign({}, st, { sort: d.sort })); window.scrollTo({ top: 0 }); return; }
+    if (d.resetall) { e.preventDefault(); apply(Object.assign({}, DEFAULTS, { sort: st.sort })); return; }
+    if (d.fclose) return closeSheet();
+    if (d.fchip) {
+      const k = d.fchip, v = d.val;
+      if (k === 'side') draft.side = v;
+      else draft[k] = draft[k].includes(v) ? draft[k].filter(x => x !== v) : [...draft[k], v];
+      return sheet();
+    }
+    if (d.freset) { draft = Object.assign({}, DEFAULTS, { sort: draft.sort }); return sheet(); }
+    if (d.fsave) {
+      const name = (prompt('Name this setup', 'My setup') || '').trim();
+      if (!name) return;
+      const setups = (store(SAVED_KEY) || []).filter(x => x.name !== name);
+      setups.push({ name, f: Object.fromEntries(Object.keys(DEFAULTS).map(k => [k, draft[k]])) });
+      store(SAVED_KEY, setups.slice(-8));
+      return sheet();
+    }
+    if (d.fload) { draft = Object.assign({}, DEFAULTS, (store(SAVED_KEY) || [])[+d.fload].f); return sheet(); }
+    if (d.fdel) { const setups = store(SAVED_KEY) || []; setups.splice(+d.fdel, 1); store(SAVED_KEY, setups); return sheet(); }
+    if (d.fapply) { apply(draft); closeSheet(); }
   });
-  document.getElementById('sort').addEventListener('change', e => { st.sort = e.target.value; render(); });
+  document.getElementById('sheet').addEventListener('input', e => {
+    const t = e.target;
+    if (t.dataset.frange) {
+      draft[t.dataset.frange] = +t.value;
+      document.getElementById('fminv').textContent = `${draft.minRate ? `${draft.minRate}%+` : 'Any'} in ${WIN_LABEL[WIN_KEYS.includes(draft.sort) ? draft.sort : 'l10']}`;
+      document.getElementById('foddsv').textContent = draft.minOdds <= -1000 ? 'Any price' : `At least ${odds(draft.minOdds)}`;
+      const n = filtered(draft).length;
+      document.querySelector('[data-fapply]').textContent = `Show ${n} result${n === 1 ? '' : 's'}`;
+    }
+  });
+  document.getElementById('sheet').addEventListener('change', e => {
+    if (e.target.dataset.ftoggle) { draft[e.target.dataset.ftoggle] = e.target.checked; sheet(); }
+  });
   document.getElementById('q').addEventListener('input', e => { st.q = e.target.value.trim().toLowerCase(); render(); });
   render();
 }).catch(fail);

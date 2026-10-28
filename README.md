@@ -17,7 +17,7 @@ filter and line change is instant.
 | **Game** | Odds tab: game lines plus player props, with L5 / L10 / L20 / season hit rates and an alt-line ladder for every player. Matchup tab: records (home/away, conference, division, by division), ATS, O/U, quarter and half records, last 5 games, injuries. Box score once final, with each stat colored against that day's prop line. |
 | **Player** | Bar chart of any stat (points, rebounds, assists, threes, PRA and combos, stocks, attempts) against an adjustable line, over or under. Hit rates for H2H / L5 / L10 / L20 / this season / last season. Filters: home/away, days of rest, starter/bench, team result, final margin, minimum minutes, regular season only, and **with / without any teammate**. Supporting stats (minutes, FGA, 3PA, FTA, fouls) for the same games, plus the full game log. |
 | **Trends** | The slate's strongest trends written as sentences ("The Indiana Pacers are 10-2 (83.3%) against the spread in their last 12 games as an underdog"), filterable by player/team, market and game. The same feed is the Insights tab on each game page. |
-| **Props** | Today's sportsbook props ranked by recent hit rate, best side or overs/unders only. Players ruled out sink to the bottom. |
+| **Props** | Today's sportsbook props with a one-tap sort bar (opponent rank, L5 / L10 / L20, H2H, this or last season, best price, biggest movers) and a filters sheet (stat types, side, matchup, minimum hit rate, odds, games, EV+ only) with saved setups. Each card shows OPP RANK, implied probability and who's out. |
 
 ## How it works
 
