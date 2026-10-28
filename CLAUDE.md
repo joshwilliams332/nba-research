@@ -105,11 +105,16 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   3. Open the deep page from a line with our OWN control, not Outlier's bar-chart icon: each ladder line ends in a
      "›" arrow / "Breakdown" pill (tapping the line's hit % works too). player.html opens on that stat and line. Keep
      OUR stat tabs (no FGA/FTM/etc.). Add a bottom section bar to jump between: Statistics (windows + chart),
-     Supporting stats, "vs {OPP} {position}" = how this defense does against his position (allowed per game + rank,
-     season and last 10, from defenseVsPosition; G/F/C buckets since ESPN rarely gives PG/SG/SF/PF) - NOT a
-     game-by-game list of other players and whether they hit their lines (Josh doesn't want that), Shot chart vs
+     Supporting stats, "{Stat} vs {OPP}": (a) how this defense does against his position (allowed per game + rank,
+     season and last 10, from defenseVsPosition; G/F/C buckets since ESPN rarely gives PG/SG/SF/PF, with All / G / F
+     / C tabs), and (b) a list of recent players at that position who faced this opponent with just their stat that
+     night (player, matchup, date, result) - no lines, odds or hit/miss marks; then "Key {OPP} {Stat} defense": team
+     points / rebounds / assists allowed per game with ranks for the stats in the selected market. Shot chart vs
      defense, Key defense ranks, Probable starters + injuries, and line movement as one simple line of text
      ("Opened 10.5 -> now 11.5 ↑", morning vs pre-tip pull), no chart.
+  4. Model projection: keep it off the compact list (it can be mistaken for the book line). On the deep page show it in
+     its own clearly labeled box next to the real line, e.g. "Sportsbook line 10.5 (DK) · Hoop Lab projection 12.8 ·
+     58% over", with a "what's this?" link to model.html.
   Build directly, no subagents. Pairs with Update 1 (same "tap the bar for the deep page" pattern for game lines).
 - Later ideas: correlation finder for same-game parlays, expected starters from ESPN depth charts, a `model-auditor`
   agent that reruns the backtest weekly, re-running the research agent monthly.
