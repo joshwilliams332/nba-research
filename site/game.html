@@ -13,6 +13,7 @@
 <main><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
+<script src="assets/context.js"></script>
 <script>
 shell('games');
 const PROP_STATS = ['pts', 'reb', 'ast', 'fg3m', 'pra', 'pr', 'pa', 'ra', 'stl', 'blk'];
@@ -40,7 +41,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
         <div class="mid">${score}</div>
         ${teamLink(g.h, `${logo(L, g.h, 52)}<div><b>${esc(H.name)}</b><small>${esc(g.hr || '')}</small></div>`, 'team home')}
       </div>
-      ${final && lineResult(g) ? `<p class="note" style="text-align:center">${esc(lineResult(g))}</p>` : ''}
+      ${final && lineResult(g) ? `<p class="note" style="text-align:center">${esc(lineResult(g))}</p>` : impliedRow(L, g)}
     </section>
     <div class="tabs" id="tabs"></div>
     <div id="pane"></div>`;
@@ -122,13 +123,25 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       <div class="head">${headshot(pid, 40)}
         <div class="grow"><div class="name">${esc(p.n)}${injuryTag(inj.get(pid))}</div>
           <div class="sub">${esc(p.t)} · Over ${line} ${esc(STATS[stat].short)}${prop && prop.u != null ? ` · U ${odds(prop.u)}` : ''}</div></div>
-        ${priceTag}<span class="chev">⌄</span></div>
-      <div style="padding:0 14px">${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
+        ${evTag(prop)}${priceTag}<span class="chev">⌄</span></div>
+      <div style="padding:0 14px">${teamContext(L, g, p.t)}${strip(results, l10.rows.map(r => `${shortDate(r.g.d)} ${r.home ? 'vs' : '@'} ${r.opp}: ${STATS[stat].f(r)}`))}</div>
       <div class="rates r5">${oppRankCell(L, opp, p.p, stat)}${['l5', 'l10', 'l20', 'season'].map(k => `<div><small>${k === 'season' ? 'SEASON' : k.toUpperCase()}</small>${rateTag(rates[k])}</div>`).join('')}</div>
       ${ladder}</div>`;
   }
 
   // ---------- matchup tab
+  // Pace (last 10 and the chosen season) and tonight's implied totals, under the records.
+  function contextRows() {
+    const l10 = teamPace(L, { last: 10 }), ps = teamPace(L, { season });
+    const it = impliedTotals(g.line);
+    const pace = (p, t) => p[t] && p[t].pace != null ? `${fmt1(p[t].pace)} <small>${rankWord(p[t].rank)}</small>` : '-';
+    const faster = (p, x, y) => p[x] && p[y] && p[x].pace != null && p[y].pace != null ? p[x].pace > p[y].pace : null;
+    const row = (label, x, y, bx) => `<tr><td class="${bx === true ? 'better' : ''}">${x}</td><td>${label}</td><td class="${bx === false ? 'better' : ''}">${y}</td></tr>`;
+    return row('Pace, last 10', pace(l10, g.a), pace(l10, g.h), faster(l10, g.a, g.h))
+      + row('Pace, season', pace(ps, g.a), pace(ps, g.h), faster(ps, g.a, g.h))
+      + (it && g.state === 'pre' ? row('Implied total', fmt1(it.a), fmt1(it.h), it.a > it.h ? true : it.a < it.h ? false : null) : '');
+  }
+
   function matchupPane() {
     const a = teamSplits(L, g.a, season), h = teamSplits(L, g.h, season);
     const better = (label, x, y) => {
@@ -139,7 +152,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     const rows = a.rows.map(([label, x], i) => {
       const y = h.rows[i][1], [bx, by] = better(label, x, y);
       return `<tr><td class="${bx ? 'better' : ''}">${esc(x)}</td><td>${esc(label)}</td><td class="${by ? 'better' : ''}">${esc(y)}</td></tr>`;
-    }).join('');
+    }).join('') + contextRows();
     const seasons = [L.meta.season, L.meta.season - 1].map(s => `<button class="pill ${s === season ? 'on' : ''}" data-season="${s}">${s - 1}-${String(s).slice(2)}</button>`).join('');
     const injList = team => {
       const list = (L.injuries || []).filter(i => i.t === team);
