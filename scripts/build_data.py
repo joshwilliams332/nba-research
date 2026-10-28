@@ -498,6 +498,7 @@ def parse_pbp(summary, gid):
             rows.append([period, clock, team, ids[0], "r"])
     wp = [[at[str(w.get("playId"))], round(w["homeWinPercentage"], 3)] for w in summary.get("winprobability") or []
           if str(w.get("playId")) in at and isinstance(w.get("homeWinPercentage"), (int, float))]
+    wp.sort(key=lambda p: p[0])  # ESPN's list isn't always in game order
     if len(wp) > 90:  # ~90 points is plenty for a small chart
         step = len(wp) / 90
         wp = [wp[int(i * step)] for i in range(90)] + [wp[-1]]

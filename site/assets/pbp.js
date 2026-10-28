@@ -143,6 +143,7 @@ async function winProbCard(L, g) {
   if (!el) return;
   const d = await fetch(`data/wp/${g.id}.json`).then(r => (r.ok ? r.json() : null)).catch(() => null);
   if (!d || !d.wp || d.wp.length < 2) { el.remove(); return; }
+  d.wp.sort((a, b) => a[0] - b[0]);
   const end = Math.max(2880, d.wp[d.wp.length - 1][0]);
   const W = 300, H = 110;
   const pts = d.wp.map(([t, p]) => `${(t / end * W).toFixed(1)},${((1 - p) * H).toFixed(1)}`).join(' ');
@@ -153,7 +154,7 @@ async function winProbCard(L, g) {
     <div class="wp"><span class="wpteam top">${esc(g.h)}</span><span class="wpteam bot">${esc(g.a)}</span>
     <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Win probability chart">
       <g stroke="rgba(255,255,255,.12)" stroke-width="1">${quarters}<line x1="0" y1="${H / 2}" x2="${W}" y2="${H / 2}" stroke-dasharray="4 4"/></g>
-      <polyline points="${pts}" fill="none" stroke="${H_.color || '#ff8a3d'}" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+      <polyline points="${pts}" fill="none" stroke="var(--accent)" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
     </svg></div>
     <p class="note">Chance the ${esc(H_.name || g.h)} win (top = ${esc(g.h)}, bottom = ${esc(A_.name || g.a)}), from ESPN. Lines mark the quarters.</p>`;
 }
