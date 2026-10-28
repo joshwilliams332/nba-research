@@ -17,7 +17,8 @@ filter and line change is instant.
 | **Game** | Odds tab: game lines plus player props, with L5 / L10 / L20 / season hit rates and an alt-line ladder for every player. Matchup tab: records (home/away, conference, division, by division), ATS, O/U, quarter and half records, last 5 games, injuries. Box score once final, with each stat colored against that day's prop line. |
 | **Player** | Bar chart of any stat (points, rebounds, assists, threes, PRA and combos, stocks, attempts) against an adjustable line, over or under. Hit rates for H2H / L5 / L10 / L20 / this season / last season. Filters: home/away, days of rest, starter/bench, team result, final margin, minimum minutes, regular season only, and **with / without any teammate**. Supporting stats (minutes, FGA, 3PA, FTA, fouls) for the same games, plus the full game log. |
 | **Trends** | The slate's strongest trends written as sentences ("The Indiana Pacers are 10-2 (83.3%) against the spread in their last 12 games as an underdog"), filterable by player/team, market and game. The same feed is the Insights tab on each game page. |
-| **Props** | Today's sportsbook props ranked by recent hit rate, best side or overs/unders only. Players ruled out sink to the bottom. |
+| **Props** | Today's sportsbook props ranked by recent hit rate, best side or overs/unders only, each with the model's projection, its gap to the line and the chance of that side. Players ruled out sink to the bottom. |
+| **Model** | How the projection model works and how it did on last season: accuracy against simple baselines, a calibration chart, what each adjustment adds, and how its leans did. |
 
 ## How it works
 
@@ -37,6 +38,12 @@ The Odds API ───┘                                   └── store/ ─
 - **The trend finder** (`site/assets/insights.js`) runs every player prop and team line through situational splits
   (recent form, home/away, vs opponent, rest, without an injured teammate, as favorite/underdog, after a loss), keeps
   sides that hit 75%+ over 5+ games, and ranks them by the Wilson lower bound so 18-of-20 beats 5-of-5.
+- **The projection model** (`site/assets/model.js`) projects a stat as expected minutes x per-minute rate, adjusted for
+  the opponent's defense against the player's position (per possession, shrunk toward average) and the game's expected
+  pace, then turns it into over / under probabilities with a negative binomial. `scripts/backtest.js` replays every game
+  of last season using only earlier games, fits each stat's spread on the first half and reports the second half
+  (accuracy vs L10 / season averages, Brier score vs the site's hit rates, calibration, and an ablation of each
+  adjustment) to `site/data/model.json`, which the Model page renders. It reruns with every data update.
 - **The site** (`site/`) is plain HTML/CSS/JS with no framework or build step. `site/assets/common.js` holds the
   shared logic: stat definitions, filters, window hit rates, team trends, records and quarter splits.
   Trends for a game line are judged against *that game's* number (e.g. "would the 76ers' last 10 games have
@@ -56,6 +63,7 @@ To start from the cached data instead of downloading two seasons of box scores:
 ```bash
 git clone --depth 1 --branch data https://github.com/joshwilliams332/nba-research store
 python3 scripts/build_data.py --offline
+node scripts/backtest.js                     # projection model backtest -> site/data/model.json
 ```
 
 Tests:

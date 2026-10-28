@@ -35,6 +35,11 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   ranked by Wilson lower bound, best 2 per player stat / team market (one per split family). Player splits reuse
   `applyFilters` + windows, and each card links to player.html with the same filters as URL params (loc, rest, role,
   without, win) so the numbers match. Typical lines are only used when no props were pulled at all, and are marked.
+- Projection model (`site/assets/model.js`, tested in `tests/model.test.js`): minutes x per-minute rate x defense
+  (per possession vs position, shrunk) x pace, negative binomial for probabilities. Everything must use only games
+  before tip-off (there's a no-peeking test). `scripts/backtest.js` runs in the deploy workflow after `check_data.py`,
+  writes `site/data/model.json` (fitted phi per stat + backtest report for `model.html`). Last season is judged
+  against typical lines because no book line history exists for it; change tuning only on the fit half (before Jan 1).
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)
@@ -56,8 +61,9 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   corner orientation; demote money-line insights on heavy favorites; shot-zone ranks include playoffs while DvP is
   regular season only.
 - Phase 4 "Prove it" (next, from the research report):
-  1. Projection model (minutes x per-minute rate, adjusted for DvP and pace) with a backtest on last season, a
-     calibration chart and a methodology page; projections and gap to the line on prop rows.
+  1. (done) Projection model (minutes x per-minute rate, adjusted for DvP and pace) with a backtest on last season, a
+     calibration chart and a methodology page (`model.html`); projections and gap to the line on prop rows and the
+     player page. Follow-ups: injury / teammate-out minutes, real-line backtest once props accumulate.
   2. Second, small pre-tip props pull (budgeted in `plan_markets`) for closing line value and line movement.
   3. Saved picks tracker (localStorage, no backend): auto-graded from box scores, record / units / CLV, share cards.
   4. PWA: manifest, icons, offline shell; later opt-in push alerts (needs VAPID keys in Actions secrets).

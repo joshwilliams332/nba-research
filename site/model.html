@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoop Lab · Model</title>
+<meta name="description" content="How Hoop Lab's player projections are built, and how they did on every game of last season.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="top"></header>
+<main>
+  <section class="pagehead"><h1>Model</h1><p>How the projections on prop rows are built, and how they did on games they never saw.</p></section>
+  <div id="body"><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script>
+shell('props');
+
+const LABEL = { all: 'All', pts: 'PTS', reb: 'REB', ast: 'AST', fg3m: '3PM', pra: 'PRA' };
+const n0 = n => n.toLocaleString();
+const p1 = x => (x == null ? '-' : `${(x * 100).toFixed(1)}%`);
+
+/* Predicted chance of the over (x) vs how often it hit (y), one dot per 10% bin; on the diagonal = calibrated. */
+function calibChart(bins) {
+  const W = 320, H = 300, x0 = 42, x1 = 308, y0 = 262, y1 = 12;
+  const X = v => x0 + v * (x1 - x0), Y = v => y0 - v * (y0 - y1);
+  const max = Math.max(...bins.map(b => b.n));
+  const grid = [0, 0.2, 0.4, 0.6, 0.8, 1].map(v => `
+    <line x1="${X(v)}" y1="${y0}" x2="${X(v)}" y2="${y1}" stroke="var(--line)"/><line x1="${x0}" y1="${Y(v)}" x2="${x1}" y2="${Y(v)}" stroke="var(--line)"/>
+    <text x="${X(v)}" y="${y0 + 15}" text-anchor="middle">${v * 100}%</text><text x="${x0 - 6}" y="${Y(v) + 4}" text-anchor="end">${v * 100}%</text>`).join('');
+  const shown = bins.filter(b => b.n >= 50);
+  const path = shown.map((b, i) => `${i ? 'L' : 'M'}${X(b.pred).toFixed(1)},${Y(b.actual).toFixed(1)}`).join('');
+  const dots = shown.map(b => `<circle cx="${X(b.pred).toFixed(1)}" cy="${Y(b.actual).toFixed(1)}" r="${(3 + 7 * Math.sqrt(b.n / max)).toFixed(1)}"
+      fill="var(--accent)" fill-opacity=".85" stroke="var(--bg)"><title>Predicted ${p1(b.pred)}, hit ${p1(b.actual)} over ${n0(b.n)} props</title></circle>`).join('');
+  return `<svg class="calib" viewBox="0 0 ${W} ${H}" role="img" aria-label="Calibration chart: predicted chance of the over against how often it hit">
+    ${grid}<line x1="${X(0)}" y1="${Y(0)}" x2="${X(1)}" y2="${Y(1)}" stroke="var(--muted)" stroke-dasharray="4 4"/>
+    <path d="${path}" fill="none" stroke="var(--accent)" stroke-width="2"/>${dots}
+    <text x="${(x0 + x1) / 2}" y="${H - 2}" text-anchor="middle">Model's chance of the over</text>
+    <text transform="translate(11 ${(y0 + y1) / 2}) rotate(-90)" text-anchor="middle">How often it hit</text></svg>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Model (dot size = props)</span><span><i style="background:var(--muted)"></i>Perfect calibration</span></div>`;
+}
+
+/* A table row with the lowest number in `cols` highlighted. */
+function bestRow(label, vals, fmt, lowerIsBetter = true) {
+  const nums = vals.filter(v => v != null), best = lowerIsBetter ? Math.min(...nums) : Math.max(...nums);
+  return `<tr><td>${label}</td>${vals.map(v => `<td class="${v === best ? 'best' : ''}">${v == null ? '-' : fmt(v)}</td>`).join('')}</tr>`;
+}
+
+Promise.all([load('meta'), fetch('data/model.json').then(r => (r.ok ? r.json() : null)).catch(() => null)]).then(([[meta], M]) => {
+  footer({ meta });
+  const body = document.getElementById('body');
+  if (!M) { body.innerHTML = emptyState('The backtest hasn\'t run yet.', 'It runs with every data update.'); return; }
+  const yy = s => `${s - 1}-${String(s).slice(2)}`;
+  const st = { stat: 'all' };
+  const sum = k => (k === 'all' ? M.test.all : M.test.stats[k]);
+
+  function render() {
+    const T = sum(st.stat), now = M.thisSeason ? (st.stat === 'all' ? M.thisSeason.all : M.thisSeason.stats[st.stat]) : null;
+    const lean = T.leans.find(l => l.min === 0.6) || T.leans[0];
+    const statNames = ['pts', 'reb', 'ast', 'fg3m', 'pra'];
+    body.innerHTML = `
+      <div class="tabs" id="stats">${Object.entries(LABEL).map(([k, l]) => `<button data-stat="${k}" class="${k === st.stat ? 'on' : ''}">${l}</button>`).join('')}</div>
+      <div class="card">
+        <h2>The scorecard</h2>
+        <p class="note" style="margin:4px 0 12px">${yy(M.season)} from ${fmtDay(M.testFrom || M.fitBefore, { month: 'short', day: 'numeric' })} on: ${n0(M.testGames)} games the model was never tuned on,
+          ${n0(T.n)} player props. Each one is judged against the line the site shows when no book line exists (floor of the last-10 average + 0.5).</p>
+        <div class="mstats">
+          <div><small>Brier score (lower is better)</small><b>${T.model.brier.toFixed(3)}</b><small>L10 hit rate ${T.hitRate.brier.toFixed(3)} · coin flip 0.250</small></div>
+          <div><small>Avg miss vs actual</small><b>${T.mae.model.toFixed(2)}</b><small>L10 average ${T.mae.l10.toFixed(2)}</small></div>
+          <div><small>Leans of 60%+</small><b>${p1(lean.rate)}</b><small>${n0(lean.hits)} of ${n0(lean.n)} · always-under ${p1(lean.under)}</small></div>
+          <div><small>This season so far</small><b>${now ? now.model.brier.toFixed(3) : '-'}</b><small>${now ? `Brier on ${n0(now.n)} props · L10 rate ${now.hitRate.brier.toFixed(3)}` : 'No games yet'}</small></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Calibration</h2>
+        <p class="note" style="margin:4px 0 8px">When the model says 60%, does the over hit about 60% of the time? Each dot is a 10% bucket of predictions
+          (buckets under 50 props are left off). On the dashed line means the probabilities can be taken at face value.</p>
+        ${calibChart(T.calibration)}
+        <div class="tscroll"><table class="mtable" style="margin-top:10px"><tr><th>Predicted</th><th>Props</th><th>Model said</th><th>Hit</th></tr>
+          ${T.calibration.map(b => `<tr><td>${Math.round(b.lo * 100)}-${Math.round(b.hi * 100)}%</td><td>${n0(b.n)}</td><td>${p1(b.pred)}</td><td>${p1(b.actual)}</td></tr>`).join('')}</table></div>
+      </div>
+      <div class="card">
+        <h2>Does each piece help?</h2>
+        <p class="note" style="margin:4px 0 8px">Average miss (projection vs actual) by stat. Lower is better; best in green.</p>
+        <div class="tscroll"><table class="mtable"><tr><th></th><th>Model</th><th>Min x rate</th><th>+ pace</th><th>+ defense</th><th>L10 avg</th><th>Season avg</th></tr>
+          ${statNames.map(k => { const m = M.test.stats[k].mae; return bestRow(LABEL[k], [m.model, m.base, m.pace, m.dvp, m.l10, m.season], v => v.toFixed(2)); }).join('')}</table></div>
+        <p class="note">Most of the edge over a plain average comes from weighting recent minutes and a steadier per-minute rate.
+          The pace and defense adjustments are real but small: matchups move a typical prop by a few tenths of a point.</p>
+      </div>
+      <div class="card">
+        <h2>Probabilities vs the alternatives</h2>
+        <div class="tscroll"><table class="mtable"><tr><th></th><th>Model</th><th>L10 hit rate</th><th>Base rate</th><th>Coin flip</th></tr>
+          ${statNames.map(k => { const x = M.test.stats[k]; return bestRow(LABEL[k], [x.model.brier, x.hitRate.brier, x.baseRate.brier, 0.25], v => v.toFixed(3)); }).join('')}</table></div>
+        <p class="note">Brier score: the average squared gap between the predicted chance and what happened (1 or 0). L10 hit rate = the site's
+          sample-adjusted last-10 rate (the ≈ number). Base rate = how often overs hit at these lines in the first half of the season, for every prop.</p>
+      </div>
+      <div class="card">
+        <h2>When the model leans</h2>
+        <div class="tscroll"><table class="mtable"><tr><th>Lean</th><th>Props</th><th>Model's side hit</th><th>Always under</th><th>Overs picked</th></tr>
+          ${T.leans.map(l => `<tr><td>${Math.round(l.min * 100)}%+</td><td>${n0(l.n)}</td><td class="${l.rate > l.under ? 'best' : ''}">${p1(l.rate)}</td><td>${p1(l.under)}</td><td>${n0(l.overs)}</td></tr>`).join('')}</table></div>
+        <p class="note">Typical lines sit a little above the median game, so unders hit more often than overs at them. The honest comparison for the
+          model's side is blindly taking the under on the same props, not 50%. Against real sportsbook lines (shaded, with the vig) these numbers would be lower.</p>
+      </div>
+      <div class="card prose">
+        <h2>How it's built</h2>
+        <p>Every projection uses only games played before tip-off, so the backtest can't peek. The code is <code>site/assets/model.js</code>;
+          the backtest is <code>scripts/backtest.js</code> and reruns with every data update.</p>
+        <h3>1. Minutes</h3>
+        <p>A weighted average of his last ${M.params.minGames} games; a game's weight halves every ${M.params.minHalfLife} games back, so a new role shows up within a week.</p>
+        <h3>2. Per-minute rate</h3>
+        <p>The stat per minute over his last ${M.params.rateGames} games, with a slower decay (half-life ${M.params.rateHalfLife} games), since what a player does per minute is
+          steadier than how much he plays. It's blended with the league rate for his position as if ${M.params.ratePriorMin} minutes at that rate were added, which only matters for thin samples.</p>
+        <h3>3. Opponent defense</h3>
+        <p>What the opponent allowed to his position per possession over its last ${M.params.oppGames} games, against the league over the past year (guards, forwards and centers
+          as on the OPP RANK cells). Because matchup effects are small and noisy, the factor is pulled toward average as if ${M.params.oppShrink} average games were added.</p>
+        <h3>4. Pace</h3>
+        <p>Expected possessions (the two teams' last-${M.params.paceGames} pace averaged) over his own team's recent pace. A game expected to be 3% faster adds about 3%.</p>
+        <h3>5. From a number to a probability</h3>
+        <p>Projection = minutes x rate x defense x pace. Actual games scatter around it more than a simple count would (a quiet night, foul trouble, a blowout), so each stat
+          gets a negative binomial whose variance is a fitted multiple of the projection (points ${M.phi.pts.toFixed(1)}x, rebounds ${M.phi.reb.toFixed(1)}x, assists ${M.phi.ast.toFixed(1)}x, threes ${M.phi.fg3m.toFixed(1)}x).
+          Those multiples are fitted on ${yy(M.season)} games before ${fmtDay(M.fitBefore, { month: 'short', day: 'numeric' })}; everything on this page is from the games after.</p>
+        <h3>What it doesn't know</h3>
+        <ul><li>News: a starter ruled out an hour before tip, a minutes restriction, a coach's rotation change. The Props and player pages show who's out; the model doesn't adjust for it yet.</li>
+          <li>Real line history: The Odds API's history is paid, so last season is judged against typical lines. Props pulled from now on are stored and will make a real-line backtest possible.</li>
+          <li>Blowouts and overtime, beyond what they do to the spread above.</li></ul>
+        <p class="note">Built ${new Date(M.built).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}. A projection is an estimate, not a promise.</p>
+      </div>`;
+  }
+  document.querySelector('main').addEventListener('click', e => {
+    const b = e.target.closest('[data-stat]');
+    if (b) { st.stat = b.dataset.stat; render(); }
+  });
+  render();
+}).catch(fail);
+</script>
+</body>
+</html>
