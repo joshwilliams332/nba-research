@@ -12,10 +12,10 @@
 <body>
 <header id="top"></header>
 <main>
-  <h1 style="font-size:26px;margin:4px 0 12px">Players</h1>
+  <section class="pagehead"><h1>Players</h1><p>Hit rates, game logs and splits for every player.</p></section>
   <input class="search" id="q" type="search" placeholder="Search players…" autocomplete="off" style="margin-bottom:10px">
   <select id="team" style="margin-bottom:12px"></select>
-  <div id="list" class="card flush plist"><div class="empty">Loading players…</div></div>
+  <div id="list" class="card flush plist"><div class="skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></div>
 </main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
@@ -44,7 +44,7 @@ lab(['players', 'logs', 'injuries']).then(L => {
       .sort((a, b) => (b.cur - a.cur) || (b.min * b.gp) - (a.min * a.gp));
     const shown = term || team ? rows.slice(0, 80) : rows.slice(0, 40);
     document.getElementById('list').innerHTML = shown.map(x => `<a href="player.html?id=${x.id}">${headshot(x.id, 40)}
-      <div class="grow"><b>${esc(x.p.n)}</b>${injuryTag(inj.get(x.id))}<br><small>${esc(x.p.t)} · ${esc(x.p.p || '')} · ${x.gp} GP${x.cur ? '' : ' last season'}</small></div>
+      <div class="grow"><b>${esc(x.p.n)}</b>${injuryTag(inj.get(x.id))}<br><small><span class="tm">${logo(L, x.p.t, 14)}${esc(x.p.t)}</span> · ${esc(x.p.p || '')} · ${x.gp} GP${x.cur ? '' : ' last season'}</small></div>
       <div class="right" style="font-size:13px;font-variant-numeric:tabular-nums"><b>${fmt1(x.pts)}</b> <small>PTS</small><br><small>${fmt1(x.reb)} REB · ${fmt1(x.ast)} AST</small></div></a>`).join('')
       || `<div class="empty">No players match.</div>`;
   }

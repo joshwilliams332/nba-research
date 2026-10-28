@@ -267,6 +267,54 @@ function teamSplits(L, team, season) {
   return { rows: out, games: sides.length };
 }
 
+// ---------------------------------------------------------------- standings
+
+/* Current streak from a team's sides (oldest first): 'W3', 'L1', or '-' before any games. */
+function streakOf(sides) {
+  if (!sides.length) return '-';
+  const last = sides[sides.length - 1].win;
+  let n = 0;
+  for (let i = sides.length - 1; i >= 0 && sides[i].win === last; i--) n++;
+  return `${last ? 'W' : 'L'}${n}`;
+}
+
+/* Games behind the leader: ((leader W - W) + (L - leader L)) / 2. */
+function gamesBehind(leader, row) {
+  return ((leader.w - row.w) + (row.l - leader.l)) / 2;
+}
+
+/* Regular-season standings for one season: {East: [...], West: [...]}, best record first. Each row:
+   {team, conf, rank, w, l, pct, gb, home, away, l10, streak, ats, ou, diff (avg margin)}. */
+function standings(L, season) {
+  const rec = list => `${list.filter(s => s.win).length}-${list.filter(s => !s.win).length}`;
+  const rows = Object.keys(L.teams).map(team => {
+    const sides = teamFinals(L, team).filter(s => s.g.s === season && s.g.st === 2);
+    const w = sides.filter(s => s.win).length, l = sides.length - w;
+    const ats = tally(sides.filter(s => s.spread != null).map(s => outcome(s.margin + s.spread, 0)));
+    const ou = tally(sides.filter(s => s.tot != null).map(s => outcome(s.total, s.tot)));
+    return {
+      team, conf: L.teams[team].conf, w, l, pct: sides.length ? w / sides.length : 0,
+      home: rec(sides.filter(s => s.home)), away: rec(sides.filter(s => !s.home)), l10: rec(sides.slice(-10)),
+      streak: streakOf(sides), ats: `${ats.hits}-${ats.misses}-${ats.pushes}`, ou: `${ou.hits}-${ou.misses}-${ou.pushes}`,
+      diff: sides.length ? mean(sides.map(s => s.margin)) : 0,
+    };
+  });
+  const out = {};
+  for (const conf of ['East', 'West']) {
+    const list = rows.filter(r => r.conf === conf)
+      .sort((a, b) => (b.pct - a.pct) || (b.w - a.w) || (b.diff - a.diff) || (a.team < b.team ? -1 : 1));
+    list.forEach((r, i) => { r.rank = i + 1; r.gb = gamesBehind(list[0], r); });
+    out[conf] = list;
+  }
+  return out;
+}
+
+/* Grey placeholder cards shown while data loads. */
+function skeleton(cards = 3, lines = 3) {
+  return Array.from({ length: cards }, () => `<div class="card skel-card">${Array.from({ length: lines }, (_, i) =>
+    `<div class="skel" style="width:${[70, 92, 55, 80][i % 4]}%"></div>`).join('')}</div>`).join('');
+}
+
 // ---------------------------------------------------------------- defense vs position
 
 const POSITIONS = ['G', 'F', 'C'];
@@ -393,8 +441,8 @@ const shortDate = isoDate => { const [, m, d] = isoDate.split('-'); return `${+m
 /* Status line for a game card: tip time, live clock or Final. */
 function gameStatus(g) {
   if (g.state === 'pre') return fmtTime(g.t);
-  if (g.state === 'in') return `<span class="live">${esc(g.detail || 'Live')}</span>`;
-  return esc(g.detail || 'Final');
+  if (g.state === 'in') return `<span class="status live"><i></i>${esc(g.detail || 'Live')}</span>`;
+  return `<span class="status final">${esc(g.detail || 'Final')}</span>`;
 }
 
 function logo(L, abbr, size = 28) {
@@ -424,6 +472,16 @@ function injuryTag(inj) {
   const s = String(inj.st || '').toLowerCase();
   const code = s.startsWith('out') ? 'O' : s.startsWith('doubt') ? 'D' : s.startsWith('quest') ? 'Q' : s.startsWith('prob') ? 'P' : s.startsWith('day') ? 'DTD' : 'INJ';
   return `<span class="inj inj-${code.toLowerCase()}" title="${esc(`${inj.st}: ${inj.det || ''}`)}">${code}</span>`;
+}
+
+/* Link to a team page around some markup. */
+function teamLink(abbr, inner, cls = '') {
+  return `<a href="team.html?t=${encodeURIComponent(abbr)}"${cls ? ` class="${cls}"` : ''}>${inner}</a>`;
+}
+
+/* A friendly empty-state card. */
+function emptyState(text, sub = '') {
+  return `<div class="card empty"><div class="empty-ic">🏀</div><div>${text}</div>${sub ? `<small>${sub}</small>` : ''}</div>`;
 }
 
 function injuryMap(L) {
@@ -500,6 +558,7 @@ const NAV = [
   ['games', 'index.html', 'Games', '<path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 0v18M3 12h18M5.6 5.6c3 2.4 3 10.4 0 12.8M18.4 5.6c-3 2.4-3 10.4 0 12.8"/>'],
   ['props', 'props.html', 'Props', '<path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/>'],
   ['players', 'players.html', 'Players', '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>'],
+  ['standings', 'standings.html', 'Standings', '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/>'],
 ];
 
 function shell(active) {
@@ -525,10 +584,10 @@ function footer(L) {
 
 function fail(err) {
   const main = document.querySelector('main');
-  if (main) main.innerHTML = `<div class="card empty">Couldn't load the data (${esc(err.message)}). Try again in a minute.</div>`;
+  if (main) main.innerHTML = emptyState(`Couldn't load the data (${esc(err.message)}).`, 'Try again in a minute.');
   console.error(err);
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { STATS, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass };
+  module.exports = { STATS, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass };
 }

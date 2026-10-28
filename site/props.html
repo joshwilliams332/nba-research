@@ -12,7 +12,7 @@
 <body>
 <header id="top"></header>
 <main>
-  <h1 style="font-size:26px;margin:4px 0 12px">Props</h1>
+  <section class="pagehead"><h1>Props</h1><p>Today's sportsbook lines, ranked by how often they've hit lately.</p></section>
   <input class="search" id="q" type="search" placeholder="Search players or teams…" autocomplete="off" style="margin-bottom:10px">
   <div class="tabs" id="mkts"></div>
   <div class="row" style="margin-bottom:12px;flex-wrap:wrap">
@@ -21,7 +21,7 @@
       <option value="l10">L10 hit rate</option><option value="l5">L5 hit rate</option><option value="l20">L20 hit rate</option>
       <option value="season">Season hit rate</option><option value="h2h">vs opponent</option><option value="time">Tip-off</option></select></label>
   </div>
-  <div id="list"><div class="card empty">Loading props…</div></div>
+  <div id="list"><div class="card skel-card"><div class="skel"></div><div class="skel" style="width:60%"></div></div></div>
 </main>
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
