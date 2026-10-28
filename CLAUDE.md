@@ -84,6 +84,19 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   2. Second, small pre-tip props pull (budgeted in `plan_markets`) for closing line value and line movement.
   3. Saved picks tracker (localStorage, no backend): auto-graded from box scores, record / units / CLV, share cards.
   4. PWA: manifest, icons, offline shell; later opt-in push alerts (needs VAPID keys in Actions secrets).
+- **Update 1 (planned, Josh approved the plan; build when he says so): line breakdown page.** Tapping a game line
+  (money line, spread or total side) on the Games list / game page opens a breakdown for that bet, inspired by
+  Outlier but with our own layout and branding (ideas are fine to borrow; never their name, logo, look-alike design,
+  text, or licensed data such as RotoWire lineups). Sections:
+  1. Statistics: H2H / L5 / L10 / L20 / this season / last season hit rates for that bet, for each side (tap a team to
+     switch), game-by-game list (date, opponent, W/L and score, or cover / over result), same filters as player pages.
+  2. Insights: the trend finder's team insights for that market.
+  3. Shot chart, offense vs defense: team-level zones (where this team scores vs where the opponent allows), built
+     from the play-by-play store.
+  4. Lineup: "probable starters (last game)" from box-score starter flags plus the ESPN injury report (no RotoWire).
+  5. Line movement: save an ESPN game-line snapshot on every workflow run (~8/day, free) and chart open -> now.
+  6. Our extra: the model's win / cover / over chance next to the line.
+  Cost: no new data or credits. Build directly, no subagents.
 - Later ideas: correlation finder for same-game parlays, expected starters from ESPN depth charts, a `model-auditor`
   agent that reruns the backtest weekly, re-running the research agent monthly.
 - Out of reach for now: NBA.com stats (play types, tracking) are blocked from cloud servers; The Odds API historical
