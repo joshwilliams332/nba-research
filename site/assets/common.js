@@ -667,19 +667,24 @@ const NAV = [
   ['props', 'props.html', 'Props', '<path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/>'],
   ['trends', 'trends.html', 'Trends', '<path d="M12 3c1 3.2 5 5.4 5 10.5a5 5 0 0 1-10 0c0-2.3 1.1-3.9 2.2-5 .3 1.8 1.2 2.8 2.1 2.8-.9-3.1-.1-6 .7-8.3Z"/>'],
   ['players', 'players.html', 'Players', '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>'],
+  ['picks', 'picks.html', 'My picks', '<path d="M6 3h12v18l-6-4.5L6 21V3Z"/>'],
   ['standings', 'standings.html', 'Standings', '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/>'],
 ];
+// The phone bottom nav holds five; Standings moves to an icon in the phone header (desktop shows everything).
+const HEADER_ONLY = new Set(['standings']);
 
 function shell(active) {
-  const links = NAV.map(([k, href, label, icon]) =>
-    `<a href="${href}" class="${k === active ? 'on' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg><span>${label}</span></a>`).join('');
+  const link = ([k, href, label, icon]) =>
+    `<a href="${href}" class="${k === active ? 'on' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg><span>${label}</span></a>`;
   const top = document.getElementById('top');
   if (top) {
-    top.innerHTML = `<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/><path d="M3 16h26M16 3v26M7 7c5 4 5 14 0 18M25 7c-5 4-5 14 0 18" stroke="#1a0f05" stroke-width="1.6" fill="none"/></svg>Hoop Lab</a><nav class="topnav">${links}</nav>`;
+    const extras = NAV.filter(([k]) => HEADER_ONLY.has(k)).map(([k, href, label, icon]) =>
+      `<a href="${href}" class="hdricon${k === active ? ' on' : ''}" aria-label="${label}" title="${label}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg></a>`).join('');
+    top.innerHTML = `<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/><path d="M3 16h26M16 3v26M7 7c5 4 5 14 0 18M25 7c-5 4-5 14 0 18" stroke="#1a0f05" stroke-width="1.6" fill="none"/></svg>Hoop Lab</a><nav class="topnav">${NAV.map(link).join('')}</nav>${extras}`;
   }
   const bottom = document.createElement('nav');
   bottom.className = 'bottomnav';
-  bottom.innerHTML = links;
+  bottom.innerHTML = NAV.filter(([k]) => !HEADER_ONLY.has(k)).map(link).join('');
   document.body.appendChild(bottom);
   appShell();
 }
