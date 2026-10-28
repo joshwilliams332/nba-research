@@ -84,6 +84,7 @@ const DATA = {};
 function load(...names) {
   return Promise.all(names.map(n => DATA[n] || (DATA[n] = fetch(`data/${n}.json`).then(r => {
     if (!r.ok) throw new Error(`data/${n}.json: ${r.status}`);
+    if (r.headers.get('x-hooplab-cached')) APP.cached = true;  // the service worker answered from its cache
     return r.json();
   }))));
 }
@@ -680,9 +681,70 @@ function shell(active) {
   bottom.className = 'bottomnav';
   bottom.innerHTML = links;
   document.body.appendChild(bottom);
+  appShell();
+}
+
+// ---------------------------------------------------------------- installable app
+
+const APP = { cached: false, built: null, prompt: null };
+
+/* Register the service worker (sw.js) and offer to install: Chrome/Android hands us an install prompt;
+   iOS Safari has none, so it gets a one-time "Share, then Add to Home Screen" hint. */
+function appShell() {
+  if (typeof navigator === 'undefined' || !('serviceWorker' in navigator) || location.protocol === 'file:') return;
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+  const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  if (standalone || store('installHint')) return;
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    APP.prompt = e;
+    installChip('Install Hoop Lab for quick access from your home screen.', 'Install');
+  });
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (ios) installChip('Install Hoop Lab: tap <b>Share</b>, then <b>Add to Home Screen</b>.');
+  window.addEventListener('online', offlineBanner);
+  window.addEventListener('offline', offlineBanner);
+}
+
+function installChip(html, action) {
+  if (document.getElementById('install')) return;
+  const el = document.createElement('div');
+  el.id = 'install';
+  el.className = 'installchip';
+  el.innerHTML = `<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/></svg><span>${html}</span>
+    ${action ? `<button class="btn" data-install="1">${action}</button>` : ''}<button class="x" aria-label="Dismiss">×</button>`;
+  el.addEventListener('click', async e => {
+    if (e.target.closest('[data-install]') && APP.prompt) {
+      APP.prompt.prompt();
+      await APP.prompt.userChoice.catch(() => null);
+      APP.prompt = null;
+    } else if (!e.target.closest('.x')) return;
+    store('installHint', 1);
+    el.remove();
+  });
+  document.body.appendChild(el);
+}
+
+/* "Offline · data from Oct 28, 3:12 PM" under the header when the network is down or data came from the cache. */
+function offlineBanner() {
+  if (typeof document === 'undefined') return;
+  let el = document.getElementById('offline');
+  const off = APP.cached || (typeof navigator !== 'undefined' && navigator.onLine === false);
+  if (!off) { if (el) el.remove(); return; }
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'offline';
+    el.className = 'offline';
+    const top = document.getElementById('top');
+    top ? top.after(el) : document.body.prepend(el);
+  }
+  const when = APP.built ? new Date(APP.built).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
+  el.textContent = `Offline${when ? ` · data from ${when}` : ''}`;
 }
 
 function footer(L) {
+  if (L && L.meta) APP.built = L.meta.built;
+  offlineBanner();
   const el = document.getElementById('foot');
   if (!el) return;
   const built = L && L.meta ? new Date(L.meta.built).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';

@@ -35,6 +35,10 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   ranked by Wilson lower bound, best 2 per player stat / team market (one per split family). Player splits reuse
   `applyFilters` + windows, and each card links to player.html with the same filters as URL params (loc, rest, role,
   without, win) so the numbers match. Typical lines are only used when no props were pulled at all, and are marked.
+- Installable app: `site/manifest.webmanifest`, icons in `site/assets/icons/`, service worker `site/sw.js`
+  (pages and data network-first with cached fallback + "Offline · data from …" banner; assets cache-first by
+  their ?v= URL; the deploy stamps sw.js's VERSION with the commit). When adding a page or a script, add it to
+  `PAGES` / `ASSETS` in sw.js so it works offline from the first visit.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)
