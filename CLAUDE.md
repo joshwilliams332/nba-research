@@ -70,7 +70,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   (honest public record); the counted record starts at `RECORD_START` (2026-10-29; 10/28 was an unposted test night). Pick chance = 30% model + 70% books' no-vig consensus (`fairPrice`), skip when they differ
   by 20+ points (model missing news), skip anyone on the injury report; >= 54% and >= 3% edge at the posted price,
   max 5, one per player, two per game; prices -200 to +180. Grading reuses picks.js (`gradePick`, `summarize`).
-  Delivery: two scheduled Claude tasks email Josh (6:07 PM ET pregame, 8:41 AM ET recap) following
+  Delivery: two scheduled Claude tasks email Josh (6:00 PM ET pregame, 8:41 AM ET recap) following
   `.claude/agents/social-poster.md`; Josh posts by hand. Nothing auto-posts.
 - Live scores (`site/assets/live.js`, tested in `tests/live.test.js`): while a game is on (or tipping within 10 min),
   index / game / picks pages poll ESPN's public scoreboard (and the summary box score for games on screen) from the
