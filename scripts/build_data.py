@@ -117,6 +117,10 @@ SEASON_TYPES = {2, 3, 5}
 # The Odds API prop markets, in the order credits are spent on them.
 MARKETS = [("player_points", "pts"), ("player_rebounds", "reb"), ("player_assists", "ast"), ("player_threes", "fg3m")]
 CREDIT_RESERVE = 10        # never spend the last few credits of the month
+# The free Odds API key is shared with the Mingus football site. Each month this many credits are left for it
+# (spread over the month, so the share for the days still to come is always held back). 0 in the NFL off-season;
+# override with the repo variable ODDS_OTHER_SPORTS_CREDITS.
+OTHER_SPORTS_CREDITS = int(os.environ.get("ODDS_OTHER_SPORTS_CREDITS") or 200)
 # The pre-tip "closing" pull: points only, for games tipping within this many minutes.
 CLOSE_MARKETS = [("player_points", "pts")]
 CLOSE_WINDOW_MIN = 100
@@ -721,11 +725,16 @@ def parse_props(event_odds, roster_keys):
     return out
 
 
-def daily_budget(remaining, today):
-    """The credits today may use: what's left this month (minus a reserve), spread evenly over the days left."""
+def daily_budget(remaining, today, other=None):
+    """The credits today may use: what's left this month, minus a small reserve and the other sports' share for the
+    rest of the month (`other` credits a month, default OTHER_SPORTS_CREDITS), spread evenly over the days left.
+    Whatever football has already spent shows up in `remaining`, so only its share of the days to come is held back."""
+    other = OTHER_SPORTS_CREDITS if other is None else other
+    month_start = today.replace(day=1)
     next_month = date(today.year + (today.month == 12), today.month % 12 + 1, 1)
-    days_left = (next_month - today).days
-    return int(max(0, remaining - CREDIT_RESERVE) / days_left)
+    days_left, days_in_month = (next_month - today).days, (next_month - month_start).days
+    held = other * days_left / days_in_month
+    return int(max(0, remaining - CREDIT_RESERVE - held) / days_left)
 
 
 def plan_markets(remaining, n_events, today):

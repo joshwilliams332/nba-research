@@ -25,6 +25,9 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   cron runs are free). 1 credit per game per market. `daily_budget()` spreads what's left (minus a reserve) over the
   days left in the month; `plan_markets()` sets aside 1 credit/game for the close pull when the share allows,
   `plan_close()` caps the close pull at the share. Busy days can borrow from later days but never overspend.
+  The key is shared with the Mingus football site: `OTHER_SPORTS_CREDITS` (200/month, repo variable
+  `ODDS_OTHER_SPORTS_CREDITS`, 0 in the NFL off-season) is held back pro rata for the days left in the month, so
+  basketball can't eat football's share. Whatever football spends shows up in the remaining count automatically.
   Limiting to one sportsbook doesn't save credits (up to 10 books = 1 region), so all US books are pulled and
   DraftKings is shown first.
 - Seasons are named by their ending year like ESPN (2026-27 = 2027). Last season + this season are loaded.
