@@ -60,6 +60,15 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   typical lines: Josh found them noisy (bench players, few games). They live collapsed under the player page's
   "Lineup & injuries" section, with numbers only at 5+ games without him; the Without filter covers the rest.
   The projection model's own teammate-out adjustment is separate and stays (it's backtested).
+- Social posts (`scripts/social.js`, tested in `tests/social.test.js`; workflow step after the backtest, never blocks
+  the deploy): best bets lock once per day on the first run at 4 PM ET+ or 3h before the first tip, into
+  `store/social/YYYY-MM-DD.json` + `.png` (card drawn by the runner's Chrome); the recap (`-recap.json/.png`) is
+  written once every pick's game is final; `status.json` says what the last run did. Locked files are never rewritten
+  (honest public record). Pick chance = 30% model + 70% books' no-vig consensus (`fairPrice`), skip when they differ
+  by 20+ points (model missing news), skip anyone on the injury report; >= 54% and >= 3% edge at the posted price,
+  max 5, one per player, two per game; prices -200 to +180. Grading reuses picks.js (`gradePick`, `summarize`).
+  Delivery: two scheduled Claude tasks email Josh (6:07 PM ET pregame, 8:41 AM ET recap) following
+  `.claude/agents/social-poster.md`; Josh posts by hand. Nothing auto-posts.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)
@@ -67,6 +76,8 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   traces warnings to their cause.
 - `mobile-reviewer`: screenshots pages at 390px and 1280px and reports layout problems. Run it before merging UI work.
 - `trend-finder`: proposes and tests new Insight rules for `site/assets/insights.js` against real data.
+- `social-poster`: the playbook the scheduled email tasks follow (fetch the day's post from the `data` branch, send it
+  to Josh as written, poll if the run is late). Cheap by design: no data rebuild, no rewriting.
 - Josh asked to stop using subagents for now because of token cost (Phase 4's last three pieces were finished
   one at a time in the main session). Don't spawn agents unless he asks again.
 - Phase 2 was built by parallel agents, each in its own git worktree and PR (dvp, insights, teams/polish), merged
