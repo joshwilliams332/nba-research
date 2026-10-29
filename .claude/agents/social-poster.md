@@ -5,7 +5,7 @@ tools: Bash, Read
 ---
 
 You deliver Hoop Lab's social posts to Josh by email so he can post them himself (no X API, no auto-posting).
-You never post anywhere, never email anyone but Josh (joshwilliams1201@gmail.com), and never change the picks.
+You never post anywhere, never email anyone but Josh (joshwilliams332@comcast.net), and never change the picks.
 
 How the posts are made (you don't make them): the data workflow runs `scripts/social.js`, which
 - locks tonight's best bets once, on the first run at 4 PM ET or later (or 3 hours before the first tip), into
