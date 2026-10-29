@@ -620,3 +620,16 @@ a, button, input, select, label, summary, .proprow > .head, [data-step] { touch-
   .matchup .team, .matchup .team.home { flex-direction: column; gap: 4px; text-align: center; }
   .matchup .team b { font-size: 15px; }
 }
+
+/* ---------- teammate-out chips (player page) */
+.matebar { margin: -2px 0 10px; }
+.matechips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.matelabel { flex: none; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
+.matechip { flex: none; display: inline-flex; align-items: center; gap: 5px; min-height: 36px; padding: 6px 11px; border-radius: 999px;
+  background: var(--card2); border: 1px solid var(--line); color: var(--text); font-size: 13px; font-weight: 650; cursor: pointer; }
+.matechip .inj { margin-left: 0; }
+.matechip.on { background: rgba(255, 138, 61, .16); border-color: var(--accent); color: var(--accent); }
+.matechip.add { color: var(--muted); font-weight: 600; border-style: dashed; }
+.matenote2 { margin: 6px 2px 0; font-size: 12px; color: var(--muted); }
+.matenote2 b { color: var(--text); }
+.matenote2.small { color: var(--warm); }

@@ -163,3 +163,12 @@ test('teammate boost compares games with and without a teammate on the same team
   assert.deepStrictEqual(C.outMates(L, 'p1').map(m => m.id), ['star']);
   assert.strictEqual(C.lastName('Joel Star Jr.'), 'Star');
 });
+
+test('injury status: a day-to-day entry takes the status its note gives', () => {
+  const st = (s, det) => C.injuryStatus({ st: s, det });
+  assert.strictEqual(st('Day-To-Day', "Williams (knee) is doubtful for Thursday's game against Memphis"), 'Doubtful');
+  assert.strictEqual(st('Day-To-Day', 'He is questionable for Friday'), 'Questionable');
+  assert.strictEqual(st('Day-To-Day', 'He has been ruled out for Saturday'), 'Out');
+  assert.strictEqual(st('Day-To-Day', 'Listed day-to-day with soreness'), 'Day-To-Day');
+  assert.strictEqual(st('Out', 'Probable to return next week'), 'Out');  // only day-to-day entries are reread
+});
