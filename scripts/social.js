@@ -81,8 +81,36 @@ function injured(L, pid) {
   return (L.injuries || []).some(i => i.id === pid && /^(out|doubt|quest|day)/i.test(i.st || ''));
 }
 
+// Teammates' news. A rotation teammate (ROTATION_MIN+ minutes over his last 10 games for the team) whose status is
+// uncertain makes tonight's role a coin flip, so the pick is skipped. If he's out, the player's games without him
+// (MATE_MIN_GAMES+) must not go against the pick: e.g. Clingan's rebound under hit 8 of 10 overall but 0 of 10
+// without Robert Williams.
+const ROTATION_MIN = 15;
+const MATE_MIN_GAMES = 5;
+const UNSURE = /^(doubt|quest|day|game)/i;
+
+function keyMates(L, pid, team) {
+  return (L.injuries || []).filter(i => i.id && i.id !== pid && i.t === team && L.players[i.id]).map(i => {
+    const rows = playerRows(L, i.id).filter(r => r.team === team && r.g.s >= L.meta.season - 1).slice(-10);
+    return { id: i.id, n: L.players[i.id].n, st: injuryStatus(i), min: mean(rows.map(r => r.min)) || 0, games: rows.length };
+  }).filter(m => m.min >= ROTATION_MIN && m.games >= 3);
+}
+
+/* Why a side shouldn't be picked because of a teammate, or null. */
+function mateProblem(L, pid, stat, line, side, rows, mates) {
+  const unsure = mates.find(m => UNSURE.test(m.st));
+  if (unsure) return `${unsure.n} is ${unsure.st.toLowerCase()}`;
+  for (const m of mates.filter(x => /^out/i.test(x.st))) {
+    const without = teammateBoost(L, pid, m.id, stat, rows).withoutRows;
+    if (without.length < MATE_MIN_GAMES) continue;
+    const hits = without.filter(r => outcome(STATS[stat].f(r), line, side) === 'hit').length;
+    if (hits / without.length < 0.5) return `${side === 'o' ? 'over' : 'under'} hit ${hits} of ${without.length} without ${m.n}`;
+  }
+  return null;
+}
+
 /* Every side of every prop for games that haven't started, with the model's chance and edge at the posted price. */
-function candidates(L, day) {
+function candidates(L, day, skipped = []) {
   const out = [];
   for (const [gid, props] of Object.entries((L.props || {}).games || {})) {
     const g = L.byId.get(gid);
@@ -95,6 +123,7 @@ function candidates(L, day) {
       const proj = M.project(L, pr.id, pr.s, g, { rows });
       if (!proj) continue;
       const opp = p.t === g.h ? g.a : g.h;
+      const mates = keyMates(L, pr.id, p.t);
       const fair = fairPrice(pr);  // consensus no-vig chance of the over across books at this line
       if (!fair) continue;
       for (const side of ['o', 'u']) {
@@ -105,8 +134,12 @@ function candidates(L, day) {
         if (Math.abs(model - market) > PICK.maxGap) continue;
         const prob = PICK.modelWeight * model + (1 - PICK.modelWeight) * market;
         const edge = prob * decimalOdds(price) - 1;
+        if (prob >= PICK.minProb && edge >= PICK.minEdge) {
+          const why = mateProblem(L, pr.id, pr.s, pr.l, side, rows, mates);
+          if (why) { skipped.push(`${p.n} ${side === 'o' ? 'O' : 'U'} ${pr.l} ${STATS[pr.s].short}: ${why}`); continue; }
+        }
         const l10 = rows.slice(-10).map(r => outcome(STATS[pr.s].f(r), pr.l, side));
-        out.push({ g, pr, p, opp, side, price, prob, model, market, edge, proj, l10, rank: oppRank(L, opp, posBucket(p.p), pr.s) });
+        out.push({ g, pr, p, opp, side, price, prob, model, market, edge, proj, l10, mates, rank: oppRank(L, opp, posBucket(p.p), pr.s) });
       }
     }
   }
@@ -147,6 +180,7 @@ function toPick(L, c) {
     proj: Math.round(c.proj.mean * 10) / 10, prob: Math.round(c.prob * 1000) / 1000,
     model: Math.round(c.model * 1000) / 1000, market: Math.round(c.market * 1000) / 1000, edge: Math.round(c.edge * 1000) / 1000,
     l10: c.l10, oppRank: c.rank && c.rank.rank != null ? { rank: c.rank.rank, of: c.rank.of } : null, why: whyLine(L, c),
+    mates: Object.fromEntries((c.mates || []).map(m => [m.id, m.st])),  // rotation teammates' status at lock
   };
 }
 
@@ -307,22 +341,63 @@ function lockPicks(L, dir, now, force) {
   const hasProps = Object.keys((L.props || {}).games || {}).some(gid => (L.byId.get(gid) || {}).d === day);
   if (!hasProps) return { day, state: 'no-props', why: 'no sportsbook props pulled today' };
 
-  const cands = candidates(L, day);
+  const skipped = [];
+  const cands = candidates(L, day, skipped);
   const picks = choosePicks(cands).map(c => toPick(L, c));
   const season = seasonRecord(L, dir, day, L.meta.season);
   const post = slatePost(day, today.length, picks, season);
   const png = renderPng(slateCard(day, today.length, picks), path.join(dir, `${day}.png`), cardHeight(picks.length));
   const img = png ? `${RAW}/${day}.png` : null;
+  const clock = t => new Date(t).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
+  const pulled = (L.props || {}).fetched;
   const notes = [
-    `Locked ${new Date(now).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' })} ET from ${cands.length} prop sides; prices are from that moment, so check your book before posting.`,
+    `Locked ${clock(now)} ET from ${cands.length} prop sides. Prices are from the ${pulled ? `${clock(pulled)} ET ` : ''}sportsbook pull and lines move, so check your book before posting; if the price got much worse, skip or say so.`,
+    ...(skipped.length ? [`Skipped because of a teammate's news: ${skipped.slice(0, 4).join('; ')}${skipped.length > 4 ? ` (+${skipped.length - 4} more)` : ''}.`] : []),
     'Our chance = 30% model + 70% the books\' no-vig price, so a pick needs the model to lean past a fair market. Props where the two disagree by 20+ points were skipped (usually news the model can\'t see).',
-    'Players on the injury report (even questionable) were skipped. If someone is ruled out after this, the pick is graded as a void.',
+    'Players on the injury report (even questionable) were skipped, and so were players whose rotation teammate is questionable/doubtful. If someone is ruled out after this, the pick is graded as a void.',
     'The model is backtested against typical lines, not yet against real sportsbook lines. This public record is the real test.',
   ];
   const title = picks.length ? `Tonight's post · ${dayLabel(day)} · ${picks.length} pick${picks.length === 1 ? '' : 's'}` : `Tonight's post · ${dayLabel(day)} · no plays`;
   write(file, { date: day, lockedAt: new Date(now).toISOString(), games: today.length, settings: PICK, picks, post, image: img,
     email: { subject: `🏀 ${title}`, html: emailHTML(title, post, img, notes), text: emailText(post, img, notes) } });
   return { day, state: 'locked', why: `${picks.length} picks locked`, new: true };
+}
+
+/* After the lock and before the picks tip: has news changed? A pick's player or a rotation teammate whose injury
+   status moved since the lock, or a pre-tip close line that moved against the pick, goes into a "heads up" note.
+   Writes YYYY-MM-DD-check.json (the locked picks file is never touched); the email task sends its email instead of
+   the lock's when it exists. Removed again if the news goes back to how it was. */
+function checkPicks(L, dir, now) {
+  const day = L.meta.today;
+  const doc = read(path.join(dir, `${day}.json`));
+  const file = path.join(dir, `${day}-check.json`);
+  if (!doc || !doc.picks || !doc.picks.length) return { state: 'none' };
+  const live = doc.picks.filter(p => { const g = L.byId.get(p.gid); return g && g.state === 'pre'; });
+  if (!live.length) return { state: 'started' };
+  const status = id => { const i = (L.injuries || []).find(x => x.id === id); return i ? injuryStatus(i) : 'Active'; };
+  const notes = [];
+  for (const p of live) {
+    const own = status(p.pid);
+    if (own !== 'Active') notes.push(`${p.name} is now listed ${own.toLowerCase()} (pick stays on the record; it's a void if he sits).`);
+    const before = p.mates || {};
+    for (const m of keyMates(L, p.pid, p.team)) {
+      if ((before[m.id] || 'Active') !== m.st) notes.push(`${m.n} (${p.team}) is now ${m.st.toLowerCase()}${before[m.id] ? ` (was ${before[m.id].toLowerCase()})` : ''}: this can change ${p.name}'s role.`);
+    }
+    for (const [id, was] of Object.entries(before)) {
+      if (!(L.injuries || []).some(i => i.id === id)) notes.push(`${(L.players[id] || {}).n || id} is off the injury report (was ${was.toLowerCase()}): expect him to play.`);
+    }
+    const prop = (((L.props || {}).games || {})[p.gid] || []).find(x => x.id === p.pid && x.s === p.stat);
+    const close = prop && prop.close;
+    if (close && (close[0] !== p.line || (p.side === 'o' ? close[1] : close[2]) <= p.price - 15)) {
+      const now_ = p.side === 'o' ? close[1] : close[2];
+      notes.push(`${p.name} ${p.side === 'o' ? 'O' : 'U'} ${p.line}: the line is now ${close[0]} at ${now_ > 0 ? '+' : ''}${now_} (locked ${p.price > 0 ? '+' : ''}${p.price}).`);
+    }
+  }
+  if (!notes.length) { if (fs.existsSync(file)) fs.unlinkSync(file); return { state: 'clear' }; }
+  const box = `<div style="background:#fff4e5;border:1px solid #f5c58a;border-radius:8px;padding:10px 12px;margin:0 0 14px;font:14px -apple-system,Segoe UI,sans-serif;color:#7a4300"><b>Heads up before you post</b><ul style="margin:6px 0 0;padding-left:18px">${notes.map(n => `<li>${htmlEsc(n)}</li>`).join('')}</ul></div>`;
+  write(file, { date: day, checked: new Date(now).toISOString(), notes,
+    email: { subject: `${doc.email.subject} · heads up`, html: box + doc.email.html, text: `HEADS UP: ${notes.join(' ')}\n\n${doc.email.text}` } });
+  return { state: 'heads-up', notes: notes.length };
 }
 
 /* Recap the latest locked day before today once all its games are final. Written once. */
@@ -359,10 +434,11 @@ function main() {
   const L = loadLab(path.resolve(arg('--data', path.join(root, 'site', 'data'))));
   const now = Date.parse(arg('--now', new Date().toISOString()));
   const lock = lockPicks(L, dir, now, args.includes('--force-lock'));
+  const check = checkPicks(L, dir, now);
   const recap = writeRecap(L, dir);
-  write(path.join(dir, 'status.json'), { checked: new Date(now).toISOString(), today: L.meta.today, lock, recap });
+  write(path.join(dir, 'status.json'), { checked: new Date(now).toISOString(), today: L.meta.today, lock, check, recap });
   console.log(`Social: ${lock.day} ${lock.state} (${lock.why}); recap ${recap.day || '-'} ${recap.state}${recap.record ? ` ${recap.record}` : ''}`);
 }
 
 if (require.main === module) main();
-module.exports = { PICK, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
+module.exports = { PICK, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };

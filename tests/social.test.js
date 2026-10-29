@@ -69,3 +69,59 @@ test('post length counts emoji as two characters', () => {
   assert.strictEqual(S.postLength('ab'), 2);
   assert.strictEqual(S.postLength('a🏀'), 3);
 });
+
+// A small team for the teammate rules: big man "c" plays 30 min with "w" (another big) and grabs 8 rebounds;
+// in games "w" sits, "c" plays 36 and grabs 13.
+function bigs(nWith, nWithout) {
+  const C = require('../site/assets/common.js');
+  const cols = ['min', 'pts', 'reb'];
+  const games = [], logs = { c: [], w: [] };
+  for (let i = 0; i < nWith + nWithout; i++) {
+    const d = new Date(Date.UTC(2026, 9, 1 + i)).toISOString().slice(0, 10);
+    games.push({ id: `g${i}`, d, t: `${d}T23:00Z`, s: 2027, st: 2, h: 'POR', a: 'MEM', state: 'post', hs: 100, as: 90 });
+    const without = i >= nWith;
+    logs.c.push([`g${i}`, 'POR', 1, without ? 36 : 30, 10, without ? 13 : 8]);
+    if (!without) logs.w.push([`g${i}`, 'POR', 0, 20, 6, 6]);
+  }
+  const L = C.indexLab({ cols, season: 2027, today: '2026-10-29' }, { POR: {}, MEM: {} }, games);
+  L.players = { c: { n: 'Donovan Clingan', t: 'POR', p: 'C' }, w: { n: 'Robert Williams III', t: 'POR', p: 'C' } };
+  L.logs = logs;
+  return { L, C, rows: C.playerRows(L, 'c') };
+}
+
+test('teammate rules: an uncertain rotation teammate blocks the pick; an out one only if the split goes against it', () => {
+  const { L, rows } = bigs(10, 6);
+  // Day-to-day on the report, but the note says doubtful: role is uncertain, skip.
+  L.injuries = [{ id: 'w', t: 'POR', st: 'Day-To-Day', det: "Williams (knee) is doubtful for Thursday's game" }];
+  let mates = S.keyMates(L, 'c', 'POR');
+  assert.deepStrictEqual(mates.map(m => [m.id, m.st]), [['w', 'Doubtful']]);
+  assert.match(S.mateProblem(L, 'c', 'reb', 10.5, 'u', rows, mates), /doubtful/);
+  // Out: the under 10.5 hit 0 of 6 without him -> skip; the over is fine.
+  L.injuries = [{ id: 'w', t: 'POR', st: 'Out', det: '' }];
+  mates = S.keyMates(L, 'c', 'POR');
+  assert.match(S.mateProblem(L, 'c', 'reb', 10.5, 'u', rows, mates), /under hit 0 of 6 without Robert Williams III/);
+  assert.strictEqual(S.mateProblem(L, 'c', 'reb', 10.5, 'o', rows, mates), null);
+  // Too few games without him to judge: no block.
+  const few = bigs(12, 3);
+  few.L.injuries = [{ id: 'w', t: 'POR', st: 'Out', det: '' }];
+  assert.strictEqual(S.mateProblem(few.L, 'c', 'reb', 10.5, 'u', few.rows, S.keyMates(few.L, 'c', 'POR')), null);
+});
+
+test('heads-up check: notes a teammate status change after the lock, and clears when nothing changed', () => {
+  const fs = require('fs'), os = require('os'), path = require('path');
+  const { L } = bigs(10, 0);
+  L.games.push({ id: 'tonight', d: '2026-10-29', t: '2026-10-29T23:00Z', s: 2027, st: 2, h: 'POR', a: 'MEM', state: 'pre' });
+  L.byId.set('tonight', L.games[L.games.length - 1]);
+  L.props = { games: {} };
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'social-'));
+  const pick = { id: 'x', gid: 'tonight', pid: 'c', name: 'Donovan Clingan', team: 'POR', stat: 'reb', side: 'u', line: 10.5, price: -106, mates: {} };
+  fs.writeFileSync(path.join(dir, '2026-10-29.json'), JSON.stringify({ picks: [pick], email: { subject: 'S', html: '<p>post</p>', text: 'post' } }));
+  L.injuries = [];
+  assert.strictEqual(S.checkPicks(L, dir, Date.now()).state, 'clear');
+  assert.ok(!fs.existsSync(path.join(dir, '2026-10-29-check.json')));
+  L.injuries = [{ id: 'w', t: 'POR', st: 'Out', det: '' }];
+  assert.strictEqual(S.checkPicks(L, dir, Date.now()).state, 'heads-up');
+  const check = JSON.parse(fs.readFileSync(path.join(dir, '2026-10-29-check.json'), 'utf8'));
+  assert.match(check.notes[0], /Robert Williams III \(POR\) is now out/);
+  assert.match(check.email.html, /Heads up before you post/);
+});

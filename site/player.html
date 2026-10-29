@@ -83,6 +83,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
       ${inj ? `<p class="note"><b style="color:var(--warm)">${esc(inj.st)}</b>: ${esc(inj.det || '')}</p>` : ''}
     </section>
     <div class="tabs" id="stats"></div>
+    <div class="matebar" id="matebar"></div>
     <nav class="secbar" id="secbar" aria-label="Sections"></nav>
     <div class="card" id="linecard"></div>
     <div class="windows" id="windows"></div>
@@ -181,6 +182,29 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
 
   function countFilters() {
     return Object.entries(st.f).filter(([, v]) => Array.isArray(v) ? v.length : v).length;
+  }
+
+  // "Teammate out" chips at the top: teammates on today's injury report (most serious first), one tap = only games
+  // without him. Every window, the chart and the log follow. "+ Any teammate" opens the full filter.
+  const RANK = st => /^out/i.test(st) ? 0 : /^doubt/i.test(st) ? 1 : /^quest/i.test(st) ? 2 : 3;
+  const injuredMates = (L.injuries || []).filter(i => i.id && i.id !== pid && i.t === p.t && mates.some(m => m.id === i.id))
+    .sort((a, b) => (RANK(injuryStatus(a)) - RANK(injuryStatus(b))) || mates.findIndex(m => m.id === a.id) - mates.findIndex(m => m.id === b.id));
+  const MATE_SMALL = 8;
+  function renderMatebar() {
+    const without = st.f.without || [];
+    const extra = without.filter(id => !injuredMates.some(i => i.id === id));
+    const chip = (id, status) => {
+      const on = without.includes(id);
+      const code = status ? injuryTag({ st: status, det: '' }) : '';
+      return `<button class="matechip${on ? ' on' : ''}" data-mtoggle="${id}" aria-pressed="${on}">${on ? '✓ ' : ''}${esc(lastName((L.players[id] || {}).n || id))}${code}</button>`;
+    };
+    const n = without.length ? filtered().length : 0;
+    const names = without.map(id => lastName((L.players[id] || {}).n || id)).join(' and ');
+    document.getElementById('matebar').innerHTML = `<div class="matechips"><span class="matelabel">Without</span>
+        ${injuredMates.map(i => chip(i.id, injuryStatus(i))).join('')}${extra.map(id => chip(id)).join('')}
+        <button class="matechip add" data-mateadd="1">+ Any teammate</button></div>
+      ${without.length ? `<p class="matenote2${n < MATE_SMALL ? ' small' : ''}"><b>${n}</b> game${n === 1 ? '' : 's'} without ${esc(names)}${n < MATE_SMALL ? ' · small sample, read loosely' : ''}. Hit rates, chart and log below use only these games.</p>`
+        : injuredMates.length ? '<p class="matenote2">Tap an injured teammate to see only games he missed.</p>' : ''}`;
   }
 
   function renderFilters() {
@@ -376,6 +400,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     const rows = filtered();
     const rates = windowRates(rows, st.stat, st.line, st.side, opts());
     renderStats();
+    renderMatebar();
     renderLine();
     renderWindows(rates);
     renderChart(rates);
@@ -391,6 +416,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     url.searchParams.set('stat', st.stat);
     url.searchParams.set('line', st.line);
     if (st.side === 'u') url.searchParams.set('side', 'u'); else url.searchParams.delete('side');
+    if ((st.f.without || []).length) url.searchParams.set('without', st.f.without.join(',')); else url.searchParams.delete('without');
     history.replaceState(null, '', url);
   }
 
@@ -403,7 +429,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
       document.querySelectorAll('#secbar a').forEach(a => a.classList.toggle('on', a === j));
       return;
     }
-    const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-dvppos],[data-zone],[data-shotseason],[data-reset],[data-clear],[data-unmate],[data-addmate]');
+    const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-dvppos],[data-zone],[data-shotseason],[data-reset],[data-clear],[data-unmate],[data-addmate],[data-mtoggle],[data-mateadd]');
     if (!t) return;
     const d = t.dataset;
     if (d.stat) { st.stat = d.stat; st.line = defaultLine(d.stat); }
@@ -416,6 +442,19 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     else if (d.shotseason) { shotState.season = +d.shotseason; }
     else if (d.reset) { e.preventDefault(); st.line = propFor(st.stat).l; }
     else if (d.clear) { e.preventDefault(); st.f = {}; renderFilters(); }
+    else if (d.mtoggle) {
+      const w = st.f.without || [];
+      st.f.without = w.includes(d.mtoggle) ? w.filter(x => x !== d.mtoggle) : [...w, d.mtoggle];
+      if (!st.f.without.length) delete st.f.without;
+      renderFilters();
+    } else if (d.mateadd) {
+      const f = document.getElementById('filters');
+      f.open = true;
+      f.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const sel = f.querySelector('[data-mate]');
+      if (sel) sel.focus();
+      return;
+    }
     else if (d.unmate) { const [k, id] = d.unmate.split(':'); st.f[k] = st.f[k].filter(x => x !== id); renderFilters(); }
     else if (d.addmate) {
       const [k, id] = d.addmate.split(':');

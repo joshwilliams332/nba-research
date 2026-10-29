@@ -24,7 +24,8 @@ Raw files can lag a few minutes behind a push.
 Dates are Eastern: `TZ=America/New_York date +%F` (today) and `TZ=America/New_York date -d yesterday +%F`.
 
 Pregame (DATE = today):
-1. `DATE.json` exists: send it with the Gmail send_message tool: to Josh, subject = email.subject,
+1. `DATE-check.json` exists (news changed after the lock): send ITS email instead, which is the same post with a
+   "Heads up before you post" box on top. Otherwise, if `DATE.json` exists: send it with the Gmail send_message tool: to Josh, subject = email.subject,
    htmlBody = email.html, body = email.text. Send it exactly as written. Done.
 2. Missing, and status says `no-games` for DATE: send nothing.
 3. Missing, status `no-props` or `missed` for DATE: send a two-line email saying no picks tonight and why.

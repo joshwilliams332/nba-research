@@ -75,6 +75,13 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   the data job's snapshot. No Odds API credits, no server. Game page: live header, "Now 19 / 24.5" on prop rows, live
   Box score tab (mid-game only already-cleared stats are green). My picks: "Now" stat, and a pick whose game ended
   before the data job saved the box score is settled from the live final instead of reading as void.
+- Teammates and injuries: `injuryStatus()` (common.js) reads ESPN's note for "Day-To-Day" entries ("is doubtful for
+  Thursday's game" -> Doubtful); `outMates`, `injuryTag` and the picks use it. Player page: a "Without" chip row under
+  the stat tabs lists teammates on today's injury report; one tap = only games he missed (same `without` filter, kept in
+  the URL), with the game count and an amber note under 8 games. Picks (`social.js`): skip a side when a rotation
+  teammate (15+ min) is questionable / doubtful / day-to-day, or is out and the side hit under 50% in 5+ games without
+  him. After the lock, `checkPicks` writes `YYYY-MM-DD-check.json` (heads-up notes: status changes since the lock, a
+  close line that moved against the pick) and the 6 PM email task sends that version when it exists.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)

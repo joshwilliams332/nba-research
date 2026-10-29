@@ -445,6 +445,19 @@ function adjustedRate(t, prior = 0.5) {
 }
 
 const OUT_STATUS = /^(out|doubt)/i;
+
+/* A report entry's status for the next game. ESPN often lists "Day-To-Day" while its note says more ("is doubtful for
+   Thursday's game"), so for day-to-day entries the note's wording wins: out, doubtful, questionable or probable. */
+function injuryStatus(inj) {
+  const st = String((inj && inj.st) || '');
+  if (!/^day/i.test(st)) return st;
+  const det = String(inj.det || '').toLowerCase();
+  if (/\b(ruled out|will not play|won't play|out for|is out\b|will miss)/.test(det)) return 'Out';
+  if (/\bdoubtful\b/.test(det)) return 'Doubtful';
+  if (/\bquestionable\b|game-time decision/.test(det)) return 'Questionable';
+  if (/\bprobable\b/.test(det)) return 'Probable';
+  return st;
+}
 const KEY_MATE_MIN = 20;     // a teammate averaging this many minutes counts as a key absence
 const BOOST_MIN_GAMES = 3;   // games without him needed before we show a boost
 
@@ -492,11 +505,11 @@ function outMates(L, pid) {
   const team = (L.players[pid] || {}).t;
   if (!team) return [];
   const played = playedIndex(L);
-  return (L.injuries || []).filter(i => i.id && i.id !== pid && i.t === team && OUT_STATUS.test(i.st || '') && L.players[i.id])
+  return (L.injuries || []).filter(i => i.id && i.id !== pid && i.t === team && OUT_STATUS.test(injuryStatus(i)) && L.players[i.id])
     .map(i => {
       const rows = playerRows(L, i.id).filter(r => r.team === team && r.g.s >= L.meta.season - 1);
       const together = rows.filter(r => (played.get(r.gid) || new Set()).has(pid)).length;
-      return { id: i.id, n: L.players[i.id].n, st: i.st, min: mean(rows.map(r => r.min)) || 0, together };
+      return { id: i.id, n: L.players[i.id].n, st: injuryStatus(i), min: mean(rows.map(r => r.min)) || 0, together };
     })
     .filter(m => m.min >= KEY_MATE_MIN && m.together >= BOOST_MIN_GAMES)
     .sort((a, b) => b.min - a.min);
@@ -565,7 +578,7 @@ function adjTag(t) {
 
 function injuryTag(inj) {
   if (!inj) return '';
-  const s = String(inj.st || '').toLowerCase();
+  const s = injuryStatus(inj).toLowerCase();
   const code = s.startsWith('out') ? 'O' : s.startsWith('doubt') ? 'D' : s.startsWith('quest') ? 'Q' : s.startsWith('prob') ? 'P' : s.startsWith('day') ? 'DTD' : 'INJ';
   return `<span class="inj inj-${code.toLowerCase()}" title="${esc(`${inj.st}: ${inj.det || ''}`)}">${code}</span>`;
 }
@@ -766,5 +779,5 @@ function fail(err) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { STATS, STAT_ORDER, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, lastName, SHRINK_K };
+  module.exports = { STATS, STAT_ORDER, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, injuryStatus, lastName, SHRINK_K };
 }
