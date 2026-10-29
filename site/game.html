@@ -25,6 +25,7 @@
 <script src="assets/insights.js"></script>
 <script src="assets/picks.js"></script>
 <script src="assets/pbp.js"></script>
+<script src="assets/live.js"></script>
 <script>
 shell('games');
 const PROP_STATS = ['pts', 'reb', 'ast', 'fg3m', 'pra', 'pr', 'pa', 'ra', 'stl', 'blk'];
@@ -40,16 +41,20 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   document.title = `Hoop Lab · ${g.a} @ ${g.h}`;
 
   const final = g.state === 'post';
-  const score = g.state !== 'pre'
-    ? `<div class="score"><span class="${g.as < g.hs && final ? 'lose' : ''}">${g.as}</span> - <span class="${g.hs < g.as && final ? 'lose' : ''}">${g.hs}</span></div>${gameStatus(g)}`
-    : `<b style="color:var(--text);font-size:16px">${fmtTime(g.t)}</b><br>${fmtDay(g.d)}`;
+  // Score, clock and (while live) when it was last checked; redrawn in place by live updates.
+  const scoreHTML = () => {
+    const done = g.state === 'post', note = g.state === 'pre' ? '' : liveNote(L);
+    return (g.state !== 'pre'
+      ? `<div class="score"><span class="${g.as < g.hs && done ? 'lose' : ''}">${g.as}</span> - <span class="${g.hs < g.as && done ? 'lose' : ''}">${g.hs}</span></div>${gameStatus(g)}`
+      : `<b style="color:var(--text);font-size:16px">${fmtTime(g.t)}</b><br>${fmtDay(g.d)}`) + (note ? `<small class="livenote">${esc(note)}</small>` : '');
+  };
   main.innerHTML = `
     <section class="hero" style="--c1:${A.color}aa;--c2:${H.color}aa">
       <div class="row"><a class="back" href="index.html?d=${g.d}" aria-label="Back to games">‹</a>
         <span class="grow" style="text-align:center;color:var(--muted);font-size:13px">${esc([g.v, g.tv].filter(Boolean).join(' · '))}</span><span style="width:38px"></span></div>
       <div class="matchup">
         ${teamLink(g.a, `${logo(L, g.a, 52)}<div><b>${esc(A.name)}</b><small>${esc(g.ar || '')}</small></div>`, 'team')}
-        <div class="mid">${score}</div>
+        <div class="mid" id="score">${scoreHTML()}</div>
         ${teamLink(g.h, `${logo(L, g.h, 52)}<div><b>${esc(H.name)}</b><small>${esc(g.hr || '')}</small></div>`, 'team home')}
       </div>
       ${final && lineResult(g) ? `<p class="note" style="text-align:center">${esc(lineResult(g))}</p>` : impliedRow(L, g)}
@@ -58,7 +63,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     <div id="pane"></div>`;
 
   const tabs = [['odds', 'Odds'], ['insights', 'Insights'], ['matchup', 'Matchup']];
-  if (final) tabs.push(['box', 'Box score']);
+  if (g.state !== 'pre') tabs.push(['box', 'Box score']);
   let tab = params().get('tab') || (final ? 'box' : 'odds');
   let sub = 'lines', stat = 'pts', season = L.meta.season, term = '';
   const open = new Set();
@@ -162,7 +167,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       <div class="head"><a class="plink" href="player.html?id=${pid}&stat=${stat}&opp=${opp}" aria-label="${esc(p.n)}">${headshot(pid, 40)}</a>
         <div class="grow"><a class="name" href="player.html?id=${pid}&stat=${stat}&opp=${opp}">${esc(p.n)}</a>${injuryTag(inj.get(pid))}
           <div class="sub">${esc(p.t)} · ${esc(STATS[stat].label)}</div></div>
-        ${lineTag}<span class="chev">⌄</span></div>
+        ${g.state === 'pre' ? '' : liveTag(liveValue(L, g.id, pid, stat), line)}${lineTag}<span class="chev">⌄</span></div>
       ${body}</div>`;
   }
 
@@ -219,11 +224,17 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       const r = playerRows(L, pid).find(x => x.gid === g.id);
       if (r) rows.push({ pid, r });
     }
+    // During the game (and right after, before the data job saves the box score) the live one fills in.
+    const live = !rows.length && (L.liveBox || {})[g.id];
+    if (live) for (const [pid, r] of Object.entries(live)) if (r && r.team) rows.push({ pid, r });
+    if (!rows.length) return `<div class="card empty">${g.state === 'in' ? 'Live box score loading…' : 'No box score yet.'}<br><small>${esc(liveNote(L) || 'It appears after the next data update.')}</small></div>`;
     const cell = (x, s, val) => {
       const line = ((L.proplines[x.pid] || {})[g.id] || {})[s];
       if (line == null) return `<td>${val}</td>`;
       const o = outcome(STATS[s].f(x.r), line);
-      return `<td class="${o === 'push' ? '' : o}" title="Prop line ${line}">${val}</td>`;
+      // Mid-game a stat under its line hasn't missed yet: only mark the ones already past it.
+      const cls = o === 'push' || (g.state === 'in' && o === 'miss') ? '' : o;
+      return `<td class="${cls}" title="Prop line ${line}">${val}</td>`;
     };
     const table = team => {
       const list = rows.filter(x => x.r.team === team).sort((a, b) => (b.r.starter - a.r.starter) || b.r.min - a.r.min);
@@ -237,7 +248,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     const q = (side, label) => `<tr><td class="l">${label}</td>${(side || []).map(v => `<td>${v}</td>`).join('')}</tr>`;
     const nq = Math.max((g.aq || []).length, 4);
     return `<div id="wpcard"></div><div class="card"><div class="tablewrap"><table class="data"><tr><th class="l"></th>${Array.from({ length: nq }, (_, i) => `<th>${i < 4 ? `Q${i + 1}` : `OT${i > 4 ? i - 3 : ''}`}</th>`).join('')}</tr>
-      ${q(g.aq, g.a)}${q(g.hq, g.h)}</table></div><p class="note">Green / red stat = cleared / missed that day's prop line, when one was pulled.</p></div>
+      ${q(g.aq, g.a)}${q(g.hq, g.h)}</table></div><p class="note">${g.state === 'in' ? `Live box score (${esc(liveNote(L))}). Green stat = already past today's prop line.` : 'Green / red stat = cleared / missed that day\'s prop line, when one was pulled.'}</p></div>
       ${table(g.a)}${table(g.h)}`;
   }
 
@@ -245,7 +256,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     renderTabs();
     const pane = document.getElementById('pane');
     pane.innerHTML = tab === 'odds' ? oddsPane() : tab === 'insights' ? insightsPane() : tab === 'matchup' ? matchupPane() : boxPane();
-    if (tab === 'box') winProbCard(L, g);
+    if (tab === 'box' && g.state === 'post') winProbCard(L, g);
     const ps = document.getElementById('psearch');
     if (ps) ps.addEventListener('input', () => {
       term = ps.value.trim().toLowerCase();
@@ -275,6 +286,14 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     render();
   });
   render();
+
+  // Live: refresh the score, clock, prop counts and box score while the game is on. Leave the pane alone while
+  // someone is typing in it.
+  startLive(L, { day: g.d, gids: [g.id], onUpdate() {
+    document.getElementById('score').innerHTML = scoreHTML();
+    const typing = document.activeElement && document.activeElement.matches('#pane input');
+    if (!typing && (tab === 'box' || (tab === 'odds' && sub === 'props'))) render();
+  } });
 }).catch(fail);
 </script>
 </body>

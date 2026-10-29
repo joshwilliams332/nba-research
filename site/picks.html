@@ -24,6 +24,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/picks.js"></script>
+<script src="assets/live.js"></script>
 <script>
 shell('picks');
 document.getElementById('picks').innerHTML = skeleton(3, 3);
@@ -57,7 +58,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   function statusChip(grade) {
     const s = grade.status;
     if (s === 'open') return `<span class="pstatus open">${grade.g ? esc(fmtTime(grade.g.t)) : 'Open'}</span>`;
-    if (s === 'live') return `<span class="pstatus live">${esc(grade.g.detail || 'Live')}</span>`;
+    if (s === 'live') return `<span class="pstatus live">${esc(grade.g.detail || 'Live')}</span>${grade.now != null ? `<span class="pnow">Now <b>${fmt1(grade.now)}</b></span>` : ''}`;
     const label = { win: 'Won', loss: 'Lost', push: 'Push', void: 'Void' }[s];
     return `<span class="pstatus ${s}"${grade.why ? ` title="${esc(grade.why)}"` : ''}>${label}</span>`;
   }
@@ -122,7 +123,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   }
 
   function render() {
-    const all = loadPicks().map(pick => ({ pick, grade: gradePick(L, pick) }));
+    const all = loadPicks().map(pick => ({ pick, grade: liveGradePick(L, pick, gradePick(L, pick)) }));
     if (!all.length) {
       root.innerHTML = `<div class="card empty"><b>No saved picks yet.</b><br><small>Tap the bookmark on any player prop (on a game's Player props tab, the Props page or a player page) to track it here.
         It grades itself after the game.</small></div>${manageCard()}`;
@@ -228,6 +229,10 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     }
   });
   render();
+
+  // Live: keep the score, clock and "Now" stat of picks in today's games fresh while they're on.
+  const liveGids = [...new Set(loadPicks().map(p => p.gid).filter(id => { const g = L.byId.get(id); return g && g.d >= L.meta.today && g.state !== 'post'; }))].slice(0, 8);
+  if (liveGids.length) startLive(L, { day: L.meta.today, gids: liveGids, onUpdate() { if (!document.activeElement.matches('input, select, textarea')) render(); } });
 }).catch(fail);
 </script>
 </body>

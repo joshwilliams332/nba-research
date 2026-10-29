@@ -69,6 +69,12 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   max 5, one per player, two per game; prices -200 to +180. Grading reuses picks.js (`gradePick`, `summarize`).
   Delivery: two scheduled Claude tasks email Josh (6:07 PM ET pregame, 8:41 AM ET recap) following
   `.claude/agents/social-poster.md`; Josh posts by hand. Nothing auto-posts.
+- Live scores (`site/assets/live.js`, tested in `tests/live.test.js`): while a game is on (or tipping within 10 min),
+  index / game / picks pages poll ESPN's public scoreboard (and the summary box score for games on screen) from the
+  browser every 25 s; pauses when the tab is hidden, stops when nothing's live, gives up after 3 failed checks and keeps
+  the data job's snapshot. No Odds API credits, no server. Game page: live header, "Now 19 / 24.5" on prop rows, live
+  Box score tab (mid-game only already-cleared stats are green). My picks: "Now" stat, and a pick whose game ended
+  before the data job saved the box score is settled from the live final instead of reading as void.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)
