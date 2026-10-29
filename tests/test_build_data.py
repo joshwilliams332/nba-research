@@ -74,6 +74,25 @@ class BoxTests(unittest.TestCase):
 
 
 class PropsTests(unittest.TestCase):
+    # These tests check basketball's own budgeting; the shared-key reserve has its own test below.
+    def setUp(self):
+        self._other = b.OTHER_SPORTS_CREDITS
+        b.OTHER_SPORTS_CREDITS = 0
+
+    def tearDown(self):
+        b.OTHER_SPORTS_CREDITS = self._other
+
+    def test_football_share_is_held_back(self):
+        # Nov 1 (30 days), 500 left, 200 a month for football: (500 - 10 - 200) / 30 = 9 a day for basketball.
+        self.assertEqual(b.daily_budget(500, date(2026, 11, 1), other=200), 9)
+        # Mid-month football has already spent part of its share (it's gone from `remaining`); only the
+        # 16 days still to come are held back: (250 - 10 - 200 * 16/30) / 16 = 8.
+        self.assertEqual(b.daily_budget(250, date(2026, 11, 15), other=200), 8)
+        # Without a share it's the old even spread.
+        self.assertEqual(b.daily_budget(500, date(2026, 11, 1), other=0), 16)
+        # Never negative, even if football overspends.
+        self.assertEqual(b.daily_budget(50, date(2026, 11, 15), other=200), 0)
+
     def test_plan_spreads_credits_over_the_month(self):
         # 400 credits, 10 days left in October, 8 games: 39/day, 8 set aside for closing lines -> 31 -> 3 markets
         self.assertEqual(b.plan_markets(400, 8, date(2026, 10, 22)), (3, 8))
