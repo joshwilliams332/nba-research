@@ -60,10 +60,7 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
       const rows = playerRows(L, pr.id).filter(r => r.g.t < g.t);
       const o = { opp, season: L.meta.season };
       const or = oppRank(L, opp, posBucket(p.p), pr.s);
-      // Key teammate ruled out today, and how this stat moved without him (for the card's note).
-      const outs = g.state === 'post' ? [] : outMates(L, pr.id);
-      const mate = outs[0] ? { m: outs[0], b: teammateBoost(L, pr.id, outs[0].id, pr.s, rows) } : null;
-      items.push({ g, pr, p, opp, or, mate, over: windowRates(rows, pr.s, pr.l, 'o', o), under: windowRates(rows, pr.s, pr.l, 'u', o) });
+      items.push({ g, pr, p, opp, or, over: windowRates(rows, pr.s, pr.l, 'o', o), under: windowRates(rows, pr.s, pr.l, 'u', o) });
     }
   }
   const mkts = [...new Set(items.map(x => x.pr.s))];
@@ -93,9 +90,7 @@ lab(['players', 'logs', 'props', 'injuries']).then(L => {
     const results = l10.rows.map(row => outcome(STATS[pr.s].f(row), pr.l, side));
     const href = `player.html?id=${pr.id}&stat=${pr.s}&line=${pr.l}&opp=${x.opp}${side === 'u' ? '&side=u' : ''}`;
     const ip = typeof oddsProb === 'function' && price != null ? oddsProb(price) : null;
-    const note = x.mate ? `<div class="matenote">${esc(lastName(x.mate.m.n))} OUT${x.mate.b && x.mate.b.meaningful
-      ? ` · ${signed(Math.round(x.mate.b.delta.stat * 10) / 10)} ${esc(STATS[pr.s].short)} without him (${x.mate.b.without.n} games)` : ''}</div>` : '';
-    return `<a class="card flush propcard" href="${href}">${note}
+    return `<a class="card flush propcard" href="${href}">
       <div class="proprow"><div class="head" style="cursor:pointer">${headshot(pr.id, 42)}
         <div class="grow"><div class="name">${esc(x.p.n)} <small>(${esc(x.p.t)})</small>${injuryTag(inj.get(pr.id))}</div>
           <div class="sub">${side === 'o' ? 'Over' : 'Under'} ${pr.l} ${esc(STATS[pr.s].label)} · ${x.p.t === x.g.h ? 'vs' : '@'} ${esc(x.opp)} ${x.g.state === 'pre' ? fmtTime(x.g.t) : ''}${moveTag(pr)}</div></div>

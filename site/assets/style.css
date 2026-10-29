@@ -315,13 +315,14 @@ td .logo { vertical-align: middle; margin-right: 4px; }
 .adjline { font-size: 13px; color: var(--muted); }
 .adjline b { color: var(--text); }
 .adjline .amber { color: var(--warm); font-weight: 650; }
-.boostchip { display: inline-block; margin: 0 14px 8px; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px;
-  background: rgba(42, 211, 139, .12); color: var(--hit); border: 1px solid rgba(42, 211, 139, .3); }
-.boostchip.down { background: rgba(255, 92, 108, .12); color: var(--miss); border-color: rgba(255, 92, 108, .3); }
 .boost table { width: 100%; }
 .boost td.up { color: var(--hit); font-weight: 700; }
 .boost td.down { color: var(--miss); font-weight: 700; }
 .boost .row { flex-wrap: wrap; }
+.boost:not(:empty) { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+.matesplit summary { cursor: pointer; font-size: 13px; padding: 6px 0; color: var(--muted); }
+.matesplit summary b { color: var(--text); }
+.matesplit[open] summary { margin-bottom: 6px; }
 
 /* ---------- pace, totals and prices */
 .ctxline { display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: 12px; color: var(--muted); margin: 6px 0 0; }
@@ -515,7 +516,6 @@ body:has(.sortbar) #foot { padding-bottom: 150px; }
   border-radius: 999px; padding: 11px 16px; font-weight: 700; cursor: pointer; }
 .filterbtn b { background: var(--accent); color: #111; border-radius: 999px; padding: 0 7px; font-size: 12px; }
 .propcard { display: block; }
-.matenote { padding: 7px 14px; font-size: 12px; font-weight: 650; color: var(--warm); background: rgba(242, 193, 78, .08); border-bottom: 1px solid var(--line); }
 .rates > div.sorted { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
 .sheet { position: fixed; inset: 0; z-index: 60; background: rgba(0, 0, 0, .55); display: flex; align-items: flex-end; justify-content: center; }
 .sheet[hidden] { display: none; }

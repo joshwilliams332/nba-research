@@ -103,9 +103,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
       const recent = rows.filter(r => r.team === p.t).slice(-10);
       const teamRecent = new Set(teamFinals(L, p.t, g.t).slice(-10).map(s => s.g.id));
       const inRotation = recent.filter(r => teamRecent.has(r.gid)).length >= 1 && mean(recent.map(r => r.min)) >= 12;
-      // Key teammates ruled out today (injury report is current, so only for games not yet final).
-      const outs = g.state === 'post' ? [] : outMates(L, pid);
-      if (inRotation || withProp.has(pid)) list.push({ pid, p, rows, outs });
+      if (inRotation || withProp.has(pid)) list.push({ pid, p, rows });
     }
     return list;
   }
@@ -119,14 +117,9 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     const f = STATS[stat].f;
     const items = cachedPlayers.filter(x => !term || (x.p.n || '').toLowerCase().includes(term)).map(x => {
       const prop = props.find(p => p.id === x.pid && p.s === stat);
-      const boostedLine = prop ? null : boostedTypicalLine(L, x.pid, stat, x.rows, x.outs);
-      const line = prop ? prop.l : boostedLine ? boostedLine.line : typicalLine(x.rows, stat);
+      const line = prop ? prop.l : typicalLine(x.rows, stat);
       const rates = windowRates(x.rows, stat, line, 'o', { opp: x.p.t === g.h ? g.a : g.h, season: L.meta.season });
-      // The biggest change in this stat without a teammate who's out today, when there are enough games to say.
-      const boost = x.outs.slice(0, 2).map(m => ({ m, b: teammateBoost(L, x.pid, m.id, stat, x.rows) }))
-        .filter(y => y.b.meaningful && Math.abs(y.b.delta.stat) >= 1)
-        .sort((a, b) => Math.abs(b.b.delta.stat) - Math.abs(a.b.delta.stat))[0];
-      return { ...x, prop, line, boostedLine, boost, rates, avg: mean(x.rows.slice(-10).map(f)) || 0 };
+      return { ...x, prop, line, rates, avg: mean(x.rows.slice(-10).map(f)) || 0 };
     }).sort((a, b) => (!!b.prop - !!a.prop) || b.avg - a.avg);
     if (!items.length) return pills + search + `<div class="card empty">No players found.</div>`;
     const anyProp = props.some(p => p.s === stat);
@@ -138,20 +131,20 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   // Compact row: picture, name (both open the player page), stat and line. Tapping the row opens a ladder of lines,
   // each with its last-10 strip and a "Breakdown ›" link to the player page on that stat and line.
   function propRow(x) {
-    const { pid, p, prop, line, boostedLine, boost } = x;
+    const { pid, p, prop, line } = x;
     const saved = savedKeys();
     const isOpen = open.has(pid);
     const opp = p.t === g.h ? g.a : g.h;
     const deep = ln => `player.html?id=${pid}&stat=${stat}&line=${ln}&opp=${opp}`;
     const lineTag = prop ? `<span class="linepill">O ${line} <small>${odds(prop.o)}</small></span>`
-      : `<span class="linepill typical" title="${esc(boostedLine ? `Typical line from his games without ${boostedLine.without.join(' and ')}` : 'No sportsbook line: half point above the last-10 average floor')}">O ${line} <small>typical${boostedLine ? ' w/o' : ''}</small></span>`;
+      : `<span class="linepill typical" title="No sportsbook line: half point above the last-10 average floor">O ${line} <small>typical</small></span>`;
     let body = '';
     if (isOpen) {
       const lines = [];
       for (let d = -2; d <= 3; d++) if (line + d > 0) lines.push(line + d);
       const f = STATS[stat].f;
       body = `<div class="ladderwrap">
-        <div class="ladderctx">${teamContext(L, g, p.t)}${boost ? `<span class="boostchip${boost.b.delta.stat < 0 ? ' down' : ''}" title="${esc(`${p.n} averages ${fmt1(boost.b.without.stat)} ${STATS[stat].short} in ${boost.b.without.n} games without ${boost.m.n} vs ${fmt1(boost.b.with.stat)} in ${boost.b.with.n} with him (this season and last)`)}">${signed(Math.round(boost.b.delta.stat * 10) / 10)} ${esc(STATS[stat].short)} w/o ${esc(lastName(boost.m.n))}</span>` : ''}</div>
+        <div class="ladderctx">${teamContext(L, g, p.t)}</div>
         <div class="rates r1">${oppRankCell(L, opp, p.p, stat)}</div>
         ${lines.map(ln => {
           const r = windowRates(x.rows, stat, ln, 'o', { opp, season: L.meta.season });
