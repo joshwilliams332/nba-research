@@ -26,6 +26,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/context.js"></script>
+<script src="assets/live.js"></script>
 <script>
 shell('games');
 document.getElementById('list').innerHTML = skeleton(3, 4);
@@ -87,7 +88,7 @@ lab().then(L => {
     const built = new Date(L.meta.built).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     document.getElementById('slate').textContent = [fmtDay(day, { weekday: 'long', month: 'short', day: 'numeric' }),
       `${games.length} game${games.length === 1 ? '' : 's'}`, live ? `${live} live` : '',
-      books.length ? `lines from ${books.join(', ')}` : '', `updated ${built}`].filter(Boolean).join(' · ');
+      books.length ? `lines from ${books.join(', ')}` : '', (live && liveNote(L)) || `updated ${built}`].filter(Boolean).join(' · ');
   }
 
   document.getElementById('days').addEventListener('click', e => {
@@ -101,6 +102,8 @@ lab().then(L => {
   q.addEventListener('input', renderList);
   renderDays();
   renderList();
+  // Live scores for today's games, straight from ESPN while any are on (the list redraws when they change).
+  startLive(L, { day: today, onUpdate() { if (day === today && document.activeElement !== q) renderList(); } });
 }).catch(fail);
 </script>
 </body>

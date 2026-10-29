@@ -594,3 +594,23 @@ a, button, input, select, label, summary, .proprow > .head, [data-step] { touch-
 .estbig { font-size: 15px; margin: 0; }
 .estbig b { font-size: 18px; }
 @media (max-width: 520px) { .lbhead h1 { font-size: 18px; } .estscore { font-size: 16px; } }
+
+/* ---------- live scores */
+.livenow { display: inline-flex; align-items: center; gap: 5px; flex: none; margin-right: 6px; padding: 3px 8px; border-radius: 999px;
+  font-size: 13px; font-weight: 750; font-variant-numeric: tabular-nums; background: rgba(255, 92, 108, .1); color: var(--text); }
+.livenow i { width: 6px; height: 6px; border-radius: 50%; background: var(--miss); animation: livepulse 1.6s infinite; }
+.livenow small { color: var(--muted); font-weight: 600; }
+.livenow.hit { background: rgba(42, 211, 139, .14); color: var(--hit); }
+.livenow.miss { background: rgba(255, 92, 108, .16); color: var(--miss); }
+@keyframes livepulse { 50% { opacity: .3; } }
+.livenote { display: block; margin-top: 4px; font-size: 11px; color: var(--muted); }
+.pnow { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); text-align: right; }
+.pnow b { color: var(--text); }
+/* Game page header: long names (Timberwolves, Trail Blazers) can't run under the score. Phones stack the logo above
+   the name so the name gets the whole column; anything still too long ends in "…". */
+.matchup .team > div { min-width: 0; }
+.matchup .team b, .matchup .team small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 520px) {
+  .matchup .team, .matchup .team.home { flex-direction: column; gap: 4px; text-align: center; }
+  .matchup .team b { font-size: 15px; }
+}
