@@ -56,6 +56,10 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   `hooplab.picks`, graded from logs.json box scores (`gradePick`), units/ROI from American odds, CLV from
   closelines when present, JSON export/import, canvas share cards. "My picks" is the 5th bottom-nav item;
   Standings lives behind the trophy button in the header.
+- Teammate-out splits ("+2.3 PTS without him") stay off list views (Props cards, game-page rows) and don't move
+  typical lines: Josh found them noisy (bench players, few games). They live collapsed under the player page's
+  "Lineup & injuries" section, with numbers only at 5+ games without him; the Without filter covers the rest.
+  The projection model's own teammate-out adjustment is separate and stays (it's backtested).
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)
@@ -127,8 +131,8 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - **Update 3 (done): Props page sorting and filters.** Sort and filters persist in localStorage (`hooplab.props.filters`, saved setups in `hooplab.props.setups`). Own design, not a clone.
   1. Sticky sort bar above the bottom nav: Opp Rank · L5 · L10 · L20 · H2H · This season · Last season. Picking one
      re-sorts the list by that hit rate (best first) and switches the chips under each card to match.
-  2. Cards: player, line, price, strip, OPP RANK, IP (implied % from the odds), and a specific teammate-out note
-     ("Embiid OUT · +3.4 PTS without him", from outMates / teammateBoost) instead of a generic injury warning.
+  2. Cards: player, line, price, strip, OPP RANK, IP (implied % from the odds), and (since removed, see Conventions) a
+     teammate-out note ("Embiid OUT · +3.4 PTS without him").
      Tapping a card opens player.html on that stat and line.
   3. Filters sheet: stat types (multi-select), only EV+, players, games, minimum hit rate (slider, chosen window),
      odds range (slider, e.g. at least -300), opponent matchup Favorable / Neutral / Unfavorable (OPP RANK top 10 /

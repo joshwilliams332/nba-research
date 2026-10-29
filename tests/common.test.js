@@ -161,8 +161,5 @@ test('teammate boost compares games with and without a teammate on the same team
   assert.strictEqual(b.meaningful, true);
   // Only key absences (20+ minutes, 3+ games together) count; the bench player doesn't.
   assert.deepStrictEqual(C.outMates(L, 'p1').map(m => m.id), ['star']);
-  // Typical line from the 3 games without him: floor(26) + 0.5.
-  const t = C.boostedTypicalLine(L, 'p1', 'pts', C.playerRows(L, 'p1'), C.outMates(L, 'p1'));
-  assert.deepStrictEqual([t.line, t.n, t.without], [26.5, 3, ['Joel Star Jr.']]);
   assert.strictEqual(C.lastName('Joel Star Jr.'), 'Star');
 });

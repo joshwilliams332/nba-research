@@ -60,10 +60,9 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
   if (P.get('without')) st.f.without = P.get('without').split(',').filter(id => L.players[id]);
   if (WINDOWS.some(w => w.key === P.get('win'))) st.win = P.get('win');
   const propFor = s => props.find(x => x.s === s);
-  // Key teammates ruled out for the next game: their absence moves the typical line and gets its own card.
+  // Key teammates ruled out for the next game: shown (collapsed) under Lineup & injuries.
   const outs = next ? outMates(L, pid) : [];
-  const boosted = s => (propFor(s) || STATS[s].period ? null : boostedTypicalLine(L, pid, s, all, outs));
-  const defaultLine = s => (propFor(s) ? propFor(s).l : (boosted(s) || {}).line ?? typicalLine(forStat(all, s), s));
+  const defaultLine = s => (propFor(s) ? propFor(s).l : typicalLine(forStat(all, s), s));
   st.line = P.get('line') != null && !isNaN(+P.get('line')) ? +P.get('line') : defaultLine(st.stat);
 
   // Teammates who have played for this team, most minutes first (for with / without filters).
@@ -92,11 +91,10 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     <div class="card" id="chart" data-sec="Stats"></div>
     <div class="card"><details class="filters" id="filters"></details></div>
     <div class="card" id="support" data-sec="Supporting"></div>
-    ${outs.length ? '<div class="card boost" id="boost" data-sec="Teammates out"></div>' : ''}
     ${opp ? '<div class="card dvp" id="dvp" data-sec="vs opponent"></div>' : ''}
     <div class="card" id="shots" data-sec="Shot chart"></div>
     ${opp ? '<div class="card" id="keydef" data-sec="Defense"></div>' : ''}
-    ${next ? '<div class="card" id="lineup" data-sec="Lineup"></div>' : ''}
+    ${next ? '<div class="card" id="lineup" data-sec="Lineup & injuries"><div id="lineupbody"></div><div class="boost" id="boost"></div></div>' : ''}
     <div class="card" id="log" data-sec="Game log"></div>`;
 
   function filtered() { return forStat(applyFilters(L, all, st.f), st.stat); }
@@ -123,7 +121,6 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     const src = prop && prop.l === st.line
       ? `${bookName(prop.bk)} line: Over ${odds(prop.o)} / Under ${odds(prop.u)}`
       : prop ? `Sportsbook line is ${prop.l} (${bookName(prop.bk)})`
-      : boosted(st.stat) ? `Typical line without ${boosted(st.stat).without.join(' and ')} (from the last 10 of his ${boosted(st.stat).n} games without them). No sportsbook line pulled.`
       : 'Typical line (the half point above the last-10 average floor). No sportsbook line pulled.';
     document.getElementById('linecard').innerHTML = `
       <div class="linectl">
@@ -337,7 +334,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
   // Probable starters (who started each team's last game) and the injury report, for the next game.
   function renderLineup() {
     const el = document.getElementById('lineup');
-    if (el && next) el.innerHTML = lineupHTML(L, next);
+    if (el && next) document.getElementById('lineupbody').innerHTML = lineupHTML(L, next);
   }
 
   function renderSecbar() {
@@ -346,26 +343,33 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
       .map(x => `<a href="#${x.id}" data-jump="${x.id}">${esc(x.dataset.sec === 'vs opponent' ? `${STATS[st.stat].short} vs ${opp}` : x.dataset.sec)}</a>`).join('');
   }
 
-  // "Without {teammate}" cards: how minutes, shots, usage and this stat change when a key teammate sits.
+  // Key teammates out for the next game, inside Lineup & injuries and collapsed: how his minutes, shots, usage and
+  // this stat changed in past games without them. Small samples are noisy, so numbers only show with
+  // MATE_SHOW_GAMES+ games without him; the "Without" filter covers the rest.
+  const MATE_SHOW_GAMES = 5;
   function renderBoost() {
     const el = document.getElementById('boost');
     if (!el) return;
     const s = STATS[st.stat];
     el.innerHTML = outs.slice(0, 2).map(m => {
       const b = teammateBoost(L, pid, m.id, st.stat, all);
-      const row = (label, k, d = 1) => {
+      const applied = (st.f.without || []).includes(m.id);
+      const btn = `<button class="btn" data-addmate="without:${m.id}" data-scroll="1"${applied ? ' disabled' : ''}>${applied ? 'Filter applied' : `Show only games without ${esc(lastName(m.n))}`}</button>`;
+      if (b.without.n < MATE_SHOW_GAMES) {
+        return `<p class="note"><b>${esc(m.n)}</b> <span class="inj inj-o">${esc(m.st)}</span> · ${b.without.n ? `only ${b.without.n} game${b.without.n === 1 ? '' : 's'}` : 'no games'} on ${esc(p.t)} without him since last season, too few to compare.</p>`;
+      }
+      const row = (label, k) => {
         const dv = b.delta[k];
         const cls = dv == null || Math.abs(dv) < 0.5 ? '' : dv > 0 ? 'up' : 'down';
-        return `<tr><td class="l">${label}</td><td>${fmt1(b.with[k])}</td><td>${fmt1(b.without[k])}</td><td class="${cls}">${dv == null ? '-' : signed(Math.round(dv * 10) / 10, d)}</td></tr>`;
+        return `<tr><td class="l">${label}</td><td>${fmt1(b.with[k])}</td><td>${fmt1(b.without[k])}</td><td class="${cls}">${dv == null ? '-' : signed(Math.round(dv * 10) / 10)}</td></tr>`;
       };
-      const applied = (st.f.without || []).includes(m.id);
-      return `<div class="row" style="margin-bottom:8px"><h2 class="grow">Without ${esc(m.n)}</h2><span class="inj inj-o">${esc(m.st)}</span></div>
-        ${b.without.n ? `<div class="tablewrap"><table class="data"><tr><th class="l">Per game</th><th>With <small>(${b.with.n})</small></th><th>Without <small>(${b.without.n})</small></th><th>Change</th></tr>
+      return `<details class="matesplit"><summary><b>${esc(m.n)}</b> <span class="inj inj-o">${esc(m.st)}</span> · his numbers without him (${b.without.n} games)</summary>
+        <div class="tablewrap"><table class="data"><tr><th class="l">Per game</th><th>With <small>(${b.with.n})</small></th><th>Without <small>(${b.without.n})</small></th><th>Change</th></tr>
           ${row('Minutes', 'min')}${row('FG attempts', 'fga')}${row('Usage', 'use')}${row(esc(s.label), 'stat')}</table></div>
-          <p class="note">${b.meaningful ? '' : `Only ${b.without.n} game${b.without.n === 1 ? '' : 's'} without him on this team, so read this loosely. `}Usage = FGA + 0.44 × FTA + turnovers per game. Games on ${esc(p.t)} this season and last, while ${esc(lastName(m.n))} was on the team.</p>
-          <div class="row" style="margin-top:8px"><button class="btn" data-addmate="without:${m.id}" data-scroll="1"${applied ? ' disabled' : ''}>${applied ? 'Filter applied' : `Show only games without ${esc(lastName(m.n))}`}</button></div>`
-        : `<p class="muted" style="margin:0">No games on ${esc(p.t)} without him since last season, so there's nothing to compare yet.</p>`}`;
-    }).join('<div class="sep"></div>');
+        <p class="note">Usage = FGA + 0.44 × FTA + turnovers per game. Games on ${esc(p.t)} this season and last, while ${esc(lastName(m.n))} was on the team. Splits like this swing a lot on a handful of games.</p>
+        <div class="row" style="margin-top:8px">${btn}</div></details>`;
+    }).join('');
+    el.hidden = !outs.length;
   }
 
   function render() {

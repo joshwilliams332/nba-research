@@ -502,18 +502,6 @@ function outMates(L, pid) {
     .sort((a, b) => b.min - a.min);
 }
 
-/* Typical line from the games without today's key absence(s), when there are enough of them.
-   Returns {line, without: [names]} or null to fall back to the normal typical line. */
-function boostedTypicalLine(L, pid, stat, rows, mates) {
-  if (!mates || !mates.length) return null;
-  const played = playedIndex(L);
-  const team = (L.players[pid] || {}).t;
-  const ons = mates.map(m => onTeamFor(L, m.id, team));
-  const without = rows.filter(r => r.team === team && mates.every((m, i) => ons[i](r) && !(played.get(r.gid) || new Set()).has(m.id)));
-  if (without.length < BOOST_MIN_GAMES) return null;
-  return { line: typicalLine(without, stat), without: mates.map(m => m.n), n: without.length };
-}
-
 /* Short last name for chips: "Joel Embiid" -> "Embiid", "Kelly Oubre Jr." -> "Oubre". */
 function lastName(name) {
   const parts = String(name || '').split(' ').filter(w => !/^(jr\.?|sr\.?|ii|iii|iv)$/i.test(w));
@@ -778,5 +766,5 @@ function fail(err) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { STATS, STAT_ORDER, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, boostedTypicalLine, lastName, SHRINK_K };
+  module.exports = { STATS, STAT_ORDER, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, lastName, SHRINK_K };
 }
