@@ -124,4 +124,20 @@ test('heads-up check: notes a teammate status change after the lock, and clears 
   const check = JSON.parse(fs.readFileSync(path.join(dir, '2026-10-29-check.json'), 'utf8'));
   assert.match(check.notes[0], /Robert Williams III \(POR\) is now out/);
   assert.match(check.email.html, /Heads up before you post/);
+test('the season record skips days before the record start (the unposted test night)', () => {
+  const fs = require('fs'), os = require('os'), path = require('path');
+  const C = require('../site/assets/common.js');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'social-'));
+  const L = C.indexLab({ cols: ['min', 'pts'], season: 2027 }, { A: {}, B: {} }, [
+    { id: 'g1', d: '2026-10-28', t: '2026-10-28T23:00Z', s: 2027, st: 2, h: 'A', a: 'B', state: 'post', hs: 100, as: 90 },
+    { id: 'g2', d: '2026-10-29', t: '2026-10-29T23:00Z', s: 2027, st: 2, h: 'A', a: 'B', state: 'post', hs: 100, as: 90 },
+  ]);
+  L.players = { p: { n: 'P', t: 'A' } };
+  L.logs = { p: [['g1', 'A', 1, 30, 30], ['g2', 'A', 1, 30, 30]] };
+  const pick = gid => ({ id: gid, gid, pid: 'p', stat: 'pts', side: 'o', line: 20.5, price: -110, units: 1 });
+  fs.writeFileSync(path.join(dir, '2026-10-28.json'), JSON.stringify({ picks: [pick('g1')] }));
+  fs.writeFileSync(path.join(dir, '2026-10-29.json'), JSON.stringify({ picks: [pick('g2')] }));
+  const s = S.seasonRecord(L, dir, '2026-10-29', 2027);
+  assert.deepStrictEqual([s.w, s.l], [1, 0]);
+  assert.strictEqual(S.RECORD_START, '2026-10-29');
 });

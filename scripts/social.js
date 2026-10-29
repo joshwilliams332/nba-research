@@ -40,6 +40,9 @@ const PICK = {
   stats: ['pts', 'reb', 'ast', 'fg3m'],
 };
 const LOCK_HOUR = 16;          // ET
+// The public record starts here. Oct 28 locked by accident when the feature was merged mid-slate and was never
+// posted, so it's kept on the data branch but not counted in "Season:".
+const RECORD_START = '2026-10-29';
 const POS_WORD = { G: 'guards', F: 'forwards', C: 'centers', ALL: 'all players' };
 const LOCK_BEFORE_TIP_MIN = 180;
 
@@ -191,7 +194,7 @@ function seasonRecord(L, dir, through, season) {
   const graded = [];
   for (const f of fs.readdirSync(dir).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort()) {
     const day = f.slice(0, 10);
-    if (day > through) continue;
+    if (day > through || day < RECORD_START) continue;
     const doc = read(path.join(dir, f));
     for (const pick of doc.picks || []) {
       const g = L.byId.get(pick.gid);
@@ -441,4 +444,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { PICK, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
+module.exports = { PICK, RECORD_START, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
