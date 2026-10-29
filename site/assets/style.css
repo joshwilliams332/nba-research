@@ -135,6 +135,9 @@ label.field > span { display: block; margin-bottom: 4px; }
 .gamehead .t { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .gamehead .t.home { flex-direction: row-reverse; text-align: right; }
 .gamehead .t b { display: block; font-size: 16px; }
+/* Names can't push under the score: they shrink and cut off with "…" (min-width lets the flex item shrink). */
+.gamehead .t > div { min-width: 0; }
+.gamehead .t b, .gamehead .t small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .gamehead .mid { text-align: center; color: var(--muted); font-size: 13px; }
 .gamehead .mid b { color: var(--text); font-size: 18px; }
 .mkt { padding: 0 14px 12px; }
@@ -578,6 +581,9 @@ a, button, input, select, label, summary, .proprow > .head, [data-step] { touch-
   .proprow > .head { padding: 10px 12px; }
   .rates { gap: 4px; padding: 0 12px 10px; }
   .gamehead { padding: 10px 12px; }
+  /* Phones: logo above the name so long names (Timberwolves, Trail Blazers) get the whole column. */
+  .gamehead .t, .gamehead .t.home { flex-direction: column; gap: 4px; text-align: center; }
+  .gamehead .t b { font-size: 15px; }
   .mkt { padding: 0 12px 10px; }
   .price { padding: 3px 8px; font-size: 13px; }
 }
