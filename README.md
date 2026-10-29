@@ -69,6 +69,14 @@ Leans are graded against the typical line, because real sportsbook lines are onl
 pulls onward. The model is slightly overconfident at the extremes (its 80%+ calls hit about 76%), which the
 calibration chart on the Model page shows.
 
+## Social posts
+
+Every afternoon the data job locks the projection model's best bets for the night (`scripts/social.js`): the model's
+chance is blended with the sportsbooks' no-vig price, props where they disagree a lot are skipped (usually news the
+model can't see), and the top edges at the posted price become up to five picks, with a card image. The picks are
+saved to the `data` branch before tip-off and never rewritten; the next morning they're graded from box scores into a
+results recap with the running record. A scheduled task emails both to me, ready to post by hand.
+
 ## Running it locally
 
 ```bash
