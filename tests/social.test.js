@@ -124,6 +124,8 @@ test('heads-up check: notes a teammate status change after the lock, and clears 
   const check = JSON.parse(fs.readFileSync(path.join(dir, '2026-10-29-check.json'), 'utf8'));
   assert.match(check.notes[0], /Robert Williams III \(POR\) is now out/);
   assert.match(check.email.html, /Heads up before you post/);
+});
+
 test('the season record skips days before the record start (the unposted test night)', () => {
   const fs = require('fs'), os = require('os'), path = require('path');
   const C = require('../site/assets/common.js');
