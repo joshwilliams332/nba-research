@@ -43,6 +43,15 @@ const LOCK_HOUR = 16;          // ET
 // The public record starts here. Oct 28 locked by accident when the feature was merged mid-slate and was never
 // posted, so it's kept on the data branch but not counted in "Season:".
 const RECORD_START = '2026-10-29';
+// Picks withdrawn before they were posted and before tip-off. The locked file keeps them (the data branch history
+// shows they existed); they're left out of the post, recap and record. Only ever add a pick here before its game
+// starts and before it has been posted anywhere.
+const WITHDRAWN = {
+  // Oct 29, 6:30 PM ET, before posting and before the 10 PM tip: Robert Williams (doubtful) changes Clingan's role;
+  // the under went 0 of 10 in Clingan's last 10 without him. The new teammate rule would have skipped it.
+  '401909895-5105565-reb': 'teammate news (Robert Williams doubtful)',
+};
+const counted = picks => (picks || []).filter(p => !WITHDRAWN[p.id]);
 const POS_WORD = { G: 'guards', F: 'forwards', C: 'centers', ALL: 'all players' };
 const LOCK_BEFORE_TIP_MIN = 180;
 
@@ -196,7 +205,7 @@ function seasonRecord(L, dir, through, season) {
     const day = f.slice(0, 10);
     if (day > through || day < RECORD_START) continue;
     const doc = read(path.join(dir, f));
-    for (const pick of doc.picks || []) {
+    for (const pick of counted(doc.picks)) {
       const g = L.byId.get(pick.gid);
       if (!g || g.s !== season) continue;
       graded.push({ pick, grade: P.gradePick(L, pick) });
@@ -411,11 +420,12 @@ function writeRecap(L, dir) {
   const file = path.join(dir, `${day}-recap.json`);
   if (fs.existsSync(file)) return { day, state: 'done' };
   const doc = read(path.join(dir, `${day}.json`));
-  if (!doc.picks.length) return { day, state: 'no-picks' };
-  const rows = doc.picks.map(pick => ({ pick, grade: P.gradePick(L, pick) }));
+  const picks = counted(doc.picks);
+  if (!picks.length) return { day, state: 'no-picks' };
+  const rows = picks.map(pick => ({ pick, grade: P.gradePick(L, pick) }));
   if (rows.some(r => r.grade.status === 'open' || r.grade.status === 'live')) return { day, state: 'pending' };
   const s = P.summarize(rows);
-  const season = seasonRecord(L, dir, day, L.byId.get(doc.picks[0].gid).s);
+  const season = seasonRecord(L, dir, day, L.byId.get(picks[0].gid).s);
   const post = recapPost(day, rows, s, season);
   const png = renderPng(recapCard(day, rows, s, season), path.join(dir, `${day}-recap.png`), recapHeight(rows.length));
   const img = png ? `${RAW}/${day}-recap.png` : null;
@@ -444,4 +454,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { PICK, RECORD_START, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
+module.exports = { PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };

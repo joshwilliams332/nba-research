@@ -141,3 +141,22 @@ test('the season record skips days before the record start (the unposted test ni
   assert.deepStrictEqual([s.w, s.l], [1, 0]);
   assert.strictEqual(S.RECORD_START, '2026-10-29');
 });
+
+test('withdrawn picks (pulled before posting and tip) stay out of the record', () => {
+  const fs = require('fs'), os = require('os'), path = require('path');
+  const C = require('../site/assets/common.js');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'social-'));
+  const L = C.indexLab({ cols: ['min', 'pts', 'reb'], season: 2027 }, { A: {}, B: {} }, [
+    { id: '401909895', d: '2026-10-29', t: '2026-10-30T02:00Z', s: 2027, st: 2, h: 'A', a: 'B', state: 'post', hs: 100, as: 90 },
+  ]);
+  L.players = { 5105565: { n: 'C', t: 'A' }, 4065733: { n: 'J', t: 'B' } };
+  L.logs = { 5105565: [['401909895', 'A', 1, 30, 10, 14]], 4065733: [['401909895', 'B', 1, 30, 20, 3]] };
+  const picks = [
+    { id: '401909895-5105565-reb', gid: '401909895', pid: '5105565', stat: 'reb', side: 'u', line: 10.5, price: -106, units: 1 },
+    { id: '401909895-4065733-pts', gid: '401909895', pid: '4065733', stat: 'pts', side: 'u', line: 24.5, price: -115, units: 1 },
+  ];
+  fs.writeFileSync(path.join(dir, '2026-10-29.json'), JSON.stringify({ picks }));
+  const s = S.seasonRecord(L, dir, '2026-10-29', 2027);
+  assert.deepStrictEqual([s.w, s.l], [1, 0]);  // the withdrawn rebound under (a loss) isn't counted
+  assert.ok(S.WITHDRAWN['401909895-5105565-reb']);
+});
