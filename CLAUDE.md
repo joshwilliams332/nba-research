@@ -72,7 +72,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   by 20+ points (model missing news), skip anyone on the injury report; >= 54% and >= 3% edge at the posted price,
   max 5, one per player, two per game; prices -200 to +180. Grading reuses picks.js (`gradePick`, `summarize`).
   Delivery: scheduled Claude tasks email Josh (12:23 PM ET picks, 5:53 PM ET heads-up only if a -check.json exists,
-  8:41 AM ET recap) following
+  4:41 AM ET recap, after the 3:47 AM EDT / 2:47 AM EST data run grades the late games) following
   `.claude/agents/pick-digest.md`. Public wording (README, workflow, PRs) describes it as automated emails to Josh, not
   social media posting (recruiters read this repo). Nothing auto-posts.
 - Live scores (`site/assets/live.js`, tested in `tests/live.test.js`): while a game is on (or tipping within 10 min),
