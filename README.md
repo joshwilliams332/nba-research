@@ -70,13 +70,18 @@ Leans are graded against the typical line, because real sportsbook lines are onl
 pulls onward. The model is slightly overconfident at the extremes (its 80%+ calls hit about 76%), which the
 calibration chart on the Model page shows.
 
-## Social posts
+## Daily picks digest (automated email)
 
-Every afternoon the data job locks the projection model's best bets for the night (`scripts/social.js`): the model's
-chance is blended with the sportsbooks' no-vig price, props where they disagree a lot are skipped (usually news the
-model can't see), and the top edges at the posted price become up to five picks, with a card image. The picks are
-saved to the `data` branch before tip-off and never rewritten; the next morning they're graded from box scores into a
-results recap with the running record. A scheduled task emails both to me, ready to post by hand.
+To test the projection model against real sportsbook lines out in the open, the data job runs a small daily digest
+(`scripts/digest.js`):
+
+- **Afternoon lock.** The model's chance is blended with the sportsbooks' no-vig price. Props where the two disagree
+  a lot are skipped (usually news the model can't see), as are players whose rotation teammates have uncertain injury
+  status. The best edges at the posted price become up to five picks, saved to the `data` branch before tip-off and
+  never rewritten.
+- **Heads-up check.** If injury news or the closing line moves after the lock, the digest adds a note.
+- **Morning recap.** The picks are graded from box scores into a recap with the running record and closing-line value.
+- **Delivery.** Two scheduled tasks email me the picks and the recap. Nothing is posted anywhere automatically.
 
 ## Running it locally
 

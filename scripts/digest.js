@@ -1,19 +1,22 @@
 #!/usr/bin/env node
-/* Hoop Lab social posts: the model's best bets before tip-off, and a results recap the morning after.
+/* Hoop Lab daily picks digest: the model's best bets locked before tip-off, and a graded results recap the morning
+   after, delivered to me as two automated emails a day. It's how the projection model gets tracked against real
+   sportsbook lines in the open: every pick is timestamped before the game and graded from box scores, never edited.
 
    Runs in the data workflow after scripts/build_data.py (and the backtest), writing to the store, which is saved on the
-   `data` branch. Nothing here posts anywhere: a scheduled Claude task emails the post text and card links to Josh,
-   who posts them himself (see .claude/agents/social-poster.md).
+   `data` branch. A scheduled task then emails the digest (see .claude/agents/pick-digest.md). Nothing is posted
+   anywhere automatically.
 
-   store/social/YYYY-MM-DD.json         picks, locked once before tip-off (never rewritten, so the record is honest)
-   store/social/YYYY-MM-DD.png          the slate card image
-   store/social/YYYY-MM-DD-recap.json   graded results + season record, written once every pick's game is final
-   store/social/YYYY-MM-DD-recap.png    the recap card image
-   store/social/status.json             what the last run did (for the email task)
+   store/digest/YYYY-MM-DD.json         picks, locked once before tip-off (never rewritten, so the record is honest)
+   store/digest/YYYY-MM-DD.png          a summary card image of the picks
+   store/digest/YYYY-MM-DD-check.json   heads-up notes when injury news or prices change after the lock
+   store/digest/YYYY-MM-DD-recap.json   graded results + season record, written once every pick's game is final
+   store/digest/YYYY-MM-DD-recap.png    the recap card image
+   store/digest/status.json             what the last run did (for the email task)
 
    Picks lock on the first run where it's 4 PM ET or later, or the first tip is within 3 hours.
 
-   Usage: node scripts/social.js [--store store] [--data site/data] [--now ISO] [--force-lock] */
+   Usage: node scripts/digest.js [--store store] [--data site/data] [--now ISO] [--force-lock] */
 'use strict';
 
 const fs = require('fs');
@@ -23,7 +26,7 @@ Object.assign(globalThis, require('../site/assets/common.js'), require('../site/
 const M = require('../site/assets/model.js');
 const P = require('../site/assets/picks.js');
 
-const RAW = 'https://raw.githubusercontent.com/joshwilliams332/nba-research/data/social';
+const RAW = 'https://raw.githubusercontent.com/joshwilliams332/nba-research/data/digest';
 const SITE = 'https://joshwilliams332.github.io/nba-research';
 const PICK = {
   max: 5,            // picks per night
@@ -442,7 +445,10 @@ function main() {
   const arg = (k, d) => (args.includes(k) ? args[args.indexOf(k) + 1] : d);
   const root = path.join(__dirname, '..');
   const store = path.resolve(arg('--store', path.join(root, 'store')));
-  const dir = path.join(store, 'social');
+  const dir = path.join(store, 'digest');
+  // The folder used to be called social/; move its history over once so the record carries on.
+  const old = path.join(store, 'social');
+  if (fs.existsSync(old) && !fs.existsSync(dir)) fs.renameSync(old, dir);
   fs.mkdirSync(dir, { recursive: true });
   const L = loadLab(path.resolve(arg('--data', path.join(root, 'site', 'data'))));
   const now = Date.parse(arg('--now', new Date().toISOString()));

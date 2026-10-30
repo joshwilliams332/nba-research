@@ -1,7 +1,7 @@
-// Tests for the social posts script (scripts/social.js). Run with: node --test tests/*.test.js
+// Tests for the daily picks digest (scripts/digest.js). Run with: node --test tests/*.test.js
 const test = require('node:test');
 const assert = require('node:assert');
-const S = require('../scripts/social.js');
+const S = require('../scripts/digest.js');
 
 // A candidate side as candidates() builds it (only the fields choosePicks reads).
 const cand = (pid, gid, prob, edge, side = 'o') => ({ pr: { id: pid }, g: { id: gid }, prob, edge, side });
@@ -113,7 +113,7 @@ test('heads-up check: notes a teammate status change after the lock, and clears 
   L.games.push({ id: 'tonight', d: '2026-10-29', t: '2026-10-29T23:00Z', s: 2027, st: 2, h: 'POR', a: 'MEM', state: 'pre' });
   L.byId.set('tonight', L.games[L.games.length - 1]);
   L.props = { games: {} };
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'social-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'digest-'));
   const pick = { id: 'x', gid: 'tonight', pid: 'c', name: 'Donovan Clingan', team: 'POR', stat: 'reb', side: 'u', line: 10.5, price: -106, mates: {} };
   fs.writeFileSync(path.join(dir, '2026-10-29.json'), JSON.stringify({ picks: [pick], email: { subject: 'S', html: '<p>post</p>', text: 'post' } }));
   L.injuries = [];
@@ -129,7 +129,7 @@ test('heads-up check: notes a teammate status change after the lock, and clears 
 test('the season record skips days before the record start (the unposted test night)', () => {
   const fs = require('fs'), os = require('os'), path = require('path');
   const C = require('../site/assets/common.js');
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'social-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'digest-'));
   const L = C.indexLab({ cols: ['min', 'pts'], season: 2027 }, { A: {}, B: {} }, [
     { id: 'g1', d: '2026-10-28', t: '2026-10-28T23:00Z', s: 2027, st: 2, h: 'A', a: 'B', state: 'post', hs: 100, as: 90 },
     { id: 'g2', d: '2026-10-29', t: '2026-10-29T23:00Z', s: 2027, st: 2, h: 'A', a: 'B', state: 'post', hs: 100, as: 90 },
@@ -147,7 +147,7 @@ test('the season record skips days before the record start (the unposted test ni
 test('withdrawn picks (pulled before posting and tip) stay out of the record', () => {
   const fs = require('fs'), os = require('os'), path = require('path');
   const C = require('../site/assets/common.js');
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'social-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'digest-'));
   const L = C.indexLab({ cols: ['min', 'pts', 'reb'], season: 2027 }, { A: {}, B: {} }, [
     { id: '401909895', d: '2026-10-29', t: '2026-10-30T02:00Z', s: 2027, st: 2, h: 'A', a: 'B', state: 'post', hs: 100, as: 90 },
   ]);

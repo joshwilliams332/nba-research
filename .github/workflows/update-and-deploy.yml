@@ -61,12 +61,12 @@ jobs:
       # Replays past games through the projection model and writes site/data/model.json for model.html.
       - name: Backtest the projection model
         run: node scripts/backtest.js
-      # Locks tonight's best bets before tip-off (once, never rewritten) and writes the morning recap once games are
-      # final, with card images (runner's Chrome). A scheduled Claude task emails them to Josh to post himself.
+      # Daily picks digest: locks tonight's model picks before tip-off (once, never rewritten) and grades them into a
+      # recap once games are final, with summary card images (runner's Chrome). A scheduled task emails both to Josh.
       # Never blocks the deploy.
-      - name: Social posts (best bets and recap)
+      - name: Daily picks digest (lock and recap)
         continue-on-error: true
-        run: node scripts/social.js --store store | tee -a "$GITHUB_STEP_SUMMARY"
+        run: node scripts/digest.js --store store | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Save the data store
         run: |
           cd store
