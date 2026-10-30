@@ -162,3 +162,15 @@ test('withdrawn picks (pulled before posting and tip) stay out of the record', (
   assert.deepStrictEqual([s.w, s.l], [1, 0]);  // the withdrawn rebound under (a loss) isn't counted
   assert.ok(S.WITHDRAWN['401909895-5105565-reb']);
 });
+
+test('picks lock on the morning props run (10 AM ET+), not before', () => {
+  const fs = require('fs'), os = require('os'), path = require('path');
+  const C = require('../site/assets/common.js');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'digest-'));
+  const L = C.indexLab({ cols: ['min', 'pts'], season: 2027, today: '2026-10-31' }, { A: {}, B: {} }, [
+    { id: 'g1', d: '2026-10-31', t: '2026-10-31T23:00Z', s: 2027, st: 2, h: 'A', a: 'B', state: 'pre' },
+  ]);
+  L.props = { games: {} };
+  assert.strictEqual(S.lockPicks(L, dir, Date.parse('2026-10-31T13:30Z')).state, 'waiting');   // 9:30 AM EDT
+  assert.strictEqual(S.lockPicks(L, dir, Date.parse('2026-10-31T15:40Z')).state, 'no-props');  // 11:40 AM EDT: would lock
+});

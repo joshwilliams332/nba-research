@@ -75,13 +75,14 @@ calibration chart on the Model page shows.
 To test the projection model against real sportsbook lines out in the open, the data job runs a small daily digest
 (`scripts/digest.js`):
 
-- **Afternoon lock.** The model's chance is blended with the sportsbooks' no-vig price. Props where the two disagree
+- **Late-morning lock.** Right after the morning props pull, while prices are fresh, the model's chance is blended with the sportsbooks' no-vig price. Props where the two disagree
   a lot are skipped (usually news the model can't see), as are players whose rotation teammates have uncertain injury
   status. The best edges at the posted price become up to five picks, saved to the `data` branch before tip-off and
   never rewritten.
-- **Heads-up check.** If injury news or the closing line moves after the lock, the digest adds a note.
+- **Heads-up check.** If injury news or the closing line moves after the lock, the digest writes a note that is
+  emailed before tip-off.
 - **Morning recap.** The picks are graded from box scores into a recap with the running record and closing-line value.
-- **Delivery.** Two scheduled tasks email me the picks and the recap. Nothing is posted anywhere automatically.
+- **Delivery.** Scheduled tasks email me the picks at midday, a heads-up only when news changed, and the recap. Nothing is posted anywhere automatically.
 
 ## Running it locally
 

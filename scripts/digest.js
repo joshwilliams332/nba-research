@@ -14,7 +14,8 @@
    store/digest/YYYY-MM-DD-recap.png    the recap card image
    store/digest/status.json             what the last run did (for the email task)
 
-   Picks lock on the first run where it's 4 PM ET or later, or the first tip is within 3 hours.
+   Picks lock on the first run at 10 AM ET or later (the morning run that pulls the day's props, so the email goes out
+   while the prices are still fresh), or once the first tip is within 3 hours. Later runs only write heads-up notes.
 
    Usage: node scripts/digest.js [--store store] [--data site/data] [--now ISO] [--force-lock] */
 'use strict';
@@ -42,7 +43,7 @@ const PICK = {
   priceRange: [-200, 180],
   stats: ['pts', 'reb', 'ast', 'fg3m'],
 };
-const LOCK_HOUR = 16;          // ET
+const LOCK_HOUR = 10;          // ET: the morning props pull happens on the first run after 10:00 ET
 // The public record starts here. Oct 28 locked by accident when the feature was merged mid-slate and was never
 // posted, so it's kept on the data branch but not counted in "Season:".
 const RECORD_START = '2026-10-29';
