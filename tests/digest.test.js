@@ -193,15 +193,18 @@ test('model check: season report card with splits, CLV and observations', () => 
   assert.match(lines[3], /100% of picks are unders/);
 });
 
-test("site picks: today's locked picks for My picks, withdrawn ones left out", () => {
+test("site picks: today's and past locked picks for My picks, withdrawn and pre-record days left out", () => {
   const fs = require('fs'), os = require('os'), path = require('path');
   const C = require('../site/assets/common.js');
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'digest-'));
-  const L = C.indexLab({ cols: ['min', 'pts'], season: 2027, today: '2026-10-29' }, { A: {}, B: {} }, []);
-  assert.deepStrictEqual(S.sitePicks(L, dir), { date: '2026-10-29', picks: [] });
+  const L = C.indexLab({ cols: ['min', 'pts'], season: 2027, today: '2026-10-30' }, { A: {}, B: {} }, []);
+  assert.deepStrictEqual(S.sitePicks(L, dir), { date: '2026-10-30', recordStart: '2026-10-29', picks: [], history: [] });
   const keep = { id: 'k', gid: 'g', pid: 'p', name: 'P', team: 'A', stat: 'pts', side: 'u', line: 10.5, price: -120, book: 'draftkings', prob: 0.58, why: 'w', model: 0.7 };
+  fs.writeFileSync(path.join(dir, '2026-10-28.json'), JSON.stringify({ picks: [{ ...keep, id: 'test-night' }] }));
   fs.writeFileSync(path.join(dir, '2026-10-29.json'), JSON.stringify({ picks: [keep, { ...keep, id: '401909895-5105565-reb' }] }));
+  fs.writeFileSync(path.join(dir, '2026-10-30.json'), JSON.stringify({ picks: [{ ...keep, id: 't' }] }));
   const out = S.sitePicks(L, dir);
-  assert.deepStrictEqual(out.picks.map(p => p.id), ['k']);
+  assert.deepStrictEqual(out.picks.map(p => p.id), ['t']);
+  assert.deepStrictEqual(out.history.map(d => [d.date, d.picks.map(p => p.id)]), [['2026-10-30', ['t']], ['2026-10-29', ['k']]]);
   assert.strictEqual(out.picks[0].model, undefined);
 });

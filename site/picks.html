@@ -35,7 +35,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   const RANGES = [['all', 'All'], ['7', 'Last 7 days'], ['30', 'Last 30 days'], ['season', 'This season'], ['custom', 'Dates']];
   const st = { range: store('picksRange') || 'all', from: '', to: '', manage: false, msg: '', building: false, sel: new Set(), boost: 0, price: '', units: 1 };
   let model = null;  // today's locked model picks (data/digest.json), when the data job has written them
-  load('digest').then(([d]) => { model = d; render(); }).catch(() => {});
+  const modelReady = load('digest').then(([d]) => d).catch(() => null);
 
   const isParlay = p => p.type === 'parlay';
   // Grade one pick, with live box scores for games on now (each leg of a parlay too).
@@ -160,24 +160,54 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
       ${st.msg ? `<p class="note">${esc(st.msg)}</p>` : ''}</div>`;
   }
 
-  // Today's model picks: add one or all to My picks in a tap (then parlay them if you like).
+  // The model's picks: a card with its record (since the record started), today's picks to add in a tap, and every
+  // past day graded under "See all picks". Open / closed state of the card and of each day is remembered.
+  const opened = Object.assign({ model: true, history: false }, store('picksOpen') || {});
+  const isOpen = (k, dflt) => (k in opened ? opened[k] : dflt);
+  const statusMark = s => ({ win: '✓', loss: '✗', push: '–', void: '–', live: '●', open: '○' }[s] || '○');
+  const recordLine = s => `${s.w}-${s.l}${s.p ? `-${s.p}` : ''} · <b class="${s.profit > 0 ? 'up' : s.profit < 0 ? 'down' : ''}">${units(s.profit)}</b>`;
+
+  function modelRow(p, g, keys, canAdd) {
+    const pl = L.players[p.pid] || {}, st_ = g.status;
+    const on = keys.has(pickKey({ ...p, line: +p.line }));
+    const res = ['win', 'loss', 'push'].includes(st_) ? ` · ${fmt1(g.actual)}` : st_ === 'live' && g.now != null ? ` · now ${fmt1(g.now)}` : st_ === 'void' ? ' · void' : '';
+    const right = canAdd && st_ === 'open'
+      ? `<button class="btn${on ? ' on' : ''}" data-addmodel="${esc(p.id)}"${on ? ' disabled' : ''}>${on ? 'Added' : '+ Add'}</button>`
+      : `<span class="pstatus ${st_}">${st_ === 'open' ? esc(fmtTime(g.g.t)) : st_ === 'live' ? 'Live' : { win: 'Won', loss: 'Lost', push: 'Push', void: 'Void' }[st_]}</span>`;
+    return `<div class="row mpick ${st_}"><i class="mmark" aria-hidden="true">${statusMark(st_)}</i>
+      <a class="grow" href="player.html?id=${esc(p.pid)}&stat=${esc(p.stat)}&line=${p.line}${p.side === 'u' ? '&side=u' : ''}"><b>${esc(pl.n || p.name)}</b>
+        <small>${esc(pickText(p))} · ${odds(p.price)}${res}</small>
+        ${canAdd && p.why && st_ === 'open' ? `<small class="pleggame">${esc(p.why)}</small>` : ''}</a>${right}</div>`;
+  }
+
   function modelCard() {
-    if (!model || model.date !== L.meta.today) return '';
-    const list = model.picks.filter(p => { const g = L.byId.get(p.gid); return g && g.state === 'pre'; });
-    if (!list.length) return '';
+    if (!model || !(model.history || []).length) return '';
     const keys = savedKeys();
-    const key = p => pickKey({ ...p, line: +p.line });
-    const rows = list.map(p => {
-      const on = keys.has(key(p)), pl = L.players[p.pid] || {};
-      return `<div class="row mpick">${headshot(p.pid, 32)}<div class="grow"><b>${esc(pl.n || p.name)}</b> <small>${esc(pickText(p))} · ${odds(p.price)}</small>
-        <small class="pleggame">${esc(p.why || '')}</small></div>
-        <button class="btn${on ? ' on' : ''}" data-addmodel="${esc(p.id)}"${on ? ' disabled' : ''}>${on ? 'Added' : '+ Add'}</button></div>`;
-    }).join('');
-    const left = list.filter(p => !keys.has(key(p))).length;
-    if (!left) return '';  // all added: they're in Open below
-    return `<div class="card mpicks"><div class="row"><h3 class="grow" style="margin:0">Today's model picks</h3>
-      ${left ? `<button class="btn" data-addmodel="all">Add all ${left}</button>` : ''}</div>
-      <p class="note" style="margin-top:4px">Locked this morning from the props pull. Check your book's price before you bet.</p>${rows}</div>`;
+    const days = model.history.map(d => {
+      const rows = d.picks.map(p => ({ pick: { ...p, units: 1 }, grade: liveGradePick(L, p, gradePick(L, { ...p, units: 1 })) }));
+      return { date: d.date, rows, s: summarize(rows) };
+    });
+    const season = summarize(days.flatMap(d => d.rows));
+    const today = days.find(d => d.date === L.meta.today);
+    const past = days.filter(d => d !== today);
+    const addable = today ? today.rows.filter(r => r.grade.status === 'open' && !keys.has(pickKey({ ...r.pick, line: +r.pick.line }))).length : 0;
+    const todayHtml = today
+      ? `<div class="row mhead"><h4 class="grow">Today · ${today.rows.length} pick${today.rows.length === 1 ? '' : 's'}</h4>
+          ${addable ? `<button class="btn" data-addmodel="all">Add ${addable === today.rows.length ? 'all ' : ''}${addable}</button>` : ''}</div>
+        ${today.rows.map(r => modelRow(r.pick, r.grade, keys, true)).join('')}
+        <p class="note">Locked this morning from the props pull. Check your book's price before you bet.</p>`
+      : `<p class="note">No picks today yet. They lock on the morning props run (about 10:30 AM ET).</p>`;
+    const dayBlock = d => `<details class="pday" data-open="m${d.date}"${isOpen(`m${d.date}`, false) ? ' open' : ''}>
+      <summary><span class="grow">${esc(fmtDay(d.date, { weekday: 'short', month: 'short', day: 'numeric' }))}</span><span class="pdayrec">${recordLine(d.s)}</span></summary>
+      ${d.rows.map(r => modelRow(r.pick, r.grade, keys, false)).join('')}</details>`;
+    return `<details class="card mpicks" data-open="model"${isOpen('model', true) ? ' open' : ''}>
+      <summary><span class="grow"><b>Hoop Lab model picks</b><small>Record since ${esc(fmtDay(model.recordStart || days[days.length - 1].date, { month: 'short', day: 'numeric' }))} · 1 unit each</small></span>
+        <span class="mrec">${recordLine(season)}${season.roi != null ? ` <small>ROI ${pct(season.roi)}</small>` : ''}</span></summary>
+      ${todayHtml}
+      ${past.length ? `<details class="mall" data-open="history"${isOpen('history', false) ? ' open' : ''}>
+        <summary>See all picks <small>${past.length} day${past.length === 1 ? '' : 's'}</small></summary>${past.map(dayBlock).join('')}</details>` : ''}
+      <p class="note"><a href="model.html">How the model works</a> · picks are never edited after they lock.</p>
+    </details>`;
   }
 
   // The parlay builder's bar: legs picked, price (worked out, or what your book shows), boost, units.
@@ -199,6 +229,19 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
         <label class="field"><span>Units</span><select data-punits="1">${[0.5, 1, 2, 3, 4, 5].map(u => `<option value="${u}"${st.units === u ? ' selected' : ''}>${u}</option>`).join('')}</select></label>
         <button class="btn primary" data-build="save"${legs.length >= 2 ? '' : ' disabled'}>Save parlay</button></div>
     </div>`;
+  }
+
+  // Your graded picks, one drop-down per day (the latest day open), each with that day's record.
+  function gradedByDay(done) {
+    const days = new Map();
+    for (const r of done) {
+      const d = pickDate(r.pick, r.grade.g);
+      if (!days.has(d)) days.set(d, []);
+      days.get(d).push(r);
+    }
+    return [...days.entries()].map(([d, rows], i) => `<details class="pday mine" data-open="d${d}"${isOpen(`d${d}`, i === 0) ? ' open' : ''}>
+      <summary><span class="grow">${esc(fmtDay(d, { weekday: 'short', month: 'short', day: 'numeric' }))} <small>${rows.length} pick${rows.length === 1 ? '' : 's'}</small></span>
+        <span class="pdayrec">${recordLine(summarize(rows))}</span></summary>${rows.map(pickCard).join('')}</details>`).join('');
   }
 
   function render() {
@@ -233,7 +276,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
       + (open.length ? `<div class="row psec"><h2 class="grow" style="margin:0">Open <small>${open.length}</small></h2>
           ${openSingles >= 2 && !st.building ? '<button class="btn" data-build="start">Build a parlay</button>' : ''}</div>
           ${st.building ? '<p class="note">Tick the picks to combine, then set the price your book shows.</p>' : ''}${open.map(pickCard).join('')}` : '')
-      + (done.length ? `<h2 class="psec">Graded <small>${done.length}</small></h2>${done.map(pickCard).join('')}` : '')
+      + (done.length ? `<h2 class="psec">Graded <small>${done.length}</small></h2>${gradedByDay(done)}` : '')
       + (!rows.length ? `<div class="card empty">No picks in this date range.</div>` : '')
       + `<div class="grid2">${breakdownTable('By market', breakdown(done, p => (isParlay(p) ? 'parlay' : p.stat), k => (k === 'parlay' ? 'Parlays' : pickMarketLabel(k))))}
         ${breakdownTable('By side', breakdown(done, p => (isParlay(p) ? 'parlay' : p.side), k => ({ o: 'Overs', u: 'Unders', h: 'Home', a: 'Away', parlay: 'Parlays' }[k] || k)))}</div>`
@@ -282,7 +325,8 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     }
     else if (d.addmodel) {
       const keys = savedKeys();
-      const add = model.picks.filter(p => (d.addmodel === 'all' || p.id === d.addmodel) && !keys.has(pickKey({ ...p, line: +p.line })));
+      const add = model.picks.filter(p => (d.addmodel === 'all' || p.id === d.addmodel) && !keys.has(pickKey({ ...p, line: +p.line }))
+        && (L.byId.get(p.gid) || {}).state === 'pre');
       const list = loadPicks();
       for (const p of add) list.push(makePick({ ...p, units: 1 }));
       savePicks(list);
@@ -331,6 +375,12 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
       }), 'hooplab-record.png');
     }
   });
+  root.addEventListener('toggle', e => {
+    const k = e.target.dataset && e.target.dataset.open;
+    if (!k) return;
+    opened[k] = e.target.open;
+    store('picksOpen', opened);
+  }, true);
   root.addEventListener('change', e => {
     const t = e.target, d = t.dataset;
     if (d.sel) { if (t.checked) st.sel.add(d.sel); else st.sel.delete(d.sel); render(); }
@@ -351,9 +401,14 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   });
   render();
 
-  // Live: keep the score, clock and "Now" stat of picks in today's games fresh while they're on.
-  const liveGids = [...new Set(loadPicks().flatMap(p => (isParlay(p) ? p.legs.map(l => l.gid) : [p.gid])).filter(id => { const g = L.byId.get(id); return g && g.d >= L.meta.today && g.state !== 'post'; }))].slice(0, 8);
-  if (liveGids.length) startLive(L, { day: L.meta.today, gids: liveGids, onUpdate() { if (!document.activeElement.matches('input, select, textarea')) render(); } });
+  modelReady.then(m => {
+    model = m;
+    render();
+    // Live: keep the score, clock and "Now" stat of today's picks (yours and the model's) fresh while games are on.
+    const liveGids = [...new Set(loadPicks().flatMap(p => (isParlay(p) ? p.legs.map(l => l.gid) : [p.gid])).concat(model ? model.picks.map(p => p.gid) : [])
+      .filter(id => { const g = L.byId.get(id); return g && g.d >= L.meta.today && g.state !== 'post'; }))].slice(0, 10);
+    if (liveGids.length) startLive(L, { day: L.meta.today, gids: liveGids, onUpdate() { if (!document.activeElement.matches('input, select, textarea')) render(); } });
+  });
 }).catch(fail);
 </script>
 </body>

@@ -60,8 +60,10 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   closelines when present, JSON export/import, canvas share cards. Parlays (`type: 'parlay'`, `makeParlay`,
   `gradeParlay`): built on My picks from 2+ open saved picks, legs copied, price from the legs or what the book shows,
   optional profit boost %; graded like a book (any losing leg loses it; void/push legs drop out and the price is rebuilt;
-  all drop out = push). "Today's model picks" card adds the digest's locked picks in one tap (`site/data/digest.json`,
-  written by `digest.js` each run before the deploy). "My picks" is the 5th bottom-nav item;
+  all drop out = push). "Hoop Lab model picks" card (collapsible): the model's record since `RECORD_START`, today's
+  picks with one-tap add, and "See all picks" with every past day graded (`site/data/digest.json` = today + history,
+  written by `digest.js` each run before the deploy). Your graded picks are grouped into one drop-down per day; open /
+  closed state is kept in `hooplab.picksOpen`. "My picks" is the 5th bottom-nav item;
   Standings lives behind the trophy button in the header.
 - Teammate-out splits ("+2.3 PTS without him") stay off list views (Props cards, game-page rows) and don't move
   typical lines: Josh found them noisy (bench players, few games). They live collapsed under the player page's
