@@ -218,6 +218,64 @@ function seasonRecord(L, dir, through, season) {
   return P.summarize(graded);
 }
 
+/* Every counted, graded pick so far this season (same filter as seasonRecord), for the model check. */
+function seasonGraded(L, dir, through, season) {
+  const out = [];
+  for (const f of fs.readdirSync(dir).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort()) {
+    const day = f.slice(0, 10);
+    if (day > through || day < RECORD_START) continue;
+    for (const pick of counted(read(path.join(dir, f)).picks)) {
+      const g = L.byId.get(pick.gid);
+      if (g && g.s === season) out.push({ pick, grade: P.gradePick(L, pick) });
+    }
+  }
+  return out;
+}
+
+const STAT_WORD = { pts: 'Points', reb: 'Rebounds', ast: 'Assists', fg3m: 'Threes' };
+const pct = x => `${Math.round(x * 100)}%`;
+const wl = rows => { const s = P.summarize(rows); return `${s.w}-${s.l}${s.p ? `-${s.p}` : ''} (${units(s.profit)})`; };
+
+/* The model's running report card for the recap email (for Josh, not for posting): win rate vs what the picks said
+   they'd hit, ROI, closing line value, splits by side and stat, and plain-language observations. Pure: takes the
+   graded rows from seasonGraded. Returns a list of note lines (empty before anything is graded). */
+function modelCheck(rows) {
+  const done = rows.filter(r => r.grade.status === 'win' || r.grade.status === 'loss');
+  if (!done.length) return [];
+  const s = P.summarize(rows), n = done.length;
+  const wins = done.filter(r => r.grade.status === 'win').length;
+  const avg = (list, f) => list.reduce((a, r) => a + f(r), 0) / list.length;
+  const expected = avg(done, r => r.pick.prob || 0);
+  const market = avg(done, r => r.pick.market || 0);
+  const lines = [];
+  lines.push(`Model check, season so far: ${wl(rows)} over ${n} graded pick${n === 1 ? '' : 's'}, won ${pct(wins / n)} vs the ${pct(expected)} our chances said `
+    + `(the books alone said ${pct(market)}). ROI ${s.roi == null ? '-' : `${s.roi >= 0 ? '+' : ''}${(s.roi * 100).toFixed(1)}%`}.`);
+  const clv = done.filter(r => r.grade.clv != null);
+  if (clv.length) {
+    const beat = clv.filter(r => r.grade.clv > 0).length;
+    lines.push(`Closing line value: beat the close on ${beat} of ${clv.length} (average ${avg(clv, r => r.grade.clv) >= 0 ? '+' : ''}${avg(clv, r => r.grade.clv).toFixed(2)} pts). This is the best early sign of a real edge, more than wins.`);
+  }
+  const split = (key, label) => {
+    const groups = {};
+    for (const r of done) (groups[key(r)] = groups[key(r)] || []).push(r);
+    return Object.entries(groups).sort((a, b) => b[1].length - a[1].length).map(([k, list]) => `${label(k)} ${wl(list)}`).join(' · ');
+  };
+  lines.push(`By side: ${split(r => r.pick.side, k => (k === 'o' ? 'Overs' : 'Unders'))}. By stat: ${split(r => r.pick.stat, k => STAT_WORD[k] || k)}.`);
+
+  const obs = [];
+  if (n < 50) obs.push(`only ${n} graded so far: streaks of 2-3 wins or losses mean nothing yet; the record says something around 100+ picks`);
+  const unders = done.filter(r => r.pick.side === 'u').length;
+  if (n >= 5 && (unders / n >= 0.8 || unders / n <= 0.2)) obs.push(`${pct(Math.max(unders, n - unders) / n)} of picks are ${unders * 2 >= n ? 'unders' : 'overs'}, so the model leans one way; worth checking it isn't a bias in the projections`);
+  for (const [stat, list] of Object.entries(done.reduce((m, r) => ((m[r.pick.stat] = m[r.pick.stat] || []).push(r), m), {}))) {
+    const w = list.filter(r => r.grade.status === 'win').length;
+    if (list.length >= 8 && w / list.length < 0.4) obs.push(`${STAT_WORD[stat] || stat} picks are ${w}-${list.length - w}: watching; if it holds past ~20, tighten that market`);
+  }
+  if (n >= 30 && wins / n < expected - 0.08) obs.push(`winning well below what the chances said: the model may be overconfident on real lines; consider weighting the market more than 70%`);
+  if (n >= 30 && wins / n > expected + 0.08) obs.push(`winning above what the chances said; nice, but likely partly luck`);
+  if (obs.length) lines.push(`Observations: ${obs.join('; ')}.`);
+  return lines;
+}
+
 /* The opponent's defense vs his position, from the bet's side: an over against a top-10 most-generous defense is
    favorable, an under against a top-10 stingiest one too (the Props page's Favorable / Unfavorable filter). */
 function matchup(p) {
@@ -433,8 +491,11 @@ function writeRecap(L, dir) {
   const post = recapPost(day, rows, s, season);
   const png = renderPng(recapCard(day, rows, s, season), path.join(dir, `${day}-recap.png`), recapHeight(rows.length));
   const img = png ? `${RAW}/${day}-recap.png` : null;
-  const notes = rows.filter(r => r.grade.clv != null).length
-    ? [`Closing line value: ${rows.filter(r => r.grade.clv != null).map(r => `${short(r.pick)} ${r.grade.clv > 0 ? '+' : ''}${r.grade.clv}`).join(' · ')} (points vs the pre-tip line; positive = we beat the close).`] : [];
+  const notes = [
+    ...(rows.filter(r => r.grade.clv != null).length
+      ? [`Closing line value: ${rows.filter(r => r.grade.clv != null).map(r => `${short(r.pick)} ${r.grade.clv > 0 ? '+' : ''}${r.grade.clv}`).join(' · ')} (points vs the pre-tip line; positive = we beat the close).`] : []),
+    ...modelCheck(seasonGraded(L, dir, day, L.byId.get(picks[0].gid).s)),
+  ];
   const title = `Recap · ${dayLabel(day)} · ${s.w}-${s.l}${s.p ? `-${s.p}` : ''} (${units(s.profit)})`;
   write(file, { date: day, gradedAt: new Date().toISOString(), record: s, season, results: rows.map(r => ({ id: r.pick.id, status: r.grade.status, actual: r.grade.actual ?? null, profit: r.grade.profit, clv: r.grade.clv ?? null })),
     post, image: img, email: { subject: `🏀 ${title}`, html: emailHTML(title, post, img, notes), text: emailText(post, img, notes) } });
@@ -461,4 +522,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
+module.exports = { modelCheck, seasonGraded, PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };

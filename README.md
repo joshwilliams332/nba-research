@@ -82,6 +82,9 @@ To test the projection model against real sportsbook lines out in the open, the 
 - **Heads-up check.** If injury news or the closing line moves after the lock, the digest writes a note that is
   emailed before tip-off.
 - **Morning recap.** The picks are graded from box scores into a recap with the running record and closing-line value.
+  Each recap also carries a model check: season win rate vs the chances the picks claimed, ROI, closing-line value,
+  over/under and per-stat splits, and plain-language observations (small-sample warnings, one-sided leans, a stat
+  market that keeps missing).
 - **Delivery.** Scheduled tasks email me the picks at midday, a heads-up only when news changed, and the recap. Nothing is posted anywhere automatically.
 
 ## Running it locally

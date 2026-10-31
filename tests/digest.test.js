@@ -174,3 +174,21 @@ test('picks lock on the morning props run (10 AM ET+), not before', () => {
   assert.strictEqual(S.lockPicks(L, dir, Date.parse('2026-10-31T13:30Z')).state, 'waiting');   // 9:30 AM EDT
   assert.strictEqual(S.lockPicks(L, dir, Date.parse('2026-10-31T15:40Z')).state, 'no-props');  // 11:40 AM EDT: would lock
 });
+
+test('model check: season report card with splits, CLV and observations', () => {
+  assert.deepStrictEqual(S.modelCheck([]), []);
+  const r = (stat, side, status, prob, clv) => ({
+    pick: { stat, side, prob, market: prob - 0.04, price: -110, units: 1 },
+    grade: { status, profit: status === 'win' ? 0.91 : status === 'loss' ? -1 : 0, clv },
+  });
+  const rows = [
+    r('pts', 'u', 'win', 0.58, 0.5), r('pts', 'u', 'loss', 0.56, -0.5), r('ast', 'u', 'loss', 0.6, 1),
+    r('ast', 'u', 'win', 0.6, null), r('reb', 'u', 'win', 0.55, null), r('pts', 'u', 'void', 0.57, null),
+  ];
+  const lines = S.modelCheck(rows);
+  assert.match(lines[0], /3-2 \(\+0\.7u\) over 5 graded picks, won 60% vs the 58% our chances said \(the books alone said 54%\)/);
+  assert.match(lines[1], /beat the close on 2 of 3/);
+  assert.match(lines[2], /By side: Unders 3-2 .*By stat: Points 1-1/);
+  assert.match(lines[3], /only 5 graded so far/);
+  assert.match(lines[3], /100% of picks are unders/);
+});

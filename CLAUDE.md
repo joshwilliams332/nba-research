@@ -67,7 +67,8 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   the deploy): best bets lock once per day on the first run at 10 AM ET+ (the morning props run, so prices are fresh; was 4 PM
   until Oct 31) or 3h before the first tip, into
   `store/digest/YYYY-MM-DD.json` + `.png` (moved from `social/` once, automatically) (card drawn by the runner's Chrome); the recap (`-recap.json/.png`) is
-  written once every pick's game is final; `status.json` says what the last run did. Locked files are never rewritten
+  written once every pick's game is final, with `modelCheck()` (season win rate vs claimed chance, ROI, CLV, side/stat splits,
+  observations) in its for-Josh notes; `status.json` says what the last run did. Locked files are never rewritten
   (honest public record); the counted record starts at `RECORD_START` (2026-10-29; 10/28 was an unposted test night). `WITHDRAWN` lists picks pulled before posting and before tip (with the reason); they stay in the locked file but leave the post, recap and record. Never add one after a pick was posted or its game started. Pick chance = 30% model + 70% books' no-vig consensus (`fairPrice`), skip when they differ
   by 20+ points (model missing news), skip anyone on the injury report; >= 54% and >= 3% edge at the posted price,
   max 5, one per player, two per game; prices -200 to +180. Grading reuses picks.js (`gradePick`, `summarize`).
