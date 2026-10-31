@@ -430,6 +430,64 @@ td .logo { vertical-align: middle; margin-right: 4px; }
   display: inline-flex; align-items: center; justify-content: center; font-size: 18px; padding: 0; }
 .iconbtn svg, .btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: -3px; }
 .btn.danger { color: var(--miss); }
+
+/* ---------- parlays and today's model picks (My picks) */
+.btn.primary { background: var(--accent); color: #1a0f05; border-color: var(--accent); }
+.btn:disabled { opacity: .5; cursor: default; }
+details.mpicks > summary, .pday > summary, .mall > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; }
+details.mpicks > summary::-webkit-details-marker, .pday > summary::-webkit-details-marker, .mall > summary::-webkit-details-marker { display: none; }
+details.mpicks > summary::after, .pday > summary::after, .mall > summary::after { content: '▾'; color: var(--muted); font-size: 12px; transition: transform .15s; flex: none; }
+details[open] > summary::after { transform: rotate(180deg); }
+details.mpicks > summary small { display: block; color: var(--muted); font-size: 12px; font-weight: 500; }
+.mrec { text-align: right; font-size: 15px; font-weight: 750; white-space: nowrap; }
+.mrec small { display: block; color: var(--muted); font-size: 11px; font-weight: 600; }
+.mhead { margin-top: 12px; }
+.mhead h4 { margin: 0; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.mpicks .mpick { gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); align-items: center; }
+.mpicks .mpick a { color: inherit; text-decoration: none; min-width: 0; overflow-wrap: anywhere; }
+.mpicks .mpick small { color: var(--muted); }
+.mpicks .mpick .btn, .mpicks .mpick .pstatus { flex: none; }
+.mpicks .mpick .btn.on { color: var(--hit); }
+.mmark { flex: none; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-style: normal;
+  font-size: 12px; font-weight: 800; background: var(--card2); color: var(--muted); }
+.mpick.win .mmark { background: rgba(42, 211, 139, .18); color: var(--hit); }
+.mpick.loss .mmark { background: rgba(255, 92, 108, .18); color: var(--miss); }
+.mpick.live .mmark { color: var(--miss); }
+.mall { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+.mall > summary { font-weight: 700; color: var(--accent); }
+.mall > summary small { color: var(--muted); font-weight: 600; }
+.pday { margin-top: 8px; }
+.pday > summary { padding: 8px 10px; background: var(--card2); border-radius: 10px; font-weight: 700; font-size: 14px; }
+.pday > summary small { color: var(--muted); font-weight: 600; }
+.pday[open] > summary { margin-bottom: 6px; }
+.pday.mine { margin: 0 0 10px; }
+.pday.mine > summary { background: var(--card); border: 1px solid var(--line); padding: 10px 12px; }
+.pdayrec { font-size: 13px; white-space: nowrap; }
+.pleggame { display: block; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.pselect { display: flex; align-items: center; gap: 8px; padding: 10px 14px 0; font-size: 13px; font-weight: 650; color: var(--accent); cursor: pointer; }
+.pselect input { width: 18px; height: 18px; accent-color: var(--accent); }
+.pickcard.sel { border-color: rgba(255, 138, 61, .6); }
+.pickcard.parlay .phead { padding: 12px 14px 6px; align-items: flex-start; gap: 10px; }
+.plegs { padding: 0 14px 8px; }
+.pleg { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; border-top: 1px dashed var(--line); font-size: 13px; color: var(--text); text-decoration: none; }
+.pleg > i { flex: none; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  font-style: normal; font-size: 12px; font-weight: 800; background: var(--card2); color: var(--muted); margin-top: 1px; }
+.pleg.win > i { background: rgba(42, 211, 139, .18); color: var(--hit); }
+.pleg.loss > i { background: rgba(255, 92, 108, .18); color: var(--miss); }
+.pleg.live > i { color: var(--miss); }
+.pleg small { color: var(--muted); }
+.pleg .grow { min-width: 0; overflow-wrap: anywhere; }
+.parlaybar { position: fixed; z-index: 35; left: 8px; right: 8px; bottom: calc(max(10px, env(safe-area-inset-bottom)) + 66px);
+  background: #1d2128; border: 1px solid #3a414c; border-radius: 14px; padding: 10px 12px; box-shadow: 0 10px 28px rgba(0, 0, 0, .5); }
+.parlaybar .row { gap: 8px; align-items: center; }
+.parlaybar .muted { color: var(--muted); font-size: 13px; }
+.parlaybar .pbfields { margin-top: 8px; align-items: flex-end; flex-wrap: wrap; }
+.parlaybar .pbfields .field { flex: 1 1 0; min-width: 0; }
+.parlaybar .pbfields .btn { flex: 1 0 100%; padding: 10px; }
+@media (min-width: 760px) { .parlaybar .pbfields .btn { flex: none; padding: 7px 12px; } }
+.parlaybar .note.warn { color: var(--warm); margin: 6px 0 0; }
+body.building main { padding-bottom: 170px; }
+@media (min-width: 760px) { .parlaybar { left: 50%; right: auto; width: 620px; transform: translateX(-50%); bottom: 20px; } }
 .pastebox { width: 100%; background: var(--card2); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: 12px/1.4 ui-monospace, monospace; resize: vertical; }
 
 /* ---------- app shell */
@@ -633,3 +691,5 @@ a, button, input, select, label, summary, .proprow > .head, [data-step] { touch-
 .matenote2 { margin: 6px 2px 0; font-size: 12px; color: var(--muted); }
 .matenote2 b { color: var(--text); }
 .matenote2.small { color: var(--warm); }
+body.building #picktoast { bottom: calc(max(10px, env(safe-area-inset-bottom)) + 250px); }
+@media (min-width: 760px) { body.building #picktoast { bottom: 150px; } }

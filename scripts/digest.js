@@ -502,6 +502,21 @@ function writeRecap(L, dir) {
   return { day, state: 'done', new: true, record: recordTxt(s) };
 }
 
+/* The locked picks for the site's My picks page: today's (to add in one tap) and every counted day since the record
+   started (graded in the browser from the box scores, so the page shows the model's record and past picks). Withdrawn
+   picks are left out, as in the official record. Only what a saved pick needs; written next to the other site data
+   before the deploy step. */
+function sitePicks(L, dir) {
+  const slim = p => ({ id: p.id, gid: p.gid, pid: p.pid, name: p.name, team: p.team, stat: p.stat, side: p.side,
+    line: p.line, price: p.price, book: p.book, prob: p.prob, why: p.why });
+  const days = fs.readdirSync(dir).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map(f => f.slice(0, 10))
+    .filter(d => d >= RECORD_START && d <= L.meta.today).sort().reverse();
+  const history = days.map(date => ({ date, picks: counted(read(path.join(dir, `${date}.json`)).picks).map(slim) }))
+    .filter(d => d.picks.length);
+  const today = history.find(d => d.date === L.meta.today);
+  return { date: L.meta.today, recordStart: RECORD_START, picks: today ? today.picks : [], history };
+}
+
 function main() {
   const args = process.argv.slice(2);
   const arg = (k, d) => (args.includes(k) ? args[args.indexOf(k) + 1] : d);
@@ -512,14 +527,16 @@ function main() {
   const old = path.join(store, 'social');
   if (fs.existsSync(old) && !fs.existsSync(dir)) fs.renameSync(old, dir);
   fs.mkdirSync(dir, { recursive: true });
-  const L = loadLab(path.resolve(arg('--data', path.join(root, 'site', 'data'))));
+  const dataDir = path.resolve(arg('--data', path.join(root, 'site', 'data')));
+  const L = loadLab(dataDir);
   const now = Date.parse(arg('--now', new Date().toISOString()));
   const lock = lockPicks(L, dir, now, args.includes('--force-lock'));
   const check = checkPicks(L, dir, now);
   const recap = writeRecap(L, dir);
   write(path.join(dir, 'status.json'), { checked: new Date(now).toISOString(), today: L.meta.today, lock, check, recap });
+  write(path.join(dataDir, 'digest.json'), sitePicks(L, dir));
   console.log(`Social: ${lock.day} ${lock.state} (${lock.why}); recap ${recap.day || '-'} ${recap.state}${recap.record ? ` ${recap.record}` : ''}`);
 }
 
 if (require.main === module) main();
-module.exports = { modelCheck, seasonGraded, PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
+module.exports = { sitePicks, modelCheck, seasonGraded, PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };

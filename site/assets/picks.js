@@ -21,6 +21,7 @@ function savePicks(list) {
 
 /* Same game, player (or team), market, side and line = the same pick. */
 function pickKey(p) {
+  if (p.type === 'parlay') return `parlay|${(p.legs || []).map(pickKey).sort().join('+')}|${p.savedAt || ''}`;
   return [p.gid, p.pid || p.team || '', p.stat, p.side, p.line].join('|');
 }
 
@@ -52,12 +53,83 @@ function savedKeys() {
   return new Set(loadPicks().map(pickKey));
 }
 
+// ---------------------------------------------------------------- parlays
+
+const PARLAY_MAX_LEGS = 12;
+
+/* American odds <-> decimal. */
+const toDecimal = a => (a > 0 ? 1 + a / 100 : 1 + 100 / -a);
+function toAmerican(d) {
+  if (!(d > 1)) return null;
+  return d >= 2 ? Math.round((d - 1) * 100) : Math.round(-100 / (d - 1));
+}
+
+/* The parlay's price from its legs' prices (a leg without one counts as -110). */
+function parlayPrice(legs) {
+  if (!legs.length) return null;
+  return toAmerican(legs.reduce((d, l) => d * toDecimal(l.price == null ? DEFAULT_PRICE : l.price), 1));
+}
+
+/* A profit boost of `boost` % on American odds: the winnings grow, the stake doesn't. */
+function boostedPrice(price, boost) {
+  if (price == null || !(boost > 0)) return price;
+  return toAmerican(1 + (toDecimal(price) - 1) * (1 + boost / 100));
+}
+
+/* A parlay from saved singles (copies of their legs, so removing a single later doesn't change the parlay).
+   fields: {legs, price?, boost?, units?, book?}. With no price, it's worked out from the legs. */
+function makeParlay(fields) {
+  const legs = fields.legs.map(l => {
+    const leg = { gid: String(l.gid), stat: l.stat, side: l.side, line: +l.line, price: l.price == null || l.price === '' ? null : +l.price };
+    for (const k of ['pid', 'team', 'name', 'book']) if (l[k]) leg[k] = String(l[k]);
+    return leg;
+  });
+  const price = fields.price == null || fields.price === '' ? parlayPrice(legs) : +fields.price;
+  const p = {
+    id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`, type: 'parlay',
+    savedAt: new Date().toISOString(), legs, price, units: fields.units > 0 ? +fields.units : 1,
+    book: fields.book || null,
+  };
+  if (fields.boost > 0) p.boost = +fields.boost;
+  return p;
+}
+
+function validParlay(p) {
+  if (!p.id || !Array.isArray(p.legs) || p.legs.length < 2 || p.legs.length > PARLAY_MAX_LEGS) return false;
+  if (!p.legs.every(l => validPick({ ...l, id: 'leg' }))) return false;
+  if (p.price != null && (typeof p.price !== 'number' || !isFinite(p.price) || Math.abs(p.price) < 100)) return false;
+  if (p.boost != null && !(typeof p.boost === 'number' && p.boost > 0 && p.boost <= 200)) return false;
+  if (p.units != null && !(typeof p.units === 'number' && p.units > 0 && p.units <= 100)) return false;
+  return true;
+}
+
+/* Grade a parlay like a sportsbook: any losing leg loses it (even while others are still to play); once every leg is
+   decided, pushed or voided legs drop out and the price is recalculated from the remaining legs; if they all drop
+   out it's a push. `legGrade(leg)` grades one leg (the page passes one that also reads live box scores).
+   Returns {status, profit, legs: [grade per leg], price (the price it settled at), g (the latest leg's game)}. */
+function gradeParlay(L, pick, legGrade = leg => gradeResult(L, leg)) {
+  const legs = pick.legs.map(leg => legGrade({ ...leg, units: 1 }));
+  const games = legs.map(x => x.g).filter(Boolean).sort((a, b) => (a.t < b.t ? -1 : 1));
+  const g = games[games.length - 1] || null, units = pick.units || 1;
+  const out = (status, profit, extra = {}) => ({ status, profit, legs, g, ...extra });
+  if (legs.some(x => x.status === 'loss')) return out('loss', -units);
+  if (legs.some(x => x.status === 'live')) return out('live', 0, { g: legs.find(x => x.status === 'live').g });
+  if (legs.some(x => x.status === 'open')) return out('open', 0, { g: legs.find(x => x.status === 'open').g });
+  const kept = pick.legs.filter((_, i) => legs[i].status === 'win');
+  if (!kept.length) return out('push', 0);
+  // All legs stand: the price you got. Some dropped out: rebuilt from the remaining legs' prices.
+  const base = kept.length === pick.legs.length && pick.price != null ? pick.price : parlayPrice(kept);
+  const price = boostedPrice(base, pick.boost);
+  return out('win', payout('win', price, units), { price, reduced: kept.length < pick.legs.length });
+}
+
 // ---------------------------------------------------------------- import / export
 
 const TEAM_MARKETS = ['ml', 'spread', 'total'];
 
 /* A pick must name a game, a player or team, a known market, a side and a numeric line. */
 function validPick(p) {
+  if (p && p.type === 'parlay') return validParlay(p);
   if (!p || typeof p !== 'object' || !p.id || !p.gid || !(p.pid || p.team)) return false;
   const known = (typeof STATS !== 'undefined' && STATS[p.stat]) || TEAM_MARKETS.includes(p.stat);
   if (!known || !['o', 'u', 'h', 'a'].includes(p.side)) return false;
@@ -123,6 +195,7 @@ function settle(value, line, side) {
    status: 'open' (not started), 'live', 'win' | 'loss' | 'push', 'void' (game final but the player didn't play,
    or the game is missing / postponed). Also carries `close` and `clv` when a closing line is on record. */
 function gradePick(L, pick) {
+  if (pick.type === 'parlay') return gradeParlay(L, pick);
   const grade = gradeResult(L, pick);
   const close = closeLine(L, pick);
   if (close != null) { grade.close = close; grade.clv = clvPoints(pick, close); }
@@ -210,6 +283,7 @@ function pickMarketLabel(stat) {
 
 /* "Over 24.5 Points", "Under 7.5 Assists", "PHI -4.5", "PHI ML". */
 function pickText(p) {
+  if (p.type === 'parlay') return `${p.legs.length}-leg parlay`;
   if (p.stat === 'ml') return `${p.team} ML`;
   if (p.stat === 'spread') return `${p.team} ${signed(p.line)}`;
   return `${p.side === 'o' ? 'Over' : 'Under'} ${p.line} ${pickMarketLabel(p.stat)}`;
@@ -318,5 +392,5 @@ async function sharePNG(canvas, filename) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { pickKey, makePick, validPick, exportPicks, parseImport, mergePicks, payout, settle, gradePick, summarize, closeLine, clvPoints, pickText };
+  module.exports = { toDecimal, toAmerican, parlayPrice, boostedPrice, makeParlay, validParlay, gradeParlay, gradeResult, pickKey, makePick, validPick, exportPicks, parseImport, mergePicks, payout, settle, gradePick, summarize, closeLine, clvPoints, pickText };
 }
