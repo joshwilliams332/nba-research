@@ -102,3 +102,53 @@ test('import validation and merging', () => {
   assert.strictEqual(current.length, 2);
   assert.strictEqual(P.pickText(a), 'Over 22.5 Points');
 });
+
+test('parlay price from legs, and a profit boost on top', () => {
+  assert.strictEqual(P.parlayPrice([{ price: -131 }, { price: -131 }]), 211);
+  assert.strictEqual(P.parlayPrice([{ price: 100 }, { price: null }]), 282);   // a leg without a price counts as -110
+  assert.strictEqual(P.boostedPrice(210, 50), 315);
+  assert.strictEqual(P.boostedPrice(-200, 50), -133);                          // 0.5 profit -> 0.75 profit
+  assert.strictEqual(P.boostedPrice(-131, 0), -131);
+});
+
+test('parlays: built from legs, validated, and graded like a sportsbook', () => {
+  const L = lab();
+  const leg = (over = {}) => ({ gid: '1', pid: 'p1', stat: 'pts', side: 'o', line: 22.5, price: -120, ...over });
+  const par = (legs, extra = {}) => P.makeParlay({ legs, units: 1, ...extra });
+
+  // Both legs hit (25 pts > 22.5, 20 pts < 22.5 under): win at the entered price, boosted.
+  const both = par([leg(), leg({ gid: '2', side: 'u' })], { price: 210, boost: 50 });
+  assert.ok(P.validPick(both));
+  let g = P.gradePick(L, both);
+  assert.strictEqual(g.status, 'win');
+  assert.strictEqual(g.price, 315);
+  assert.strictEqual(g.profit, 3.15);
+  // No price given: worked out from the legs.
+  assert.strictEqual(par([leg(), leg({ gid: '2', side: 'u' })]).price, P.parlayPrice([{ price: -120 }, { price: -120 }]));
+
+  // One leg loses: the whole parlay loses, even with another leg still to play.
+  g = P.gradePick(L, par([leg({ side: 'u' }), leg({ gid: '3' })]));
+  assert.strictEqual(g.status, 'loss');
+  assert.strictEqual(g.profit, -1);
+  // Nothing lost yet but a leg to play: open (or live).
+  assert.strictEqual(P.gradePick(L, par([leg(), leg({ gid: '3' })])).status, 'open');
+  assert.strictEqual(P.gradePick(L, par([leg(), leg({ gid: '4' })])).status, 'live');
+
+  // A leg voids (player didn't play): it drops out and the price is rebuilt from the rest.
+  g = P.gradePick(L, par([leg({ price: 150 }), leg({ pid: 'nobody', name: 'X' })], { price: 400 }));
+  assert.strictEqual(g.status, 'win');
+  assert.strictEqual(g.price, 150);
+  assert.ok(g.reduced);
+  // Every leg pushes: push.
+  assert.strictEqual(P.gradePick(L, par([leg({ line: 25 }), leg({ gid: '2', line: 20 })])).status, 'push');
+
+  // Counted once in the record.
+  const s = P.summarize([{ pick: both, grade: P.gradePick(L, both) }]);
+  assert.deepStrictEqual([s.w, s.l], [1, 0]);
+  // Invalid: one leg, or a bad leg.
+  assert.ok(!P.validPick({ ...both, legs: [leg()] }));
+  assert.ok(!P.validPick({ ...both, legs: [leg(), { ...leg(), stat: 'nope' }] }));
+  // Round-trips through export / import.
+  const back = P.parseImport(P.exportPicks([both]));
+  assert.strictEqual(back.picks.length, 1);
+});
