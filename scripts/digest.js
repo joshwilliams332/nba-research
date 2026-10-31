@@ -1,19 +1,23 @@
 #!/usr/bin/env node
-/* Hoop Lab social posts: the model's best bets before tip-off, and a results recap the morning after.
+/* Hoop Lab daily picks digest: the model's best bets locked before tip-off, and a graded results recap the morning
+   after, delivered to me as two automated emails a day. It's how the projection model gets tracked against real
+   sportsbook lines in the open: every pick is timestamped before the game and graded from box scores, never edited.
 
    Runs in the data workflow after scripts/build_data.py (and the backtest), writing to the store, which is saved on the
-   `data` branch. Nothing here posts anywhere: a scheduled Claude task emails the post text and card links to Josh,
-   who posts them himself (see .claude/agents/social-poster.md).
+   `data` branch. A scheduled task then emails the digest (see .claude/agents/pick-digest.md). Nothing is posted
+   anywhere automatically.
 
-   store/social/YYYY-MM-DD.json         picks, locked once before tip-off (never rewritten, so the record is honest)
-   store/social/YYYY-MM-DD.png          the slate card image
-   store/social/YYYY-MM-DD-recap.json   graded results + season record, written once every pick's game is final
-   store/social/YYYY-MM-DD-recap.png    the recap card image
-   store/social/status.json             what the last run did (for the email task)
+   store/digest/YYYY-MM-DD.json         picks, locked once before tip-off (never rewritten, so the record is honest)
+   store/digest/YYYY-MM-DD.png          a summary card image of the picks
+   store/digest/YYYY-MM-DD-check.json   heads-up notes when injury news or prices change after the lock
+   store/digest/YYYY-MM-DD-recap.json   graded results + season record, written once every pick's game is final
+   store/digest/YYYY-MM-DD-recap.png    the recap card image
+   store/digest/status.json             what the last run did (for the email task)
 
-   Picks lock on the first run where it's 4 PM ET or later, or the first tip is within 3 hours.
+   Picks lock on the first run at 10 AM ET or later (the morning run that pulls the day's props, so the email goes out
+   while the prices are still fresh), or once the first tip is within 3 hours. Later runs only write heads-up notes.
 
-   Usage: node scripts/social.js [--store store] [--data site/data] [--now ISO] [--force-lock] */
+   Usage: node scripts/digest.js [--store store] [--data site/data] [--now ISO] [--force-lock] */
 'use strict';
 
 const fs = require('fs');
@@ -23,7 +27,7 @@ Object.assign(globalThis, require('../site/assets/common.js'), require('../site/
 const M = require('../site/assets/model.js');
 const P = require('../site/assets/picks.js');
 
-const RAW = 'https://raw.githubusercontent.com/joshwilliams332/nba-research/data/social';
+const RAW = 'https://raw.githubusercontent.com/joshwilliams332/nba-research/data/digest';
 const SITE = 'https://joshwilliams332.github.io/nba-research';
 const PICK = {
   max: 5,            // picks per night
@@ -39,7 +43,7 @@ const PICK = {
   priceRange: [-200, 180],
   stats: ['pts', 'reb', 'ast', 'fg3m'],
 };
-const LOCK_HOUR = 16;          // ET
+const LOCK_HOUR = 10;          // ET: the morning props pull happens on the first run after 10:00 ET
 // The public record starts here. Oct 28 locked by accident when the feature was merged mid-slate and was never
 // posted, so it's kept on the data branch but not counted in "Season:".
 const RECORD_START = '2026-10-29';
@@ -212,6 +216,64 @@ function seasonRecord(L, dir, through, season) {
     }
   }
   return P.summarize(graded);
+}
+
+/* Every counted, graded pick so far this season (same filter as seasonRecord), for the model check. */
+function seasonGraded(L, dir, through, season) {
+  const out = [];
+  for (const f of fs.readdirSync(dir).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort()) {
+    const day = f.slice(0, 10);
+    if (day > through || day < RECORD_START) continue;
+    for (const pick of counted(read(path.join(dir, f)).picks)) {
+      const g = L.byId.get(pick.gid);
+      if (g && g.s === season) out.push({ pick, grade: P.gradePick(L, pick) });
+    }
+  }
+  return out;
+}
+
+const STAT_WORD = { pts: 'Points', reb: 'Rebounds', ast: 'Assists', fg3m: 'Threes' };
+const pct = x => `${Math.round(x * 100)}%`;
+const wl = rows => { const s = P.summarize(rows); return `${s.w}-${s.l}${s.p ? `-${s.p}` : ''} (${units(s.profit)})`; };
+
+/* The model's running report card for the recap email (for Josh, not for posting): win rate vs what the picks said
+   they'd hit, ROI, closing line value, splits by side and stat, and plain-language observations. Pure: takes the
+   graded rows from seasonGraded. Returns a list of note lines (empty before anything is graded). */
+function modelCheck(rows) {
+  const done = rows.filter(r => r.grade.status === 'win' || r.grade.status === 'loss');
+  if (!done.length) return [];
+  const s = P.summarize(rows), n = done.length;
+  const wins = done.filter(r => r.grade.status === 'win').length;
+  const avg = (list, f) => list.reduce((a, r) => a + f(r), 0) / list.length;
+  const expected = avg(done, r => r.pick.prob || 0);
+  const market = avg(done, r => r.pick.market || 0);
+  const lines = [];
+  lines.push(`Model check, season so far: ${wl(rows)} over ${n} graded pick${n === 1 ? '' : 's'}, won ${pct(wins / n)} vs the ${pct(expected)} our chances said `
+    + `(the books alone said ${pct(market)}). ROI ${s.roi == null ? '-' : `${s.roi >= 0 ? '+' : ''}${(s.roi * 100).toFixed(1)}%`}.`);
+  const clv = done.filter(r => r.grade.clv != null);
+  if (clv.length) {
+    const beat = clv.filter(r => r.grade.clv > 0).length;
+    lines.push(`Closing line value: beat the close on ${beat} of ${clv.length} (average ${avg(clv, r => r.grade.clv) >= 0 ? '+' : ''}${avg(clv, r => r.grade.clv).toFixed(2)} pts). This is the best early sign of a real edge, more than wins.`);
+  }
+  const split = (key, label) => {
+    const groups = {};
+    for (const r of done) (groups[key(r)] = groups[key(r)] || []).push(r);
+    return Object.entries(groups).sort((a, b) => b[1].length - a[1].length).map(([k, list]) => `${label(k)} ${wl(list)}`).join(' · ');
+  };
+  lines.push(`By side: ${split(r => r.pick.side, k => (k === 'o' ? 'Overs' : 'Unders'))}. By stat: ${split(r => r.pick.stat, k => STAT_WORD[k] || k)}.`);
+
+  const obs = [];
+  if (n < 50) obs.push(`only ${n} graded so far: streaks of 2-3 wins or losses mean nothing yet; the record says something around 100+ picks`);
+  const unders = done.filter(r => r.pick.side === 'u').length;
+  if (n >= 5 && (unders / n >= 0.8 || unders / n <= 0.2)) obs.push(`${pct(Math.max(unders, n - unders) / n)} of picks are ${unders * 2 >= n ? 'unders' : 'overs'}, so the model leans one way; worth checking it isn't a bias in the projections`);
+  for (const [stat, list] of Object.entries(done.reduce((m, r) => ((m[r.pick.stat] = m[r.pick.stat] || []).push(r), m), {}))) {
+    const w = list.filter(r => r.grade.status === 'win').length;
+    if (list.length >= 8 && w / list.length < 0.4) obs.push(`${STAT_WORD[stat] || stat} picks are ${w}-${list.length - w}: watching; if it holds past ~20, tighten that market`);
+  }
+  if (n >= 30 && wins / n < expected - 0.08) obs.push(`winning well below what the chances said: the model may be overconfident on real lines; consider weighting the market more than 70%`);
+  if (n >= 30 && wins / n > expected + 0.08) obs.push(`winning above what the chances said; nice, but likely partly luck`);
+  if (obs.length) lines.push(`Observations: ${obs.join('; ')}.`);
+  return lines;
 }
 
 /* The opponent's defense vs his position, from the bet's side: an over against a top-10 most-generous defense is
@@ -429,8 +491,11 @@ function writeRecap(L, dir) {
   const post = recapPost(day, rows, s, season);
   const png = renderPng(recapCard(day, rows, s, season), path.join(dir, `${day}-recap.png`), recapHeight(rows.length));
   const img = png ? `${RAW}/${day}-recap.png` : null;
-  const notes = rows.filter(r => r.grade.clv != null).length
-    ? [`Closing line value: ${rows.filter(r => r.grade.clv != null).map(r => `${short(r.pick)} ${r.grade.clv > 0 ? '+' : ''}${r.grade.clv}`).join(' · ')} (points vs the pre-tip line; positive = we beat the close).`] : [];
+  const notes = [
+    ...(rows.filter(r => r.grade.clv != null).length
+      ? [`Closing line value: ${rows.filter(r => r.grade.clv != null).map(r => `${short(r.pick)} ${r.grade.clv > 0 ? '+' : ''}${r.grade.clv}`).join(' · ')} (points vs the pre-tip line; positive = we beat the close).`] : []),
+    ...modelCheck(seasonGraded(L, dir, day, L.byId.get(picks[0].gid).s)),
+  ];
   const title = `Recap · ${dayLabel(day)} · ${s.w}-${s.l}${s.p ? `-${s.p}` : ''} (${units(s.profit)})`;
   write(file, { date: day, gradedAt: new Date().toISOString(), record: s, season, results: rows.map(r => ({ id: r.pick.id, status: r.grade.status, actual: r.grade.actual ?? null, profit: r.grade.profit, clv: r.grade.clv ?? null })),
     post, image: img, email: { subject: `🏀 ${title}`, html: emailHTML(title, post, img, notes), text: emailText(post, img, notes) } });
@@ -442,7 +507,10 @@ function main() {
   const arg = (k, d) => (args.includes(k) ? args[args.indexOf(k) + 1] : d);
   const root = path.join(__dirname, '..');
   const store = path.resolve(arg('--store', path.join(root, 'store')));
-  const dir = path.join(store, 'social');
+  const dir = path.join(store, 'digest');
+  // The folder used to be called social/; move its history over once so the record carries on.
+  const old = path.join(store, 'social');
+  if (fs.existsSync(old) && !fs.existsSync(dir)) fs.renameSync(old, dir);
   fs.mkdirSync(dir, { recursive: true });
   const L = loadLab(path.resolve(arg('--data', path.join(root, 'site', 'data'))));
   const now = Date.parse(arg('--now', new Date().toISOString()));
@@ -454,4 +522,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
+module.exports = { modelCheck, seasonGraded, PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };

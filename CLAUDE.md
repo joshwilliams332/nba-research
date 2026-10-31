@@ -63,15 +63,19 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   typical lines: Josh found them noisy (bench players, few games). They live collapsed under the player page's
   "Lineup & injuries" section, with numbers only at 5+ games without him; the Without filter covers the rest.
   The projection model's own teammate-out adjustment is separate and stays (it's backtested).
-- Social posts (`scripts/social.js`, tested in `tests/social.test.js`; workflow step after the backtest, never blocks
-  the deploy): best bets lock once per day on the first run at 4 PM ET+ or 3h before the first tip, into
-  `store/social/YYYY-MM-DD.json` + `.png` (card drawn by the runner's Chrome); the recap (`-recap.json/.png`) is
-  written once every pick's game is final; `status.json` says what the last run did. Locked files are never rewritten
+- Daily picks digest (`scripts/digest.js`, tested in `tests/digest.test.js`; called "social posts" before Oct 30; workflow step after the backtest, never blocks
+  the deploy): best bets lock once per day on the first run at 10 AM ET+ (the morning props run, so prices are fresh; was 4 PM
+  until Oct 31) or 3h before the first tip, into
+  `store/digest/YYYY-MM-DD.json` + `.png` (moved from `social/` once, automatically) (card drawn by the runner's Chrome); the recap (`-recap.json/.png`) is
+  written once every pick's game is final, with `modelCheck()` (season win rate vs claimed chance, ROI, CLV, side/stat splits,
+  observations) in its for-Josh notes; `status.json` says what the last run did. Locked files are never rewritten
   (honest public record); the counted record starts at `RECORD_START` (2026-10-29; 10/28 was an unposted test night). `WITHDRAWN` lists picks pulled before posting and before tip (with the reason); they stay in the locked file but leave the post, recap and record. Never add one after a pick was posted or its game started. Pick chance = 30% model + 70% books' no-vig consensus (`fairPrice`), skip when they differ
   by 20+ points (model missing news), skip anyone on the injury report; >= 54% and >= 3% edge at the posted price,
   max 5, one per player, two per game; prices -200 to +180. Grading reuses picks.js (`gradePick`, `summarize`).
-  Delivery: two scheduled Claude tasks email Josh (6:00 PM ET pregame, 8:41 AM ET recap) following
-  `.claude/agents/social-poster.md`; Josh posts by hand. Nothing auto-posts.
+  Delivery: scheduled Claude tasks email Josh (12:23 PM ET picks, 5:53 PM ET heads-up only if a -check.json exists,
+  4:41 AM ET recap, after the 3:47 AM EDT / 2:47 AM EST data run grades the late games) following
+  `.claude/agents/pick-digest.md`. Public wording (README, workflow, PRs) describes it as automated emails to Josh, not
+  social media posting (recruiters read this repo). Nothing auto-posts.
 - Live scores (`site/assets/live.js`, tested in `tests/live.test.js`): while a game is on (or tipping within 10 min),
   index / game / picks pages poll ESPN's public scoreboard (and the summary box score for games on screen) from the
   browser every 25 s; pauses when the tab is hidden, stops when nothing's live, gives up after 3 failed checks and keeps
@@ -81,10 +85,10 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - Teammates and injuries: `injuryStatus()` (common.js) reads ESPN's note for "Day-To-Day" entries ("is doubtful for
   Thursday's game" -> Doubtful); `outMates`, `injuryTag` and the picks use it. Player page: a "Without" chip row under
   the stat tabs lists teammates on today's injury report; one tap = only games he missed (same `without` filter, kept in
-  the URL), with the game count and an amber note under 8 games. Picks (`social.js`): skip a side when a rotation
+  the URL), with the game count and an amber note under 8 games. Picks (`digest.js`): skip a side when a rotation
   teammate (15+ min) is questionable / doubtful / day-to-day, or is out and the side hit under 50% in 5+ games without
   him. After the lock, `checkPicks` writes `YYYY-MM-DD-check.json` (heads-up notes: status changes since the lock, a
-  close line that moved against the pick) and the 6 PM email task sends that version when it exists.
+  close line that moved against the pick) and the 5:53 PM heads-up task emails it when it exists.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)
@@ -92,7 +96,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   traces warnings to their cause.
 - `mobile-reviewer`: screenshots pages at 390px and 1280px and reports layout problems. Run it before merging UI work.
 - `trend-finder`: proposes and tests new Insight rules for `site/assets/insights.js` against real data.
-- `social-poster`: the playbook the scheduled email tasks follow (fetch the day's post from the `data` branch, send it
+- `pick-digest`: the playbook the scheduled email tasks follow (fetch the day's post from the `data` branch, send it
   to Josh as written, poll if the run is late). Cheap by design: no data rebuild, no rewriting.
 - Josh asked to stop using subagents for now because of token cost (Phase 4's last three pieces were finished
   one at a time in the main session). Don't spawn agents unless he asks again.
