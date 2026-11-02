@@ -20,7 +20,9 @@ if (typeof module !== 'undefined' && typeof STATS === 'undefined') {
   Object.assign(globalThis, require('./common.js'), require('./context.js'));
 }
 
-// Tuning. Each was chosen on last season's games in scripts/backtest.js, then left alone.
+// Tuning. Chosen on last season's games in scripts/backtest.js, then left alone, except two retuned on Nov 2, 2026
+// after both 2025-26 and early 2026-27 games (and real sportsbook lines) agreed: mateStrength 0.5 -> 0.3 (the
+// teammate-out boost over-projected, mostly points) and otherTeamWeight 1 -> 0.6 (players who changed teams).
 const MODEL = {
   minHalfLife: 4,        // games: half-life of the minutes average
   rateHalfLife: 20,      // games: half-life of the per-minute rate average
@@ -30,9 +32,10 @@ const MODEL = {
   oppCap: 0.15,          // opponent factor stays within 1 ± this
   paceStrength: 0.5,
   paceCap: 0.06,
-  mateStrength: 0.5,     // how much of a teammate-out split to apply
+  mateStrength: 0.3,     // how much of a teammate-out split to apply
   mateMinGames: 3,       // games with and without him needed before the split counts
   maxMinutes: 42,
+  otherTeamWeight: 0.6,  // weight of a player's games for a previous team in the minutes and rate averages
   minGames: 5,           // prior games needed to project at all
   dispersion: { pts: 2.6, reb: 1.6, ast: 1.5, fg3m: 1.25, pra: 2.6, pr: 2.4, pa: 2.4, ra: 1.6, stl: 1.1, blk: 1.2, sb: 1.15, tov: 1.2, fga: 1.6, fg3a: 1.5, fta: 1.7 },
   dispersionPad: 15,     // games of the typical dispersion blended into the player's own
@@ -230,14 +233,15 @@ function project(L, pid, stat, g, opts = {}) {
   // Minutes: exponentially weighted, most recent first.
   const recent = rows.slice(-20).reverse();
   let wSum = 0, mSum = 0;
-  recent.forEach((r, age) => { const w = decay(age, MODEL.minHalfLife); wSum += w; mSum += w * r.min; });
+  const tw = r => (r.team === team ? 1 : MODEL.otherTeamWeight);
+  recent.forEach((r, age) => { const w = decay(age, MODEL.minHalfLife) * tw(r); wSum += w; mSum += w * r.min; });
   let minutes = mSum / wSum;
 
   // Per-minute rate, decay-weighted over every prior game, padded with the position average.
   const pos = ctx.posRate[bucket][stat];
   const posRate = pos[1] ? pos[0] / pos[1] : 0;
   let a = MODEL.ratePadMinutes * posRate, m = MODEL.ratePadMinutes;
-  rows.slice().reverse().forEach((r, age) => { const w = decay(age, MODEL.rateHalfLife); a += w * f(r); m += w * r.min; });
+  rows.slice().reverse().forEach((r, age) => { const w = decay(age, MODEL.rateHalfLife) * tw(r); a += w * f(r); m += w * r.min; });
   let rate = a / m;
 
   // Teammates out tonight.

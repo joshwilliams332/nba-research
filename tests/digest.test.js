@@ -208,3 +208,14 @@ test("site picks: today's and past locked picks for My picks, withdrawn and pre-
   assert.deepStrictEqual(out.history.map(d => [d.date, d.picks.map(p => p.id)]), [['2026-10-30', ['t']], ['2026-10-29', ['k']]]);
   assert.strictEqual(out.picks[0].model, undefined);
 });
+
+test('thin evidence: a teammate out with too few games without him is named, not skipped', () => {
+  const { L, rows } = bigs(10, 3);
+  L.injuries = [{ id: 'w', t: 'POR', st: 'Out', det: '' }];
+  const mates = S.keyMates(L, 'c', 'POR');
+  assert.deepStrictEqual(S.thinMates(L, 'c', 'reb', rows, mates), ['Robert Williams III (3 games without him)']);
+  assert.strictEqual(S.mateProblem(L, 'c', 'reb', 10.5, 'u', rows, mates), null);
+  const many = bigs(10, 6);
+  many.L.injuries = [{ id: 'w', t: 'POR', st: 'Out', det: '' }];
+  assert.deepStrictEqual(S.thinMates(many.L, 'c', 'reb', many.rows, S.keyMates(many.L, 'c', 'POR')), []);
+});
