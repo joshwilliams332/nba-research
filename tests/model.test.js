@@ -54,3 +54,22 @@ test('projection tracks a steady player and needs enough games', () => {
   // Period stats aren't projected.
   assert.strictEqual(M.project(L, 'p1', 'nope', next), null);
 });
+
+test("a traded player's games for his old team count less than his new team's", () => {
+  // 20 games scoring 30 for BBB, then 10 for AAA scoring 10; next game is for AAA.
+  const games = Array.from({ length: 31 }, (_, i) => {
+    const d = new Date(Date.UTC(2026, 9, 1 + i * 2)).toISOString().slice(0, 10);
+    return game(String(i + 1), d, 'AAA', 'BBB', i === 30 ? { state: 'pre', hs: undefined, as: undefined } : {});
+  });
+  const L = C.indexLab(meta, teams, games);
+  const row = (gid, team, pts) => [gid, team, 1, 30, pts, 6, 4, 2, 5, 7, 15, 4, 5, 1, 5, 1, 0, 2, 2, 3];
+  L.players = { t: { n: 'Traded Guy', t: 'AAA', p: 'G' } };
+  L.logs = { t: games.slice(0, 30).map((g, i) => row(g.id, i < 20 ? 'BBB' : 'AAA', i < 20 ? 30 : 10)) };
+  L.injuries = [];
+  const next = games[30];
+  const at = w => { M.MODEL.otherTeamWeight = w; delete L._model; return M.project(L, 't', 'pts', next, { absent: [] }).mean; };
+  const saved = M.MODEL.otherTeamWeight;
+  try {
+    assert.ok(at(0.6) < at(1), 'old-team games weigh less, pulling the projection toward his new-team scoring');
+  } finally { M.MODEL.otherTeamWeight = saved; }
+});

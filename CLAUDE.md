@@ -48,7 +48,11 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   `PAGES` / `ASSETS` in sw.js so it works offline from the first visit.
 - Projection model (`site/assets/model.js`, tested in `tests/model.test.js`): minutes x per-minute rate x opponent
   (DvP, half strength, capped) x pace, teammate-out adjustment weighted by the share of recent games the teammate
-  played (avoids double counting), negative binomial for the chances. `scripts/backtest.js` (workflow step) writes
+  played (avoids double counting), negative binomial for the chances. Retuned Nov 2, 2026 (PR "roster fixes"):
+  `mateStrength` 0.5 -> 0.3 and `otherTeamWeight` 0.6 (previous-team games count less), both better on 2025-26,
+  2026-27 and real lines. Tested and rejected: treating rotation players who missed the team's last few games as out
+  when ESPN doesn't list them (made projections worse at K = 2, 3 and 5), and skipping picks with a key teammate out and
+  under 5 games without him (those spots did no worse on real lines); the digest names them as "thin evidence" instead. `scripts/backtest.js` (workflow step) writes
   `site/data/model.json` for `model.html`. Node loads the helpers via `Object.assign(globalThis, require(...))`;
   never declare common.js names with `var`/`const` in other asset files (they share one global scope in the browser).
 - Line movement / CLV (`site/assets/lines.js`, tested in `tests/lines.test.js`): props.json props carry `open` and

@@ -113,6 +113,14 @@ function keyMates(L, pid, team) {
 }
 
 /* Why a side shouldn't be picked because of a teammate, or null. */
+/* Rotation teammates out tonight with too few games without them to judge the player's new role (fewer than
+   MATE_MIN_GAMES): "Anthony Edwards (3 games)". Not a reason to skip: on real lines the model has done no worse in
+   these spots (Nov 2 test), but Josh sees them in the email so he can weigh the news himself. */
+function thinMates(L, pid, stat, rows, mates) {
+  return mates.filter(m => /^out/i.test(m.st)).map(m => ({ m, n: teammateBoost(L, pid, m.id, stat, rows).withoutRows.length }))
+    .filter(x => x.n < MATE_MIN_GAMES).map(x => `${x.m.n} (${x.n} game${x.n === 1 ? '' : 's'} without him)`);
+}
+
 function mateProblem(L, pid, stat, line, side, rows, mates) {
   const unsure = mates.find(m => UNSURE.test(m.st));
   if (unsure) return `${unsure.n} is ${unsure.st.toLowerCase()}`;
@@ -155,7 +163,7 @@ function candidates(L, day, skipped = []) {
           if (why) { skipped.push(`${p.n} ${side === 'o' ? 'O' : 'U'} ${pr.l} ${STATS[pr.s].short}: ${why}`); continue; }
         }
         const l10 = rows.slice(-10).map(r => outcome(STATS[pr.s].f(r), pr.l, side));
-        out.push({ g, pr, p, opp, side, price, prob, model, market, edge, proj, l10, mates, rank: oppRank(L, opp, posBucket(p.p), pr.s) });
+        out.push({ g, pr, p, opp, side, price, prob, model, market, edge, proj, l10, mates, thin: thinMates(L, pr.id, pr.s, rows, mates), rank: oppRank(L, opp, posBucket(p.p), pr.s) });
       }
     }
   }
@@ -197,6 +205,7 @@ function toPick(L, c) {
     model: Math.round(c.model * 1000) / 1000, market: Math.round(c.market * 1000) / 1000, edge: Math.round(c.edge * 1000) / 1000,
     l10: c.l10, oppRank: c.rank && c.rank.rank != null ? { rank: c.rank.rank, of: c.rank.of } : null, why: whyLine(L, c),
     mates: Object.fromEntries((c.mates || []).map(m => [m.id, m.st])),  // rotation teammates' status at lock
+    ...(c.thin && c.thin.length ? { thin: c.thin } : {}),                  // teammates out with too few games to judge
   };
 }
 
@@ -426,6 +435,7 @@ function lockPicks(L, dir, now, force) {
   const pulled = (L.props || {}).fetched;
   const notes = [
     `Locked ${clock(now)} ET from ${cands.length} prop sides. Prices are from the ${pulled ? `${clock(pulled)} ET ` : ''}sportsbook pull and lines move, so check your book before posting; if the price got much worse, skip or say so.`,
+    ...picks.filter(p => p.thin).map(p => `Thin evidence: ${p.name} ${p.side === 'o' ? 'O' : 'U'} ${p.line} ${STATS[p.stat].short}. ${p.thin.join(', ')} out, too few games to judge his new role. The model can't see it yet, so weigh the news yourself.`),
     ...(skipped.length ? [`Skipped because of a teammate's news: ${skipped.slice(0, 4).join('; ')}${skipped.length > 4 ? ` (+${skipped.length - 4} more)` : ''}.`] : []),
     'Our chance = 30% model + 70% the books\' no-vig price, so a pick needs the model to lean past a fair market. Props where the two disagree by 20+ points were skipped (usually news the model can\'t see).',
     'Players on the injury report (even questionable) were skipped, and so were players whose rotation teammate is questionable/doubtful. If someone is ruled out after this, the pick is graded as a void.',
@@ -539,4 +549,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { sitePicks, modelCheck, seasonGraded, PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
+module.exports = { thinMates, sitePicks, modelCheck, seasonGraded, PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };

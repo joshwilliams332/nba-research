@@ -89,13 +89,13 @@ Promise.all([lab(), load('model')]).then(([L, [M]]) => {
       <p><b>Projection = minutes × production per minute × opponent × pace.</b></p>
       <ul>
         <li><b>Minutes:</b> his recent minutes, weighted so the last few games count most.</li>
-        <li><b>Per minute:</b> his production per minute over this season and last, recent games weighted more, padded with the average for his position so a hot week can't swing it.</li>
+        <li><b>Per minute:</b> his production per minute over this season and last, recent games weighted more, padded with the average for his position so a hot week can't swing it. Games for a previous team count a bit less, so a traded player's new role shows up sooner.</li>
         <li><b>Teammates out:</b> when a key teammate is ruled out, part of the change in his minutes and production in past games without that teammate is added, but only for the share of recent games the teammate actually played, so it isn't counted twice.</li>
         <li><b>Opponent:</b> what tonight's defense allows to his position compared with the league, applied at half strength and capped at ±15%.</li>
         <li><b>Pace:</b> tonight's expected pace compared with his team's usual pace, half strength, capped at ±6%.</li>
         <li><b>The percentages:</b> the projection is spread into a range of outcomes (a negative binomial, since stat lines vary more than a simple coin model), using how much his own numbers have bounced around lately.</li>
       </ul>
-      <p class="note">Settings were picked on last season's games and then left alone. The code is the same one the site runs live (<code>site/assets/model.js</code>), and <code>scripts/backtest.js</code> rebuilds this page after every data update.
+      <p class="note">Settings were picked on last season's games and then left alone, with one exception: on Nov 2, 2026 the teammate-out adjustment was weakened (it was pushing projections too high, mostly points) and games for a previous team were given less weight, after both seasons and real sportsbook lines agreed it helped. A third idea, treating players who haven't appeared lately as out even when they aren't on the injury report, was tested and made projections worse, so it wasn't added. The code is the same one the site runs live (<code>site/assets/model.js</code>), and <code>scripts/backtest.js</code> rebuilds this page after every data update.
         Last run: ${esc(M.generated || '')}.</p>
       <p class="note">This is a research tool, not betting advice. Past accuracy doesn't guarantee future results; lines also reflect information the model doesn't see.</p></div>`;
 }).catch(fail);
