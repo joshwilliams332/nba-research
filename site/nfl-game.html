@@ -158,7 +158,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
       return `<div class="proprow${open ? ' open' : ''}">
         <div class="head" data-open="${esc(key)}">${p.img ? `<a href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&g=${encodeURIComponent(g.id)}"><img class="nflmug" src="${esc(p.img)}" alt="" width="36" height="36" loading="lazy" onerror="this.remove()"></a>` : ''}
           <div class="grow"><a class="name" href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&g=${encodeURIComponent(g.id)}">${esc(p.n)}</a> <span class="sub">- ${esc(NFL_STATS[x.stat].label)}</span>${inj}
-            <div class="sub">${typical ? `typical ${x.line}` : `${x.line} · O ${odds(x.r.over)} / U ${odds(x.r.under)}`}</div></div><span class="gochev">${open ? '▴' : '▾'}</span></div>
+            <div class="sub">${typical ? `typical ${x.line}` : `${x.line}${x.r.open != null && x.r.open !== x.line ? ` <small class="muted">(opened ${x.r.open} ${x.line > x.r.open ? '↑' : '↓'})</small>` : ''} · ${x.r.over != null ? `O ${odds(x.r.over)} / U ${odds(x.r.under)}` : 'DK line'}`}</div></div><span class="gochev">${open ? '▴' : '▾'}</span></div>
         ${open ? `<div class="nflladder">${ladder(x)}</div>` : ''}</div>`;
     }).join('')}</div>
     <p class="note">${typical ? 'No sportsbook props were pulled for this game, so these are <b>typical lines</b> (half a point above each player\'s last-10 average), not real lines.' : `Lines from the sportsbooks Mingus Football pulled${pulled ? ` (${esc(new Date(pulled).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }))})` : ''}; the price shown is the over at the posted line.`} Strips: his last 10 games at each line.</p>`;

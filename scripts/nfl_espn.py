@@ -230,6 +230,31 @@ def parse_injuries(doc):
     return out
 
 
+CORE = "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl"
+DRAFTKINGS = "100"   # ESPN's provider id for DraftKings
+# ESPN prop bet types (main over / under lines) -> our stats. Milestones, quarter and TD-scorer markets are skipped.
+PROP_TYPES = {
+    "Total Passing Yards": "pass_yds", "Total Pass Completions": "cmp", "Total Passing Attempts": "att",
+    "Total Passing Touchdowns": "pass_td", "Total Passing Interceptions": "int", "Total Rushing Yards": "rush_yds",
+    "Total Carries": "car", "Total Receiving Yards": "rec_yds", "Total Receptions": "rec",
+    "Total Rushing Plus Receiving Yards": "rush_rec_yds", "Total Passing Plus Rushing Yards": "pass_rush_yds",
+}
+
+
+def parse_propbets(doc):
+    """ESPN's DraftKings player props for one game -> [{eid, stat, line, open, at}]. Lines only: ESPN gives no prices."""
+    out = []
+    for i in doc.get("items", []):
+        name = re.sub(r"\s*\(incl\. overtime\)\s*$", "", dig(i, "type", "name") or "")
+        stat = PROP_TYPES.get(name)
+        m = re.search(r"/athletes/(\d+)", dig(i, "athlete", "$ref") or "")
+        line = num(dig(i, "current", "target", "value"))
+        if not stat or not m or line is None:
+            continue
+        out.append({"eid": m.group(1), "stat": stat, "line": line, "open": num(dig(i, "open", "target", "value")), "at": i.get("lastUpdated")})
+    return out
+
+
 # ---------------------------------------------------------------- fetching with the store cache
 
 def fetch_season(season, cache, refresh_weeks=2, get=get):
@@ -287,6 +312,29 @@ def fetch_boxes(games, cache, limit=250, get=get):
         f.write_text(json.dumps(b, separators=(",", ":")))
         boxes[g["id"]] = b
     return boxes, new
+
+
+def fetch_props(games, cache, today, days=8, get=get):
+    """DraftKings prop lines for games that haven't started and kick off within `days`, refreshed every run into
+    store/nfl/espn/props/<event>.json. Once a game starts the file is left alone, so it holds the last pregame
+    (closing) line. Returns {game id: rows} for every game with a file."""
+    folder = Path(cache) / "props"
+    folder.mkdir(parents=True, exist_ok=True)
+    out, calls = {}, 0
+    horizon = (today + dt.timedelta(days=days)).isoformat()
+    for g in games:
+        f = folder / f"{g['eid']}.json"
+        if g["state"] == "pre" and today.isoformat() <= g["date"] <= horizon:
+            try:
+                rows = parse_propbets(get(f"{CORE}/events/{g['eid']}/competitions/{g['eid']}/odds/{DRAFTKINGS}/propBets?limit=1000"))
+                calls += 1
+                if rows:
+                    f.write_text(json.dumps(rows, separators=(",", ":")))
+            except Exception:
+                pass
+        if f.exists():
+            out[g["id"]] = json.loads(f.read_text())
+    return out, calls
 
 
 def fetch_injuries(get=get):

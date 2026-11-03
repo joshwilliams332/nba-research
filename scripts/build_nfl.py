@@ -372,6 +372,35 @@ def apply_espn_injuries(players, injuries, ids):
     return n
 
 
+def merge_props(props, espn_props, ids, players):
+    """ESPN's DraftKings lines (no prices) fill in every player / stat Mingus Football didn't pull; rows it did pull keep
+    their prices and get the DraftKings open when the line matches. Every ESPN-sourced row is marked `src: 'espn'`."""
+    added = 0
+    for gid, rows in espn_props.items():
+        mine = props["games"].setdefault(gid, [])
+        have = {(r["pid"], r["stat"]): r for r in mine}
+        for r in rows:
+            match = ids.get(r["eid"])
+            if not match:
+                continue
+            pid = match[0]
+            if (pid, r["stat"]) in have:
+                row = have[(pid, r["stat"])]
+                if row.get("line") == r["line"] and r.get("open") is not None:
+                    row["open"] = r["open"]
+                continue
+            p = players.get(pid, {})
+            mine.append({"pid": pid, "name": p.get("n") or match[2], "team": p.get("t"), "pos": p.get("pos") or match[1],
+                         "stat": r["stat"], "line": r["line"], "open": r.get("open"), "over": None, "under": None,
+                         "book_o": "DraftKings", "book_u": "DraftKings", "src": "espn"})
+            added += 1
+        if not mine:
+            del props["games"][gid]
+        else:
+            props["pulled"].setdefault(gid, max((r.get("at") or "" for r in rows), default=None))
+    return added
+
+
 def current_week(games, season):
     open_ = [g for g in games if g["season"] == season and g["home_score"] is None and g["type"] == "REG"]
     if open_:
@@ -380,7 +409,7 @@ def current_week(games, season):
     return max(weeks) if weeks else 1
 
 
-def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch=fetch_csv, espn=None, espn_get=None):
+def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch=fetch_csv, espn=None, espn_get=None, today=None):
     """`espn`: the store folder for ESPN caches (store/nfl/espn); None builds from nflverse alone."""
     season = season or season_now()
     seasons = [season - 1, season]
@@ -416,12 +445,15 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
         players = apply_status(players, roster, [] if espn_inj else injuries)
         unmatched = merge_boxes(games, boxes, players, logs, teamstats, ids)
         hurt = apply_espn_injuries(players, espn_inj, ids)
+        espn_props, prop_calls = nfl_espn.fetch_props([g for g in games if g.get("src") == "espn"], espn, today or dt.date.today(), get=get)
         note = (f"ESPN: {len(espn_games)} games ({calls} scoreboard calls), {len(boxes)} box scores ({new_boxes} new), "
                 f"{hurt} injury-report players, {unmatched} box-score players without an nflverse id")
     else:
         players = apply_status(players, roster, injuries)
     teams = json.loads((Path(mingus) / "site" / "data" / "teams.json").read_text()) if mingus else {}
     props = build_props(mingus_data)
+    if espn:
+        note += f", DraftKings prop lines for {len(espn_props)} games ({prop_calls} calls, {merge_props(props, espn_props, ids, players)} rows added)"
     proj = build_proj(mingus_data)
     picks = build_picks(mingus_data)
     meta = {"season": season, "seasons": seasons, "week": current_week(games, season),

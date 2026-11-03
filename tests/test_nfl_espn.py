@@ -1,5 +1,6 @@
 """Tests for scripts/nfl_espn.py and the ESPN merge in build_nfl.py, on trimmed copies of real ESPN responses.
 Run: python3 -m unittest discover -s tests"""
+import datetime as dt
 import json
 import sys
 import tempfile
@@ -103,6 +104,31 @@ class ParseTest(unittest.TestCase):
         self.assertEqual(inj["111"]["st"], "Questionable")
 
 
+PROPBETS = {"items": [
+    {"athlete": {"$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/athletes/111?lang=en"},
+     "type": {"id": "13", "name": "Total Receiving Yards (incl. overtime)"}, "lastUpdated": "2026-11-03T07:55Z",
+     "current": {"target": {"value": 64.5}}, "open": {"target": {"value": 59.5}}},
+    {"athlete": {"$ref": ".../athletes/4360310?lang=en"}, "type": {"name": "Total Passing Yards (incl. overtime)"},
+     "current": {"target": {"value": 236.5}}, "open": {"target": {"value": 244.5}}},
+    {"athlete": {"$ref": ".../athletes/111"}, "type": {"name": "Receiving Yards Milestones"}, "current": {"target": {"value": 10.0}}},
+    {"athlete": {"$ref": ".../athletes/111"}, "type": {"name": "Anytime Touchdown Scorer"}, "current": {}}]}
+
+
+class PropsTest(unittest.TestCase):
+    def test_parse(self):
+        rows = E.parse_propbets(PROPBETS)
+        self.assertEqual([(r["eid"], r["stat"], r["line"], r["open"]) for r in rows], [("111", "rec_yds", 64.5, 59.5), ("4360310", "pass_yds", 236.5, 244.5)])
+
+    def test_merge_keeps_priced_rows(self):
+        props = {"games": {"g": [{"pid": "00-1", "stat": "pass_yds", "line": 236.5, "over": -115, "under": -105}]}, "pulled": {"g": "t"}}
+        ids = {"111": ("00-2", "WR", "Brian Thomas"), "4360310": ("00-1", "QB", "Trevor Lawrence")}
+        added = build_nfl.merge_props(props, {"g": E.parse_propbets(PROPBETS)}, ids, {"00-2": {"n": "Brian Thomas Jr.", "t": "JAX", "pos": "WR"}})
+        self.assertEqual(added, 1)
+        qb, wr = props["games"]["g"]
+        self.assertEqual((qb["over"], qb["open"]), (-115, 244.5))       # Mingus Football's priced row stays, gets the open
+        self.assertEqual((wr["name"], wr["line"], wr["over"], wr["src"]), ("Brian Thomas Jr.", 64.5, None, "espn"))
+
+
 class MergeTest(unittest.TestCase):
     def test_build_with_espn(self):
         boards = {8: {"events": [event("500", 8, "JAX", "IND", state="post", scores=("27", "20"), date="2026-10-25T17:00Z")]},
@@ -113,6 +139,8 @@ class MergeTest(unittest.TestCase):
                 return INJURIES
             if "summary" in url:
                 return SUMMARY
+            if "propBets" in url:
+                return PROPBETS
             if "seasontype=2" in url:
                 return boards.get(int(url.rsplit("week=", 1)[1]), {"events": []})
             return {"events": []}
@@ -122,7 +150,7 @@ class MergeTest(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as d:
             out, store = Path(d) / "out", Path(d) / "espn"
-            build_nfl.build(out=out, season=2026, fetch=fetch, espn=store, espn_get=get)
+            build_nfl.build(out=out, season=2026, fetch=fetch, espn=store, espn_get=get, today=dt.date(2026, 11, 3))
             games = {g["id"]: g for g in json.loads((out / "games.json").read_text())}
             g = games["2026_09_JAX_BAL"]
             self.assertEqual((g["src"], g["eid"], g["home_spread"], g["book"], g["roof"]), ("espn", "401", -9.5, "DraftKings", "outdoors"))
@@ -142,9 +170,11 @@ class MergeTest(unittest.TestCase):
             ts = json.loads((out / "teamstats.json").read_text())["JAX"][-1]
             self.assertEqual((ts["third"], ts["rz"], ts["pass_yds"]), ([5, 11], [3, 4], 310))
             self.assertTrue((store / "box" / "500.json").exists())
+            props = json.loads((out / "props.json").read_text())["games"]
+            self.assertEqual({(r["pid"], r["stat"]) for r in props.get("2026_09_JAX_BAL", [])}, {("00-2", "rec_yds"), ("00-1", "pass_yds")})
             # The line moves: a second run adds history and keeps the open.
             boards[9]["events"][0]["competitions"][0]["odds"] = [dict(DK[0], details="BAL -10.5")]
-            build_nfl.build(out=out, season=2026, fetch=fetch, espn=store, espn_get=get)
+            build_nfl.build(out=out, season=2026, fetch=fetch, espn=store, espn_get=get, today=dt.date(2026, 11, 3))
             g = {g["id"]: g for g in json.loads((out / "games.json").read_text())}["2026_09_JAX_BAL"]
             self.assertEqual((g["open"]["home_spread"], g["home_spread"], len(g["lh"])), (-9.5, -10.5, 2))
 
