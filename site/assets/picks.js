@@ -21,6 +21,7 @@ function savePicks(list) {
 
 /* Same game, player (or team), market, side and line = the same pick. */
 function pickKey(p) {
+  if (p.sport === 'nfl') return ['nfl', p.gid, p.pid, p.stat, p.side, p.line].join('|');
   if (p.type === 'parlay') return `parlay|${(p.legs || []).map(pickKey).sort().join('+')}|${p.savedAt || ''}`;
   return [p.gid, p.pid || p.team || '', p.stat, p.side, p.line].join('|');
 }
@@ -33,6 +34,7 @@ function makePick(fields) {
     price: fields.price == null || fields.price === '' ? null : +fields.price,
     book: fields.book || null, units: fields.units > 0 ? +fields.units : 1,
   };
+  if (fields.sport === 'nfl') p.sport = 'nfl';
   if (fields.pid) p.pid = String(fields.pid);
   if (fields.team) p.team = fields.team;
   if (fields.name) p.name = fields.name;
@@ -81,7 +83,7 @@ function boostedPrice(price, boost) {
 function makeParlay(fields) {
   const legs = fields.legs.map(l => {
     const leg = { gid: String(l.gid), stat: l.stat, side: l.side, line: +l.line, price: l.price == null || l.price === '' ? null : +l.price };
-    for (const k of ['pid', 'team', 'name', 'book']) if (l[k]) leg[k] = String(l[k]);
+    for (const k of ['pid', 'team', 'name', 'book', 'sport']) if (l[k]) leg[k] = String(l[k]);
     return leg;
   });
   const price = fields.price == null || fields.price === '' ? parlayPrice(legs) : +fields.price;
@@ -126,12 +128,15 @@ function gradeParlay(L, pick, legGrade = leg => gradeResult(L, leg)) {
 // ---------------------------------------------------------------- import / export
 
 const TEAM_MARKETS = ['ml', 'spread', 'total'];
+// NFL Lab player stats a saved pick can be on (the keys of NFL_STATS in nfl.js; a test keeps the two in step).
+const NFL_PICK_STATS = ['pass_yds', 'cmp', 'att', 'pass_td', 'int', 'rush_yds', 'car', 'rush_td', 'rec_yds', 'rec', 'tgt', 'rec_td', 'rush_rec_yds', 'pass_rush_yds'];
 
 /* A pick must name a game, a player or team, a known market, a side and a numeric line. */
 function validPick(p) {
   if (p && p.type === 'parlay') return validParlay(p);
   if (!p || typeof p !== 'object' || !p.id || !p.gid || !(p.pid || p.team)) return false;
-  const known = (typeof STATS !== 'undefined' && STATS[p.stat]) || TEAM_MARKETS.includes(p.stat);
+  const known = p.sport === 'nfl' ? NFL_PICK_STATS.includes(p.stat) && !!p.pid
+    : (typeof STATS !== 'undefined' && STATS[p.stat]) || TEAM_MARKETS.includes(p.stat);
   if (!known || !['o', 'u', 'h', 'a'].includes(p.side)) return false;
   if (typeof p.line !== 'number' || !isFinite(p.line)) return false;
   if (p.price != null && (typeof p.price !== 'number' || !isFinite(p.price) || Math.abs(p.price) < 100)) return false;
@@ -274,7 +279,8 @@ function clvPoints(pick, close) {
 
 // ---------------------------------------------------------------- describing picks
 
-function pickMarketLabel(stat) {
+function pickMarketLabel(stat, sport) {
+  if (sport === 'nfl') return ((typeof NFL_STATS !== 'undefined' && NFL_STATS[stat]) || {}).label || stat;
   if (stat === 'ml') return 'Money line';
   if (stat === 'spread') return 'Spread';
   if (stat === 'total') return 'Total';
@@ -286,7 +292,7 @@ function pickText(p) {
   if (p.type === 'parlay') return `${p.legs.length}-leg parlay`;
   if (p.stat === 'ml') return `${p.team} ML`;
   if (p.stat === 'spread') return `${p.team} ${signed(p.line)}`;
-  return `${p.side === 'o' ? 'Over' : 'Under'} ${p.line} ${pickMarketLabel(p.stat)}`;
+  return `${p.side === 'o' ? 'Over' : 'Under'} ${p.line} ${pickMarketLabel(p.stat, p.sport)}`;
 }
 
 /* Bookmark button for a pick. `fields` is stored as a data attribute and saved on tap by bindPickButtons. */
@@ -392,5 +398,5 @@ async function sharePNG(canvas, filename) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { toDecimal, toAmerican, parlayPrice, boostedPrice, makeParlay, validParlay, gradeParlay, gradeResult, pickKey, makePick, validPick, exportPicks, parseImport, mergePicks, payout, settle, gradePick, summarize, closeLine, clvPoints, pickText };
+  module.exports = { NFL_PICK_STATS, toDecimal, toAmerican, parlayPrice, boostedPrice, makeParlay, validParlay, gradeParlay, gradeResult, pickKey, makePick, validPick, exportPicks, parseImport, mergePicks, payout, settle, gradePick, summarize, closeLine, clvPoints, pickText };
 }

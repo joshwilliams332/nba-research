@@ -207,6 +207,8 @@ function nflAddPlayers(N, players, logsDoc, props, proj) {
       return r;
     }).filter(r => r.g);
   }
+  // Weeks whose player stats are in (nflverse publishes them the day after the games).
+  N.statWeeks = new Set(Object.values(N.logs).flatMap(list => list.map(r => `${r.season}-${r.week}`)));
   return N;
 }
 
@@ -284,6 +286,40 @@ function nflLadder(line, stat) {
   return [-2, -1, 0, 1, 2].map(k => line + k * step).filter(l => l >= 0.5);
 }
 
+// ---------------------------------------------------------------- grading saved picks
+
+/* Kickoff as an ISO time with the Eastern offset (EDT from the second Sunday of March to the first Sunday of
+   November, else EST), so it sorts and formats alongside NBA tip times. */
+function nflIso(g) {
+  const [y, m, d] = g.date.split('-').map(Number);
+  const nthSunday = (month, n) => { const first = new Date(Date.UTC(y, month - 1, 1)).getUTCDay(); return 1 + ((7 - first) % 7) + 7 * (n - 1); };
+  const dst = (m > 3 && m < 11) || (m === 3 && d >= nthSunday(3, 2)) || (m === 11 && d < nthSunday(11, 1));
+  return `${g.date}T${g.time || '13:00'}:00${dst ? '-04:00' : '-05:00'}`;
+}
+
+/* The game as My picks shows it (same fields as an NBA game: t, d, a, h, s, state). */
+function nflGameView(g) {
+  return { id: g.id, t: nflIso(g), d: g.date, a: g.away, h: g.home, s: g.season, state: g.final ? 'post' : 'pre', detail: g.final ? 'Final' : '', nfl: true };
+}
+
+/* Grade a saved NFL pick from nflverse's player stats: open until the game is final and its week's stats are in;
+   void if the stats are in and he has no row (didn't play). Same result shape as picks.js gradePick. */
+function gradeNflPick(N, pick) {
+  const raw = N.byId.get(pick.gid);
+  if (!raw) return { status: 'void', profit: 0, why: 'game not found' };
+  const g = nflGameView(raw);
+  if (!raw.final) return { status: 'open', g, profit: 0 };
+  const row = (N.logs[pick.pid] || []).find(r => r.g.id === raw.id);
+  if (!row) {
+    if (!N.statWeeks.has(`${raw.season}-${raw.week}`)) return { status: 'open', g, profit: 0, why: 'final; stats come the next morning' };
+    return { status: 'void', g, profit: 0, why: "didn't play" };
+  }
+  const actual = NFL_STATS[pick.stat] ? NFL_STATS[pick.stat].f(row) : null;
+  if (actual == null) return { status: 'void', g, profit: 0, why: 'stat unavailable' };
+  const result = settle(actual, pick.line, pick.side);
+  return { status: result, g, actual, profit: payout(result, pick.price, pick.units || 1) };
+}
+
 // ---------------------------------------------------------------- display helpers (browser)
 
 function nflLogo(N, team, size = 28) {
@@ -338,5 +374,5 @@ function nflGameLines(N, g) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
+  module.exports = { nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
 }

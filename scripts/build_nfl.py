@@ -17,6 +17,7 @@ Files written:
     logs.json       {cols, logs: player id -> [[season, week, team, opp, ...cols]]}
     props.json      {games: game id -> prop rows, pulled: game id -> time}
     proj.json       game id -> player id -> stat -> {mean, sd, p_over, line}
+    picks.json      Mingus Football's locked model picks by slate + its official records
 
 Usage:
     python3 scripts/build_nfl.py --mingus mingus --mingus-data mingus-data
@@ -206,6 +207,42 @@ def build_proj(data_dir):
     return out
 
 
+PICK_FIELDS = ("id", "gid", "week", "pid", "name", "team", "opp", "pos", "stat", "side", "line", "price", "book", "prob", "proj", "why")
+SLATES = {"night": "Night game", "early": "Sunday 1 PM", "late": "Sunday 4 PM"}
+
+
+def build_picks(data_dir):
+    """Mingus Football's locked model picks (night games and the Sunday slates), test nights left out, plus its
+    official records. Graded in the browser from the same nflverse stats as saved picks."""
+    root = Path(data_dir) / "picks" if data_dir else None
+    out = {"history": [], "records": {}}
+    if not root or not root.exists():
+        return out
+    files = [(f, None) for f in root.glob("[0-9]*.json")] + [(f, sub) for sub in ("sun-early", "sun-late") for f in (root / sub).glob("[0-9]*.json")]
+    for f, sub in files:
+        if not f.stem.count("-") == 2:            # 2026-11-01.json only (skip -results, -quick, -check)
+            continue
+        try:
+            doc = json.loads(f.read_text())
+        except ValueError:
+            continue
+        if doc.get("test") or not doc.get("picks"):
+            continue
+        slate = doc.get("slate") or ("early" if sub == "sun-early" else "late" if sub == "sun-late" else "night")
+        picks = [{k: p.get(k) for k in PICK_FIELDS} | {"sport": "nfl"} for p in doc["picks"] if PROP_STATS.get(p.get("stat"))]
+        for p in picks:
+            p["stat"] = PROP_STATS[p["stat"]]
+        out["history"].append({"date": doc.get("date") or f.stem, "slate": slate, "label": SLATES.get(slate, slate),
+                               "week": doc.get("week"), "picks": picks})
+    out["history"].sort(key=lambda d: (d["date"], ["early", "late", "night"].index(d["slate"]) if d["slate"] in ("early", "late", "night") else 9), reverse=True)
+    for name, file in (("night", "record.json"), ("sunday", "sunday-record.json")):
+        try:
+            out["records"][name] = json.loads((root / file).read_text()).get("season")
+        except (OSError, ValueError):
+            pass
+    return out
+
+
 def current_week(games, season):
     open_ = [g for g in games if g["season"] == season and g["home_score"] is None and g["type"] == "REG"]
     if open_:
@@ -238,16 +275,17 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
     teams = json.loads((Path(mingus) / "site" / "data" / "teams.json").read_text()) if mingus else {}
     props = build_props(mingus_data)
     proj = build_proj(mingus_data)
+    picks = build_picks(mingus_data)
     meta = {"season": season, "seasons": seasons, "week": current_week(games, season),
             "built": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "source": "nflverse + Mingus Football"}
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     for name, value in (("meta", meta), ("games", games), ("teams", teams), ("teamstats", teamstats),
-                        ("players", players), ("logs", logs), ("props", props), ("proj", proj)):
+                        ("players", players), ("logs", logs), ("props", props), ("proj", proj), ("picks", picks)):
         (out / f"{name}.json").write_text(json.dumps(value, separators=(",", ":")))
     final = sum(1 for g in games if g["home_score"] is not None)
     return (f"NFL Lab: {len(games)} games ({final} final) over {seasons}, week {meta['week']}, {len(players)} players, "
-            f"props for {len(props['games'])} games, projections for {len(proj)} games")
+            f"props for {len(props['games'])} games, projections for {len(proj)} games, {sum(len(d['picks']) for d in picks['history'])} model picks")
 
 
 def main():
