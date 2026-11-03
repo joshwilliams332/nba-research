@@ -101,9 +101,16 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   close line that moved against the pick) and the 5:53 PM heads-up task emails it when it exists.
 - **NFL Lab / Mingus Lab (Nov 3, 2026; plan in the Mingus project, `claude/plans/nfl-lab.md`).** The site is branded
   Mingus Lab with a Hoop Lab / NFL Lab switch in the header (`shell(active, 'nfl')` on NFL pages, `NAV_NFL`; My picks
-  is shared and keeps the last sport). Data: `scripts/build_nfl.py` (workflow step, never blocks the deploy) pulls
-  nflverse release CSVs directly (schedules with lines and prices, team + player weekly stats for last season and this
-  one, weekly rosters for IR / reserve, injury reports) and reads Mingus Football's checkouts (main: `site/data/teams.json`;
+  is shared and keeps the last sport; header mark and Games icon are a football on NFL pages; NBA page titles say "NBA").
+  Data: `scripts/build_nfl.py` (workflow step, never blocks the deploy). **This season comes from ESPN** like the NBA
+  (`scripts/nfl_espn.py`, tested in `tests/test_nfl_espn.py`, cached in `store/nfl/espn/`: weekly scoreboards with
+  DraftKings lines + prices, line history `lines.json` -> games' `open` / `lh`, box scores -> logs and team totals with
+  third down / red zone, the injury report, and DraftKings player prop LINES from ESPN's core odds feed (no prices;
+  rows `src: 'espn'`, filling players Mingus Football didn't price; files freeze at kickoff = closing line)). ESPN ids map
+  to nflverse gsis ids via roster `espn_id`; players carry `eid`. Live scores: `nflStartLive` in nfl.js (games list and
+  game page; "Now" on prop rows), reusing live.js helpers. nflverse release CSVs cover last season and are the fallback
+  (schedules with lines and prices, team + player weekly stats,
+  weekly rosters for IR / reserve, injury reports). Also reads Mingus Football's checkouts (main: `site/data/teams.json`;
   `data` branch: `odds/props/<game>.json`, `model/projections/`). We read the football repo, never edit it (one chat per
   repo); football owns its props pulls and model. nflverse `spread_line` is positive when home is favored; ours
   (`home_spread`) is the home team's number. Output in `site/data/nfl/` (meta, games, teams, teamstats, players, logs,

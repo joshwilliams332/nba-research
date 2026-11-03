@@ -445,6 +445,9 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
         players = apply_status(players, roster, [] if espn_inj else injuries)
         unmatched = merge_boxes(games, boxes, players, logs, teamstats, ids)
         hurt = apply_espn_injuries(players, espn_inj, ids)
+        for eid, (pid, _, _) in ids.items():   # ESPN ids for the pages' live box scores
+            if pid in players:
+                players[pid]["eid"] = eid
         espn_props, prop_calls = nfl_espn.fetch_props([g for g in games if g.get("src") == "espn"], espn, today or dt.date.today(), get=get)
         note = (f"ESPN: {len(espn_games)} games ({calls} scoreboard calls), {len(boxes)} box scores ({new_boxes} new), "
                 f"{hurt} injury-report players, {unmatched} box-score players without an nflverse id")

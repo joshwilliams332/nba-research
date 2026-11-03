@@ -124,3 +124,37 @@ test('kickoff times carry the Eastern offset', () => {
   assert.strictEqual(F.nflIso({ date: '2026-11-08', time: '13:00' }), '2026-11-08T13:00:00-05:00');
   assert.strictEqual(F.nflIso({ date: '2026-11-01', time: '13:00' }), '2026-11-01T13:00:00-05:00');   // first Sunday of November
 });
+
+// ---------------------------------------------------------------- live scores
+test('live scores land on games by ESPN id and never go backwards', () => {
+  const N = F.nflLab({ season: 2026 }, [game('g9', 9, 'BBB', 'AAA', null, null, { eid: '401', state: 'pre' })], teams, {});
+  const g = N.byId.get('g9');
+  assert.strictEqual(F.nflApplyLive(N, [{ id: '401', state: 'in', as: 7, hs: 10, detail: 'Q2 3:11' }]), 1);
+  assert.deepStrictEqual(F.nflLiveScore(g), { away: 7, home: 10, detail: 'Q2 3:11' });
+  assert.strictEqual(g.final, false);
+  F.nflApplyLive(N, [{ id: '401', state: 'post', as: 17, hs: 24, detail: 'Final' }]);
+  assert.deepStrictEqual([g.final, g.away_score, g.home_score, F.nflLiveScore(g)], [true, 17, 24, null]);
+  assert.strictEqual(F.nflApplyLive(N, [{ id: '401', state: 'in', as: 0, hs: 0 }]), 0);
+});
+
+test('live box score rows and the live value for a prop', () => {
+  const summary = { boxscore: { players: [{ statistics: [
+    { name: 'passing', labels: ['C/ATT', 'YDS', 'TD', 'INT'], athletes: [{ athlete: { id: '11' }, stats: ['18/25', '1,204', '2', '0'] }] },
+    { name: 'rushing', labels: ['CAR', 'YDS', 'TD'], athletes: [{ athlete: { id: '11' }, stats: ['4', '22', '0'] }] },
+    { name: 'kicking', labels: ['FG'], athletes: [{ athlete: { id: '99' }, stats: ['1/1'] }] }] }] } };
+  const box = F.nflParseLiveBox(summary);
+  assert.deepStrictEqual([box['11'].cmp, box['11'].att, box['11'].pass_yds, box['11'].rush_yds, box['99']], [18, 25, 1204, 22, undefined]);
+  const N = { liveBox: { g9: box }, players: { p1: { eid: '11' }, p2: {} } };
+  assert.strictEqual(F.nflLiveValue(N, 'g9', 'p1', 'pass_rush_yds'), 1226);
+  assert.strictEqual(F.nflLiveValue(N, 'g9', 'p2', 'pass_yds'), null);
+});
+
+test('live polling waits until 10 minutes before kickoff', () => {
+  const g = { state: 'pre', eid: '1', date: '2026-11-08', time: '13:00' };          // 1 PM EST = 18:00 UTC
+  const kick = Date.parse('2026-11-08T18:00:00Z');
+  assert.strictEqual(F.nflLiveWait([g], kick - 3600e3), 50 * 60000);
+  assert.strictEqual(F.nflLiveWait([g], kick - 5 * 60000), 0);
+  assert.strictEqual(F.nflLiveWait([g], kick + 6 * 3600e3), null);
+  assert.strictEqual(F.nflLiveWait([{ ...g, state: 'in' }], 0), 0);
+  assert.strictEqual(F.nflLiveWait([{ ...g, eid: null }], kick), null);
+});

@@ -27,6 +27,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/nfl.js"></script>
+<script src="assets/live.js"></script>
 <script>
 shell('nfl-games', 'nfl');
 document.getElementById('list').innerHTML = skeleton(3, 4);
@@ -53,9 +54,11 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
   function card(g) {
     const A = N.teams[g.away] || {}, H = N.teams[g.home] || {};
     const lost = side => g.final && (side === 'a' ? g.away_score < g.home_score : g.home_score < g.away_score) ? ' class="lose"' : '';
-    const mid = g.final ? `<b class="score">${g.away_score} - ${g.home_score}</b><br>Final` : `<b>${esc(nflKick(g).split(' · ')[1])}</b><br><small>${esc(fmtDay(g.date, { weekday: 'short', month: 'short', day: 'numeric' }))}</small>`;
+    const live = nflLiveScore(g);
+    const mid = live ? `<b class="score">${live.away} - ${live.home}</b><br><span class="status live"><i></i>${esc(live.detail)}</span>`
+      : g.final ? `<b class="score">${g.away_score} - ${g.home_score}</b><br>Final` : `<b>${esc(nflKick(g).split(' · ')[1])}</b><br><small>${esc(fmtDay(g.date, { weekday: 'short', month: 'short', day: 'numeric' }))}</small>`;
     const body = g.final ? resultLine(g) : nflGameLines(N, g);
-    const implied = !g.final && g.home_implied != null
+    const implied = !g.final && !live && g.home_implied != null
       ? `<div class="implied" title="Implied points from the spread and total"><span><b>${g.away_implied.toFixed(1)}</b></span><span class="muted">Team totals</span><span><b>${g.home_implied.toFixed(1)}</b></span></div>` : '';
     return `<a class="card gamecard" href="nfl-game.html?id=${encodeURIComponent(g.id)}" style="--ca:${A.color || '#333'}33;--ch:${H.color || '#333'}33">
       <div class="gamehead">
@@ -89,9 +92,9 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
     document.getElementById('list').innerHTML = list.length ? list.map(card).join('')
       + `<p class="note">Strips: each team's last games against this week's number, oldest on the left. Tap a game for the full breakdown and matchup.</p>`
       : emptyState(term ? 'No games match that search.' : 'No games this week.', term ? '' : 'Pick another week above.');
-    const final = list.filter(g => g.final).length;
+    const final = list.filter(g => g.final).length, nlive = list.filter(g => g.state === 'in').length;
     document.getElementById('slate').textContent = [`Week ${week}`, `${list.length} game${list.length === 1 ? '' : 's'}`,
-      final ? `${final} final` : '', meta.source && meta.source.startsWith('ESPN') ? 'DraftKings lines' : 'lines from nflverse'].filter(Boolean).join(' · ');
+      nlive ? `${nlive} live` : '', final ? `${final} final` : '', nlive ? liveNote(N).replace(/^live · /, 'updated ') : '', meta.source && meta.source.startsWith('ESPN') ? 'DraftKings lines' : 'lines from nflverse'].filter(Boolean).join(' · ');
   }
 
   document.getElementById('weeks').addEventListener('click', e => {
@@ -101,10 +104,18 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
     history.replaceState(null, '', `?w=${week}`);
     renderWeeks();
     renderList();
+    watch();
   });
   q.addEventListener('input', renderList);
+  // Live scores for the week on screen (polls ESPN only while a game is on or about to kick off).
+  let poller = null;
+  function watch() {
+    if (poller) poller.stop();
+    poller = nflStartLive(N, { games: N.games.filter(g => g.season === meta.season && g.week === week), onUpdate: renderList });
+  }
   renderWeeks();
   renderList();
+  watch();
 }).catch(err => {
   document.getElementById('list').innerHTML = emptyState('NFL data is unavailable right now.', 'It comes from Mingus Football on each data update. Try again in a bit.');
   console.error(err);

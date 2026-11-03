@@ -679,11 +679,14 @@ const HEADER_ONLY = new Set(['standings']);
 
 // NFL Lab's nav. My picks is shared by both sports (NFL trends come later).
 const NAV_NFL = [
-  ['nfl-games', 'nfl.html', 'Games', NAV[0][3]],
+  ['nfl-games', 'nfl.html', 'Games', '<path d="M5 19C4 12 8 6 19 5c1 7-3 13-14 14Z"/><path d="M9.5 14.5l5-5M10 12l2 2M11 11l2 2M12 10l2 2"/>'],
   ['nfl-props', 'nfl-props.html', 'Props', NAV[1][3]],
   ['nfl-players', 'nfl-players.html', 'Players', NAV[3][3]],
   ['picks', 'picks.html', 'My picks', NAV[4][3]],
 ];
+// Header mark: a basketball on Hoop Lab pages, a football on NFL Lab pages.
+const BRAND_NBA = '<circle cx="16" cy="16" r="13" fill="var(--accent)"/><path d="M3 16h26M16 3v26M7 7c5 4 5 14 0 18M25 7c-5 4-5 14 0 18" stroke="#1a0f05" stroke-width="1.6" fill="none"/>';
+const BRAND_NFL = '<ellipse cx="16" cy="16" rx="14" ry="8.5" transform="rotate(-45 16 16)" fill="var(--accent)"/><path d="M11.5 20.5l9-9M13.5 16.5l2 2M15 15l2 2M16.5 13.5l2 2M6.5 21.5l4 4M21.5 6.5l4 4" stroke="#1a0f05" stroke-width="1.6" fill="none" stroke-linecap="round"/>';
 const SPORTS = [['nba', 'index.html', 'Hoop Lab'], ['nfl', 'nfl.html', 'NFL Lab']];
 
 /* Page header (Mingus Lab brand, the Hoop Lab / NFL Lab switch, desktop nav) and the phone bottom nav.
@@ -701,7 +704,7 @@ function shell(active, sport) {
       `<a href="${href}" class="hdricon${k === active ? ' on' : ''}" aria-label="${label}" title="${label}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg></a>`).join('');
     const sw = `<nav class="sportsw" aria-label="Sport">${SPORTS.map(([k, href, label]) =>
       `<a href="${href}" class="${k === sport ? 'on' : ''}"${k === sport ? ' aria-current="true"' : ''}>${label}</a>`).join('')}</nav>`;
-    top.innerHTML = `<a class="brand" href="${sport === 'nfl' ? 'nfl.html' : 'index.html'}" aria-label="Mingus Lab"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/><path d="M3 16h26M16 3v26M7 7c5 4 5 14 0 18M25 7c-5 4-5 14 0 18" stroke="#1a0f05" stroke-width="1.6" fill="none"/></svg><span>Mingus Lab</span></a>${sw}<nav class="topnav">${nav.map(link).join('')}</nav>${extras}`;
+    top.innerHTML = `<a class="brand" href="${sport === 'nfl' ? 'nfl.html' : 'index.html'}" aria-label="Mingus Lab"><svg viewBox="0 0 32 32" aria-hidden="true">${sport === 'nfl' ? BRAND_NFL : BRAND_NBA}</svg><span>Mingus Lab</span></a>${sw}<nav class="topnav">${nav.map(link).join('')}</nav>${extras}`;
   }
   const bottom = document.createElement('nav');
   bottom.className = 'bottomnav' + (sport === 'nfl' ? ' nfl' : '');

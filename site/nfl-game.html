@@ -23,6 +23,7 @@
 <script src="assets/common.js"></script>
 <script src="assets/nfl.js"></script>
 <script src="assets/picks.js"></script>
+<script src="assets/live.js"></script>
 <script>
 shell('nfl-games', 'nfl');
 const main = document.getElementById('main');
@@ -46,19 +47,23 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   if (st.m === 'over' || st.m === 'under') st.team = params.get('s') === 'h' ? g.home : g.away;
 
   const weather = [g.stadium, g.roof && g.roof !== 'outdoors' ? g.roof : (g.temp != null ? `${g.temp}°F${g.wind != null ? `, wind ${g.wind} mph` : ''}` : '')].filter(Boolean).join(' · ');
-  const mid = g.final
-    ? `<div class="score"><span class="${g.away_score < g.home_score ? 'lose' : ''}">${g.away_score}</span> - <span class="${g.home_score < g.away_score ? 'lose' : ''}">${g.home_score}</span></div>Final`
-    : `<b style="color:var(--text);font-size:16px">${esc(nflKick(g).split(' · ')[1])}</b><br>${esc(fmtDay(g.date))}`;
+  const midHtml = () => {
+    const live = nflLiveScore(g);
+    if (live) return `<div class="score"><span>${live.away}</span> - <span>${live.home}</span></div><span class="status live"><i></i>${esc(live.detail)}</span>`;
+    return g.final
+      ? `<div class="score"><span class="${g.away_score < g.home_score ? 'lose' : ''}">${g.away_score}</span> - <span class="${g.home_score < g.away_score ? 'lose' : ''}">${g.home_score}</span></div>Final`
+      : `<b style="color:var(--text);font-size:16px">${esc(nflKick(g).split(' · ')[1])}</b><br>${esc(fmtDay(g.date))}`;
+  };
   main.innerHTML = `
     <section class="hero" style="--c1:${A.color || '#1d5c57'}aa;--c2:${H.color || '#7a3b17'}aa">
       <div class="row"><a class="back" href="nfl.html?w=${g.week}" aria-label="Back to NFL games">‹</a>
         <span class="grow" style="text-align:center;color:var(--muted);font-size:13px">Week ${g.week}${weather ? ` · ${esc(weather)}` : ''}</span><span style="width:38px"></span></div>
       <div class="matchup">
         <div class="team">${nflLogo(N, g.away, 52)}<div><b>${esc(A.nickname || g.away)}</b><small>${nflRecord(N, g.away, g.t)}</small></div></div>
-        <div class="mid">${mid}</div>
+        <div class="mid" id="mid">${midHtml()}</div>
         <div class="team home">${nflLogo(N, g.home, 52)}<div><b>${esc(H.nickname || g.home)}</b><small>${nflRecord(N, g.home, g.t)}</small></div></div>
       </div>
-      ${!g.final && g.home_implied != null ? `<div class="implied" title="Implied points from the spread and total"><span><b>${g.away_implied.toFixed(1)}</b></span><span class="muted">Team totals</span><span><b>${g.home_implied.toFixed(1)}</b></span></div>` : ''}
+      ${!g.final && g.state !== 'in' && g.home_implied != null ? `<div class="implied" title="Implied points from the spread and total"><span><b>${g.away_implied.toFixed(1)}</b></span><span class="muted">Team totals</span><span><b>${g.home_implied.toFixed(1)}</b></span></div>` : ''}
     </section>
     <div class="tabs" id="tabs"></div>
     <div id="pane"></div>`;
@@ -158,7 +163,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
       return `<div class="proprow${open ? ' open' : ''}">
         <div class="head" data-open="${esc(key)}">${p.img ? `<a href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&g=${encodeURIComponent(g.id)}"><img class="nflmug" src="${esc(p.img)}" alt="" width="36" height="36" loading="lazy" onerror="this.remove()"></a>` : ''}
           <div class="grow"><a class="name" href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&g=${encodeURIComponent(g.id)}">${esc(p.n)}</a> <span class="sub">- ${esc(NFL_STATS[x.stat].label)}</span>${inj}
-            <div class="sub">${typical ? `typical ${x.line}` : `${x.line}${x.r.open != null && x.r.open !== x.line ? ` <small class="muted">(opened ${x.r.open} ${x.line > x.r.open ? '↑' : '↓'})</small>` : ''} · ${x.r.over != null ? `O ${odds(x.r.over)} / U ${odds(x.r.under)}` : 'DK line'}`}</div></div><span class="gochev">${open ? '▴' : '▾'}</span></div>
+            <div class="sub">${liveTag(nflLiveValue(N, g.id, x.pid, x.stat), x.line)}${typical ? `typical ${x.line}` : `${x.line}${x.r.open != null && x.r.open !== x.line ? ` <small class="muted">(opened ${x.r.open} ${x.line > x.r.open ? '↑' : '↓'})</small>` : ''} · ${x.r.over != null ? `O ${odds(x.r.over)} / U ${odds(x.r.under)}` : 'DK line'}`}</div></div><span class="gochev">${open ? '▴' : '▾'}</span></div>
         ${open ? `<div class="nflladder">${ladder(x)}</div>` : ''}</div>`;
     }).join('')}</div>
     <p class="note">${typical ? 'No sportsbook props were pulled for this game, so these are <b>typical lines</b> (half a point above each player\'s last-10 average), not real lines.' : `Lines from the sportsbooks Mingus Football pulled${pulled ? ` (${esc(new Date(pulled).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }))})` : ''}; the price shown is the over at the posted line.`} Strips: his last 10 games at each line.</p>`;
@@ -223,6 +228,11 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   });
   bindPickButtons(main);
   render();
+  // Live: header score every 25 s while the game is on, and "Now 54 / 64.5" on prop rows from the live box score.
+  nflStartLive(N, { games: [g], gids: [g.id], onUpdate() {
+    document.getElementById('mid').innerHTML = midHtml();
+    if (st.tab === 'props') render();
+  } });
   if (location.hash === '#lines') setTimeout(() => { const el = document.getElementById('lines'); if (el) el.scrollIntoView({ block: 'start' }); }, 50);
 }).catch(err => {
   main.innerHTML = emptyState('NFL data is unavailable right now.', 'It comes from Mingus Football on each data update. Try again in a bit.');
