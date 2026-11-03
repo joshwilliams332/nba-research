@@ -27,6 +27,9 @@ def main(store):
     (out / "scoreboard-prev.json").write_text(json.dumps(prev, indent=1))
     final = next((e["id"] for e in prev.get("events", []) if e.get("status", {}).get("type", {}).get("completed")), None)
     upcoming = next((e["id"] for e in board.get("events", []) if not e.get("status", {}).get("type", {}).get("completed")), None)
+    if not upcoming and week:   # the default week is finished (Monday night to Wednesday): look at next week's games
+        nxt = get(f"{API}/scoreboard?dates={season}&seasontype=2&week={week + 1}")
+        upcoming = next((e["id"] for e in nxt.get("events", []) if not e.get("status", {}).get("type", {}).get("completed")), None)
     for name, eid in (("summary-final", final), ("summary-upcoming", upcoming)):
         if eid:
             (out / f"{name}.json").write_text(json.dumps(get(f"{API}/summary?event={eid}"), indent=1))

@@ -65,6 +65,13 @@ class ParseTest(unittest.TestCase):
         self.assertEqual(E.parse_line([dict(DK[0], details="JAX -3")], "BAL", "JAX")["home_spread"], 3.0)
         self.assertEqual(E.parse_line([dict(DK[0], details="WSH -1.5")], "WAS", "DAL")["home_spread"], -1.5)
         self.assertEqual(E.parse_line(None, "BAL", "JAX"), {})
+        newer = [{"provider": {"name": "DraftKings"}, "details": "JAX -8.5", "overUnder": 42.5,
+                  "moneyline": {"home": {"close": {"odds": "+320"}}, "away": {"close": {"odds": "-410"}}},
+                  "pointSpread": {"home": {"close": {"line": "+8.5", "odds": "-108"}}, "away": {"open": {"odds": "EVEN"}}},
+                  "total": {"over": {"close": {"line": "o42.5", "odds": "-110"}}, "under": {"current": {"odds": "-110"}}}}]
+        line = E.parse_line(newer, "BAL", "JAX")
+        self.assertEqual((line["home_spread"], line["home_ml"], line["away_ml"], line["home_spread_odds"], line["away_spread_odds"], line["under_odds"]),
+                         (8.5, 320, -410, -108, 100, -110))
 
     def test_event(self):
         g = E.parse_event(event("401", 9, "JAX", "BAL", odds=DK))

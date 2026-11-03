@@ -78,6 +78,21 @@ def game_id(season, week, away, home):
     return f"{season}_{week:02d}_{away}_{home}"
 
 
+def side_odds(o, *path):
+    """A price from ESPN's newer odds format (moneyline / pointSpread / total -> close / current / open -> odds),
+    preferring the latest number. Same as the NBA build."""
+    for when in ("close", "current", "open"):
+        raw = dig(o, *path, when, "odds")
+        v = inum(str(raw).upper().replace("EVEN", "100")) if raw is not None else None
+        if v is not None:
+            return v
+    return None
+
+
+def first(*vals):
+    return next((v for v in vals if v is not None), None)
+
+
 def parse_line(odds_list, home, away):
     """ESPN odds (scoreboard `odds` or summary `pickcenter`) -> our line fields: home_spread (the home team's number),
     total, money lines and prices, book."""
@@ -95,13 +110,13 @@ def parse_line(odds_list, home, away):
         line["home_spread"] = 0.0
     if "home_spread" not in line and o.get("spread") is not None:
         line["home_spread"] = num(o.get("spread"))
-    line["total"] = num(o.get("overUnder"))
-    line["home_ml"] = inum(dig(o, "homeTeamOdds", "moneyLine"))
-    line["away_ml"] = inum(dig(o, "awayTeamOdds", "moneyLine"))
-    line["home_spread_odds"] = inum(dig(o, "homeTeamOdds", "spreadOdds"))
-    line["away_spread_odds"] = inum(dig(o, "awayTeamOdds", "spreadOdds"))
-    line["over_odds"] = inum(o.get("overOdds"))
-    line["under_odds"] = inum(o.get("underOdds"))
+    line["total"] = first(num(o.get("overUnder")), num(str(dig(o, "total", "over", "close", "line") or "").lstrip("ou")))
+    line["home_ml"] = first(inum(dig(o, "homeTeamOdds", "moneyLine")), side_odds(o, "moneyline", "home"))
+    line["away_ml"] = first(inum(dig(o, "awayTeamOdds", "moneyLine")), side_odds(o, "moneyline", "away"))
+    line["home_spread_odds"] = first(inum(dig(o, "homeTeamOdds", "spreadOdds")), side_odds(o, "pointSpread", "home"))
+    line["away_spread_odds"] = first(inum(dig(o, "awayTeamOdds", "spreadOdds")), side_odds(o, "pointSpread", "away"))
+    line["over_odds"] = first(inum(o.get("overOdds")), side_odds(o, "total", "over"))
+    line["under_odds"] = first(inum(o.get("underOdds")), side_odds(o, "total", "under"))
     line["book"] = dig(o, "provider", "name")
     return {k: v for k, v in line.items() if v is not None}
 
