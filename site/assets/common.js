@@ -677,9 +677,11 @@ const NAV = [
 // The phone bottom nav holds five; Standings moves to an icon in the phone header (desktop shows everything).
 const HEADER_ONLY = new Set(['standings']);
 
-// NFL Lab's nav (Phase 1: games; props, players and trends come next). My picks is shared by both sports.
+// NFL Lab's nav. My picks is shared by both sports (NFL trends come later).
 const NAV_NFL = [
   ['nfl-games', 'nfl.html', 'Games', NAV[0][3]],
+  ['nfl-props', 'nfl-props.html', 'Props', NAV[1][3]],
+  ['nfl-players', 'nfl-players.html', 'Players', NAV[3][3]],
   ['picks', 'picks.html', 'My picks', NAV[4][3]],
 ];
 const SPORTS = [['nba', 'index.html', 'Hoop Lab'], ['nfl', 'nfl.html', 'NFL Lab']];

@@ -69,3 +69,26 @@ test('kickoff label', () => {
   assert.match(F.nflKick({ date: '2026-11-05', time: '20:15' }), /Nov 5 · 8:15 PM$/);
   assert.match(F.nflKick({ date: '2026-11-08', time: '09:30' }), /9:30 AM$/);
 });
+
+test('players: logs join their games, windows by line, defense vs position and ladders', () => {
+  const players = { qa: { n: 'QB A', pos: 'QB', t: 'AAA' }, qb: { n: 'QB B', pos: 'QB', t: 'BBB' } };
+  const logs = { cols: ['pass_yds', 'att'], logs: {
+    qa: [[2026, 1, 'AAA', 'BBB', 250, 30], [2026, 2, 'AAA', 'CCC', 180, 25], [2026, 3, 'AAA', 'CCC', 300, 40]],
+    qb: [[2026, 1, 'BBB', 'AAA', 200, 28]],
+  } };
+  const P = F.nflAddPlayers(F.nflLab({ season: 2026 }, games, teams, teamstats), players, logs, { games: { g4: [{ pid: 'qa', stat: 'pass_yds', line: 240.5, over: -110 }] } }, {});
+  const rows = F.nflPlayerRows(P, 'qa', P.byId.get('g4').t);
+  assert.strictEqual(rows.length, 3);
+  assert.strictEqual(rows[0].g.id, 'g1');
+  assert.strictEqual(rows[0].home, true);
+  const w = F.nflPlayerWindows(rows, 'pass_yds', 240.5, 'o', 'BBB', 2026);
+  assert.deepStrictEqual([w.l10.hits, w.l10.n, w.h2h.hits, w.h2h.n], [2, 3, 1, 1]);
+  assert.strictEqual(F.nflTypical(rows, 'pass_yds'), 243.5);
+  // QBs vs CCC: 180 and 300 -> 240 a game; vs AAA: 200; vs BBB: 250 -> BBB allows the most (rank 1).
+  const d = F.nflDefVsPos(P, 'QB', 'pass_yds');
+  assert.deepStrictEqual([d.teams.BBB.rank, d.teams.CCC.rank, d.teams.AAA.rank], [1, 2, 3]);
+  assert.strictEqual(F.nflVsOpponent(P, 'CCC', 'QB', 'pass_yds')[0].v, 300);
+  assert.strictEqual(F.nflGameProps(P, 'g4').qa.pass_yds.line, 240.5);
+  assert.deepStrictEqual(F.nflLadder(240.5, 'pass_yds'), [210.5, 225.5, 240.5, 255.5, 270.5]);
+  assert.deepStrictEqual(F.nflLadder(1.5, 'rec'), [0.5, 1.5, 2.5, 3.5]);
+});

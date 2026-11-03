@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NFL Lab · Player</title>
+<meta name="description" content="NFL player prop research: hit rates by window against any line, game log chart, usage and the matchup.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mingus Lab">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head>
+<body>
+<header id="top"></header>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script src="assets/nfl.js"></script>
+<script>
+shell('nfl-players', 'nfl');
+const main = document.getElementById('main');
+main.innerHTML = skeleton(3, 4);
+load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/logs', 'nfl/props', 'nfl/proj')
+  .then(([meta, games, teams, teamstats, players, logs, props, proj]) => {
+  const N = nflAddPlayers(nflLab(meta, games, teams, teamstats), players, logs, props, proj);
+  const params = new URLSearchParams(location.search);
+  const pid = params.get('id'), p = N.players[pid];
+  if (!p) { main.innerHTML = emptyState('Player not found.', '<a href="nfl-players.html">Find a player</a>'); return; }
+  document.title = `NFL Lab · ${p.n}`;
+  document.getElementById('foot').innerHTML = `<p>NFL data: nflverse (stats, rosters, injuries) and Mingus Football (props and projections). Hit rates describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
+
+  const g = (params.get('g') && N.byId.get(params.get('g'))) || nflNextGame(N, p.t);
+  const opp = g ? (g.home === p.t ? g.away : g.home) : null;
+  const rows = nflPlayerRows(N, pid, g ? g.t : null);
+  const stats = NFL_POS_STATS[p.pos] || NFL_POS_STATS.WR;
+  const gp = g ? (nflGameProps(N, g.id)[pid] || {}) : {};
+  const pj = g ? ((N.proj[g.id] || {})[pid] || {}) : {};
+  const st = { stat: stats.includes(params.get('stat')) ? params.get('stat') : (stats.find(s => gp[s]) || stats[0]), side: params.get('side') === 'u' ? 'u' : 'o', win: 'l10', line: null, support: null };
+  const book = () => gp[st.stat] || null;
+  const startLine = () => (params.get('line') && params.get('stat') === st.stat ? +params.get('line') : null) ?? (book() ? book().line : nflTypical(rows, st.stat));
+  st.line = startLine();
+
+  const status = p.st ? `<span class="tag nflst ${/^IR|Out|Inactive|Released|Retired|Suspended/.test(p.st) ? 'out' : 'q'}">${esc(p.st)}${p.det ? ` · ${esc(p.det)}` : ''}</span>` : '';
+  main.innerHTML = `
+    <section class="hero" style="--c1:${(N.teams[p.t] || {}).color || '#1d5c57'}aa;--c2:#111a">
+      <div class="row"><a class="back" href="${g ? `nfl-game.html?id=${encodeURIComponent(g.id)}#props` : 'nfl.html'}" aria-label="Back">‹</a><span class="grow"></span></div>
+      <div class="nflphead">${p.img ? `<img src="${esc(p.img)}" alt="" width="72" height="72" class="nflshot" onerror="this.remove()">` : ''}
+        <div><h1>${esc(p.n)} <small>${esc(p.pos)}</small></h1>
+          <p class="muted">${nflLogo(N, p.t, 18)} ${esc(((N.teams[p.t] || {}).city || '') + ' ' + ((N.teams[p.t] || {}).nickname || p.t))}${g ? ` · next: ${g.home === p.t ? 'vs' : '@'} ${esc(opp)} ${esc(nflKick(g))}` : ''}</p>${status}</div></div>
+    </section>
+    <div class="tabs" id="stats"></div>
+    <div class="card" id="linecard"></div>
+    <div class="windows" id="windows"></div>
+    <div class="card" id="chart"></div>
+    <div class="card" id="support"></div>
+    <div class="card" id="vsopp"></div>
+    <div class="card" id="log"></div>`;
+
+  const WINS = [['h2h', opp ? `vs ${opp}` : 'H2H'], ['l5', 'L5'], ['l10', 'L10'], ['l20', 'L20'], ['season', String(meta.season)], ['last', String(meta.season - 1)]];
+  const f = () => NFL_STATS[st.stat].f;
+
+  function renderStats() {
+    document.getElementById('stats').innerHTML = stats.map(s => `<button data-stat="${s}" class="${s === st.stat ? 'on' : ''}">${NFL_STATS[s].short}${gp[s] ? ' <small class="bookdot" title="Sportsbook line">●</small>' : ''}</button>`).join('');
+  }
+
+  function renderLine() {
+    const b = book(), proj = pj[st.stat];
+    const price = b ? (st.side === 'o' ? b.over : b.under) : null;
+    const src = b ? `Sportsbook line <b>${b.line}</b>${price != null ? ` · ${st.side === 'o' ? 'over' : 'under'} ${odds(price)}` : ''} <small>(${esc((st.side === 'o' ? b.book_o : b.book_u) || '')}${b.books > 1 ? `, ${b.books} books` : ''})</small>`
+      : `No sportsbook line pulled for this game; <b>typical line</b> ${nflTypical(rows, st.stat)} (half a point above his last-10 average).`;
+    const fair = b && b.fair_o != null ? ` · fair ${pct(st.side === 'o' ? b.fair_o : b.fair_u)}` : '';
+    const projBox = proj && st.stat in pj ? `<div class="projbox nflproj"><div><small>MINGUS PROJECTION</small><b>${fmt1(proj.mean)}</b><span class="muted">${signed(Math.round((proj.mean - st.line) * 10) / 10)} vs ${st.line}</span></div>
+      ${proj.p_over != null && b && proj.line === st.line ? `<div><small>OVER ${st.line}</small><b>${pct(proj.p_over)}</b><span class="muted">under ${pct(1 - proj.p_over)}</span></div>` : ''}
+      <p class="note">Mingus Football's model (opportunities × efficiency × matchup, blended with Sleeper). Shown next to the book line, never instead of it.</p></div>` : '';
+    document.getElementById('linecard').innerHTML = `
+      <div class="row" style="gap:8px;flex-wrap:wrap"><h2 class="grow">${esc(NFL_STATS[st.stat].label)}</h2>
+        <div class="seg"><button data-side="o" class="${st.side === 'o' ? 'on' : ''}">Over</button><button data-side="u" class="${st.side === 'u' ? 'on' : ''}">Under</button></div>
+        <div class="seg"><button data-step="-1" aria-label="Lower line">−</button><button class="on" disabled>${st.line}</button><button data-step="1" aria-label="Raise line">+</button></div></div>
+      <p class="note" style="margin:8px 0 0">${src}${fair}${b && st.line !== b.line ? ` · <a href="#" data-reset="1">back to ${b.line}</a>` : ''}</p>${projBox}`;
+  }
+
+  function rates() { return nflPlayerWindows(rows, st.stat, st.line, st.side, opp, meta.season); }
+
+  function renderWindows(R) {
+    document.getElementById('windows').innerHTML = WINS.map(([k, l]) => `<button data-win="${k}" class="${k === st.win ? 'on' : ''}">${esc(l)}${rateTag(R[k])}</button>`).join('');
+  }
+
+  function bars(list, fn, line, side, cls = '') {
+    if (!list.length) return `<p class="empty">No games in this window.</p>`;
+    const vals = list.map(fn);
+    const max = Math.max(1, ...vals, line == null ? 0 : line) * 1.08;
+    const label = r => `${r.season === meta.season ? '' : `'${String(r.season).slice(2)} `}W${r.week}<br>${r.home ? 'vs' : '@'}<br>${r.opp}`;
+    const bar = (r, v) => `<div class="bar ${line == null ? 'neutral' : outcome(v, line, side)}" style="--h:${(Math.max(v, 0) / max) * 100}%" title="${r.season} week ${r.week} ${r.home ? 'vs' : '@'} ${r.opp}: ${v}"><span>${fmt1(v)}</span></div>`;
+    const lineEl = line == null ? '' : `<div class="lineat" style="bottom:calc((100% - 18px) * ${line / max})"><span>${line}</span></div>`;
+    return `<div class="chart"><div style="min-width:${list.length * 32}px"><div class="bars ${cls}">${lineEl}${list.map((r, i) => bar(r, vals[i])).join('')}</div>
+      <div class="xlabels">${list.map(r => `<span>${label(r)}</span>`).join('')}</div></div></div>`;
+  }
+
+  function renderChart(R) {
+    const w = R[st.win], vals = w.rows.map(f());
+    document.getElementById('chart').innerHTML = `
+      <div class="row"><h2 class="grow">${esc(NFL_STATS[st.stat].label)} · ${esc(WINS.find(x => x[0] === st.win)[1])}</h2>${rateTag(w, { count: true })}</div>
+      <div class="summary"><span>Average <b>${fmt1(mean(vals))}</b></span><span>Median <b>${fmt1(median(vals))}</b></span>
+        <span>${st.side === 'o' ? 'Over' : 'Under'} ${st.line}: <b>${w.hits} of ${w.n}</b>${w.pushes ? ` (${w.pushes} push)` : ''}</span></div>
+      ${bars(w.rows, f(), st.line, st.side)}`;
+  }
+
+  // Supporting stats: the volume behind the number (targets and share, carries, pass attempts).
+  const SUPPORT = {
+    tgt: { label: 'Targets', f: r => r.tgt }, tgt_sh: { label: 'Target share', f: r => Math.round((r.tgt_sh || 0) * 100), pct: true },
+    rec: { label: 'Receptions', f: r => r.rec }, car: { label: 'Carries', f: r => r.car }, att: { label: 'Pass attempts', f: r => r.att },
+    cmp: { label: 'Completions', f: r => r.cmp },
+  };
+  const supportFor = () => p.pos === 'QB' ? ['att', 'cmp', 'car'] : p.pos === 'RB' ? ['car', 'tgt', 'rec'] : ['tgt', 'tgt_sh', 'rec'];
+  function renderSupport(R) {
+    const keys = supportFor();
+    if (!keys.includes(st.support)) st.support = keys[0];
+    const w = R[st.win], s = SUPPORT[st.support], vals = w.rows.map(s.f);
+    document.getElementById('support').innerHTML = `<h2>Supporting stats</h2>
+      <div class="tabs under">${keys.map(k => `<button data-support="${k}" class="${k === st.support ? 'on' : ''}">${SUPPORT[k].label} <small>${fmt1(mean(w.rows.map(SUPPORT[k].f)))}${SUPPORT[k].pct ? '%' : ''}</small></button>`).join('')}</div>
+      ${bars(w.rows, s.f, null, 'o', 'small')}
+      <p class="note">Same games as the chart above. Average ${fmt1(mean(vals))}${s.pct ? '%' : ''}.</p>`;
+  }
+
+  function renderVsOpp() {
+    if (!opp) { document.getElementById('vsopp').innerHTML = '<p class="note">No upcoming game.</p>'; return; }
+    const d = nflDefVsPos(N, p.pos, st.stat), mine = d.teams[opp];
+    const ord = n => { const s = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
+    const list = nflVsOpponent(N, opp, p.pos, st.stat);
+    const group = nflPosGroup(p.pos);
+    document.getElementById('vsopp').innerHTML = `<h2>${esc(NFL_STATS[st.stat].label)} vs ${esc(opp)}</h2>
+      ${mine ? `<p class="nfldvp">${nflLogo(N, opp, 22)} <span>${esc(nflTeamName(N, opp))} allow <b>${fmt1(mine.avg)}</b> ${esc(NFL_STATS[st.stat].label.toLowerCase())} a game to ${group}s, <b class="${mine.rank <= 8 ? 'hit' : mine.rank > d.of - 8 ? 'miss' : ''}">${ord(mine.rank)} most</b> of ${d.of} (${mine.games} games).</span></p>` : ''}
+      ${list.length ? `<div class="tablewrap"><table class="data"><tr><th class="l">Player</th><th class="l">Game</th><th>${esc(NFL_STATS[st.stat].short)}</th></tr>
+        ${list.map(x => `<tr><td class="l"><a href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${st.stat}">${esc((N.players[x.pid] || {}).n || x.pid)}</a></td><td class="l">${esc(x.r.team)} ${x.r.home ? 'vs' : '@'} ${esc(x.r.opp)} · W${x.r.week}</td><td>${fmt1(x.v)}</td></tr>`).join('')}</table></div>`
+        : '<p class="note">No games against them yet this season.</p>'}
+      <p class="note">${group}s who faced ${esc(opp)} this season and what they did that day. Green rank = soft matchup for an over, red = tough.</p>`;
+  }
+
+  function renderLog() {
+    const cols = p.pos === 'QB' ? ['cmp', 'att', 'pass_yds', 'pass_td', 'int', 'car', 'rush_yds'] : p.pos === 'RB' ? ['car', 'rush_yds', 'rush_td', 'tgt', 'rec', 'rec_yds'] : ['tgt', 'rec', 'rec_yds', 'rec_td'];
+    const short = { cmp: 'CMP', att: 'ATT', pass_yds: 'YDS', pass_td: 'TD', int: 'INT', car: 'CAR', rush_yds: 'RUSH', rush_td: 'TD', tgt: 'TGT', rec: 'REC', rec_yds: 'YDS', rec_td: 'TD' };
+    document.getElementById('log').innerHTML = `<h2>Game log</h2><div class="tablewrap"><table class="data"><tr><th class="l">Game</th>${cols.map(c => `<th>${short[c]}</th>`).join('')}</tr>
+      ${rows.slice().reverse().slice(0, 25).map(r => `<tr><td class="l">${r.season === meta.season ? '' : `${r.season} `}W${r.week} ${r.home ? 'vs' : '@'} ${esc(r.opp)}</td>${cols.map(c => `<td>${r[c]}</td>`).join('')}</tr>`).join('')}</table></div>`;
+  }
+
+  function render() {
+    const R = rates();
+    renderStats(); renderLine(); renderWindows(R); renderChart(R); renderSupport(R); renderVsOpp(); renderLog();
+  }
+  main.addEventListener('click', e => {
+    const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-reset]');
+    if (!t) return;
+    const d = t.dataset;
+    if (d.stat) { st.stat = d.stat; st.line = book() ? book().line : nflTypical(rows, st.stat); }
+    else if (d.side) st.side = d.side;
+    else if (d.step) st.line = Math.max(0.5, st.line + (+d.step) * (NFL_STATS[st.stat].step >= 10 ? 5 : 1));
+    else if (d.win) st.win = d.win;
+    else if (d.support) st.support = d.support;
+    else if (d.reset) { e.preventDefault(); st.line = book().line; }
+    history.replaceState(null, '', `?id=${encodeURIComponent(pid)}&stat=${st.stat}&line=${st.line}${st.side === 'u' ? '&side=u' : ''}${g ? `&g=${encodeURIComponent(g.id)}` : ''}`);
+    render();
+  });
+  render();
+}).catch(err => {
+  main.innerHTML = emptyState('NFL data is unavailable right now.', 'Try again after the next data update.');
+  console.error(err);
+});
+</script>
+</body>
+</html>

@@ -101,15 +101,22 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   close line that moved against the pick) and the 5:53 PM heads-up task emails it when it exists.
 - **NFL Lab / Mingus Lab (Nov 3, 2026; plan in the Mingus project, `claude/plans/nfl-lab.md`).** The site is branded
   Mingus Lab with a Hoop Lab / NFL Lab switch in the header (`shell(active, 'nfl')` on NFL pages, `NAV_NFL`; My picks
-  is shared and keeps the last sport). Mingus Football (repo `joshwilliams332/mingus`) owns all NFL data and models;
-  `scripts/build_nfl.py` (workflow step, never blocks the deploy) copies its published `meta`, `games`, `teams`,
-  `teamstats` JSON into `site/data/nfl/`. No Odds API credits. Logic in `site/assets/nfl.js` (names prefixed `nfl`,
-  tested in `tests/nfl.test.js`) turns games into the same sides shape as NBA (`lineResults`, `tally`, `strip`);
-  styles in `site/assets/nfl.css`. Phase 1 (done): `nfl.html` (week tabs, cards with L10 strips vs this week's number)
-  and `nfl-game.html` (Game lines + Breakdown with H2H / L5 / L10 / season and the game list; Matchup = offense vs
-  defense ranks, common opponents, last 5 with ATS / O/U at each game's own line). Only this season's games for now.
-  Next: Phase 2 props + player pages (needs football's 2025 logs, IR fix, published projections), Phase 3 shared
-  My picks with NFL grading, Phase 4 NFL trends and a passing-zone chart.
+  is shared and keeps the last sport). Data: `scripts/build_nfl.py` (workflow step, never blocks the deploy) pulls
+  nflverse release CSVs directly (schedules with lines and prices, team + player weekly stats for last season and this
+  one, weekly rosters for IR / reserve, injury reports) and reads Mingus Football's checkouts (main: `site/data/teams.json`;
+  `data` branch: `odds/props/<game>.json`, `model/projections/`). We read the football repo, never edit it (one chat per
+  repo); football owns its props pulls and model. nflverse `spread_line` is positive when home is favored; ours
+  (`home_spread`) is the home team's number. Output in `site/data/nfl/` (meta, games, teams, teamstats, players, logs,
+  props, proj). No Odds API credits. Logic in `site/assets/nfl.js` (names prefixed `nfl`, tested in `tests/nfl.test.js`;
+  data build tested in `tests/test_build_nfl.py`), styles in `site/assets/nfl.css`.
+  Pages: `nfl.html` (week tabs, cards with L10 strips vs this week's number), `nfl-game.html` (Game lines + Breakdown;
+  Player props: compact rows -> ladder -> player page, typical lines labeled when no props were pulled; Matchup =
+  offense vs defense ranks, common opponents, last 5 ATS / O/U), `nfl-player.html` (stat tabs by position, book or
+  typical line, H2H / L5 / L10 / L20 / season / last season, chart, supporting stats, defense vs position rank +
+  players vs that defense, game log, Mingus projection box), `nfl-props.html` (week's props, sort bar, stat and side
+  filters in `hooplab.nflprops`), `nfl-players.html`. Defense-vs-position ranks: 1 = allows the most (soft for an
+  over); team Matchup ranks: 1 = best. Next: Phase 3 shared My picks with NFL grading + football's record, Phase 4
+  NFL trends and a passing-zone chart.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)

@@ -55,11 +55,17 @@ jobs:
           # Credits a month left for the football site on the shared free key (default 200; set 0 in the NFL off-season).
           ODDS_OTHER_SPORTS_CREDITS: ${{ vars.ODDS_OTHER_SPORTS_CREDITS }}
         run: python3 scripts/build_data.py --store store
-      # NFL Lab: copy Mingus Football's published data (schedule, lines, scores, team box totals) into site/data/nfl/.
+      # NFL Lab: nflverse (schedules and lines, team and player stats, rosters, injuries) plus Mingus Football's team
+      # logos and, from its data branch, the props it pulls and its projections -> site/data/nfl/.
       # No Odds API credits; never blocks the deploy (the NFL pages say so if it's missing).
-      - name: NFL Lab data (from Mingus Football)
+      - name: NFL Lab data (nflverse + Mingus Football)
         continue-on-error: true
-        run: python3 scripts/build_nfl.py | tee -a "$GITHUB_STEP_SUMMARY"
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse https://github.com/joshwilliams332/mingus mingus
+          git -C mingus sparse-checkout set site/data
+          git clone -q --depth 1 --branch data --filter=blob:none --sparse https://github.com/joshwilliams332/mingus mingus-data
+          git -C mingus-data sparse-checkout set odds/props model/projections
+          python3 scripts/build_nfl.py --mingus mingus --mingus-data mingus-data | tee -a "$GITHUB_STEP_SUMMARY"
       # Errors (no games, no logs) fail the run before deploying; warnings go to the run's summary page.
       - name: Check the data
         run: python3 scripts/check_data.py

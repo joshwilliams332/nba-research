@@ -26,8 +26,9 @@
 shell('nfl-games', 'nfl');
 const main = document.getElementById('main');
 main.innerHTML = skeleton(3, 4);
-load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, teams, teamstats]) => {
-  const N = nflLab(meta, games, teams, teamstats);
+load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/logs', 'nfl/props', 'nfl/proj')
+  .then(([meta, games, teams, teamstats, players, logs, props, proj]) => {
+  const N = nflAddPlayers(nflLab(meta, games, teams, teamstats), players, logs, props, proj);
   const params = new URLSearchParams(location.search);
   const g = N.byId.get(params.get('id'));
   if (!g) { main.innerHTML = emptyState('Game not found.', '<a href="nfl.html">Back to NFL games</a>'); return; }
@@ -36,7 +37,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
   document.getElementById('foot').innerHTML = `<p>NFL data: Mingus Football (nflverse). Trends describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
 
   const st = {
-    tab: location.hash === '#matchup' ? 'matchup' : 'lines',
+    tab: ['#matchup', '#props'].includes(location.hash) ? location.hash.slice(1) : 'lines', open: null,
     m: ['ml', 'spread', 'over', 'under'].includes(params.get('m')) ? params.get('m') : (g.home_spread != null ? 'spread' : 'ml'),
     team: params.get('s') === 'a' ? g.away : g.home,
     win: 'l10', off: g.away,
@@ -61,7 +62,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
     <div class="tabs" id="tabs"></div>
     <div id="pane"></div>`;
 
-  const TABS = [['lines', 'Game lines'], ['matchup', 'Matchup']];
+  const TABS = [['lines', 'Game lines'], ['props', 'Player props'], ['matchup', 'Matchup']];
   function renderTabs() {
     document.getElementById('tabs').innerHTML = TABS.map(([k, l]) => `<button data-tab="${k}" class="${k === st.tab ? 'on' : ''}">${l}</button>`).join('');
   }
@@ -108,6 +109,55 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
       </div>`;
   }
 
+  // ---------------------------------------------------------------- player props
+  // Compact rows ("Trevor Lawrence - Passing yards"); tap one for a ladder of lines with each line's L10 strip and
+  // hit rate; the arrow opens the player page on that stat and line. With no props pulled for this game, the main
+  // players get typical lines (labeled) so the research still works.
+  const gprops = nflGameProps(N, g.id);
+  function propList() {
+    const out = [];
+    for (const [pid, byStat] of Object.entries(gprops)) for (const [stat, r] of Object.entries(byStat)) out.push({ pid, stat, line: r.line, r });
+    if (out.length) return { rows: out, typical: false };
+    // Typical lines: each team's QB (attempts), top 2 RBs (carries), top 3 WR/TE (targets) over their last 3 games.
+    for (const team of [g.away, g.home]) {
+      const recent = Object.entries(N.players).filter(([pid, p]) => p.t === team && !/^IR|Out|Inactive|Released|Retired|Suspended/.test(p.st || ''))
+        .map(([pid, p]) => ({ pid, p, rows: nflPlayerRows(N, pid, g.t).filter(r => r.team === team).slice(-3) })).filter(x => x.rows.length);
+      const vol = (x, k) => x.rows.reduce((a, r) => a + (r[k] || 0), 0);
+      const pick = (pos, k, n, stat) => recent.filter(x => pos.includes(x.p.pos)).sort((a, b) => vol(b, k) - vol(a, k)).slice(0, n)
+        .forEach(x => out.push({ pid: x.pid, stat, line: nflTypical(nflPlayerRows(N, x.pid, g.t), stat), r: null }));
+      pick(['QB'], 'att', 1, 'pass_yds'); pick(['RB', 'FB'], 'car', 2, 'rush_yds'); pick(['WR', 'TE'], 'tgt', 3, 'rec_yds');
+    }
+    return { rows: out, typical: true };
+  }
+  function ladder(x) {
+    const rows = nflPlayerRows(N, x.pid, g.t), f = NFL_STATS[x.stat].f;
+    return nflLadder(x.line, x.stat).map(line => {
+      const res = rows.slice(-10).map(r => outcome(f(r), line, 'o')), t = tally(res);
+      const main = line === x.line, price = main && x.r ? x.r.over : null;
+      return `<div class="row nflrung${main ? ' main' : ''}"><b class="ln">O ${line}</b><div class="grow">${strip(res)}</div>${rateTag(t)}
+        ${price != null ? `<span class="price">${odds(price)}</span>` : ''}
+        <a class="gopill" href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&line=${line}&g=${encodeURIComponent(g.id)}" aria-label="Breakdown">›</a></div>`;
+    }).join('');
+  }
+  function propsPane() {
+    const { rows, typical } = propList();
+    if (!rows.length) return `<div class="card">${emptyState('No player props for this game yet.', 'Mingus Football pulls props for night games and the Sunday slates.')}</div>`;
+    const order = ['pass_yds', 'rush_yds', 'rush_rec_yds', 'rec_yds', 'rec'];
+    rows.sort((a, b) => order.indexOf(a.stat) - order.indexOf(b.stat) || ((N.players[a.pid] || {}).n || '').localeCompare((N.players[b.pid] || {}).n || ''));
+    const pulled = N.propsPulled[g.id];
+    return `<div class="card flush">${rows.map((x, i) => {
+      const p = N.players[x.pid] || { n: x.r && x.r.name || x.pid, t: '' };
+      const key = `${x.pid}|${x.stat}`, open = st.open === key;
+      const inj = p.st ? ` <span class="tag nflst ${/^IR|Out/.test(p.st) ? 'out' : 'q'}">${esc(p.st)}</span>` : '';
+      return `<div class="proprow${open ? ' open' : ''}">
+        <div class="head" data-open="${esc(key)}">${p.img ? `<a href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&g=${encodeURIComponent(g.id)}"><img class="nflmug" src="${esc(p.img)}" alt="" width="36" height="36" loading="lazy" onerror="this.remove()"></a>` : ''}
+          <div class="grow"><a class="name" href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&g=${encodeURIComponent(g.id)}">${esc(p.n)}</a> <span class="sub">- ${esc(NFL_STATS[x.stat].label)}</span>${inj}
+            <div class="sub">${typical ? `typical ${x.line}` : `${x.line} · O ${odds(x.r.over)} / U ${odds(x.r.under)}`}</div></div><span class="gochev">${open ? '▴' : '▾'}</span></div>
+        ${open ? `<div class="nflladder">${ladder(x)}</div>` : ''}</div>`;
+    }).join('')}</div>
+    <p class="note">${typical ? 'No sportsbook props were pulled for this game, so these are <b>typical lines</b> (half a point above each player\'s last-10 average), not real lines.' : `Lines from the sportsbooks Mingus Football pulled${pulled ? ` (${esc(new Date(pulled).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }))})` : ''}; the price shown is the over at the posted line.`} Strips: his last 10 games at each line.</p>`;
+  }
+
   // ---------------------------------------------------------------- matchup
   const R = nflRanks(N);
   const ord = n => { const s = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
@@ -150,12 +200,14 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
 
   function render() {
     renderTabs();
-    document.getElementById('pane').innerHTML = st.tab === 'matchup' ? matchupPane() : linesPane();
+    document.getElementById('pane').innerHTML = st.tab === 'matchup' ? matchupPane() : st.tab === 'props' ? propsPane() : linesPane();
   }
   main.addEventListener('click', e => {
-    const t = e.target.closest('[data-tab],[data-m],[data-team],[data-win],[data-swap]');
+    if (e.target.closest('a')) return;
+    const t = e.target.closest('[data-tab],[data-m],[data-team],[data-win],[data-swap],[data-open]');
     if (!t) return;
     const d = t.dataset;
+    if (d.open) { st.open = st.open === d.open ? null : d.open; render(); return; }
     if (d.tab) { st.tab = d.tab; history.replaceState(null, '', `${location.search}#${d.tab}`); }
     else if (d.m) st.m = d.m;
     else if (d.team) st.team = d.team;
