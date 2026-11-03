@@ -1,0 +1,83 @@
+/* NFL Lab pages (nfl.html, nfl-game.html). Shared look comes from style.css; this file only adds NFL-only pieces. */
+
+/* Breakdown: the two team buttons, then the H2H / L5 / L10 / season boxes. */
+.nflteams { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+.nflteams button { display: flex; align-items: center; gap: 8px; min-width: 0; padding: 10px; border-radius: 12px; cursor: pointer;
+  background: var(--card2); border: 1px solid var(--line); color: var(--muted); text-align: left; }
+.nflteams button.on { border-color: var(--accent); color: var(--text); background: linear-gradient(180deg, rgba(255, 138, 61, .12), var(--card2)); }
+.nflteams button span { min-width: 0; }
+.nflteams button b, .nflteams button small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nflteams button small { font-size: 12px; }
+.nflwins { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 10px; }
+.nflwins button { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 8px 2px; border-radius: 10px; cursor: pointer;
+  background: var(--card2); border: 1px solid var(--line); color: var(--muted); min-width: 0; }
+.nflwins button.on { border-color: #4a525e; color: var(--text); }
+.nflwins b { font-size: 17px; color: var(--text); }
+.nflwins b.hit { color: var(--hit); }
+.nflwins b.miss { color: var(--miss); }
+.nflwins small { font-size: 11px; }
+table.data b.hit, table.data span.hit { color: var(--hit); }
+table.data b.miss, table.data span.miss { color: var(--miss); }
+table.data b.push { color: var(--muted); }
+table.data td.c, table.data th.c { text-align: center; }
+
+/* Matchup: offense vs defense rankings. */
+.nflswap { gap: 8px; margin-bottom: 8px; font-size: 14px; }
+.nflswap .grow { min-width: 0; display: flex; align-items: center; gap: 6px; }
+.nflswap .grow:last-child { justify-content: flex-end; }
+.nflswap .btn { flex: none; padding: 6px 12px; }
+table.nflrank td { text-align: center; font-variant-numeric: tabular-nums; }
+table.nflrank td.c { white-space: nowrap; }
+@media (max-width: 420px) { table.nflrank td, table.nflrank th { padding-left: 4px; padding-right: 4px; font-size: 13px; } }
+
+/* Player page */
+.nflphead { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+.nflphead h1 { font-size: 24px; margin: 0; }
+.nflphead h1 small { font-size: 14px; color: var(--muted); font-weight: 650; }
+.nflphead p { margin: 2px 0 4px; font-size: 13px; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.nflshot { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; background: var(--card2); flex: none; }
+.nflmug { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; background: var(--card2); flex: none; }
+.tag.nflst.out { color: var(--miss); border-color: rgba(255, 92, 108, .4); }
+.tag.nflst.q { color: var(--warm); border-color: rgba(255, 184, 77, .4); }
+.bookdot { color: var(--accent); font-size: 8px; vertical-align: 2px; }
+.nflproj { margin-top: 10px; }
+.nfldvp { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: 14px; }
+.nfldvp b.hit { color: var(--hit); }
+.nfldvp b.miss { color: var(--miss); }
+
+/* Game page player props: compact row -> ladder */
+.nflladder { padding: 0 14px 10px; }
+.nflrung { gap: 10px; padding: 6px 0; border-top: 1px dashed var(--line); align-items: center; }
+.nflrung .ln { flex: none; width: 70px; font-variant-numeric: tabular-nums; }
+.nflrung.main .ln { color: var(--accent); }
+.nflrung .strip { margin: 0; }
+.nflrung .grow { min-width: 0; }
+.gopill { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--card2); border: 1px solid var(--line); font-size: 18px; color: var(--text); }
+.proprow .head .name { color: var(--text); }
+
+/* Props page */
+.nflprop { display: block; padding: 12px 14px; }
+.nflprop .row { gap: 10px; align-items: center; }
+.nflprop .grow { min-width: 0; }
+.nflprop .sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.nflprop .sub b { color: var(--text); }
+.nflprop .price { padding: 2px 8px; font-size: 12px; }
+.nflsortrate { flex: none; text-align: right; }
+.nflsortrate small { display: block; font-size: 10px; color: var(--muted); font-weight: 700; }
+#filters { align-items: center; }
+#filters .seg { flex: none; }
+.nflsort { position: fixed; z-index: 29; left: 10px; right: 10px; bottom: calc(max(10px, env(safe-area-inset-bottom)) + 70px); display: flex; gap: 4px;
+  align-items: center; overflow-x: auto; scrollbar-width: none; padding: 6px; border-radius: 14px; background: rgba(24, 27, 33, .95); border: 1px solid var(--line); }
+.nflsort::-webkit-scrollbar { display: none; }
+.nflsort span { flex: none; font-size: 11px; font-weight: 700; color: var(--muted); padding: 0 6px; }
+.nflsort button { flex: none; border: 0; background: none; color: var(--muted); font-weight: 700; padding: 7px 11px; border-radius: 10px; cursor: pointer; }
+.nflsort button.on { background: var(--text); color: #111; }
+body:has(.nflsort) main { padding-bottom: 140px; }
+@media (min-width: 760px) { .nflsort { left: 50%; right: auto; transform: translateX(-50%); bottom: 20px; } body:has(.nflsort) main { padding-bottom: 80px; } }
+
+/* Players list */
+.nflplayer { gap: 10px; padding: 10px 14px; border-top: 1px solid var(--line); align-items: center; color: var(--text); }
+.nflplayer:first-child { border-top: 0; }
+.nflplayer .grow { min-width: 0; }
+.nflplayer .sub { font-size: 12px; color: var(--muted); }

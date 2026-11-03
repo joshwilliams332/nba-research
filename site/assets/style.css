@@ -44,6 +44,12 @@ img.logo { object-fit: contain; flex: none; }
   color: var(--muted); font-size: 11px; font-weight: 600; white-space: nowrap; }
 .bottomnav a.on { color: var(--accent); background: var(--card2); }
 .bottomnav svg { width: 22px; height: 22px; }
+/* Mingus Lab sport switch (Hoop Lab / NFL Lab), next to the brand. */
+.sportsw { display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--card2); border: 1px solid var(--line); flex: none; }
+.sportsw a { padding: 5px 11px; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.sportsw a.on { background: var(--accent); color: #1a0f05; }
+#top { gap: 12px; }
+@media (max-width: 430px) { .brand span { display: none; } }
 @media (min-width: 760px) {
   body { padding-bottom: 0; }
   .topnav { display: flex; }

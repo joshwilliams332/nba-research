@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NFL Lab · Game</title>
+<meta name="description" content="NFL game breakdown: money line, spread and total trends, and the offense vs defense matchup.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mingus Lab">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head>
+<body>
+<header id="top"></header>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script src="assets/nfl.js"></script>
+<script>
+shell('nfl-games', 'nfl');
+const main = document.getElementById('main');
+main.innerHTML = skeleton(3, 4);
+load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/logs', 'nfl/props', 'nfl/proj')
+  .then(([meta, games, teams, teamstats, players, logs, props, proj]) => {
+  const N = nflAddPlayers(nflLab(meta, games, teams, teamstats), players, logs, props, proj);
+  const params = new URLSearchParams(location.search);
+  const g = N.byId.get(params.get('id'));
+  if (!g) { main.innerHTML = emptyState('Game not found.', '<a href="nfl.html">Back to NFL games</a>'); return; }
+  const A = N.teams[g.away] || {}, H = N.teams[g.home] || {};
+  document.title = `NFL Lab · ${g.away} @ ${g.home}`;
+  document.getElementById('foot').innerHTML = `<p>NFL data: Mingus Football (nflverse). Trends describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
+
+  const st = {
+    tab: ['#matchup', '#props'].includes(location.hash) ? location.hash.slice(1) : 'lines', open: null,
+    m: ['ml', 'spread', 'over', 'under'].includes(params.get('m')) ? params.get('m') : (g.home_spread != null ? 'spread' : 'ml'),
+    team: params.get('s') === 'a' ? g.away : g.home,
+    win: 'l10', off: g.away,
+  };
+  if (st.m === 'over' || st.m === 'under') st.team = params.get('s') === 'h' ? g.home : g.away;
+
+  const weather = [g.stadium, g.roof && g.roof !== 'outdoors' ? g.roof : (g.temp != null ? `${g.temp}°F${g.wind != null ? `, wind ${g.wind} mph` : ''}` : '')].filter(Boolean).join(' · ');
+  const mid = g.final
+    ? `<div class="score"><span class="${g.away_score < g.home_score ? 'lose' : ''}">${g.away_score}</span> - <span class="${g.home_score < g.away_score ? 'lose' : ''}">${g.home_score}</span></div>Final`
+    : `<b style="color:var(--text);font-size:16px">${esc(nflKick(g).split(' · ')[1])}</b><br>${esc(fmtDay(g.date))}`;
+  main.innerHTML = `
+    <section class="hero" style="--c1:${A.color || '#1d5c57'}aa;--c2:${H.color || '#7a3b17'}aa">
+      <div class="row"><a class="back" href="nfl.html?w=${g.week}" aria-label="Back to NFL games">‹</a>
+        <span class="grow" style="text-align:center;color:var(--muted);font-size:13px">Week ${g.week}${weather ? ` · ${esc(weather)}` : ''}</span><span style="width:38px"></span></div>
+      <div class="matchup">
+        <div class="team">${nflLogo(N, g.away, 52)}<div><b>${esc(A.nickname || g.away)}</b><small>${nflRecord(N, g.away, g.t)}</small></div></div>
+        <div class="mid">${mid}</div>
+        <div class="team home">${nflLogo(N, g.home, 52)}<div><b>${esc(H.nickname || g.home)}</b><small>${nflRecord(N, g.home, g.t)}</small></div></div>
+      </div>
+      ${!g.final && g.home_implied != null ? `<div class="implied" title="Implied points from the spread and total"><span><b>${g.away_implied.toFixed(1)}</b></span><span class="muted">Team totals</span><span><b>${g.home_implied.toFixed(1)}</b></span></div>` : ''}
+    </section>
+    <div class="tabs" id="tabs"></div>
+    <div id="pane"></div>`;
+
+  const TABS = [['lines', 'Game lines'], ['props', 'Player props'], ['matchup', 'Matchup']];
+  function renderTabs() {
+    document.getElementById('tabs').innerHTML = TABS.map(([k, l]) => `<button data-tab="${k}" class="${k === st.tab ? 'on' : ''}">${l}</button>`).join('');
+  }
+
+  // ---------------------------------------------------------------- game lines + breakdown
+  const MKTS = [['ml', 'Money line'], ['spread', 'Spread'], ['over', 'Over'], ['under', 'Under']];
+  function betLabel(kind, team) {
+    const L = nflLines(g, team);
+    if (kind === 'ml') return `${team} money line${L.ml != null ? ` (${odds(L.ml)})` : ''}`;
+    if (kind === 'spread') return `${team} ${signed(L.spread)}`;
+    return `${kind === 'over' ? 'Over' : 'Under'} ${g.total}`;
+  }
+  function resultCell(s, kind, num) {
+    const r = lineResults([s], kind, num)[0];
+    const mark = r === 'hit' ? '<b class="hit">✓</b>' : r === 'miss' ? '<b class="miss">✗</b>' : '<b class="push">–</b>';
+    if (kind === 'ml') return mark;
+    if (kind === 'spread') return `${mark} <small>${signed(s.margin)}</small>`;
+    return `${mark} <small>${s.total}</small>`;
+  }
+  function linesPane() {
+    const available = MKTS.filter(([k]) => k === 'ml' ? g.home_ml != null || g.away_ml != null : k === 'spread' ? g.home_spread != null : g.total != null);
+    if (!available.length) return `<div class="card">${nflGameLines(N, g)}</div>`;
+    if (!available.some(([k]) => k === st.m)) st.m = available[0][0];
+    const w = nflWindows(N, g, st.team, st.m);
+    const rows = st.win === 'h2h' ? w.rows.filter(s => s.opp === (st.team === g.home ? g.away : g.home))
+      : st.win === 'l5' ? w.rows.slice(-5) : st.win === 'season' ? w.rows : w.rows.slice(-10);
+    const win = (k, label, t) => `<button data-win="${k}" class="${k === st.win ? 'on' : ''}"><small>${label}</small><b class="${t.n ? (t.rate >= 0.6 ? 'hit' : t.rate <= 0.4 ? 'miss' : '') : ''}">${t.n ? pct(t.rate) : '-'}</b><small>${t.n ? `${t.hits}/${t.n}` : ''}</small></button>`;
+    const teamBtn = team => {
+      const t = nflWindows(N, g, team, st.m).l10;
+      return `<button data-team="${team}" class="${team === st.team ? 'on' : ''}">${nflLogo(N, team, 26)}<span><b>${esc(nflTeamName(N, team))}</b><small>${t.n ? `L${t.n} ${pct(t.rate)}` : 'no games yet'}</small></span></button>`;
+    };
+    const list = rows.slice().reverse().map(s => `<tr><td class="l">${esc(shortDate(s.g.date))}</td><td class="l">${s.home ? 'vs' : '@'} ${nflLogo(N, s.opp, 18)} ${esc(s.opp)}</td>
+      <td class="${s.win ? 'hit' : s.tie ? '' : 'miss'}">${s.win ? 'W' : s.tie ? 'T' : 'L'} ${s.pts}-${s.oppPts}</td><td>${resultCell(s, st.m, w.num)}</td></tr>`).join('');
+    return `<div class="card flush">${nflGameLines(N, g)}</div>
+      <div class="card" id="lines">
+        <h2>Breakdown</h2>
+        <div class="tabs">${available.map(([k, l]) => `<button data-m="${k}" class="${k === st.m ? 'on' : ''}">${l}</button>`).join('')}</div>
+        <div class="nflteams">${teamBtn(g.away)}${teamBtn(g.home)}</div>
+        <p class="note" style="margin:8px 0">${esc(betLabel(st.m, st.team))}: how ${esc(nflTeamName(N, st.team))} would have done against this number in past games.</p>
+        <div class="nflwins">${win('h2h', 'H2H', w.h2h)}${win('l5', 'L5', w.l5)}${win('l10', 'L10', w.l10)}${win('season', String(meta.season || 'Season'), w.season)}</div>
+        ${rows.length ? `<div class="tablewrap"><table class="data"><tr><th class="l">Date</th><th class="l">Opponent</th><th>Result</th><th>${st.m === 'ml' ? 'Won' : st.m === 'spread' ? 'Covered' : st.m === 'over' ? 'Over' : 'Under'}</th></tr>${list}</table></div>`
+          : '<p class="note">No games in this window yet.</p>'}
+        <p class="note">Only this season's games are in NFL Lab for now; last season's arrive with the player pages.</p>
+      </div>`;
+  }
+
+  // ---------------------------------------------------------------- player props
+  // Compact rows ("Trevor Lawrence - Passing yards"); tap one for a ladder of lines with each line's L10 strip and
+  // hit rate; the arrow opens the player page on that stat and line. With no props pulled for this game, the main
+  // players get typical lines (labeled) so the research still works.
+  const gprops = nflGameProps(N, g.id);
+  function propList() {
+    const out = [];
+    for (const [pid, byStat] of Object.entries(gprops)) for (const [stat, r] of Object.entries(byStat)) out.push({ pid, stat, line: r.line, r });
+    if (out.length) return { rows: out, typical: false };
+    // Typical lines: each team's QB (attempts), top 2 RBs (carries), top 3 WR/TE (targets) over their last 3 games.
+    for (const team of [g.away, g.home]) {
+      const recent = Object.entries(N.players).filter(([pid, p]) => p.t === team && !/^IR|Out|Inactive|Released|Retired|Suspended/.test(p.st || ''))
+        .map(([pid, p]) => ({ pid, p, rows: nflPlayerRows(N, pid, g.t).filter(r => r.team === team).slice(-3) })).filter(x => x.rows.length);
+      const vol = (x, k) => x.rows.reduce((a, r) => a + (r[k] || 0), 0);
+      const pick = (pos, k, n, stat) => recent.filter(x => pos.includes(x.p.pos)).sort((a, b) => vol(b, k) - vol(a, k)).slice(0, n)
+        .forEach(x => out.push({ pid: x.pid, stat, line: nflTypical(nflPlayerRows(N, x.pid, g.t), stat), r: null }));
+      pick(['QB'], 'att', 1, 'pass_yds'); pick(['RB', 'FB'], 'car', 2, 'rush_yds'); pick(['WR', 'TE'], 'tgt', 3, 'rec_yds');
+    }
+    return { rows: out, typical: true };
+  }
+  function ladder(x) {
+    const rows = nflPlayerRows(N, x.pid, g.t), f = NFL_STATS[x.stat].f;
+    return nflLadder(x.line, x.stat).map(line => {
+      const res = rows.slice(-10).map(r => outcome(f(r), line, 'o')), t = tally(res);
+      const main = line === x.line, price = main && x.r ? x.r.over : null;
+      return `<div class="row nflrung${main ? ' main' : ''}"><b class="ln">O ${line}</b><div class="grow">${strip(res)}</div>${rateTag(t)}
+        ${price != null ? `<span class="price">${odds(price)}</span>` : ''}
+        <a class="gopill" href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&line=${line}&g=${encodeURIComponent(g.id)}" aria-label="Breakdown">›</a></div>`;
+    }).join('');
+  }
+  function propsPane() {
+    const { rows, typical } = propList();
+    if (!rows.length) return `<div class="card">${emptyState('No player props for this game yet.', 'Mingus Football pulls props for night games and the Sunday slates.')}</div>`;
+    const order = ['pass_yds', 'rush_yds', 'rush_rec_yds', 'rec_yds', 'rec'];
+    rows.sort((a, b) => order.indexOf(a.stat) - order.indexOf(b.stat) || ((N.players[a.pid] || {}).n || '').localeCompare((N.players[b.pid] || {}).n || ''));
+    const pulled = N.propsPulled[g.id];
+    return `<div class="card flush">${rows.map((x, i) => {
+      const p = N.players[x.pid] || { n: x.r && x.r.name || x.pid, t: '' };
+      const key = `${x.pid}|${x.stat}`, open = st.open === key;
+      const inj = p.st ? ` <span class="tag nflst ${/^IR|Out/.test(p.st) ? 'out' : 'q'}">${esc(p.st)}</span>` : '';
+      return `<div class="proprow${open ? ' open' : ''}">
+        <div class="head" data-open="${esc(key)}">${p.img ? `<a href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&g=${encodeURIComponent(g.id)}"><img class="nflmug" src="${esc(p.img)}" alt="" width="36" height="36" loading="lazy" onerror="this.remove()"></a>` : ''}
+          <div class="grow"><a class="name" href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&g=${encodeURIComponent(g.id)}">${esc(p.n)}</a> <span class="sub">- ${esc(NFL_STATS[x.stat].label)}</span>${inj}
+            <div class="sub">${typical ? `typical ${x.line}` : `${x.line} · O ${odds(x.r.over)} / U ${odds(x.r.under)}`}</div></div><span class="gochev">${open ? '▴' : '▾'}</span></div>
+        ${open ? `<div class="nflladder">${ladder(x)}</div>` : ''}</div>`;
+    }).join('')}</div>
+    <p class="note">${typical ? 'No sportsbook props were pulled for this game, so these are <b>typical lines</b> (half a point above each player\'s last-10 average), not real lines.' : `Lines from the sportsbooks Mingus Football pulled${pulled ? ` (${esc(new Date(pulled).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }))})` : ''}; the price shown is the over at the posted line.`} Strips: his last 10 games at each line.</p>`;
+  }
+
+  // ---------------------------------------------------------------- matchup
+  const R = nflRanks(N);
+  const ord = n => { const s = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
+  const fmtStat = (k, v) => v == null ? '-' : k === 'ypp' ? v.toFixed(1) : k === 'to' || k === 'sk' ? v.toFixed(1) : v.toFixed(1);
+  function rankCell(rank) {
+    if (!rank) return '<td>-</td>';
+    const cls = rank <= 8 ? 'hit' : rank > R.of - 8 ? 'miss' : '';
+    return `<td class="${cls}">${ord(rank)}</td>`;
+  }
+  function matchupPane() {
+    const off = st.off, def = off === g.home ? g.away : g.home;
+    const O = R.totals[off] || { off: {} }, D = R.totals[def] || { def: {} };
+    const ro = (R.ranks[off] || { off: {} }).off, rd = (R.ranks[def] || { def: {} }).def;
+    const rows = NFL_RANK_STATS.map(([k, label]) => `<tr><td>${fmtStat(k, O.off[k])}</td>${rankCell(ro[k])}<td class="c"><b>${label}</b></td>${rankCell(rd[k])}<td>${fmtStat(k, D.def[k])}</td></tr>`).join('');
+    const common = nflCommonOpponents(N, g.away, g.home, g.t);
+    const res = s => `<span class="${s.win ? 'hit' : s.tie ? '' : 'miss'}">${s.win ? 'W' : s.tie ? 'T' : 'L'} ${s.pts}-${s.oppPts}</span>`;
+    const rec = list => { const w = list.filter(s => s.win).length, t = list.filter(s => s.tie).length; return `${w}-${list.length - w - t}${t ? `-${t}` : ''}`; };
+    const commonA = common.flatMap(c => c.a), commonH = common.flatMap(c => c.b);
+    const last = team => nflFinals(N, team, g.t).slice(-5).reverse().map(s => `<tr><td class="l">Wk ${s.g.week}</td><td class="l">${s.home ? 'vs' : '@'} ${nflLogo(N, s.opp, 18)} ${esc(s.opp)}</td><td>${res(s)}</td>
+      <td>${s.spread == null ? '-' : `${outcome(s.margin + s.spread, 0, 'o') === 'hit' ? '<b class="hit">✓</b>' : outcome(s.margin + s.spread, 0, 'o') === 'push' ? '–' : '<b class="miss">✗</b>'} <small>${signed(s.spread)}</small>`}</td>
+      <td>${s.totalLine == null ? '-' : `${s.total > s.totalLine ? 'O' : s.total < s.totalLine ? 'U' : 'P'} <small>${s.totalLine}</small>`}</td></tr>`).join('');
+    return `<div class="card">
+        <h2>Team rankings (${esc(String(meta.season || ''))})</h2>
+        <div class="row nflswap"><span class="grow">${nflLogo(N, off, 22)} <b>${esc(nflTeamName(N, off))} offense</b></span>
+          <button class="btn" data-swap="1" aria-label="Swap offense and defense">⇄</button>
+          <span class="grow" style="text-align:right"><b>${esc(nflTeamName(N, def))} defense</b> ${nflLogo(N, def, 22)}</span></div>
+        <div class="tablewrap"><table class="data nflrank"><tr><th>Avg</th><th>Rank</th><th class="c">Per game</th><th>Rank</th><th>Avg</th></tr>${rows}</table></div>
+        <p class="note">Ranks among ${R.of} teams this season. Offense: 1st = best (fewest turnovers and sacks taken). Defense: 1st = allows the least (forces the most turnovers and sacks). Green = top 8, red = bottom 8.</p>
+      </div>
+      <div class="card"><h2>Record vs common opponents</h2>
+        ${common.length ? `<div class="row" style="justify-content:space-between;margin-bottom:6px"><b>${esc(g.away)} ${rec(commonA)}</b><b>${rec(commonH)} ${esc(g.home)}</b></div>
+          <div class="tablewrap"><table class="data">${common.map(c => `<tr><td class="l">${c.a.map(res).join('<br>')}</td><td class="c">${nflLogo(N, c.opp, 22)}<br><small>${esc(c.opp)}</small></td><td>${c.b.map(res).join('<br>')}</td></tr>`).join('')}</table></div>`
+          : '<p class="note">No common opponents yet this season.</p>'}</div>
+      <div class="grid2">
+        ${[g.away, g.home].map(team => `<div class="card"><h3>${nflLogo(N, team, 22)} ${esc(nflTeamName(N, team))}: last 5</h3>
+          <div class="tablewrap"><table class="data"><tr><th class="l">Week</th><th class="l">Opp</th><th>Result</th><th>ATS</th><th>O/U</th></tr>${last(team) || '<tr><td colspan="5">No games yet.</td></tr>'}</table></div>
+          <p class="note">ATS and O/U use each game's own line.</p></div>`).join('')}
+      </div>`;
+  }
+
+  function render() {
+    renderTabs();
+    document.getElementById('pane').innerHTML = st.tab === 'matchup' ? matchupPane() : st.tab === 'props' ? propsPane() : linesPane();
+  }
+  main.addEventListener('click', e => {
+    if (e.target.closest('a')) return;
+    const t = e.target.closest('[data-tab],[data-m],[data-team],[data-win],[data-swap],[data-open]');
+    if (!t) return;
+    const d = t.dataset;
+    if (d.open) { st.open = st.open === d.open ? null : d.open; render(); return; }
+    if (d.tab) { st.tab = d.tab; history.replaceState(null, '', `${location.search}#${d.tab}`); }
+    else if (d.m) st.m = d.m;
+    else if (d.team) st.team = d.team;
+    else if (d.win) st.win = d.win;
+    else if (d.swap) st.off = st.off === g.home ? g.away : g.home;
+    render();
+  });
+  render();
+  if (location.hash === '#lines') setTimeout(() => { const el = document.getElementById('lines'); if (el) el.scrollIntoView({ block: 'start' }); }, 50);
+}).catch(err => {
+  main.innerHTML = emptyState('NFL data is unavailable right now.', 'It comes from Mingus Football on each data update. Try again in a bit.');
+  console.error(err);
+});
+</script>
+</body>
+</html>
