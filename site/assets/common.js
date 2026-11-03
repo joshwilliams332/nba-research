@@ -590,7 +590,8 @@ function teamLink(abbr, inner, cls = '') {
 
 /* A friendly empty-state card. */
 function emptyState(text, sub = '') {
-  return `<div class="card empty"><div class="empty-ic">🏀</div><div>${text}</div>${sub ? `<small>${sub}</small>` : ''}</div>`;
+  const nfl = typeof document !== 'undefined' && document.documentElement.dataset.sport === 'nfl';
+  return `<div class="card empty"><div class="empty-ic">${nfl ? '🏈' : '🏀'}</div><div>${text}</div>${sub ? `<small>${sub}</small>` : ''}</div>`;
 }
 
 function injuryMap(L) {
@@ -677,10 +678,11 @@ const NAV = [
 // The phone bottom nav holds five; Standings moves to an icon in the phone header (desktop shows everything).
 const HEADER_ONLY = new Set(['standings']);
 
-// NFL Lab's nav. My picks is shared by both sports (NFL trends come later).
+// NFL Lab's nav (same five as Hoop Lab's phone nav). My picks is shared by both sports.
 const NAV_NFL = [
   ['nfl-games', 'nfl.html', 'Games', '<path d="M5 19C4 12 8 6 19 5c1 7-3 13-14 14Z"/><path d="M9.5 14.5l5-5M10 12l2 2M11 11l2 2M12 10l2 2"/>'],
   ['nfl-props', 'nfl-props.html', 'Props', NAV[1][3]],
+  ['nfl-trends', 'nfl-trends.html', 'Trends', NAV[2][3]],
   ['nfl-players', 'nfl-players.html', 'Players', NAV[3][3]],
   ['picks', 'picks.html', 'My picks', NAV[4][3]],
 ];
@@ -696,6 +698,7 @@ function shell(active, sport) {
   if (SHARED_PAGES.has(active)) sport = store('sport') === 'nfl' ? 'nfl' : 'nba';
   else store('sport', sport = sport || 'nba');
   const nav = sport === 'nfl' ? NAV_NFL : NAV;
+  document.documentElement.dataset.sport = sport;
   const link = ([k, href, label, icon]) =>
     `<a href="${href}" class="${k === active ? 'on' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg><span>${label}</span></a>`;
   const top = document.getElementById('top');

@@ -375,6 +375,123 @@ function nflGameLines(N, g) {
   return parts.join('');
 }
 
+// ---------------------------------------------------------------- insights
+// Same rule as Hoop Lab's insights.js: a side is kept when it hits 75%+ over 5+ games, ranked by the Wilson lower
+// bound, best two per player stat / team market (one per window family). Player trends use this game's sportsbook
+// lines (typical lines, marked, only when no props were pulled at all); team trends use this game's numbers.
+const NFL_INSIGHT_RATE = 0.75, NFL_INSIGHT_N = 5;
+const NFL_WINDOWS = [['l5', 'recent', n => `last ${n} games`], ['l10', 'recent', n => `last ${n} games`],
+  ['season', 'season', n => `${n} games this season`], ['h2h', 'h2h', (n, opp) => `${n} games vs ${opp}`]];
+
+function nflWilson(hits, n, z = 1.28) {
+  if (!n) return 0;
+  const p = hits / n, z2 = z * z;
+  return (p + z2 / (2 * n) - z * Math.sqrt((p * (1 - p) + z2 / (4 * n)) / n)) / (1 + z2 / n);
+}
+
+/* {side: 'o'|'u', results, ...tally} when one side of these results clears the bar, else null. Pushes count as
+   not hitting; `both` false only allows the 'o' (yes) side. */
+function nflStrongSide(results, both = true) {
+  const yes = tally(results);
+  if (yes.n < NFL_INSIGHT_N) return null;
+  if (yes.rate >= NFL_INSIGHT_RATE) return { side: 'o', results, ...yes };
+  if (!both) return null;
+  const flipped = results.map(r => (r === 'hit' ? 'miss' : r === 'miss' ? 'hit' : 'push')), no = tally(flipped);
+  return no.rate >= NFL_INSIGHT_RATE ? { side: 'u', results: flipped, ...no } : null;
+}
+
+function nflKeepBest(list, per = 2) {
+  const groups = new Map();
+  for (const x of list) (groups.get(x.group) || groups.set(x.group, []).get(x.group)).push(x);
+  const out = [];
+  for (const items of groups.values()) {
+    items.sort((a, b) => b.strength - a.strength || b.n - a.n);
+    const fams = new Set();
+    for (const x of items) {
+      if (fams.has(x.family) || fams.size >= per) continue;
+      fams.add(x.family);
+      out.push(x);
+    }
+  }
+  return out;
+}
+
+/* Trends for one game: [{type: 'player'|'team', text, label, results, dates, rate, n, strength, ...}]. */
+function nflGameInsights(N, g) {
+  const out = [];
+  const book = Object.values(N.props[g.id] || {});
+  let rows = book.map(r => ({ pid: r.pid, stat: r.stat, line: r.line, price: r.over, uprice: r.under, typical: false }));
+  if (!rows.length) {
+    // Typical lines for each team's main players (QB pass yds, top RB rush yds, top 2 WR/TE rec yds).
+    for (const team of [g.away, g.home]) {
+      const mine = Object.entries(N.players).filter(([, p]) => p.t === team && !/^IR|Out|Inactive|Released|Retired|Suspended/.test(p.st || ''))
+        .map(([pid, p]) => ({ pid, p, r: nflPlayerRows(N, pid, g.t).filter(x => x.team === team).slice(-3) })).filter(x => x.r.length);
+      const vol = (x, k) => x.r.reduce((a, y) => a + (y[k] || 0), 0);
+      const top = (pos, k, n, stat) => mine.filter(x => pos.includes(x.p.pos)).sort((a, b) => vol(b, k) - vol(a, k)).slice(0, n)
+        .forEach(x => rows.push({ pid: x.pid, stat, line: nflTypical(nflPlayerRows(N, x.pid, g.t), stat), typical: true }));
+      top(['QB'], 'att', 1, 'pass_yds'); top(['RB', 'FB'], 'car', 1, 'rush_yds'); top(['WR', 'TE'], 'tgt', 2, 'rec_yds');
+    }
+  }
+  for (const r of rows) {
+    const p = N.players[r.pid];
+    if (!p || !NFL_STATS[r.stat]) continue;
+    const team = p.t, opp = team === g.home ? g.away : g.home;
+    const w = nflPlayerWindows(nflPlayerRows(N, r.pid, g.t), r.stat, r.line, 'o', opp, g.season);
+    for (const [k, family, words] of NFL_WINDOWS) {
+      const win = w[k], s = nflStrongSide(win.rows.map(x => outcome(NFL_STATS[r.stat].f(x), r.line, 'o')));
+      if (!s) continue;
+      const side = s.side === 'o' ? 'over' : 'under', label = NFL_STATS[r.stat].label.toLowerCase();
+      out.push({ type: 'player', pid: r.pid, name: p.n, team, img: p.img, stat: r.stat, line: r.line, side: s.side, typical: r.typical,
+        price: s.side === 'o' ? r.price : r.uprice, group: `${r.pid}|${r.stat}`, family, strength: nflWilson(s.hits, s.n),
+        text: `${p.n} has gone ${side} ${r.line} ${label} in ${s.hits} of his ${words(s.n, opp)}.`,
+        label: `${p.n} ${side} ${r.line} ${label}`, results: s.results, dates: win.rows.map(x => x.g.date),
+        rate: s.rate, n: s.n, hits: s.hits });
+    }
+  }
+  const markets = [['ml', false], ['spread', false], ['total', true]];
+  for (const team of [g.away, g.home]) {
+    const opp = team === g.home ? g.away : g.home;
+    for (const [m, both] of markets) {
+      if (m === 'ml' ? nflLines(g, team).ml == null : m === 'spread' ? g.home_spread == null : g.total == null) continue;
+      const w = nflWindows(N, g, team, m === 'total' ? 'over' : m);
+      const pick = { l5: w.rows.slice(-5), l10: w.rows.slice(-10), season: w.cur, h2h: w.rows.filter(x => x.opp === opp) };
+      for (const [k, family, words] of NFL_WINDOWS) {
+        const list = pick[k], s = nflStrongSide(lineResults(list, m === 'total' ? 'over' : m, w.num), both);
+        if (!s) continue;
+        const num = m === 'spread' ? signed(w.num) : '';
+        const what = m === 'ml' ? `won ${s.hits} of their ${words(s.n, opp)}`
+          : m === 'spread' ? `covered ${num} in ${s.hits} of their ${words(s.n, opp)}`
+          : `gone ${s.side === 'o' ? 'over' : 'under'} ${w.num} in ${s.hits} of their ${words(s.n, opp)}`;
+        const L = nflLines(g, team);
+        out.push({ type: 'team', team, market: m === 'total' ? (s.side === 'o' ? 'over' : 'under') : m, group: `${team}|${m}`, family,
+          strength: nflWilson(s.hits, s.n), text: `The ${nflTeamName(N, team)} have ${what}.`,
+          label: m === 'ml' ? `${team} money line` : m === 'spread' ? `${team} ${num}` : `${s.side === 'o' ? 'Over' : 'Under'} ${w.num}`,
+          price: m === 'ml' ? L.ml : m === 'spread' ? (team === g.home ? g.home_spread_odds : g.away_spread_odds) : s.side === 'o' ? g.over_odds : g.under_odds,
+          results: s.results, dates: list.map(x => x.g.date), rate: s.rate, n: s.n, hits: s.hits });
+      }
+    }
+  }
+  for (const x of out) { x.gid = g.id; x.t = g.t; if (x.type === 'player') x.market = x.stat; }
+  return nflKeepBest(out);
+}
+
+/* One insight as a card (game page Insights tab and the NFL Trends page). */
+function nflInsightCard(N, x, showGame) {
+  const g = N.byId.get(x.gid) || {};
+  const who = x.type === 'player'
+    ? `${x.img ? `<img class="nflmug" src="${esc(x.img)}" alt="" width="44" height="44" loading="lazy" onerror="this.remove()">` : ''}<div class="grow"><b>${esc(x.name)}</b> <small>(${esc(x.team)})</small></div>`
+    : `${nflLogo(N, x.team, 40)}<div class="grow"><b>${esc(nflTeamName(N, x.team))}</b></div>`;
+  const game = showGame && g.id ? `<span class="tag">${esc(g.away)} @ ${esc(g.home)}</span>` : '';
+  const price = x.price != null ? `<span class="price">${odds(x.price)}</span>` : x.typical ? '<span class="tag">typical line</span>' : '';
+  const href = x.type === 'player' ? `nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&line=${x.line}${x.side === 'u' ? '&side=u' : ''}&g=${encodeURIComponent(x.gid)}`
+    : `nfl-game.html?id=${encodeURIComponent(x.gid)}&m=${x.market}&s=${x.team === g.away ? 'a' : 'h'}#lines`;
+  return `<a class="card insight" href="${href}"><div class="row">${who}${game}</div>
+    <p class="itext">${esc(x.text)}</p>
+    <div class="ibet"><span class="grow">${esc(x.label)}</span>${price}</div>
+    ${strip(x.results, x.dates.map((d, i) => `${shortDate(d)}: ${x.results[i]}`))}
+    <div class="irate"><b class="rate ${x.rate >= 0.75 ? 'hot' : ''}">${pct(x.rate)}</b> in the last ${x.n} games</div></a>`;
+}
+
 // ---------------------------------------------------------------- live scores
 // While a game is on (or kicking off within 10 minutes), NFL pages ask ESPN's public scoreboard for fresh scores every
 // 25 s straight from the browser, like Hoop Lab's live.js (whose parseLiveScoreboard / liveTag / liveNote this reuses),
@@ -501,5 +618,5 @@ function nflStartLive(N, opts) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { nflApplyLive, nflParseLiveBox, nflLiveValue, nflLiveScore, nflLiveWait, nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
+  module.exports = { nflGameInsights, nflInsightCard, nflStrongSide, nflWilson, nflApplyLive, nflParseLiveBox, nflLiveValue, nflLiveScore, nflLiveWait, nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
 }
