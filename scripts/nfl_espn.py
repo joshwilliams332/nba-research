@@ -267,18 +267,21 @@ def fetch_season(season, cache, refresh_weeks=2, get=get):
     pending = 0
     for stype, w in weeks:
         f = folder / f"{season}-{stype}-{w:02d}.json"
-        evs = None
+        evs = stale = None
         if f.exists():
             evs = json.loads(f.read_text())
             if any(e.get("state") != "post" for e in evs):
-                evs = None   # not finished when cached: refresh
+                stale, evs = evs, None   # not finished when cached: refresh (the old copy is the fallback)
         if evs is None:
             if pending > refresh_weeks:
+                games += stale or []
                 continue      # far-future weeks: no need every run (they'd still have no scores)
             try:
                 doc = get(f"{API}/scoreboard?dates={season}&seasontype={stype}&week={w}")
                 fetched += 1
             except Exception:
+                games += stale or []   # ESPN down: keep what we had
+                pending += 1 if stale else 0
                 continue
             evs = [g for g in (parse_event(e) for e in doc.get("events", [])) if g]
             if evs:
