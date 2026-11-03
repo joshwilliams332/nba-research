@@ -256,7 +256,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
       ${upcoming}
       ${past.length ? `<details class="mall" data-open="nflhistory"${isOpen('nflhistory', false) ? ' open' : ''}>
         <summary>See all picks <small>${past.length} slate${past.length === 1 ? '' : 's'}</small></summary>${past.map(block).join('')}</details>` : ''}
-      <p class="note">Graded here from nflverse box scores. Test nights before the official record started are left out.</p>
+      <p class="note">Graded here from ESPN box scores (nflverse as backup). Test nights before the official record started are left out.</p>
     </details>`;
   }
   const modelCards = () => store('sport') === 'nfl' ? nflModelCard() + modelCard() : modelCard() + nflModelCard();
