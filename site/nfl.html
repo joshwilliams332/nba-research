@@ -46,7 +46,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
     if (on) on.scrollIntoView({ inline: 'center', block: 'nearest' });
   }
   function weekSpan(w) {
-    const d = N.games.filter(g => g.week === w).map(g => g.date).sort();
+    const d = N.games.filter(g => g.season === meta.season && g.week === w).map(g => g.date).sort();
     return d.length ? fmtDay(d[0], { month: 'short', day: 'numeric' }) : '';
   }
 
@@ -82,7 +82,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
 
   function renderList() {
     const term = q.value.trim().toLowerCase();
-    const list = N.games.filter(g => g.week === week && g.type === 'REG').filter(g => !term || [g.home, g.away].some(t => {
+    const list = N.games.filter(g => g.season === meta.season && g.week === week && g.type === 'REG').filter(g => !term || [g.home, g.away].some(t => {
       const T = N.teams[t] || {};
       return `${t} ${T.city || ''} ${T.nickname || ''}`.toLowerCase().includes(term);
     }));
