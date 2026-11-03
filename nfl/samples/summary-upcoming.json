@@ -640,8 +640,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "2",
       "uid": "s:20~l:28~t:2",
@@ -706,7 +704,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -798,8 +798,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "17",
       "uid": "s:20~l:28~t:17",
@@ -864,7 +862,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401872969",
@@ -976,8 +976,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "21",
       "uid": "s:20~l:28~t:21",
@@ -1042,7 +1040,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401872996",
@@ -1154,8 +1154,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "11",
       "uid": "s:20~l:28~t:11",
@@ -1220,7 +1218,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   }
@@ -2744,7 +2744,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1,
     "logos": [
      {
@@ -2795,7 +2795,7 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_1",
      "text": "Home Bet",
@@ -2819,7 +2819,7 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_3",
      "text": "Away Bet",
@@ -2959,7 +2959,7 @@
         "home",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_1",
        "text": "Home Bet",
@@ -2991,7 +2991,7 @@
         "away",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_3",
        "text": "Away Bet",
@@ -3323,6 +3323,18 @@
    "records": []
   }
  ],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "33",
+   "gameProjection": "18.9"
+  },
+  "awayTeam": {
+   "id": "30",
+   "gameProjection": "80.9"
+  }
+ },
+ "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -3659,11 +3671,11 @@
      },
      {
       "type": "Media",
-      "name": "D'Andre Swift breaks the plane for his 3rd TD",
-      "caption": "D'Andre Swift breaks the plane for his 3rd TD",
+      "name": "Jeffery Simmons records first sack with Bears",
+      "caption": "Jeffery Simmons records first sack with Bears",
       "height": 324,
       "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1102/098f4ef3008c4883aec15d49fd46f0e31405/098f4ef3008c4883aec15d49fd46f0e31405.jpg"
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1102/7d5f53d7adfd487798dbd6304073b30a1323/7d5f53d7adfd487798dbd6304073b30a1323.jpg"
      }
     ],
     "categories": [
@@ -4496,18 +4508,6 @@
    }
   ]
  },
- "winprobability": [],
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "33",
-   "gameProjection": "18.9"
-  },
-  "awayTeam": {
-   "id": "30",
-   "gameProjection": "80.9"
-  }
- },
  "header": {
   "id": "401873037",
   "uid": "s:20~l:28~e:401873037",
@@ -5291,7 +5291,7 @@
     "type": "event"
    },
    {
-    "ticketName": "11/16 vs Chargers 6550 tickets left",
+    "ticketName": "11/16 vs Chargers 6542 tickets left",
     "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717",
     "type": "event"
    },
@@ -5301,7 +5301,7 @@
     "type": "event"
    },
    {
-    "ticketName": "11/29 @ Texans 6603 tickets left",
+    "ticketName": "11/29 @ Texans 6599 tickets left",
     "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
     "type": "event"
    },
