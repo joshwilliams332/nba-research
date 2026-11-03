@@ -66,6 +66,7 @@ jobs:
           git clone -q --depth 1 --branch data --filter=blob:none --sparse https://github.com/joshwilliams332/mingus mingus-data
           git -C mingus-data sparse-checkout set odds/props model/projections picks
           python3 scripts/build_nfl.py --mingus mingus --mingus-data mingus-data | tee -a "$GITHUB_STEP_SUMMARY"
+          python3 scripts/nfl_espn_samples.py store | tee -a "$GITHUB_STEP_SUMMARY" || true
       # Errors (no games, no logs) fail the run before deploying; warnings go to the run's summary page.
       - name: Check the data
         run: python3 scripts/check_data.py
