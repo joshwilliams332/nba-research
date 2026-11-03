@@ -34,7 +34,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   const pid = params.get('id'), p = N.players[pid];
   if (!p) { main.innerHTML = emptyState('Player not found.', '<a href="nfl-players.html">Find a player</a>'); return; }
   document.title = `NFL Lab · ${p.n}`;
-  document.getElementById('foot').innerHTML = `<p>NFL data: nflverse (stats, rosters, injuries) and Mingus Football (props and projections). Hit rates describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
+  document.getElementById('foot').innerHTML = `<p>NFL data: ESPN box scores and injuries this season, nflverse history, Mingus Football props and projections. Hit rates describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
 
   const g = (params.get('g') && N.byId.get(params.get('g'))) || nflNextGame(N, p.t);
   const opp = g ? (g.home === p.t ? g.away : g.home) : null;

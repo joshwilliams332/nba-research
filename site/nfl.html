@@ -36,7 +36,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
   const params = new URLSearchParams(location.search);
   let week = +params.get('w') || nflCurrentWeek(N);
   const q = document.getElementById('q');
-  document.getElementById('foot').innerHTML = `<p>NFL data: Mingus Football (nflverse schedules, scores and lines), updated ${esc(String(meta.built_at || '').slice(0, 16).replace('T', ' '))} UTC.
+  document.getElementById('foot').innerHTML = `<p>NFL data: ESPN (scores, DraftKings lines, box scores, injuries) with nflverse history, updated ${esc(String(meta.built || meta.built_at || '').slice(0, 16).replace('T', ' '))} UTC.
     Lines and trends describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
 
   function renderWeeks() {
@@ -91,7 +91,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
       : emptyState(term ? 'No games match that search.' : 'No games this week.', term ? '' : 'Pick another week above.');
     const final = list.filter(g => g.final).length;
     document.getElementById('slate').textContent = [`Week ${week}`, `${list.length} game${list.length === 1 ? '' : 's'}`,
-      final ? `${final} final` : '', 'lines from nflverse'].filter(Boolean).join(' · ');
+      final ? `${final} final` : '', meta.source && meta.source.startsWith('ESPN') ? 'DraftKings lines' : 'lines from nflverse'].filter(Boolean).join(' · ');
   }
 
   document.getElementById('weeks').addEventListener('click', e => {

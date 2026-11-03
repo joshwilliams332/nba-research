@@ -2,8 +2,12 @@
 """NFL Lab data: build site/data/nfl/ for the NFL side of Mingus Lab.
 
 Sources (all public, no Odds API credits):
+- ESPN's NFL site API (scripts/nfl_espn.py) for this season: games, final and live scores, records, DraftKings lines
+  (line history kept in the store), box scores (player logs, team totals with third down and red zone) and the injury
+  report. ESPN athletes are matched to nflverse ids through the rosters' `espn_id`.
 - nflverse (github.com/nflverse/nflverse-data releases): schedules with lines and scores, team and player weekly
-  stats, weekly rosters (reserve / IR status) and injury reports, for last season and this one.
+  stats, weekly rosters (reserve / IR status) and injury reports. It covers last season and is the fallback for any
+  game, box score or injury report ESPN doesn't give us this season.
 - Mingus Football (github.com/joshwilliams332/mingus), which owns the NFL models: team logos and colors from its site
   data, and from its `data` branch the sportsbook props it pulls (`odds/props/<game>.json`) and its projections
   (`model/projections/<season>-wNN.json`). The workflow checks both out (sparse) and passes the folders in.
@@ -31,6 +35,9 @@ import json
 import sys
 import urllib.request
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import nfl_espn  # noqa: E402
 
 NFLVERSE = "https://github.com/nflverse/nflverse-data/releases/download"
 OUT = Path(__file__).resolve().parent.parent / "site" / "data" / "nfl"
@@ -243,6 +250,128 @@ def build_picks(data_dir):
     return out
 
 
+# ---------------------------------------------------------------- ESPN on top of nflverse (this season)
+
+LINE_KEYS = ("home_spread", "total", "home_ml", "away_ml", "home_spread_odds", "away_spread_odds", "over_odds", "under_odds", "book")
+
+
+def set_implied(g):
+    if g.get("home_spread") is not None and g.get("total") is not None:
+        g["home_implied"] = round(g["total"] / 2 - g["home_spread"] / 2, 1)
+        g["away_implied"] = round(g["total"] / 2 + g["home_spread"] / 2, 1)
+    return g
+
+
+def merge_games(games, espn_games, boxes, history, now):
+    """ESPN's games replace nflverse's for the same id (scores, state, records, DraftKings lines); nflverse keeps the
+    weather and division flag and covers anything ESPN didn't return. `history` (gid -> [[time, spread, total]]) gets
+    a new entry whenever a pregame line changes; games carry `open` (first line seen) and `lh`."""
+    by_id = {g["id"]: g for g in games}
+    for e in espn_games:
+        g = by_id.get(e["id"])
+        if g is None:
+            g = by_id[e["id"]] = {"div": False}
+        line = {k: e[k] for k in LINE_KEYS if k in e}
+        if "home_spread" not in line and "total" not in line:
+            line = (boxes.get(e["id"]) or {}).get("line") or {}
+        if line:
+            for k in LINE_KEYS:
+                g.pop(k, None)
+            g.update(line)
+        g.update({k: v for k, v in e.items() if k not in LINE_KEYS and (v is not None or k not in g)})
+        g["src"] = "espn"
+        if e["state"] == "pre" and (g.get("home_spread") is not None or g.get("total") is not None):
+            h = history.setdefault(e["id"], [])
+            point = [g.get("home_spread"), g.get("total")]
+            if not h or h[-1][1:] != point:
+                h.append([now] + point)
+        if history.get(e["id"]):
+            h = history[e["id"]]
+            g["open"] = {"home_spread": h[0][1], "total": h[0][2], "at": h[0][0]}
+            g["lh"] = h
+        set_implied(g)
+    out = list(by_id.values())
+    out.sort(key=lambda g: (g["date"], g["time"]))
+    return out
+
+
+def espn_ids(roster_rows):
+    """ESPN athlete id -> (gsis id, position, name) from nflverse rosters (latest week wins)."""
+    out = {}
+    for r in sorted(roster_rows, key=lambda r: num(r.get("week"), int) or 0):
+        if r.get("espn_id") and r.get("gsis_id"):
+            out[str(num(r["espn_id"], int) or r["espn_id"])] = (r["gsis_id"], r.get("position"), r.get("full_name"))
+    return out
+
+
+def merge_boxes(games, boxes, players, logs, teamstats, ids):
+    """ESPN box scores replace nflverse's rows for the same player-week (and team-week). Target share comes from the
+    team's targets in that game; air-yard share isn't in the box score, so nflverse's is kept when it has one."""
+    cols = logs["cols"]
+    at = {c: i + 4 for i, c in enumerate(cols)}
+    unmatched = set()
+    by_id = {g["id"]: g for g in games}
+    for gid, box in boxes.items():
+        g = by_id.get(gid)
+        if not g:
+            continue
+        season, week = g["season"], g["week"]
+        opp = {g["home"]: g["away"], g["away"]: g["home"]}
+        tgts = {}
+        for row in box["players"].values():
+            tgts[row["team"]] = tgts.get(row["team"], 0) + row.get("tgt", 0)
+        for eid, row in box["players"].items():
+            match = ids.get(eid)
+            if not match:
+                if any(row.get(k) for k in ("att", "car", "tgt", "rec")):
+                    unmatched.add(eid)
+                continue
+            pid, pos, name = match
+            if pos not in POSITIONS:
+                continue
+            vals = [row.get(c, 0) for c in cols]
+            vals[cols.index("tgt_sh")] = round(row.get("tgt", 0) / tgts[row["team"]], 3) if tgts.get(row["team"]) else None
+            mine = logs["logs"].setdefault(pid, [])
+            old = next((r for r in mine if r[0] == season and r[1] == week), None)
+            vals[cols.index("ay_sh")] = old[at["ay_sh"]] if old else None
+            if not any(v for v in vals):
+                continue
+            new = [season, week, row["team"], opp.get(row["team"])] + vals
+            if old:
+                mine[mine.index(old)] = new
+            else:
+                mine.append(new)
+                mine.sort(key=lambda r: (r[0], r[1]))
+            p = players.setdefault(pid, {"n": row.get("n") or name, "pos": pos, "t": row["team"], "img": None})
+            p["img"] = p.get("img") or row.get("img")
+            if (season, week) >= max((r[0], r[1]) for r in mine):
+                p["t"] = row["team"]
+        for team, tot in box["teams"].items():
+            rows = teamstats.setdefault(team, [])
+            rows[:] = [r for r in rows if (r["season"], r["week"]) != (season, week)]
+            rows.append({"season": season, "week": week, "opp": opp.get(team)} | {k: (v if v is not None else 0) if not isinstance(v, list) else v for k, v in tot.items()})
+            rows.sort(key=lambda r: (r["season"], r["week"]))
+    return len(unmatched)
+
+
+def apply_espn_injuries(players, injuries, ids):
+    """ESPN's current injury report (Out / Doubtful / Questionable / IR ...) for matched players, replacing nflverse's
+    weekly report. A reserve status from the roster stays unless ESPN lists him."""
+    n = 0
+    for eid, i in injuries.items():
+        match = ids.get(eid)
+        if not match or match[0] not in players:
+            continue
+        p = players[match[0]]
+        p["st"], p["det"] = i["st"], i["det"]
+        if i.get("note"):
+            p["note"] = i["note"]
+        if i.get("ret"):
+            p["ret"] = i["ret"]
+        n += 1
+    return n
+
+
 def current_week(games, season):
     open_ = [g for g in games if g["season"] == season and g["home_score"] is None and g["type"] == "REG"]
     if open_:
@@ -251,7 +380,8 @@ def current_week(games, season):
     return max(weeks) if weeks else 1
 
 
-def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch=fetch_csv):
+def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch=fetch_csv, espn=None, espn_get=None):
+    """`espn`: the store folder for ESPN caches (store/nfl/espn); None builds from nflverse alone."""
     season = season or season_now()
     seasons = [season - 1, season]
     games = build_games(fetch("schedules/games.csv", cache), seasons)
@@ -271,13 +401,31 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
         injuries = fetch(f"injuries/injuries_{season}.csv", cache)
     except Exception:
         injuries = []
-    players = apply_status(players, roster, injuries)
+    note = "nflverse only"
+    if espn:
+        get = espn_get or nfl_espn.get
+        espn = Path(espn)
+        espn_games, calls = nfl_espn.fetch_season(season, espn, get=get)
+        boxes, new_boxes = nfl_espn.fetch_boxes(espn_games, espn, get=get)
+        espn_inj = nfl_espn.fetch_injuries(get=get)
+        hist_file = espn / "lines.json"
+        history = json.loads(hist_file.read_text()) if hist_file.exists() else {}
+        games = merge_games(games, espn_games, boxes, history, dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"))
+        hist_file.write_text(json.dumps(history, separators=(",", ":")))
+        ids = espn_ids(roster)
+        players = apply_status(players, roster, [] if espn_inj else injuries)
+        unmatched = merge_boxes(games, boxes, players, logs, teamstats, ids)
+        hurt = apply_espn_injuries(players, espn_inj, ids)
+        note = (f"ESPN: {len(espn_games)} games ({calls} scoreboard calls), {len(boxes)} box scores ({new_boxes} new), "
+                f"{hurt} injury-report players, {unmatched} box-score players without an nflverse id")
+    else:
+        players = apply_status(players, roster, injuries)
     teams = json.loads((Path(mingus) / "site" / "data" / "teams.json").read_text()) if mingus else {}
     props = build_props(mingus_data)
     proj = build_proj(mingus_data)
     picks = build_picks(mingus_data)
     meta = {"season": season, "seasons": seasons, "week": current_week(games, season),
-            "built": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "source": "nflverse + Mingus Football"}
+            "built": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "source": "ESPN + nflverse + Mingus Football" if espn else "nflverse + Mingus Football"}
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     for name, value in (("meta", meta), ("games", games), ("teams", teams), ("teamstats", teamstats),
@@ -285,7 +433,7 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
         (out / f"{name}.json").write_text(json.dumps(value, separators=(",", ":")))
     final = sum(1 for g in games if g["home_score"] is not None)
     return (f"NFL Lab: {len(games)} games ({final} final) over {seasons}, week {meta['week']}, {len(players)} players, "
-            f"props for {len(props['games'])} games, projections for {len(proj)} games, {sum(len(d['picks']) for d in picks['history'])} model picks")
+            f"props for {len(props['games'])} games, projections for {len(proj)} games, {sum(len(d['picks']) for d in picks['history'])} model picks. {note}")
 
 
 def main():
@@ -293,9 +441,10 @@ def main():
     ap.add_argument("--mingus", help="checkout of Mingus Football's main branch (for site/data/teams.json)")
     ap.add_argument("--mingus-data", help="checkout of Mingus Football's data branch (odds/props, model/projections)")
     ap.add_argument("--cache", help="folder to cache nflverse downloads in")
+    ap.add_argument("--espn", help="store folder for ESPN caches (e.g. store/nfl/espn); leave out for nflverse only")
     args = ap.parse_args()
     try:
-        print(build(args.mingus, args.mingus_data, cache=args.cache))
+        print(build(args.mingus, args.mingus_data, cache=args.cache, espn=args.espn))
     except Exception as e:  # never break the deploy over football data
         print(f"NFL Lab: skipped ({e}); the NFL pages will say the data is unavailable", file=sys.stderr)
         sys.exit(1)

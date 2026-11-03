@@ -30,6 +30,23 @@ def main(store):
     for name, eid in (("summary-final", final), ("summary-upcoming", upcoming)):
         if eid:
             (out / f"{name}.json").write_text(json.dumps(get(f"{API}/summary?event={eid}"), indent=1))
+    # Does ESPN's odds feed carry player props? (core API: providers per game, then each provider's propBets)
+    if upcoming:
+        core = f"https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{upcoming}/competitions/{upcoming}/odds"
+        try:
+            odds = get(core)
+            (out / "odds-upcoming.json").write_text(json.dumps(odds, indent=1))
+            for item in (odds.get("items") or [])[:4]:
+                ref = item.get("$ref", "").split("?")[0]
+                pid = ref.rstrip("/").rsplit("/", 1)[-1]
+                try:
+                    props = get(f"{ref}/propBets?limit=1000")
+                    (out / f"propbets-{pid}.json").write_text(json.dumps(props, indent=1))
+                    print(f"propBets provider {pid}: {props.get('count')} entries")
+                except Exception as e:
+                    print(f"propBets provider {pid}: {e}")
+        except Exception as e:
+            print(f"odds: {e}", file=sys.stderr)
     for name, url in (("injuries", f"{API}/injuries"), ("teams", f"{API}/teams")):
         try:
             (out / f"{name}.json").write_text(json.dumps(get(url), indent=1))

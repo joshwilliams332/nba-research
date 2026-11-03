@@ -35,7 +35,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   if (!g) { main.innerHTML = emptyState('Game not found.', '<a href="nfl.html">Back to NFL games</a>'); return; }
   const A = N.teams[g.away] || {}, H = N.teams[g.home] || {};
   document.title = `NFL Lab · ${g.away} @ ${g.home}`;
-  document.getElementById('foot').innerHTML = `<p>NFL data: Mingus Football (nflverse). Trends describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
+  document.getElementById('foot').innerHTML = `<p>NFL data: ESPN (scores, DraftKings lines, box scores, injuries) with nflverse history; props from Mingus Football. Trends describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
 
   const st = {
     tab: ['#matchup', '#props'].includes(location.hash) ? location.hash.slice(1) : 'lines', open: null,
