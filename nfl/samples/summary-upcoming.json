@@ -176,11 +176,11 @@
    ]
   },
   "weather": {
-   "temperature": 64,
-   "highTemperature": 64,
-   "lowTemperature": 64,
+   "temperature": 65,
+   "highTemperature": 65,
+   "lowTemperature": 65,
    "conditionId": "38",
-   "gust": 8,
+   "gust": 7,
    "precipitation": 29,
    "link": {
     "language": "en-US",
@@ -640,8 +640,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "2",
       "uid": "s:20~l:28~t:2",
@@ -706,7 +704,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -887,8 +887,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "4",
       "uid": "s:20~l:28~t:4",
@@ -953,7 +951,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401872981",
@@ -1065,8 +1065,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "34",
       "uid": "s:20~l:28~t:34",
@@ -1131,7 +1129,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873028",
@@ -3323,6 +3323,17 @@
    "records": []
   }
  ],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "33",
+   "gameProjection": "18.9"
+  },
+  "awayTeam": {
+   "id": "30",
+   "gameProjection": "80.9"
+  }
+ },
  "news": {
   "header": "NFL News",
   "link": {
@@ -4497,17 +4508,6 @@
   ]
  },
  "winprobability": [],
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "33",
-   "gameProjection": "18.9"
-  },
-  "awayTeam": {
-   "id": "30",
-   "gameProjection": "80.9"
-  }
- },
  "header": {
   "id": "401873037",
   "uid": "s:20~l:28~e:401873037",
@@ -5287,12 +5287,12 @@
     "type": "team"
    },
    {
-    "ticketName": "11/5 vs Jaguars 4820 tickets left",
+    "ticketName": "11/5 vs Jaguars 4824 tickets left",
     "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-4-2026/production/6487393?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/16 vs Chargers 5387 tickets left",
+    "ticketName": "11/16 vs Chargers 5388 tickets left",
     "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717",
     "type": "event"
    },
