@@ -212,19 +212,6 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
 
   // ---------------------------------------------------------------- insights
   let insights;
-  function insightCard(x) {
-    const who = x.type === 'player'
-      ? `${x.img ? `<img class="nflmug" src="${esc(x.img)}" alt="" width="44" height="44" loading="lazy" onerror="this.remove()">` : ''}<div class="grow"><b>${esc(x.name)}</b> <small>(${esc(x.team)})</small></div>`
-      : `${nflLogo(N, x.team, 40)}<div class="grow"><b>${esc(nflTeamName(N, x.team))}</b></div>`;
-    const price = x.price != null ? `<span class="price">${odds(x.price)}</span>` : x.typical ? '<span class="tag">typical line</span>' : '';
-    const href = x.type === 'player' ? `nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&line=${x.line}${x.side === 'u' ? '&side=u' : ''}&g=${encodeURIComponent(g.id)}`
-      : `nfl-game.html?id=${encodeURIComponent(g.id)}&m=${x.market}&s=${x.team === g.away ? 'a' : 'h'}#lines`;
-    return `<a class="card insight" href="${href}"><div class="row">${who}</div>
-      <p class="itext">${esc(x.text)}</p>
-      <div class="ibet"><span class="grow">${esc(x.label)}</span>${price}</div>
-      ${strip(x.results, x.dates.map((d, i) => `${shortDate(d)}: ${x.results[i]}`))}
-      <div class="irate"><b class="rate ${x.rate >= 0.75 ? 'hot' : ''}">${pct(x.rate)}</b> in the last ${x.n} games</div></a>`;
-  }
   function insightsPane() {
     insights = insights || nflGameInsights(N, g);
     const sorts = { best: (a, b) => b.strength - a.strength, rate: (a, b) => b.rate - a.rate || b.n - a.n };
@@ -234,7 +221,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
       <span class="grow"></span>
       <div class="seg">${[['best', 'Best'], ['rate', 'Hit rate']].map(([k, l]) => `<button data-isort="${k}" class="${k === st.isort ? 'on' : ''}">${l}</button>`).join('')}</div></div>`;
     const note = insights.some(x => x.typical) ? `<p class="note" style="margin:-4px 0 10px">No sportsbook props for this game yet, so player trends use typical lines (half a point above the last-10 average).</p>` : '';
-    return controls + note + (list.length ? `<div class="insights">${list.map(insightCard).join('')}</div>`
+    return controls + note + (list.length ? `<div class="insights">${list.map(x => nflInsightCard(N, x)).join('')}</div>`
       : `<div class="card empty">No strong trends for this game: nothing hits 75% or more over 5+ games.</div>`);
   }
 

@@ -471,7 +471,25 @@ function nflGameInsights(N, g) {
       }
     }
   }
+  for (const x of out) { x.gid = g.id; x.t = g.t; if (x.type === 'player') x.market = x.stat; }
   return nflKeepBest(out);
+}
+
+/* One insight as a card (game page Insights tab and the NFL Trends page). */
+function nflInsightCard(N, x, showGame) {
+  const g = N.byId.get(x.gid) || {};
+  const who = x.type === 'player'
+    ? `${x.img ? `<img class="nflmug" src="${esc(x.img)}" alt="" width="44" height="44" loading="lazy" onerror="this.remove()">` : ''}<div class="grow"><b>${esc(x.name)}</b> <small>(${esc(x.team)})</small></div>`
+    : `${nflLogo(N, x.team, 40)}<div class="grow"><b>${esc(nflTeamName(N, x.team))}</b></div>`;
+  const game = showGame && g.id ? `<span class="tag">${esc(g.away)} @ ${esc(g.home)}</span>` : '';
+  const price = x.price != null ? `<span class="price">${odds(x.price)}</span>` : x.typical ? '<span class="tag">typical line</span>' : '';
+  const href = x.type === 'player' ? `nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&line=${x.line}${x.side === 'u' ? '&side=u' : ''}&g=${encodeURIComponent(x.gid)}`
+    : `nfl-game.html?id=${encodeURIComponent(x.gid)}&m=${x.market}&s=${x.team === g.away ? 'a' : 'h'}#lines`;
+  return `<a class="card insight" href="${href}"><div class="row">${who}${game}</div>
+    <p class="itext">${esc(x.text)}</p>
+    <div class="ibet"><span class="grow">${esc(x.label)}</span>${price}</div>
+    ${strip(x.results, x.dates.map((d, i) => `${shortDate(d)}: ${x.results[i]}`))}
+    <div class="irate"><b class="rate ${x.rate >= 0.75 ? 'hot' : ''}">${pct(x.rate)}</b> in the last ${x.n} games</div></a>`;
 }
 
 // ---------------------------------------------------------------- live scores
@@ -600,5 +618,5 @@ function nflStartLive(N, opts) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { nflGameInsights, nflStrongSide, nflWilson, nflApplyLive, nflParseLiveBox, nflLiveValue, nflLiveScore, nflLiveWait, nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
+  module.exports = { nflGameInsights, nflInsightCard, nflStrongSide, nflWilson, nflApplyLive, nflParseLiveBox, nflLiveValue, nflLiveScore, nflLiveWait, nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
 }

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NFL Lab · Trends</title>
+<meta name="description" content="NFL trends for this week: player props and game lines that have hit 75% or more over 5+ games.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mingus Lab">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head>
+<body>
+<header id="top"></header>
+<main>
+  <section class="pagehead"><h1>NFL Trends</h1><p id="sub">&nbsp;</p></section>
+  <input class="search" id="q" type="search" placeholder="Search players or teams…" autocomplete="off" style="margin-bottom:10px">
+  <div class="row" style="margin-bottom:10px;flex-wrap:wrap">
+    <div class="seg" id="kind"></div><span class="grow"></span>
+    <label class="row" style="gap:6px;font-size:13px;color:var(--muted)">Sort <select id="sort" style="width:auto">
+      <option value="rate">Hit rate</option><option value="n">Sample size</option><option value="best">Strongest</option><option value="date">Kickoff</option></select></label>
+  </div>
+  <div class="tabs" id="mkts"></div>
+  <div class="tabs" id="games"></div>
+  <div id="list"></div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script src="assets/nfl.js"></script>
+<script>
+shell('nfl-trends', 'nfl');
+document.getElementById('list').innerHTML = skeleton(3, 3);
+load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/logs', 'nfl/props', 'nfl/proj')
+  .then(([meta, games, teams, teamstats, players, logs, props, proj]) => {
+  const N = nflAddPlayers(nflLab(meta, games, teams, teamstats), players, logs, props, proj);
+  document.getElementById('foot').innerHTML = `<p>Trends describe the past, not the future. Player trends use this week's DraftKings lines (typical lines, marked, when none are posted yet); team trends use this week's spread, total and money line. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
+  // This week's games that haven't kicked off.
+  const week = nflCurrentWeek(N);
+  const slate = N.games.filter(g => g.season === meta.season && g.week === week && !g.final && g.state !== 'in');
+  const sub = document.getElementById('sub');
+  if (!slate.length) { sub.innerHTML = '&nbsp;'; document.getElementById('list').innerHTML = emptyState('No upcoming games this week.'); return; }
+  sub.textContent = `Week ${week} · ${slate.length} game${slate.length === 1 ? '' : 's'} · trends that hit 75%+ over 5+ games`;
+
+  const all = slate.flatMap(g => nflGameInsights(N, g));
+  const st = { kind: 'all', mkt: 'all', gid: 'all', sort: 'rate' };
+  const TEAM_MKTS = { ml: 'Money line', spread: 'Spread', over: 'Over', under: 'Under' };
+  const ORDER = ['pass_yds', 'rush_yds', 'rec_yds', 'rec', 'rush_rec_yds', 'pass_td', 'cmp', 'att', 'car', 'int', 'pass_rush_yds', 'tgt', 'rush_td', 'rec_td', 'ml', 'spread', 'over', 'under'];
+  const mkts = [...new Set(all.map(x => x.market))].sort((a, b) => ORDER.indexOf(a) - ORDER.indexOf(b));
+  const mlabel = m => TEAM_MKTS[m] || (NFL_STATS[m] || {}).label || m;
+  const sorts = { rate: (a, b) => b.rate - a.rate || b.n - a.n, n: (a, b) => b.n - a.n || b.rate - a.rate, best: (a, b) => b.strength - a.strength,
+    date: (a, b) => (a.t < b.t ? -1 : a.t > b.t ? 1 : 0) || b.strength - a.strength };
+  const q = document.getElementById('q'), sortSel = document.getElementById('sort');
+
+  function render() {
+    document.getElementById('kind').innerHTML = [['all', 'All'], ['player', 'Players'], ['team', 'Teams']]
+      .map(([k, l]) => `<button data-kind="${k}" class="${k === st.kind ? 'on' : ''}">${l}</button>`).join('');
+    document.getElementById('mkts').innerHTML = [['all', 'All markets'], ...mkts.map(m => [m, mlabel(m)])]
+      .map(([k, l]) => `<button data-mkt="${k}" class="${k === st.mkt ? 'on' : ''}">${esc(l)}</button>`).join('');
+    document.getElementById('games').innerHTML = [['all', 'All games'], ...slate.map(g => [g.id, `${g.away} @ ${g.home}`])]
+      .map(([k, l]) => `<button data-gid="${k}" class="${k === st.gid ? 'on' : ''}">${esc(l)}</button>`).join('');
+    const term = q.value.trim().toLowerCase();
+    const list = all.filter(x => (st.kind === 'all' || x.type === st.kind) && (st.mkt === 'all' || x.market === st.mkt)
+      && (st.gid === 'all' || x.gid === st.gid)
+      && (!term || `${x.name || ''} ${x.team} ${nflTeamName(N, x.team)}`.toLowerCase().includes(term))).sort(sorts[st.sort]);
+    const typical = list.some(x => x.typical);
+    document.getElementById('list').innerHTML = (typical ? `<p class="note" style="margin:0 0 10px">Some games have no sportsbook props yet, so their player trends use typical lines (half a point above the last-10 average), marked on the card.</p>` : '')
+      + (list.length ? `<div class="insights">${list.map(x => nflInsightCard(N, x, true)).join('')}</div>` : emptyState('No trends match.', 'Try another market or game.'));
+  }
+  document.querySelector('main').addEventListener('click', e => {
+    const b = e.target.closest('[data-kind],[data-mkt],[data-gid]');
+    if (!b) return;
+    const d = b.dataset;
+    if (d.kind) st.kind = d.kind; else if (d.mkt) st.mkt = d.mkt; else st.gid = d.gid;
+    render();
+  });
+  q.addEventListener('input', render);
+  sortSel.addEventListener('change', () => { st.sort = sortSel.value; render(); });
+  render();
+}).catch(err => {
+  document.getElementById('list').innerHTML = emptyState('NFL data is unavailable right now.');
+  console.error(err);
+});
+</script>
+</body>
+</html>

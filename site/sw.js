@@ -13,7 +13,7 @@
 
 const VERSION = 'dev';
 const CACHE = `hooplab-${VERSION}`;
-const PAGES = ['./', 'index.html', 'nfl.html', 'nfl-game.html', 'nfl-player.html', 'nfl-props.html', 'nfl-players.html', 'game.html', 'player.html', 'players.html', 'props.html', 'standings.html',
+const PAGES = ['./', 'index.html', 'nfl.html', 'nfl-game.html', 'nfl-player.html', 'nfl-props.html', 'nfl-players.html', 'nfl-trends.html', 'game.html', 'player.html', 'players.html', 'props.html', 'standings.html',
   'team.html', 'trends.html', 'picks.html', 'model.html', 'line.html'];
 const ASSETS = ['assets/style.css', 'assets/common.js', 'assets/context.js', 'assets/insights.js', 'assets/pbp.js', 'assets/picks.js', 'assets/lines.js', 'assets/model.js', 'assets/gameline.js', 'assets/live.js', 'assets/nfl.js', 'assets/nfl.css'];
 const STATIC = ['manifest.webmanifest', 'assets/icon.svg', 'assets/icons/icon-192.png', 'assets/icons/icon-512.png',
