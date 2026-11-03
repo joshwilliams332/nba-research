@@ -92,3 +92,35 @@ test('players: logs join their games, windows by line, defense vs position and l
   assert.deepStrictEqual(F.nflLadder(240.5, 'pass_yds'), [210.5, 225.5, 240.5, 255.5, 270.5]);
   assert.deepStrictEqual(F.nflLadder(1.5, 'rec'), [0.5, 1.5, 2.5, 3.5]);
 });
+
+test('saved NFL picks: grading from box scores, open until stats are in, and the stat list matches picks.js', () => {
+  Object.assign(global, require('../site/assets/picks.js'), F);   // the browser shares one global scope
+  const P = require('../site/assets/picks.js');
+  const games2 = [...games, game('g5', 5, 'AAA', 'BBB', 24, 20)];    // final, but week 5 stats aren't in yet
+  const players = { qa: { n: 'QB A', pos: 'QB', t: 'AAA' }, qc: { n: 'QB C', pos: 'QB', t: 'CCC' } };
+  // QB A sat week 2 (QB C's row shows week 2's stats are in).
+  const logs = { cols: ['pass_yds'], logs: { qa: [[2026, 1, 'AAA', 'BBB', 250], [2026, 3, 'AAA', 'CCC', 300]], qc: [[2026, 2, 'CCC', 'AAA', 210]] } };
+  const G = F.nflAddPlayers(F.nflLab({ season: 2026 }, games2, teams, teamstats), players, logs);
+  const pick = over => P.makePick({ sport: 'nfl', gid: 'g1', pid: 'qa', stat: 'pass_yds', side: 'o', line: 240.5, price: -110, ...over });
+  assert.ok(P.validPick(pick()));
+  assert.ok(!P.validPick(pick({ stat: 'pts' })));
+  let gr = F.gradeNflPick(G, pick());
+  assert.deepStrictEqual([gr.status, gr.actual], ['win', 250]);
+  assert.strictEqual(gr.g.state, 'post');
+  assert.strictEqual(F.gradeNflPick(G, pick({ gid: 'g2' })).status, 'void');        // week 2 stats exist, no row: DNP
+  assert.strictEqual(F.gradeNflPick(G, pick({ gid: 'g5' })).status, 'open');        // final, stats pending
+  assert.strictEqual(F.gradeNflPick(G, pick({ gid: 'g4' })).status, 'open');        // not played yet
+  assert.match(P.pickText(pick()), /Over 240.5 Passing yards/);
+  assert.notStrictEqual(P.pickKey(pick()), P.pickKey({ ...pick(), sport: undefined }));
+  assert.deepStrictEqual(P.NFL_PICK_STATS, Object.keys(F.NFL_STATS));
+  // Mixed-sport parlay legs keep their sport.
+  const par = P.makeParlay({ legs: [pick(), { gid: '1', pid: 'p1', stat: 'pts', side: 'o', line: 20.5, price: -110 }] });
+  assert.strictEqual(par.legs[0].sport, 'nfl');
+  assert.ok(P.validPick(par));
+});
+
+test('kickoff times carry the Eastern offset', () => {
+  assert.strictEqual(F.nflIso({ date: '2026-10-25', time: '13:00' }), '2026-10-25T13:00:00-04:00');
+  assert.strictEqual(F.nflIso({ date: '2026-11-08', time: '13:00' }), '2026-11-08T13:00:00-05:00');
+  assert.strictEqual(F.nflIso({ date: '2026-11-01', time: '13:00' }), '2026-11-01T13:00:00-05:00');   // first Sunday of November
+});

@@ -22,6 +22,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/nfl.js"></script>
+<script src="assets/picks.js"></script>
 <script>
 shell('nfl-games', 'nfl');
 const main = document.getElementById('main');
@@ -129,13 +130,18 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
     }
     return { rows: out, typical: true };
   }
+  const pf = (x, line, price) => ({ sport: 'nfl', gid: g.id, pid: x.pid, name: (N.players[x.pid] || {}).n || (x.r && x.r.name), stat: x.stat, side: 'o', line,
+    price: price ?? null, book: price != null && x.r ? x.r.book_o || null : null });
+  let saved = savedKeys();
   function ladder(x) {
+    saved = savedKeys();
     const rows = nflPlayerRows(N, x.pid, g.t), f = NFL_STATS[x.stat].f;
     return nflLadder(x.line, x.stat).map(line => {
       const res = rows.slice(-10).map(r => outcome(f(r), line, 'o')), t = tally(res);
       const main = line === x.line, price = main && x.r ? x.r.over : null;
       return `<div class="row nflrung${main ? ' main' : ''}"><b class="ln">O ${line}</b><div class="grow">${strip(res)}</div>${rateTag(t)}
         ${price != null ? `<span class="price">${odds(price)}</span>` : ''}
+        ${g.final ? '' : pickButton(pf(x, line, price), saved.has(pickKey(pf(x, line, price))))}
         <a class="gopill" href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&line=${line}&g=${encodeURIComponent(g.id)}" aria-label="Breakdown">›</a></div>`;
     }).join('');
   }
@@ -215,6 +221,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
     else if (d.swap) st.off = st.off === g.home ? g.away : g.home;
     render();
   });
+  bindPickButtons(main);
   render();
   if (location.hash === '#lines') setTimeout(() => { const el = document.getElementById('lines'); if (el) el.scrollIntoView({ block: 'start' }); }, 50);
 }).catch(err => {

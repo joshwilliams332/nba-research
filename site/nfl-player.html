@@ -22,6 +22,7 @@
 <footer id="foot"></footer>
 <script src="assets/common.js"></script>
 <script src="assets/nfl.js"></script>
+<script src="assets/picks.js"></script>
 <script>
 shell('nfl-players', 'nfl');
 const main = document.getElementById('main');
@@ -81,7 +82,10 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
     document.getElementById('linecard').innerHTML = `
       <div class="row" style="gap:8px;flex-wrap:wrap"><h2 class="grow">${esc(NFL_STATS[st.stat].label)}</h2>
         <div class="seg"><button data-side="o" class="${st.side === 'o' ? 'on' : ''}">Over</button><button data-side="u" class="${st.side === 'u' ? 'on' : ''}">Under</button></div>
-        <div class="seg"><button data-step="-1" aria-label="Lower line">−</button><button class="on" disabled>${st.line}</button><button data-step="1" aria-label="Raise line">+</button></div></div>
+        <div class="seg"><button data-step="-1" aria-label="Lower line">−</button><button class="on" disabled>${st.line}</button><button data-step="1" aria-label="Raise line">+</button></div>
+        ${g && !g.final ? (() => { const fl = { sport: 'nfl', gid: g.id, pid, name: p.n, team: p.t, stat: st.stat, side: st.side, line: st.line,
+          price: b && b.line === st.line ? price : null, book: b && b.line === st.line ? ((st.side === 'o' ? b.book_o : b.book_u) || null) : null };
+          return pickButton(fl, savedKeys().has(pickKey(fl))); })() : ''}</div>
       <p class="note" style="margin:8px 0 0">${src}${fair}${b && st.line !== b.line ? ` · <a href="#" data-reset="1">back to ${b.line}</a>` : ''}</p>${projBox}`;
   }
 
@@ -153,6 +157,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
     const R = rates();
     renderStats(); renderLine(); renderWindows(R); renderChart(R); renderSupport(R); renderVsOpp(); renderLog();
   }
+  bindPickButtons(main);
   main.addEventListener('click', e => {
     const t = e.target.closest('[data-stat],[data-side],[data-step],[data-win],[data-support],[data-reset]');
     if (!t) return;

@@ -115,8 +115,13 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   typical line, H2H / L5 / L10 / L20 / season / last season, chart, supporting stats, defense vs position rank +
   players vs that defense, game log, Mingus projection box), `nfl-props.html` (week's props, sort bar, stat and side
   filters in `hooplab.nflprops`), `nfl-players.html`. Defense-vs-position ranks: 1 = allows the most (soft for an
-  over); team Matchup ranks: 1 = best. Next: Phase 3 shared My picks with NFL grading + football's record, Phase 4
-  NFL trends and a passing-zone chart.
+  over); team Matchup ranks: 1 = best. **Shared My picks (Phase 3):** picks with `sport: 'nfl'` (stats in
+  `NFL_PICK_STATS`, kept equal to `NFL_STATS` by a test) are saved from bookmarks on the NFL props page, game-page
+  ladder rungs and the player page line card, and graded by `gradeNflPick()` (open until the game is final and its
+  week's nflverse stats are in; void if the stats are in and he has no row). Parlays can mix sports (legs keep
+  `sport`). My picks shows two model cards (Hoop Lab; NFL Lab = Mingus Football's locked picks from `nfl/picks.json`,
+  test nights excluded, graded here), the current sport's card first, and a By sport breakdown. Next: Phase 4 NFL
+  trends and a passing-zone chart.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)

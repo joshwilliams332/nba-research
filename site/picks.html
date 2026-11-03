@@ -25,6 +25,7 @@
 <script src="assets/common.js"></script>
 <script src="assets/picks.js"></script>
 <script src="assets/live.js"></script>
+<script src="assets/nfl.js"></script>
 <script>
 shell('picks');
 document.getElementById('picks').innerHTML = skeleton(3, 3);
@@ -36,12 +37,22 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   const st = { range: store('picksRange') || 'all', from: '', to: '', manage: false, msg: '', building: false, sel: new Set(), boost: 0, price: '', units: 1 };
   let model = null;  // today's locked model picks (data/digest.json), when the data job has written them
   const modelReady = load('digest').then(([d]) => d).catch(() => null);
+  // NFL Lab: its data (to grade NFL picks) and Mingus Football's locked model picks.
+  let N = null;
+  const nflReady = load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/logs', 'nfl/picks')
+    .then(([meta, games, teams, teamstats, players, logs, picks]) => {
+      N = nflAddPlayers(nflLab(meta, games, teams, teamstats), players, logs);
+      N.modelPicks = picks;
+    }).catch(() => null);
 
   const isParlay = p => p.type === 'parlay';
-  // Grade one pick, with live box scores for games on now (each leg of a parlay too).
-  const grade = p => isParlay(p)
-    ? gradeParlay(L, p, leg => liveGradePick(L, leg, gradeResult(L, leg)))
-    : liveGradePick(L, p, gradePick(L, p));
+  const isNfl = p => p.sport === 'nfl';
+  const nflGrade = p => N ? gradeNflPick(N, p) : { status: 'open', profit: 0, why: 'NFL data loading' };
+  // Grade one pick, with live box scores for NBA games on now (each leg of a parlay too). NFL picks grade from
+  // nflverse's stats once the game is final.
+  const legGrade = leg => isNfl(leg) ? nflGrade(leg) : liveGradePick(L, leg, gradeResult(L, leg));
+  const grade = p => isParlay(p) ? gradeParlay(L, p, legGrade)
+    : isNfl(p) ? nflGrade(p) : liveGradePick(L, p, gradePick(L, p));
 
   // A pick's date is its game's (ET) date; falls back to the day it was saved.
   const pickDate = (p, g) => (g && g.d) || String(p.savedAt || '').slice(0, 10);
@@ -50,12 +61,17 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     const d = pickDate(p, g), today = L.meta.today;
     if (st.range === '7') return dayDiff(d, today) < 7;
     if (st.range === '30') return dayDiff(d, today) < 30;
-    if (st.range === 'season') return g ? g.s === L.meta.season : true;
+    if (st.range === 'season') return g ? g.s === (g.nfl ? (N ? N.meta.season : g.s) : L.meta.season) : true;
     if (st.range === 'custom') return (!st.from || d >= st.from) && (!st.to || d <= st.to);
     return true;
   }
 
   function who(p) {
+    if (isNfl(p)) {
+      const pl = (N && N.players[p.pid]) || {};
+      return { name: pl.n || p.name || 'Player', team: pl.t || p.team || '', img: `<span class="hs" style="width:40px;height:40px">${pl.img ? `<img src="${esc(pl.img)}" alt="" loading="lazy" onerror="this.remove()">` : ''}</span>`,
+        href: `nfl-player.html?id=${encodeURIComponent(p.pid)}&stat=${p.stat}&line=${p.line}${p.side === 'u' ? '&side=u' : ''}&g=${encodeURIComponent(p.gid)}` };
+    }
     if (p.pid) {
       const pl = L.players[p.pid] || {};
       return { name: pl.n || p.name || 'Player', team: pl.t || '', img: headshot(p.pid, 40), href: `player.html?id=${p.pid}&stat=${p.stat}&line=${p.line}${p.side === 'u' ? '&side=u' : ''}` };
@@ -65,7 +81,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
 
   function statusChip(grade) {
     const s = grade.status;
-    if (s === 'open') return `<span class="pstatus open">${grade.g ? esc(fmtTime(grade.g.t)) : 'Open'}</span>`;
+    if (s === 'open') return `<span class="pstatus open"${grade.why ? ` title="${esc(grade.why)}"` : ''}>${grade.g ? esc(grade.g.nfl ? (grade.g.state === 'post' ? 'Stats pending' : nflKick({ date: grade.g.d, time: grade.g.t.slice(11, 16) })) : fmtTime(grade.g.t)) : 'Open'}</span>`;
     if (s === 'live') return `<span class="pstatus live">${esc(grade.g.detail || 'Live')}</span>${grade.now != null ? `<span class="pnow">Now <b>${fmt1(grade.now)}</b></span>` : ''}`;
     const label = { win: 'Won', loss: 'Lost', push: 'Push', void: 'Void' }[s];
     return `<span class="pstatus ${s}"${grade.why ? ` title="${esc(grade.why)}"` : ''}>${label}</span>`;
@@ -168,14 +184,14 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   const recordLine = s => `${s.w}-${s.l}${s.p ? `-${s.p}` : ''} · <b class="${s.profit > 0 ? 'up' : s.profit < 0 ? 'down' : ''}">${units(s.profit)}</b>`;
 
   function modelRow(p, g, keys, canAdd) {
-    const pl = L.players[p.pid] || {}, st_ = g.status;
+    const w = who(p), st_ = g.status;
     const on = keys.has(pickKey({ ...p, line: +p.line }));
     const res = ['win', 'loss', 'push'].includes(st_) ? ` · ${fmt1(g.actual)}` : st_ === 'live' && g.now != null ? ` · now ${fmt1(g.now)}` : st_ === 'void' ? ' · void' : '';
     const right = canAdd && st_ === 'open'
-      ? `<button class="btn${on ? ' on' : ''}" data-addmodel="${esc(p.id)}"${on ? ' disabled' : ''}>${on ? 'Added' : '+ Add'}</button>`
-      : `<span class="pstatus ${st_}">${st_ === 'open' ? esc(fmtTime(g.g.t)) : st_ === 'live' ? 'Live' : { win: 'Won', loss: 'Lost', push: 'Push', void: 'Void' }[st_]}</span>`;
+      ? `<button class="btn${on ? ' on' : ''}" data-addmodel="${esc(p.id)}" data-sport="${isNfl(p) ? 'nfl' : 'nba'}"${on ? ' disabled' : ''}>${on ? 'Added' : '+ Add'}</button>`
+      : `<span class="pstatus ${st_}">${st_ === 'open' ? esc(g.g ? (g.g.nfl ? nflKick({ date: g.g.d, time: g.g.t.slice(11, 16) }) : fmtTime(g.g.t)) : 'Open') : st_ === 'live' ? 'Live' : { win: 'Won', loss: 'Lost', push: 'Push', void: 'Void' }[st_]}</span>`;
     return `<div class="row mpick ${st_}"><i class="mmark" aria-hidden="true">${statusMark(st_)}</i>
-      <a class="grow" href="player.html?id=${esc(p.pid)}&stat=${esc(p.stat)}&line=${p.line}${p.side === 'u' ? '&side=u' : ''}"><b>${esc(pl.n || p.name)}</b>
+      <a class="grow" href="${w.href}"><b>${esc(w.name)}</b>
         <small>${esc(pickText(p))} · ${odds(p.price)}${res}</small>
         ${canAdd && p.why && st_ === 'open' ? `<small class="pleggame">${esc(p.why)}</small>` : ''}</a>${right}</div>`;
   }
@@ -209,6 +225,41 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
       <p class="note"><a href="model.html">How the model works</a> · picks are never edited after they lock.</p>
     </details>`;
   }
+
+  // NFL Lab's model picks (Mingus Football's locked picks): the record, this week's open picks to add in a tap, and
+  // every past slate graded. Same layout as the Hoop Lab card.
+  function nflModelCard() {
+    const doc = N && N.modelPicks;
+    if (!doc || !(doc.history || []).length) return '';
+    const keys = savedKeys();
+    const slates = doc.history.map(d => {
+      const rows = d.picks.map(p => ({ pick: { ...p, units: 1 }, grade: gradeNflPick(N, { ...p, units: 1 }) }));
+      return { ...d, rows, s: summarize(rows) };
+    });
+    const season = summarize(slates.flatMap(d => d.rows));
+    const open = slates.filter(d => d.rows.some(r => r.grade.status === 'open'));
+    const past = slates.filter(d => !open.includes(d));
+    const openRows = open.flatMap(d => d.rows);
+    const addable = openRows.filter(r => !r.grade.g || r.grade.g.state === 'pre').filter(r => !keys.has(pickKey({ ...r.pick, line: +r.pick.line }))).length;
+    const label = d => `${fmtDay(d.date, { weekday: 'short', month: 'short', day: 'numeric' })} · ${d.label}`;
+    const upcoming = open.length
+      ? `<div class="row mhead"><h4 class="grow">Open · ${openRows.length} pick${openRows.length === 1 ? '' : 's'}</h4>
+          ${addable ? `<button class="btn" data-addmodel="all" data-sport="nfl">Add ${addable}</button>` : ''}</div>
+        ${openRows.map(r => modelRow(r.pick, r.grade, keys, true)).join('')}`
+      : `<p class="note">No open NFL picks. They lock before night games and each Sunday slate.</p>`;
+    const block = d => `<details class="pday" data-open="n${d.date}${d.slate}"${isOpen(`n${d.date}${d.slate}`, false) ? ' open' : ''}>
+      <summary><span class="grow">${esc(label(d))}</span><span class="pdayrec">${recordLine(d.s)}</span></summary>
+      ${d.rows.map(r => modelRow(r.pick, r.grade, keys, false)).join('')}</details>`;
+    return `<details class="card mpicks" data-open="nflmodel"${isOpen('nflmodel', true) ? ' open' : ''}>
+      <summary><span class="grow"><b>NFL Lab model picks</b><small>Mingus Football's model · night games and Sunday slates · 1 unit each</small></span>
+        <span class="mrec">${recordLine(season)}${season.roi != null ? ` <small>ROI ${pct(season.roi)}</small>` : ''}</span></summary>
+      ${upcoming}
+      ${past.length ? `<details class="mall" data-open="nflhistory"${isOpen('nflhistory', false) ? ' open' : ''}>
+        <summary>See all picks <small>${past.length} slate${past.length === 1 ? '' : 's'}</small></summary>${past.map(block).join('')}</details>` : ''}
+      <p class="note">Graded here from nflverse box scores. Test nights before the official record started are left out.</p>
+    </details>`;
+  }
+  const modelCards = () => store('sport') === 'nfl' ? nflModelCard() + modelCard() : modelCard() + nflModelCard();
 
   // The parlay builder's bar: legs picked, price (worked out, or what your book shows), boost, units.
   function builderBar(all) {
@@ -247,7 +298,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   function render() {
     const all = loadPicks().map(pick => ({ pick, grade: grade(pick) }));
     if (!all.length) {
-      root.innerHTML = modelCard() + `<div class="card empty"><b>No saved picks yet.</b><br><small>Tap the bookmark on any player prop (on a game's Player props tab, the Props page or a player page) to track it here.
+      root.innerHTML = modelCards() + `<div class="card empty"><b>No saved picks yet.</b><br><small>Tap the bookmark on any player prop (on a game's Player props tab, the Props page or a player page) to track it here.
         It grades itself after the game.</small></div>${manageCard()}`;
       return;
     }
@@ -272,14 +323,15 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
       ${s.clv == null ? '<p class="note">Closing line value appears once a pre-tip line is on record for your picks.</p>' : ''}
     </div>`;
     const openSingles = open.filter(r => !isParlay(r.pick)).length;
-    root.innerHTML = modelCard() + ranges + record
+    root.innerHTML = modelCards() + ranges + record
       + (open.length ? `<div class="row psec"><h2 class="grow" style="margin:0">Open <small>${open.length}</small></h2>
           ${openSingles >= 2 && !st.building ? '<button class="btn" data-build="start">Build a parlay</button>' : ''}</div>
           ${st.building ? '<p class="note">Tick the picks to combine, then set the price your book shows.</p>' : ''}${open.map(pickCard).join('')}` : '')
       + (done.length ? `<h2 class="psec">Graded <small>${done.length}</small></h2>${gradedByDay(done)}` : '')
       + (!rows.length ? `<div class="card empty">No picks in this date range.</div>` : '')
-      + `<div class="grid2">${breakdownTable('By market', breakdown(done, p => (isParlay(p) ? 'parlay' : p.stat), k => (k === 'parlay' ? 'Parlays' : pickMarketLabel(k))))}
-        ${breakdownTable('By side', breakdown(done, p => (isParlay(p) ? 'parlay' : p.side), k => ({ o: 'Overs', u: 'Unders', h: 'Home', a: 'Away', parlay: 'Parlays' }[k] || k)))}</div>`
+      + `<div class="grid2">${breakdownTable('By market', breakdown(done, p => (isParlay(p) ? 'parlay' : `${isNfl(p) ? 'nfl' : 'nba'}:${p.stat}`), k => (k === 'parlay' ? 'Parlays' : k.startsWith('nfl:') ? `NFL ${pickMarketLabel(k.slice(4), 'nfl').toLowerCase()}` : pickMarketLabel(k.slice(4)))))}
+        ${breakdownTable('By side', breakdown(done, p => (isParlay(p) ? 'parlay' : p.side), k => ({ o: 'Overs', u: 'Unders', h: 'Home', a: 'Away', parlay: 'Parlays' }[k] || k)))}
+        ${breakdownTable('By sport', breakdown(done, p => (isParlay(p) ? (p.legs.some(isNfl) ? (p.legs.every(isNfl) ? 'nfl' : 'mixed') : 'nba') : isNfl(p) ? 'nfl' : 'nba'), k => ({ nba: 'NBA', nfl: 'NFL', mixed: 'Mixed parlays' }[k])))}</div>`
       + manageCard() + builderBar(all);
     document.body.classList.toggle('building', st.building);
     root._rows = all;
@@ -325,8 +377,10 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     }
     else if (d.addmodel) {
       const keys = savedKeys();
-      const add = model.picks.filter(p => (d.addmodel === 'all' || p.id === d.addmodel) && !keys.has(pickKey({ ...p, line: +p.line }))
-        && (L.byId.get(p.gid) || {}).state === 'pre');
+      const source = d.sport === 'nfl'
+        ? N.modelPicks.history.flatMap(x => x.picks).filter(p => { const g = N.byId.get(p.gid); return g && !g.final; })
+        : model.picks.filter(p => (L.byId.get(p.gid) || {}).state === 'pre');
+      const add = source.filter(p => (d.addmodel === 'all' || p.id === d.addmodel) && !keys.has(pickKey({ ...p, line: +p.line })));
       const list = loadPicks();
       for (const p of add) list.push(makePick({ ...p, units: 1 }));
       savePicks(list);
@@ -401,6 +455,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   });
   render();
 
+  nflReady.then(() => render());
   modelReady.then(m => {
     model = m;
     render();

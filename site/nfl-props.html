@@ -27,6 +27,7 @@
 <div class="nflsort" id="sort"></div>
 <script src="assets/common.js"></script>
 <script src="assets/nfl.js"></script>
+<script src="assets/picks.js"></script>
 <script>
 shell('nfl-props', 'nfl');
 document.getElementById('list').innerHTML = skeleton(4, 3);
@@ -66,6 +67,10 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
     document.getElementById('sort').innerHTML = `<span>Sort</span>${SORTS.map(([k, l]) => `<button data-sort="${k}" class="${k === st.sort ? 'on' : ''}">${l}</button>`).join('')}`;
   }
 
+  // Saved-pick fields for the bookmark (My picks grades NFL picks from the box scores).
+  const fields = x => ({ sport: 'nfl', gid: x.g.id, pid: x.r.pid, name: x.p.n, team: x.r.team || x.p.t, stat: x.r.stat, side: st.side, line: x.r.line,
+    price: st.side === 'o' ? x.r.over : x.r.under, book: (st.side === 'o' ? x.r.book_o : x.r.book_u) || null });
+  let keys = savedKeys();
   function card(x) {
     const w = x.w[st.side], t = w[st.sort], l10 = w.l10;
     const price = st.side === 'o' ? x.r.over : x.r.under, fair = st.side === 'o' ? x.r.fair_o : x.r.fair_u;
@@ -75,11 +80,13 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
       <div class="row">${x.p.img ? `<img class="nflmug" src="${esc(x.p.img)}" alt="" width="40" height="40" loading="lazy" onerror="this.remove()">` : ''}
         <div class="grow"><b>${esc(x.p.n)}</b> <small class="muted">${esc(x.p.pos)} · ${esc(x.g.home === (x.r.team || x.p.t) ? 'vs' : '@')} ${esc(x.opp)}</small>${inj}
           <div class="sub"><b>${st.side === 'o' ? 'Over' : 'Under'} ${x.r.line}</b> ${esc(NFL_STATS[x.r.stat].label)}${price != null ? ` · <span class="price">${odds(price)}</span>` : ''}${fair != null ? ` <small class="muted">fair ${pct(fair)}</small>` : ''}</div></div>
-        <div class="nflsortrate"><small>${esc(SORTS.find(s => s[0] === st.sort)[1])}</small>${rateTag(t, { count: true })}</div></div>
+        <div class="nflsortrate"><small>${esc(SORTS.find(s => s[0] === st.sort)[1])}</small>${rateTag(t, { count: true })}</div>
+        ${x.g.final ? '' : pickButton(fields(x), keys.has(pickKey(fields(x))))}</div>
       ${strip(l10.rows.map(r => outcome(f(r), x.r.line, st.side)))}</a>`;
   }
 
   function renderList() {
+    keys = savedKeys();
     const list = items.filter(x => st.stat === 'all' || x.r.stat === st.stat)
       .sort((a, b) => ((b.w[st.side][st.sort].rate ?? -1) - (a.w[st.side][st.sort].rate ?? -1)) || (b.w[st.side][st.sort].n - a.w[st.side][st.sort].n));
     document.getElementById('list').innerHTML = list.length ? list.map(card).join('')
@@ -96,6 +103,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
     if (d.sort) st.sort = d.sort; else if (d.side) st.side = d.side; else st.stat = d.stat;
     save(); renderFilters(); renderList();
   });
+  bindPickButtons(document.getElementById('list'));
   renderFilters();
   renderList();
 }).catch(err => {
