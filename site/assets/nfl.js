@@ -19,8 +19,10 @@ function nflLab(meta, games, teams, teamstats) {
   const N = { meta, teams, teamstats: teamstats || {}, games: [], byId: new Map(), teamGames: {}, box: {}, byTeamWeek: new Map() };
   for (const raw of games) {
     const g = { ...raw, season: raw.season || meta.season, t: `${raw.date}T${raw.time || '13:00'}`, final: NFL_FINAL(raw) };
+    g.state = g.final ? 'post' : raw.state || 'pre';
     N.games.push(g);
     N.byId.set(g.id, g);
+    if (g.eid) (N.byEid = N.byEid || new Map()).set(String(g.eid), g);
     for (const team of [g.home, g.away]) {
       (N.teamGames[team] = N.teamGames[team] || []).push(g);
       N.byTeamWeek.set(`${g.season}-${g.week}-${team}`, g);
@@ -373,6 +375,131 @@ function nflGameLines(N, g) {
   return parts.join('');
 }
 
+// ---------------------------------------------------------------- live scores
+// While a game is on (or kicking off within 10 minutes), NFL pages ask ESPN's public scoreboard for fresh scores every
+// 25 s straight from the browser, like Hoop Lab's live.js (whose parseLiveScoreboard / liveTag / liveNote this reuses),
+// and the game page also reads the live box score for "Now 54 / 64.5" on prop rows. No server, no Odds API credits;
+// the data job's snapshot is the fallback.
+const NFL_LIVE_API = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl';
+const NFL_LIVE_CATS = {
+  passing: { 'C/ATT': ['cmp', 'att'], YDS: 'pass_yds', TD: 'pass_td', INT: 'int' },
+  rushing: { CAR: 'car', YDS: 'rush_yds', TD: 'rush_td' },
+  receiving: { REC: 'rec', YDS: 'rec_yds', TD: 'rec_td', TGTS: 'tgt' },
+};
+const NFL_LOG_ZERO = { cmp: 0, att: 0, pass_yds: 0, pass_td: 0, int: 0, car: 0, rush_yds: 0, rush_td: 0, tgt: 0, rec: 0, rec_yds: 0, rec_td: 0 };
+
+/* Copy scoreboard results (parseLiveScoreboard's {id, state, hs, as, detail}, keyed by ESPN event id) onto the games.
+   A live game gets `live` and `detail`; a final one gets its scores and `final`. Never goes backwards. Returns how
+   many games changed. */
+function nflApplyLive(N, list) {
+  const rank = { pre: 0, in: 1, post: 2 };
+  let changed = 0;
+  for (const x of list) {
+    const g = N.byEid && N.byEid.get(String(x.id));
+    if (!g || (rank[x.state] ?? 0) < (rank[g.state] ?? 0)) continue;
+    const before = JSON.stringify([g.state, g.live, g.detail, g.home_score]);
+    g.state = x.state;
+    g.detail = x.detail || g.detail;
+    if (x.state === 'in') g.live = { away: x.as, home: x.hs };
+    if (x.state === 'post') Object.assign(g, { away_score: x.as, home_score: x.hs, final: true, live: null });
+    if (JSON.stringify([g.state, g.live, g.detail, g.home_score]) !== before) changed++;
+  }
+  return changed;
+}
+
+/* ESPN game summary -> {espn athlete id: log row} (passing, rushing and receiving columns). */
+function nflParseLiveBox(summary) {
+  const out = {};
+  for (const side of ((summary || {}).boxscore || {}).players || []) {
+    for (const cat of side.statistics || []) {
+      const cols = NFL_LIVE_CATS[cat.name];
+      if (!cols) continue;
+      const labels = (cat.labels || []).map(x => String(x).toUpperCase());
+      for (const a of cat.athletes || []) {
+        const id = String(((a.athlete || {}).id) || '');
+        if (!id) continue;
+        const row = out[id] = out[id] || { ...NFL_LOG_ZERO };
+        labels.forEach((label, i) => {
+          const c = cols[label];
+          if (Array.isArray(c)) String((a.stats || [])[i] || '').split('/').forEach((v, k) => { row[c[k]] = parseFloat(v) || 0; });
+          else if (c) row[c] = parseFloat(String((a.stats || [])[i] || '').replace(',', '')) || 0;
+        });
+      }
+    }
+  }
+  return out;
+}
+
+/* A player's live value for a stat (null without a live box score for him). Players carry `eid` (ESPN id). */
+function nflLiveValue(N, gid, pid, stat) {
+  const box = (N.liveBox || {})[gid], p = N.players && N.players[pid];
+  const row = box && p && p.eid && box[p.eid];
+  return row && NFL_STATS[stat] ? NFL_STATS[stat].f(row) : null;
+}
+
+/* The live score a card or header shows: {away, home, detail} for a game in progress, else null. */
+function nflLiveScore(g) {
+  return g.state === 'in' && g.live ? { away: g.live.away, home: g.live.home, detail: g.detail || 'Live' } : null;
+}
+
+/* ms until checking is worth it for these games (0 = now), or null for never: any game in progress, or one kicking
+   off within 10 minutes (or past kickoff but not final, up to 5 hours). */
+function nflLiveWait(games, now) {
+  let wait = null;
+  for (const g of games) {
+    if (g.state === 'in') return 0;
+    if (g.state !== 'pre' || !g.eid) continue;
+    const kick = Date.parse(nflIso(g)), until = kick - 10 * 60000 - now;
+    if (until <= 0 && now - kick < 5 * 3600e3) return 0;
+    if (until > 0 && (wait == null || until < wait)) wait = until;
+  }
+  return wait;
+}
+
+/* Poll while needed. opts: games (the ones on screen), gids (games to keep a live box score for), onUpdate(). Sets
+   N.liveAt / N.liveFailed like live.js so liveNote(N) works. */
+function nflStartLive(N, opts) {
+  N.liveBox = N.liveBox || {};
+  let timer = null, fails = 0, stopped = false;
+  const getJSON = url => fetch(url, { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  const games = () => opts.games;
+  async function check() {
+    timer = null;
+    if (stopped || document.hidden) return;
+    try {
+      const weeks = [...new Set(games().map(g => `${g.season}|${g.type === 'POST' ? 3 : 2}|${g.week}`))];
+      for (const w of weeks) {
+        const [season, type, week] = w.split('|');
+        const url = type === '2' ? `${NFL_LIVE_API}/scoreboard?dates=${season}&seasontype=2&week=${week}` : `${NFL_LIVE_API}/scoreboard`;
+        nflApplyLive(N, parseLiveScoreboard(await getJSON(url)));
+      }
+      for (const gid of opts.gids || []) {
+        const g = N.byId.get(gid);
+        if (g && g.eid && (g.state === 'in' || (g.state === 'post' && N.liveBox[gid] && !N.liveBox[gid].final))) {
+          N.liveBox[gid] = nflParseLiveBox(await getJSON(`${NFL_LIVE_API}/summary?event=${g.eid}`));
+          if (g.state === 'post') N.liveBox[gid].final = true;
+        }
+      }
+      fails = 0;
+      N.liveAt = Date.now();
+      opts.onUpdate && opts.onUpdate();
+    } catch (e) {
+      if (++fails >= 3) { N.liveFailed = true; stopped = true; opts.onUpdate && opts.onUpdate(); return; }
+    }
+    schedule();
+  }
+  function schedule() {
+    if (stopped || timer) return;
+    const wait = nflLiveWait(games(), Date.now());
+    if (wait != null) timer = setTimeout(check, wait === 0 ? 25000 : wait);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && !stopped && !timer) { if (nflLiveWait(games(), Date.now()) === 0) check(); else schedule(); }
+  });
+  if (nflLiveWait(games(), Date.now()) === 0) check(); else schedule();
+  return { stop() { stopped = true; if (timer) clearTimeout(timer); } };
+}
+
 if (typeof module !== 'undefined') {
-  module.exports = { nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
+  module.exports = { nflApplyLive, nflParseLiveBox, nflLiveValue, nflLiveScore, nflLiveWait, nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
 }

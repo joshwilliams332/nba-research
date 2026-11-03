@@ -166,6 +166,7 @@ class MergeTest(unittest.TestCase):
             self.assertEqual(wr[4 + cols.index("tgt_sh")], 0.75)                   # 9 of the team's 12 targets
             players = json.loads((out / "players.json").read_text())
             self.assertEqual(players["00-2"]["st"], "Questionable")
+            self.assertEqual(players["00-1"]["eid"], "4360310")
             self.assertNotIn("st", players["00-1"])                                # nflverse report replaced by ESPN's
             ts = json.loads((out / "teamstats.json").read_text())["JAX"][-1]
             self.assertEqual((ts["third"], ts["rz"], ts["pass_yds"]), ([5, 11], [3, 4], 310))
