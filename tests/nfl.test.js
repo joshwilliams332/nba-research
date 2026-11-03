@@ -158,3 +158,25 @@ test('live polling waits until 10 minutes before kickoff', () => {
   assert.strictEqual(F.nflLiveWait([{ ...g, state: 'in' }], 0), 0);
   assert.strictEqual(F.nflLiveWait([{ ...g, eid: null }], kick), null);
 });
+
+// ---------------------------------------------------------------- insights
+test('insights keep sides that hit 75%+ over 5+ games', () => {
+  assert.strictEqual(F.nflStrongSide(['hit', 'hit', 'hit', 'miss']), null);                       // under 5 games
+  assert.strictEqual(F.nflStrongSide(['hit', 'hit', 'hit', 'hit', 'miss']).side, 'o');
+  assert.strictEqual(F.nflStrongSide(['miss', 'miss', 'miss', 'miss', 'hit']).side, 'u');
+  assert.strictEqual(F.nflStrongSide(['miss', 'miss', 'miss', 'miss', 'hit'], false), null);      // money line / spread: yes side only
+  assert.ok(F.nflWilson(18, 20) > F.nflWilson(5, 5));
+});
+
+test('game insights: team trends against this game\'s numbers', () => {
+  const list = [];
+  for (let w = 1; w <= 6; w++) list.push(game(`t${w}`, w, 'BBB', 'AAA', 10, 30));               // AAA wins big, totals 40
+  list.push(game('t7', 7, 'BBB', 'AAA', null, null, { home_spread: -3, total: 50.5 }));
+  const N = F.nflAddPlayers(F.nflLab({ season: 2026 }, list.map(x => ({ ...x, season: 2026 })), teams, {}), {}, { cols: [], logs: {} }, { games: {} }, {});
+  const ins = F.nflGameInsights(N, N.byId.get('t7'));
+  const aaa = ins.filter(x => x.team === 'AAA');
+  assert.ok(aaa.some(x => x.market === 'spread' && /covered -3 in 6 of their last 6 games/.test(x.text)));
+  assert.ok(aaa.some(x => x.market === 'under'));
+  assert.ok(ins.every(x => x.rate >= 0.75 && x.n >= 5));
+  assert.ok(ins.filter(x => x.group === 'AAA|spread').length <= 2);
+});

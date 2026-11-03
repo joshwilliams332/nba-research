@@ -590,7 +590,8 @@ function teamLink(abbr, inner, cls = '') {
 
 /* A friendly empty-state card. */
 function emptyState(text, sub = '') {
-  return `<div class="card empty"><div class="empty-ic">🏀</div><div>${text}</div>${sub ? `<small>${sub}</small>` : ''}</div>`;
+  const nfl = typeof document !== 'undefined' && document.documentElement.dataset.sport === 'nfl';
+  return `<div class="card empty"><div class="empty-ic">${nfl ? '🏈' : '🏀'}</div><div>${text}</div>${sub ? `<small>${sub}</small>` : ''}</div>`;
 }
 
 function injuryMap(L) {
@@ -696,6 +697,7 @@ function shell(active, sport) {
   if (SHARED_PAGES.has(active)) sport = store('sport') === 'nfl' ? 'nfl' : 'nba';
   else store('sport', sport = sport || 'nba');
   const nav = sport === 'nfl' ? NAV_NFL : NAV;
+  document.documentElement.dataset.sport = sport;
   const link = ([k, href, label, icon]) =>
     `<a href="${href}" class="${k === active ? 'on' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg><span>${label}</span></a>`;
   const top = document.getElementById('top');
