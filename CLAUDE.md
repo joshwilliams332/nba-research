@@ -99,6 +99,17 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   teammate (15+ min) is questionable / doubtful / day-to-day, or is out and the side hit under 50% in 5+ games without
   him. After the lock, `checkPicks` writes `YYYY-MM-DD-check.json` (heads-up notes: status changes since the lock, a
   close line that moved against the pick) and the 5:53 PM heads-up task emails it when it exists.
+- **NFL Lab / Mingus Lab (Nov 3, 2026; plan in the Mingus project, `claude/plans/nfl-lab.md`).** The site is branded
+  Mingus Lab with a Hoop Lab / NFL Lab switch in the header (`shell(active, 'nfl')` on NFL pages, `NAV_NFL`; My picks
+  is shared and keeps the last sport). Mingus Football (repo `joshwilliams332/mingus`) owns all NFL data and models;
+  `scripts/build_nfl.py` (workflow step, never blocks the deploy) copies its published `meta`, `games`, `teams`,
+  `teamstats` JSON into `site/data/nfl/`. No Odds API credits. Logic in `site/assets/nfl.js` (names prefixed `nfl`,
+  tested in `tests/nfl.test.js`) turns games into the same sides shape as NBA (`lineResults`, `tally`, `strip`);
+  styles in `site/assets/nfl.css`. Phase 1 (done): `nfl.html` (week tabs, cards with L10 strips vs this week's number)
+  and `nfl-game.html` (Game lines + Breakdown with H2H / L5 / L10 / season and the game list; Matchup = offense vs
+  defense ranks, common opponents, last 5 with ATS / O/U at each game's own line). Only this season's games for now.
+  Next: Phase 2 props + player pages (needs football's 2025 logs, IR fix, published projections), Phase 3 shared
+  My picks with NFL grading, Phase 4 NFL trends and a passing-zone chart.
 - Green = hit, red = miss, grey = push. Ruled-out players are tagged (O/Q/D/P/DTD) and sink on the Props page.
 
 ## Agents (`.claude/agents/`)

@@ -677,18 +677,33 @@ const NAV = [
 // The phone bottom nav holds five; Standings moves to an icon in the phone header (desktop shows everything).
 const HEADER_ONLY = new Set(['standings']);
 
-function shell(active) {
+// NFL Lab's nav (Phase 1: games; props, players and trends come next). My picks is shared by both sports.
+const NAV_NFL = [
+  ['nfl-games', 'nfl.html', 'Games', NAV[0][3]],
+  ['picks', 'picks.html', 'My picks', NAV[4][3]],
+];
+const SPORTS = [['nba', 'index.html', 'Hoop Lab'], ['nfl', 'nfl.html', 'NFL Lab']];
+
+/* Page header (Mingus Lab brand, the Hoop Lab / NFL Lab switch, desktop nav) and the phone bottom nav.
+   sport: 'nfl' for NFL Lab pages; NBA pages leave it out. Shared pages (My picks) keep the last sport used. */
+const SHARED_PAGES = new Set(['picks']);
+function shell(active, sport) {
+  if (SHARED_PAGES.has(active)) sport = store('sport') === 'nfl' ? 'nfl' : 'nba';
+  else store('sport', sport = sport || 'nba');
+  const nav = sport === 'nfl' ? NAV_NFL : NAV;
   const link = ([k, href, label, icon]) =>
     `<a href="${href}" class="${k === active ? 'on' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg><span>${label}</span></a>`;
   const top = document.getElementById('top');
   if (top) {
-    const extras = NAV.filter(([k]) => HEADER_ONLY.has(k)).map(([k, href, label, icon]) =>
+    const extras = nav.filter(([k]) => HEADER_ONLY.has(k)).map(([k, href, label, icon]) =>
       `<a href="${href}" class="hdricon${k === active ? ' on' : ''}" aria-label="${label}" title="${label}"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg></a>`).join('');
-    top.innerHTML = `<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/><path d="M3 16h26M16 3v26M7 7c5 4 5 14 0 18M25 7c-5 4-5 14 0 18" stroke="#1a0f05" stroke-width="1.6" fill="none"/></svg>Hoop Lab</a><nav class="topnav">${NAV.map(link).join('')}</nav>${extras}`;
+    const sw = `<nav class="sportsw" aria-label="Sport">${SPORTS.map(([k, href, label]) =>
+      `<a href="${href}" class="${k === sport ? 'on' : ''}"${k === sport ? ' aria-current="true"' : ''}>${label}</a>`).join('')}</nav>`;
+    top.innerHTML = `<a class="brand" href="${sport === 'nfl' ? 'nfl.html' : 'index.html'}" aria-label="Mingus Lab"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/><path d="M3 16h26M16 3v26M7 7c5 4 5 14 0 18M25 7c-5 4-5 14 0 18" stroke="#1a0f05" stroke-width="1.6" fill="none"/></svg><span>Mingus Lab</span></a>${sw}<nav class="topnav">${nav.map(link).join('')}</nav>${extras}`;
   }
   const bottom = document.createElement('nav');
-  bottom.className = 'bottomnav';
-  bottom.innerHTML = NAV.filter(([k]) => !HEADER_ONLY.has(k)).map(link).join('');
+  bottom.className = 'bottomnav' + (sport === 'nfl' ? ' nfl' : '');
+  bottom.innerHTML = nav.filter(([k]) => !HEADER_ONLY.has(k)).map(link).join('');
   document.body.appendChild(bottom);
   // Elements with data-go act as links even when they sit inside another link (game cards).
   const follow = e => {

@@ -9,6 +9,10 @@ Does that change without his co-star? How have both teams done against tonight's
 It's a static site with no backend: a Python job collects the data, and the browser does the math, so every
 filter and line change is instant.
 
+The site is **Mingus Lab**: Hoop Lab (NBA) plus **NFL Lab**, switched from the header. NFL Lab reads the data that
+[Mingus Football](https://github.com/joshwilliams332/mingus) publishes (schedule, scores, lines and team box totals
+from nflverse), so the two projects share one research interface without duplicating a data pipeline.
+
 ## What it does
 
 | Page | What you get |
@@ -19,6 +23,7 @@ filter and line change is instant.
 | **Player** | Bar chart of any stat (points, rebounds, assists, threes, PRA and combos, stocks, attempts) against an adjustable line, over or under. Hit rates for H2H / L5 / L10 / L20 / this season / last season. Filters: home/away, days of rest, starter/bench, team result, final margin, minimum minutes, regular season only, and **with / without any teammate**. Supporting stats (minutes, FGA, 3PA, FTA, fouls) for the same games, plus the full game log. |
 | **Trends** | The slate's strongest trends written as sentences ("The Indiana Pacers are 10-2 (83.3%) against the spread in their last 12 games as an underdog"), filterable by player/team, market and game. The same feed is the Insights tab on each game page. |
 | **My picks** | Save any prop with the bookmark and it grades itself from the box scores: record, units, ROI and closing-line value, with share cards and export/import between devices. Combine open picks into a parlay (price from the legs or what your book shows, optional profit boost), graded the way a sportsbook settles it. Graded picks are grouped by day. A model card shows the model's own record, today's locked picks (one tap to add) and every past pick, graded. Stored on the device only. |
+| **NFL Lab** | Week-by-week NFL games with money line, spread and total, each side's last games against this week's number, and a game page with a breakdown (H2H / L5 / L10 / season and the game-by-game list) and the matchup: offense vs defense ranks (scoring, yards, yards per play, passing, rushing, first downs, turnovers, sacks), record vs common opponents and recent ATS / O/U. Props, player pages and shared NFL picks come next. |
 | **Live** | During games the Games list, game page and My picks update every 25 seconds straight from ESPN's public scoreboard: score and clock, each player's stat so far against his prop line, and a live box score. |
 | **Props** | Today's sportsbook props with a one-tap sort bar (opponent rank, L5 / L10 / L20, H2H, this or last season, best price, biggest movers) and a filters sheet (stat types, side, matchup, minimum hit rate, odds, games, EV+ only) with saved setups. Each card shows OPP RANK, implied probability and who's out. |
 

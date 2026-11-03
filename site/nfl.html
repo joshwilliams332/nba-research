@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NFL Lab · Games</title>
+<meta name="description" content="NFL games by week with money line, spread and total trends against this week's numbers.">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mingus Lab">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/nfl.css">
+</head>
+<body>
+<header id="top"></header>
+<main>
+  <section class="pagehead"><h1>NFL Games</h1><p id="slate">&nbsp;</p></section>
+  <div class="days" id="weeks"></div>
+  <input class="search" id="q" type="search" placeholder="Search teams…" autocomplete="off" style="margin-bottom:12px">
+  <div id="list"></div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/common.js"></script>
+<script src="assets/nfl.js"></script>
+<script>
+shell('nfl-games', 'nfl');
+document.getElementById('list').innerHTML = skeleton(3, 4);
+load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, teams, teamstats]) => {
+  const N = nflLab(meta, games, teams, teamstats);
+  const weeks = nflWeeks(N);
+  const params = new URLSearchParams(location.search);
+  let week = +params.get('w') || nflCurrentWeek(N);
+  const q = document.getElementById('q');
+  document.getElementById('foot').innerHTML = `<p>NFL data: Mingus Football (nflverse schedules, scores and lines), updated ${esc(String(meta.built_at || '').slice(0, 16).replace('T', ' '))} UTC.
+    Lines and trends describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
+
+  function renderWeeks() {
+    document.getElementById('weeks').innerHTML = weeks.map(w =>
+      `<button data-w="${w}" class="${w === week ? 'on' : ''}"><b>Week ${w}</b><small>${esc(weekSpan(w))}</small></button>`).join('');
+    const on = document.querySelector('#weeks .on');
+    if (on) on.scrollIntoView({ inline: 'center', block: 'nearest' });
+  }
+  function weekSpan(w) {
+    const d = N.games.filter(g => g.week === w).map(g => g.date).sort();
+    return d.length ? fmtDay(d[0], { month: 'short', day: 'numeric' }) : '';
+  }
+
+  function card(g) {
+    const A = N.teams[g.away] || {}, H = N.teams[g.home] || {};
+    const lost = side => g.final && (side === 'a' ? g.away_score < g.home_score : g.home_score < g.away_score) ? ' class="lose"' : '';
+    const mid = g.final ? `<b class="score">${g.away_score} - ${g.home_score}</b><br>Final` : `<b>${esc(nflKick(g).split(' · ')[1])}</b><br><small>${esc(fmtDay(g.date, { weekday: 'short', month: 'short', day: 'numeric' }))}</small>`;
+    const body = g.final ? resultLine(g) : nflGameLines(N, g);
+    const implied = !g.final && g.home_implied != null
+      ? `<div class="implied" title="Implied points from the spread and total"><span><b>${g.away_implied.toFixed(1)}</b></span><span class="muted">Team totals</span><span><b>${g.home_implied.toFixed(1)}</b></span></div>` : '';
+    return `<a class="card gamecard" href="nfl-game.html?id=${encodeURIComponent(g.id)}" style="--ca:${A.color || '#333'}33;--ch:${H.color || '#333'}33">
+      <div class="gamehead">
+        <div class="t">${nflLogo(N, g.away, 34)}<div><b${lost('a')}>${esc(A.nickname || g.away)}</b><small>${nflRecord(N, g.away, g.t)}</small></div></div>
+        <div class="mid">${mid}</div>
+        <div class="t home">${nflLogo(N, g.home, 34)}<div><b${lost('h')}>${esc(H.nickname || g.home)}</b><small>${nflRecord(N, g.home, g.t)}</small></div></div>
+      </div>${implied}${body}</a>`;
+  }
+
+  // "JAX covered -9.5 · Over 42.5 (49)" for a final game, against its own closing numbers.
+  function resultLine(g) {
+    const out = [];
+    if (g.home_spread != null) {
+      const fav = g.home_spread <= 0 ? g.home : g.away, num = -Math.abs(g.home_spread);
+      const s = nflSide(g, fav), r = outcome(s.margin + num, 0, 'o');
+      out.push(r === 'push' ? `${fav} ${signed(num)} push` : r === 'hit' ? `${fav} covered ${signed(num)}` : `${fav} didn't cover ${signed(num)}`);
+    }
+    if (g.total != null) {
+      const t = g.home_score + g.away_score;
+      out.push(t === g.total ? `Push ${g.total}` : `${t > g.total ? 'Over' : 'Under'} ${g.total} (${t})`);
+    }
+    return `<div class="resultline">${out.length ? out.map(x => `<span>${esc(x)}</span>`).join('') : '<span>No lines on record</span>'}</div>`;
+  }
+
+  function renderList() {
+    const term = q.value.trim().toLowerCase();
+    const list = N.games.filter(g => g.week === week && g.type === 'REG').filter(g => !term || [g.home, g.away].some(t => {
+      const T = N.teams[t] || {};
+      return `${t} ${T.city || ''} ${T.nickname || ''}`.toLowerCase().includes(term);
+    }));
+    document.getElementById('list').innerHTML = list.length ? list.map(card).join('')
+      + `<p class="note">Strips: each team's last games against this week's number, oldest on the left. Tap a game for the full breakdown and matchup.</p>`
+      : emptyState(term ? 'No games match that search.' : 'No games this week.', term ? '' : 'Pick another week above.');
+    const final = list.filter(g => g.final).length;
+    document.getElementById('slate').textContent = [`Week ${week}`, `${list.length} game${list.length === 1 ? '' : 's'}`,
+      final ? `${final} final` : '', 'lines from nflverse'].filter(Boolean).join(' · ');
+  }
+
+  document.getElementById('weeks').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    week = +b.dataset.w;
+    history.replaceState(null, '', `?w=${week}`);
+    renderWeeks();
+    renderList();
+  });
+  q.addEventListener('input', renderList);
+  renderWeeks();
+  renderList();
+}).catch(err => {
+  document.getElementById('list').innerHTML = emptyState('NFL data is unavailable right now.', 'It comes from Mingus Football on each data update. Try again in a bit.');
+  console.error(err);
+});
+</script>
+</body>
+</html>

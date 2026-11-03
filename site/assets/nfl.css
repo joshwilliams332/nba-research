@@ -1,0 +1,31 @@
+/* NFL Lab pages (nfl.html, nfl-game.html). Shared look comes from style.css; this file only adds NFL-only pieces. */
+
+/* Breakdown: the two team buttons, then the H2H / L5 / L10 / season boxes. */
+.nflteams { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+.nflteams button { display: flex; align-items: center; gap: 8px; min-width: 0; padding: 10px; border-radius: 12px; cursor: pointer;
+  background: var(--card2); border: 1px solid var(--line); color: var(--muted); text-align: left; }
+.nflteams button.on { border-color: var(--accent); color: var(--text); background: linear-gradient(180deg, rgba(255, 138, 61, .12), var(--card2)); }
+.nflteams button span { min-width: 0; }
+.nflteams button b, .nflteams button small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nflteams button small { font-size: 12px; }
+.nflwins { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 10px; }
+.nflwins button { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 8px 2px; border-radius: 10px; cursor: pointer;
+  background: var(--card2); border: 1px solid var(--line); color: var(--muted); min-width: 0; }
+.nflwins button.on { border-color: #4a525e; color: var(--text); }
+.nflwins b { font-size: 17px; color: var(--text); }
+.nflwins b.hit { color: var(--hit); }
+.nflwins b.miss { color: var(--miss); }
+.nflwins small { font-size: 11px; }
+table.data b.hit, table.data span.hit { color: var(--hit); }
+table.data b.miss, table.data span.miss { color: var(--miss); }
+table.data b.push { color: var(--muted); }
+table.data td.c, table.data th.c { text-align: center; }
+
+/* Matchup: offense vs defense rankings. */
+.nflswap { gap: 8px; margin-bottom: 8px; font-size: 14px; }
+.nflswap .grow { min-width: 0; display: flex; align-items: center; gap: 6px; }
+.nflswap .grow:last-child { justify-content: flex-end; }
+.nflswap .btn { flex: none; padding: 6px 12px; }
+table.nflrank td { text-align: center; font-variant-numeric: tabular-nums; }
+table.nflrank td.c { white-space: nowrap; }
+@media (max-width: 420px) { table.nflrank td, table.nflrank th { padding-left: 4px; padding-right: 4px; font-size: 13px; } }

@@ -55,6 +55,11 @@ jobs:
           # Credits a month left for the football site on the shared free key (default 200; set 0 in the NFL off-season).
           ODDS_OTHER_SPORTS_CREDITS: ${{ vars.ODDS_OTHER_SPORTS_CREDITS }}
         run: python3 scripts/build_data.py --store store
+      # NFL Lab: copy Mingus Football's published data (schedule, lines, scores, team box totals) into site/data/nfl/.
+      # No Odds API credits; never blocks the deploy (the NFL pages say so if it's missing).
+      - name: NFL Lab data (from Mingus Football)
+        continue-on-error: true
+        run: python3 scripts/build_nfl.py | tee -a "$GITHUB_STEP_SUMMARY"
       # Errors (no games, no logs) fail the run before deploying; warnings go to the run's summary page.
       - name: Check the data
         run: python3 scripts/check_data.py
@@ -77,9 +82,9 @@ jobs:
           git commit --quiet -m "Data update $(date -u +%Y-%m-%dT%H:%MZ)"
           git push --quiet origin data
       # Browsers keep style.css and common.js cached for a while, so after a deploy a page could load
-      # the new HTML with the old script. Tagging the links (every assets/*.js and style.css) with this commit makes every deploy fetch fresh copies.
+      # the new HTML with the old script. Tagging the links (every assets/*.js and *.css) with this commit makes every deploy fetch fresh copies.
       - name: Tag asset links with this commit
-        run: sed -i -E "s#assets/([a-z]+\.js|style\.css)\"#assets/\1?v=${GITHUB_SHA::8}\"#g" site/*.html
+        run: sed -i -E "s#assets/([a-z]+\.(js|css))\"#assets/\1?v=${GITHUB_SHA::8}\"#g" site/*.html
       # The service worker precaches those same ?v= URLs and names its cache after the commit, so each deploy
       # installs fresh caches and drops the old ones.
       - name: Stamp the service worker with this commit
