@@ -79,6 +79,17 @@ class BuildNflTest(unittest.TestCase):
         build_nfl.build(self.mingus, self.data, self.out, season=2026, fetch=fetch)
         self.assertEqual(self.read("players")["00-1"]["st"], "IR")
 
+    def test_props_and_picks_come_from_mingus_picks(self):
+        picks = Path(tempfile.mkdtemp())
+        (picks / "odds" / "props").mkdir(parents=True)
+        (picks / "odds" / "props" / "2026_09_JAX_BAL.json").write_text(json.dumps({"game": "2026_09_JAX_BAL", "pulled": "t2",
+            "rows": [{"pid": "00-1", "stat": "pass_yds", "line": 224.5, "over": -110, "under": -110}]}))
+        build_nfl.build(self.mingus, self.data, self.out, season=2026, fetch=fake_fetch, picks_data=picks)
+        self.assertEqual(self.read("props")["games"]["2026_09_JAX_BAL"][0]["line"], 224.5)   # new home wins
+        # No picks/ folder there yet: the old copy on mingus's data branch is used (none here, so empty).
+        self.assertEqual(self.read("picks")["history"], [])
+        self.assertEqual(build_nfl.pick_source(picks, self.data, "picks"), self.data)
+
     def test_season(self):
         import datetime as dt
         self.assertEqual(build_nfl.season_now(dt.date(2026, 11, 3)), 2026)

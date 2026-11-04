@@ -8,9 +8,12 @@ Sources (all public, no Odds API credits):
 - nflverse (github.com/nflverse/nflverse-data releases): schedules with lines and scores, team and player weekly
   stats, weekly rosters (reserve / IR status) and injury reports. It covers last season and is the fallback for any
   game, box score or injury report ESPN doesn't give us this season.
-- Mingus Football (github.com/joshwilliams332/mingus), which owns the NFL models: team logos and colors from its site
-  data, and from its `data` branch the sportsbook props it pulls (`odds/props/<game>.json`) and its projections
-  (`model/projections/<season>-wNN.json`). The workflow checks both out (sparse) and passes the folders in.
+- Mingus Football (github.com/joshwilliams332/mingus): team logos and colors from its site data, and from its `data`
+  branch its projections (`model/projections/<season>-wNN.json`).
+- Mingus Picks (github.com/joshwilliams332/mingus-picks), which does every NFL Odds API pull: from its `data` branch the
+  sportsbook props (`odds/props/<game>.json`) and the locked model picks (`picks/`). NFL Lab never calls the Odds API.
+  The workflow checks all three out (sparse) and passes the folders in; until a folder exists in mingus-picks the
+  old copy on mingus's `data` branch is read instead.
 
 Files written:
     meta.json       season, current week, seasons loaded, when built
@@ -21,7 +24,7 @@ Files written:
     logs.json       {cols, logs: player id -> [[season, week, team, opp, ...cols]]}
     props.json      {games: game id -> prop rows, pulled: game id -> time}
     proj.json       game id -> player id -> stat -> {mean, sd, p_over, line}
-    picks.json      Mingus Football's locked model picks by slate + its official records
+    picks.json      Mingus Picks' locked model picks by slate + its official records
 
 Usage:
     python3 scripts/build_nfl.py --mingus mingus --mingus-data mingus-data
@@ -219,7 +222,7 @@ SLATES = {"night": "Night game", "early": "Sunday 1 PM", "late": "Sunday 4 PM"}
 
 
 def build_picks(data_dir):
-    """Mingus Football's locked model picks (night games and the Sunday slates), test nights left out, plus its
+    """Mingus Picks' locked model picks (night games and the Sunday slates), test nights left out, plus its
     official records. Graded in the browser from the same nflverse stats as saved picks."""
     root = Path(data_dir) / "picks" if data_dir else None
     out = {"history": [], "records": {}}
@@ -373,7 +376,7 @@ def apply_espn_injuries(players, injuries, ids):
 
 
 def merge_props(props, espn_props, ids, players):
-    """ESPN's DraftKings lines (no prices) fill in every player / stat Mingus Football didn't pull; rows it did pull keep
+    """ESPN's DraftKings lines (no prices) fill in every player / stat Mingus Picks didn't pull; rows it did pull keep
     their prices and get the DraftKings open when the line matches. Every ESPN-sourced row is marked `src: 'espn'`."""
     added = 0
     for gid, rows in espn_props.items():
@@ -409,7 +412,13 @@ def current_week(games, season):
     return max(weeks) if weeks else 1
 
 
-def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch=fetch_csv, espn=None, espn_get=None, today=None):
+def pick_source(picks_data, mingus_data, sub):
+    """mingus-picks' folder when it has `sub`, else the old copy on mingus's data branch."""
+    return picks_data if picks_data and (Path(picks_data) / sub).exists() else mingus_data
+
+
+def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch=fetch_csv, espn=None, espn_get=None, today=None,
+          picks_data=None):
     """`espn`: the store folder for ESPN caches (store/nfl/espn); None builds from nflverse alone."""
     season = season or season_now()
     seasons = [season - 1, season]
@@ -454,13 +463,13 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
     else:
         players = apply_status(players, roster, injuries)
     teams = json.loads((Path(mingus) / "site" / "data" / "teams.json").read_text()) if mingus else {}
-    props = build_props(mingus_data)
+    props = build_props(pick_source(picks_data, mingus_data, "odds/props"))
     if espn:
         note += f", DraftKings prop lines for {len(espn_props)} games ({prop_calls} calls, {merge_props(props, espn_props, ids, players)} rows added)"
     proj = build_proj(mingus_data)
-    picks = build_picks(mingus_data)
+    picks = build_picks(pick_source(picks_data, mingus_data, "picks"))
     meta = {"season": season, "seasons": seasons, "week": current_week(games, season),
-            "built": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "source": "ESPN + nflverse + Mingus Football" if espn else "nflverse + Mingus Football"}
+            "built": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "source": "ESPN + nflverse + Mingus Football + Mingus Picks" if espn else "nflverse + Mingus Football + Mingus Picks"}
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     for name, value in (("meta", meta), ("games", games), ("teams", teams), ("teamstats", teamstats),
@@ -474,12 +483,13 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--mingus", help="checkout of Mingus Football's main branch (for site/data/teams.json)")
-    ap.add_argument("--mingus-data", help="checkout of Mingus Football's data branch (odds/props, model/projections)")
+    ap.add_argument("--mingus-data", help="checkout of Mingus Football's data branch (model/projections)")
+    ap.add_argument("--picks-data", help="checkout of Mingus Picks' data branch (odds/props, picks)")
     ap.add_argument("--cache", help="folder to cache nflverse downloads in")
     ap.add_argument("--espn", help="store folder for ESPN caches (e.g. store/nfl/espn); leave out for nflverse only")
     args = ap.parse_args()
     try:
-        print(build(args.mingus, args.mingus_data, cache=args.cache, espn=args.espn))
+        print(build(args.mingus, args.mingus_data, cache=args.cache, espn=args.espn, picks_data=args.picks_data))
     except Exception as e:  # never break the deploy over football data
         print(f"NFL Lab: skipped ({e}); the NFL pages will say the data is unavailable", file=sys.stderr)
         sys.exit(1)

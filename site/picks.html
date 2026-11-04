@@ -37,7 +37,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   const st = { range: store('picksRange') || 'all', from: '', to: '', manage: false, msg: '', building: false, sel: new Set(), boost: 0, price: '', units: 1 };
   let model = null;  // today's locked model picks (data/digest.json), when the data job has written them
   const modelReady = load('digest').then(([d]) => d).catch(() => null);
-  // NFL Lab: its data (to grade NFL picks) and Mingus Football's locked model picks.
+  // NFL Lab: its data (to grade NFL picks) and Mingus Picks' locked model picks.
   let N = null;
   const nflReady = load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/logs', 'nfl/picks')
     .then(([meta, games, teams, teamstats, players, logs, picks]) => {
@@ -226,7 +226,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     </details>`;
   }
 
-  // NFL Lab's model picks (Mingus Football's locked picks): the record, this week's open picks to add in a tap, and
+  // NFL Lab's model picks (Mingus Picks' locked picks): the record, this week's open picks to add in a tap, and
   // every past slate graded. Same layout as the Hoop Lab card.
   function nflModelCard() {
     const doc = N && N.modelPicks;
@@ -251,7 +251,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
       <summary><span class="grow">${esc(label(d))}</span><span class="pdayrec">${recordLine(d.s)}</span></summary>
       ${d.rows.map(r => modelRow(r.pick, r.grade, keys, false)).join('')}</details>`;
     return `<details class="card mpicks" data-open="nflmodel"${isOpen('nflmodel', true) ? ' open' : ''}>
-      <summary><span class="grow"><b>NFL Lab model picks</b><small>Mingus Football's model · night games and Sunday slates · 1 unit each</small></span>
+      <summary><span class="grow"><b>NFL Lab model picks</b><small>Mingus Picks · night games and Sunday slates · 1 unit each</small></span>
         <span class="mrec">${recordLine(season)}${season.roi != null ? ` <small>ROI ${pct(season.roi)}</small>` : ''}</span></summary>
       ${upcoming}
       ${past.length ? `<details class="mall" data-open="nflhistory"${isOpen('nflhistory', false) ? ' open' : ''}>
