@@ -1,8 +1,9 @@
 # Hoop Lab: notes for Claude
 
-NBA research site for Josh (joshwilliams332): trends, hit rates, matchups. Live at
-https://joshwilliams332.github.io/nba-research/. Also a resume project, so keep the code clean, tested and
-documented (README), and work through PRs with clear descriptions.
+NBA research site for Josh (joshwilliams332): trends, hit rates, matchups, and the projection model behind the daily
+picks. Live at https://joshwilliams332.github.io/nba-research/. Hoop Lab is the core; Mingus Lab is the umbrella
+name, with NFL Lab beside it. The repo is public and held to a professional standard: clean, tested code, an
+up-to-date README, and PRs with clear descriptions.
 Josh mostly checks the site on his phone, so every change gets checked at ~390px wide as well as desktop.
 The look is inspired by Outlier, but it uses its own name and branding; never copy another product's logos or marks.
 
@@ -85,7 +86,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   Delivery: scheduled Claude tasks email Josh (12:23 PM ET picks, 5:53 PM ET heads-up only if a -check.json exists,
   4:41 AM ET recap, after the 3:47 AM EDT / 2:47 AM EST data run grades the late games) following
   `.claude/agents/pick-digest.md`. Public wording (README, workflow, PRs) describes it as automated emails to Josh, not
-  social media posting (recruiters read this repo). Nothing auto-posts.
+  social media posting (the repo is public). Nothing auto-posts.
 - Live scores (`site/assets/live.js`, tested in `tests/live.test.js`): while a game is on (or tipping within 10 min),
   index / game / picks pages poll ESPN's public scoreboard (and the summary box score for games on screen) from the
   browser every 25 s; pauses when the tab is hidden, stops when nothing's live, gives up after 3 failed checks and keeps
