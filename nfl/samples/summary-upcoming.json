@@ -887,6 +887,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "4",
       "uid": "s:20~l:28~t:4",
@@ -951,9 +953,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png"
     },
     {
      "id": "401872981",
@@ -2732,7 +2732,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1,
     "logos": [
      {
@@ -2783,7 +2783,7 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_1",
      "text": "Home Bet",
@@ -2807,7 +2807,7 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_3",
      "text": "Away Bet",
@@ -2947,7 +2947,7 @@
         "home",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_1",
        "text": "Home Bet",
@@ -2979,7 +2979,7 @@
         "away",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_3",
        "text": "Away Bet",
@@ -3311,18 +3311,6 @@
    "records": []
   }
  ],
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "33",
-   "gameProjection": "18.8"
-  },
-  "awayTeam": {
-   "id": "30",
-   "gameProjection": "81"
-  }
- },
- "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -5835,6 +5823,18 @@
    }
   ]
  },
+ "winprobability": [],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "33",
+   "gameProjection": "18.8"
+  },
+  "awayTeam": {
+   "id": "30",
+   "gameProjection": "81"
+  }
+ },
  "header": {
   "id": "401873037",
   "uid": "s:20~l:28~e:401873037",
@@ -6347,292 +6347,6 @@
      },
      "isTBDFlex": false
     },
-    "odds": [
-     {
-      "awayTeamOdds": {
-       "favorite": true,
-       "underdog": false,
-       "moneyLine": -520,
-       "spreadOdds": -108.0,
-       "open": {
-        "favorite": false,
-        "pointSpread": {
-         "alternateDisplayValue": "+4.5",
-         "american": "+4.5"
-        },
-        "spread": {
-         "value": 1.9,
-         "displayValue": "10/11",
-         "alternateDisplayValue": "-110",
-         "decimal": 1.9,
-         "fraction": "10/11",
-         "american": "-110"
-        },
-        "moneyLine": {
-         "value": 2.8,
-         "displayValue": "9/5",
-         "alternateDisplayValue": "+180",
-         "decimal": 2.8,
-         "fraction": "9/5",
-         "american": "+180"
-        }
-       },
-       "current": {
-        "pointSpread": {
-         "alternateDisplayValue": "-10",
-         "american": "-10"
-        },
-        "spread": {
-         "value": 1.92,
-         "displayValue": "25/27",
-         "alternateDisplayValue": "-108",
-         "decimal": 1.92,
-         "fraction": "25/27",
-         "american": "-108"
-        },
-        "moneyLine": {
-         "value": 1.19,
-         "displayValue": "5/26",
-         "alternateDisplayValue": "-520",
-         "decimal": 1.19,
-         "fraction": "5/26",
-         "american": "-520"
-        }
-       },
-       "team": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/30?lang=en&region=us"
-       }
-      },
-      "homeTeamOdds": {
-       "favorite": false,
-       "underdog": true,
-       "moneyLine": 390,
-       "spreadOdds": -112.0,
-       "open": {
-        "favorite": true,
-        "pointSpread": {
-         "alternateDisplayValue": "-4.5",
-         "american": "-4.5"
-        },
-        "spread": {
-         "value": 1.9,
-         "displayValue": "10/11",
-         "alternateDisplayValue": "-110",
-         "decimal": 1.9,
-         "fraction": "10/11",
-         "american": "-110"
-        },
-        "moneyLine": {
-         "value": 1.45,
-         "displayValue": "50/109",
-         "alternateDisplayValue": "-218",
-         "decimal": 1.45,
-         "fraction": "50/109",
-         "american": "-218"
-        }
-       },
-       "current": {
-        "pointSpread": {
-         "alternateDisplayValue": "+10",
-         "american": "+10"
-        },
-        "spread": {
-         "value": 1.89,
-         "displayValue": "25/28",
-         "alternateDisplayValue": "-112",
-         "decimal": 1.89,
-         "fraction": "25/28",
-         "american": "-112"
-        },
-        "moneyLine": {
-         "value": 4.9,
-         "displayValue": "39/10",
-         "alternateDisplayValue": "+390",
-         "decimal": 4.9,
-         "fraction": "39/10",
-         "american": "+390"
-        }
-       },
-       "team": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/33?lang=en&region=us"
-       }
-      },
-      "current": {
-       "over": {
-        "value": 1.92,
-        "displayValue": "25/27",
-        "alternateDisplayValue": "-108",
-        "decimal": 1.92,
-        "fraction": "25/27",
-        "american": "-108"
-       },
-       "under": {
-        "value": 1.89,
-        "displayValue": "25/28",
-        "alternateDisplayValue": "-112",
-        "decimal": 1.89,
-        "fraction": "25/28",
-        "american": "-112"
-       },
-       "total": {
-        "alternateDisplayValue": "40.5",
-        "american": "40.5"
-       }
-      },
-      "propBets": [
-       {
-        "type": {
-         "id": "8",
-         "name": "Total Passing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "8",
-         "name": "Total Passing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "8",
-         "name": "Total Passing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "8",
-         "name": "Total Passing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "9",
-         "name": "Total Pass Completions (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "9",
-         "name": "Total Pass Completions (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "10",
-         "name": "Total Passing Touchdowns (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "10",
-         "name": "Total Passing Touchdowns (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "13",
-         "name": "Total Receiving Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "13",
-         "name": "Total Receiving Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "13",
-         "name": "Total Receiving Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "13",
-         "name": "Total Receiving Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "13",
-         "name": "Total Receiving Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "13",
-         "name": "Total Receiving Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "13",
-         "name": "Total Receiving Yards (incl. overtime)"
-        }
-       }
-      ]
-     }
-    ],
     "broadcasts": [
      {
       "type": {
@@ -6664,18 +6378,6 @@
     "href": "https://www.espn.com/nfl/game/_/gameId/401873037/jaguars-ravens",
     "text": "Gamecast",
     "shortText": "Summary",
-    "isExternal": false,
-    "isPremium": false
-   },
-   {
-    "rel": [
-     "odds",
-     "desktop",
-     "event"
-    ],
-    "href": "https://www.espn.com/nfl/odds/_/gameId/401873037",
-    "text": "Odds",
-    "shortText": "Odds",
     "isExternal": false,
     "isPremium": false
    },
@@ -6898,7 +6600,6 @@
    ]
   }
  },
- "wallclockAvailable": false,
  "ticketsInfo": {
   "tickets": [
    {
@@ -6912,7 +6613,7 @@
     "type": "team"
    },
    {
-    "ticketName": "11/5 vs Jaguars 4751 tickets left",
+    "ticketName": "11/5 vs Jaguars 4733 tickets left",
     "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-4-2026/production/6487393?wsUser=717",
     "type": "event"
    },
@@ -6961,7 +6662,7 @@
    "opponentTeamName": "Jaguars",
    "currentTeamName": "Ravens",
    "venueName": "M&T Bank Stadium",
-   "summary": "Tickets as low as $36",
+   "summary": "Tickets as low as $37",
    "date": "2026-11-06T01:15Z",
    "dateDay": "Thu",
    "homeAway": "home",
@@ -6972,6 +6673,7 @@
    "timeValid": true
   }
  },
+ "wallclockAvailable": false,
  "meta": {
   "gp_topic": "gp-football-nfl-401873037",
   "gameSwitcherEnabled": true,
