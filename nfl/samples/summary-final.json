@@ -25948,6 +25948,128 @@
    "injuries": [
     {
      "status": "Questionable",
+     "date": "2026-11-04T20:59Z",
+     "athlete": {
+      "id": "3124005",
+      "uid": "s:20~l:28~a:3124005",
+      "guid": "f24ad202-b39e-fcce-dcd2-4b5e8765c418",
+      "lastName": "Franklin",
+      "fullName": "Zaire Franklin",
+      "displayName": "Zaire Franklin",
+      "shortName": "Z. Franklin",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/3124005/zaire-franklin",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/3124005.png",
+       "alt": "Zaire Franklin"
+      },
+      "jersey": "44",
+      "position": {
+       "name": "Linebacker",
+       "displayName": "Linebacker",
+       "abbreviation": "LB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/3124005?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Shin",
+      "location": "Leg",
+      "detail": "Fracture",
+      "side": "Not Specified",
+      "returnDate": "2026-11-08"
+     }
+    },
+    {
+     "status": "Out",
+     "date": "2026-11-04T17:59Z",
+     "athlete": {
+      "id": "4361423",
+      "uid": "s:20~l:28~a:4361423",
+      "guid": "19e0d5a6-9c4e-83d1-c9c2-5cfa322727f5",
+      "lastName": "Parsons",
+      "fullName": "Micah Parsons",
+      "displayName": "Micah Parsons",
+      "shortName": "M. Parsons",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4361423/micah-parsons",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4361423.png",
+       "alt": "Micah Parsons"
+      },
+      "jersey": "1",
+      "position": {
+       "name": "Defensive End",
+       "displayName": "Defensive End",
+       "abbreviation": "DE"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4361423?lang=en&region=us"
+      },
+      "status": {
+       "id": "13",
+       "name": "Day-To-Day",
+       "type": "day-to-day",
+       "abbreviation": "Day-To-Day"
+      }
+     },
+     "type": {
+      "id": "4",
+      "name": "INJURY_STATUS_OUT",
+      "description": "out",
+      "abbreviation": "O"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "PUP-R",
+       "abbreviation": "PUP-R",
+       "displayDescription": "PUP-R"
+      },
+      "type": "Knee - ACL",
+      "location": "Leg",
+      "detail": "Surgery",
+      "side": "Left",
+      "returnDate": "2026-11-25"
+     }
+    },
+    {
+     "status": "Questionable",
      "date": "2026-11-03T13:03Z",
      "athlete": {
       "id": "4426411",
@@ -26005,67 +26127,6 @@
       "detail": "Sprain",
       "side": "Not Specified",
       "returnDate": "2026-11-25"
-     }
-    },
-    {
-     "status": "Questionable",
-     "date": "2026-11-03T13:03Z",
-     "athlete": {
-      "id": "3124005",
-      "uid": "s:20~l:28~a:3124005",
-      "guid": "f24ad202-b39e-fcce-dcd2-4b5e8765c418",
-      "lastName": "Franklin",
-      "fullName": "Zaire Franklin",
-      "displayName": "Zaire Franklin",
-      "shortName": "Z. Franklin",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/3124005/zaire-franklin",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/3124005.png",
-       "alt": "Zaire Franklin"
-      },
-      "jersey": "44",
-      "position": {
-       "name": "Linebacker",
-       "displayName": "Linebacker",
-       "abbreviation": "LB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/3124005?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Shin",
-      "location": "Leg",
-      "detail": "Fracture",
-      "side": "Not Specified",
-      "returnDate": "2026-11-08"
      }
     },
     {
@@ -26187,67 +26248,6 @@
       "location": "Torso",
       "detail": "Fracture",
       "returnDate": "2026-11-08"
-     }
-    },
-    {
-     "status": "Out",
-     "date": "2026-11-02T19:39Z",
-     "athlete": {
-      "id": "4361423",
-      "uid": "s:20~l:28~a:4361423",
-      "guid": "19e0d5a6-9c4e-83d1-c9c2-5cfa322727f5",
-      "lastName": "Parsons",
-      "fullName": "Micah Parsons",
-      "displayName": "Micah Parsons",
-      "shortName": "M. Parsons",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4361423/micah-parsons",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4361423.png",
-       "alt": "Micah Parsons"
-      },
-      "jersey": "1",
-      "position": {
-       "name": "Defensive End",
-       "displayName": "Defensive End",
-       "abbreviation": "DE"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4361423?lang=en&region=us"
-      },
-      "status": {
-       "id": "13",
-       "name": "Day-To-Day",
-       "type": "day-to-day",
-       "abbreviation": "Day-To-Day"
-      }
-     },
-     "type": {
-      "id": "4",
-      "name": "INJURY_STATUS_OUT",
-      "description": "out",
-      "abbreviation": "O"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "PUP-R",
-       "abbreviation": "PUP-R",
-       "displayDescription": "PUP-R"
-      },
-      "type": "Knee - ACL",
-      "location": "Leg",
-      "detail": "Surgery",
-      "side": "Left",
-      "returnDate": "2026-11-25"
      }
     }
    ]
@@ -26653,7 +26653,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1,
     "logos": [
      {
@@ -26704,7 +26704,7 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118182%3Foutcomes%3D0ML84695615_1",
      "text": "Home Bet",
@@ -26718,7 +26718,7 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118182%3Foutcomes%3D0ML84695615_3",
      "text": "Away Bet",
@@ -27738,283 +27738,33 @@
   },
   "articles": [
    {
-    "id": 50379252,
-    "nowId": "1-50379252",
-    "contentKey": "50379252-1-293-1",
-    "dataSourceIdentifier": "32c0514446c92",
-    "type": "Media",
-    "headline": "Greg Dulcich's Week 9 fantasy preview",
-    "description": "Greg Dulcich's Week 9 fantasy preview",
-    "lastModified": "2026-11-04T15:37:24Z",
-    "published": "2026-11-04T15:37:24Z",
+    "id": 50381853,
+    "nowId": "1-50381853",
+    "contentKey": "50381853-1-5-1",
+    "dataSourceIdentifier": "bde7d43030e50",
+    "type": "HeadlineNews",
+    "headline": "Colts' Shane Steichen defends Jonathan Taylor usage, says RB will keep role",
+    "description": "Jonathan Taylor will continue to play his usual role with the Colts despite being at the center of trade talks with multiple teams, Shane Steichen said.",
+    "lastModified": "2026-11-04T21:16:35Z",
+    "published": "2026-11-04T21:16:35Z",
     "images": [
      {
-      "name": "Greg Dulcich's Week 9 fantasy preview",
-      "caption": "Greg Dulcich's Week 9 fantasy preview",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/ss_20261104_103344701_3724704/ss_20261104_103344701_3724704.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 409228,
-      "type": "topic",
-      "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d",
-      "description": "fantasy",
-      "sportId": 0,
-      "topicId": 785
-     },
-     {
-      "id": 529467,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4367209",
-      "guid": "d05acdf6-28d5-9e9e-3783-e51705161bcb",
-      "description": "Greg Dulcich",
-      "sportId": 28,
-      "athleteId": 4367209,
-      "athlete": {
-       "id": 4367209,
-       "description": "Greg Dulcich",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4367209/greg-dulcich"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4367209/greg-dulcich"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 730035,
-      "type": "editorialindicator",
-      "guid": "765b3968-7a2d-3d80-bded-8ba8b1e1cc03",
-      "description": "Verts - Exclude Content"
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/930dc1ef-0d7f-462b-b8ac-f75a9c9277ba"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50379252"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50379252&videoDSI=32c0514446c92"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50379252/greg-dulcich-week-9-fantasy-preview",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50379252/greg-dulcich-week-9-fantasy-preview",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=32c0514446c92"
-       }
-      }
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50379089,
-    "nowId": "1-50379089",
-    "contentKey": "50379089-1-293-1",
-    "dataSourceIdentifier": "98a0c2922ca17",
-    "type": "Media",
-    "headline": "Ladd McConkey's Week 9 fantasy outlook",
-    "description": "Ladd McConkey's Week 9 fantasy outlook",
-    "lastModified": "2026-11-04T15:23:27Z",
-    "published": "2026-11-04T15:23:27Z",
-    "images": [
-     {
-      "name": "Ladd McConkey's Week 9 fantasy outlook",
-      "caption": "Ladd McConkey's Week 9 fantasy outlook",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/ss_20261104_101523875_3724693/ss_20261104_101523875_3724693.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 730035,
-      "type": "editorialindicator",
-      "guid": "765b3968-7a2d-3d80-bded-8ba8b1e1cc03",
-      "description": "Verts - Exclude Content"
-     },
-     {
-      "id": 439382,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4612826",
-      "guid": "ea99dfb4-efbc-32ae-aefe-267c745f722b",
-      "description": "Ladd McConkey",
-      "sportId": 28,
-      "athleteId": 4612826,
-      "athlete": {
-       "id": 4612826,
-       "description": "Ladd McConkey",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4612826/ladd-mcconkey"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4612826/ladd-mcconkey"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 409228,
-      "type": "topic",
-      "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d",
-      "description": "fantasy",
-      "sportId": 0,
-      "topicId": 785
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/6a663804-9244-461f-b84a-cb9a71c7307e"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50379089"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50379089&videoDSI=98a0c2922ca17"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50379089/ladd-mcconkey-week-9-fantasy-outlook",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50379089/ladd-mcconkey-week-9-fantasy-outlook",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=98a0c2922ca17"
-       }
-      }
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50369642,
-    "nowId": "1-50369642",
-    "contentKey": "50369642-1-6-1",
-    "dataSourceIdentifier": "3c23f076357e2",
-    "type": "Story",
-    "headline": "NFL Week 9 latest intel, buzz questions, fantasy tips and trade deadline news",
-    "description": "What now for the Ravens without Lamar Jackson? What are people around the NFL saying about Justin Herbert's struggles? And what's the latest on the looming trade deadline?",
-    "lastModified": "2026-11-04T15:17:25Z",
-    "published": "2026-11-04T15:17:25Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "c8d03a3da0c62",
-      "id": 50371552,
+      "dataSourceIdentifier": "953021d34bfde",
+      "id": 50281272,
       "type": "header",
-      "name": "Jesse Minter for BUZZ [608x342]",
-      "credit": "Mark Konezny/Imagn Images",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1103/r1740667_608x342_16-9.jpg"
+      "name": "Jonathan Taylor [1296x729]",
+      "credit": "Kevin Sabitus/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1025/r1736160_2_1296x729_16-9.jpg"
      },
      {
       "type": "Media",
-      "name": "Domonique Foxworth wonders whether if Lamar Jackson ever plays for the Ravens again",
-      "caption": "Domonique Foxworth wonders whether if Lamar Jackson ever plays for the Ravens again",
+      "name": "The team Domonique Foxworth says needs Jonathan Taylor the most",
+      "caption": "The team Domonique Foxworth says needs Jonathan Taylor the most",
       "height": 324,
       "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1102/ss_20261102_083606751_3721913/ss_20261102_083606751_3721913.jpg"
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1103/ss_20261103_083034129_3723670515/ss_20261103_083034129_3723670515.jpg"
      }
     ],
     "categories": [
@@ -28039,82 +27789,6 @@
         "web": {
          "leagues": {
           "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 409222,
-      "type": "topic",
-      "guid": "b66e959d-b64e-9bd6-7d5c-1bcb0d53c0cb",
-      "description": "daily",
-      "sportId": 0,
-      "topicId": 779
-     },
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 2830,
-      "type": "team",
-      "uid": "s:20~l:28~t:33",
-      "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
-      "description": "Baltimore Ravens",
-      "sportId": 28,
-      "teamId": 33,
-      "team": {
-       "id": 33,
-       "description": "Baltimore Ravens",
-       "abbreviation": "BAL",
-       "shortDisplayName": "Ravens",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2610,
-      "type": "team",
-      "uid": "s:20~l:28~t:24",
-      "guid": "84caf62b-c753-71ea-a787-44fd224a4294",
-      "description": "Los Angeles Chargers",
-      "sportId": 28,
-      "teamId": 24,
-      "team": {
-       "id": 24,
-       "description": "Los Angeles Chargers",
-       "abbreviation": "LAC",
-       "shortDisplayName": "Chargers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
          }
         }
        }
@@ -28148,830 +27822,30 @@
       }
      },
      {
-      "id": 1298,
-      "type": "team",
-      "uid": "s:20~l:28~t:6",
-      "guid": "b0fc8fb7-9dbe-e574-9008-6f0ee7c6b234",
-      "description": "Dallas Cowboys",
-      "sportId": 28,
-      "teamId": 6,
-      "team": {
-       "id": 6,
-       "description": "Dallas Cowboys",
-       "abbreviation": "DAL",
-       "shortDisplayName": "Cowboys",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/dal/dallas-cowboys"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/dal/dallas-cowboys"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1750,
-      "type": "team",
-      "uid": "s:20~l:28~t:3",
-      "guid": "19d73366-b5a5-cca2-a176-a2c024ce0bb3",
-      "description": "Chicago Bears",
-      "sportId": 28,
-      "teamId": 3,
-      "team": {
-       "id": 3,
-       "description": "Chicago Bears",
-       "abbreviation": "CHI",
-       "shortDisplayName": "Bears",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2378,
-      "type": "team",
-      "uid": "s:20~l:28~t:20",
-      "guid": "732d3caf-b350-1e34-48c6-b7cebb4a0d88",
-      "description": "New York Jets",
-      "sportId": 28,
-      "teamId": 20,
-      "team": {
-       "id": 20,
-       "description": "New York Jets",
-       "abbreviation": "NYJ",
-       "shortDisplayName": "Jets",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyj/new-york-jets"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyj/new-york-jets"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2035,
-      "type": "team",
-      "uid": "s:20~l:28~t:18",
-      "guid": "97d2f6c9-2f22-459c-306a-046941ccab2a",
-      "description": "New Orleans Saints",
-      "sportId": 28,
-      "teamId": 18,
-      "team": {
-       "id": 18,
-       "description": "New Orleans Saints",
-       "abbreviation": "NO",
-       "shortDisplayName": "Saints",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2996,
-      "type": "team",
-      "uid": "s:20~l:28~t:30",
-      "guid": "ca6fb778-cbf6-d9a3-3e93-01230335fcab",
-      "description": "Jacksonville Jaguars",
-      "sportId": 28,
-      "teamId": 30,
-      "team": {
-       "id": 30,
-       "description": "Jacksonville Jaguars",
-       "abbreviation": "JAX",
-       "shortDisplayName": "Jaguars",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2776,
-      "type": "team",
-      "uid": "s:20~l:28~t:23",
-      "guid": "debcd592-8d53-71f1-fc15-5c8b8ef9df6e",
-      "description": "Pittsburgh Steelers",
-      "sportId": 28,
-      "teamId": 23,
-      "team": {
-       "id": 23,
-       "description": "Pittsburgh Steelers",
-       "abbreviation": "PIT",
-       "shortDisplayName": "Steelers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1407,
-      "type": "team",
-      "uid": "s:20~l:28~t:21",
-      "guid": "d1a9b001-1df7-fbd7-ae4c-6ca7065286ec",
-      "description": "Philadelphia Eagles",
-      "sportId": 28,
-      "teamId": 21,
-      "team": {
-       "id": 21,
-       "description": "Philadelphia Eagles",
-       "abbreviation": "PHI",
-       "shortDisplayName": "Eagles",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1583,
-      "type": "team",
-      "uid": "s:20~l:28~t:22",
-      "guid": "8fc7b962-95e1-3cb8-6a7d-b499de9ad546",
-      "description": "Arizona Cardinals",
-      "sportId": 28,
-      "teamId": 22,
-      "team": {
-       "id": 22,
-       "description": "Arizona Cardinals",
-       "abbreviation": "ARI",
-       "shortDisplayName": "Cardinals",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ari/arizona-cardinals"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ari/arizona-cardinals"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1920,
-      "type": "team",
-      "uid": "s:20~l:28~t:16",
-      "guid": "3db556c9-ed76-a7a5-4ccb-a92fc6db4334",
-      "description": "Minnesota Vikings",
-      "sportId": 28,
-      "teamId": 16,
-      "team": {
-       "id": 16,
-       "description": "Minnesota Vikings",
-       "abbreviation": "MIN",
-       "shortDisplayName": "Vikings",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1861,
-      "type": "team",
-      "uid": "s:20~l:28~t:9",
-      "guid": "06cd3bcf-7a86-53d4-28e7-aa049dd36261",
-      "description": "Green Bay Packers",
-      "sportId": 28,
-      "teamId": 9,
-      "team": {
-       "id": 9,
-       "description": "Green Bay Packers",
-       "abbreviation": "GB",
-       "shortDisplayName": "Packers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1805,
-      "type": "team",
-      "uid": "s:20~l:28~t:8",
-      "guid": "56caffee-178d-f6f2-a076-b277486b8c32",
-      "description": "Detroit Lions",
-      "sportId": 28,
-      "teamId": 8,
-      "team": {
-       "id": 8,
-       "description": "Detroit Lions",
-       "abbreviation": "DET",
-       "shortDisplayName": "Lions",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/det/detroit-lions"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/det/detroit-lions"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1352,
-      "type": "team",
-      "uid": "s:20~l:28~t:19",
-      "guid": "378600ea-2397-8364-8399-b7c1606a49a7",
-      "description": "New York Giants",
-      "sportId": 28,
-      "teamId": 19,
-      "team": {
-       "id": 19,
-       "description": "New York Giants",
-       "abbreviation": "NYG",
-       "shortDisplayName": "Giants",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2553,
-      "type": "team",
-      "uid": "s:20~l:28~t:13",
-      "guid": "b18540eb-6f2b-534c-e7f9-9bd930518da9",
-      "description": "Las Vegas Raiders",
-      "sportId": 28,
-      "teamId": 13,
-      "team": {
-       "id": 13,
-       "description": "Las Vegas Raiders",
-       "abbreviation": "LV",
-       "shortDisplayName": "Raiders",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2886,
-      "type": "team",
-      "uid": "s:20~l:28~t:10",
-      "guid": "0a0aea59-9a5e-01b3-57a3-0151cf4bf393",
-      "description": "Tennessee Titans",
-      "sportId": 28,
-      "teamId": 10,
-      "team": {
-       "id": 10,
-       "description": "Tennessee Titans",
-       "abbreviation": "TEN",
-       "shortDisplayName": "Titans",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2091,
-      "type": "team",
-      "uid": "s:20~l:28~t:27",
-      "guid": "13e8b157-a75a-ff24-ae91-fa3d52ddf204",
-      "description": "Tampa Bay Buccaneers",
-      "sportId": 28,
-      "teamId": 27,
-      "team": {
-       "id": 27,
-       "description": "Tampa Bay Buccaneers",
-       "abbreviation": "TB",
-       "shortDisplayName": "Buccaneers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/tb/tampa-bay-buccaneers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/tb/tampa-bay-buccaneers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1462,
-      "type": "team",
-      "uid": "s:20~l:28~t:28",
-      "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
-      "description": "Washington Commanders",
-      "sportId": 28,
-      "teamId": 28,
-      "team": {
-       "id": 28,
-       "description": "Washington Commanders",
-       "abbreviation": "WSH",
-       "shortDisplayName": "Commanders",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "Jeremy Fowler and Dan Graziano",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50369642"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50369642"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50369642"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50369642/week-9-buzz-fantasy-predictions-graziano-fowler-2026-trades"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50378944,
-    "nowId": "1-50378944",
-    "contentKey": "50378944-1-293-1",
-    "dataSourceIdentifier": "85c2d88300183",
-    "type": "Media",
-    "headline": "What does Brandon Aiyuk's application for reinstatement mean for 49ers?",
-    "description": "What does Brandon Aiyuk's application for reinstatement mean for 49ers?",
-    "lastModified": "2026-11-04T15:21:04Z",
-    "published": "2026-11-04T15:21:04Z",
-    "images": [
-     {
-      "name": "What does Brandon Aiyuk's application for reinstatement mean for 49ers?",
-      "caption": "What does Brandon Aiyuk's application for reinstatement mean for 49ers?",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/ss_20261104_095844398_3724686610/ss_20261104_095844398_3724686610.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 434992,
+      "id": 435130,
       "type": "athlete",
-      "uid": "s:20~l:28~a:4360438",
-      "guid": "adf56900-5f5b-78ef-7309-892ec10e85d3",
-      "description": "Brandon Aiyuk",
+      "uid": "s:20~l:28~a:4242335",
+      "guid": "ddd8786c-fd5a-4e55-ccc8-6ddf6f1ede33",
+      "description": "Jonathan Taylor",
       "sportId": 28,
-      "athleteId": 4360438,
+      "athleteId": 4242335,
       "athlete": {
-       "id": 4360438,
-       "description": "Brandon Aiyuk",
+       "id": 4242335,
+       "description": "Jonathan Taylor",
        "links": {
         "mobile": {
          "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4360438/brandon-aiyuk"
+          "href": "https://www.espn.com/nfl/player/_/id/4242335/jonathan-taylor"
          }
         },
         "web": {
          "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4360438/brandon-aiyuk"
+          "href": "https://www.espn.com/nfl/player/_/id/4242335/jonathan-taylor"
          }
         }
        }
       }
      },
-     {
-      "id": 756046,
-      "type": "series",
-      "guid": "e114d885-c579-4bfb-b35c-4fc63c302d00",
-      "description": "Get Up!",
-      "series": {
-       "description": "Get Up!"
-      }
-     },
-     {
-      "id": 1637,
-      "type": "team",
-      "uid": "s:20~l:28~t:25",
-      "guid": "985a261f-296c-c95c-32a5-addc4df75001",
-      "description": "San Francisco 49ers",
-      "sportId": 28,
-      "teamId": 25,
-      "team": {
-       "id": 25,
-       "description": "San Francisco 49ers",
-       "abbreviation": "SF",
-       "shortDisplayName": "49ers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 730035,
-      "type": "editorialindicator",
-      "guid": "765b3968-7a2d-3d80-bded-8ba8b1e1cc03",
-      "description": "Verts - Exclude Content"
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/904d81ab-23b0-4017-9b1d-b330437f3c9d"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50378944"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50378944&videoDSI=85c2d88300183"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50378944/what-does-brandon-aiyuk-application-reinstatement-mean-49ers",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50378944/what-does-brandon-aiyuk-application-reinstatement-mean-49ers",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=85c2d88300183"
-       }
-      }
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50378943,
-    "nowId": "1-50378943",
-    "contentKey": "50378943-1-293-1",
-    "dataSourceIdentifier": "65f8080551807",
-    "type": "Media",
-    "headline": "Jason McCourty: This is Shedeur Sanders' opportunity to show what he can do",
-    "description": "Jason McCourty: This is Shedeur Sanders' opportunity to show what he can do",
-    "lastModified": "2026-11-04T15:00:07Z",
-    "published": "2026-11-04T15:00:07Z",
-    "images": [
-     {
-      "name": "Jason McCourty: This is Shedeur Sanders' opportunity to show what he can do",
-      "caption": "Jason McCourty: This is Shedeur Sanders' opportunity to show what he can do",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/ss_20261104_095709073_3724685/ss_20261104_095709073_3724685.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 711826,
-      "type": "editorialindicator",
-      "guid": "122acb1b-7e9e-31cf-88a1-d2dc784385cf",
-      "description": "2 Star Rating"
-     },
-     {
-      "id": 2719,
-      "type": "team",
-      "uid": "s:20~l:28~t:5",
-      "guid": "539babc5-e5fb-753b-8ae1-c15032a91ef4",
-      "description": "Cleveland Browns",
-      "sportId": 28,
-      "teamId": 5,
-      "team": {
-       "id": 5,
-       "description": "Cleveland Browns",
-       "abbreviation": "CLE",
-       "shortDisplayName": "Browns",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cle/cleveland-browns"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cle/cleveland-browns"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 466378,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4432762",
-      "guid": "fecbc03c-f8bf-342e-82be-991901cf6449",
-      "description": "Shedeur Sanders",
-      "sportId": 28,
-      "athleteId": 4432762,
-      "athlete": {
-       "id": 4432762,
-       "description": "Shedeur Sanders",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4432762/shedeur-sanders"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4432762/shedeur-sanders"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 166843,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:3122840",
-      "guid": "b6ec8e9e-3d85-a1de-9d0a-5a51621a9c20",
-      "description": "Deshaun Watson",
-      "sportId": 28,
-      "athleteId": 3122840,
-      "athlete": {
-       "id": 3122840,
-       "description": "Deshaun Watson",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3122840/deshaun-watson"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3122840/deshaun-watson"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 756046,
-      "type": "series",
-      "guid": "e114d885-c579-4bfb-b35c-4fc63c302d00",
-      "description": "Get Up!",
-      "series": {
-       "description": "Get Up!"
-      }
-     },
-     {
-      "id": 63176,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:12691",
-      "guid": "9241b9f4-18a2-e3ee-1df4-4f356ea5b336",
-      "description": "Jason McCourty",
-      "sportId": 28,
-      "athleteId": 12691,
-      "athlete": {
-       "id": 12691,
-       "description": "Jason McCourty",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/12691/jason-mccourty"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/12691/jason-mccourty"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/9bef7a67-e126-40d7-ab61-d0572c478415"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50378943"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50378943&videoDSI=65f8080551807"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50378943/shedeur-sanders-opportunity-show-do",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50378943/shedeur-sanders-opportunity-show-do",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=65f8080551807"
-       }
-      }
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50378819,
-    "nowId": "1-50378819",
-    "contentKey": "50378819-1-5-1",
-    "dataSourceIdentifier": "52e91ca72d2fc",
-    "type": "HeadlineNews",
-    "headline": "Browns QB Deshaun Watson in concussion protocol; status vs. Saints unclear",
-    "description": "The Browns have placed starting QB Deshaun Watson in the concussion protocol, the team announced Wednesday, leaving his status for Sunday's matchup against the Saints in question.",
-    "lastModified": "2026-11-04T15:08:59Z",
-    "published": "2026-11-04T15:08:59Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "bda074902f3db",
-      "id": 50350242,
-      "type": "header",
-      "name": "Deshaun Watson [600x400]",
-      "alt": "Deshaun Watson",
-      "credit": "Gene J. Puskar/AP Photo",
-      "height": 400,
-      "width": 600,
-      "url": "https://a.espncdn.com/photo/2026/1101/r1739664_600x400_3-2.jpg"
-     },
-     {
-      "dataSourceIdentifier": "d7918a233764b",
-      "id": 49697784,
-      "type": "header",
-      "name": "Shedeur Sanders & Deshaun Watson [600x400]",
-      "alt": "Shedeur Sanders, Deshaun Watson",
-      "credit": "Carolyn Kaster/AP Photo",
-      "height": 400,
-      "width": 600,
-      "url": "https://a.espncdn.com/photo/2026/0823/r1705605_600x400_3-2.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Jason McCourty: This is Shedeur Sanders' opportunity to show what he can do",
-      "caption": "Jason McCourty: This is Shedeur Sanders' opportunity to show what he can do",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/ss_20261104_095709073_3724685/ss_20261104_095709073_3724685.jpg"
-     }
-    ],
-    "categories": [
      {
       "id": 409224,
       "type": "topic",
@@ -28981,6 +27855,85 @@
       "topicId": 781
      },
      {
+      "id": 698425,
+      "type": "contributor",
+      "guid": "5585e764-d266-3aaa-804a-cc2fef2c8bc0",
+      "description": "Stephen Holder",
+      "slug": "stephen-holder",
+      "contributor": {
+       "id": 3914,
+       "description": "Stephen Holder"
+      }
+     }
+    ],
+    "byline": "Stephen Holder",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50381853"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50381853"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50381853"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50381853/shane-steichen-defends-colts-jonathan-taylor-usage-trade"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 49804149,
+    "nowId": "1-49804149",
+    "contentKey": "49804149-1-6-1",
+    "dataSourceIdentifier": "404cfcc05d0f3",
+    "type": "Story",
+    "headline": "Fantasy football rankings for Week 9: Wide receiver",
+    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
+    "lastModified": "2026-11-04T20:57:11Z",
+    "published": "2026-11-04T20:57:11Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "0297460dcb6cb",
+      "id": 49817677,
+      "type": "header",
+      "name": "CeeDee Lamb [1296x729]",
+      "alt": "CeeDee Lamb, Dallas Cowboys wide receiver",
+      "credit": "Kevin Jairaj-Imagn Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0903/r1711058_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Why Dopp likes Jameson Williams as a lineup lock in Week 9",
+      "caption": "Why Dopp likes Jameson Williams as a lineup lock in Week 9",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/dm_261104_Why_Dopp_backs_Williams_St_Brown_as_Week_9_starts/dm_261104_Why_Dopp_backs_Williams_St_Brown_as_Week_9_starts.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
       "id": 9572,
       "type": "league",
       "uid": "s:20~l:28",
@@ -29005,1106 +27958,454 @@
         }
        }
       }
-     },
-     {
-      "id": 2719,
-      "type": "team",
-      "uid": "s:20~l:28~t:5",
-      "guid": "539babc5-e5fb-753b-8ae1-c15032a91ef4",
-      "description": "Cleveland Browns",
-      "sportId": 28,
-      "teamId": 5,
-      "team": {
-       "id": 5,
-       "description": "Cleveland Browns",
-       "abbreviation": "CLE",
-       "shortDisplayName": "Browns",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cle/cleveland-browns"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cle/cleveland-browns"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 166843,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:3122840",
-      "guid": "b6ec8e9e-3d85-a1de-9d0a-5a51621a9c20",
-      "description": "Deshaun Watson",
-      "sportId": 28,
-      "athleteId": 3122840,
-      "athlete": {
-       "id": 3122840,
-       "description": "Deshaun Watson",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3122840/deshaun-watson"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3122840/deshaun-watson"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 466378,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4432762",
-      "guid": "fecbc03c-f8bf-342e-82be-991901cf6449",
-      "description": "Shedeur Sanders",
-      "sportId": 28,
-      "athleteId": 4432762,
-      "athlete": {
-       "id": 4432762,
-       "description": "Shedeur Sanders",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4432762/shedeur-sanders"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4432762/shedeur-sanders"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 696247,
-      "type": "contributor",
-      "guid": "48ff5193-afea-319f-914b-89b575869d5a",
-      "description": "Daniel Oyefusi",
-      "slug": "daniel-oyefusi",
-      "contributor": {
-       "id": 4053,
-       "description": "Daniel Oyefusi"
-      }
      }
     ],
-    "byline": "Daniel Oyefusi",
+    "byline": "ESPN Fantasy",
     "links": {
      "api": {
       "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50378819"
+       "href": "https://content.core.api.espn.com/v1/sports/news/49804149"
       }
      },
      "app": {
       "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50378819"
+       "href": "sportscenter://x-callback-url/showStory?uid=49804149"
       }
      },
      "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50378819"
+      "href": "http://m.espn.go.com/wireless/story?storyId=49804149"
      },
      "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50378819/browns-qb-watson-concussion-protocol-status-vs-saints-unclear"
+      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804149/nfl-fantasy-football-rankings-2026-wr-wide-receiver"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 49804068,
+    "nowId": "1-49804068",
+    "contentKey": "49804068-1-6-1",
+    "dataSourceIdentifier": "1683952726e7f",
+    "type": "Story",
+    "headline": "Fantasy football rankings for Week 9: Running back",
+    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
+    "lastModified": "2026-11-04T20:57:35Z",
+    "published": "2026-11-04T20:57:35Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "519f695ea5875",
+      "id": 50174405,
+      "type": "header",
+      "name": "Kenneth Walker III [1296x729]",
+      "alt": "Kenneth Walker III, Kansas City Chiefs running back",
+      "credit": "Kevin Sabitus/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0922/r1720547_1296x729_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "bd21d9a31c266",
+      "id": 50116946,
+      "type": "header",
+      "name": "Jahmyr Gibbs [1296x729]",
+      "alt": "Jahmyr Gibbs #0 of the Detroit Lions runs the ball against the New York Jets during the second quarter at Ford Field on September 27, 2026 in Detroit, Michigan.",
+      "credit": "Nic Antaya/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0927/r1722612_1296x729_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "68855ddab625a",
+      "id": 49817418,
+      "type": "header",
+      "name": "Saquon Barkley [1296x729]",
+      "alt": "Saquon Barkley, Philadelphia Eagles running back",
+      "credit": "Ronald Martinez/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0903/r1711047_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Can fantasy managers trust Kenny Gainwell in Week 9?",
+      "caption": "Can fantasy managers trust Kenny Gainwell in Week 9?",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/dm_261104_ffp_gainwell/dm_261104_ffp_gainwell.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     }
+    ],
+    "byline": "ESPN Fantasy",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/49804068"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=49804068"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=49804068"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804068/nfl-fantasy-football-rankings-2026-rb-running-back"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 49804164,
+    "nowId": "1-49804164",
+    "contentKey": "49804164-1-6-1",
+    "dataSourceIdentifier": "8459d490c1fe6",
+    "type": "Story",
+    "headline": "Fantasy football rankings for Week 9: Tight end",
+    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
+    "lastModified": "2026-11-04T20:56:32Z",
+    "published": "2026-11-04T20:56:32Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "1f60fb4295469",
+      "id": 50174499,
+      "type": "header",
+      "name": "Brock Bowers [1296x729]",
+      "alt": "Brock Bowers, Las Vegas Raiders tight end",
+      "credit": "Morgan Simmons/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0929/r1723237_1296x729_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "f55ef42f933b6",
+      "id": 49817709,
+      "type": "header",
+      "name": "Colston Loveland [1296x729]",
+      "alt": "Colston Loveland, Chicago Bears tight end",
+      "credit": "Melissa Tamez/Icon Sportswire",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0903/r1711063_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Why Greg Dulcich is a streaming TE option in Week 9",
+      "caption": "Why Greg Dulcich is a streaming TE option in Week 9",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/dm_261104_ffp_dulcich728/dm_261104_ffp_dulcich728.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     }
+    ],
+    "byline": "ESPN Fantasy",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/49804164"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=49804164"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=49804164"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804164/nfl-fantasy-football-rankings-2026-te-tight-end"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 49804233,
+    "nowId": "1-49804233",
+    "contentKey": "49804233-1-6-1",
+    "dataSourceIdentifier": "49c06078ebf58",
+    "type": "Story",
+    "headline": "Fantasy football rankings for Week 9: Kicker",
+    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
+    "lastModified": "2026-11-04T20:56:08Z",
+    "published": "2026-11-04T20:56:08Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "865f9c98084be",
+      "id": 49817787,
+      "type": "header",
+      "name": "Cam Little [1296x729]",
+      "alt": "Cam Little, Jacksonville Jaguars kicker",
+      "credit": "Chris Leduc/Icon Sportswire",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0903/r1711066_1296x729_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "c6a692612d32a",
+      "id": 50067090,
+      "type": "header",
+      "name": "Brandon Aubrey for kicker rankings [1296x729]",
+      "alt": "Dallas Cowboys place kicker Brandon Aubrey (17) makes a game-winning field goal against the New York Giants during overtime at AT&T Stadium.",
+      "credit": "Raymond Carlin III-Imagn Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0722/r1692509_1296x729_16-9.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     }
+    ],
+    "byline": "ESPN Fantasy",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/49804233"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=49804233"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=49804233"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804233/nfl-fantasy-football-rankings-2026-k-kicker"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 49804273,
+    "nowId": "1-49804273",
+    "contentKey": "49804273-1-6-1",
+    "dataSourceIdentifier": "39f2fbfa1d8ba",
+    "type": "Story",
+    "headline": "Fantasy football rankings for Week 9: D/ST",
+    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
+    "lastModified": "2026-11-04T20:56:52Z",
+    "published": "2026-11-04T20:56:52Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "431d427687d29",
+      "id": 50297659,
+      "type": "header",
+      "name": "Vikings defense [1296x729]",
+      "alt": "Minnesota Vikings defensive players, in purple uniforms and helmets, dancing after a big play",
+      "credit": "Stephen Maturen/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1027/r1736992_1296x729_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "493086bab89eb",
+      "id": 49817957,
+      "type": "header",
+      "name": "Texans defense [1296x729]",
+      "alt": "Will Anderson Jr. and Danielle Hunter, Houston Texans edge rushers",
+      "credit": "Troy Taormina-Imagn Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0903/r1711074_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Why the Giants are a good defense to pick up in Week 9",
+      "caption": "Why the Giants are a good defense to pick up in Week 9",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1103/ss_20261103_163421583_3723976/ss_20261103_163421583_3723976.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     }
+    ],
+    "byline": "ESPN Fantasy",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/49804273"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=49804273"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=49804273"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804273/nfl-fantasy-football-rankings-2026-dst-defense"
      }
     },
     "premium": false
    }
   ]
  },
- "winprobability": [
-  {
-   "homeWinPercentage": 0.6487,
-   "tiePercentage": 0.0,
-   "playId": "4018730231"
-  },
-  {
-   "homeWinPercentage": 0.5644,
-   "tiePercentage": 0.0,
-   "playId": "40187302340"
-  },
-  {
-   "homeWinPercentage": 0.5697,
-   "tiePercentage": 0.0,
-   "playId": "40187302379"
-  },
-  {
-   "homeWinPercentage": 0.5377,
-   "tiePercentage": 0.0,
-   "playId": "401873023101"
-  },
-  {
-   "homeWinPercentage": 0.555,
-   "tiePercentage": 0.0,
-   "playId": "401873023123"
-  },
-  {
-   "homeWinPercentage": 0.5714,
-   "tiePercentage": 0.0,
-   "playId": "401873023145"
-  },
-  {
-   "homeWinPercentage": 0.605,
-   "tiePercentage": 0.0,
-   "playId": "401873023170"
-  },
-  {
-   "homeWinPercentage": 0.5858,
-   "tiePercentage": 0.0,
-   "playId": "401873023190"
-  },
-  {
-   "homeWinPercentage": 0.5858,
-   "tiePercentage": 0.0,
-   "playId": "401873023200"
-  },
-  {
-   "homeWinPercentage": 0.5992,
-   "tiePercentage": 0.0,
-   "playId": "401873023210"
-  },
-  {
-   "homeWinPercentage": 0.5956,
-   "tiePercentage": 0.0,
-   "playId": "401873023240"
-  },
-  {
-   "homeWinPercentage": 0.5805,
-   "tiePercentage": 0.0,
-   "playId": "401873023265"
-  },
-  {
-   "homeWinPercentage": 0.5539,
-   "tiePercentage": 0.0,
-   "playId": "401873023288"
-  },
-  {
-   "homeWinPercentage": 0.5665,
-   "tiePercentage": 0.0,
-   "playId": "401873023313"
-  },
-  {
-   "homeWinPercentage": 0.5712,
-   "tiePercentage": 0.0,
-   "playId": "401873023339"
-  },
-  {
-   "homeWinPercentage": 0.5836,
-   "tiePercentage": 0.0,
-   "playId": "401873023369"
-  },
-  {
-   "homeWinPercentage": 0.609,
-   "tiePercentage": 0.0,
-   "playId": "401873023391"
-  },
-  {
-   "homeWinPercentage": 0.6088,
-   "tiePercentage": 0.0,
-   "playId": "401873023414"
-  },
-  {
-   "homeWinPercentage": 0.6086,
-   "tiePercentage": 0.0,
-   "playId": "401873023427"
-  },
-  {
-   "homeWinPercentage": 0.5778,
-   "tiePercentage": 0.0,
-   "playId": "401873023440"
-  },
-  {
-   "homeWinPercentage": 0.5834,
-   "tiePercentage": 0.0,
-   "playId": "401873023471"
-  },
-  {
-   "homeWinPercentage": 0.5697,
-   "tiePercentage": 0.0,
-   "playId": "401873023493"
-  },
-  {
-   "homeWinPercentage": 0.6313,
-   "tiePercentage": 0.0,
-   "playId": "401873023516"
-  },
-  {
-   "homeWinPercentage": 0.609,
-   "tiePercentage": 0.0,
-   "playId": "401873023550"
-  },
-  {
-   "homeWinPercentage": 0.596,
-   "tiePercentage": 0.0,
-   "playId": "401873023572"
-  },
-  {
-   "homeWinPercentage": 0.6787,
-   "tiePercentage": 0.0,
-   "playId": "401873023594"
-  },
-  {
-   "homeWinPercentage": 0.6607,
-   "tiePercentage": 0.0,
-   "playId": "401873023619"
-  },
-  {
-   "homeWinPercentage": 0.6421,
-   "tiePercentage": 0.0,
-   "playId": "401873023641"
-  },
-  {
-   "homeWinPercentage": 0.7174,
-   "tiePercentage": 0.0,
-   "playId": "401873023666"
-  },
-  {
-   "homeWinPercentage": 0.6944,
-   "tiePercentage": 0.0,
-   "playId": "401873023700"
-  },
-  {
-   "homeWinPercentage": 0.6796,
-   "tiePercentage": 0.0,
-   "playId": "401873023707"
-  },
-  {
-   "homeWinPercentage": 0.6675,
-   "tiePercentage": 0.0,
-   "playId": "401873023731"
-  },
-  {
-   "homeWinPercentage": 0.6705,
-   "tiePercentage": 0.0,
-   "playId": "401873023756"
-  },
-  {
-   "homeWinPercentage": 0.6698,
-   "tiePercentage": 0.0,
-   "playId": "401873023778"
-  },
-  {
-   "homeWinPercentage": 0.6256,
-   "tiePercentage": 0.0,
-   "playId": "401873023800"
-  },
-  {
-   "homeWinPercentage": 0.6463,
-   "tiePercentage": 0.0,
-   "playId": "401873023830"
-  },
-  {
-   "homeWinPercentage": 0.658,
-   "tiePercentage": 0.0,
-   "playId": "401873023853"
-  },
-  {
-   "homeWinPercentage": 0.6013,
-   "tiePercentage": 0.0,
-   "playId": "401873023876"
-  },
-  {
-   "homeWinPercentage": 0.5937,
-   "tiePercentage": 0.0,
-   "playId": "401873023906"
-  },
-  {
-   "homeWinPercentage": 0.613,
-   "tiePercentage": 0.0,
-   "playId": "401873023936"
-  },
-  {
-   "homeWinPercentage": 0.6561,
-   "tiePercentage": 0.0,
-   "playId": "401873023959"
-  },
-  {
-   "homeWinPercentage": 0.5824,
-   "tiePercentage": 0.0,
-   "playId": "401873023984"
-  },
-  {
-   "homeWinPercentage": 0.564,
-   "tiePercentage": 0.0,
-   "playId": "4018730231006"
-  },
-  {
-   "homeWinPercentage": 0.5638,
-   "tiePercentage": 0.0,
-   "playId": "4018730231028"
-  },
-  {
-   "homeWinPercentage": 0.5351,
-   "tiePercentage": 0.0,
-   "playId": "4018730231048"
-  },
-  {
-   "homeWinPercentage": 0.544,
-   "tiePercentage": 0.0,
-   "playId": "4018730231088"
-  },
-  {
-   "homeWinPercentage": 0.5684,
-   "tiePercentage": 0.0,
-   "playId": "4018730231116"
-  },
-  {
-   "homeWinPercentage": 0.5627,
-   "tiePercentage": 0.0,
-   "playId": "4018730231141"
-  },
-  {
-   "homeWinPercentage": 0.5441,
-   "tiePercentage": 0.0,
-   "playId": "4018730231163"
-  },
-  {
-   "homeWinPercentage": 0.552,
-   "tiePercentage": 0.0,
-   "playId": "4018730231185"
-  },
-  {
-   "homeWinPercentage": 0.4765,
-   "tiePercentage": 0.0,
-   "playId": "4018730231210"
-  },
-  {
-   "homeWinPercentage": 0.4934,
-   "tiePercentage": 0.0,
-   "playId": "4018730231251"
-  },
-  {
-   "homeWinPercentage": 0.4947,
-   "tiePercentage": 0.0,
-   "playId": "4018730231262"
-  },
-  {
-   "homeWinPercentage": 0.507,
-   "tiePercentage": 0.0,
-   "playId": "4018730231273"
-  },
-  {
-   "homeWinPercentage": 0.5311,
-   "tiePercentage": 0.0,
-   "playId": "4018730231314"
-  },
-  {
-   "homeWinPercentage": 0.5041,
-   "tiePercentage": 0.0,
-   "playId": "4018730231337"
-  },
-  {
-   "homeWinPercentage": 0.5039,
-   "tiePercentage": 0.0,
-   "playId": "4018730231347"
-  },
-  {
-   "homeWinPercentage": 0.5123,
-   "tiePercentage": 0.0,
-   "playId": "4018730231357"
-  },
-  {
-   "homeWinPercentage": 0.5081,
-   "tiePercentage": 0.0,
-   "playId": "4018730231389"
-  },
-  {
-   "homeWinPercentage": 0.5188,
-   "tiePercentage": 0.0,
-   "playId": "4018730231411"
-  },
-  {
-   "homeWinPercentage": 0.6052,
-   "tiePercentage": 0.0,
-   "playId": "4018730231436"
-  },
-  {
-   "homeWinPercentage": 0.605,
-   "tiePercentage": 0.0,
-   "playId": "4018730231454"
-  },
-  {
-   "homeWinPercentage": 0.6345,
-   "tiePercentage": 0.0,
-   "playId": "4018730231472"
-  },
-  {
-   "homeWinPercentage": 0.6549,
-   "tiePercentage": 0.0,
-   "playId": "4018730231519"
-  },
-  {
-   "homeWinPercentage": 0.6499,
-   "tiePercentage": 0.0,
-   "playId": "4018730231552"
-  },
-  {
-   "homeWinPercentage": 0.6408,
-   "tiePercentage": 0.0,
-   "playId": "4018730231574"
-  },
-  {
-   "homeWinPercentage": 0.6871,
-   "tiePercentage": 0.0,
-   "playId": "4018730231599"
-  },
-  {
-   "homeWinPercentage": 0.7148,
-   "tiePercentage": 0.0,
-   "playId": "4018730231630"
-  },
-  {
-   "homeWinPercentage": 0.665,
-   "tiePercentage": 0.0,
-   "playId": "4018730231637"
-  },
-  {
-   "homeWinPercentage": 0.6769,
-   "tiePercentage": 0.0,
-   "playId": "4018730231672"
-  },
-  {
-   "homeWinPercentage": 0.6893,
-   "tiePercentage": 0.0,
-   "playId": "4018730231697"
-  },
-  {
-   "homeWinPercentage": 0.6663,
-   "tiePercentage": 0.0,
-   "playId": "4018730231720"
-  },
-  {
-   "homeWinPercentage": 0.7587,
-   "tiePercentage": 0.0,
-   "playId": "4018730231756"
-  },
-  {
-   "homeWinPercentage": 0.7369,
-   "tiePercentage": 0.0,
-   "playId": "4018730231783"
-  },
-  {
-   "homeWinPercentage": 0.775,
-   "tiePercentage": 0.0,
-   "playId": "4018730231808"
-  },
-  {
-   "homeWinPercentage": 0.7831,
-   "tiePercentage": 0.0,
-   "playId": "4018730231838"
-  },
-  {
-   "homeWinPercentage": 0.7999,
-   "tiePercentage": 0.0,
-   "playId": "4018730231863"
-  },
-  {
-   "homeWinPercentage": 0.7655,
-   "tiePercentage": 0.0,
-   "playId": "4018730231890"
-  },
-  {
-   "homeWinPercentage": 0.7952,
-   "tiePercentage": 0.0,
-   "playId": "4018730231914"
-  },
-  {
-   "homeWinPercentage": 0.7956,
-   "tiePercentage": 0.0,
-   "playId": "4018730231927"
-  },
-  {
-   "homeWinPercentage": 0.7634,
-   "tiePercentage": 0.0,
-   "playId": "4018730231939"
-  },
-  {
-   "homeWinPercentage": 0.7664,
-   "tiePercentage": 0.0,
-   "playId": "4018730231954"
-  },
-  {
-   "homeWinPercentage": 0.757,
-   "tiePercentage": 0.0,
-   "playId": "4018730231968"
-  },
-  {
-   "homeWinPercentage": 0.8472,
-   "tiePercentage": 0.0,
-   "playId": "4018730231998"
-  },
-  {
-   "homeWinPercentage": 0.8576,
-   "tiePercentage": 0.0,
-   "playId": "4018730232032"
-  },
-  {
-   "homeWinPercentage": 0.8451,
-   "tiePercentage": 0.0,
-   "playId": "4018730232039"
-  },
-  {
-   "homeWinPercentage": 0.875,
-   "tiePercentage": 0.0,
-   "playId": "4018730232069"
-  },
-  {
-   "homeWinPercentage": 0.8728,
-   "tiePercentage": 0.0,
-   "playId": "4018730232079"
-  },
-  {
-   "homeWinPercentage": 0.8769,
-   "tiePercentage": 0.0,
-   "playId": "4018730232089"
-  },
-  {
-   "homeWinPercentage": 0.8745,
-   "tiePercentage": 0.0,
-   "playId": "4018730232120"
-  },
-  {
-   "homeWinPercentage": 0.8723,
-   "tiePercentage": 0.0,
-   "playId": "4018730232133"
-  },
-  {
-   "homeWinPercentage": 0.8719,
-   "tiePercentage": 0.0,
-   "playId": "4018730232145"
-  },
-  {
-   "homeWinPercentage": 0.8696,
-   "tiePercentage": 0.0,
-   "playId": "4018730232160"
-  },
-  {
-   "homeWinPercentage": 0.8785,
-   "tiePercentage": 0.0,
-   "playId": "4018730232174"
-  },
-  {
-   "homeWinPercentage": 0.8901,
-   "tiePercentage": 0.0,
-   "playId": "4018730232207"
-  },
-  {
-   "homeWinPercentage": 0.8785,
-   "tiePercentage": 0.0,
-   "playId": "4018730232232"
-  },
-  {
-   "homeWinPercentage": 0.8714,
-   "tiePercentage": 0.0,
-   "playId": "4018730232255"
-  },
-  {
-   "homeWinPercentage": 0.8614,
-   "tiePercentage": 0.0,
-   "playId": "4018730232278"
-  },
-  {
-   "homeWinPercentage": 0.8576,
-   "tiePercentage": 0.0,
-   "playId": "4018730232301"
-  },
-  {
-   "homeWinPercentage": 0.8584,
-   "tiePercentage": 0.0,
-   "playId": "4018730232321"
-  },
-  {
-   "homeWinPercentage": 0.8636,
-   "tiePercentage": 0.0,
-   "playId": "4018730232346"
-  },
-  {
-   "homeWinPercentage": 0.8616,
-   "tiePercentage": 0.0,
-   "playId": "4018730232369"
-  },
-  {
-   "homeWinPercentage": 0.8607,
-   "tiePercentage": 0.0,
-   "playId": "4018730232391"
-  },
-  {
-   "homeWinPercentage": 0.8406,
-   "tiePercentage": 0.0,
-   "playId": "4018730232411"
-  },
-  {
-   "homeWinPercentage": 0.8578,
-   "tiePercentage": 0.0,
-   "playId": "4018730232434"
-  },
-  {
-   "homeWinPercentage": 0.8374,
-   "tiePercentage": 0.0,
-   "playId": "4018730232456"
-  },
-  {
-   "homeWinPercentage": 0.8203,
-   "tiePercentage": 0.0,
-   "playId": "4018730232486"
-  },
-  {
-   "homeWinPercentage": 0.831,
-   "tiePercentage": 0.0,
-   "playId": "4018730232516"
-  },
-  {
-   "homeWinPercentage": 0.8668,
-   "tiePercentage": 0.0,
-   "playId": "4018730232541"
-  },
-  {
-   "homeWinPercentage": 0.895,
-   "tiePercentage": 0.0,
-   "playId": "4018730232564"
-  },
-  {
-   "homeWinPercentage": 0.8999,
-   "tiePercentage": 0.0,
-   "playId": "4018730232586"
-  },
-  {
-   "homeWinPercentage": 0.9043,
-   "tiePercentage": 0.0,
-   "playId": "4018730232611"
-  },
-  {
-   "homeWinPercentage": 0.9162,
-   "tiePercentage": 0.0,
-   "playId": "4018730232633"
-  },
-  {
-   "homeWinPercentage": 0.9259,
-   "tiePercentage": 0.0,
-   "playId": "4018730232658"
-  },
-  {
-   "homeWinPercentage": 0.9293,
-   "tiePercentage": 0.0,
-   "playId": "4018730232680"
-  },
-  {
-   "homeWinPercentage": 0.9233,
-   "tiePercentage": 0.0,
-   "playId": "4018730232702"
-  },
-  {
-   "homeWinPercentage": 0.9401,
-   "tiePercentage": 0.0,
-   "playId": "4018730232724"
-  },
-  {
-   "homeWinPercentage": 0.9416,
-   "tiePercentage": 0.0,
-   "playId": "4018730232737"
-  },
-  {
-   "homeWinPercentage": 0.9606,
-   "tiePercentage": 0.0,
-   "playId": "4018730232749"
-  },
-  {
-   "homeWinPercentage": 0.9565,
-   "tiePercentage": 0.0,
-   "playId": "4018730232797"
-  },
-  {
-   "homeWinPercentage": 0.9498,
-   "tiePercentage": 0.0,
-   "playId": "4018730232820"
-  },
-  {
-   "homeWinPercentage": 0.9539,
-   "tiePercentage": 0.0,
-   "playId": "4018730232842"
-  },
-  {
-   "homeWinPercentage": 0.9457,
-   "tiePercentage": 0.0,
-   "playId": "4018730232868"
-  },
-  {
-   "homeWinPercentage": 0.934,
-   "tiePercentage": 0.0,
-   "playId": "4018730232895"
-  },
-  {
-   "homeWinPercentage": 0.9407,
-   "tiePercentage": 0.0,
-   "playId": "4018730232920"
-  },
-  {
-   "homeWinPercentage": 0.9474,
-   "tiePercentage": 0.0,
-   "playId": "4018730232942"
-  },
-  {
-   "homeWinPercentage": 0.9599,
-   "tiePercentage": 0.0,
-   "playId": "4018730232965"
-  },
-  {
-   "homeWinPercentage": 0.9518,
-   "tiePercentage": 0.0,
-   "playId": "4018730232985"
-  },
-  {
-   "homeWinPercentage": 0.9518,
-   "tiePercentage": 0.0,
-   "playId": "4018730232995"
-  },
-  {
-   "homeWinPercentage": 0.9554,
-   "tiePercentage": 0.0,
-   "playId": "4018730233005"
-  },
-  {
-   "homeWinPercentage": 0.9492,
-   "tiePercentage": 0.0,
-   "playId": "4018730233035"
-  },
-  {
-   "homeWinPercentage": 0.9603,
-   "tiePercentage": 0.0,
-   "playId": "4018730233058"
-  },
-  {
-   "homeWinPercentage": 0.9632,
-   "tiePercentage": 0.0,
-   "playId": "4018730233086"
-  },
-  {
-   "homeWinPercentage": 0.9605,
-   "tiePercentage": 0.0,
-   "playId": "4018730233108"
-  },
-  {
-   "homeWinPercentage": 0.9704,
-   "tiePercentage": 0.0,
-   "playId": "4018730233141"
-  },
-  {
-   "homeWinPercentage": 0.9753,
-   "tiePercentage": 0.0,
-   "playId": "4018730233166"
-  },
-  {
-   "homeWinPercentage": 0.9747,
-   "tiePercentage": 0.0,
-   "playId": "4018730233196"
-  },
-  {
-   "homeWinPercentage": 0.9693,
-   "tiePercentage": 0.0,
-   "playId": "4018730233237"
-  },
-  {
-   "homeWinPercentage": 0.9707,
-   "tiePercentage": 0.0,
-   "playId": "4018730233259"
-  },
-  {
-   "homeWinPercentage": 0.9748,
-   "tiePercentage": 0.0,
-   "playId": "4018730233279"
-  },
-  {
-   "homeWinPercentage": 0.9595,
-   "tiePercentage": 0.0,
-   "playId": "4018730233304"
-  },
-  {
-   "homeWinPercentage": 0.96,
-   "tiePercentage": 0.0,
-   "playId": "4018730233318"
-  },
-  {
-   "homeWinPercentage": 0.9592,
-   "tiePercentage": 0.0,
-   "playId": "4018730233331"
-  },
-  {
-   "homeWinPercentage": 0.9521,
-   "tiePercentage": 0.0,
-   "playId": "4018730233365"
-  },
-  {
-   "homeWinPercentage": 0.9562,
-   "tiePercentage": 0.0,
-   "playId": "4018730233390"
-  },
-  {
-   "homeWinPercentage": 0.9686,
-   "tiePercentage": 0.0,
-   "playId": "4018730233412"
-  },
-  {
-   "homeWinPercentage": 0.9751,
-   "tiePercentage": 0.0,
-   "playId": "4018730233432"
-  },
-  {
-   "homeWinPercentage": 0.9688,
-   "tiePercentage": 0.0,
-   "playId": "4018730233455"
-  },
-  {
-   "homeWinPercentage": 0.5664,
-   "tiePercentage": 0.0,
-   "playId": "4018730233470"
-  },
-  {
-   "homeWinPercentage": 0.9749,
-   "tiePercentage": 0.0,
-   "playId": "4018730233484"
-  },
-  {
-   "homeWinPercentage": 0.9731,
-   "tiePercentage": 0.0,
-   "playId": "4018730233521"
-  },
-  {
-   "homeWinPercentage": 0.9633,
-   "tiePercentage": 0.0,
-   "playId": "4018730233543"
-  },
-  {
-   "homeWinPercentage": 0.967,
-   "tiePercentage": 0.0,
-   "playId": "4018730233566"
-  },
-  {
-   "homeWinPercentage": 0.9674,
-   "tiePercentage": 0.0,
-   "playId": "4018730233576"
-  },
-  {
-   "homeWinPercentage": 0.9601,
-   "tiePercentage": 0.0,
-   "playId": "4018730233586"
-  },
-  {
-   "homeWinPercentage": 0.9624,
-   "tiePercentage": 0.0,
-   "playId": "4018730233615"
-  },
-  {
-   "homeWinPercentage": 0.9527,
-   "tiePercentage": 0.0,
-   "playId": "4018730233640"
-  },
-  {
-   "homeWinPercentage": 0.9659,
-   "tiePercentage": 0.0,
-   "playId": "4018730233665"
-  },
-  {
-   "homeWinPercentage": 0.9763,
-   "tiePercentage": 0.0,
-   "playId": "4018730233687"
-  },
-  {
-   "homeWinPercentage": 0.9628,
-   "tiePercentage": 0.0,
-   "playId": "4018730233711"
-  },
-  {
-   "homeWinPercentage": 0.9719,
-   "tiePercentage": 0.0,
-   "playId": "4018730233736"
-  },
-  {
-   "homeWinPercentage": 0.9766,
-   "tiePercentage": 0.0,
-   "playId": "4018730233759"
-  },
-  {
-   "homeWinPercentage": 0.958,
-   "tiePercentage": 0.0,
-   "playId": "4018730233782"
-  },
-  {
-   "homeWinPercentage": 0.9557,
-   "tiePercentage": 0.0,
-   "playId": "4018730233807"
-  },
-  {
-   "homeWinPercentage": 0.9767,
-   "tiePercentage": 0.0,
-   "playId": "4018730233832"
-  },
-  {
-   "homeWinPercentage": 0.9806,
-   "tiePercentage": 0.0,
-   "playId": "4018730233866"
-  },
-  {
-   "homeWinPercentage": 0.982,
-   "tiePercentage": 0.0,
-   "playId": "4018730233889"
-  },
-  {
-   "homeWinPercentage": 0.9121,
-   "tiePercentage": 0.0,
-   "playId": "4018730233914"
-  },
-  {
-   "homeWinPercentage": 0.9121,
-   "tiePercentage": 0.0,
-   "playId": "4018730233947"
-  },
-  {
-   "homeWinPercentage": 0.942,
-   "tiePercentage": 0.0,
-   "playId": "4018730233953"
-  },
-  {
-   "homeWinPercentage": 0.9115,
-   "tiePercentage": 0.0,
-   "playId": "4018730233983"
-  },
-  {
-   "homeWinPercentage": 0.9085,
-   "tiePercentage": 0.0,
-   "playId": "4018730234019"
-  },
-  {
-   "homeWinPercentage": 0.9158,
-   "tiePercentage": 0.0,
-   "playId": "4018730234042"
-  },
-  {
-   "homeWinPercentage": 0.8708,
-   "tiePercentage": 0.0,
-   "playId": "4018730234072"
-  },
-  {
-   "homeWinPercentage": 0.8785,
-   "tiePercentage": 0.0,
-   "playId": "4018730234121"
-  },
-  {
-   "homeWinPercentage": 0.8807,
-   "tiePercentage": 0.0,
-   "playId": "4018730234134"
-  },
-  {
-   "homeWinPercentage": 0.9097,
-   "tiePercentage": 0.0,
-   "playId": "4018730234147"
-  },
-  {
-   "homeWinPercentage": 0.9159,
-   "tiePercentage": 0.0,
-   "playId": "4018730234188"
-  },
-  {
-   "homeWinPercentage": 0.9557,
-   "tiePercentage": 0.0,
-   "playId": "4018730234213"
-  },
-  {
-   "homeWinPercentage": 0.9814,
-   "tiePercentage": 0.0,
-   "playId": "4018730234235"
-  },
-  {
-   "homeWinPercentage": 0.9766,
-   "tiePercentage": 0.0,
-   "playId": "4018730234258"
-  },
-  {
-   "homeWinPercentage": 0.9804,
-   "tiePercentage": 0.0,
-   "playId": "4018730234269"
-  },
-  {
-   "homeWinPercentage": 0.9803,
-   "tiePercentage": 0.0,
-   "playId": "4018730234280"
-  },
-  {
-   "homeWinPercentage": 0.9843,
-   "tiePercentage": 0.0,
-   "playId": "4018730234295"
-  },
-  {
-   "homeWinPercentage": 0.984,
-   "tiePercentage": 0.0,
-   "playId": "4018730234302"
-  },
-  {
-   "homeWinPercentage": 0.9942,
-   "tiePercentage": 0.0,
-   "playId": "4018730234309"
-  },
-  {
-   "homeWinPercentage": 0.9984,
-   "tiePercentage": 0.0,
-   "playId": "4018730234329"
-  },
-  {
-   "homeWinPercentage": 0.9792,
-   "tiePercentage": 0.0,
-   "playId": "4018730234348"
-  },
-  {
-   "homeWinPercentage": 0.9883,
-   "tiePercentage": 0.0,
-   "playId": "4018730234363"
-  },
-  {
-   "homeWinPercentage": 0.9827,
-   "tiePercentage": 0.0,
-   "playId": "4018730234377"
-  },
-  {
-   "homeWinPercentage": 0.9847,
-   "tiePercentage": 0.0,
-   "playId": "4018730234406"
-  },
-  {
-   "homeWinPercentage": 0.999,
-   "tiePercentage": 0.0,
-   "playId": "4018730234456"
-  },
-  {
-   "homeWinPercentage": 0.999,
-   "tiePercentage": 0.0,
-   "playId": "4018730234474"
-  },
-  {
-   "homeWinPercentage": 0.999,
-   "tiePercentage": 0.0,
-   "playId": "4018730234494"
-  },
-  {
-   "homeWinPercentage": 0.999,
-   "tiePercentage": 0.0,
-   "playId": "4018730234506"
-  },
-  {
-   "homeWinPercentage": 0.999,
-   "tiePercentage": 0.0,
-   "playId": "4018730234517"
-  },
-  {
-   "homeWinPercentage": 1.0,
-   "tiePercentage": 0.0,
-   "playId": "4018730234577"
-  }
- ],
  "header": {
   "id": "401873023",
   "uid": "s:20~l:28~e:401873023",
@@ -31097,6 +29398,993 @@
  },
  "videos": [],
  "wallclockAvailable": true,
+ "winprobability": [
+  {
+   "homeWinPercentage": 0.6487,
+   "tiePercentage": 0.0,
+   "playId": "4018730231"
+  },
+  {
+   "homeWinPercentage": 0.5644,
+   "tiePercentage": 0.0,
+   "playId": "40187302340"
+  },
+  {
+   "homeWinPercentage": 0.5697,
+   "tiePercentage": 0.0,
+   "playId": "40187302379"
+  },
+  {
+   "homeWinPercentage": 0.5377,
+   "tiePercentage": 0.0,
+   "playId": "401873023101"
+  },
+  {
+   "homeWinPercentage": 0.555,
+   "tiePercentage": 0.0,
+   "playId": "401873023123"
+  },
+  {
+   "homeWinPercentage": 0.5714,
+   "tiePercentage": 0.0,
+   "playId": "401873023145"
+  },
+  {
+   "homeWinPercentage": 0.605,
+   "tiePercentage": 0.0,
+   "playId": "401873023170"
+  },
+  {
+   "homeWinPercentage": 0.5858,
+   "tiePercentage": 0.0,
+   "playId": "401873023190"
+  },
+  {
+   "homeWinPercentage": 0.5858,
+   "tiePercentage": 0.0,
+   "playId": "401873023200"
+  },
+  {
+   "homeWinPercentage": 0.5992,
+   "tiePercentage": 0.0,
+   "playId": "401873023210"
+  },
+  {
+   "homeWinPercentage": 0.5956,
+   "tiePercentage": 0.0,
+   "playId": "401873023240"
+  },
+  {
+   "homeWinPercentage": 0.5805,
+   "tiePercentage": 0.0,
+   "playId": "401873023265"
+  },
+  {
+   "homeWinPercentage": 0.5539,
+   "tiePercentage": 0.0,
+   "playId": "401873023288"
+  },
+  {
+   "homeWinPercentage": 0.5665,
+   "tiePercentage": 0.0,
+   "playId": "401873023313"
+  },
+  {
+   "homeWinPercentage": 0.5712,
+   "tiePercentage": 0.0,
+   "playId": "401873023339"
+  },
+  {
+   "homeWinPercentage": 0.5836,
+   "tiePercentage": 0.0,
+   "playId": "401873023369"
+  },
+  {
+   "homeWinPercentage": 0.609,
+   "tiePercentage": 0.0,
+   "playId": "401873023391"
+  },
+  {
+   "homeWinPercentage": 0.6088,
+   "tiePercentage": 0.0,
+   "playId": "401873023414"
+  },
+  {
+   "homeWinPercentage": 0.6086,
+   "tiePercentage": 0.0,
+   "playId": "401873023427"
+  },
+  {
+   "homeWinPercentage": 0.5778,
+   "tiePercentage": 0.0,
+   "playId": "401873023440"
+  },
+  {
+   "homeWinPercentage": 0.5834,
+   "tiePercentage": 0.0,
+   "playId": "401873023471"
+  },
+  {
+   "homeWinPercentage": 0.5697,
+   "tiePercentage": 0.0,
+   "playId": "401873023493"
+  },
+  {
+   "homeWinPercentage": 0.6313,
+   "tiePercentage": 0.0,
+   "playId": "401873023516"
+  },
+  {
+   "homeWinPercentage": 0.609,
+   "tiePercentage": 0.0,
+   "playId": "401873023550"
+  },
+  {
+   "homeWinPercentage": 0.596,
+   "tiePercentage": 0.0,
+   "playId": "401873023572"
+  },
+  {
+   "homeWinPercentage": 0.6787,
+   "tiePercentage": 0.0,
+   "playId": "401873023594"
+  },
+  {
+   "homeWinPercentage": 0.6607,
+   "tiePercentage": 0.0,
+   "playId": "401873023619"
+  },
+  {
+   "homeWinPercentage": 0.6421,
+   "tiePercentage": 0.0,
+   "playId": "401873023641"
+  },
+  {
+   "homeWinPercentage": 0.7174,
+   "tiePercentage": 0.0,
+   "playId": "401873023666"
+  },
+  {
+   "homeWinPercentage": 0.6944,
+   "tiePercentage": 0.0,
+   "playId": "401873023700"
+  },
+  {
+   "homeWinPercentage": 0.6796,
+   "tiePercentage": 0.0,
+   "playId": "401873023707"
+  },
+  {
+   "homeWinPercentage": 0.6675,
+   "tiePercentage": 0.0,
+   "playId": "401873023731"
+  },
+  {
+   "homeWinPercentage": 0.6705,
+   "tiePercentage": 0.0,
+   "playId": "401873023756"
+  },
+  {
+   "homeWinPercentage": 0.6698,
+   "tiePercentage": 0.0,
+   "playId": "401873023778"
+  },
+  {
+   "homeWinPercentage": 0.6256,
+   "tiePercentage": 0.0,
+   "playId": "401873023800"
+  },
+  {
+   "homeWinPercentage": 0.6463,
+   "tiePercentage": 0.0,
+   "playId": "401873023830"
+  },
+  {
+   "homeWinPercentage": 0.658,
+   "tiePercentage": 0.0,
+   "playId": "401873023853"
+  },
+  {
+   "homeWinPercentage": 0.6013,
+   "tiePercentage": 0.0,
+   "playId": "401873023876"
+  },
+  {
+   "homeWinPercentage": 0.5937,
+   "tiePercentage": 0.0,
+   "playId": "401873023906"
+  },
+  {
+   "homeWinPercentage": 0.613,
+   "tiePercentage": 0.0,
+   "playId": "401873023936"
+  },
+  {
+   "homeWinPercentage": 0.6561,
+   "tiePercentage": 0.0,
+   "playId": "401873023959"
+  },
+  {
+   "homeWinPercentage": 0.5824,
+   "tiePercentage": 0.0,
+   "playId": "401873023984"
+  },
+  {
+   "homeWinPercentage": 0.564,
+   "tiePercentage": 0.0,
+   "playId": "4018730231006"
+  },
+  {
+   "homeWinPercentage": 0.5638,
+   "tiePercentage": 0.0,
+   "playId": "4018730231028"
+  },
+  {
+   "homeWinPercentage": 0.5351,
+   "tiePercentage": 0.0,
+   "playId": "4018730231048"
+  },
+  {
+   "homeWinPercentage": 0.544,
+   "tiePercentage": 0.0,
+   "playId": "4018730231088"
+  },
+  {
+   "homeWinPercentage": 0.5684,
+   "tiePercentage": 0.0,
+   "playId": "4018730231116"
+  },
+  {
+   "homeWinPercentage": 0.5627,
+   "tiePercentage": 0.0,
+   "playId": "4018730231141"
+  },
+  {
+   "homeWinPercentage": 0.5441,
+   "tiePercentage": 0.0,
+   "playId": "4018730231163"
+  },
+  {
+   "homeWinPercentage": 0.552,
+   "tiePercentage": 0.0,
+   "playId": "4018730231185"
+  },
+  {
+   "homeWinPercentage": 0.4765,
+   "tiePercentage": 0.0,
+   "playId": "4018730231210"
+  },
+  {
+   "homeWinPercentage": 0.4934,
+   "tiePercentage": 0.0,
+   "playId": "4018730231251"
+  },
+  {
+   "homeWinPercentage": 0.4947,
+   "tiePercentage": 0.0,
+   "playId": "4018730231262"
+  },
+  {
+   "homeWinPercentage": 0.507,
+   "tiePercentage": 0.0,
+   "playId": "4018730231273"
+  },
+  {
+   "homeWinPercentage": 0.5311,
+   "tiePercentage": 0.0,
+   "playId": "4018730231314"
+  },
+  {
+   "homeWinPercentage": 0.5041,
+   "tiePercentage": 0.0,
+   "playId": "4018730231337"
+  },
+  {
+   "homeWinPercentage": 0.5039,
+   "tiePercentage": 0.0,
+   "playId": "4018730231347"
+  },
+  {
+   "homeWinPercentage": 0.5123,
+   "tiePercentage": 0.0,
+   "playId": "4018730231357"
+  },
+  {
+   "homeWinPercentage": 0.5081,
+   "tiePercentage": 0.0,
+   "playId": "4018730231389"
+  },
+  {
+   "homeWinPercentage": 0.5188,
+   "tiePercentage": 0.0,
+   "playId": "4018730231411"
+  },
+  {
+   "homeWinPercentage": 0.6052,
+   "tiePercentage": 0.0,
+   "playId": "4018730231436"
+  },
+  {
+   "homeWinPercentage": 0.605,
+   "tiePercentage": 0.0,
+   "playId": "4018730231454"
+  },
+  {
+   "homeWinPercentage": 0.6345,
+   "tiePercentage": 0.0,
+   "playId": "4018730231472"
+  },
+  {
+   "homeWinPercentage": 0.6549,
+   "tiePercentage": 0.0,
+   "playId": "4018730231519"
+  },
+  {
+   "homeWinPercentage": 0.6499,
+   "tiePercentage": 0.0,
+   "playId": "4018730231552"
+  },
+  {
+   "homeWinPercentage": 0.6408,
+   "tiePercentage": 0.0,
+   "playId": "4018730231574"
+  },
+  {
+   "homeWinPercentage": 0.6871,
+   "tiePercentage": 0.0,
+   "playId": "4018730231599"
+  },
+  {
+   "homeWinPercentage": 0.7148,
+   "tiePercentage": 0.0,
+   "playId": "4018730231630"
+  },
+  {
+   "homeWinPercentage": 0.665,
+   "tiePercentage": 0.0,
+   "playId": "4018730231637"
+  },
+  {
+   "homeWinPercentage": 0.6769,
+   "tiePercentage": 0.0,
+   "playId": "4018730231672"
+  },
+  {
+   "homeWinPercentage": 0.6893,
+   "tiePercentage": 0.0,
+   "playId": "4018730231697"
+  },
+  {
+   "homeWinPercentage": 0.6663,
+   "tiePercentage": 0.0,
+   "playId": "4018730231720"
+  },
+  {
+   "homeWinPercentage": 0.7587,
+   "tiePercentage": 0.0,
+   "playId": "4018730231756"
+  },
+  {
+   "homeWinPercentage": 0.7369,
+   "tiePercentage": 0.0,
+   "playId": "4018730231783"
+  },
+  {
+   "homeWinPercentage": 0.775,
+   "tiePercentage": 0.0,
+   "playId": "4018730231808"
+  },
+  {
+   "homeWinPercentage": 0.7831,
+   "tiePercentage": 0.0,
+   "playId": "4018730231838"
+  },
+  {
+   "homeWinPercentage": 0.7999,
+   "tiePercentage": 0.0,
+   "playId": "4018730231863"
+  },
+  {
+   "homeWinPercentage": 0.7655,
+   "tiePercentage": 0.0,
+   "playId": "4018730231890"
+  },
+  {
+   "homeWinPercentage": 0.7952,
+   "tiePercentage": 0.0,
+   "playId": "4018730231914"
+  },
+  {
+   "homeWinPercentage": 0.7956,
+   "tiePercentage": 0.0,
+   "playId": "4018730231927"
+  },
+  {
+   "homeWinPercentage": 0.7634,
+   "tiePercentage": 0.0,
+   "playId": "4018730231939"
+  },
+  {
+   "homeWinPercentage": 0.7664,
+   "tiePercentage": 0.0,
+   "playId": "4018730231954"
+  },
+  {
+   "homeWinPercentage": 0.757,
+   "tiePercentage": 0.0,
+   "playId": "4018730231968"
+  },
+  {
+   "homeWinPercentage": 0.8472,
+   "tiePercentage": 0.0,
+   "playId": "4018730231998"
+  },
+  {
+   "homeWinPercentage": 0.8576,
+   "tiePercentage": 0.0,
+   "playId": "4018730232032"
+  },
+  {
+   "homeWinPercentage": 0.8451,
+   "tiePercentage": 0.0,
+   "playId": "4018730232039"
+  },
+  {
+   "homeWinPercentage": 0.875,
+   "tiePercentage": 0.0,
+   "playId": "4018730232069"
+  },
+  {
+   "homeWinPercentage": 0.8728,
+   "tiePercentage": 0.0,
+   "playId": "4018730232079"
+  },
+  {
+   "homeWinPercentage": 0.8769,
+   "tiePercentage": 0.0,
+   "playId": "4018730232089"
+  },
+  {
+   "homeWinPercentage": 0.8745,
+   "tiePercentage": 0.0,
+   "playId": "4018730232120"
+  },
+  {
+   "homeWinPercentage": 0.8723,
+   "tiePercentage": 0.0,
+   "playId": "4018730232133"
+  },
+  {
+   "homeWinPercentage": 0.8719,
+   "tiePercentage": 0.0,
+   "playId": "4018730232145"
+  },
+  {
+   "homeWinPercentage": 0.8696,
+   "tiePercentage": 0.0,
+   "playId": "4018730232160"
+  },
+  {
+   "homeWinPercentage": 0.8785,
+   "tiePercentage": 0.0,
+   "playId": "4018730232174"
+  },
+  {
+   "homeWinPercentage": 0.8901,
+   "tiePercentage": 0.0,
+   "playId": "4018730232207"
+  },
+  {
+   "homeWinPercentage": 0.8785,
+   "tiePercentage": 0.0,
+   "playId": "4018730232232"
+  },
+  {
+   "homeWinPercentage": 0.8714,
+   "tiePercentage": 0.0,
+   "playId": "4018730232255"
+  },
+  {
+   "homeWinPercentage": 0.8614,
+   "tiePercentage": 0.0,
+   "playId": "4018730232278"
+  },
+  {
+   "homeWinPercentage": 0.8576,
+   "tiePercentage": 0.0,
+   "playId": "4018730232301"
+  },
+  {
+   "homeWinPercentage": 0.8584,
+   "tiePercentage": 0.0,
+   "playId": "4018730232321"
+  },
+  {
+   "homeWinPercentage": 0.8636,
+   "tiePercentage": 0.0,
+   "playId": "4018730232346"
+  },
+  {
+   "homeWinPercentage": 0.8616,
+   "tiePercentage": 0.0,
+   "playId": "4018730232369"
+  },
+  {
+   "homeWinPercentage": 0.8607,
+   "tiePercentage": 0.0,
+   "playId": "4018730232391"
+  },
+  {
+   "homeWinPercentage": 0.8406,
+   "tiePercentage": 0.0,
+   "playId": "4018730232411"
+  },
+  {
+   "homeWinPercentage": 0.8578,
+   "tiePercentage": 0.0,
+   "playId": "4018730232434"
+  },
+  {
+   "homeWinPercentage": 0.8374,
+   "tiePercentage": 0.0,
+   "playId": "4018730232456"
+  },
+  {
+   "homeWinPercentage": 0.8203,
+   "tiePercentage": 0.0,
+   "playId": "4018730232486"
+  },
+  {
+   "homeWinPercentage": 0.831,
+   "tiePercentage": 0.0,
+   "playId": "4018730232516"
+  },
+  {
+   "homeWinPercentage": 0.8668,
+   "tiePercentage": 0.0,
+   "playId": "4018730232541"
+  },
+  {
+   "homeWinPercentage": 0.895,
+   "tiePercentage": 0.0,
+   "playId": "4018730232564"
+  },
+  {
+   "homeWinPercentage": 0.8999,
+   "tiePercentage": 0.0,
+   "playId": "4018730232586"
+  },
+  {
+   "homeWinPercentage": 0.9043,
+   "tiePercentage": 0.0,
+   "playId": "4018730232611"
+  },
+  {
+   "homeWinPercentage": 0.9162,
+   "tiePercentage": 0.0,
+   "playId": "4018730232633"
+  },
+  {
+   "homeWinPercentage": 0.9259,
+   "tiePercentage": 0.0,
+   "playId": "4018730232658"
+  },
+  {
+   "homeWinPercentage": 0.9293,
+   "tiePercentage": 0.0,
+   "playId": "4018730232680"
+  },
+  {
+   "homeWinPercentage": 0.9233,
+   "tiePercentage": 0.0,
+   "playId": "4018730232702"
+  },
+  {
+   "homeWinPercentage": 0.9401,
+   "tiePercentage": 0.0,
+   "playId": "4018730232724"
+  },
+  {
+   "homeWinPercentage": 0.9416,
+   "tiePercentage": 0.0,
+   "playId": "4018730232737"
+  },
+  {
+   "homeWinPercentage": 0.9606,
+   "tiePercentage": 0.0,
+   "playId": "4018730232749"
+  },
+  {
+   "homeWinPercentage": 0.9565,
+   "tiePercentage": 0.0,
+   "playId": "4018730232797"
+  },
+  {
+   "homeWinPercentage": 0.9498,
+   "tiePercentage": 0.0,
+   "playId": "4018730232820"
+  },
+  {
+   "homeWinPercentage": 0.9539,
+   "tiePercentage": 0.0,
+   "playId": "4018730232842"
+  },
+  {
+   "homeWinPercentage": 0.9457,
+   "tiePercentage": 0.0,
+   "playId": "4018730232868"
+  },
+  {
+   "homeWinPercentage": 0.934,
+   "tiePercentage": 0.0,
+   "playId": "4018730232895"
+  },
+  {
+   "homeWinPercentage": 0.9407,
+   "tiePercentage": 0.0,
+   "playId": "4018730232920"
+  },
+  {
+   "homeWinPercentage": 0.9474,
+   "tiePercentage": 0.0,
+   "playId": "4018730232942"
+  },
+  {
+   "homeWinPercentage": 0.9599,
+   "tiePercentage": 0.0,
+   "playId": "4018730232965"
+  },
+  {
+   "homeWinPercentage": 0.9518,
+   "tiePercentage": 0.0,
+   "playId": "4018730232985"
+  },
+  {
+   "homeWinPercentage": 0.9518,
+   "tiePercentage": 0.0,
+   "playId": "4018730232995"
+  },
+  {
+   "homeWinPercentage": 0.9554,
+   "tiePercentage": 0.0,
+   "playId": "4018730233005"
+  },
+  {
+   "homeWinPercentage": 0.9492,
+   "tiePercentage": 0.0,
+   "playId": "4018730233035"
+  },
+  {
+   "homeWinPercentage": 0.9603,
+   "tiePercentage": 0.0,
+   "playId": "4018730233058"
+  },
+  {
+   "homeWinPercentage": 0.9632,
+   "tiePercentage": 0.0,
+   "playId": "4018730233086"
+  },
+  {
+   "homeWinPercentage": 0.9605,
+   "tiePercentage": 0.0,
+   "playId": "4018730233108"
+  },
+  {
+   "homeWinPercentage": 0.9704,
+   "tiePercentage": 0.0,
+   "playId": "4018730233141"
+  },
+  {
+   "homeWinPercentage": 0.9753,
+   "tiePercentage": 0.0,
+   "playId": "4018730233166"
+  },
+  {
+   "homeWinPercentage": 0.9747,
+   "tiePercentage": 0.0,
+   "playId": "4018730233196"
+  },
+  {
+   "homeWinPercentage": 0.9693,
+   "tiePercentage": 0.0,
+   "playId": "4018730233237"
+  },
+  {
+   "homeWinPercentage": 0.9707,
+   "tiePercentage": 0.0,
+   "playId": "4018730233259"
+  },
+  {
+   "homeWinPercentage": 0.9748,
+   "tiePercentage": 0.0,
+   "playId": "4018730233279"
+  },
+  {
+   "homeWinPercentage": 0.9595,
+   "tiePercentage": 0.0,
+   "playId": "4018730233304"
+  },
+  {
+   "homeWinPercentage": 0.96,
+   "tiePercentage": 0.0,
+   "playId": "4018730233318"
+  },
+  {
+   "homeWinPercentage": 0.9592,
+   "tiePercentage": 0.0,
+   "playId": "4018730233331"
+  },
+  {
+   "homeWinPercentage": 0.9521,
+   "tiePercentage": 0.0,
+   "playId": "4018730233365"
+  },
+  {
+   "homeWinPercentage": 0.9562,
+   "tiePercentage": 0.0,
+   "playId": "4018730233390"
+  },
+  {
+   "homeWinPercentage": 0.9686,
+   "tiePercentage": 0.0,
+   "playId": "4018730233412"
+  },
+  {
+   "homeWinPercentage": 0.9751,
+   "tiePercentage": 0.0,
+   "playId": "4018730233432"
+  },
+  {
+   "homeWinPercentage": 0.9688,
+   "tiePercentage": 0.0,
+   "playId": "4018730233455"
+  },
+  {
+   "homeWinPercentage": 0.5664,
+   "tiePercentage": 0.0,
+   "playId": "4018730233470"
+  },
+  {
+   "homeWinPercentage": 0.9749,
+   "tiePercentage": 0.0,
+   "playId": "4018730233484"
+  },
+  {
+   "homeWinPercentage": 0.9731,
+   "tiePercentage": 0.0,
+   "playId": "4018730233521"
+  },
+  {
+   "homeWinPercentage": 0.9633,
+   "tiePercentage": 0.0,
+   "playId": "4018730233543"
+  },
+  {
+   "homeWinPercentage": 0.967,
+   "tiePercentage": 0.0,
+   "playId": "4018730233566"
+  },
+  {
+   "homeWinPercentage": 0.9674,
+   "tiePercentage": 0.0,
+   "playId": "4018730233576"
+  },
+  {
+   "homeWinPercentage": 0.9601,
+   "tiePercentage": 0.0,
+   "playId": "4018730233586"
+  },
+  {
+   "homeWinPercentage": 0.9624,
+   "tiePercentage": 0.0,
+   "playId": "4018730233615"
+  },
+  {
+   "homeWinPercentage": 0.9527,
+   "tiePercentage": 0.0,
+   "playId": "4018730233640"
+  },
+  {
+   "homeWinPercentage": 0.9659,
+   "tiePercentage": 0.0,
+   "playId": "4018730233665"
+  },
+  {
+   "homeWinPercentage": 0.9763,
+   "tiePercentage": 0.0,
+   "playId": "4018730233687"
+  },
+  {
+   "homeWinPercentage": 0.9628,
+   "tiePercentage": 0.0,
+   "playId": "4018730233711"
+  },
+  {
+   "homeWinPercentage": 0.9719,
+   "tiePercentage": 0.0,
+   "playId": "4018730233736"
+  },
+  {
+   "homeWinPercentage": 0.9766,
+   "tiePercentage": 0.0,
+   "playId": "4018730233759"
+  },
+  {
+   "homeWinPercentage": 0.958,
+   "tiePercentage": 0.0,
+   "playId": "4018730233782"
+  },
+  {
+   "homeWinPercentage": 0.9557,
+   "tiePercentage": 0.0,
+   "playId": "4018730233807"
+  },
+  {
+   "homeWinPercentage": 0.9767,
+   "tiePercentage": 0.0,
+   "playId": "4018730233832"
+  },
+  {
+   "homeWinPercentage": 0.9806,
+   "tiePercentage": 0.0,
+   "playId": "4018730233866"
+  },
+  {
+   "homeWinPercentage": 0.982,
+   "tiePercentage": 0.0,
+   "playId": "4018730233889"
+  },
+  {
+   "homeWinPercentage": 0.9121,
+   "tiePercentage": 0.0,
+   "playId": "4018730233914"
+  },
+  {
+   "homeWinPercentage": 0.9121,
+   "tiePercentage": 0.0,
+   "playId": "4018730233947"
+  },
+  {
+   "homeWinPercentage": 0.942,
+   "tiePercentage": 0.0,
+   "playId": "4018730233953"
+  },
+  {
+   "homeWinPercentage": 0.9115,
+   "tiePercentage": 0.0,
+   "playId": "4018730233983"
+  },
+  {
+   "homeWinPercentage": 0.9085,
+   "tiePercentage": 0.0,
+   "playId": "4018730234019"
+  },
+  {
+   "homeWinPercentage": 0.9158,
+   "tiePercentage": 0.0,
+   "playId": "4018730234042"
+  },
+  {
+   "homeWinPercentage": 0.8708,
+   "tiePercentage": 0.0,
+   "playId": "4018730234072"
+  },
+  {
+   "homeWinPercentage": 0.8785,
+   "tiePercentage": 0.0,
+   "playId": "4018730234121"
+  },
+  {
+   "homeWinPercentage": 0.8807,
+   "tiePercentage": 0.0,
+   "playId": "4018730234134"
+  },
+  {
+   "homeWinPercentage": 0.9097,
+   "tiePercentage": 0.0,
+   "playId": "4018730234147"
+  },
+  {
+   "homeWinPercentage": 0.9159,
+   "tiePercentage": 0.0,
+   "playId": "4018730234188"
+  },
+  {
+   "homeWinPercentage": 0.9557,
+   "tiePercentage": 0.0,
+   "playId": "4018730234213"
+  },
+  {
+   "homeWinPercentage": 0.9814,
+   "tiePercentage": 0.0,
+   "playId": "4018730234235"
+  },
+  {
+   "homeWinPercentage": 0.9766,
+   "tiePercentage": 0.0,
+   "playId": "4018730234258"
+  },
+  {
+   "homeWinPercentage": 0.9804,
+   "tiePercentage": 0.0,
+   "playId": "4018730234269"
+  },
+  {
+   "homeWinPercentage": 0.9803,
+   "tiePercentage": 0.0,
+   "playId": "4018730234280"
+  },
+  {
+   "homeWinPercentage": 0.9843,
+   "tiePercentage": 0.0,
+   "playId": "4018730234295"
+  },
+  {
+   "homeWinPercentage": 0.984,
+   "tiePercentage": 0.0,
+   "playId": "4018730234302"
+  },
+  {
+   "homeWinPercentage": 0.9942,
+   "tiePercentage": 0.0,
+   "playId": "4018730234309"
+  },
+  {
+   "homeWinPercentage": 0.9984,
+   "tiePercentage": 0.0,
+   "playId": "4018730234329"
+  },
+  {
+   "homeWinPercentage": 0.9792,
+   "tiePercentage": 0.0,
+   "playId": "4018730234348"
+  },
+  {
+   "homeWinPercentage": 0.9883,
+   "tiePercentage": 0.0,
+   "playId": "4018730234363"
+  },
+  {
+   "homeWinPercentage": 0.9827,
+   "tiePercentage": 0.0,
+   "playId": "4018730234377"
+  },
+  {
+   "homeWinPercentage": 0.9847,
+   "tiePercentage": 0.0,
+   "playId": "4018730234406"
+  },
+  {
+   "homeWinPercentage": 0.999,
+   "tiePercentage": 0.0,
+   "playId": "4018730234456"
+  },
+  {
+   "homeWinPercentage": 0.999,
+   "tiePercentage": 0.0,
+   "playId": "4018730234474"
+  },
+  {
+   "homeWinPercentage": 0.999,
+   "tiePercentage": 0.0,
+   "playId": "4018730234494"
+  },
+  {
+   "homeWinPercentage": 0.999,
+   "tiePercentage": 0.0,
+   "playId": "4018730234506"
+  },
+  {
+   "homeWinPercentage": 0.999,
+   "tiePercentage": 0.0,
+   "playId": "4018730234517"
+  },
+  {
+   "homeWinPercentage": 1.0,
+   "tiePercentage": 0.0,
+   "playId": "4018730234577"
+  }
+ ],
  "meta": {
   "gp_topic": "gp-football-nfl-401873023",
   "gameSwitcherEnabled": true,
