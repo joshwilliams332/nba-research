@@ -34,7 +34,7 @@ document.getElementById('list').innerHTML = skeleton(4, 3);
 load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/logs', 'nfl/props', 'nfl/proj')
   .then(([meta, games, teams, teamstats, players, logs, props, proj]) => {
   const N = nflAddPlayers(nflLab(meta, games, teams, teamstats), players, logs, props, proj);
-  document.getElementById('foot').innerHTML = `<p>Props: the sportsbooks Mingus Football pulls (night games and the Sunday slates). Hit rates describe the past, not the future. 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
+  document.getElementById('foot').innerHTML = `<p>Props: the sportsbooks Mingus Picks pulls (night games and the Sunday slates). Hit rates describe the past, not the future. 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
   const saved = (() => { try { return JSON.parse(localStorage.getItem('hooplab.nflprops')) || {}; } catch (e) { return {}; } })();
   const st = { sort: saved.sort || 'l10', side: saved.side || 'o', stat: saved.stat || 'all' };
   const SORTS = [['l5', 'L5'], ['l10', 'L10'], ['l20', 'L20'], ['h2h', 'H2H'], ['season', String(meta.season)], ['last', String(meta.season - 1)]];
@@ -90,7 +90,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
     const list = items.filter(x => st.stat === 'all' || x.r.stat === st.stat)
       .sort((a, b) => ((b.w[st.side][st.sort].rate ?? -1) - (a.w[st.side][st.sort].rate ?? -1)) || (b.w[st.side][st.sort].n - a.w[st.side][st.sort].n));
     document.getElementById('list').innerHTML = list.length ? list.map(card).join('')
-      : emptyState('No props pulled yet this week.', 'Mingus Football pulls props for night games and the Sunday slates.');
+      : emptyState('No props pulled yet this week.', 'Mingus Picks pulls props for night games and the Sunday slates; DraftKings lines fill in as they post.');
     const g0 = gids.map(id => N.byId.get(id));
     document.getElementById('sub').textContent = [`Week ${g0.length ? g0[0].week : meta.week}`, `${list.length} props`, `${gids.length} game${gids.length === 1 ? '' : 's'}`, past ? 'last pull (games played)' : ''].filter(Boolean).join(' · ');
   }

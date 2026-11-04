@@ -117,7 +117,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats').then(([meta, games, 
   renderList();
   watch();
 }).catch(err => {
-  document.getElementById('list').innerHTML = emptyState('NFL data is unavailable right now.', 'It comes from Mingus Football on each data update. Try again in a bit.');
+  document.getElementById('list').innerHTML = emptyState('NFL data is unavailable right now.', 'It comes from ESPN on each data update. Try again in a bit.');
   console.error(err);
 });
 </script>

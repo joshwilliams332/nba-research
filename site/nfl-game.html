@@ -36,7 +36,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   if (!g) { main.innerHTML = emptyState('Game not found.', '<a href="nfl.html">Back to NFL games</a>'); return; }
   const A = N.teams[g.away] || {}, H = N.teams[g.home] || {};
   document.title = `NFL Lab · ${g.away} @ ${g.home}`;
-  document.getElementById('foot').innerHTML = `<p>NFL data: ESPN (scores, DraftKings lines, box scores, injuries) with nflverse history; props from Mingus Football. Trends describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
+  document.getElementById('foot').innerHTML = `<p>NFL data: ESPN (scores, DraftKings lines, box scores, injuries) with nflverse history; props from Mingus Picks and DraftKings. Trends describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
 
   // Same layout as Hoop Lab's game page: Odds (Game lines / Player props) · Insights · Matchup.
   const hash = location.hash.slice(1);
@@ -203,7 +203,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
           ${liveTag(nflLiveValue(N, g.id, x.pid, x.stat), x.line)}${linePill(x)}<span class="chev">⌄</span></div>
         ${open ? `<div class="nflladder">${ladder(x)}</div>` : ''}</div>`;
     }).join('')}</div>
-    <p class="note">${anyBook ? `DraftKings lines${pulled ? ` (updated ${esc(new Date(pulled).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }))})` : ''}; prices where Mingus Football pulled them, ↑↓ = moved since it opened. ` : ''}Tap a player for a ladder of lines with his last 10 games at each; › opens the full breakdown.</p>`;
+    <p class="note">${anyBook ? `DraftKings lines${pulled ? ` (updated ${esc(new Date(pulled).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' }))})` : ''}; prices where Mingus Picks pulled them, ↑↓ = moved since it opened. ` : ''}Tap a player for a ladder of lines with his last 10 games at each; › opens the full breakdown.</p>`;
   }
   function oddsPane() {
     const head = `<div class="tabs under"><button data-sub="lines" class="${st.sub === 'lines' ? 'on' : ''}">Game lines</button><button data-sub="props" class="${st.sub === 'props' ? 'on' : ''}">Player props</button></div>`;
@@ -304,7 +304,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   } });
   if (location.hash === '#lines') setTimeout(() => { const el = document.getElementById('lines'); if (el) el.scrollIntoView({ block: 'start' }); }, 50);
 }).catch(err => {
-  main.innerHTML = emptyState('NFL data is unavailable right now.', 'It comes from Mingus Football on each data update. Try again in a bit.');
+  main.innerHTML = emptyState('NFL data is unavailable right now.', 'It comes from ESPN on each data update. Try again in a bit.');
   console.error(err);
 });
 </script>

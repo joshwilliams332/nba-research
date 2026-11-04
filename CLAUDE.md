@@ -111,8 +111,10 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   game page; "Now" on prop rows), reusing live.js helpers. nflverse release CSVs cover last season and are the fallback
   (schedules with lines and prices, team + player weekly stats,
   weekly rosters for IR / reserve, injury reports). Also reads Mingus Football's checkouts (main: `site/data/teams.json`;
-  `data` branch: `odds/props/<game>.json`, `model/projections/`). We read the football repo, never edit it (one chat per
-  repo); football owns its props pulls and model. nflverse `spread_line` is positive when home is favored; ours
+  `data` branch: `model/projections/`) and, since the Nov 3 fantasy / picks split, **Mingus Picks**
+  (`joshwilliams332/mingus-picks`, `data` branch: `odds/props/<game>.json`, `picks/`; `--picks-data`, falling back to
+  mingus's old copies while a folder is missing). We read the football repos, never edit them (one chat per repo);
+  mingus-picks does every NFL Odds API pull and NFL Lab never calls the Odds API. nflverse `spread_line` is positive when home is favored; ours
   (`home_spread`) is the home team's number. Output in `site/data/nfl/` (meta, games, teams, teamstats, players, logs,
   props, proj). No Odds API credits. Logic in `site/assets/nfl.js` (names prefixed `nfl`, tested in `tests/nfl.test.js`;
   data build tested in `tests/test_build_nfl.py`), styles in `site/assets/nfl.css`.

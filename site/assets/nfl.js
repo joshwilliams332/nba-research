@@ -1,6 +1,5 @@
-/* NFL Lab: the football side of Mingus Lab. Data comes from Mingus Football's published files (copied into
-   site/data/nfl/ by scripts/build_nfl.py on every data run): the schedule with lines and scores, teams, and each team's
-   week-by-week box totals. This file turns them into the shapes Hoop Lab's shared helpers already understand
+/* NFL Lab: the football side of Mingus Lab. scripts/build_nfl.py writes site/data/nfl/ on every data run (ESPN and
+   nflverse games, lines, box scores and injuries; Mingus Football's projections; Mingus Picks' props and picks). This file turns them into the shapes Hoop Lab's shared helpers already understand
    (lineResults, tally, strip, rateTag), plus team rankings for the Matchup tab.
 
    Loaded after common.js. Names start with nfl / NFL so they never clash with common.js in the shared browser scope.

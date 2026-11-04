@@ -10,9 +10,10 @@ It's a static site with no backend: a Python job collects the data, and the brow
 filter and line change is instant.
 
 The site is **Mingus Lab**: Hoop Lab (NBA) plus **NFL Lab**, switched from the header. NFL Lab is built from
-nflverse's public data plus the sportsbook props and projections that
-[Mingus Football](https://github.com/joshwilliams332/mingus) publishes, so the two projects share one research
-interface without duplicating the football model.
+ESPN's public NFL data (scores, DraftKings lines, box scores, injuries) with nflverse for past seasons, plus the
+projections [Mingus Football](https://github.com/joshwilliams332/mingus) publishes and the sportsbook props and
+locked picks [Mingus Picks](https://github.com/joshwilliams332/mingus-picks) publishes, so the projects share one
+research interface without duplicating the football model or its odds pulls.
 
 ## What it does
 
@@ -24,7 +25,7 @@ interface without duplicating the football model.
 | **Player** | Bar chart of any stat (points, rebounds, assists, threes, PRA and combos, stocks, attempts) against an adjustable line, over or under. Hit rates for H2H / L5 / L10 / L20 / this season / last season. Filters: home/away, days of rest, starter/bench, team result, final margin, minimum minutes, regular season only, and **with / without any teammate**. Supporting stats (minutes, FGA, 3PA, FTA, fouls) for the same games, plus the full game log. |
 | **Trends** | The slate's strongest trends written as sentences ("The Indiana Pacers are 10-2 (83.3%) against the spread in their last 12 games as an underdog"), filterable by player/team, market and game. The same feed is the Insights tab on each game page. |
 | **My picks** | Save any prop with the bookmark and it grades itself from the box scores: record, units, ROI and closing-line value, with share cards and export/import between devices. Combine open picks into a parlay (price from the legs or what your book shows, optional profit boost), graded the way a sportsbook settles it. Graded picks are grouped by day. A model card shows the model's own record, today's locked picks (one tap to add) and every past pick, graded. Stored on the device only. |
-| **NFL Lab** | The NFL side of Mingus Lab, built from nflverse plus the props and projections [Mingus Football](https://github.com/joshwilliams332/mingus) publishes. Week-by-week games with money line, spread and total trends against this week's number; a game page with a line breakdown, player props (each line's last-10 strip and hit rate, with typical lines labeled when no props were pulled) and the matchup (offense vs defense ranks, common opponents, recent ATS / O/U); player pages (any stat and line, H2H / L5 / L10 / L20 / this and last season, usage, defense vs position, the Mingus projection next to the book line); and a sortable props page. Save any NFL prop to My picks (it grades from the box scores) and mix NBA and NFL legs in one parlay; the NFL model's locked picks and record sit next to Hoop Lab's. |
+| **NFL Lab** | The NFL side of Mingus Lab, built from ESPN and nflverse plus Mingus Football's projections and Mingus Picks' props and locked picks. Odds / Insights / Matchup game page and a Trends page like Hoop Lab's, with live scores during games. Week-by-week games with money line, spread and total trends against this week's number; a game page with a line breakdown, player props (each line's last-10 strip and hit rate, with typical lines labeled when no props were pulled) and the matchup (offense vs defense ranks, common opponents, recent ATS / O/U); player pages (any stat and line, H2H / L5 / L10 / L20 / this and last season, usage, defense vs position, the Mingus projection next to the book line); and a sortable props page. Save any NFL prop to My picks (it grades from the box scores) and mix NBA and NFL legs in one parlay; the NFL model's locked picks and record sit next to Hoop Lab's. |
 | **Live** | During games the Games list, game page and My picks update every 25 seconds straight from ESPN's public scoreboard: score and clock, each player's stat so far against his prop line, and a live box score. |
 | **Props** | Today's sportsbook props with a one-tap sort bar (opponent rank, L5 / L10 / L20, H2H, this or last season, best price, biggest movers) and a filters sheet (stat types, side, matchup, minimum hit rate, odds, games, EV+ only) with saved setups. Each card shows OPP RANK, implied probability and who's out. |
 
