@@ -176,9 +176,9 @@
    ]
   },
   "weather": {
-   "temperature": 65,
-   "highTemperature": 65,
-   "lowTemperature": 65,
+   "temperature": 67,
+   "highTemperature": 67,
+   "lowTemperature": 67,
    "conditionId": "7",
    "gust": 10,
    "precipitation": 48,
@@ -373,8 +373,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "1",
       "uid": "s:20~l:28~t:1",
@@ -439,7 +437,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401872997",
@@ -640,8 +640,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "2",
       "uid": "s:20~l:28~t:2",
@@ -706,7 +704,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -1341,8 +1341,7 @@
          "details": {
           "fantasyStatus": {
            "description": "OUT",
-           "abbreviation": "OUT",
-           "displayDescription": "Out"
+           "abbreviation": "OUT"
           },
           "type": "Thumb",
           "location": "Arm",
@@ -1871,7 +1870,7 @@
         "status": "Questionable",
         "injuries": {
          "status": "Questionable",
-         "date": "2026-11-04T01:30Z",
+         "date": "2026-11-05T00:51Z",
          "type": {
           "id": "2",
           "name": "INJURY_STATUS_QUESTIONABLE",
@@ -2027,69 +2026,8 @@
    },
    "injuries": [
     {
-     "status": "Questionable",
-     "date": "2026-11-04T20:17Z",
-     "athlete": {
-      "id": "4601278",
-      "uid": "s:20~l:28~a:4601278",
-      "guid": "0fa246a4-1068-3be1-9d79-42844aeedbce",
-      "lastName": "Wiggins",
-      "fullName": "Nate Wiggins",
-      "displayName": "Nate Wiggins",
-      "shortName": "N. Wiggins",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4601278/nate-wiggins",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4601278.png",
-       "alt": "Nate Wiggins"
-      },
-      "jersey": "2",
-      "position": {
-       "name": "Cornerback",
-       "displayName": "Cornerback",
-       "abbreviation": "CB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4601278?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Illness",
-      "location": "Other",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-11-05"
-     }
-    },
-    {
      "status": "Out",
-     "date": "2026-11-04T20:14Z",
+     "date": "2026-11-05T01:14Z",
      "athlete": {
       "id": "3858276",
       "uid": "s:20~l:28~a:3858276",
@@ -2146,6 +2084,128 @@
       "detail": "Not Specified",
       "side": "Not Specified",
       "returnDate": "2026-11-16"
+     }
+    },
+    {
+     "status": "Injured Reserve",
+     "date": "2026-11-05T01:10Z",
+     "athlete": {
+      "id": "4685526",
+      "uid": "s:20~l:28~a:4685526",
+      "guid": "5ba8accf-3628-3600-a87f-d46192f50537",
+      "lastName": "Randall",
+      "fullName": "Adam Randall",
+      "displayName": "Adam Randall",
+      "shortName": "A. Randall",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4685526/adam-randall",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4685526.png",
+       "alt": "Adam Randall"
+      },
+      "jersey": "23",
+      "position": {
+       "name": "Running Back",
+       "displayName": "Running Back",
+       "abbreviation": "RB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4685526?lang=en&region=us"
+      },
+      "status": {
+       "id": "13",
+       "name": "Day-To-Day",
+       "type": "day-to-day",
+       "abbreviation": "Day-To-Day"
+      }
+     },
+     "type": {
+      "id": "5",
+      "name": "INJURY_STATUS_IR",
+      "description": "Injured Reserve",
+      "abbreviation": "IR"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "IR-R",
+       "abbreviation": "IR-R",
+       "displayDescription": "IR-R"
+      },
+      "type": "Neck",
+      "location": "Head",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-05"
+     }
+    },
+    {
+     "status": "Questionable",
+     "date": "2026-11-05T01:06Z",
+     "athlete": {
+      "id": "4601278",
+      "uid": "s:20~l:28~a:4601278",
+      "guid": "0fa246a4-1068-3be1-9d79-42844aeedbce",
+      "lastName": "Wiggins",
+      "fullName": "Nate Wiggins",
+      "displayName": "Nate Wiggins",
+      "shortName": "N. Wiggins",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4601278/nate-wiggins",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4601278.png",
+       "alt": "Nate Wiggins"
+      },
+      "jersey": "2",
+      "position": {
+       "name": "Cornerback",
+       "displayName": "Cornerback",
+       "abbreviation": "CB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4601278?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Illness",
+      "location": "Other",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-05"
      }
     },
     {
@@ -2269,67 +2329,6 @@
       "side": "Right",
       "returnDate": "2026-12-13"
      }
-    },
-    {
-     "status": "Out",
-     "date": "2026-11-01T21:50Z",
-     "athlete": {
-      "id": "3916387",
-      "uid": "s:20~l:28~a:3916387",
-      "guid": "7d76fbb1-1c5e-d9f4-954f-cad43f720ae2",
-      "lastName": "Jackson",
-      "fullName": "Lamar Jackson",
-      "displayName": "Lamar Jackson",
-      "shortName": "L. Jackson",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/3916387/lamar-jackson",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/3916387.png",
-       "alt": "Lamar Jackson"
-      },
-      "jersey": "8",
-      "position": {
-       "name": "Quarterback",
-       "displayName": "Quarterback",
-       "abbreviation": "QB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/3916387?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "4",
-      "name": "INJURY_STATUS_OUT",
-      "description": "out",
-      "abbreviation": "O"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "OUT",
-       "abbreviation": "OUT",
-       "displayDescription": "Out"
-      },
-      "type": "Thumb",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Right",
-      "returnDate": "2026-12-13"
-     }
     }
    ]
   },
@@ -2401,6 +2400,67 @@
    "injuries": [
     {
      "status": "Questionable",
+     "date": "2026-11-05T00:51Z",
+     "athlete": {
+      "id": "4426349",
+      "uid": "s:20~l:28~a:4426349",
+      "guid": "5431a37e-7b11-f9fb-a12b-68627e0eb858",
+      "lastName": "Walker",
+      "fullName": "Travon Walker",
+      "displayName": "Travon Walker",
+      "shortName": "T. Walker",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4426349/travon-walker",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4426349.png",
+       "alt": "Travon Walker"
+      },
+      "jersey": "44",
+      "position": {
+       "name": "Defensive End",
+       "displayName": "Defensive End",
+       "abbreviation": "DE"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4426349?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Ribs",
+      "location": "Torso",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-05"
+     }
+    },
+    {
+     "status": "Questionable",
      "date": "2026-11-04T20:07Z",
      "athlete": {
       "id": "4882093",
@@ -2455,67 +2515,6 @@
       },
       "type": "Ankle",
       "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-11-05"
-     }
-    },
-    {
-     "status": "Questionable",
-     "date": "2026-11-04T01:30Z",
-     "athlete": {
-      "id": "4426349",
-      "uid": "s:20~l:28~a:4426349",
-      "guid": "5431a37e-7b11-f9fb-a12b-68627e0eb858",
-      "lastName": "Walker",
-      "fullName": "Travon Walker",
-      "displayName": "Travon Walker",
-      "shortName": "T. Walker",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4426349/travon-walker",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4426349.png",
-       "alt": "Travon Walker"
-      },
-      "jersey": "44",
-      "position": {
-       "name": "Defensive End",
-       "displayName": "Defensive End",
-       "abbreviation": "DE"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4426349?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Ribs",
-      "location": "Torso",
       "detail": "Not Specified",
       "side": "Not Specified",
       "returnDate": "2026-11-05"
@@ -2754,13 +2753,13 @@
    "details": "JAX -10",
    "overUnder": 39.5,
    "spread": 10.0,
-   "overOdds": -118.0,
-   "underOdds": -102.0,
+   "overOdds": -112.0,
+   "underOdds": -108.0,
    "awayTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -535,
-    "spreadOdds": -108.0,
+    "moneyLine": -520,
+    "spreadOdds": -105.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/30?lang=en&region=us"
     },
@@ -2770,8 +2769,8 @@
    "homeTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 400,
-    "spreadOdds": -112.0,
+    "moneyLine": 390,
+    "spreadOdds": -115.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/33?lang=en&region=us"
     },
@@ -2942,7 +2941,7 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "+400",
+      "odds": "+390",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2974,7 +2973,7 @@
     },
     "away": {
      "close": {
-      "odds": "-535",
+      "odds": "-520",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3011,7 +3010,7 @@
     "home": {
      "close": {
       "line": "+10",
-      "odds": "-112",
+      "odds": "-115",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3045,7 +3044,7 @@
     "away": {
      "close": {
       "line": "-10",
-      "odds": "-108",
+      "odds": "-105",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3083,7 +3082,7 @@
     "over": {
      "close": {
       "line": "o39.5",
-      "odds": "-118",
+      "odds": "-112",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3117,7 +3116,7 @@
     "under": {
      "close": {
       "line": "u39.5",
-      "odds": "-102",
+      "odds": "-108",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3313,6 +3312,18 @@
    "records": []
   }
  ],
+ "winprobability": [],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "33",
+   "gameProjection": "18.8"
+  },
+  "awayTeam": {
+   "id": "30",
+   "gameProjection": "81"
+  }
+ },
  "news": {
   "header": "NFL News",
   "link": {
@@ -3330,33 +3341,33 @@
   },
   "articles": [
    {
-    "id": 50381853,
-    "nowId": "1-50381853",
-    "contentKey": "50381853-1-5-1",
-    "dataSourceIdentifier": "bde7d43030e50",
-    "type": "HeadlineNews",
-    "headline": "Colts' Shane Steichen defends Jonathan Taylor usage, says RB will keep role",
-    "description": "Jonathan Taylor will continue to play his usual role with the Colts despite being at the center of trade talks with multiple teams, Shane Steichen said.",
-    "lastModified": "2026-11-04T21:16:35Z",
-    "published": "2026-11-04T21:16:35Z",
+    "id": 50383054,
+    "nowId": "1-50383054",
+    "contentKey": "50383054-1-6-1",
+    "dataSourceIdentifier": "22ee43224ba10",
+    "type": "Story",
+    "headline": "Return of 'Kirko Chainz' and In-N-Out runs: Kirk Cousins brings joy to Raiders",
+    "description": "From reviving 'Kirko Chainz' to treating teammates to In-N-Out, Cousins is encouraging the Raiders to find joy.",
+    "lastModified": "2026-11-05T01:30:37Z",
+    "published": "2026-11-05T01:30:37Z",
     "images": [
      {
-      "dataSourceIdentifier": "953021d34bfde",
-      "id": 50281272,
+      "dataSourceIdentifier": "78ad8179d90ad",
+      "id": 50282082,
       "type": "header",
-      "name": "Jonathan Taylor [1296x729]",
-      "credit": "Kevin Sabitus/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1025/r1736160_2_1296x729_16-9.jpg"
+      "name": "Kirk Cousins [608x342]",
+      "credit": "Ethan Miller/Getty Images",
+      "height": 342,
+      "width": 608,
+      "url": "https://a.espncdn.com/photo/2026/1025/r1736216_608x342_16-9.jpg"
      },
      {
       "type": "Media",
-      "name": "The team Domonique Foxworth says needs Jonathan Taylor the most",
-      "caption": "The team Domonique Foxworth says needs Jonathan Taylor the most",
+      "name": "Kirk Cousins shows off 'Kohl's Cash' chain to Manning brothers",
+      "caption": "Kirk Cousins talks about his rehab and shows off his \"Kohl's Cash\" chain to the Manning brothers.",
       "height": 324,
       "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1103/ss_20261103_083034129_3723670515/ss_20261103_083034129_3723670515.jpg"
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2023/1211/dm_231211_NFL_Interview_Kirk_Cousins_chain/dm_231211_NFL_Interview_Kirk_Cousins_chain.jpg"
      }
     ],
     "categories": [
@@ -3387,57 +3398,747 @@
       }
      },
      {
-      "id": 2942,
+      "id": 2553,
       "type": "team",
-      "uid": "s:20~l:28~t:11",
-      "guid": "582d14eb-da61-e505-cc40-d972a1b60ed1",
-      "description": "Indianapolis Colts",
+      "uid": "s:20~l:28~t:13",
+      "guid": "b18540eb-6f2b-534c-e7f9-9bd930518da9",
+      "description": "Las Vegas Raiders",
       "sportId": 28,
-      "teamId": 11,
+      "teamId": 13,
       "team": {
-       "id": 11,
-       "description": "Indianapolis Colts",
-       "abbreviation": "IND",
-       "shortDisplayName": "Colts",
+       "id": 13,
+       "description": "Las Vegas Raiders",
+       "abbreviation": "LV",
+       "shortDisplayName": "Raiders",
        "links": {
         "mobile": {
          "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
+          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
          }
         },
         "web": {
          "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
+          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
          }
         }
        }
       }
      },
      {
-      "id": 435130,
+      "id": 103992,
       "type": "athlete",
-      "uid": "s:20~l:28~a:4242335",
-      "guid": "ddd8786c-fd5a-4e55-ccc8-6ddf6f1ede33",
-      "description": "Jonathan Taylor",
+      "uid": "s:20~l:28~a:14880",
+      "guid": "53bec012-c2ed-bc7c-a8d5-438611f9faa1",
+      "description": "Kirk Cousins",
       "sportId": 28,
-      "athleteId": 4242335,
+      "athleteId": 14880,
       "athlete": {
-       "id": 4242335,
-       "description": "Jonathan Taylor",
+       "id": 14880,
+       "description": "Kirk Cousins",
        "links": {
         "mobile": {
          "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4242335/jonathan-taylor"
+          "href": "https://www.espn.com/nfl/player/_/id/14880/kirk-cousins"
          }
         },
         "web": {
          "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4242335/jonathan-taylor"
+          "href": "https://www.espn.com/nfl/player/_/id/14880/kirk-cousins"
          }
         }
        }
       }
      },
+     {
+      "id": 704689,
+      "type": "contributor",
+      "guid": "b01f248b-d634-36a1-95d7-36c479b8a8b6",
+      "description": "Ryan McFadden",
+      "slug": "ryan-mcfadden",
+      "contributor": {
+       "id": 4152,
+       "description": "Ryan McFadden"
+      }
+     }
+    ],
+    "byline": "Ryan McFadden",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50383054"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50383054"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50383054"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50383054/kirk-cousins-raiders-kirko-chainz-celebration-teammates"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50371800,
+    "nowId": "1-50371800",
+    "contentKey": "50371800-1-6-1",
+    "dataSourceIdentifier": "d01d19246582e",
+    "type": "Story",
+    "headline": "Fantasy football matchup rankings: Upgrade Brown, fade Jacobs, Moore",
+    "description": "The most and least favorable matchups in the NFL for this week's games at the four key fantasy positions.",
+    "lastModified": "2026-11-04T15:53:37Z",
+    "published": "2026-11-04T15:53:37Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "c384a847d899e",
+      "id": 50372148,
+      "type": "header",
+      "name": "Chase Brown [1296x729]",
+      "caption": "A matchup against the Falcons is just what the Bengals need to get running back Chase Brown going.",
+      "alt": "Chase Brown runs the ball.",
+      "credit": "Andy Lyons/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1103/r1740711_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Tristan H. Cockcroft: Don't sleep on Malik Washington in Week 9",
+      "caption": "Tristan H. Cockcroft: Don't sleep on Malik Washington in Week 9",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1103/ss_20261103_162616616_3723968995/ss_20261103_162616616_3723968995.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 141870,
+      "type": "topic",
+      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
+      "description": "news - fantasy",
+      "sportId": 0,
+      "topicId": 240
+     },
+     {
+      "id": 152381,
+      "type": "topic",
+      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
+      "description": "news - fantasy football",
+      "sportId": 0,
+      "topicId": 401
+     },
+     {
+      "id": 129297,
+      "type": "topic",
+      "guid": "ffd795dd-dc60-d4c3-f868-831dc2ec21b3",
+      "description": "news - nfl",
+      "sportId": 0,
+      "topicId": 121
+     },
+     {
+      "id": 529420,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4242512",
+      "guid": "77d56116-fed8-b61e-d8d8-9a30107e2104",
+      "description": "Malik Willis",
+      "sportId": 28,
+      "athleteId": 4242512,
+      "athlete": {
+       "id": 4242512,
+       "description": "Malik Willis",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4242512/malik-willis"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4242512/malik-willis"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 492854,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4431611",
+      "guid": "dd15176c-3004-333f-beaa-149216c42968",
+      "description": "Caleb Williams",
+      "sportId": 28,
+      "athleteId": 4431611,
+      "athlete": {
+       "id": 4431611,
+       "description": "Caleb Williams",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4431611/caleb-williams"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4431611/caleb-williams"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 228197,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4362238",
+      "guid": "07049770-8e6a-c054-e9f3-0a204d623b57",
+      "description": "Chase Brown",
+      "sportId": 28,
+      "athleteId": 4362238,
+      "athlete": {
+       "id": 4362238,
+       "description": "Chase Brown",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4362238/chase-brown"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4362238/chase-brown"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 379791,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4047365",
+      "guid": "a83b6715-f018-aedf-190e-f77f026c7e4a",
+      "description": "Josh Jacobs",
+      "sportId": 28,
+      "athleteId": 4047365,
+      "athlete": {
+       "id": 4047365,
+       "description": "Josh Jacobs",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4047365/josh-jacobs"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4047365/josh-jacobs"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 115682,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:15818",
+      "guid": "c22ef201-95ad-1740-dd33-3ae06d7e7e68",
+      "description": "Keenan Allen",
+      "sportId": 28,
+      "athleteId": 15818,
+      "athlete": {
+       "id": 15818,
+       "description": "Keenan Allen",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/15818/keenan-allen"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/15818/keenan-allen"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 184495,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3915416",
+      "guid": "f90765ad-da8a-9a88-8beb-568c2812636d",
+      "description": "DJ Moore",
+      "sportId": 28,
+      "athleteId": 3915416,
+      "athlete": {
+       "id": 3915416,
+       "description": "DJ Moore",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3915416/dj-moore"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3915416/dj-moore"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 529467,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4367209",
+      "guid": "d05acdf6-28d5-9e9e-3783-e51705161bcb",
+      "description": "Greg Dulcich",
+      "sportId": 28,
+      "athleteId": 4367209,
+      "athlete": {
+       "id": 4367209,
+       "description": "Greg Dulcich",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4367209/greg-dulcich"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4367209/greg-dulcich"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 184692,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3121023",
+      "guid": "de06715d-5216-76ee-f063-dabb342c4225",
+      "description": "Dallas Goedert",
+      "sportId": 28,
+      "athleteId": 3121023,
+      "athlete": {
+       "id": 3121023,
+       "description": "Dallas Goedert",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3121023/dallas-goedert"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3121023/dallas-goedert"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 698729,
+      "type": "contributor",
+      "guid": "6f206a9b-4c7e-3475-bf3f-090be4770216",
+      "description": "Tristan H. Cockcroft",
+      "slug": "tristan-h.-cockcroft",
+      "contributor": {
+       "id": 1115,
+       "description": "Tristan H. Cockcroft"
+      }
+     }
+    ],
+    "byline": "Tristan H. Cockcroft",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50371800"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50371800"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=50371800"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/id/50371800/fantasy-football-rankings-best-worst-matchup-qb-rb-wr-te"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50381369,
+    "nowId": "1-50381369",
+    "contentKey": "50381369-1-6-1",
+    "dataSourceIdentifier": "e1189adc703de",
+    "type": "Story",
+    "headline": "Ravens look to stabilize crumbling season with QB Jacoby Brissett",
+    "description": "Given the veteran QB's recent track record, it remains to be seen whether Baltimore can truly salvage its season.",
+    "lastModified": "2026-11-05T00:57:25Z",
+    "published": "2026-11-05T00:57:25Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "bdce84c40843d",
+      "id": 50381349,
+      "type": "header",
+      "name": "Jacoby Brissett [1296x729]",
+      "credit": "Ron Jenkins/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1104/r1741157_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Why McAfee likes Jacoby Brissett trade to Ravens",
+      "caption": "Why McAfee likes Jacoby Brissett trade to Ravens",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/ss_20261104_145441982_3724878912/ss_20261104_145441982_3724878912.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2830,
+      "type": "team",
+      "uid": "s:20~l:28~t:33",
+      "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
+      "description": "Baltimore Ravens",
+      "sportId": 28,
+      "teamId": 33,
+      "team": {
+       "id": 33,
+       "description": "Baltimore Ravens",
+       "abbreviation": "BAL",
+       "shortDisplayName": "Ravens",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 152903,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:2578570",
+      "guid": "efcb42e5-0bef-62d1-b58b-dbc17fde2479",
+      "description": "Jacoby Brissett",
+      "sportId": 28,
+      "athleteId": 2578570,
+      "athlete": {
+       "id": 2578570,
+       "description": "Jacoby Brissett",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/2578570/jacoby-brissett"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/2578570/jacoby-brissett"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 184545,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3916387",
+      "guid": "7d76fbb1-1c5e-d9f4-954f-cad43f720ae2",
+      "description": "Lamar Jackson",
+      "sportId": 28,
+      "athleteId": 3916387,
+      "athlete": {
+       "id": 3916387,
+       "description": "Lamar Jackson",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3916387/lamar-jackson"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3916387/lamar-jackson"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696306,
+      "type": "contributor",
+      "guid": "9e75a49e-54ea-333b-b3e4-5ddc7b66f32d",
+      "description": "Jamison Hensley",
+      "slug": "jamison-hensley",
+      "contributor": {
+       "id": 2078,
+       "description": "Jamison Hensley"
+      }
+     }
+    ],
+    "byline": "Jamison Hensley",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50381369"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50381369"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50381369"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50381369/baltimore-ravens-crumbling-season-qb-jacoby-brissett"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50383380,
+    "nowId": "1-50383380",
+    "contentKey": "50383380-1-5-1",
+    "dataSourceIdentifier": "cb95e28fad93c",
+    "type": "HeadlineNews",
+    "headline": "Saints' Jordyn Tyson returns to practice, listed as limited participant",
+    "description": "New Orleans Saints rookie wide receiver Jordyn Tyson took a major step toward making his season debut Wednesday, returning to practice for the first time since injuring his right hamstring in a joint practice against the Jacksonville Jaguars on Aug. 13.",
+    "lastModified": "2026-11-05T00:54:48Z",
+    "published": "2026-11-05T00:54:48Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "e46fd9696cf30",
+      "id": 49644507,
+      "type": "header",
+      "name": "Jordyn Tyson [600x400]",
+      "caption": "Jordyn Tyson had generated legitimate buzz as an impact rookie prior to his hamstring injury.",
+      "alt": "Jordyn Tyson, New Orleans Saints wide receiver",
+      "credit": "Stephen Lew-Imagn Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/0818/r1703254_600x400_3-2.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2035,
+      "type": "team",
+      "uid": "s:20~l:28~t:18",
+      "guid": "97d2f6c9-2f22-459c-306a-046941ccab2a",
+      "description": "New Orleans Saints",
+      "sportId": 28,
+      "teamId": 18,
+      "team": {
+       "id": 18,
+       "description": "New Orleans Saints",
+       "abbreviation": "NO",
+       "shortDisplayName": "Saints",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 539343,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4880281",
+      "guid": "378653f9-6b58-363d-a709-85e11465a73c",
+      "description": "Jordyn Tyson",
+      "sportId": 28,
+      "athleteId": 4880281,
+      "athlete": {
+       "id": 4880281,
+       "description": "Jordyn Tyson",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4880281/jordyn-tyson"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4880281/jordyn-tyson"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696390,
+      "type": "contributor",
+      "guid": "20a90658-548b-3df5-9b3f-d35801f93fd1",
+      "description": "Katherine Terrell",
+      "slug": "katherine-terrell",
+      "contributor": {
+       "id": 2725,
+       "description": "Katherine Terrell"
+      }
+     }
+    ],
+    "byline": "Katherine Terrell",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50383380"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50383380"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50383380"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50383380/saints-jordyn-tyson-first-practice-august-injury"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50383350,
+    "nowId": "1-50383350",
+    "contentKey": "50383350-1-5-1",
+    "dataSourceIdentifier": "b8682fda179f8",
+    "type": "HeadlineNews",
+    "headline": "Sources: Jalen Hurts makes appearance at Eagles facility",
+    "description": "Sources said Wednesday was the first time some players had seen Jalen Hurts since he was put on injured reserve because of blood clots in his lungs.",
+    "lastModified": "2026-11-05T00:26:13Z",
+    "published": "2026-11-05T00:26:13Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "d648c3ae847d5",
+      "id": 49929865,
+      "type": "header",
+      "name": "Jalen Hurts [600x400]",
+      "caption": "Jalen Hurts arrives for the Philadelphia Eagles season opener against the Washington Commanders.",
+      "credit": "Philadelphia Eagles/X",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/0913/r1716029_600x400_3-2.jpg"
+     }
+    ],
+    "categories": [
      {
       "id": 409224,
       "type": "topic",
@@ -3447,84 +4148,139 @@
       "topicId": 781
      },
      {
-      "id": 698425,
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1407,
+      "type": "team",
+      "uid": "s:20~l:28~t:21",
+      "guid": "d1a9b001-1df7-fbd7-ae4c-6ca7065286ec",
+      "description": "Philadelphia Eagles",
+      "sportId": 28,
+      "teamId": 21,
+      "team": {
+       "id": 21,
+       "description": "Philadelphia Eagles",
+       "abbreviation": "PHI",
+       "shortDisplayName": "Eagles",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 435090,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4040715",
+      "guid": "caceb80c-6350-a107-9fcf-7c7bd1b4edd8",
+      "description": "Jalen Hurts",
+      "sportId": 28,
+      "athleteId": 4040715,
+      "athlete": {
+       "id": 4040715,
+       "description": "Jalen Hurts",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4040715/jalen-hurts"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4040715/jalen-hurts"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696391,
       "type": "contributor",
-      "guid": "5585e764-d266-3aaa-804a-cc2fef2c8bc0",
-      "description": "Stephen Holder",
-      "slug": "stephen-holder",
+      "guid": "e28af6cd-603c-3042-a666-1dfbc724a082",
+      "description": "Tim McManus",
+      "slug": "tim-mcmanus",
       "contributor": {
-       "id": 3914,
-       "description": "Stephen Holder"
+       "id": 2723,
+       "description": "Tim McManus"
       }
      }
     ],
-    "byline": "Stephen Holder",
+    "byline": "Tim McManus",
     "links": {
      "api": {
       "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50381853"
+       "href": "https://content.core.api.espn.com/v1/sports/news/50383350"
       }
      },
      "app": {
       "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50381853"
+       "href": "sportscenter://x-callback-url/showStory?uid=50383350"
       }
      },
      "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50381853"
+      "href": "http://m.espn.go.com/nfl/story?storyId=50383350"
      },
      "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50381853/shane-steichen-defends-colts-jonathan-taylor-usage-trade"
+      "href": "https://www.espn.com/nfl/story/_/id/50383350/jalen-hurts-makes-appearance-eagles-facility"
      }
     },
     "premium": false
    },
    {
-    "id": 49804149,
-    "nowId": "1-49804149",
-    "contentKey": "49804149-1-6-1",
-    "dataSourceIdentifier": "404cfcc05d0f3",
-    "type": "Story",
-    "headline": "Fantasy football rankings for Week 9: Wide receiver",
-    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
-    "lastModified": "2026-11-04T20:57:11Z",
-    "published": "2026-11-04T20:57:11Z",
+    "id": 50383288,
+    "nowId": "1-50383288",
+    "contentKey": "50383288-1-5-1",
+    "dataSourceIdentifier": "8132791daee17",
+    "type": "HeadlineNews",
+    "headline": "RB Josh Jacobs not anticipating missing more time despite additional allegations",
+    "description": "Packers running back Josh Jacobs said he's operating under the assumption that he won't have to sit out any more games than the six he already missed while on the NFL commissioner's exempt list despite the release of additional allegations against him.",
+    "lastModified": "2026-11-05T01:10:46Z",
+    "published": "2026-11-05T01:10:46Z",
     "images": [
      {
-      "dataSourceIdentifier": "0297460dcb6cb",
-      "id": 49817677,
+      "dataSourceIdentifier": "331439fa93c15",
+      "id": 50383306,
       "type": "header",
-      "name": "CeeDee Lamb [1296x729]",
-      "alt": "CeeDee Lamb, Dallas Cowboys wide receiver",
-      "credit": "Kevin Jairaj-Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711058_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Why Dopp likes Jameson Williams as a lineup lock in Week 9",
-      "caption": "Why Dopp likes Jameson Williams as a lineup lock in Week 9",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/dm_261104_Why_Dopp_backs_Williams_St_Brown_as_Week_9_starts/dm_261104_Why_Dopp_backs_Williams_St_Brown_as_Week_9_starts.jpg"
+      "name": "Josh Jacobs [600x400]",
+      "credit": "Jeff Hanisch/Imagn Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1104/r1741296_2_600x400_3-2.jpg"
      }
     ],
     "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
      {
       "id": 9572,
       "type": "league",
@@ -3550,465 +4306,93 @@
         }
        }
       }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/49804149"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=49804149"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=49804149"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804149/nfl-fantasy-football-rankings-2026-wr-wide-receiver"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 49804068,
-    "nowId": "1-49804068",
-    "contentKey": "49804068-1-6-1",
-    "dataSourceIdentifier": "1683952726e7f",
-    "type": "Story",
-    "headline": "Fantasy football rankings for Week 9: Running back",
-    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
-    "lastModified": "2026-11-04T20:57:35Z",
-    "published": "2026-11-04T20:57:35Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "519f695ea5875",
-      "id": 50174405,
-      "type": "header",
-      "name": "Kenneth Walker III [1296x729]",
-      "alt": "Kenneth Walker III, Kansas City Chiefs running back",
-      "credit": "Kevin Sabitus/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0922/r1720547_1296x729_16-9.jpg"
      },
      {
-      "dataSourceIdentifier": "bd21d9a31c266",
-      "id": 50116946,
-      "type": "header",
-      "name": "Jahmyr Gibbs [1296x729]",
-      "alt": "Jahmyr Gibbs #0 of the Detroit Lions runs the ball against the New York Jets during the second quarter at Ford Field on September 27, 2026 in Detroit, Michigan.",
-      "credit": "Nic Antaya/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0927/r1722612_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "68855ddab625a",
-      "id": 49817418,
-      "type": "header",
-      "name": "Saquon Barkley [1296x729]",
-      "alt": "Saquon Barkley, Philadelphia Eagles running back",
-      "credit": "Ronald Martinez/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711047_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Can fantasy managers trust Kenny Gainwell in Week 9?",
-      "caption": "Can fantasy managers trust Kenny Gainwell in Week 9?",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/dm_261104_ffp_gainwell/dm_261104_ffp_gainwell.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
+      "id": 1861,
+      "type": "team",
+      "uid": "s:20~l:28~t:9",
+      "guid": "06cd3bcf-7a86-53d4-28e7-aa049dd36261",
+      "description": "Green Bay Packers",
       "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
+      "teamId": 9,
+      "team": {
+       "id": 9,
+       "description": "Green Bay Packers",
+       "abbreviation": "GB",
+       "shortDisplayName": "Packers",
        "links": {
         "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
          }
         },
         "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
          }
         }
        }
       }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/49804068"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=49804068"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=49804068"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804068/nfl-fantasy-football-rankings-2026-rb-running-back"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 49804164,
-    "nowId": "1-49804164",
-    "contentKey": "49804164-1-6-1",
-    "dataSourceIdentifier": "8459d490c1fe6",
-    "type": "Story",
-    "headline": "Fantasy football rankings for Week 9: Tight end",
-    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
-    "lastModified": "2026-11-04T20:56:32Z",
-    "published": "2026-11-04T20:56:32Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "1f60fb4295469",
-      "id": 50174499,
-      "type": "header",
-      "name": "Brock Bowers [1296x729]",
-      "alt": "Brock Bowers, Las Vegas Raiders tight end",
-      "credit": "Morgan Simmons/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0929/r1723237_1296x729_16-9.jpg"
      },
      {
-      "dataSourceIdentifier": "f55ef42f933b6",
-      "id": 49817709,
-      "type": "header",
-      "name": "Colston Loveland [1296x729]",
-      "alt": "Colston Loveland, Chicago Bears tight end",
-      "credit": "Melissa Tamez/Icon Sportswire",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711063_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Why Greg Dulcich is a streaming TE option in Week 9",
-      "caption": "Why Greg Dulcich is a streaming TE option in Week 9",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1104/dm_261104_ffp_dulcich728/dm_261104_ffp_dulcich728.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
+      "id": 379791,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4047365",
+      "guid": "a83b6715-f018-aedf-190e-f77f026c7e4a",
+      "description": "Josh Jacobs",
       "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
+      "athleteId": 4047365,
+      "athlete": {
+       "id": 4047365,
+       "description": "Josh Jacobs",
        "links": {
         "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4047365/josh-jacobs"
          }
         },
         "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4047365/josh-jacobs"
          }
         }
        }
       }
+     },
+     {
+      "id": 696303,
+      "type": "contributor",
+      "guid": "ea87f8d2-5ce6-3674-82f4-717fc740555b",
+      "description": "Rob Demovsky",
+      "slug": "rob-demovsky",
+      "contributor": {
+       "id": 2311,
+       "description": "Rob Demovsky"
+      }
      }
     ],
-    "byline": "ESPN Fantasy",
+    "byline": "Rob Demovsky",
     "links": {
      "api": {
       "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/49804164"
+       "href": "https://content.core.api.espn.com/v1/sports/news/50383288"
       }
      },
      "app": {
       "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=49804164"
+       "href": "sportscenter://x-callback-url/showStory?uid=50383288"
       }
      },
      "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=49804164"
+      "href": "http://m.espn.go.com/nfl/story?storyId=50383288"
      },
      "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804164/nfl-fantasy-football-rankings-2026-te-tight-end"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 49804233,
-    "nowId": "1-49804233",
-    "contentKey": "49804233-1-6-1",
-    "dataSourceIdentifier": "49c06078ebf58",
-    "type": "Story",
-    "headline": "Fantasy football rankings for Week 9: Kicker",
-    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
-    "lastModified": "2026-11-04T20:56:08Z",
-    "published": "2026-11-04T20:56:08Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "865f9c98084be",
-      "id": 49817787,
-      "type": "header",
-      "name": "Cam Little [1296x729]",
-      "alt": "Cam Little, Jacksonville Jaguars kicker",
-      "credit": "Chris Leduc/Icon Sportswire",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711066_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "c6a692612d32a",
-      "id": 50067090,
-      "type": "header",
-      "name": "Brandon Aubrey for kicker rankings [1296x729]",
-      "alt": "Dallas Cowboys place kicker Brandon Aubrey (17) makes a game-winning field goal against the New York Giants during overtime at AT&T Stadium.",
-      "credit": "Raymond Carlin III-Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0722/r1692509_1296x729_16-9.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/49804233"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=49804233"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=49804233"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804233/nfl-fantasy-football-rankings-2026-k-kicker"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 49804273,
-    "nowId": "1-49804273",
-    "contentKey": "49804273-1-6-1",
-    "dataSourceIdentifier": "39f2fbfa1d8ba",
-    "type": "Story",
-    "headline": "Fantasy football rankings for Week 9: D/ST",
-    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
-    "lastModified": "2026-11-04T20:56:52Z",
-    "published": "2026-11-04T20:56:52Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "431d427687d29",
-      "id": 50297659,
-      "type": "header",
-      "name": "Vikings defense [1296x729]",
-      "alt": "Minnesota Vikings defensive players, in purple uniforms and helmets, dancing after a big play",
-      "credit": "Stephen Maturen/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1027/r1736992_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "493086bab89eb",
-      "id": 49817957,
-      "type": "header",
-      "name": "Texans defense [1296x729]",
-      "alt": "Will Anderson Jr. and Danielle Hunter, Houston Texans edge rushers",
-      "credit": "Troy Taormina-Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711074_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Why the Giants are a good defense to pick up in Week 9",
-      "caption": "Why the Giants are a good defense to pick up in Week 9",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1103/ss_20261103_163421583_3723976/ss_20261103_163421583_3723976.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/49804273"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=49804273"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=49804273"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-49804273/nfl-fantasy-football-rankings-2026-dst-defense"
+      "href": "https://www.espn.com/nfl/story/_/id/50383288/packers-josh-jacobs-not-worried-missing-more-games-additional-allegations"
      }
     },
     "premium": false
    }
   ]
- },
- "winprobability": [],
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "33",
-   "gameProjection": "18.8"
-  },
-  "awayTeam": {
-   "id": "30",
-   "gameProjection": "81"
-  }
  },
  "header": {
   "id": "401873037",
@@ -4787,6 +5171,79 @@
    ]
   }
  },
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Ravens Tickets",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets--sports-nfl-football/performer/60?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/5 vs Jaguars 3847 tickets left",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-4-2026/production/6487393?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/16 vs Chargers 7082 tickets left",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/22 @ Panthers 2588 tickets left",
+    "ticketLink": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-6-2026/production/6488723?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/29 @ Texans 4767 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 vs Buccaneers 7038 tickets left",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-6-2026/production/6487492?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 @ Steelers 6607 tickets left",
+    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-1-2027/production/6495077?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/27 vs Browns 7203 tickets left",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-2-2026/production/6487385?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/31 @ Bengals 5586 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-1-2026/production/6488960?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Steelers 7929 tickets left",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-3-2026/production/6487388?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Jaguars",
+   "currentTeamName": "Ravens",
+   "venueName": "M&T Bank Stadium",
+   "summary": "Tickets as low as $33",
+   "date": "2026-11-06T01:15Z",
+   "dateDay": "Thu",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-4-2026/production/6487393?wsUser=717",
+   "venueLink": "https://www.vividseats.com/mt-bank-stadium-tickets/venue/1371?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/baltimore-ravens-tickets--sports-nfl-football/performer/60?wsUser=717",
+   "timeValid": true
+  }
+ },
  "article": {
   "id": 50380295,
   "nowId": "1-50380295",
@@ -4799,9 +5256,9 @@
   "description": "\u2014 Joe Fagnano's NFL career is beginning with two games in five days. There's not a lot of time to stop and think.",
   "title": "Ravens are down to their No. 3 quarterback with the AFC South-leading Jaguars in town",
   "linkText": "Ravens are down to their No. 3 quarterback with the AFC South-leading Jaguars in town",
-  "categorized": "2026-11-04T18:09:35Z",
+  "categorized": "2026-11-04T21:54:43Z",
   "originallyPosted": "2026-11-04T18:09:34Z",
-  "lastModified": "2026-11-04T18:09:35Z",
+  "lastModified": "2026-11-04T21:54:43Z",
   "published": "2026-11-04T18:09:34Z",
   "root": "nfl",
   "section": "NFL",
@@ -4909,7 +5366,7 @@
    "Jacksonville Jaguars",
    "Jacksonville Jaguars @ Baltimore Ravens"
   ],
-  "story": "OWINGS MILLS, Md. -- \u2014 <a href=\"http://www.espn.com/nfl/player/_/id/4429582/joe-fagnano\">Joe Fagnano</a>'s NFL career is beginning with two games in five days. There's not a lot of time to stop and think.\n\n\r\n              \u201cAsk my wife. We go through walkthroughs in the living room. She\u2019s reading plays and stuff,\u201d Baltimore's new starting quarterback said. \u201cShe probably knows the playbook just as well as us at this point.\u201d\n\n\r\n              Fagnano was thrust into duty last weekend, when Baltimore had to turn to its No. 3 quarterback because of injuries to <a href=\"https://apnews.com/article/baltimore-ravens-qb-lamar-jackson-0baebd49f4865d674f0a877d39cd39d3\"><a href=\"http://www.espn.com/nfl/player/_/id/3916387/lamar-jackson\">Lamar Jackson</a></a> and <a href=\"http://www.espn.com/nfl/player/_/id/4035671/tyler-huntley\">Tyler Huntley</a>. Now he's <a href=\"https://apnews.com/article/baltimore-ravens-joe-fagnano-lamar-jackson-c698608966895be1e1934dcdcc5d4e0b\">set to start</a> Thursday night against the <a href=\"http://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars\">Jacksonville Jaguars</a>, as the Ravens try to prevent their season from careening off the rails.\n\n\r\n              Jacksonville has a three-game lead in the AFC South and is suddenly a huge favorite despite being on the road on a short week. This is a game that probably seemed daunting for the Jaguars when it first appeared on the schedule, but a lot has changed.\n\n\r\n              \u201cWe do a great job of not underestimating or overestimating the opponent if something\u2019s going to happen \u2014 of not panicking, doing our job,\u201d Jaguars defensive end <a href=\"http://www.espn.com/nfl/player/_/id/3915239/josh-hines-allen\">Josh Hines-Allen</a> said. \"I think this is another case for that.\u201d\n\n\r\n              Jacksonville already has benefited from weakened opponents this season. The Jaguars beat Philadelphia last month in London with the Eagles missing running back <a href=\"http://www.espn.com/nfl/player/_/id/3929630/saquon-barkley\">Saquon Barkley</a>, leading receiver <a href=\"http://www.espn.com/nfl/player/_/id/4241478/devonta-smith\">DeVonta Smith</a> and pass rusher <a href=\"http://www.espn.com/nfl/player/_/id/3916409/jonathan-greenard\">Jonathan Greenard</a> \u2014 and days after right tackle <a href=\"http://www.espn.com/nfl/player/_/id/15797/lane-johnson\">Lane Johnson</a> abruptly retired and the team traded center <a href=\"http://www.espn.com/nfl/player/_/id/4361178/cam-jurgens\">Cam Jurgens</a> to Baltimore.\n\n\r\n              They <a href=\"https://apnews.com/article/colts-jaguars-score-913f20dbb3b0fc4c2e0e221079df41d1\">thumped Indianapolis</a> last week after the Colts traded two of their best players, defensive tackle <a href=\"http://www.espn.com/nfl/player/_/id/2971282/deforest-buckner\">DeForest Buckner</a> and guard <a href=\"http://www.espn.com/nfl/player/_/id/3129308/quenton-nelson\">Quenton Nelson</a>.\n\n\r\n              One question is what type of crowd the Jaguars will be up against this week. It would be understandable if Baltimore fans were a little demoralized, with Jackson expected to go on <a href=\"https://apnews.com/article/nfl-roster-ir-pup-waivers-06af6d081e7fd7630202be3133851179\">injured reserve</a> and Huntley possibly headed there as well. Even before Jackson left <a href=\"https://apnews.com/article/nfl-roster-ir-pup-waivers-06af6d081e7fd7630202be3133851179\">last weekend's game at Buffalo</a> with a thumb injury, the Ravens had lost five of their last six home games.\n\n\r\n              \u201cHopefully the fan base comes out there and gives us an opportunity, gives us a little grace. I think all of us wanted to be better than 4-4 at this point in time in the season,\u201d defensive lineman <a href=\"http://www.espn.com/nfl/player/_/id/11284/calais-campbell\">Calais Campbell</a> said. \u201cWe win a couple games, and we\u2019re still in it. Who knows what happens with guys coming back and all that stuff? I\u2019m still holding out hope.\u201d\n\n\r\n              <hl2>Need to know</hl2>\r\n              Jacksonville (5-2) at Baltimore (4-4).\n\n\r\n              When/where to watch: Thursday, 8:15 p.m. EST, Prime Video.\n\n\r\n              Latest odds: Jaguars by 10.\n\n\r\n              Against the spread: Jaguars 4-3; Ravens 2-6.\n\n\r\n              Last week: Jaguars beat the Colts 42-7; Ravens lost to the Bills 36-10.\n\n\r\n              Last meeting: Ravens beat the Jaguars 23-7 on Dec. 17, 2023, in Jacksonville.\n\n\r\n              Series record: Jaguars lead 13-11.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Baltimore's offensive line against Jacksonville's defensive front. The Ravens' running game has struggled without Jackson, and the offensive line already has had to go through many injury-related changes since the start of the season. Baltimore surely would like to lean on <a href=\"http://www.espn.com/nfl/player/_/id/3043078/derrick-henry\">Derrick Henry</a> to make things easier for Fagnano. The Jaguars will try to prevent that.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 The Jaguars are playing their first Thursday night game since winning at New Orleans in 2023.\n\n\r\n              \u2014 The Jags are 14-4 against the AFC under second-year coach Liam Coen. They have outscored AFC opponents 553-320 in those games, a plus-233 scoring margin that\u2019s the best in the NFL by 91 points.\n\n\r\n              \u2014 Last week the Jags became the first team since Kansas City in 2004 to have two TD passes of 25 or more yards and two rushing TDs of 25 or more yards in the same game.\n\n\r\n              \u2014 Jacksonville\u2019s 10 scores of 25-plus yards in 2026 lead the NFL.\n\n\r\n              \u2014 Baltimore's <a href=\"http://www.espn.com/nfl/player/_/id/4429615/zay-flowers\">Zay Flowers</a> has 311 yards after the catch this season, trailing only <a href=\"http://www.espn.com/nfl/player/_/id/4569987/jaylen-warren\">Jaylen Warren</a> (346) and <a href=\"http://www.espn.com/nfl/player/_/id/4426515/puka-nacua\">Puka Nacua</a> (323).\n\n\r\n              \u2014 Henry is ninth on the NFL's career rushing list with 13,650 yards. He is 12 yards behind Jerome Bettis and 34 behind LaDainian Tomlinson.\n\n\r\n              \u2014 Ravens LB <a href=\"http://www.espn.com/nfl/player/_/id/3915189/roquan-smith\">Roquan Smith</a> is the only player in the league with at least 60 tackles, multiple sacks and multiple forced fumbles this season.\n\n\r\n              \u2014 One stat Baltimore hopes won't be relevant Thursday: The Ravens have not been shut out since 2002. Their 395-game streak of scoring at least one point trails only San Francisco's run of 420 from 1977-2004 as the longest in NFL history.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Mark Long in Jacksonville, Florida, contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
+  "story": "OWINGS MILLS, Md. -- \u2014 <a href=\"http://www.espn.com/nfl/player/_/id/4429582/joe-fagnano\">Joe Fagnano</a>'s NFL career is beginning with two games in five days. There's not a lot of time to stop and think.\n\n\r\n              \u201cAsk my wife. We go through walkthroughs in the living room. She\u2019s reading plays and stuff,\u201d Baltimore's latest starting quarterback said. \u201cShe probably knows the playbook just as well as us at this point.\u201d\n\n\r\n              Fagnano was thrust into duty last weekend, when Baltimore had to turn to its No. 3 quarterback because of injuries to <a href=\"https://apnews.com/article/baltimore-ravens-qb-lamar-jackson-0baebd49f4865d674f0a877d39cd39d3\"><a href=\"http://www.espn.com/nfl/player/_/id/3916387/lamar-jackson\">Lamar Jackson</a></a> and <a href=\"http://www.espn.com/nfl/player/_/id/4035671/tyler-huntley\">Tyler Huntley</a>. Now he's <a href=\"https://apnews.com/article/baltimore-ravens-joe-fagnano-lamar-jackson-c698608966895be1e1934dcdcc5d4e0b\">set to start</a> Thursday night against the <a href=\"http://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars\">Jacksonville Jaguars</a>, as the Ravens try to prevent their season from careening off the rails. They are finalizing a <a href=\"https://apnews.com/article/brissett-jackson-huntley-cardinals-ravens-trade-3f34dcce6532c77aa3602046068c69ba\">trade with the <a href=\"http://www.espn.com/nfl/team/_/name/ari/arizona-cardinals\">Arizona Cardinals</a> for veteran QB <a href=\"http://www.espn.com/nfl/player/_/id/2578570/jacoby-brissett\">Jacoby Brissett</a></a>, a person with knowledge of the trade told The Associated Press on Wednesday, speaking on condition of anonymity because the deal hasn\u2019t been completed.\n\n\r\n              Jacksonville has a three-game lead in the AFC South and is suddenly a huge favorite despite being on the road on a short week. This is a game that probably seemed daunting for the Jaguars when it first appeared on the schedule, but a lot has changed.\n\n\r\n              \u201cWe do a great job of not underestimating or overestimating the opponent if something\u2019s going to happen \u2014 of not panicking, doing our job,\u201d Jaguars defensive end <a href=\"http://www.espn.com/nfl/player/_/id/3915239/josh-hines-allen\">Josh Hines-Allen</a> said. \"I think this is another case for that.\u201d\n\n\r\n              Jacksonville already has benefited from weakened opponents this season. The Jaguars beat Philadelphia last month in London with the Eagles missing running back <a href=\"http://www.espn.com/nfl/player/_/id/3929630/saquon-barkley\">Saquon Barkley</a>, leading receiver <a href=\"http://www.espn.com/nfl/player/_/id/4241478/devonta-smith\">DeVonta Smith</a> and pass rusher <a href=\"http://www.espn.com/nfl/player/_/id/3916409/jonathan-greenard\">Jonathan Greenard</a> \u2014 and days after right tackle <a href=\"http://www.espn.com/nfl/player/_/id/15797/lane-johnson\">Lane Johnson</a> abruptly retired and the team traded center <a href=\"http://www.espn.com/nfl/player/_/id/4361178/cam-jurgens\">Cam Jurgens</a> to Baltimore.\n\n\r\n              They <a href=\"https://apnews.com/article/colts-jaguars-score-913f20dbb3b0fc4c2e0e221079df41d1\">thumped Indianapolis</a> last week after the Colts traded two of their best players, defensive tackle <a href=\"http://www.espn.com/nfl/player/_/id/2971282/deforest-buckner\">DeForest Buckner</a> and guard <a href=\"http://www.espn.com/nfl/player/_/id/3129308/quenton-nelson\">Quenton Nelson</a>.\n\n\r\n              One question is what type of crowd the Jaguars will be up against this week. It would be understandable if Baltimore fans were a little demoralized, with Jackson expected to go on <a href=\"https://apnews.com/article/nfl-roster-ir-pup-waivers-06af6d081e7fd7630202be3133851179\">injured reserve</a> and Huntley possibly headed there as well. Even before Jackson left <a href=\"https://apnews.com/article/nfl-roster-ir-pup-waivers-06af6d081e7fd7630202be3133851179\">last weekend's game at Buffalo</a> with a thumb injury, the Ravens had lost five of their last six home games.\n\n\r\n              \u201cHopefully the fan base comes out there and gives us an opportunity, gives us a little grace. I think all of us wanted to be better than 4-4 at this point in time in the season,\u201d defensive lineman <a href=\"http://www.espn.com/nfl/player/_/id/11284/calais-campbell\">Calais Campbell</a> said. \u201cWe win a couple games, and we\u2019re still in it. Who knows what happens with guys coming back and all that stuff? I\u2019m still holding out hope.\u201d\n\n\r\n              Besides Fagnano, who has been dealing with an ankle injury himself, the Ravens are down to <a href=\"http://www.espn.com/nfl/player/_/id/4428512/kedon-slovis\">Kedon Slovis</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4368343/austin-reed\">Austin Reed</a> at quarterback. Brissett likely would start against the Chargers on Nov. 15.\n\n\r\n              <hl2>Need to know</hl2>\r\n              Jacksonville (5-2) at Baltimore (4-4).\n\n\r\n              When/where to watch: Thursday, 8:15 p.m. EST, Prime Video.\n\n\r\n              Latest odds: Jaguars by 10.\n\n\r\n              Against the spread: Jaguars 4-3; Ravens 2-6.\n\n\r\n              Last week: Jaguars beat the Colts 42-7; Ravens lost to the Bills 36-10.\n\n\r\n              Last meeting: Ravens beat the Jaguars 23-7 on Dec. 17, 2023, in Jacksonville.\n\n\r\n              Series record: Jaguars lead 13-11.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Baltimore's offensive line against Jacksonville's defensive front. The Ravens' running game has struggled without Jackson, and the offensive line already has had to go through many injury-related changes since the start of the season. Baltimore surely would like to lean on <a href=\"http://www.espn.com/nfl/player/_/id/3043078/derrick-henry\">Derrick Henry</a> to make things easier for Fagnano. The Jaguars will try to prevent that.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 The Jaguars are playing their first Thursday night game since winning at New Orleans in 2023.\n\n\r\n              \u2014 The Jags are 14-4 against the AFC under second-year coach Liam Coen. They have outscored AFC opponents 553-320 in those games, a plus-233 scoring margin that\u2019s the best in the NFL by 91 points.\n\n\r\n              \u2014 Last week the Jags became the first team since Kansas City in 2004 to have two TD passes of 25 or more yards and two rushing TDs of 25 or more yards in the same game.\n\n\r\n              \u2014 Jacksonville\u2019s 10 scores of 25-plus yards in 2026 lead the NFL.\n\n\r\n              \u2014 Baltimore's <a href=\"http://www.espn.com/nfl/player/_/id/4429615/zay-flowers\">Zay Flowers</a> has 311 yards after the catch this season, trailing only <a href=\"http://www.espn.com/nfl/player/_/id/4569987/jaylen-warren\">Jaylen Warren</a> (346) and <a href=\"http://www.espn.com/nfl/player/_/id/4426515/puka-nacua\">Puka Nacua</a> (323).\n\n\r\n              \u2014 Henry is ninth on the NFL's career rushing list with 13,650 yards. He is 12 yards behind Jerome Bettis and 34 behind LaDainian Tomlinson.\n\n\r\n              \u2014 Ravens LB <a href=\"http://www.espn.com/nfl/player/_/id/3915189/roquan-smith\">Roquan Smith</a> is the only player in the league with at least 60 tackles, multiple sacks and multiple forced fumbles this season.\n\n\r\n              \u2014 One stat Baltimore hopes won't be relevant Thursday: The Ravens have not been shut out since 2002. Their 395-game streak of scoring at least one point trails only San Francisco's run of 420 from 1977-2004 as the longest in NFL history.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Mark Long in Jacksonville, Florida, and AP Pro Football Writer Rob Maaddi in Tampa, Florida, contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
   "allowContentReactions": false,
   "allowSearch": true,
   "isLiveBlog": false,
@@ -4934,79 +5391,6 @@
   "premium": false
  },
  "wallclockAvailable": false,
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Ravens Tickets",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets--sports-nfl-football/performer/60?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/5 vs Jaguars 4276 tickets left",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-4-2026/production/6487393?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/16 vs Chargers 7074 tickets left",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/22 @ Panthers 2615 tickets left",
-    "ticketLink": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-6-2026/production/6488723?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/29 @ Texans 4793 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 vs Buccaneers 6695 tickets left",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-6-2026/production/6487492?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 @ Steelers 6607 tickets left",
-    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-1-2027/production/6495077?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/27 vs Browns 6993 tickets left",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-2-2026/production/6487385?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/31 @ Bengals 5586 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-1-2026/production/6488960?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Steelers 7929 tickets left",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-3-2026/production/6487388?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Jaguars",
-   "currentTeamName": "Ravens",
-   "venueName": "M&T Bank Stadium",
-   "summary": "Tickets as low as $35",
-   "date": "2026-11-06T01:15Z",
-   "dateDay": "Thu",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-4-2026/production/6487393?wsUser=717",
-   "venueLink": "https://www.vividseats.com/mt-bank-stadium-tickets/venue/1371?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/baltimore-ravens-tickets--sports-nfl-football/performer/60?wsUser=717",
-   "timeValid": true
-  }
- },
  "meta": {
   "gp_topic": "gp-football-nfl-401873037",
   "gameSwitcherEnabled": true,
