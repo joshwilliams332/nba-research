@@ -499,6 +499,11 @@
          "value": 3.0,
          "displayValue": "3",
          "period": 1
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 2
         }
        ],
        "statistics": [],
@@ -629,12 +634,17 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/jax.png"
        },
-       "score": "10",
+       "score": "17",
        "linescores": [
         {
          "value": 10.0,
          "displayValue": "10",
          "period": 1
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 2
         }
        ],
        "statistics": [],
@@ -664,38 +674,38 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "401873037767",
+       "id": "4018730371755",
        "type": {
         "id": "74",
         "text": "Official Timeout",
         "abbreviation": "Off TO"
        },
-       "text": "Official Timeout at 02:00.",
+       "text": "Official Timeout at 00:58.",
        "scoreValue": 0,
        "team": {
         "id": "30"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.1174,
-        "awayWinPercentage": 0.8826,
+        "homeWinPercentage": 0.0428,
+        "awayWinPercentage": 0.9572,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "10 plays, 47 yards, 4:31",
+        "description": "4 plays, 80 yards, 1:06",
         "start": {
-         "yardLine": 65,
-         "text": "JAX 35"
+         "yardLine": 80,
+         "text": "JAX 20"
         },
         "end": {
-         "yardLine": 18,
-         "text": "BAL 18"
+         "yardLine": 0,
+         "text": "BAL 0"
         },
         "timeElapsed": {
-         "displayValue": "4:31"
+         "displayValue": "1:06"
         },
-        "result": "FG"
+        "result": "TD"
        },
        "start": {
         "yardLine": 65,
@@ -714,22 +724,22 @@
       "yardLine": 65,
       "distance": 0,
       "isRedZone": true,
-      "homeTimeouts": 3,
+      "homeTimeouts": 2,
       "awayTimeouts": 3,
       "possession": "30"
      },
      "status": {
-      "clock": 120.0,
-      "displayClock": "2:00",
-      "period": 1,
+      "clock": 58.0,
+      "displayClock": "0:58",
+      "period": 2,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "2:00 - 1st Quarter",
-       "shortDetail": "2:00 - 1st"
+       "detail": "0:58 - 2nd Quarter",
+       "shortDetail": "0:58 - 2nd"
       },
       "isTBDFlex": false
      },
@@ -749,8 +759,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "5/9, 100 YDS",
-         "value": 100.0,
+         "displayValue": "9/15, 197 YDS, 1 TD",
+         "value": 197.0,
          "athlete": {
           "id": "4360310",
           "fullName": "Trevor Lawrence",
@@ -789,8 +799,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "4 CAR, 22 YDS",
-         "value": 22.0,
+         "displayValue": "12 CAR, 51 YDS",
+         "value": 51.0,
          "athlete": {
           "id": "3043078",
           "fullName": "Derrick Henry",
@@ -829,13 +839,13 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "1 REC, 52 YDS",
-         "value": 52.0,
+         "displayValue": "4 REC, 65 YDS",
+         "value": 65.0,
          "athlete": {
-          "id": "4686248",
-          "fullName": "Nate Boerkircher",
-          "displayName": "Nate Boerkircher",
-          "shortName": "N. Boerkircher",
+          "id": "3916433",
+          "fullName": "Jakobi Meyers",
+          "displayName": "Jakobi Meyers",
+          "shortName": "J. Meyers",
           "links": [
            {
             "rel": [
@@ -843,13 +853,13 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4686248/nate-boerkircher"
+            "href": "https://www.espn.com/nfl/player/_/id/3916433/jakobi-meyers"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4686248.png",
-          "jersey": "87",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916433.png",
+          "jersey": "3",
           "position": {
-           "abbreviation": "TE"
+           "abbreviation": "WR"
           },
           "team": {
            "id": "30"
@@ -935,10 +945,10 @@
     }
    ],
    "weather": {
-    "displayValue": "12",
-    "temperature": 71,
-    "highTemperature": 71,
-    "conditionId": "Light rain",
+    "displayValue": "7",
+    "temperature": 68,
+    "highTemperature": 68,
+    "conditionId": "Cloudy",
     "link": {
      "language": "en-US",
      "rel": [
@@ -952,17 +962,17 @@
     }
    },
    "status": {
-    "clock": 120.0,
-    "displayClock": "2:00",
-    "period": 1,
+    "clock": 58.0,
+    "displayClock": "0:58",
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2:00 - 1st Quarter",
-     "shortDetail": "2:00 - 1st"
+     "detail": "0:58 - 2nd Quarter",
+     "shortDetail": "0:58 - 2nd"
     }
    }
   },
@@ -1115,6 +1125,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "3-5"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "1-3"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-2"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -1235,24 +1263,6 @@
            }
           }
          ]
-        }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "3-5"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "1-3"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-2"
         }
        ]
       },
@@ -1670,7 +1680,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $58",
-       "numberAvailable": 3614,
+       "numberAvailable": 3619,
        "links": [
         {
          "href": "https://www.vividseats.com/atlanta-falcons-tickets-estadio-santiago-bernabeu-11-8-2026--sports-nfl-football/production/7025389?wsUser=717"
@@ -2735,7 +2745,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $113",
-       "numberAvailable": 2228,
+       "numberAvailable": 2217,
        "links": [
         {
          "href": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-7-2026/production/6490121?wsUser=717"
@@ -3813,8 +3823,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $159",
-       "numberAvailable": 3059,
+       "summary": "Tickets as low as $171",
+       "numberAvailable": 3043,
        "links": [
         {
          "href": "https://www.vividseats.com/kansas-city-chiefs-tickets-kansas-city-geha-field-at-arrowhead-stadium-3-4-2026/production/6491109?wsUser=717"
@@ -5972,7 +5982,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $32",
-       "numberAvailable": 3034,
+       "numberAvailable": 3036,
        "links": [
         {
          "href": "https://www.vividseats.com/new-orleans-saints-tickets-new-orleans-caesars-superdome-3-4-2027/production/6493131?wsUser=717"
@@ -7051,7 +7061,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $92",
-       "numberAvailable": 1743,
+       "numberAvailable": 1744,
        "links": [
         {
          "href": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-2-2027/production/6494940?wsUser=717"
@@ -9209,7 +9219,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $90",
-       "numberAvailable": 2189,
+       "numberAvailable": 2191,
        "links": [
         {
          "href": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-9-2026/production/6488697?wsUser=717"
@@ -10288,7 +10298,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $17",
-       "numberAvailable": 3859,
+       "numberAvailable": 3804,
        "links": [
         {
          "href": "https://www.vividseats.com/los-angeles-chargers-tickets-inglewood-sofi-stadium-3-8-2026/production/6491380?wsUser=717"
@@ -11367,7 +11377,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $236",
-       "numberAvailable": 1456,
+       "numberAvailable": 1483,
        "links": [
         {
          "href": "https://www.vividseats.com/new-england-patriots-tickets-foxborough-gillette-stadium-3-3-2027/production/6492606?wsUser=717"
@@ -12446,7 +12456,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $343",
-       "numberAvailable": 3334,
+       "numberAvailable": 3320,
        "links": [
         {
          "href": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-5-2027/production/6495883?wsUser=717"
@@ -13524,8 +13534,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $160",
-       "numberAvailable": 1492,
+       "summary": "Tickets as low as $164",
+       "numberAvailable": 1481,
        "links": [
         {
          "href": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-1-2027/production/6492941?wsUser=717"
@@ -15684,7 +15694,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $171",
-       "numberAvailable": 4187,
+       "numberAvailable": 4164,
        "links": [
         {
          "href": "https://www.vividseats.com/minnesota-vikings-tickets-minneapolis-us-bank-stadium-3-8-2027/production/6492316?wsUser=717"
