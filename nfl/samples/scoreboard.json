@@ -504,6 +504,11 @@
          "value": 0.0,
          "displayValue": "0",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -645,6 +650,11 @@
          "value": 7.0,
          "displayValue": "7",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -674,72 +684,93 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730371755",
+       "id": "4018730372037",
        "type": {
-        "id": "74",
-        "text": "Official Timeout",
-        "abbreviation": "Off TO"
+        "id": "3",
+        "text": "Pass Incompletion"
        },
-       "text": "Official Timeout at 00:58.",
+       "text": " (Shotgun) J.Fagnano pass incomplete short right to R.Bateman.",
        "scoreValue": 0,
        "team": {
-        "id": "30"
+        "id": "33"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.0428,
-        "awayWinPercentage": 0.9572,
+        "homeWinPercentage": 0.0397,
+        "awayWinPercentage": 0.9603,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "4 plays, 80 yards, 1:06",
+        "description": "2 plays, -4 yards, 1:07",
         "start": {
-         "yardLine": 80,
-         "text": "JAX 20"
-        },
-        "end": {
-         "yardLine": 0,
-         "text": "BAL 0"
+         "yardLine": 29,
+         "text": "BAL 29"
         },
         "timeElapsed": {
-         "displayValue": "1:06"
-        },
-        "result": "TD"
+         "displayValue": "1:07"
+        }
        },
        "start": {
-        "yardLine": 65,
+        "yardLine": 25,
         "team": {
-         "id": "30"
+         "id": "33"
         }
        },
        "end": {
-        "yardLine": 65,
+        "yardLine": 25,
         "team": {
-         "id": "30"
+         "id": "33"
         }
-       }
+       },
+       "athletesInvolved": [
+        {
+         "id": "4360939",
+         "fullName": "Rashod Bateman",
+         "displayName": "Rashod Bateman",
+         "shortName": "R. Bateman",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/4360939/rashod-bateman"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360939.png",
+         "jersey": "7",
+         "position": "WR",
+         "team": {
+          "id": "33"
+         }
+        }
+       ]
       },
-      "down": -1,
-      "yardLine": 65,
-      "distance": 0,
-      "isRedZone": true,
-      "homeTimeouts": 2,
+      "down": 3,
+      "yardLine": 25,
+      "distance": 14,
+      "downDistanceText": "3rd & 14 at BAL 25",
+      "shortDownDistanceText": "3rd & 14",
+      "possessionText": "BAL 25",
+      "isRedZone": false,
+      "homeTimeouts": 3,
       "awayTimeouts": 3,
-      "possession": "30"
+      "possession": "33"
      },
      "status": {
-      "clock": 58.0,
-      "displayClock": "0:58",
-      "period": 2,
+      "clock": 833.0,
+      "displayClock": "13:53",
+      "period": 3,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "0:58 - 2nd Quarter",
-       "shortDetail": "0:58 - 2nd"
+       "detail": "13:53 - 3rd Quarter",
+       "shortDetail": "13:53 - 3rd"
       },
       "isTBDFlex": false
      },
@@ -799,8 +830,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "12 CAR, 51 YDS",
-         "value": 51.0,
+         "displayValue": "13 CAR, 52 YDS",
+         "value": 52.0,
          "athlete": {
           "id": "3043078",
           "fullName": "Derrick Henry",
@@ -945,10 +976,10 @@
     }
    ],
    "weather": {
-    "displayValue": "7",
+    "displayValue": "12",
     "temperature": 68,
     "highTemperature": 68,
-    "conditionId": "Cloudy",
+    "conditionId": "Light rain",
     "link": {
      "language": "en-US",
      "rel": [
@@ -962,17 +993,17 @@
     }
    },
    "status": {
-    "clock": 58.0,
-    "displayClock": "0:58",
-    "period": 2,
+    "clock": 833.0,
+    "displayClock": "13:53",
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "0:58 - 2nd Quarter",
-     "shortDetail": "0:58 - 2nd"
+     "detail": "13:53 - 3rd Quarter",
+     "shortDetail": "13:53 - 3rd"
     }
    }
   },
@@ -2745,7 +2776,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $113",
-       "numberAvailable": 2217,
+       "numberAvailable": 2229,
        "links": [
         {
          "href": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-7-2026/production/6490121?wsUser=717"
@@ -3823,8 +3854,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $171",
-       "numberAvailable": 3043,
+       "summary": "Tickets as low as $175",
+       "numberAvailable": 3054,
        "links": [
         {
          "href": "https://www.vividseats.com/kansas-city-chiefs-tickets-kansas-city-geha-field-at-arrowhead-stadium-3-4-2026/production/6491109?wsUser=717"
@@ -4604,24 +4635,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "5-2"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "4-0"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "1-2"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -4742,6 +4755,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "5-2"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "4-0"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "1-2"
         }
        ]
       }
@@ -4902,8 +4933,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $84",
-       "numberAvailable": 3765,
+       "summary": "Tickets as low as $87",
+       "numberAvailable": 3728,
        "links": [
         {
          "href": "https://www.vividseats.com/miami-dolphins-tickets-miami-gardens-hard-rock-stadium-3-7-2027/production/6492185?wsUser=717"
@@ -5981,8 +6012,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $32",
-       "numberAvailable": 3036,
+       "summary": "Tickets as low as $31",
+       "numberAvailable": 3019,
        "links": [
         {
          "href": "https://www.vividseats.com/new-orleans-saints-tickets-new-orleans-caesars-superdome-3-4-2027/production/6493131?wsUser=717"
@@ -7061,7 +7092,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $92",
-       "numberAvailable": 1744,
+       "numberAvailable": 1746,
        "links": [
         {
          "href": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-2-2027/production/6494940?wsUser=717"
@@ -8140,7 +8171,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $88",
-       "numberAvailable": 3305,
+       "numberAvailable": 3301,
        "links": [
         {
          "href": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-4-2026/production/6493311?wsUser=717"
@@ -9218,8 +9249,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $90",
-       "numberAvailable": 2191,
+       "summary": "Tickets as low as $89",
+       "numberAvailable": 2163,
        "links": [
         {
          "href": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-9-2026/production/6488697?wsUser=717"
@@ -12455,8 +12486,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $343",
-       "numberAvailable": 3320,
+       "summary": "Tickets as low as $376",
+       "numberAvailable": 3297,
        "links": [
         {
          "href": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-5-2027/production/6495883?wsUser=717"
@@ -13236,24 +13267,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "3-5"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "0-3"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "3-2"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -13374,6 +13387,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "3-5"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "0-3"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "3-2"
         }
        ]
       }
@@ -13534,8 +13565,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $164",
-       "numberAvailable": 1481,
+       "summary": "Tickets as low as $161",
+       "numberAvailable": 1486,
        "links": [
         {
          "href": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-1-2027/production/6492941?wsUser=717"
@@ -14614,7 +14645,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $356",
-       "numberAvailable": 2107,
+       "numberAvailable": 2077,
        "links": [
         {
          "href": "https://www.vividseats.com/chicago-bears-tickets-chicago-soldier-field-3-4-2026/production/6488779?wsUser=717"
@@ -15693,8 +15724,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $171",
-       "numberAvailable": 4164,
+       "summary": "Tickets as low as $173",
+       "numberAvailable": 4137,
        "links": [
         {
          "href": "https://www.vividseats.com/minnesota-vikings-tickets-minneapolis-us-bank-stadium-3-8-2027/production/6492316?wsUser=717"
