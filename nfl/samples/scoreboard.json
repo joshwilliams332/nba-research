@@ -644,7 +644,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/jax.png"
        },
-       "score": "20",
+       "score": "26",
        "linescores": [
         {
          "value": 10.0,
@@ -662,8 +662,8 @@
          "period": 3
         },
         {
-         "value": 0.0,
-         "displayValue": "0",
+         "value": 6.0,
+         "displayValue": "6",
          "period": 4
         }
        ],
@@ -694,52 +694,52 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730372920",
+       "id": "4018730373306",
        "type": {
         "id": "5",
         "text": "Rush",
         "abbreviation": "RUSH"
        },
-       "text": "(Shotgun) W.Milum reported in as eligible. Direct snap to C.Rodriguez.  C.Rodriguez right tackle to BLT 30 for 2 yards (B.Washington).",
+       "text": "A.Abdullah right guard to BLT 12 for 4 yards (T.Jones).",
        "scoreValue": 0,
        "team": {
         "id": "30"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.0075,
-        "awayWinPercentage": 0.9925,
+        "homeWinPercentage": 0.001,
+        "awayWinPercentage": 0.999,
         "secondsLeft": 0
        },
-       "statYardage": 2,
+       "statYardage": 4,
        "drive": {
-        "description": "6 plays, 29 yards, 3:02",
+        "description": "5 plays, 20 yards, 2:08",
         "start": {
-         "yardLine": 59,
-         "text": "JAX 41"
+         "yardLine": 32,
+         "text": "BAL 32"
         },
         "timeElapsed": {
-         "displayValue": "3:02"
+         "displayValue": "2:08"
         }
        },
        "start": {
-        "yardLine": 32,
+        "yardLine": 16,
         "team": {
          "id": "30"
         }
        },
        "end": {
-        "yardLine": 30,
+        "yardLine": 12,
         "team": {
          "id": "30"
         }
        },
        "athletesInvolved": [
         {
-         "id": "4362619",
-         "fullName": "Chris Rodriguez Jr.",
-         "displayName": "Chris Rodriguez Jr.",
-         "shortName": "C. Rodriguez Jr.",
+         "id": "2576336",
+         "fullName": "Ameer Abdullah",
+         "displayName": "Ameer Abdullah",
+         "shortName": "A. Abdullah",
          "links": [
           {
            "rel": [
@@ -747,11 +747,11 @@
             "desktop",
             "athlete"
            ],
-           "href": "https://www.espn.com/nfl/player/_/id/4362619/chris-rodriguez-jr"
+           "href": "https://www.espn.com/nfl/player/_/id/2576336/ameer-abdullah"
           }
          ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362619.png",
-         "jersey": "24",
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2576336.png",
+         "jersey": "20",
          "position": "RB",
          "team": {
           "id": "30"
@@ -759,20 +759,20 @@
         }
        ]
       },
-      "down": 3,
-      "yardLine": 30,
-      "distance": 3,
-      "downDistanceText": "3rd & 3 at BAL 30",
-      "shortDownDistanceText": "3rd & 3",
-      "possessionText": "BAL 30",
-      "isRedZone": false,
+      "down": 1,
+      "yardLine": 12,
+      "distance": 10,
+      "downDistanceText": "1st & 10 at BAL 12",
+      "shortDownDistanceText": "1st & 10",
+      "possessionText": "BAL 12",
+      "isRedZone": true,
       "homeTimeouts": 3,
       "awayTimeouts": 2,
       "possession": "30"
      },
      "status": {
-      "clock": 900.0,
-      "displayClock": "15:00",
+      "clock": 578.0,
+      "displayClock": "9:38",
       "period": 4,
       "type": {
        "id": "2",
@@ -780,8 +780,8 @@
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "15:00 - 4th Quarter",
-       "shortDetail": "15:00 - 4th"
+       "detail": "9:38 - 4th Quarter",
+       "shortDetail": "9:38 - 4th"
       },
       "isTBDFlex": false
      },
@@ -801,8 +801,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "14/22, 228 YDS, 1 TD",
-         "value": 228.0,
+         "displayValue": "16/26, 242 YDS, 1 TD",
+         "value": 242.0,
          "athlete": {
           "id": "4360310",
           "fullName": "Trevor Lawrence",
@@ -987,10 +987,10 @@
     }
    ],
    "weather": {
-    "displayValue": "7",
-    "temperature": 67,
-    "highTemperature": 67,
-    "conditionId": "Cloudy",
+    "displayValue": "12",
+    "temperature": 68,
+    "highTemperature": 68,
+    "conditionId": "Light rain",
     "link": {
      "language": "en-US",
      "rel": [
@@ -1004,8 +1004,8 @@
     }
    },
    "status": {
-    "clock": 900.0,
-    "displayClock": "15:00",
+    "clock": 578.0,
+    "displayClock": "9:38",
     "period": 4,
     "type": {
      "id": "2",
@@ -1013,8 +1013,8 @@
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "15:00 - 4th Quarter",
-     "shortDetail": "15:00 - 4th"
+     "detail": "9:38 - 4th Quarter",
+     "shortDetail": "9:38 - 4th"
     }
    }
   },
@@ -1722,7 +1722,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $58",
-       "numberAvailable": 3605,
+       "numberAvailable": 3602,
        "links": [
         {
          "href": "https://www.vividseats.com/atlanta-falcons-tickets-estadio-santiago-bernabeu-11-8-2026--sports-nfl-football/production/7025389?wsUser=717"
@@ -2237,24 +2237,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "2-6"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "1-2"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "1-4"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -2375,6 +2357,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "2-6"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "1-2"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "1-4"
         }
        ]
       },
@@ -2786,8 +2786,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $113",
-       "numberAvailable": 2229,
+       "summary": "Tickets as low as $109",
+       "numberAvailable": 2207,
        "links": [
         {
          "href": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-7-2026/production/6490121?wsUser=717"
@@ -4945,7 +4945,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $87",
-       "numberAvailable": 3630,
+       "numberAvailable": 3611,
        "links": [
         {
          "href": "https://www.vividseats.com/miami-dolphins-tickets-miami-gardens-hard-rock-stadium-3-7-2027/production/6492185?wsUser=717"
@@ -11419,7 +11419,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $236",
-       "numberAvailable": 1481,
+       "numberAvailable": 1470,
        "links": [
         {
          "href": "https://www.vividseats.com/new-england-patriots-tickets-foxborough-gillette-stadium-3-3-2027/production/6492606?wsUser=717"
@@ -15840,7 +15840,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+142",
+          "odds": "+140",
           "link": {
            "language": "en-US",
            "rel": [
@@ -15872,7 +15872,7 @@
         },
         "away": {
          "close": {
-          "odds": "-170",
+          "odds": "-166",
           "link": {
            "language": "en-US",
            "rel": [
