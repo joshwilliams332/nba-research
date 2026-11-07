@@ -123,7 +123,7 @@ test('heads-up check: notes a teammate status change after the lock, and clears 
   assert.strictEqual(S.checkPicks(L, dir, Date.now()).state, 'heads-up');
   const check = JSON.parse(fs.readFileSync(path.join(dir, '2026-10-29-check.json'), 'utf8'));
   assert.match(check.notes[0], /Robert Williams III \(POR\) is now out/);
-  assert.match(check.email.html, /Heads up before you post/);
+  assert.match(check.email.html, /Heads up/);
 });
 
 test('the season record skips days before the record start (the unposted test night)', () => {
@@ -218,4 +218,17 @@ test('thin evidence: a teammate out with too few games without him is named, not
   const many = bigs(10, 6);
   many.L.injuries = [{ id: 'w', t: 'POR', st: 'Out', det: '' }];
   assert.deepStrictEqual(S.thinMates(many.L, 'c', 'reb', many.rows, S.keyMates(many.L, 'c', 'POR')), []);
+});
+
+test('picks and recap emails list the picks without any posting copy', () => {
+  const pick = { name: 'Victor Wembanyama', side: 'u', line: 27.5, stat: 'pts', price: -104, book: 'draftkings', team: 'SAS', opp: 'POR', home: false, tip: '2026-11-08T03:00Z', why: 'Projected 24.6 vs the 27.5 line.' };
+  const slate = S.slateEmail("Today's picks · Sat, 11/7 · 1 pick", 7, [pick], { w: 16, l: 10, p: 0, profit: 3.7 }, ['Check your book before betting.']);
+  assert.match(slate.text, /Victor Wembanyama U 27\.5 PTS \(-104, DraftKings\)/);
+  assert.match(slate.text, /SAS @ POR · 10 PM ET/);
+  assert.match(slate.html, /Season 16-10 \(\+3\.7u\)/);
+  const recap = S.recapEmail('Recap · Sat, 11/7 · 1-0 (+1.0u)', [{ pick, grade: { status: 'win', actual: 22 } }], { w: 17, l: 10, p: 0, profit: 4.7 }, []);
+  assert.match(recap.text, /✅ Victor Wembanyama U 27\.5 PTS \(-104\)/);
+  for (const e of [slate, recap]) {
+    assert.doesNotMatch(e.html + e.text + e.subject, /\bpost|thread repl|copy, paste|card image/i);
+  }
 });

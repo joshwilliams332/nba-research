@@ -7,6 +7,8 @@ on:
     # are pulled for each game on the first run within 100 minutes of its tip, so the extra evening runs are
     # spaced 30 minutes apart to catch every tip time in both EDT and EST; runs with nothing due cost no credits.
     - cron: "37 15 * * *"   # 11:37 AM EDT / 10:37 AM EST: lines, injuries and the day's props
+    - cron: "7 17 * * *"    # 1:07 PM EDT / 12:07 PM EST: backup for the morning props + picks lock if GitHub starts the
+                            # 10:37 run late or skips it (Nov 7 it ran 4 hours late); free when the props are already in
     - cron: "37 21 * * *"   # 5:37 PM EDT / 4:37 PM EST: injury updates and line moves
     - cron: "17 22 * * *"   # 6:17 PM EDT / 5:17 PM EST: closing lines for 7:00-7:30 PM ET tips (EDT)
     - cron: "47 22 * * *"   # 6:47 PM EDT / 5:47 PM EST
