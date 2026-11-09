@@ -149,17 +149,33 @@ def build_logs(rows):
     return players, {"cols": [c for c, _ in LOG_COLS], "logs": logs}
 
 
-def apply_status(players, roster_rows, injury_rows):
-    """Latest weekly roster status (RES = reserve / IR, PUP...) and injury report status for each player."""
+# Roster statuses that mean the player left that team. A traded or re-signed player has a second row that week for his
+# new team, and that row wins (Nov 9, 2026: Jacoby Brissett, traded ARI -> BAL, showed "Released" with ARI).
+GONE = {"CUT", "UFA", "RET", "NON", "TRD", "TRC"}
+FLAGGED = {"RES": "IR", "INA": "Inactive", "CUT": "Released", "RET": "Retired", "SUS": "Suspended", "EXE": "EXE", "NON": "NON",
+           "UFA": "UFA"}
+
+
+def apply_status(players, roster_rows, injury_rows, season=0):
+    """Latest weekly roster status (RES = reserve / IR, PUP...) and injury report status for each player. The roster's
+    team is kept in `_rt` (season, week) so a box score from an older week can't move a traded player back."""
     if roster_rows:
         last = max(num(r["week"], int) or 0 for r in roster_rows)
+        best = {}
         for r in roster_rows:
             if num(r["week"], int) != last or r["gsis_id"] not in players:
                 continue
-            p = players[r["gsis_id"]]
+            had = best.get(r["gsis_id"])
+            if had is None or (had["status"] in GONE and r["status"] not in GONE):
+                best[r["gsis_id"]] = r
+        for pid, r in best.items():
+            p = players[pid]
             p["t"] = r["team"] or p["t"]
-            if r["status"] in ("RES", "INA", "CUT", "RET", "SUS", "EXE", "NON", "UFA"):
-                p["st"] = {"RES": "IR", "INA": "Inactive", "CUT": "Released", "RET": "Retired", "SUS": "Suspended"}.get(r["status"], r["status"])
+            p["_rt"] = (num(r.get("season"), int) or season, last)
+            p.pop("st", None)
+            p.pop("det", None)
+            if r["status"] in FLAGGED:
+                p["st"] = FLAGGED[r["status"]]
                 p["det"] = r.get("status_description_abbr") or ""
     if injury_rows:
         last = max(num(r["week"], int) or 0 for r in injury_rows)
@@ -347,7 +363,7 @@ def merge_boxes(games, boxes, players, logs, teamstats, ids):
                 mine.sort(key=lambda r: (r[0], r[1]))
             p = players.setdefault(pid, {"n": row.get("n") or name, "pos": pos, "t": row["team"], "img": None})
             p["img"] = p.get("img") or row.get("img")
-            if (season, week) >= max((r[0], r[1]) for r in mine):
+            if (season, week) >= max((r[0], r[1]) for r in mine) and (season, week) > p.get("_rt", (0, 0)):
                 p["t"] = row["team"]
         for team, tot in box["teams"].items():
             rows = teamstats.setdefault(team, [])
@@ -451,7 +467,7 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
         games = merge_games(games, espn_games, boxes, history, dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"))
         hist_file.write_text(json.dumps(history, separators=(",", ":")))
         ids = espn_ids(roster)
-        players = apply_status(players, roster, [] if espn_inj else injuries)
+        players = apply_status(players, roster, [] if espn_inj else injuries, season)
         unmatched = merge_boxes(games, boxes, players, logs, teamstats, ids)
         hurt = apply_espn_injuries(players, espn_inj, ids)
         for eid, (pid, _, _) in ids.items():   # ESPN ids for the pages' live box scores
@@ -461,7 +477,7 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
         note = (f"ESPN: {len(espn_games)} games ({calls} scoreboard calls), {len(boxes)} box scores ({new_boxes} new), "
                 f"{hurt} injury-report players, {unmatched} box-score players without an nflverse id")
     else:
-        players = apply_status(players, roster, injuries)
+        players = apply_status(players, roster, injuries, season)
     teams = json.loads((Path(mingus) / "site" / "data" / "teams.json").read_text()) if mingus else {}
     props = build_props(pick_source(picks_data, mingus_data, "odds/props"))
     if espn:
@@ -472,6 +488,8 @@ def build(mingus=None, mingus_data=None, out=OUT, cache=None, season=None, fetch
             "built": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "source": "ESPN + nflverse + Mingus Football + Mingus Picks" if espn else "nflverse + Mingus Football + Mingus Picks"}
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
+    for p in players.values():
+        p.pop("_rt", None)
     for name, value in (("meta", meta), ("games", games), ("teams", teams), ("teamstats", teamstats),
                         ("players", players), ("logs", logs), ("props", props), ("proj", proj), ("picks", picks)):
         (out / f"{name}.json").write_text(json.dumps(value, separators=(",", ":")))
