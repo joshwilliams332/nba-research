@@ -499,6 +499,11 @@
          "value": 14.0,
          "displayValue": "14",
          "period": 1
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 2
         }
        ],
        "statistics": [],
@@ -635,6 +640,11 @@
          "value": 0.0,
          "displayValue": "0",
          "period": 1
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 2
         }
        ],
        "statistics": [],
@@ -664,72 +674,70 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "401873050580",
+       "id": "401873050912",
        "type": {
-        "id": "74",
-        "text": "Official Timeout",
-        "abbreviation": "Off TO"
+        "id": "8",
+        "text": "Penalty",
+        "abbreviation": "PEN"
        },
-       "text": "Official Timeout at 06:00.",
+       "text": " (Shotgun) PENALTY on TB, Delay of Game, 5 yards, enforced at CHI 4 - No Play.",
        "scoreValue": 0,
        "team": {
-        "id": "3"
+        "id": "27"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.8807,
-        "awayWinPercentage": 0.11929999999999996,
+        "homeWinPercentage": 0.8637,
+        "awayWinPercentage": 0.13629999999999998,
         "secondsLeft": 0
        },
-       "statYardage": 0,
+       "statYardage": -5,
        "drive": {
-        "description": "4 plays, 81 yards, 1:24",
+        "description": "12 plays, 67 yards, 6:53",
         "start": {
-         "yardLine": 19,
-         "text": "CHI 19"
-        },
-        "end": {
-         "yardLine": 100,
-         "text": "TB 0"
+         "yardLine": 76,
+         "text": "TB 24"
         },
         "timeElapsed": {
-         "displayValue": "1:24"
-        },
-        "result": "TD"
+         "displayValue": "6:53"
+        }
        },
        "start": {
-        "yardLine": 35,
+        "yardLine": 4,
         "team": {
-         "id": "3"
+         "id": "27"
         }
        },
        "end": {
-        "yardLine": 35,
+        "yardLine": 9,
         "team": {
-         "id": "3"
+         "id": "27"
         }
        }
       },
-      "down": -1,
-      "yardLine": 35,
-      "distance": 0,
+      "down": 4,
+      "yardLine": 9,
+      "distance": 9,
+      "downDistanceText": "4th & Goal at CHI 9",
+      "shortDownDistanceText": "4th & Goal",
+      "possessionText": "CHI 9",
       "isRedZone": true,
       "homeTimeouts": 3,
       "awayTimeouts": 3,
-      "possession": "3"
+      "possession": "27"
      },
      "status": {
-      "clock": 360.0,
-      "displayClock": "6:00",
-      "period": 1,
+      "clock": 832.0,
+      "displayClock": "13:52",
+      "period": 2,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "6:00 - 1st Quarter",
-       "shortDetail": "6:00 - 1st"
+       "detail": "13:52 - 2nd Quarter",
+       "shortDetail": "13:52 - 2nd"
       },
       "isTBDFlex": false
      },
@@ -789,13 +797,13 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "2 CAR, 11 YDS",
-         "value": 11.0,
+         "displayValue": "7 CAR, 18 YDS",
+         "value": 18.0,
          "athlete": {
-          "id": "4431611",
-          "fullName": "Caleb Williams",
-          "displayName": "Caleb Williams",
-          "shortName": "C. Williams",
+          "id": "4596448",
+          "fullName": "Bucky Irving",
+          "displayName": "Bucky Irving",
+          "shortName": "B. Irving",
           "links": [
            {
             "rel": [
@@ -803,21 +811,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4431611/caleb-williams"
+            "href": "https://www.espn.com/nfl/player/_/id/4596448/bucky-irving"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431611.png",
-          "jersey": "18",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4596448.png",
+          "jersey": "7",
           "position": {
-           "abbreviation": "QB"
+           "abbreviation": "RB"
           },
           "team": {
-           "id": "3"
+           "id": "27"
           },
           "active": true
          },
          "team": {
-          "id": "3"
+          "id": "27"
          }
         }
        ]
@@ -935,10 +943,10 @@
     }
    ],
    "weather": {
-    "displayValue": "34",
+    "displayValue": "33",
     "temperature": 53,
     "highTemperature": 53,
-    "conditionId": "Mostly clear",
+    "conditionId": "Clear",
     "link": {
      "language": "en-US",
      "rel": [
@@ -952,17 +960,17 @@
     }
    },
    "status": {
-    "clock": 360.0,
-    "displayClock": "6:00",
-    "period": 1,
+    "clock": 832.0,
+    "displayClock": "13:52",
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "6:00 - 1st Quarter",
-     "shortDetail": "6:00 - 1st"
+     "detail": "13:52 - 2nd Quarter",
+     "shortDetail": "13:52 - 2nd"
     }
    }
   },
@@ -9880,8 +9888,8 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Brock Purdy threw two touchdown passes and ran for another TD and the San Francisco 49ers had five takeaways in the second half to beat the Las Vegas Raiders 38-17 on Sunday.",
-       "shortLinkText": "49ers cruise past Raiders 38-17",
+       "description": "\u2014 Jaden Dugger set the tone for the second half when he returned an interception from Kirk Cousins on the first play for a touchdown.",
+       "shortLinkText": "49ers capitalize on 5 2nd-half takeaways to cruise past Raiders 38-17",
        "video": [
         {
          "id": 50427403,
