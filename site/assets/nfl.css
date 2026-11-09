@@ -81,3 +81,7 @@ body:has(.nflsort) main { padding-bottom: 140px; }
 .nflplayer:first-child { border-top: 0; }
 .nflplayer .grow { min-width: 0; }
 .nflplayer .sub { font-size: 12px; color: var(--muted); }
+
+/* DraftKings moved off the priced line: the new line, with the old priced one underneath */
+.sub.wasline { font-size: 12px; color: var(--warm); }
+.price.was { color: var(--muted); font-size: 12px; }

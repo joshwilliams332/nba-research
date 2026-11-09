@@ -104,6 +104,19 @@ class BuildNflTest(unittest.TestCase):
         self.assertEqual(self.read("picks")["history"], [])
         self.assertEqual(build_nfl.pick_source(picks, self.data, "picks"), self.data)
 
+    def test_draftkings_move_shows_the_new_line_and_keeps_the_priced_one_as_was(self):
+        props = {"games": {"g": [{"pid": "p1", "stat": "rec_yds", "line": 53.5, "over": -111, "under": -115, "book_o": "DraftKings",
+                                  "book_u": "FanDuel", "fair_o": 0.5, "fair_u": 0.5},
+                                 {"pid": "p2", "stat": "rec", "line": 4.5, "over": -143, "under": 110, "book_o": "BetOnline.ag", "book_u": "x"}]},
+                 "pulled": {}}
+        espn = {"g": [{"eid": "1", "stat": "rec_yds", "line": 48.5, "open": 53.5}, {"eid": "2", "stat": "rec", "line": 4.5, "open": 4.5}]}
+        ids = {"1": ("p1", "TE", "Colston Loveland"), "2": ("p2", "WR", "Luther Burden")}
+        build_nfl.merge_props(props, espn, ids, {})
+        moved, same = props["games"]["g"]
+        self.assertEqual((moved["line"], moved["over"], moved["book_o"], moved["src"]), (48.5, None, "DraftKings", "espn"))
+        self.assertEqual(moved["was"], {"line": 53.5, "over": -111, "under": -115, "book_o": "DraftKings", "book_u": "FanDuel"})
+        self.assertEqual((same["line"], same["over"], same.get("was")), (4.5, -143, None))   # unmoved: keeps its price
+
     def test_season(self):
         import datetime as dt
         self.assertEqual(build_nfl.season_now(dt.date(2026, 11, 3)), 2026)

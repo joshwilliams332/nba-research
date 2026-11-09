@@ -73,7 +73,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   function renderLine() {
     const b = book(), proj = pj[st.stat];
     const price = b ? (st.side === 'o' ? b.over : b.under) : null;
-    const src = b ? `Sportsbook line <b>${b.line}</b>${price != null ? ` · ${st.side === 'o' ? 'over' : 'under'} ${odds(price)}` : ''} <small>(${esc((st.side === 'o' ? b.book_o : b.book_u) || '')}${b.books > 1 ? `, ${b.books} books` : ''})</small>${b.open != null && b.open !== b.line ? ` · opened ${b.open} → now ${b.line} ${b.line > b.open ? '↑' : '↓'}` : ''}`
+    const src = b ? `Sportsbook line <b>${b.line}</b>${price != null ? ` · ${st.side === 'o' ? 'over' : 'under'} ${odds(price)}` : ''} <small>(${esc((st.side === 'o' ? b.book_o : b.book_u) || '')}${b.books > 1 ? `, ${b.books} books` : ''})</small>${b.open != null && b.open !== b.line ? ` · opened ${b.open} → now ${b.line} ${b.line > b.open ? '↑' : '↓'}` : ''}${nflWasText(b, st.side) ? ` · <small>${esc(nflWasText(b, st.side))}</small>` : ''}`
       : `No sportsbook line pulled for this game; <b>typical line</b> ${nflTypical(rows, st.stat)} (half a point above his last-10 average).`;
     const fair = b && b.fair_o != null ? ` · fair ${pct(st.side === 'o' ? b.fair_o : b.fair_u)}` : '';
     const projBox = proj && st.stat in pj ? `<div class="projbox nflproj"><div><small>MINGUS PROJECTION</small><b>${fmt1(proj.mean)}</b><span class="muted">${signed(Math.round((proj.mean - st.line) * 10) / 10)} vs ${st.line}</span></div>
