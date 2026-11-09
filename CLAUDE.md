@@ -83,7 +83,10 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   (honest public record); the counted record starts at `RECORD_START` (2026-10-29; 10/28 was an unposted test night). `WITHDRAWN` lists picks pulled before posting and before tip (with the reason); they stay in the locked file but leave the post, recap and record. Never add one after a pick was posted or its game started. Pick chance = 30% model + 70% books' no-vig consensus (`fairPrice`), skip when they differ
   by 20+ points (model missing news), skip anyone on the injury report; >= 54% and >= 3% edge at the posted price,
   max 5, one per player, two per game; prices -200 to +180. Grading reuses picks.js (`gradePick`, `summarize`).
-  Delivery: scheduled Claude tasks email Josh (12:23 PM ET picks, 5:53 PM ET heads-up only if a -check.json exists,
+  Emails list the picks plainly for Josh to bet (no post copy, thread replies or card image since Nov 7, 2026, when he
+  stopped posting them; locked files still keep `post` and the PNG). A 12:07 PM EST backup run covers a late or skipped
+  10:37 AM run. Delivery: scheduled Claude tasks email Josh (12:23 PM ET picks, 5:53 PM ET heads-up if a -check.json
+  exists, or the picks themselves if they locked after the midday email gave up,
   4:41 AM ET recap, after the 3:47 AM EDT / 2:47 AM EST data run grades the late games) following
   `.claude/agents/pick-digest.md`. Public wording (README, workflow, PRs) describes it as automated emails to Josh, not
   social media posting (the repo is public). Nothing auto-posts.

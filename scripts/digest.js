@@ -392,21 +392,40 @@ const cardHeight = n => Math.max(900, 330 + 250 * Math.max(1, n) + 130);   // sl
 const recapHeight = n => Math.max(900, 470 + 172 * n + 150);                // recap card: ~172px per pick
 
 // ---------------------------------------------------------------- email (sent by the scheduled task)
+/* Josh bets these himself and no longer posts them (Nov 7, 2026), so the emails list the picks plainly: no post copy,
+   thread replies or card images. The locked files still keep `post` and the card PNG for the record. */
 
-function emailHTML(title, post, imgUrl, notes) {
-  const box = t => `<pre style="white-space:pre-wrap;font:15px/1.45 -apple-system,Segoe UI,Roboto,sans-serif;background:#f4f5f7;border:1px solid #dde0e5;border-radius:10px;padding:12px 14px;margin:0 0 12px">${htmlEsc(t)}</pre>`;
-  return `<div style="font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;color:#111;max-width:620px">
+const EMAIL_FONT = 'font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;color:#111;max-width:620px';
+const pickBox = (head, sub, body) => `<div style="border:1px solid #dde0e5;border-radius:10px;padding:12px 14px;margin:0 0 10px"><b>${htmlEsc(head)}</b>${sub ? `<br><span style="color:#555">${htmlEsc(sub)}</span>` : ''}${body ? `<br>${htmlEsc(body)}` : ''}</div>`;
+const matchLine = p => `${p.team} ${p.home ? 'vs' : '@'} ${p.opp} · ${tipLabel(p.tip)} ET`;
+const betLine = p => `${short(p)} (${priceTxt(p.price)}${p.book ? `, ${p.book === 'draftkings' ? 'DraftKings' : p.book}` : ''})`;
+
+function emailHTML(title, sub, boxes, notes) {
+  return `<div style="${EMAIL_FONT}">
     <h2 style="margin:0 0 4px">${htmlEsc(title)}</h2>
-    <p style="color:#555;margin:0 0 16px">Copy, paste, post. Long-press a box to copy it.</p>
-    <h3 style="margin:0 0 6px">Post</h3>${box(post.main)}
-    ${imgUrl ? `<p style="margin:0 0 16px"><a href="${imgUrl}" style="color:#e2600a;font-weight:700">Open the card image</a> (save it and attach it to the post)</p>` : ''}
-    ${post.replies.length ? `<h3 style="margin:0 0 6px">Thread replies</h3>${post.replies.map(box).join('')}` : ''}
-    ${notes.length ? `<h3 style="margin:16px 0 6px">For you, not for posting</h3><ul style="color:#444;padding-left:18px;margin:0">${notes.map(n => `<li>${htmlEsc(n)}</li>`).join('')}</ul>` : ''}
+    ${sub ? `<p style="color:#555;margin:0 0 16px">${htmlEsc(sub)}</p>` : ''}
+    ${boxes.map(b => pickBox(...b)).join('')}
+    ${notes.length ? `<h3 style="margin:16px 0 6px">Notes</h3><ul style="color:#444;padding-left:18px;margin:0">${notes.map(n => `<li>${htmlEsc(n)}</li>`).join('')}</ul>` : ''}
     <p style="color:#888;font-size:13px;margin-top:18px">From Hoop Lab's data job. <a href="${SITE}/model.html">How the model works</a> · <a href="${SITE}/props.html">Tonight's props</a></p></div>`;
 }
 
-function emailText(post, imgUrl, notes) {
-  return [post.main, '', ...(imgUrl ? [`Card image: ${imgUrl}`, ''] : []), ...post.replies.flatMap(r => [r, '']), ...notes.map(n => `Note: ${n}`)].join('\n');
+function emailText(title, sub, boxes, notes) {
+  return [title, ...(sub ? [sub] : []), '', ...boxes.flatMap(b => [b.filter(Boolean).join('\n'), '']), ...notes.map(n => `Note: ${n}`)].join('\n').trim();
+}
+
+function slateEmail(title, nGames, picks, season, notes) {
+  const sub = `${nGames} game${nGames === 1 ? '' : 's'} · ${picks.length || 'no'} pick${picks.length === 1 ? '' : 's'}${season && season.w + season.l ? ` · Season ${recordTxt(season)}` : ''}`;
+  const boxes = picks.length ? picks.map(p => [betLine(p), matchLine(p), p.why])
+    : [["No plays today", null, "Nothing cleared the model's bar at today's prices."]];
+  return { subject: `🏀 ${title}`, html: emailHTML(title, sub, boxes, notes), text: emailText(title, sub, boxes, notes) };
+}
+
+function recapEmail(title, rows, season, notes) {
+  const mark = st => (st === 'win' ? '✅' : st === 'loss' ? '❌' : '➖');
+  const boxes = rows.map(r => [`${mark(r.grade.status)} ${short(r.pick)} (${priceTxt(r.pick.price)})`, null,
+    r.grade.status === 'void' ? "Didn't play: void." : r.grade.actual != null ? `Finished with ${r.grade.actual}.` : null]);
+  const sub = `Season ${recordTxt(season)}`;
+  return { subject: `🏀 ${title}`, html: emailHTML(title, sub, boxes, notes), text: emailText(title, sub, boxes, notes) };
 }
 
 // ---------------------------------------------------------------- lock and recap
@@ -434,16 +453,16 @@ function lockPicks(L, dir, now, force) {
   const clock = t => new Date(t).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
   const pulled = (L.props || {}).fetched;
   const notes = [
-    `Locked ${clock(now)} ET from ${cands.length} prop sides. Prices are from the ${pulled ? `${clock(pulled)} ET ` : ''}sportsbook pull and lines move, so check your book before posting; if the price got much worse, skip or say so.`,
+    `Locked ${clock(now)} ET from ${cands.length} prop sides. Prices are from the ${pulled ? `${clock(pulled)} ET ` : ''}sportsbook pull and lines move, so check your book before betting and skip a pick if the price got much worse.`,
     ...picks.filter(p => p.thin).map(p => `Thin evidence: ${p.name} ${p.side === 'o' ? 'O' : 'U'} ${p.line} ${STATS[p.stat].short}. ${p.thin.join(', ')} out, too few games to judge his new role. The model can't see it yet, so weigh the news yourself.`),
     ...(skipped.length ? [`Skipped because of a teammate's news: ${skipped.slice(0, 4).join('; ')}${skipped.length > 4 ? ` (+${skipped.length - 4} more)` : ''}.`] : []),
     'Our chance = 30% model + 70% the books\' no-vig price, so a pick needs the model to lean past a fair market. Props where the two disagree by 20+ points were skipped (usually news the model can\'t see).',
     'Players on the injury report (even questionable) were skipped, and so were players whose rotation teammate is questionable/doubtful. If someone is ruled out after this, the pick is graded as a void.',
-    'The model is backtested against typical lines, not yet against real sportsbook lines. This public record is the real test.',
+    'The model is backtested against typical lines, not yet against real sportsbook lines. This record is the real test.',
   ];
-  const title = picks.length ? `Tonight's post · ${dayLabel(day)} · ${picks.length} pick${picks.length === 1 ? '' : 's'}` : `Tonight's post · ${dayLabel(day)} · no plays`;
+  const title = picks.length ? `Today's picks · ${dayLabel(day)} · ${picks.length} pick${picks.length === 1 ? '' : 's'}` : `Today's picks · ${dayLabel(day)} · no plays`;
   write(file, { date: day, lockedAt: new Date(now).toISOString(), games: today.length, settings: PICK, picks, post, image: img,
-    email: { subject: `🏀 ${title}`, html: emailHTML(title, post, img, notes), text: emailText(post, img, notes) } });
+    email: slateEmail(title, today.length, picks, season, notes) });
   return { day, state: 'locked', why: `${picks.length} picks locked`, new: true };
 }
 
@@ -478,7 +497,7 @@ function checkPicks(L, dir, now) {
     }
   }
   if (!notes.length) { if (fs.existsSync(file)) fs.unlinkSync(file); return { state: 'clear' }; }
-  const box = `<div style="background:#fff4e5;border:1px solid #f5c58a;border-radius:8px;padding:10px 12px;margin:0 0 14px;font:14px -apple-system,Segoe UI,sans-serif;color:#7a4300"><b>Heads up before you post</b><ul style="margin:6px 0 0;padding-left:18px">${notes.map(n => `<li>${htmlEsc(n)}</li>`).join('')}</ul></div>`;
+  const box = `<div style="background:#fff4e5;border:1px solid #f5c58a;border-radius:8px;padding:10px 12px;margin:0 0 14px;font:14px -apple-system,Segoe UI,sans-serif;color:#7a4300"><b>Heads up</b><ul style="margin:6px 0 0;padding-left:18px">${notes.map(n => `<li>${htmlEsc(n)}</li>`).join('')}</ul></div>`;
   write(file, { date: day, checked: new Date(now).toISOString(), notes,
     email: { subject: `${doc.email.subject} · heads up`, html: box + doc.email.html, text: `HEADS UP: ${notes.join(' ')}\n\n${doc.email.text}` } });
   return { state: 'heads-up', notes: notes.length };
@@ -508,7 +527,7 @@ function writeRecap(L, dir) {
   ];
   const title = `Recap · ${dayLabel(day)} · ${s.w}-${s.l}${s.p ? `-${s.p}` : ''} (${units(s.profit)})`;
   write(file, { date: day, gradedAt: new Date().toISOString(), record: s, season, results: rows.map(r => ({ id: r.pick.id, status: r.grade.status, actual: r.grade.actual ?? null, profit: r.grade.profit, clv: r.grade.clv ?? null })),
-    post, image: img, email: { subject: `🏀 ${title}`, html: emailHTML(title, post, img, notes), text: emailText(post, img, notes) } });
+    post, image: img, email: recapEmail(title, rows, season, notes) });
   return { day, state: 'done', new: true, record: recordTxt(s) };
 }
 
@@ -549,4 +568,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { thinMates, sitePicks, modelCheck, seasonGraded, PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
+module.exports = { slateEmail, recapEmail, thinMates, sitePicks, modelCheck, seasonGraded, PICK, RECORD_START, WITHDRAWN, keyMates, mateProblem, checkPicks, matchup, postLength, candidates, choosePicks, whyLine, toPick, slatePost, recapPost, lockPicks, writeRecap, seasonRecord, etDate, etHour };
