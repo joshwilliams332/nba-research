@@ -123,7 +123,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   props, proj). No Odds API credits. Logic in `site/assets/nfl.js` (names prefixed `nfl`, tested in `tests/nfl.test.js`;
   data build tested in `tests/test_build_nfl.py`), styles in `site/assets/nfl.css`.
   Pages: `nfl.html` (week tabs, cards with L10 strips vs this week's number), `nfl-game.html` (Game lines + Breakdown;
-  Player props: compact rows -> ladder -> player page, typical lines labeled when no props were pulled; Matchup =
+  Player props: compact rows -> ladder (`nflLadder`: yardage every 5 yards on the .5, counting stats every 1, the real line always included and the only priced rung) -> player page, typical lines labeled when no props were pulled; Matchup =
   offense vs defense ranks, common opponents, last 5 ATS / O/U), `nfl-player.html` (stat tabs by position, book or
   typical line, H2H / L5 / L10 / L20 / season / last season, chart, supporting stats, defense vs position rank +
   players vs that defense, game log, Mingus projection box), `nfl-props.html` (week's props, sort bar, stat and side

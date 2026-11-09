@@ -281,10 +281,18 @@ function nflGameProps(N, gid) {
   return out;
 }
 
-/* Ladder of lines around a main line: two steps below and above (never below 0.5). */
+/* Alternate lines around the main line, the way sportsbooks list them: yardage every 5 yards on the .5 (44.5, 49.5, ...)
+   out to `span` yards each side, counting stats every 1, with the player's real (or typical) line always included.
+   Never below 0.5. Only the real line has a price; the others are for research and saving picks. */
+const NFL_LADDER = { yds: [5, 20], pass: [5, 30], count: [1, 3], big: [1, 4], td: [1, 2] };
 function nflLadder(line, stat) {
-  const step = NFL_STATS[stat].step;
-  return [-2, -1, 0, 1, 2].map(k => line + k * step).filter(l => l >= 0.5);
+  const kind = /^pass(_rush)?_yds$/.test(stat) ? 'pass' : /yds$/.test(stat) ? 'yds' : /td$|^int$/.test(stat) ? 'td'
+    : stat === 'cmp' || stat === 'att' ? 'big' : 'count';
+  const [step, span] = NFL_LADDER[kind];
+  const out = new Set([line]);
+  const first = Math.ceil((line - span + 0.5) / step) * step - 0.5;
+  for (let l = first; l <= line + span; l += step) if (l >= 0.5) out.add(Math.round(l * 10) / 10);
+  return [...out].filter(l => l >= 0.5).sort((a, b) => a - b);
 }
 
 // ---------------------------------------------------------------- grading saved picks
