@@ -493,7 +493,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/chi.png"
        },
-       "score": "14",
+       "score": "17",
        "linescores": [
         {
          "value": 14.0,
@@ -501,8 +501,8 @@
          "period": 1
         },
         {
-         "value": 0.0,
-         "displayValue": "0",
+         "value": 3.0,
+         "displayValue": "3",
          "period": 2
         }
        ],
@@ -634,7 +634,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/tb.png"
        },
-       "score": "0",
+       "score": "3",
        "linescores": [
         {
          "value": 0.0,
@@ -642,8 +642,8 @@
          "period": 1
         },
         {
-         "value": 0.0,
-         "displayValue": "0",
+         "value": 3.0,
+         "displayValue": "3",
          "period": 2
         }
        ],
@@ -674,61 +674,85 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "401873050912",
+       "id": "4018730501940",
        "type": {
-        "id": "8",
-        "text": "Penalty",
-        "abbreviation": "PEN"
+        "id": "26",
+        "text": "Pass Interception Return",
+        "abbreviation": "INTR"
        },
-       "text": " (Shotgun) PENALTY on TB, Delay of Game, 5 yards, enforced at CHI 4 - No Play.",
+       "text": " (No Huddle, Shotgun) B.Mayfield pass short left intended for T.Johnson INTERCEPTED by C.Lewis at CHI 26. C.Lewis to CHI 26 for no gain (T.Johnson).",
        "scoreValue": 0,
        "team": {
-        "id": "27"
+        "id": "3"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.8637,
-        "awayWinPercentage": 0.13629999999999998,
+        "homeWinPercentage": 0.9167,
+        "awayWinPercentage": 0.08330000000000004,
         "secondsLeft": 0
        },
-       "statYardage": -5,
+       "statYardage": 0,
        "drive": {
-        "description": "12 plays, 67 yards, 6:53",
+        "description": "5 plays, 40 yards, 1:53",
         "start": {
-         "yardLine": 76,
-         "text": "TB 24"
+         "yardLine": 74,
+         "text": "TB 26"
         },
         "timeElapsed": {
-         "displayValue": "6:53"
+         "displayValue": "1:53"
         }
        },
        "start": {
-        "yardLine": 4,
+        "yardLine": 34,
         "team": {
          "id": "27"
         }
        },
        "end": {
-        "yardLine": 9,
+        "yardLine": 26,
         "team": {
-         "id": "27"
+         "id": "3"
         }
-       }
+       },
+       "athletesInvolved": [
+        {
+         "id": "3916577",
+         "fullName": "Cam Lewis",
+         "displayName": "Cam Lewis",
+         "shortName": "C. Lewis",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/3916577/cam-lewis"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3916577.png",
+         "jersey": "21",
+         "position": "CB",
+         "team": {
+          "id": "3"
+         }
+        }
+       ]
       },
-      "down": 4,
-      "yardLine": 9,
-      "distance": 9,
-      "downDistanceText": "4th & Goal at CHI 9",
-      "shortDownDistanceText": "4th & Goal",
-      "possessionText": "CHI 9",
-      "isRedZone": true,
+      "down": 1,
+      "yardLine": 26,
+      "distance": 10,
+      "downDistanceText": "1st & 10 at CHI 26",
+      "shortDownDistanceText": "1st & 10",
+      "possessionText": "CHI 26",
+      "isRedZone": false,
       "homeTimeouts": 3,
       "awayTimeouts": 3,
-      "possession": "27"
+      "possession": "3"
      },
      "status": {
-      "clock": 832.0,
-      "displayClock": "13:52",
+      "clock": 48.0,
+      "displayClock": "0:48",
       "period": 2,
       "type": {
        "id": "2",
@@ -736,8 +760,8 @@
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "13:52 - 2nd Quarter",
-       "shortDetail": "13:52 - 2nd"
+       "detail": "0:48 - 2nd Quarter",
+       "shortDetail": "0:48 - 2nd"
       },
       "isTBDFlex": false
      },
@@ -757,8 +781,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "6/8, 105 YDS, 2 TD",
-         "value": 105.0,
+         "displayValue": "14/22, 193 YDS, 2 TD, 2 INT",
+         "value": 193.0,
          "athlete": {
           "id": "4431611",
           "fullName": "Caleb Williams",
@@ -797,8 +821,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "7 CAR, 18 YDS",
-         "value": 18.0,
+         "displayValue": "10 CAR, 32 YDS",
+         "value": 32.0,
          "athlete": {
           "id": "4596448",
           "fullName": "Bucky Irving",
@@ -837,8 +861,8 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "2 REC, 55 YDS, 1 TD",
-         "value": 55.0,
+         "displayValue": "3 REC, 81 YDS, 1 TD",
+         "value": 81.0,
          "athlete": {
           "id": "4685278",
           "fullName": "Luther Burden III",
@@ -960,8 +984,8 @@
     }
    },
    "status": {
-    "clock": 832.0,
-    "displayClock": "13:52",
+    "clock": 48.0,
+    "displayClock": "0:48",
     "period": 2,
     "type": {
      "id": "2",
@@ -969,8 +993,8 @@
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "13:52 - 2nd Quarter",
-     "shortDetail": "13:52 - 2nd"
+     "detail": "0:48 - 2nd Quarter",
+     "shortDetail": "0:48 - 2nd"
     }
    }
   },
@@ -1834,7 +1858,7 @@
      "neutralSite": false,
      "conferenceCompetition": false,
      "playByPlayAvailable": true,
-     "recent": true,
+     "recent": false,
      "venue": {
       "id": "3812",
       "fullName": "Lucas Oil Stadium",
@@ -2660,7 +2684,7 @@
      "neutralSite": false,
      "conferenceCompetition": false,
      "playByPlayAvailable": true,
-     "recent": true,
+     "recent": false,
      "venue": {
       "id": "3622",
       "fullName": "Arrowhead Stadium",
@@ -3486,7 +3510,7 @@
      "neutralSite": false,
      "conferenceCompetition": false,
      "playByPlayAvailable": true,
-     "recent": true,
+     "recent": false,
      "venue": {
       "id": "3948",
       "fullName": "Hard Rock Stadium",
@@ -5150,7 +5174,7 @@
      "neutralSite": false,
      "conferenceCompetition": false,
      "playByPlayAvailable": true,
-     "recent": true,
+     "recent": false,
      "venue": {
       "id": "3806",
       "fullName": "Lincoln Financial Field",
@@ -5976,7 +6000,7 @@
      "neutralSite": false,
      "conferenceCompetition": false,
      "playByPlayAvailable": true,
-     "recent": true,
+     "recent": false,
      "venue": {
       "id": "3719",
       "fullName": "Northwest Stadium",
@@ -8118,6 +8142,116 @@
        "region": "us"
       }
      ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 C.J. Stroud had been feeling lousy all week, barely practiced and woke up with chills on game day. Then he had his version of Michael Jordan's flu game.",
+       "shortLinkText": "C.J. Stroud tosses 5 TD passes as Texans rout winless Chargers 44-22. LA finally scores a TD",
+       "video": [
+        {
+         "id": 50427746,
+         "source": "espn",
+         "headline": "Houston Texans vs. Los Angeles Chargers: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.jpg",
+         "duration": 65,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261108_NFL_houston_texans_vs_los_angeles_chargers_game_highlights",
+          "trackingName": "COM_NFL Highlight (Houston Texans vs. Los Angeles Chargers: Game Highlights) 2026/11/08 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/ad225011-8bcd-4406-9d4d-8598dce407d1"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50427746"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/ad225011-8bcd-4406-9d4d-8598dce407d1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50427746/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50427746"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/ad225011-8bcd-4406-9d4d-8598dce407d1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50427746/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/ad225011-8bcd-4406-9d4d-8598dce407d1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50427746/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/ad225011-8bcd-4406-9d4d-8598dce407d1/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50427746&videoDSI=3102a2e159cd9"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50427746/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50427746/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=3102a2e159cd9"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
      "highlights": [
       {
        "id": 50427746,
@@ -8231,116 +8365,6 @@
         "trackingId": "dm_20261108_NFL_houston_texans_vs_los_angeles_chargers_game_highlights",
         "trackingName": "COM_NFL Highlight (Houston Texans vs. Los Angeles Chargers: Game Highlights) 2026/11/08 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 C.J. Stroud threw five touchdown passes, including a pair of season-best 63-yarders to Tank Dell and Kayshon Boutte, and the Houston Texans routed the winless Chargers 44-22 on Sunday and sent Los Angeles to its eighth straight defeat in front of...",
-       "shortLinkText": "C.J. Stroud tosses 5 TD passes as Texans rout winless Chargers 44-22. LA finally scores a TD",
-       "video": [
-        {
-         "id": 50427746,
-         "source": "espn",
-         "headline": "Houston Texans vs. Los Angeles Chargers: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.jpg",
-         "duration": 65,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261108_NFL_houston_texans_vs_los_angeles_chargers_game_highlights",
-          "trackingName": "COM_NFL Highlight (Houston Texans vs. Los Angeles Chargers: Game Highlights) 2026/11/08 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/ad225011-8bcd-4406-9d4d-8598dce407d1"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50427746"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/ad225011-8bcd-4406-9d4d-8598dce407d1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50427746/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50427746"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/ad225011-8bcd-4406-9d4d-8598dce407d1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50427746/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/ad225011-8bcd-4406-9d4d-8598dce407d1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50427746/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/ad225011-8bcd-4406-9d4d-8598dce407d1/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1109/570e2966-d15b-457d-819c-aa0e3858debd/570e2966-d15b-457d-819c-aa0e3858debd.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50427746&videoDSI=3102a2e159cd9"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50427746/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50427746/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=3102a2e159cd9"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
@@ -9062,7 +9086,7 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Jordan Love threw for 372 yards and three touchdowns and ran for a score, and the Green Bay Packers scored 21 points off four New England Patriots turnovers to roll to a 45-27 win on Sunday.",
+       "description": "\u2014 If Jordan Love has played a better game than he did on Sunday, he can't remember it.",
        "shortLinkText": "Jordan Love accounts for 4 touchdowns, Packers force 4 turnovers in 45-27 win over Patriots",
        "video": [
         {
@@ -10714,7 +10738,7 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 AJ Barner caught a touchdown pass and ran for a score, and the Seattle Seahawks beat the Arizona Cardinals 17-3 on Sunday without starting quarterback Sam Darnold.",
+       "description": "\u2014 AJ Barner's breakout came just when the Seahawks needed it.",
        "shortLinkText": "AJ Barner has a TD catch and runs for a score in Seahawks' 17-3 win over Cardinals",
        "video": [
         {
@@ -12201,8 +12225,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $210",
-       "numberAvailable": 2593,
+       "summary": "Tickets as low as $206",
+       "numberAvailable": 2524,
        "links": [
         {
          "href": "https://www.vividseats.com/minnesota-vikings-tickets-minneapolis-us-bank-stadium-3-8-2027/production/6492316?wsUser=717"
@@ -12376,7 +12400,7 @@
         "home": {
          "close": {
           "line": "+3",
-          "odds": "-102",
+          "odds": "+100",
           "link": {
            "language": "en-US",
            "rel": [
@@ -12410,7 +12434,7 @@
         "away": {
          "close": {
           "line": "-3",
-          "odds": "-118",
+          "odds": "-120",
           "link": {
            "language": "en-US",
            "rel": [
