@@ -41,7 +41,8 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   // Same layout as Hoop Lab's game page: Odds (Game lines / Player props) · Insights · Matchup.
   const hash = location.hash.slice(1);
   const st = {
-    tab: ['insights', 'matchup'].includes(hash) ? hash : 'odds', sub: hash === 'props' ? 'props' : 'lines', open: null,
+    // A finished game opens on its box score, like Hoop Lab.
+    tab: ['insights', 'matchup', 'box'].includes(hash) ? hash : hash ? 'odds' : g.final ? 'box' : 'odds', sub: hash === 'props' ? 'props' : 'lines', open: null,
     stat: NFL_STATS[params.get('stat')] ? params.get('stat') : null, term: '', ikind: 'all', isort: 'best',
     m: ['ml', 'spread', 'over', 'under'].includes(params.get('m')) ? params.get('m') : (g.home_spread != null ? 'spread' : 'ml'),
     team: params.get('s') === 'a' ? g.away : g.home,
@@ -73,7 +74,9 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
 
   const TABS = [['odds', 'Odds'], ['insights', 'Insights'], ['matchup', 'Matchup']];
   function renderTabs() {
-    document.getElementById('tabs').innerHTML = TABS.map(([k, l]) => `<button data-tab="${k}" class="${k === st.tab ? 'on' : ''}">${l}</button>`).join('');
+    const tabs = g.state !== 'pre' ? [...TABS, ['box', 'Box score']] : TABS;
+    if (st.tab === 'box' && g.state === 'pre') st.tab = 'odds';
+    document.getElementById('tabs').innerHTML = tabs.map(([k, l]) => `<button data-tab="${k}" class="${k === st.tab ? 'on' : ''}">${l}</button>`).join('');
   }
 
   // ---------------------------------------------------------------- game lines + breakdown
@@ -265,9 +268,51 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
       </div>`;
   }
 
+  // ---------------------------------------------------------------- box score
+  // Passing, rushing and receiving for each team, plus team stats once the data job saves the game. A stat with a
+  // sportsbook line that day is green / red for cleared / missed (mid-game only the ones already past it).
+  const BOX_SECTIONS = [
+    ['Passing', r => r.att > 0, r => r.pass_yds, [['C/ATT', r => `${r.cmp}/${r.att}`, ['cmp', 'att']], ['YDS', r => r.pass_yds, 'pass_yds'], ['TD', r => r.pass_td, 'pass_td'], ['INT', r => r.int, 'int']]],
+    ['Rushing', r => r.car > 0, r => r.rush_yds, [['CAR', r => r.car, 'car'], ['YDS', r => r.rush_yds, 'rush_yds'], ['TD', r => r.rush_td, 'rush_td']]],
+    ['Receiving', r => r.rec > 0 || r.tgt > 0, r => r.rec_yds, [['REC', r => r.rec, 'rec'], ['TGT', r => r.tgt, 'tgt'], ['YDS', r => r.rec_yds, 'rec_yds'], ['TD', r => r.rec_td, 'rec_td']]],
+  ];
+  function boxCell(x, val, stat) {
+    const line = x.pid && typeof stat === 'string' && (gprops[x.pid] || {})[stat] ? gprops[x.pid][stat].line : null;
+    if (line == null) return `<td>${val}</td>`;
+    const o = outcome(x.r[stat], line, 'o');
+    const cls = o === 'push' || (g.state === 'in' && o === 'miss') ? '' : o;
+    return `<td class="${cls}" title="Line ${line}">${val}</td>`;
+  }
+  function teamStatsCard() {
+    const key = `${g.season}-${g.week}`, a = (N.box[g.away] || {})[key], h = (N.box[g.home] || {})[key];
+    if (!a || !h) return '';
+    const frac = v => Array.isArray(v) ? `${v[0]}/${v[1]}` : '-';
+    const rows = [['Total yards', t => t.yds ?? (t.pass_yds + t.rush_yds)], ['Passing yards', t => t.pass_yds], ['Rushing yards', t => t.rush_yds],
+      ['First downs', t => t.fd], ['3rd down', t => frac(t.third)], ['Red zone', t => frac(t.rz)], ['Turnovers', t => (t.int || 0) + (t.fl || 0)], ['Sacks taken', t => t.sk]];
+    return `<div class="card"><h3>Team stats</h3><div class="tablewrap"><table class="data"><tr><th class="l"></th><th>${esc(g.away)}</th><th>${esc(g.home)}</th></tr>
+      ${rows.map(([label, f]) => `<tr><td class="l">${label}</td><td>${f(a) ?? '-'}</td><td>${f(h) ?? '-'}</td></tr>`).join('')}</table></div></div>`;
+  }
+  function boxPane() {
+    const B = nflBoxScore(N, g);
+    if (!B.teams[g.away].length && !B.teams[g.home].length) {
+      return `<div class="card empty">${g.state === 'in' ? 'Live box score loading…' : 'No box score yet.'}<br><small>It appears after the next data update.</small></div>`;
+    }
+    const name = x => x.pid ? `<a href="nfl-player.html?id=${encodeURIComponent(x.pid)}">${esc(x.n)}</a>` : esc(x.n);
+    const table = team => `<div class="card"><div class="row" style="margin-bottom:8px">${nflLogo(N, team, 24)}<h3>${esc(nflTeamName(N, team))}</h3></div>
+      ${BOX_SECTIONS.map(([title, keep, sortBy, cols]) => {
+        const list = B.teams[team].filter(x => keep(x.r)).sort((p, q) => sortBy(q.r) - sortBy(p.r));
+        if (!list.length) return '';
+        return `<div class="tablewrap" style="margin-bottom:10px"><table class="data sticky"><tr><th class="l">${title}</th>${cols.map(c => `<th>${c[0]}</th>`).join('')}</tr>
+          ${list.map(x => `<tr><td class="l">${name(x)}${x.pos ? ` <small>${esc(x.pos)}</small>` : ''}</td>${cols.map(([, f, stat]) => boxCell(x, f(x.r), stat)).join('')}</tr>`).join('')}</table></div>`;
+      }).join('')}</div>`;
+    const note = B.live ? (g.state === 'in' ? "Live box score from ESPN. Green stat = already past today's prop line." : 'From ESPN; the full box score lands with the next data update.')
+      : "Green / red stat = cleared / missed that day's prop line, when one was pulled.";
+    return `${teamStatsCard()}${table(g.away)}${table(g.home)}<p class="note">${note}</p>`;
+  }
+
   function render() {
     renderTabs();
-    document.getElementById('pane').innerHTML = st.tab === 'matchup' ? matchupPane() : st.tab === 'insights' ? insightsPane() : oddsPane();
+    document.getElementById('pane').innerHTML = st.tab === 'box' ? boxPane() : st.tab === 'matchup' ? matchupPane() : st.tab === 'insights' ? insightsPane() : oddsPane();
     const ps = document.getElementById('psearch');
     if (ps) ps.addEventListener('input', () => {
       st.term = ps.value;
@@ -300,8 +345,18 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   // Live: header score every 25 s while the game is on, and "Now 54 / 64.5" on prop rows from the live box score.
   nflStartLive(N, { games: [g], gids: [g.id], onUpdate() {
     document.getElementById('mid').innerHTML = midHtml();
-    if (st.tab === 'odds' && st.sub === 'props') render();
+    if (st.tab === 'box' || (st.tab === 'odds' && st.sub === 'props')) render();
   } });
+  // Just finished, before the data job saves the box score: fetch ESPN's once so the tab isn't empty.
+  const B0 = nflBoxScore(N, g);
+  if (g.final && g.eid && !B0.teams[g.away].length && !B0.teams[g.home].length) {
+    fetch(`${NFL_LIVE_API}/summary?event=${g.eid}`).then(r => (r.ok ? r.json() : null)).then(sum => {
+      if (!sum) return;
+      N.liveBox = N.liveBox || {};
+      N.liveBox[g.id] = Object.assign(nflParseLiveBox(sum), { final: true });
+      if (st.tab === 'box') render();
+    }).catch(() => {});
+  }
   if (location.hash === '#lines') setTimeout(() => { const el = document.getElementById('lines'); if (el) el.scrollIntoView({ block: 'start' }); }, 50);
 }).catch(err => {
   main.innerHTML = emptyState('NFL data is unavailable right now.', 'It comes from ESPN on each data update. Try again in a bit.');

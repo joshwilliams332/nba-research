@@ -524,9 +524,12 @@ function nflApplyLive(N, list) {
 }
 
 /* ESPN game summary -> {espn athlete id: log row} (passing, rushing and receiving columns). */
+const NFL_ESPN_TEAM = { WSH: 'WAS', LAR: 'LA' };   // ESPN abbreviation -> ours (nflverse)
 function nflParseLiveBox(summary) {
   const out = {};
   for (const side of ((summary || {}).boxscore || {}).players || []) {
+    const ab = String(((side.team || {}).abbreviation) || '').toUpperCase();
+    const team = NFL_ESPN_TEAM[ab] || ab || null;
     for (const cat of side.statistics || []) {
       const cols = NFL_LIVE_CATS[cat.name];
       if (!cols) continue;
@@ -534,7 +537,7 @@ function nflParseLiveBox(summary) {
       for (const a of cat.athletes || []) {
         const id = String(((a.athlete || {}).id) || '');
         if (!id) continue;
-        const row = out[id] = out[id] || { ...NFL_LOG_ZERO };
+        const row = out[id] = out[id] || { ...NFL_LOG_ZERO, team, n: (a.athlete || {}).displayName || null };
         labels.forEach((label, i) => {
           const c = cols[label];
           if (Array.isArray(c)) String((a.stats || [])[i] || '').split('/').forEach((v, k) => { row[c[k]] = parseFloat(v) || 0; });
@@ -551,6 +554,28 @@ function nflLiveValue(N, gid, pid, stat) {
   const box = (N.liveBox || {})[gid], p = N.players && N.players[pid];
   const row = box && p && p.eid && box[p.eid];
   return row && NFL_STATS[stat] ? NFL_STATS[stat].f(row) : null;
+}
+
+/* A game's box score by team: {live, teams: {TEAM: [{pid, n, pos, r}]}}. Saved box scores (logs) first; while the game
+   is on, or right after it ends before the data job saves it, the live ESPN box score (N.liveBox) fills in. */
+function nflBoxScore(N, g) {
+  const teams = { [g.away]: [], [g.home]: [] };
+  for (const [pid, list] of Object.entries(N.logs || {})) {
+    const r = list.find(x => x.g && x.g.id === g.id);
+    if (r && teams[r.team]) teams[r.team].push({ pid, n: (N.players[pid] || {}).n || pid, pos: (N.players[pid] || {}).pos || '', r });
+  }
+  let live = false;
+  const box = (N.liveBox || {})[g.id];
+  if (!teams[g.away].length && !teams[g.home].length && box) {
+    const byEid = new Map(Object.entries(N.players || {}).filter(([, p]) => p.eid).map(([pid, p]) => [String(p.eid), pid]));
+    for (const [eid, r] of Object.entries(box)) {
+      if (!r || typeof r !== 'object' || !teams[r.team]) continue;
+      const pid = byEid.get(eid) || null, p = (pid && N.players[pid]) || {};
+      teams[r.team].push({ pid, n: p.n || r.n || eid, pos: p.pos || '', r });
+    }
+    live = true;
+  }
+  return { live, teams };
 }
 
 /* The live score a card or header shows: {away, home, detail} for a game in progress, else null. */
@@ -617,5 +642,5 @@ function nflStartLive(N, opts) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { nflGameInsights, nflInsightCard, nflStrongSide, nflWilson, nflApplyLive, nflParseLiveBox, nflLiveValue, nflLiveScore, nflLiveWait, nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
+  module.exports = { nflBoxScore, nflGameInsights, nflInsightCard, nflStrongSide, nflWilson, nflApplyLive, nflParseLiveBox, nflLiveValue, nflLiveScore, nflLiveWait, nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
 }

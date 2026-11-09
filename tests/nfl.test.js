@@ -180,3 +180,22 @@ test('game insights: team trends against this game\'s numbers', () => {
   assert.ok(ins.every(x => x.rate >= 0.75 && x.n >= 5));
   assert.ok(ins.filter(x => x.group === 'AAA|spread').length <= 2);
 });
+
+test('box score: saved game rows by team, else the live ESPN box score', () => {
+  const N = F.nflAddPlayers(F.nflLab({ season: 2026 }, games, teams, {}),
+    { p1: { n: 'Ace QB', pos: 'QB', t: 'AAA', eid: '11' }, p2: { n: 'Bee WR', pos: 'WR', t: 'BBB' } },
+    { cols: ['cmp', 'att', 'pass_yds', 'rec', 'rec_yds'], logs: { p1: [[2026, 1, 'AAA', 'BBB', 20, 30, 250, 0, 0]], p2: [[2026, 1, 'BBB', 'AAA', 0, 0, 0, 6, 88]] } }, {}, {});
+  const B = F.nflBoxScore(N, N.byId.get('g1'));
+  assert.strictEqual(B.live, false);
+  assert.deepStrictEqual([B.teams.AAA.map(x => [x.n, x.r.pass_yds]), B.teams.BBB.map(x => [x.n, x.r.rec_yds])], [[['Ace QB', 250]], [['Bee WR', 88]]]);
+  // A game the data job hasn't saved yet: the live box (ESPN ids, ESPN abbreviations mapped) fills in.
+  const summary = { boxscore: { players: [{ team: { abbreviation: 'AAA' }, statistics: [
+    { name: 'passing', labels: ['C/ATT', 'YDS', 'TD', 'INT'], athletes: [{ athlete: { id: '11', displayName: 'Ace QB' }, stats: ['9/12', '101', '1', '0'] }] }] },
+    { team: { abbreviation: 'BBB' }, statistics: [
+    { name: 'rushing', labels: ['CAR', 'YDS', 'TD'], athletes: [{ athlete: { id: '77', displayName: 'New Guy' }, stats: ['5', '31', '0'] }] }] }] } };
+  N.liveBox = { g2: F.nflParseLiveBox(summary) };
+  const L = F.nflBoxScore(N, N.byId.get('g2'));
+  assert.strictEqual(L.live, true);
+  assert.deepStrictEqual(L.teams.AAA.map(x => [x.pid, x.n, x.r.pass_yds]), [['p1', 'Ace QB', 101]]);
+  assert.strictEqual(F.nflBoxScore(N, N.byId.get('g3')).teams.AAA.length, 0);
+});
