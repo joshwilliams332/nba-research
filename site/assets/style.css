@@ -473,6 +473,11 @@ details.mpicks > summary small { display: block; color: var(--muted); font-size:
 .pselect { display: flex; align-items: center; gap: 8px; padding: 10px 14px 0; font-size: 13px; font-weight: 650; color: var(--accent); cursor: pointer; }
 .pselect input { width: 18px; height: 18px; accent-color: var(--accent); }
 .pickcard.sel { border-color: rgba(255, 138, 61, .6); }
+.pedit { padding: 4px 14px 12px; display: grid; gap: 8px; }
+.pedit .pbfields { gap: 8px; }
+.pedit .pbfields .field { flex: 1 1 0; min-width: 0; }
+label.field > span.pprice { display: flex; gap: 4px; margin: 0; }
+.pprice select { width: 52px; flex: none; padding: 8px 4px; }
 .pickcard.parlay .phead { padding: 12px 14px 6px; align-items: flex-start; gap: 10px; }
 .plegs { padding: 0 14px 8px; }
 .pleg { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; border-top: 1px dashed var(--line); font-size: 13px; color: var(--text); text-decoration: none; }
