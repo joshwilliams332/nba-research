@@ -89,8 +89,13 @@ test('players: logs join their games, windows by line, defense vs position and l
   assert.deepStrictEqual([d.teams.BBB.rank, d.teams.CCC.rank, d.teams.AAA.rank], [1, 2, 3]);
   assert.strictEqual(F.nflVsOpponent(P, 'CCC', 'QB', 'pass_yds')[0].v, 300);
   assert.strictEqual(F.nflGameProps(P, 'g4').qa.pass_yds.line, 240.5);
-  assert.deepStrictEqual(F.nflLadder(240.5, 'pass_yds'), [210.5, 225.5, 240.5, 255.5, 270.5]);
-  assert.deepStrictEqual(F.nflLadder(1.5, 'rec'), [0.5, 1.5, 2.5, 3.5]);
+  // Yardage every 5 yards on the .5, with his real line (48.5) included; counting stats every 1.
+  assert.deepStrictEqual(F.nflLadder(48.5, 'rec_yds'), [29.5, 34.5, 39.5, 44.5, 48.5, 49.5, 54.5, 59.5, 64.5]);
+  assert.deepStrictEqual(F.nflLadder(49.5, 'rec_yds'), [29.5, 34.5, 39.5, 44.5, 49.5, 54.5, 59.5, 64.5, 69.5]);
+  assert.strictEqual(F.nflLadder(240.5, 'pass_yds').length, 13);
+  assert.deepStrictEqual(F.nflLadder(13.5, 'car'), [10.5, 11.5, 12.5, 13.5, 14.5, 15.5, 16.5]);
+  assert.deepStrictEqual(F.nflLadder(1.5, 'rec'), [0.5, 1.5, 2.5, 3.5, 4.5]);
+  assert.deepStrictEqual(F.nflLadder(0.5, 'pass_td'), [0.5, 1.5, 2.5]);
 });
 
 test('saved NFL picks: grading from box scores, open until stats are in, and the stat list matches picks.js', () => {
