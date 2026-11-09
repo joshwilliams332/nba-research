@@ -37,7 +37,8 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
   if (!g) { main.innerHTML = `<div class="card empty">Game not found. <a href="index.html">Back to games</a></div>`; return; }
   const A = L.teams[g.a], H = L.teams[g.h];
   const inj = injuryMap(L);
-  const props = ((L.props.games || {})[g.id]) || [];
+  // Today's props; for an earlier game (props.json only holds today) the morning lines it had, without prices.
+  const props = ((L.props.games || {})[g.id]) || pastProps(L.proplines, g.id);
   document.title = `Hoop Lab · ${g.a} @ ${g.h}`;
 
   const final = g.state === 'post';
@@ -141,7 +142,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     const isOpen = open.has(pid);
     const opp = p.t === g.h ? g.a : g.h;
     const deep = ln => `player.html?id=${pid}&stat=${stat}&line=${ln}&opp=${opp}`;
-    const lineTag = prop ? `<span class="linepill">O ${line} <small>${odds(prop.o)}</small></span>`
+    const lineTag = prop ? `<span class="linepill"${prop.past ? ' title="That day\'s morning line"' : ''}>O ${line} <small>${prop.o != null ? odds(prop.o) : 'line'}</small></span>`
       : `<span class="linepill typical" title="No sportsbook line: half point above the last-10 average floor">O ${line} <small>typical</small></span>`;
     let body = '';
     if (isOpen) {
@@ -155,7 +156,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
           const r = windowRates(x.rows, stat, ln, 'o', { opp, season: L.meta.season });
           const results = r.l10.rows.map(row => outcome(f(row), ln, 'o'));
           const main = ln === line;
-          const price = main && prop ? `${evTag(prop)}<span class="price">${odds(prop.o)} <small>${bookName(prop.bk)}</small></span>` : '';
+          const price = main && prop && prop.o != null ? `${evTag(prop)}<span class="price">${odds(prop.o)} <small>${bookName(prop.bk)}</small></span>` : '';
           const pick = main && g.state === 'pre' ? pickButton({ gid: g.id, pid, name: p.n, stat, side: 'o', line, price: prop ? prop.o : null, book: prop ? prop.bk : null }, saved.has(pickKey({ gid: g.id, pid, stat, side: 'o', line }))) : '';
           return `<div class="lrow${main ? ' main' : ''}">
             <div class="lhead"><b>Over ${ln}</b>${main ? `${moveTag(prop)}` : ''}<span class="grow"></span>${price}${pick}<a class="brk" href="${deep(ln)}">Breakdown ›</a></div>
