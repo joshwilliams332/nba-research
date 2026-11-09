@@ -205,9 +205,8 @@ test('box score: saved game rows by team, else the live ESPN box score', () => {
   assert.strictEqual(F.nflBoxScore(N, N.byId.get('g3')).teams.AAA.length, 0);
 });
 
-test('was text when DraftKings moved off the priced line', () => {
-  const r = { line: 48.5, over: null, was: { line: 53.5, over: -111, under: -115, book_o: 'DraftKings', book_u: 'FanDuel' } };
-  assert.strictEqual(F.nflWasText(r), 'was 53.5 (-111 DraftKings)');
-  assert.strictEqual(F.nflWasText(r, 'u'), 'was 53.5 (-115 FanDuel)');
-  assert.strictEqual(F.nflWasText({ line: 4.5, over: -143 }), '');
+test('DraftKings-now text when DraftKings moved off the priced line', () => {
+  assert.strictEqual(F.nflNowText({ line: 233.5, over: -113, now: 231.5 }), 'DraftKings now 231.5 ↓');
+  assert.strictEqual(F.nflNowText({ line: 214.5, now: 215.5 }), 'DraftKings now 215.5 ↑');
+  assert.strictEqual(F.nflNowText({ line: 4.5, over: -143 }), '');
 });

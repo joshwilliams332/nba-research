@@ -281,12 +281,10 @@ function nflGameProps(N, gid) {
   return out;
 }
 
-/* "was 53.5 (-111 DraftKings)" when DraftKings moved off the line Mingus Picks priced (the row's `was`), else ''. */
-function nflWasText(r, side = 'o') {
-  const w = r && r.was;
-  if (!w || w.line == null) return '';
-  const price = side === 'u' ? w.under : w.over, book = side === 'u' ? w.book_u : w.book_o;
-  return `was ${w.line}${price != null ? ` (${odds(price)}${book ? ` ${book}` : ''})` : ''}`;
+/* "DraftKings now 231.5 ↓" when DraftKings moved off the line Mingus Picks priced (the row's `now`), else ''. */
+function nflNowText(r) {
+  if (!r || r.now == null || r.now === r.line) return '';
+  return `DraftKings now ${r.now} ${r.now > r.line ? '↑' : '↓'}`;
 }
 
 /* Alternate lines around the main line, the way sportsbooks list them: yardage every 5 yards on the .5 (44.5, 49.5, ...)
@@ -658,5 +656,5 @@ function nflStartLive(N, opts) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { nflWasText, nflBoxScore, nflGameInsights, nflInsightCard, nflStrongSide, nflWilson, nflApplyLive, nflParseLiveBox, nflLiveValue, nflLiveScore, nflLiveWait, nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
+  module.exports = { nflNowText, nflBoxScore, nflGameInsights, nflInsightCard, nflStrongSide, nflWilson, nflApplyLive, nflParseLiveBox, nflLiveValue, nflLiveScore, nflLiveWait, nflIso, nflGameView, gradeNflPick, NFL_STATS, NFL_POS_STATS, nflPosGroup, nflAddPlayers, nflPlayerRows, nflNextGame, nflTypical, nflPlayerWindows, nflDefVsPos, nflVsOpponent, nflGameProps, nflLadder, NFL_RANK_STATS, nflLab, nflSide, nflFinals, nflRecord, nflCurrentWeek, nflWeeks, nflLines, nflWindows, nflTeamTotals, nflRanks, nflCommonOpponents, nflKick };
 }

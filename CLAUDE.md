@@ -110,7 +110,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   (`scripts/nfl_espn.py`, tested in `tests/test_nfl_espn.py`, cached in `store/nfl/espn/`: weekly scoreboards with
   DraftKings lines + prices, line history `lines.json` -> games' `open` / `lh`, box scores -> logs and team totals with
   third down / red zone, the injury report, and DraftKings player prop LINES from ESPN's core odds feed (no prices;
-  rows `src: 'espn'`, filling players Mingus Football didn't price; files freeze at kickoff = closing line). When DraftKings moves off a line Mingus Picks priced, the row shows DraftKings' current line (no price) and keeps the priced one as `was` {line, over, under, book_o, book_u}; pages show "was 53.5 (-111 DraftKings)" via `nflWasText`, and the ladder keeps the old rung with its "was" price). ESPN ids map
+  rows `src: 'espn'`, filling players Mingus Football didn't price; files freeze at kickoff = closing line). When DraftKings moves off a line Mingus Picks priced, the row keeps the priced line and odds (like Hoop Lab, every shown line has a price) and gets `now` = DraftKings' current line; pages show "DraftKings now 231.5 ↓" in amber via `nflNowText`, and the ladder adds that rung tagged "DK now". A paid odds plan would price the moved line too). ESPN ids map
   to nflverse gsis ids via roster `espn_id`; players carry `eid`. Live scores: `nflStartLive` in nfl.js (games list and
   game page; "Now" on prop rows), reusing live.js helpers. nflverse release CSVs cover last season and are the fallback
   (schedules with lines and prices, team + player weekly stats,
