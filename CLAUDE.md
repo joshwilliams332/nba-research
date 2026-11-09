@@ -127,7 +127,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   offense vs defense ranks, common opponents, last 5 ATS / O/U), `nfl-player.html` (stat tabs by position, book or
   typical line, H2H / L5 / L10 / L20 / season / last season, chart, supporting stats, defense vs position rank +
   players vs that defense, game log, Mingus projection box), `nfl-props.html` (week's props, sort bar, stat and side
-  filters in `hooplab.nflprops`), `nfl-players.html`, `nfl-trends.html` (this week's `nflGameInsights` across games, Trends in the NFL bottom nav; the game page has Odds (Game lines / Player props with stat chips) · Insights · Matchup like Hoop Lab). Defense-vs-position ranks: 1 = allows the most (soft for an
+  filters in `hooplab.nflprops`), `nfl-players.html`, `nfl-trends.html` (this week's `nflGameInsights` across games, Trends in the NFL bottom nav; the game page has Odds (Game lines / Player props with stat chips) · Insights · Matchup like Hoop Lab, plus a Box score tab once a game starts that a finished game opens on: team stats, then passing / rushing / receiving per team from logs (`nflBoxScore`), the live ESPN box score while it's on or before the data job saves it, stats green / red vs that game's prop line). Defense-vs-position ranks: 1 = allows the most (soft for an
   over); team Matchup ranks: 1 = best. **Shared My picks (Phase 3):** picks with `sport: 'nfl'` (stats in
   `NFL_PICK_STATS`, kept equal to `NFL_STATS` by a test) are saved from bookmarks on the NFL props page, game-page
   ladder rungs and the player page line card, and graded by `gradeNflPick()` (open until the game is final and its
