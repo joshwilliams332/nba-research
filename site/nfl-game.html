@@ -170,11 +170,15 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   function ladder(x) {
     saved = savedKeys();
     const rows = x.rows, f = NFL_STATS[x.stat].f;
-    return nflLadder(x.line, x.stat).map(line => {
+    const was = x.r && x.r.was && x.r.was.line != null ? x.r.was.line : null;
+    const lines = nflLadder(x.line, x.stat);
+    if (was != null && !lines.includes(was)) { lines.push(was); lines.sort((a, b) => a - b); }
+    return lines.map(line => {
       const res = rows.slice(-10).map(r => outcome(f(r), line, 'o')), t = tally(res);
       const main = line === x.line, price = main && x.r ? x.r.over : null;
+      const wasTag = line === was && !main ? `<span class="price was" title="Priced before DraftKings moved the line">was ${x.r.was.over != null ? odds(x.r.was.over) : ''}</span>` : '';
       return `<div class="row nflrung${main ? ' main' : ''}"><b class="ln">O ${line}</b><div class="grow">${strip(res, rows.slice(-10).map(r => `Wk ${r.week} ${r.home ? 'vs' : '@'} ${r.opp}: ${f(r)}`))}</div>${rateTag(t)}
-        ${price != null ? `<span class="price">${odds(price)}</span>` : ''}
+        ${price != null ? `<span class="price">${odds(price)}</span>` : wasTag}
         ${g.final ? '' : pickButton(pf(x, line, price), saved.has(pickKey(pf(x, line, price))))}
         <a class="gopill" href="nfl-player.html?id=${encodeURIComponent(x.pid)}&stat=${x.stat}&line=${line}&g=${encodeURIComponent(g.id)}" aria-label="Breakdown">›</a></div>`;
     }).join('');
@@ -202,7 +206,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
       return `<div class="proprow compact${open ? ' open' : ''}">
         <div class="head" data-open="${esc(key)}"><a class="plink" href="${href}" aria-label="${esc(p.n)}">${p.img ? `<img class="nflmug" src="${esc(p.img)}" alt="" width="40" height="40" loading="lazy" onerror="this.remove()">` : '<span class="nflmug"></span>'}</a>
           <div class="grow"><a class="name" href="${href}">${esc(p.n)}</a>${inj}
-            <div class="sub">${esc(x.team)} · ${esc(NFL_STATS[x.stat].label)}</div></div>
+            <div class="sub">${esc(x.team)} · ${esc(NFL_STATS[x.stat].label)}</div>${nflWasText(x.r) ? `<div class="sub wasline">DraftKings moved it · ${esc(nflWasText(x.r))}</div>` : ''}</div>
           ${liveTag(nflLiveValue(N, g.id, x.pid, x.stat), x.line)}${linePill(x)}<span class="chev">⌄</span></div>
         ${open ? `<div class="nflladder">${ladder(x)}</div>` : ''}</div>`;
     }).join('')}</div>
