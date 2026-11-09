@@ -393,8 +393,8 @@ def apply_espn_injuries(players, injuries, ids):
 
 def merge_props(props, espn_props, ids, players):
     """ESPN's DraftKings lines (no prices) fill in every player / stat Mingus Picks didn't pull; rows it did pull keep
-    their prices and get the DraftKings open when the line matches, or, when DraftKings' line has since moved, show the
-    new line with the priced one under `was`. Every ESPN-sourced row is marked `src: 'espn'`."""
+    their line and prices, get the DraftKings open when the line matches, and `now` = DraftKings' current line when it
+    has moved since the pull. Every ESPN-sourced row is marked `src: 'espn'`."""
     added = 0
     for gid, rows in espn_props.items():
         mine = props["games"].setdefault(gid, [])
@@ -409,12 +409,11 @@ def merge_props(props, espn_props, ids, players):
                 if row.get("line") == r["line"]:
                     if r.get("open") is not None:
                         row["open"] = r["open"]
-                elif r.get("line") is not None and row.get("over") is not None:
-                    # DraftKings has moved off the priced line since Mingus Picks' pull: show DraftKings' line now and
-                    # keep the priced one as `was` (its price is for that old line, so it's no longer on the row).
-                    row["was"] = {k: row.get(k) for k in ("line", "over", "under", "book_o", "book_u")}
-                    row.update({"line": r["line"], "open": r.get("open"), "over": None, "under": None, "fair_o": None, "fair_u": None,
-                                "book_o": "DraftKings", "book_u": "DraftKings", "src": "espn"})
+                elif r.get("line") is not None:
+                    # DraftKings has moved off the priced line since Mingus Picks' pull. The row keeps the priced line
+                    # and its odds (like Hoop Lab, every shown line has a price) and notes DraftKings' line now (no
+                    # price: ESPN's feed has lines only).
+                    row["now"] = r["line"]
                 continue
             p = players.get(pid, {})
             mine.append({"pid": pid, "name": p.get("n") or match[2], "team": p.get("t"), "pos": p.get("pos") or match[1],
