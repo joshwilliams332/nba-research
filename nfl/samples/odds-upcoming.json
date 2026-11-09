@@ -5,148 +5,82 @@
  "pageCount": 1,
  "items": [
   {
-   "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873050/competitions/401873050/odds/100?lang=en&region=us",
+   "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873051/competitions/401873051/odds/100?lang=en&region=us",
    "provider": {
     "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/providers/100?lang=en&region=us",
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1
    },
-   "details": "CHI -6.5",
-   "overUnder": 47.5,
-   "spread": -6.5,
-   "overOdds": -105.0,
-   "underOdds": -115.0,
+   "details": "BUF -3",
+   "overUnder": 43.5,
+   "spread": 3.0,
+   "overOdds": -118.0,
+   "underOdds": -102.0,
    "awayTeamOdds": {
-    "favorite": false,
-    "underdog": true,
-    "moneyLine": 245,
-    "spreadOdds": -105.0,
-    "open": {
-     "favorite": false,
-     "pointSpread": {
-      "alternateDisplayValue": "+3.5",
-      "american": "+3.5"
-     },
-     "spread": {
-      "value": 1.9,
-      "displayValue": "10/11",
-      "alternateDisplayValue": "-110",
-      "decimal": 1.9,
-      "fraction": "10/11",
-      "american": "-110"
-     },
-     "moneyLine": {
-      "value": 2.6,
-      "displayValue": "8/5",
-      "alternateDisplayValue": "+160",
-      "decimal": 2.6,
-      "fraction": "8/5",
-      "american": "+160"
-     }
-    },
-    "close": {
-     "pointSpread": {
-      "alternateDisplayValue": "+6.5",
-      "american": "+6.5"
-     },
-     "spread": {
-      "value": 1.95,
-      "displayValue": "20/21",
-      "alternateDisplayValue": "-105",
-      "decimal": 1.95,
-      "fraction": "20/21",
-      "american": "-105"
-     },
-     "moneyLine": {
-      "value": 3.45,
-      "displayValue": "49/20",
-      "alternateDisplayValue": "+245",
-      "decimal": 3.45,
-      "fraction": "49/20",
-      "american": "+245"
-     }
-    },
-    "current": {
-     "pointSpread": {
-      "alternateDisplayValue": "+6.5",
-      "american": "+6.5"
-     },
-     "spread": {
-      "value": 1.95,
-      "displayValue": "20/21",
-      "alternateDisplayValue": "-105",
-      "decimal": 1.95,
-      "fraction": "20/21",
-      "american": "-105"
-     },
-     "moneyLine": {
-      "value": 3.45,
-      "displayValue": "49/20",
-      "alternateDisplayValue": "+245",
-      "decimal": 3.45,
-      "fraction": "49/20",
-      "american": "+245"
-     }
-    },
-    "team": {
-     "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/27?lang=en&region=us"
-    }
-   },
-   "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -305,
-    "spreadOdds": -115.0,
+    "moneyLine": -175,
+    "spreadOdds": -120.0,
     "open": {
      "favorite": true,
      "pointSpread": {
-      "alternateDisplayValue": "-3.5",
-      "american": "-3.5"
+      "alternateDisplayValue": "-3",
+      "american": "-3"
      },
      "spread": {
-      "value": 1.9,
-      "displayValue": "10/11",
-      "alternateDisplayValue": "-110",
-      "decimal": 1.9,
-      "fraction": "10/11",
-      "american": "-110"
+      "value": 1.95,
+      "displayValue": "20/21",
+      "alternateDisplayValue": "-105",
+      "decimal": 1.95,
+      "fraction": "20/21",
+      "american": "-105"
      },
      "moneyLine": {
-      "value": 1.52,
-      "displayValue": "25/48",
-      "alternateDisplayValue": "-192",
-      "decimal": 1.52,
-      "fraction": "25/48",
-      "american": "-192"
-     }
-    },
-    "close": {
-     "pointSpread": {
-      "alternateDisplayValue": "-6.5",
-      "american": "-6.5"
-     },
-     "spread": {
-      "value": 1.86,
-      "displayValue": "20/23",
-      "alternateDisplayValue": "-115",
-      "decimal": 1.86,
-      "fraction": "20/23",
-      "american": "-115"
-     },
-     "moneyLine": {
-      "value": 1.32,
-      "displayValue": "20/61",
-      "alternateDisplayValue": "-305",
-      "decimal": 1.32,
-      "fraction": "20/61",
-      "american": "-305"
+      "value": 1.64,
+      "displayValue": "20/31",
+      "alternateDisplayValue": "-155",
+      "decimal": 1.64,
+      "fraction": "20/31",
+      "american": "-155"
      }
     },
     "current": {
      "pointSpread": {
-      "alternateDisplayValue": "-6.5",
-      "american": "-6.5"
+      "alternateDisplayValue": "-3",
+      "american": "-3"
+     },
+     "spread": {
+      "value": 1.83,
+      "displayValue": "5/6",
+      "alternateDisplayValue": "-120",
+      "decimal": 1.83,
+      "fraction": "5/6",
+      "american": "-120"
+     },
+     "moneyLine": {
+      "value": 1.57,
+      "displayValue": "4/7",
+      "alternateDisplayValue": "-175",
+      "decimal": 1.57,
+      "fraction": "4/7",
+      "american": "-175"
+     }
+    },
+    "team": {
+     "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/2?lang=en&region=us"
+    }
+   },
+   "homeTeamOdds": {
+    "favorite": false,
+    "underdog": true,
+    "moneyLine": 145,
+    "spreadOdds": 100.0,
+    "open": {
+     "favorite": false,
+     "pointSpread": {
+      "alternateDisplayValue": "+3",
+      "american": "+3"
      },
      "spread": {
       "value": 1.86,
@@ -157,16 +91,38 @@
       "american": "-115"
      },
      "moneyLine": {
-      "value": 1.32,
-      "displayValue": "20/61",
-      "alternateDisplayValue": "-305",
-      "decimal": 1.32,
-      "fraction": "20/61",
-      "american": "-305"
+      "value": 2.3,
+      "displayValue": "13/10",
+      "alternateDisplayValue": "+130",
+      "decimal": 2.3,
+      "fraction": "13/10",
+      "american": "+130"
+     }
+    },
+    "current": {
+     "pointSpread": {
+      "alternateDisplayValue": "+3",
+      "american": "+3"
+     },
+     "spread": {
+      "value": 2.0,
+      "displayValue": "1/1",
+      "alternateDisplayValue": "+100",
+      "decimal": 2.0,
+      "fraction": "1/1",
+      "american": "+100"
+     },
+     "moneyLine": {
+      "value": 2.45,
+      "displayValue": "29/20",
+      "alternateDisplayValue": "+145",
+      "decimal": 2.45,
+      "fraction": "29/20",
+      "american": "+145"
      }
     },
     "team": {
-     "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/3?lang=en&region=us"
+     "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/16?lang=en&region=us"
     }
    },
    "links": [
@@ -176,9 +132,9 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118027%3Foutcomes%3D0ML84695460_1",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0ML84695600_1",
      "text": "Home Bet",
      "shortText": "Home Bet",
      "isExternal": true,
@@ -190,9 +146,9 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118027%3Foutcomes%3D0ML84695460_3",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0ML84695600_3",
      "text": "Away Bet",
      "shortText": "Away Bet",
      "isExternal": true,
@@ -205,7 +161,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118027%3Foutcomes%3D0HC84695460N650_1",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0HC84695600P300_1",
      "text": "Home Point Spread",
      "shortText": "Home Point Spread",
      "isExternal": true,
@@ -218,7 +174,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118027%3Foutcomes%3D0HC84695460P650_3",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0HC84695600N300_3",
      "text": "Away Point Spread",
      "shortText": "Away Point Spread",
      "isExternal": true,
@@ -231,7 +187,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118027%3Foutcomes%3D0OU84695460O4750_1",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0OU84695600O4350_1",
      "text": "Over Odds",
      "shortText": "Over Odds",
      "isExternal": true,
@@ -244,7 +200,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118027%3Foutcomes%3D0OU84695460U4750_3",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0OU84695600U4350_3",
      "text": "Under Odds",
      "shortText": "Under Odds",
      "isExternal": true,
@@ -257,7 +213,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118027",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167",
      "text": "Game",
      "shortText": "Game",
      "isExternal": true,
@@ -288,52 +244,30 @@
      "american": "48.5"
     }
    },
-   "close": {
-    "over": {
-     "value": 1.95,
-     "displayValue": "20/21",
-     "alternateDisplayValue": "-105",
-     "decimal": 1.95,
-     "fraction": "20/21",
-     "american": "-105"
-    },
-    "under": {
-     "value": 1.86,
-     "displayValue": "20/23",
-     "alternateDisplayValue": "-115",
-     "decimal": 1.86,
-     "fraction": "20/23",
-     "american": "-115"
-    },
-    "total": {
-     "alternateDisplayValue": "47.5",
-     "american": "47.5"
-    }
-   },
    "current": {
     "over": {
-     "value": 1.95,
-     "displayValue": "20/21",
-     "alternateDisplayValue": "-105",
-     "decimal": 1.95,
-     "fraction": "20/21",
-     "american": "-105"
+     "value": 1.84,
+     "displayValue": "50/59",
+     "alternateDisplayValue": "-118",
+     "decimal": 1.84,
+     "fraction": "50/59",
+     "american": "-118"
     },
     "under": {
-     "value": 1.86,
-     "displayValue": "20/23",
-     "alternateDisplayValue": "-115",
-     "decimal": 1.86,
-     "fraction": "20/23",
-     "american": "-115"
+     "value": 1.98,
+     "displayValue": "50/51",
+     "alternateDisplayValue": "-102",
+     "decimal": 1.98,
+     "fraction": "50/51",
+     "american": "-102"
     },
     "total": {
-     "alternateDisplayValue": "47.5",
-     "american": "47.5"
+     "alternateDisplayValue": "43.5",
+     "american": "43.5"
     }
    },
    "propBets": {
-    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873050/competitions/401873050/odds/100/propBets?lang=en&region=us"
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873051/competitions/401873051/odds/100/propBets?lang=en&region=us"
    }
   }
  ]
