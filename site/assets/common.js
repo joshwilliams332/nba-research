@@ -72,6 +72,16 @@ function median(vals) {
 
 /* When no sportsbook line exists: the half-point line just above the player's last-10 average floor,
    e.g. 24.3 -> 24.5, so it sits where a book would hang it and can't push. */
+/* A past game's sportsbook lines, once props.json (today only) has moved on: the morning lines kept in proplines.json
+   (player -> game -> stat -> line), as prop rows without prices ({id, s, l, past: true}). */
+function pastProps(proplines, gid) {
+  const out = [];
+  for (const [pid, games] of Object.entries(proplines || {})) {
+    for (const [s, l] of Object.entries((games || {})[gid] || {})) if (l != null) out.push({ id: pid, s, l, o: null, u: null, past: true });
+  }
+  return out;
+}
+
 function typicalLine(rows, stat) {
   const vals = rows.slice(-10).map(STATS[stat].f);
   if (!vals.length) return 0.5;
@@ -802,5 +812,5 @@ function fail(err) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { STATS, STAT_ORDER, WINDOWS, outcome, tally, mean, median, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, injuryStatus, lastName, SHRINK_K };
+  module.exports = { STATS, STAT_ORDER, WINDOWS, outcome, tally, mean, median, pastProps, typicalLine, indexLab, playerRows, applyFilters, windowRates, teamSide, teamFinals, lineResults, h2hSides, teamSplits, streakOf, gamesBehind, standings, signed, odds, pct, posBucket, defenseVsPosition, oppRank, rankClass, priorRate, adjustedRate, teammateBoost, outMates, injuryStatus, lastName, SHRINK_K };
 }

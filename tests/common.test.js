@@ -172,3 +172,10 @@ test('injury status: a day-to-day entry takes the status its note gives', () => 
   assert.strictEqual(st('Day-To-Day', 'Listed day-to-day with soreness'), 'Day-To-Day');
   assert.strictEqual(st('Out', 'Probable to return next week'), 'Out');  // only day-to-day entries are reread
 });
+
+test("a past game's morning lines stand in for props once props.json has moved on", () => {
+  const C = require('../site/assets/common.js');
+  const rows = C.pastProps({ p1: { g1: { pts: 26.5, reb: 4.5 }, g2: { pts: 20.5 } }, p2: { g1: { ast: 6.5 } } }, 'g1');
+  assert.deepStrictEqual(rows.map(r => [r.id, r.s, r.l, r.o, r.past]), [['p1', 'pts', 26.5, null, true], ['p1', 'reb', 4.5, null, true], ['p2', 'ast', 6.5, null, true]]);
+  assert.deepStrictEqual(C.pastProps(null, 'g1'), []);
+});
