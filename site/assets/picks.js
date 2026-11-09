@@ -125,6 +125,54 @@ function gradeParlay(L, pick, legGrade = leg => gradeResult(L, leg)) {
   return out('win', payout('win', price, units), { price, reduced: kept.length < pick.legs.length });
 }
 
+// ---------------------------------------------------------------- editing
+
+/* "+150", "-143", "150" -> number; "" -> null; anything else (or |odds| under 100) -> NaN. */
+function parsePrice(text) {
+  const t = String(text == null ? '' : text).trim().replace(/[−–]/g, '-');
+  if (!t) return null;
+  if (!/^[+-]?\d{3,5}$/.test(t)) return NaN;
+  const n = parseInt(t.replace('+', ''), 10);
+  return Math.abs(n) >= 100 ? n : NaN;
+}
+
+/* Edit a saved pick or parlay in place: price (what your book gave you), book, units, boost (parlays), line (singles).
+   changes: {price?: text, book?, units?, boost?, line?}. Returns an error message, or null when saved. */
+function editPick(list, id, changes) {
+  const p = list.find(x => x.id === id);
+  if (!p) return 'Pick not found.';
+  if ('price' in changes) {
+    const price = parsePrice(changes.price);
+    if (Number.isNaN(price)) return 'Price should look like -110 or +150.';
+    p.price = price;
+  }
+  if ('book' in changes) p.book = changes.book || null;
+  if ('units' in changes) {
+    const u = +changes.units;
+    if (!(u > 0 && u <= 100)) return 'Units should be between 0 and 100.';
+    p.units = u;
+  }
+  if (p.type === 'parlay') {
+    if ('boost' in changes) { if (+changes.boost > 0) p.boost = +changes.boost; else delete p.boost; }
+  } else if ('line' in changes) {
+    const line = +changes.line;
+    if (!(isFinite(line) && line >= 0 && Math.round(line * 2) === line * 2)) return 'Line should be a number like 48.5.';
+    p.line = line;
+  }
+  p.editedAt = new Date().toISOString();
+  return null;
+}
+
+/* Combine saved singles (open or already graded) into one parlay at the price your book gave, optionally removing the
+   singles so they don't count twice. Returns the new list. */
+function combineIntoParlay(list, ids, fields, replace) {
+  const legs = list.filter(p => ids.includes(p.id) && p.type !== 'parlay');
+  if (legs.length < 2) return list;
+  const parlay = makeParlay({ ...fields, legs });
+  if (legs.length && legs.every(l => l.savedAt)) parlay.savedAt = legs.map(l => l.savedAt).sort()[0];
+  return [...(replace ? list.filter(p => !ids.includes(p.id)) : list), parlay];
+}
+
 // ---------------------------------------------------------------- import / export
 
 const TEAM_MARKETS = ['ml', 'spread', 'total'];
@@ -398,5 +446,5 @@ async function sharePNG(canvas, filename) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { NFL_PICK_STATS, toDecimal, toAmerican, parlayPrice, boostedPrice, makeParlay, validParlay, gradeParlay, gradeResult, pickKey, makePick, validPick, exportPicks, parseImport, mergePicks, payout, settle, gradePick, summarize, closeLine, clvPoints, pickText };
+  module.exports = { parsePrice, editPick, combineIntoParlay, NFL_PICK_STATS, toDecimal, toAmerican, parlayPrice, boostedPrice, makeParlay, validParlay, gradeParlay, gradeResult, pickKey, makePick, validPick, exportPicks, parseImport, mergePicks, payout, settle, gradePick, summarize, closeLine, clvPoints, pickText };
 }

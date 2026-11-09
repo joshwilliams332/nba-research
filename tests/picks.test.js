@@ -152,3 +152,29 @@ test('parlays: built from legs, validated, and graded like a sportsbook', () => 
   const back = P.parseImport(P.exportPicks([both]));
   assert.strictEqual(back.picks.length, 1);
 });
+
+test('editing a saved pick: price you got, book, line, units; bad input changes nothing', () => {
+  const P = require('../site/assets/picks.js');
+  assert.deepStrictEqual(['-143', '+150', '150', '', '−120', '99', 'abc'].map(P.parsePrice), [-143, 150, 150, null, -120, NaN, NaN]);
+  const list = [P.makePick({ sport: 'nfl', gid: 'g', pid: 'p', stat: 'car', side: 'o', line: 13.5, price: null })];
+  const id = list[0].id;
+  assert.strictEqual(P.editPick(list, id, { price: '-125', book: 'draftkings', line: '14.5', units: '2' }), null);
+  assert.deepStrictEqual([list[0].price, list[0].book, list[0].line, list[0].units], [-125, 'draftkings', 14.5, 2]);
+  assert.match(P.editPick(list, id, { price: '-12' }), /Price/);
+  assert.match(P.editPick(list, id, { line: '14.2' }), /Line/);
+  assert.strictEqual(list[0].price, -125);
+});
+
+test('graded singles combine into a parlay at the book price, replacing the singles', () => {
+  const P = require('../site/assets/picks.js');
+  const a = P.makePick({ gid: 'g1', pid: '1', stat: 'pts', side: 'o', line: 10.5, price: -110 });
+  const b = P.makePick({ gid: 'g2', pid: '2', stat: 'reb', side: 'u', line: 7.5, price: -120 });
+  const c = P.makePick({ gid: 'g3', pid: '3', stat: 'ast', side: 'o', line: 4.5, price: 100 });
+  const out = P.combineIntoParlay([a, b, c], [a.id, b.id], { price: 250, units: 1 }, true);
+  assert.deepStrictEqual(out.map(p => p.type || 'single'), ['single', 'parlay']);
+  assert.strictEqual(out[1].price, 250);
+  assert.strictEqual(out[1].legs.length, 2);
+  assert.strictEqual(P.combineIntoParlay([a, b, c], [a.id, b.id], {}, false).length, 4);
+  P.editPick(out, out[1].id, { price: '+265', boost: '25' });
+  assert.deepStrictEqual([out[1].price, out[1].boost], [265, 25]);
+});

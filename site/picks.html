@@ -34,7 +34,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   footer(L);
   const root = document.getElementById('picks');
   const RANGES = [['all', 'All'], ['7', 'Last 7 days'], ['30', 'Last 30 days'], ['season', 'This season'], ['custom', 'Dates']];
-  const st = { range: store('picksRange') || 'all', from: '', to: '', manage: false, msg: '', building: false, sel: new Set(), boost: 0, price: '', units: 1 };
+  const st = { range: store('picksRange') || 'all', from: '', to: '', manage: false, msg: '', building: false, sel: new Set(), boost: 0, price: '', units: 1, replace: true, edit: null, err: '' };
   let model = null;  // today's locked model picks (data/digest.json), when the data job has written them
   const modelReady = load('digest').then(([d]) => d).catch(() => null);
   // NFL Lab: its data (to grade NFL picks) and Mingus Picks' locked model picks.
@@ -92,6 +92,31 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
 
   const LEG_MARK = { win: '✓', loss: '✗', push: '–', void: '–', live: '●', open: '○' };
 
+  // Edit a saved pick: the price and book you actually got (e.g. your DraftKings odds), units, and the line
+  // (singles) or profit boost (parlays). Grading and the record use the edited numbers.
+  const EDIT_BOOKS = [['draftkings', 'DraftKings'], ['fanduel', 'FanDuel'], ['betmgm', 'BetMGM'], ['williamhill_us', 'Caesars'], ['espnbet', 'ESPN BET'],
+    ['fanatics', 'Fanatics'], ['betrivers', 'BetRivers'], ['hardrockbet', 'Hard Rock'], ['', 'Other / none']];
+  function editForm(pick) {
+    if (st.edit !== pick.id) return '';
+    const pr = pick.price == null ? '' : String(Math.abs(pick.price)), neg = pick.price == null || pick.price < 0;
+    const book = EDIT_BOOKS.some(([k]) => k && k === pick.book) ? pick.book : '';
+    return `<div class="pedit" data-editform="${esc(pick.id)}">
+      <div class="row pbfields">
+        <label class="field"><span>Price</span><span class="pprice"><select data-e="sign" aria-label="Plus or minus"><option value="-"${neg ? ' selected' : ''}>−</option><option value="+"${neg ? '' : ' selected'}>+</option></select>
+          <input data-e="price" inputmode="numeric" placeholder="110" value="${esc(pr)}"></span></label>
+        <label class="field"><span>Book</span><select data-e="book">${EDIT_BOOKS.map(([k, l]) => `<option value="${k}"${k === book ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
+      </div>
+      <div class="row pbfields">
+        ${isParlay(pick) ? `<label class="field"><span>Profit boost</span><select data-e="boost">${[0, 10, 20, 25, 30, 50, 100].map(b => `<option value="${b}"${(pick.boost || 0) === b ? ' selected' : ''}>${b ? `${b}%` : 'None'}</option>`).join('')}</select></label>`
+          : `<label class="field"><span>Line</span><input data-e="line" inputmode="decimal" value="${esc(String(pick.line))}"></label>`}
+        <label class="field"><span>Units</span><input data-e="units" inputmode="decimal" value="${esc(String(pick.units || 1))}"></label>
+      </div>
+      ${st.err ? `<p class="note warn">${esc(st.err)}</p>` : ''}
+      <div class="row" style="gap:8px;justify-content:flex-end"><button class="btn" data-editcancel="1">Cancel</button><button class="btn primary" data-editsave="${esc(pick.id)}">Save</button></div>
+    </div>`;
+  }
+  const editBtn = pick => `<button class="iconbtn" data-edit="${esc(pick.id)}" aria-label="Edit this pick" title="Edit price, book, line or units">✎</button>`;
+
   function parlayCard({ pick, grade }) {
     const boosted = boostedPrice(pick.price, pick.boost);
     const price = pick.price != null ? `${odds(pick.price)}${pick.boost ? ` · <b>${odds(boosted)}</b> with a ${pick.boost}% boost` : ''}${pick.book ? ` ${esc(bookName(pick.book))}` : ''}` : '';
@@ -110,8 +135,9 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     return `<div class="pickcard parlay ${grade.status}">
       <div class="row phead"><div class="grow"><div class="name">${esc(pickText(pick))}</div><div class="sub">${price}</div></div>${statusChip(grade)}</div>
       <div class="plegs">${legs}</div>
+      ${editForm(pick)}
       <div class="pfoot">${result}<span class="grow"></span>
-        <button class="iconbtn" data-share="${esc(pick.id)}" aria-label="Share this parlay" title="Share">${ICON_SHARE}</button>
+        ${editBtn(pick)}<button class="iconbtn" data-share="${esc(pick.id)}" aria-label="Share this parlay" title="Share">${ICON_SHARE}</button>
         <button class="iconbtn" data-remove="${esc(pick.id)}" aria-label="Remove this parlay" title="Remove">×</button></div>
     </div>`;
   }
@@ -120,9 +146,9 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     if (isParlay(r.pick)) return parlayCard(r);
     const { pick, grade } = r;
     const w = who(pick), g = grade.g;
-    const pickable = st.building && grade.status === 'open';
+    const pickable = st.building;   // open or already graded: you can log a parlay you bet after the fact
     const game = g ? `${g.a} @ ${g.h} · ${fmtDay(g.d, { month: 'short', day: 'numeric' })}` : 'Game not found';
-    const price = pick.price != null ? `${odds(pick.price)}${pick.book ? ` ${bookName(pick.book)}` : ''}` : 'no price (−110 assumed)';
+    const price = pick.price != null ? `${odds(pick.price)}${pick.book ? ` ${bookName(pick.book)}` : ''}` : 'no price yet (tap ✎ to add yours; −110 until then)';
     const decided = ['win', 'loss', 'push', 'void'].includes(grade.status);
     const result = decided
       ? `<span class="pres">${grade.actual != null ? `Actual <b>${fmt1(grade.actual)}</b> · ` : ''}<b class="${grade.profit > 0 ? 'up' : grade.profit < 0 ? 'down' : ''}">${units(grade.profit)}</b>${grade.why ? ` · ${esc(grade.why)}` : ''}</span>`
@@ -135,8 +161,9 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
           <div class="sub"><b>${esc(pickText(pick))}</b> · ${esc(price)}</div>
           <div class="sub">${esc(game)}</div></div>
         ${statusChip(grade)}</a>
+      ${editForm(pick)}
       <div class="pfoot">${result}${clv}<span class="grow"></span>
-        <button class="iconbtn" data-share="${esc(pick.id)}" aria-label="Share this pick" title="Share">${ICON_SHARE}</button>
+        ${editBtn(pick)}<button class="iconbtn" data-share="${esc(pick.id)}" aria-label="Share this pick" title="Share">${ICON_SHARE}</button>
         <button class="iconbtn" data-remove="${esc(pick.id)}" aria-label="Remove this pick" title="Remove">×</button></div>
     </div>`;
   }
@@ -271,7 +298,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     const sameGame = new Set(legs.map(l => l.gid)).size < legs.length;
     return `<div class="parlaybar" role="region" aria-label="Parlay builder">
       <div class="row"><b>${legs.length} leg${legs.length === 1 ? '' : 's'}</b>
-        <span class="grow muted">${price != null ? `${odds(price)}${st.boost ? ` → ${odds(boosted)} boosted` : ''}` : 'pick 2 or more open picks'}</span>
+        <span class="grow muted">${price != null ? `${odds(price)}${st.boost ? ` → ${odds(boosted)} boosted` : ''}` : 'tick 2 or more picks'}</span>
         <button class="btn" data-build="cancel">Cancel</button></div>
       ${sameGame ? '<p class="note warn">Two legs are from the same game. Books price those as a same-game parlay, so enter the price your book shows.</p>' : ''}
       <div class="row pbfields">
@@ -279,6 +306,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
         <label class="field"><span>Profit boost</span><select data-pboost="1">${[0, 10, 20, 25, 30, 50, 100].map(b => `<option value="${b}"${st.boost === b ? ' selected' : ''}>${b ? `${b}%` : 'None'}</option>`).join('')}</select></label>
         <label class="field"><span>Units</span><select data-punits="1">${[0.5, 1, 2, 3, 4, 5].map(u => `<option value="${u}"${st.units === u ? ' selected' : ''}>${u}</option>`).join('')}</select></label>
         <button class="btn primary" data-build="save"${legs.length >= 2 ? '' : ' disabled'}>Save parlay</button></div>
+      <label class="pselect" style="padding:6px 0 0"><input type="checkbox" data-preplace="1"${st.replace ? ' checked' : ''}> Remove these singles (you bet them as a parlay)</label>
     </div>`;
   }
 
@@ -290,7 +318,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
       if (!days.has(d)) days.set(d, []);
       days.get(d).push(r);
     }
-    return [...days.entries()].map(([d, rows], i) => `<details class="pday mine" data-open="d${d}"${isOpen(`d${d}`, i === 0) ? ' open' : ''}>
+    return [...days.entries()].map(([d, rows], i) => `<details class="pday mine" data-open="d${d}"${st.building || isOpen(`d${d}`, i === 0) ? ' open' : ''}>
       <summary><span class="grow">${esc(fmtDay(d, { weekday: 'short', month: 'short', day: 'numeric' }))} <small>${rows.length} pick${rows.length === 1 ? '' : 's'}</small></span>
         <span class="pdayrec">${recordLine(summarize(rows))}</span></summary>${rows.map(pickCard).join('')}</details>`).join('');
   }
@@ -322,12 +350,13 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
         <button class="btn" data-sharerecord="1">${ICON_SHARE} Share record</button></div>
       ${s.clv == null ? '<p class="note">Closing line value appears once a pre-tip line is on record for your picks.</p>' : ''}
     </div>`;
-    const openSingles = open.filter(r => !isParlay(r.pick)).length;
+    const singles = rows.filter(r => !isParlay(r.pick)).length;
+    const buildBtn = singles >= 2 && !st.building ? '<button class="btn" data-build="start">Build a parlay</button>' : '';
     root.innerHTML = modelCards() + ranges + record
       + (open.length ? `<div class="row psec"><h2 class="grow" style="margin:0">Open <small>${open.length}</small></h2>
-          ${openSingles >= 2 && !st.building ? '<button class="btn" data-build="start">Build a parlay</button>' : ''}</div>
-          ${st.building ? '<p class="note">Tick the picks to combine, then set the price your book shows.</p>' : ''}${open.map(pickCard).join('')}` : '')
-      + (done.length ? `<h2 class="psec">Graded <small>${done.length}</small></h2>${gradedByDay(done)}` : '')
+          ${buildBtn}</div>
+          ${st.building ? '<p class="note">Tick the picks to combine (open or graded), then set the price your book shows.</p>' : ''}${open.map(pickCard).join('')}` : '')
+      + (done.length ? `<div class="row psec"><h2 class="grow" style="margin:0">Graded <small>${done.length}</small></h2>${open.length ? '' : buildBtn}</div>${gradedByDay(done)}` : '')
       + (!rows.length ? `<div class="card empty">No picks in this date range.</div>` : '')
       + `<div class="grid2">${breakdownTable('By market', breakdown(done, p => (isParlay(p) ? 'parlay' : `${isNfl(p) ? 'nfl' : 'nba'}:${p.stat}`), k => (k === 'parlay' ? 'Parlays' : k.startsWith('nfl:') ? `NFL ${pickMarketLabel(k.slice(4), 'nfl').toLowerCase()}` : pickMarketLabel(k.slice(4)))))}
         ${breakdownTable('By side', breakdown(done, p => (isParlay(p) ? 'parlay' : p.side), k => ({ o: 'Overs', u: 'Unders', h: 'Home', a: 'Away', parlay: 'Parlays' }[k] || k)))}
@@ -359,18 +388,31 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
   }
 
   root.addEventListener('click', async e => {
-    const t = e.target.closest('[data-range],[data-remove],[data-share],[data-sharerecord],[data-manage],[data-export],[data-import],[data-clearall],[data-build],[data-addmodel]');
+    const t = e.target.closest('[data-range],[data-remove],[data-share],[data-sharerecord],[data-manage],[data-export],[data-import],[data-clearall],[data-build],[data-addmodel],[data-edit],[data-editsave],[data-editcancel]');
     if (!t) return;
     const d = t.dataset;
-    if (d.build === 'start') { Object.assign(st, { building: true, sel: new Set(), boost: 0, price: '', units: 1 }); render(); }
+    if (d.edit) { st.edit = st.edit === d.edit ? null : d.edit; st.err = ''; render(); return; }
+    if (d.editcancel) { st.edit = null; st.err = ''; render(); return; }
+    if (d.editsave) {
+      const f = root.querySelector(`[data-editform="${CSS.escape(d.editsave)}"]`), val = k => { const el = f.querySelector(`[data-e="${k}"]`); return el ? el.value.trim() : undefined; };
+      const changes = { price: val('price') ? `${val('sign')}${val('price')}` : '', book: val('book'), units: val('units') };
+      if (val('line') !== undefined) changes.line = val('line');
+      if (val('boost') !== undefined) changes.boost = val('boost');
+      const list = loadPicks(), err = editPick(list, d.editsave, changes);
+      if (err) { st.err = err; render(); return; }
+      savePicks(list);
+      Object.assign(st, { edit: null, err: '' });
+      pickToast('Pick updated');
+      render();
+      return;
+    }
+    if (d.build === 'start') { Object.assign(st, { building: true, sel: new Set(), boost: 0, price: '', units: 1, replace: true }); render(); }
     else if (d.build === 'cancel') { st.building = false; render(); }
     else if (d.build === 'save') {
-      const legs = loadPicks().filter(p => st.sel.has(p.id) && !isParlay(p));
+      const list = loadPicks(), legs = list.filter(p => st.sel.has(p.id) && !isParlay(p));
       if (legs.length < 2) return;
-      const price = st.price === '' ? null : parseInt(String(st.price).replace('+', ''), 10);
-      const list = loadPicks();
-      list.push(makeParlay({ legs, price: price != null && Math.abs(price) >= 100 ? price : null, boost: st.boost, units: st.units, book: legs[0].book }));
-      savePicks(list);
+      const price = parsePrice(st.price);
+      savePicks(combineIntoParlay(list, [...st.sel], { price: Number.isNaN(price) ? null : price, boost: st.boost, units: st.units, book: legs[0].book }, st.replace));
       st.building = false;
       pickToast('Parlay saved');
       render();
@@ -439,6 +481,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     const t = e.target, d = t.dataset;
     if (d.sel) { if (t.checked) st.sel.add(d.sel); else st.sel.delete(d.sel); render(); }
     else if (d.pboost) { st.boost = +t.value; render(); }
+    else if (d.preplace) { st.replace = t.checked; }
     else if (d.punits) { st.units = +t.value; render(); }
     else if (d.units) {
       const list = loadPicks(), p = list.find(x => x.id === d.units);
@@ -462,7 +505,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
     // Live: keep the score, clock and "Now" stat of today's picks (yours and the model's) fresh while games are on.
     const liveGids = [...new Set(loadPicks().flatMap(p => (isParlay(p) ? p.legs.map(l => l.gid) : [p.gid])).concat(model ? model.picks.map(p => p.gid) : [])
       .filter(id => { const g = L.byId.get(id); return g && g.d >= L.meta.today && g.state !== 'post'; }))].slice(0, 10);
-    if (liveGids.length) startLive(L, { day: L.meta.today, gids: liveGids, onUpdate() { if (!document.activeElement.matches('input, select, textarea')) render(); } });
+    if (liveGids.length) startLive(L, { day: L.meta.today, gids: liveGids, onUpdate() { if (!st.edit && !document.activeElement.matches('input, select, textarea')) render(); } });
   });
 }).catch(fail);
 </script>
