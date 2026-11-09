@@ -79,6 +79,20 @@ class BuildNflTest(unittest.TestCase):
         build_nfl.build(self.mingus, self.data, self.out, season=2026, fetch=fetch)
         self.assertEqual(self.read("players")["00-1"]["st"], "IR")
 
+    def test_traded_player_shows_his_new_team_not_released(self):
+        # nflverse lists a traded player twice in the trade week: CUT for the old team, ACT for the new one.
+        rows = [{"season": "2026", "week": "10", "gsis_id": "00-9", "team": "BAL", "status": "ACT"},
+                {"season": "2026", "week": "10", "gsis_id": "00-9", "team": "ARI", "status": "CUT"}]
+        for order in (rows, rows[::-1]):
+            players = {"00-9": {"n": "Jacoby Brissett", "pos": "QB", "t": "ARI"}}
+            p = build_nfl.apply_status(players, order, [], 2026)["00-9"]
+            self.assertEqual(p["t"], "BAL")
+            self.assertNotIn("st", p)
+            self.assertEqual(p["_rt"], (2026, 10))
+        released = build_nfl.apply_status({"00-8": {"n": "X", "t": "ARI"}},
+                                          [{"season": "2026", "week": "10", "gsis_id": "00-8", "team": "ARI", "status": "CUT"}], [], 2026)
+        self.assertEqual(released["00-8"]["st"], "Released")   # cut with no new team still says so
+
     def test_props_and_picks_come_from_mingus_picks(self):
         picks = Path(tempfile.mkdtemp())
         (picks / "odds" / "props").mkdir(parents=True)
