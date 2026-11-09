@@ -1055,6 +1055,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "13",
       "uid": "s:20~l:28~t:13",
@@ -1081,7 +1083,7 @@
          "full",
          "default"
         ],
-        "lastUpdated": "2020-02-25T17:01Z"
+        "lastUpdated": "2024-09-22T22:51Z"
        },
        {
         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/lv.png",
@@ -1119,9 +1121,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png"
     },
     {
      "id": "401873026",
@@ -1144,6 +1144,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "33",
       "uid": "s:20~l:28~t:33",
@@ -1208,9 +1210,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png"
     }
    ]
   }
@@ -2674,7 +2674,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1,
     "logos": [
      {
@@ -2725,7 +2725,7 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0ML84695600_1",
      "text": "Home Bet",
@@ -2749,7 +2749,7 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0ML84695600_3",
      "text": "Away Bet",
@@ -2889,7 +2889,7 @@
         "home",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0ML84695600_1",
        "text": "Home Bet",
@@ -2921,7 +2921,7 @@
         "away",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118167%3Foutcomes%3D0ML84695600_3",
        "text": "Away Bet",
@@ -3253,6 +3253,7 @@
    "records": []
   }
  ],
+ "winprobability": [],
  "predictor": {
   "header": "Matchup Predictor",
   "homeTeam": {
@@ -3264,7 +3265,6 @@
    "gameProjection": "65.6"
   }
  },
- "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -4262,7 +4262,19 @@
       "athleteId": 4430737,
       "athlete": {
        "id": 4430737,
-       "description": "Kyren Williams"
+       "description": "Kyren Williams",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4430737/kyren-williams"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4430737/kyren-williams"
+         }
+        }
+       }
       }
      },
      {
@@ -5046,8 +5058,8 @@
     "type": "HeadlineNews",
     "headline": "Giants 'feel fairly good' about QB J.J. McCarthy (hip) playing Thursday",
     "description": "Giants coach John Harbaugh says he feels \"fairly good\" about quarterback J.J. McCarthy's availability this week after he suffered a hip injury in Sunday's win against the Eagles.",
-    "lastModified": "2026-11-09T17:42:13Z",
-    "published": "2026-11-09T17:42:13Z",
+    "lastModified": "2026-11-09T17:49:23Z",
+    "published": "2026-11-09T17:49:23Z",
     "images": [
      {
       "dataSourceIdentifier": "c4232abb9e984",
@@ -6326,7 +6338,19 @@
       "athleteId": 3916655,
       "athlete": {
        "id": 3916655,
-       "description": "Maxx Crosby"
+       "description": "Maxx Crosby",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3916655/maxx-crosby"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3916655/maxx-crosby"
+         }
+        }
+       }
       }
      },
      {
@@ -8838,6 +8862,7 @@
    },
    {
     "type": "event",
+    "uid": "s:20~l:28~e:401873051",
     "guid": "345d82ed-4160-3c56-b1db-c53180bafea9",
     "description": "Buffalo Bills @ Minnesota Vikings",
     "eventId": 401873051,
