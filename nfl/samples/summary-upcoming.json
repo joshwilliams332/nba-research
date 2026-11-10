@@ -176,18 +176,18 @@
    ]
   },
   "weather": {
-   "temperature": 52,
-   "highTemperature": 52,
-   "lowTemperature": 52,
+   "temperature": 51,
+   "highTemperature": 51,
+   "lowTemperature": 51,
    "conditionId": "18",
-   "gust": 18,
+   "gust": 17,
    "precipitation": 75,
    "link": {
     "language": "en-US",
     "rel": [
      "07073"
     ],
-    "href": "http://www.accuweather.com/en/us/metlife-stadium-nj/07073/hourly-weather-forecast/52866_poi?day=4&hbhhour=20&lang=en-us",
+    "href": "http://www.accuweather.com/en/us/metlife-stadium-nj/07073/hourly-weather-forecast/52866_poi?day=3&hbhhour=20&lang=en-us",
     "text": "Weather",
     "shortText": "Weather",
     "isExternal": true,
@@ -284,8 +284,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "22",
       "uid": "s:20~l:28~t:22",
@@ -350,7 +348,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401872988",
@@ -410,7 +410,7 @@
          "full",
          "dark"
         ],
-        "lastUpdated": "2024-06-25T18:58Z"
+        "lastUpdated": "2022-11-17T18:02Z"
        },
        {
         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -551,8 +551,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "34",
       "uid": "s:20~l:28~t:34",
@@ -617,7 +615,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873044",
@@ -640,8 +640,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "21",
       "uid": "s:20~l:28~t:21",
@@ -706,7 +704,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -749,7 +749,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-06-25T18:58Z"
+      "lastUpdated": "2022-11-17T18:02Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -798,8 +798,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "11",
       "uid": "s:20~l:28~t:11",
@@ -864,7 +862,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401872988",
@@ -1624,7 +1624,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-06-25T18:58Z"
+      "lastUpdated": "2022-11-17T18:02Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -2339,7 +2339,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-06-25T18:58Z"
+      "lastUpdated": "2022-11-17T18:02Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -2696,7 +2696,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1,
     "logos": [
      {
@@ -2721,7 +2721,7 @@
    "awayTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 110,
+    "moneyLine": 114,
     "spreadOdds": -110.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/28?lang=en&region=us"
@@ -2732,7 +2732,7 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -130,
+    "moneyLine": -135,
     "spreadOdds": -110.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/19?lang=en&region=us"
@@ -2747,7 +2747,7 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_1",
      "text": "Home Bet",
@@ -2771,7 +2771,7 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_3",
      "text": "Away Bet",
@@ -2904,14 +2904,14 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "-130",
+      "odds": "-135",
       "link": {
        "language": "en-US",
        "rel": [
         "home",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_1",
        "text": "Home Bet",
@@ -2936,14 +2936,14 @@
     },
     "away": {
      "close": {
-      "odds": "+110",
+      "odds": "+114",
       "link": {
        "language": "en-US",
        "rel": [
         "away",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_3",
        "text": "Away Bet",
@@ -3178,7 +3178,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-06-25T18:58Z"
+      "lastUpdated": "2022-11-17T18:02Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -3275,15 +3275,1078 @@
    "records": []
   }
  ],
+ "header": {
+  "id": "401873052",
+  "uid": "s:20~l:28~e:401873052",
+  "season": {
+   "year": 2026,
+   "current": true,
+   "type": 2
+  },
+  "timeValid": true,
+  "competitions": [
+   {
+    "id": "401873052",
+    "uid": "s:20~l:28~e:401873052~c:401873052",
+    "date": "2026-11-13T01:15Z",
+    "neutralSite": false,
+    "conferenceCompetition": false,
+    "boxscoreAvailable": false,
+    "commentaryAvailable": false,
+    "liveAvailable": false,
+    "onWatchESPN": false,
+    "recent": false,
+    "wallclockAvailable": false,
+    "boxscoreSource": "none",
+    "playByPlaySource": "none",
+    "competitors": [
+     {
+      "id": "19",
+      "uid": "s:20~l:28~t:19",
+      "order": 0,
+      "homeAway": "home",
+      "team": {
+       "id": "19",
+       "guid": "378600ea-2397-8364-8399-b7c1606a49a7",
+       "uid": "s:20~l:28~t:19",
+       "location": "New York",
+       "name": "Giants",
+       "nickname": "Giants",
+       "abbreviation": "NYG",
+       "displayName": "New York Giants",
+       "color": "003c7f",
+       "alternateColor": "c9243f",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T18:55Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/nyg.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T18:59Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T18:55Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/nyg.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T18:59Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/grayscale.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "grayscale"
+         ],
+         "lastUpdated": "2026-03-31T12:52Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        }
+       ],
+       "links": [
+        {
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants",
+         "text": "Clubhouse"
+        }
+       ]
+      },
+      "record": [
+       {
+        "type": "total",
+        "summary": "5-2-1",
+        "displayValue": "5-2-1"
+       },
+       {
+        "type": "home",
+        "summary": "3-1",
+        "displayValue": "3-1"
+       },
+       {
+        "type": "vsconf",
+        "summary": "3-2-1",
+        "displayValue": "3-2-1"
+       }
+      ],
+      "possession": false
+     },
+     {
+      "id": "28",
+      "uid": "s:20~l:28~t:28",
+      "order": 1,
+      "homeAway": "away",
+      "team": {
+       "id": "28",
+       "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
+       "uid": "s:20~l:28~t:28",
+       "location": "Washington",
+       "name": "Commanders",
+       "nickname": "Commanders",
+       "abbreviation": "WSH",
+       "displayName": "Washington Commanders",
+       "color": "5a1414",
+       "alternateColor": "ffb612",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T18:58Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/wsh.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2022-11-17T18:02Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T18:58Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/wsh.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T18:58Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/grayscale.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "grayscale"
+         ],
+         "lastUpdated": "2026-03-31T12:53Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        }
+       ],
+       "links": [
+        {
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders",
+         "text": "Clubhouse"
+        }
+       ]
+      },
+      "record": [
+       {
+        "type": "total",
+        "summary": "2-5-1",
+        "displayValue": "2-5-1"
+       },
+       {
+        "type": "road",
+        "summary": "0-3",
+        "displayValue": "0-3"
+       },
+       {
+        "type": "vsconf",
+        "summary": "2-4-1",
+        "displayValue": "2-4-1"
+       }
+      ],
+      "possession": false
+     }
+    ],
+    "status": {
+     "type": {
+      "id": "1",
+      "name": "STATUS_SCHEDULED",
+      "state": "pre",
+      "completed": false,
+      "description": "Scheduled",
+      "detail": "Thu, November 12th at 8:15 PM EST",
+      "shortDetail": "11/12 - 8:15 PM EST"
+     },
+     "isTBDFlex": false
+    },
+    "odds": [
+     {
+      "awayTeamOdds": {
+       "favorite": false,
+       "underdog": true,
+       "moneyLine": 114,
+       "spreadOdds": -110.0,
+       "open": {
+        "favorite": false,
+        "pointSpread": {
+         "alternateDisplayValue": "+1.5",
+         "american": "+1.5"
+        },
+        "spread": {
+         "value": 1.9,
+         "displayValue": "10/11",
+         "alternateDisplayValue": "-110",
+         "decimal": 1.9,
+         "fraction": "10/11",
+         "american": "-110"
+        },
+        "moneyLine": {
+         "value": 2.05,
+         "displayValue": "21/20",
+         "alternateDisplayValue": "+105",
+         "decimal": 2.05,
+         "fraction": "21/20",
+         "american": "+105"
+        }
+       },
+       "current": {
+        "pointSpread": {
+         "alternateDisplayValue": "+2.5",
+         "american": "+2.5"
+        },
+        "spread": {
+         "value": 1.9,
+         "displayValue": "10/11",
+         "alternateDisplayValue": "-110",
+         "decimal": 1.9,
+         "fraction": "10/11",
+         "american": "-110"
+        },
+        "moneyLine": {
+         "value": 2.14,
+         "displayValue": "57/50",
+         "alternateDisplayValue": "+114",
+         "decimal": 2.14,
+         "fraction": "57/50",
+         "american": "+114"
+        }
+       },
+       "team": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/28?lang=en&region=us"
+       }
+      },
+      "homeTeamOdds": {
+       "favorite": true,
+       "underdog": false,
+       "moneyLine": -135,
+       "spreadOdds": -110.0,
+       "open": {
+        "favorite": true,
+        "pointSpread": {
+         "alternateDisplayValue": "-1.5",
+         "american": "-1.5"
+        },
+        "spread": {
+         "value": 1.9,
+         "displayValue": "10/11",
+         "alternateDisplayValue": "-110",
+         "decimal": 1.9,
+         "fraction": "10/11",
+         "american": "-110"
+        },
+        "moneyLine": {
+         "value": 1.8,
+         "displayValue": "4/5",
+         "alternateDisplayValue": "-125",
+         "decimal": 1.8,
+         "fraction": "4/5",
+         "american": "-125"
+        }
+       },
+       "current": {
+        "pointSpread": {
+         "alternateDisplayValue": "-2.5",
+         "american": "-2.5"
+        },
+        "spread": {
+         "value": 1.9,
+         "displayValue": "10/11",
+         "alternateDisplayValue": "-110",
+         "decimal": 1.9,
+         "fraction": "10/11",
+         "american": "-110"
+        },
+        "moneyLine": {
+         "value": 1.74,
+         "displayValue": "20/27",
+         "alternateDisplayValue": "-135",
+         "decimal": 1.74,
+         "fraction": "20/27",
+         "american": "-135"
+        }
+       },
+       "team": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/19?lang=en&region=us"
+       }
+      },
+      "current": {
+       "over": {
+        "value": 1.95,
+        "displayValue": "20/21",
+        "alternateDisplayValue": "-105",
+        "decimal": 1.95,
+        "fraction": "20/21",
+        "american": "-105"
+       },
+       "under": {
+        "value": 1.86,
+        "displayValue": "20/23",
+        "alternateDisplayValue": "-115",
+        "decimal": 1.86,
+        "fraction": "20/23",
+        "american": "-115"
+       },
+       "total": {
+        "alternateDisplayValue": "42.5",
+        "american": "42.5"
+       }
+      },
+      "propBets": [
+       {
+        "type": {
+         "id": "8",
+         "name": "Total Passing Yards (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "8",
+         "name": "Total Passing Yards (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "8",
+         "name": "Total Passing Yards (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "8",
+         "name": "Total Passing Yards (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "9",
+         "name": "Total Pass Completions (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "9",
+         "name": "Total Pass Completions (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "9",
+         "name": "Total Pass Completions (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "9",
+         "name": "Total Pass Completions (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "10",
+         "name": "Total Passing Touchdowns (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "10",
+         "name": "Total Passing Touchdowns (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "10",
+         "name": "Total Passing Touchdowns (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "10",
+         "name": "Total Passing Touchdowns (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "11",
+         "name": "Total Carries (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "12",
+         "name": "Total Rushing Yards (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "12",
+         "name": "Total Rushing Yards (incl. overtime)"
+        }
+       },
+       {
+        "type": {
+         "id": "12",
+         "name": "Total Rushing Yards (incl. overtime)"
+        }
+       }
+      ]
+     }
+    ],
+    "broadcasts": [
+     {
+      "type": {
+       "id": "4",
+       "shortName": "Streaming"
+      },
+      "market": {
+       "id": "1",
+       "type": "National"
+      },
+      "media": {
+       "shortName": "Prime Video"
+      },
+      "lang": "en",
+      "region": "us",
+      "isNational": true
+     }
+    ],
+    "boxscoreMinutes": false
+   }
+  ],
+  "links": [
+   {
+    "rel": [
+     "summary",
+     "desktop",
+     "event"
+    ],
+    "href": "https://www.espn.com/nfl/game/_/gameId/401873052/commanders-giants",
+    "text": "Gamecast",
+    "shortText": "Summary",
+    "isExternal": false,
+    "isPremium": false
+   },
+   {
+    "rel": [
+     "odds",
+     "desktop",
+     "event"
+    ],
+    "href": "https://www.espn.com/nfl/odds/_/gameId/401873052",
+    "text": "Odds",
+    "shortText": "Odds",
+    "isExternal": false,
+    "isPremium": false
+   },
+   {
+    "rel": [
+     "tickets",
+     "desktop"
+    ],
+    "href": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
+    "text": "Tickets",
+    "shortText": "Tickets",
+    "isExternal": true,
+    "isPremium": false
+   }
+  ],
+  "week": 10,
+  "league": {
+   "id": "28",
+   "uid": "s:20~l:28",
+   "name": "National Football League",
+   "abbreviation": "NFL",
+   "shortName": "NFL",
+   "slug": "nfl",
+   "isTournament": false,
+   "links": [
+    {
+     "rel": [
+      "index",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/",
+     "text": "Index"
+    },
+    {
+     "rel": [
+      "index",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28",
+     "text": "Index"
+    },
+    {
+     "rel": [
+      "schedule",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/schedule",
+     "text": "Schedule"
+    },
+    {
+     "rel": [
+      "schedule",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
+     "text": "Schedule"
+    },
+    {
+     "rel": [
+      "standings",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/standings",
+     "text": "Standings"
+    },
+    {
+     "rel": [
+      "standings",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=standings",
+     "text": "Standings"
+    },
+    {
+     "rel": [
+      "rankings",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/powerrankings",
+     "text": "Power Rankings"
+    },
+    {
+     "rel": [
+      "scores",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/scoreboard",
+     "text": "Scores"
+    },
+    {
+     "rel": [
+      "scores",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
+     "text": "Scores"
+    },
+    {
+     "rel": [
+      "stats",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/stats",
+     "text": "Stats"
+    },
+    {
+     "rel": [
+      "stats",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=stats",
+     "text": "Stats"
+    },
+    {
+     "rel": [
+      "teams",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/teams",
+     "text": "Teams"
+    },
+    {
+     "rel": [
+      "athletes",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/players",
+     "text": "Players"
+    },
+    {
+     "rel": [
+      "injuries",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/injuries",
+     "text": "Injuries"
+    },
+    {
+     "rel": [
+      "odds",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/odds",
+     "text": "Odds"
+    },
+    {
+     "rel": [
+      "odds",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=odds",
+     "text": "Odds"
+    },
+    {
+     "rel": [
+      "playoff-bracket",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/playoff-bracket",
+     "text": "Bracket"
+    },
+    {
+     "rel": [
+      "playoff-bracket",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=bracket",
+     "text": "Bracket"
+    },
+    {
+     "rel": [
+      "freeagency",
+      "desktop",
+      "league"
+     ],
+     "href": "https://insider.espn.com/nfl/freeagency/",
+     "text": "Freeagency"
+    }
+   ],
+   "logos": [
+    {
+     "href": "https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png",
+     "rel": [
+      "full",
+      "default"
+     ]
+    },
+    {
+     "href": "https://a.espncdn.com/i/teamlogos/leagues/500-dark/nfl.png",
+     "rel": [
+      "full",
+      "dark"
+     ]
+    }
+   ]
+  }
+ },
  "predictor": {
   "header": "Matchup Predictor",
   "homeTeam": {
    "id": "19",
-   "gameProjection": "50.8"
+   "gameProjection": "50.1"
   },
   "awayTeam": {
    "id": "28",
-   "gameProjection": "48.8"
+   "gameProjection": "49.5"
   }
  },
  "winprobability": [],
@@ -3304,15 +4367,158 @@
   },
   "articles": [
    {
+    "id": 50440119,
+    "nowId": "1-50440119",
+    "contentKey": "50440119-1-5-1",
+    "dataSourceIdentifier": "df51e713000a8",
+    "type": "HeadlineNews",
+    "headline": "Vikings left at QB crossroads after Carson Wentz's poor MNF showing vs. Bills",
+    "description": "After a historically poor performance by Carson Wentz on Monday night, Vikings coach Kevin O'Connell was asked whether the team might trade for a QB ahead of Tuesday's deadline. He deferred the question to GM Nolan Teasley.",
+    "lastModified": "2026-11-10T07:42:36Z",
+    "published": "2026-11-10T07:42:36Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "6a6134150c77e",
+      "id": 50440020,
+      "type": "header",
+      "name": "Carson Wentz [600x400]",
+      "caption": "Carson Wentz's 2.3 QBR was the lowest by a QB this season and the lowest by a Vikings QB since Tarvaris Jackson had a 1.8 QBR in 2006. It was also the lowest on \"Monday Night Football\" since Sam Darnold (1.1) in the 2019 \"seeing ghosts\" game.",
+      "credit": "Kevin Sabitus/Getty Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1110/r1743880_600x400_3-2.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Carson Wentz picked off by Bills on back-to-back possessions",
+      "caption": "Carson Wentz picked off by Bills on back-to-back possessions",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1109/ab3e5cbf9fd341e885ae80f085c6b59b1389/ab3e5cbf9fd341e885ae80f085c6b59b1389.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1920,
+      "type": "team",
+      "uid": "s:20~l:28~t:16",
+      "guid": "3db556c9-ed76-a7a5-4ccb-a92fc6db4334",
+      "description": "Minnesota Vikings",
+      "sportId": 28,
+      "teamId": 16,
+      "team": {
+       "id": 16,
+       "description": "Minnesota Vikings",
+       "abbreviation": "MIN",
+       "shortDisplayName": "Vikings",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 152816,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:2573079",
+      "guid": "ed28fa2c-63a1-8258-b6b0-618e79d3e363",
+      "description": "Carson Wentz",
+      "sportId": 28,
+      "athleteId": 2573079,
+      "athlete": {
+       "id": 2573079,
+       "description": "Carson Wentz",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/2573079/carson-wentz"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/2573079/carson-wentz"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 698426,
+      "type": "contributor",
+      "guid": "5241557e-e83a-3754-aace-665eca5b4994",
+      "description": "Kevin Seifert",
+      "slug": "kevin-seifert",
+      "contributor": {
+       "id": 1300,
+       "description": "Kevin Seifert"
+      }
+     }
+    ],
+    "byline": "Kevin Seifert",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50440119"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50440119"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50440119"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50440119/vikings-kevin-oconnell-defers-qb-trade-question-gm-poor-mnf-outing-carson-wentz"
+     }
+    },
+    "premium": false
+   },
+   {
     "id": 50439529,
     "nowId": "1-50439529",
     "contentKey": "50439529-1-21-1",
     "dataSourceIdentifier": "70e7b7200f3fd",
     "type": "Recap",
     "headline": "Josh Allen and the Bills move to 7-1 with a 23-6 win over the sputtering Vikings",
-    "description": "\u2014 Josh Allen threw a touchdown pass with 44 seconds left before halftime, James Cook rushed 31 times for 107 yards and a late score, and the Buffalo Bills beat Minnesota 23-6 on Monday night, sending Vikings deeper into their unrelenting offensive slump.",
-    "lastModified": "2026-11-10T04:43:36Z",
-    "published": "2026-11-10T04:43:36Z",
+    "description": "\u2014 The Buffalo Bills knew they weren't bound for many style points or likely to reach their league-leading scoring average against Minnesota's relentlessly...",
+    "lastModified": "2026-11-10T06:12:35Z",
+    "published": "2026-11-10T06:12:35Z",
     "images": [
      {
       "type": "stitcher",
@@ -3406,11 +4612,11 @@
      },
      {
       "type": "Media",
-      "name": "Josh Allen, Bills outlast Vikings 23-6 on MNF",
-      "caption": "Josh Allen, Bills outlast Vikings 23-6 on MNF",
+      "name": "Carson Wentz picked off by Bills on back-to-back possessions",
+      "caption": "Carson Wentz picked off by Bills on back-to-back possessions",
       "height": 324,
       "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1110/5ce99b5a-a87e-4f47-b74b-320ecaf4f8e7/5ce99b5a-a87e-4f47-b74b-320ecaf4f8e7.jpg"
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1109/ab3e5cbf9fd341e885ae80f085c6b59b1389/ab3e5cbf9fd341e885ae80f085c6b59b1389.jpg"
      }
     ],
     "categories": [
@@ -3548,8 +4754,8 @@
     "type": "Media",
     "headline": "Josh Allen, Bills outlast Vikings 23-6 on MNF",
     "description": "Josh Allen, Bills outlast Vikings 23-6 on MNF",
-    "lastModified": "2026-11-10T04:29:51Z",
-    "published": "2026-11-10T04:29:51Z",
+    "lastModified": "2026-11-10T05:01:02Z",
+    "published": "2026-11-10T05:01:02Z",
     "images": [
      {
       "name": "Josh Allen, Bills outlast Vikings 23-6 on MNF",
@@ -3557,7 +4763,7 @@
       "alt": "",
       "height": 324,
       "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1110/5ce99b5a-a87e-4f47-b74b-320ecaf4f8e7/5ce99b5a-a87e-4f47-b74b-320ecaf4f8e7.jpg"
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1110/5ce99b5aa87e4f47b74b320ecaf4f8e70/5ce99b5aa87e4f47b74b320ecaf4f8e70.jpg"
      }
     ],
     "categories": [
@@ -3809,16 +5015,17 @@
     "contentKey": "50435734-1-6-1",
     "dataSourceIdentifier": "716a73074eda5",
     "type": "Story",
-    "headline": "Josh Allen leads Bills to win over tough Vikings' defense",
+    "headline": "Josh Allen leads Bills to win over tough Vikings defense",
     "description": "The Vikings kept Allen in check for much of the game, but he helped the Bills earn a low-scoring victory.",
-    "lastModified": "2026-11-10T04:47:25Z",
-    "published": "2026-11-10T04:47:25Z",
+    "lastModified": "2026-11-10T05:09:21Z",
+    "published": "2026-11-10T05:09:21Z",
     "images": [
      {
       "dataSourceIdentifier": "e90e112bf218b",
       "id": 50438769,
       "type": "header",
       "name": "Josh Allen [608x342]",
+      "caption": "Josh Allen didn't produce a satisfying fantasy stat game, but he got the job done for the Bills.",
       "credit": "David Berding/Getty Images",
       "height": 342,
       "width": 608,
@@ -3829,6 +5036,7 @@
       "id": 50438717,
       "type": "header",
       "name": "Wentz [608x342]",
+      "caption": "QB Carson Wentz failed to lead the Vikings to a touchdown before being pulled in the fourth quarter.",
       "credit": "Stephen Maturen/Getty Images",
       "height": 342,
       "width": 608,
@@ -5213,147 +6421,10 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50437202,
-    "nowId": "1-50437202",
-    "contentKey": "50437202-1-5-1",
-    "dataSourceIdentifier": "f14f595a2b6b1",
-    "type": "HeadlineNews",
-    "headline": "Chargers' Jim Harbaugh says X-rays on QB Justin Herbert's finger negative",
-    "description": "X-rays on the injured middle finger of Chargers quarterback Justin Herbert's left hand came back negative for a fracture, coach Jim Harbaugh said Monday.",
-    "lastModified": "2026-11-10T01:59:03Z",
-    "published": "2026-11-10T01:59:03Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "3aa4b22577562",
-      "id": 50437145,
-      "type": "header",
-      "name": "Justin Herbert [1296x729]",
-      "credit": "Gary A. Vasquez-Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1110/r1743800_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Quentin Johnston takes pass from Justin Herbert 58 yards to the house",
-      "caption": "Quentin Johnston takes pass from Justin Herbert 58 yards to the house",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1109/9ac8b299-3836-4a87-abcb-4b4a7f16a5cd/9ac8b299-3836-4a87-abcb-4b4a7f16a5cd.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2610,
-      "type": "team",
-      "uid": "s:20~l:28~t:24",
-      "guid": "84caf62b-c753-71ea-a787-44fd224a4294",
-      "description": "Los Angeles Chargers",
-      "sportId": 28,
-      "teamId": 24,
-      "team": {
-       "id": 24,
-       "description": "Los Angeles Chargers",
-       "abbreviation": "LAC",
-       "shortDisplayName": "Chargers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 435043,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4038941",
-      "guid": "ec880cbc-1490-cdae-548f-f844104974ae",
-      "description": "Justin Herbert",
-      "sportId": 28,
-      "athleteId": 4038941,
-      "athlete": {
-       "id": 4038941,
-       "description": "Justin Herbert",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50437202"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50437202"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50437202"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50437202/chargers-harbaugh-says-x-rays-herbert-finger-negative"
-     }
-    },
-    "premium": false
    }
   ]
  },
+ "wallclockAvailable": false,
  "ticketsInfo": {
   "tickets": [
    {
@@ -5367,22 +6438,22 @@
     "type": "team"
    },
    {
-    "ticketName": "11/12 vs Commanders 4735 tickets left",
+    "ticketName": "11/12 vs Commanders 4701 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/22 vs Jaguars 4197 tickets left",
+    "ticketName": "11/22 vs Jaguars 4190 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494186?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/29 @ Colts 4178 tickets left",
+    "ticketName": "11/29 @ Colts 4165 tickets left",
     "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/6 vs 49ers 3944 tickets left",
+    "ticketName": "12/6 vs 49ers 3940 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-8-2027/production/6494196?wsUser=717",
     "type": "event"
    },
@@ -5392,7 +6463,7 @@
     "type": "event"
    },
    {
-    "ticketName": "12/20 vs Browns 5892 tickets left",
+    "ticketName": "12/20 vs Browns 5843 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-5-2027/production/6494180?wsUser=717",
     "type": "event"
    },
@@ -5407,7 +6478,7 @@
     "type": "event"
    },
    {
-    "ticketName": "1/10 vs Eagles 7739 tickets left",
+    "ticketName": "1/10 vs Eagles 7761 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-2-2027/production/6494174?wsUser=717",
     "type": "event"
    }
@@ -5427,1070 +6498,6 @@
    "timeValid": true
   }
  },
- "header": {
-  "id": "401873052",
-  "uid": "s:20~l:28~e:401873052",
-  "season": {
-   "year": 2026,
-   "current": true,
-   "type": 2
-  },
-  "timeValid": true,
-  "competitions": [
-   {
-    "id": "401873052",
-    "uid": "s:20~l:28~e:401873052~c:401873052",
-    "date": "2026-11-13T01:15Z",
-    "neutralSite": false,
-    "conferenceCompetition": false,
-    "boxscoreAvailable": false,
-    "commentaryAvailable": false,
-    "liveAvailable": false,
-    "onWatchESPN": false,
-    "recent": false,
-    "wallclockAvailable": false,
-    "boxscoreSource": "none",
-    "playByPlaySource": "none",
-    "competitors": [
-     {
-      "id": "19",
-      "uid": "s:20~l:28~t:19",
-      "order": 0,
-      "homeAway": "home",
-      "team": {
-       "id": "19",
-       "guid": "378600ea-2397-8364-8399-b7c1606a49a7",
-       "uid": "s:20~l:28~t:19",
-       "location": "New York",
-       "name": "Giants",
-       "nickname": "Giants",
-       "abbreviation": "NYG",
-       "displayName": "New York Giants",
-       "color": "003c7f",
-       "alternateColor": "c9243f",
-       "logos": [
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "default"
-         ],
-         "lastUpdated": "2024-06-25T18:55Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/nyg.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:59Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard"
-         ],
-         "lastUpdated": "2024-06-25T18:55Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/nyg.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:59Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/grayscale.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "grayscale"
-         ],
-         "lastUpdated": "2026-03-31T12:52Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/primary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/378600ea-2397-8364-8399-b7c1606a49a7/logos/secondary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        }
-       ],
-       "links": [
-        {
-         "rel": [
-          "clubhouse",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants",
-         "text": "Clubhouse"
-        }
-       ]
-      },
-      "record": [
-       {
-        "type": "total",
-        "summary": "5-2-1",
-        "displayValue": "5-2-1"
-       },
-       {
-        "type": "home",
-        "summary": "3-1",
-        "displayValue": "3-1"
-       },
-       {
-        "type": "vsconf",
-        "summary": "3-2-1",
-        "displayValue": "3-2-1"
-       }
-      ],
-      "possession": false
-     },
-     {
-      "id": "28",
-      "uid": "s:20~l:28~t:28",
-      "order": 1,
-      "homeAway": "away",
-      "team": {
-       "id": "28",
-       "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
-       "uid": "s:20~l:28~t:28",
-       "location": "Washington",
-       "name": "Commanders",
-       "nickname": "Commanders",
-       "abbreviation": "WSH",
-       "displayName": "Washington Commanders",
-       "color": "5a1414",
-       "alternateColor": "ffb612",
-       "logos": [
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "default"
-         ],
-         "lastUpdated": "2024-06-25T18:58Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/wsh.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:58Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard"
-         ],
-         "lastUpdated": "2024-06-25T18:58Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/wsh.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:58Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/grayscale.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "grayscale"
-         ],
-         "lastUpdated": "2026-03-31T12:53Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/primary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/fbeaf73e-6d6c-cca4-0809-713d9d741f90/logos/secondary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        }
-       ],
-       "links": [
-        {
-         "rel": [
-          "clubhouse",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders",
-         "text": "Clubhouse"
-        }
-       ]
-      },
-      "record": [
-       {
-        "type": "total",
-        "summary": "2-5-1",
-        "displayValue": "2-5-1"
-       },
-       {
-        "type": "road",
-        "summary": "0-3",
-        "displayValue": "0-3"
-       },
-       {
-        "type": "vsconf",
-        "summary": "2-4-1",
-        "displayValue": "2-4-1"
-       }
-      ],
-      "possession": false
-     }
-    ],
-    "status": {
-     "type": {
-      "id": "1",
-      "name": "STATUS_SCHEDULED",
-      "state": "pre",
-      "completed": false,
-      "description": "Scheduled",
-      "detail": "Thu, November 12th at 8:15 PM EST",
-      "shortDetail": "11/12 - 8:15 PM EST"
-     },
-     "isTBDFlex": false
-    },
-    "odds": [
-     {
-      "awayTeamOdds": {
-       "favorite": false,
-       "underdog": true,
-       "moneyLine": 110,
-       "spreadOdds": -110.0,
-       "open": {
-        "favorite": false,
-        "pointSpread": {
-         "alternateDisplayValue": "+1.5",
-         "american": "+1.5"
-        },
-        "spread": {
-         "value": 1.9,
-         "displayValue": "10/11",
-         "alternateDisplayValue": "-110",
-         "decimal": 1.9,
-         "fraction": "10/11",
-         "american": "-110"
-        },
-        "moneyLine": {
-         "value": 2.05,
-         "displayValue": "21/20",
-         "alternateDisplayValue": "+105",
-         "decimal": 2.05,
-         "fraction": "21/20",
-         "american": "+105"
-        }
-       },
-       "current": {
-        "pointSpread": {
-         "alternateDisplayValue": "+2.5",
-         "american": "+2.5"
-        },
-        "spread": {
-         "value": 1.9,
-         "displayValue": "10/11",
-         "alternateDisplayValue": "-110",
-         "decimal": 1.9,
-         "fraction": "10/11",
-         "american": "-110"
-        },
-        "moneyLine": {
-         "value": 2.1,
-         "displayValue": "11/10",
-         "alternateDisplayValue": "+110",
-         "decimal": 2.1,
-         "fraction": "11/10",
-         "american": "+110"
-        }
-       },
-       "team": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/28?lang=en&region=us"
-       }
-      },
-      "homeTeamOdds": {
-       "favorite": true,
-       "underdog": false,
-       "moneyLine": -130,
-       "spreadOdds": -110.0,
-       "open": {
-        "favorite": true,
-        "pointSpread": {
-         "alternateDisplayValue": "-1.5",
-         "american": "-1.5"
-        },
-        "spread": {
-         "value": 1.9,
-         "displayValue": "10/11",
-         "alternateDisplayValue": "-110",
-         "decimal": 1.9,
-         "fraction": "10/11",
-         "american": "-110"
-        },
-        "moneyLine": {
-         "value": 1.8,
-         "displayValue": "4/5",
-         "alternateDisplayValue": "-125",
-         "decimal": 1.8,
-         "fraction": "4/5",
-         "american": "-125"
-        }
-       },
-       "current": {
-        "pointSpread": {
-         "alternateDisplayValue": "-2.5",
-         "american": "-2.5"
-        },
-        "spread": {
-         "value": 1.9,
-         "displayValue": "10/11",
-         "alternateDisplayValue": "-110",
-         "decimal": 1.9,
-         "fraction": "10/11",
-         "american": "-110"
-        },
-        "moneyLine": {
-         "value": 1.76,
-         "displayValue": "10/13",
-         "alternateDisplayValue": "-130",
-         "decimal": 1.76,
-         "fraction": "10/13",
-         "american": "-130"
-        }
-       },
-       "team": {
-        "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/19?lang=en&region=us"
-       }
-      },
-      "current": {
-       "over": {
-        "value": 1.95,
-        "displayValue": "20/21",
-        "alternateDisplayValue": "-105",
-        "decimal": 1.95,
-        "fraction": "20/21",
-        "american": "-105"
-       },
-       "under": {
-        "value": 1.86,
-        "displayValue": "20/23",
-        "alternateDisplayValue": "-115",
-        "decimal": 1.86,
-        "fraction": "20/23",
-        "american": "-115"
-       },
-       "total": {
-        "alternateDisplayValue": "42.5",
-        "american": "42.5"
-       }
-      },
-      "propBets": [
-       {
-        "type": {
-         "id": "8",
-         "name": "Total Passing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "8",
-         "name": "Total Passing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "8",
-         "name": "Total Passing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "8",
-         "name": "Total Passing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "9",
-         "name": "Total Pass Completions (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "9",
-         "name": "Total Pass Completions (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "9",
-         "name": "Total Pass Completions (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "9",
-         "name": "Total Pass Completions (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "10",
-         "name": "Total Passing Touchdowns (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "10",
-         "name": "Total Passing Touchdowns (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "10",
-         "name": "Total Passing Touchdowns (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "10",
-         "name": "Total Passing Touchdowns (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "11",
-         "name": "Total Carries (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
-        }
-       },
-       {
-        "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
-        }
-       }
-      ]
-     }
-    ],
-    "broadcasts": [
-     {
-      "type": {
-       "id": "4",
-       "shortName": "Streaming"
-      },
-      "market": {
-       "id": "1",
-       "type": "National"
-      },
-      "media": {
-       "shortName": "Prime Video"
-      },
-      "lang": "en",
-      "region": "us",
-      "isNational": true
-     }
-    ],
-    "boxscoreMinutes": false
-   }
-  ],
-  "links": [
-   {
-    "rel": [
-     "summary",
-     "desktop",
-     "event"
-    ],
-    "href": "https://www.espn.com/nfl/game/_/gameId/401873052/commanders-giants",
-    "text": "Gamecast",
-    "shortText": "Summary",
-    "isExternal": false,
-    "isPremium": false
-   },
-   {
-    "rel": [
-     "odds",
-     "desktop",
-     "event"
-    ],
-    "href": "https://www.espn.com/nfl/odds/_/gameId/401873052",
-    "text": "Odds",
-    "shortText": "Odds",
-    "isExternal": false,
-    "isPremium": false
-   },
-   {
-    "rel": [
-     "tickets",
-     "desktop"
-    ],
-    "href": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
-    "text": "Tickets",
-    "shortText": "Tickets",
-    "isExternal": true,
-    "isPremium": false
-   }
-  ],
-  "week": 10,
-  "league": {
-   "id": "28",
-   "uid": "s:20~l:28",
-   "name": "National Football League",
-   "abbreviation": "NFL",
-   "shortName": "NFL",
-   "slug": "nfl",
-   "isTournament": false,
-   "links": [
-    {
-     "rel": [
-      "index",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/",
-     "text": "Index"
-    },
-    {
-     "rel": [
-      "index",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28",
-     "text": "Index"
-    },
-    {
-     "rel": [
-      "schedule",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/schedule",
-     "text": "Schedule"
-    },
-    {
-     "rel": [
-      "schedule",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
-     "text": "Schedule"
-    },
-    {
-     "rel": [
-      "standings",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/standings",
-     "text": "Standings"
-    },
-    {
-     "rel": [
-      "standings",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=standings",
-     "text": "Standings"
-    },
-    {
-     "rel": [
-      "rankings",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/powerrankings",
-     "text": "Power Rankings"
-    },
-    {
-     "rel": [
-      "scores",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/scoreboard",
-     "text": "Scores"
-    },
-    {
-     "rel": [
-      "scores",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
-     "text": "Scores"
-    },
-    {
-     "rel": [
-      "stats",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/stats",
-     "text": "Stats"
-    },
-    {
-     "rel": [
-      "stats",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=stats",
-     "text": "Stats"
-    },
-    {
-     "rel": [
-      "teams",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/teams",
-     "text": "Teams"
-    },
-    {
-     "rel": [
-      "athletes",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/players",
-     "text": "Players"
-    },
-    {
-     "rel": [
-      "injuries",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/injuries",
-     "text": "Injuries"
-    },
-    {
-     "rel": [
-      "odds",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/odds",
-     "text": "Odds"
-    },
-    {
-     "rel": [
-      "odds",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=odds",
-     "text": "Odds"
-    },
-    {
-     "rel": [
-      "playoff-bracket",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/playoff-bracket",
-     "text": "Bracket"
-    },
-    {
-     "rel": [
-      "playoff-bracket",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=bracket",
-     "text": "Bracket"
-    },
-    {
-     "rel": [
-      "freeagency",
-      "desktop",
-      "league"
-     ],
-     "href": "https://insider.espn.com/nfl/freeagency/",
-     "text": "Freeagency"
-    }
-   ],
-   "logos": [
-    {
-     "href": "https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png",
-     "rel": [
-      "full",
-      "default"
-     ]
-    },
-    {
-     "href": "https://a.espncdn.com/i/teamlogos/leagues/500-dark/nfl.png",
-     "rel": [
-      "full",
-      "dark"
-     ]
-    }
-   ]
-  }
- },
- "wallclockAvailable": false,
  "meta": {
   "gp_topic": "gp-football-nfl-401873052",
   "gameSwitcherEnabled": true,
