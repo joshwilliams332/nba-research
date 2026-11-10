@@ -176,9 +176,9 @@
    ]
   },
   "weather": {
-   "temperature": 50,
-   "highTemperature": 50,
-   "lowTemperature": 50,
+   "temperature": 52,
+   "highTemperature": 52,
+   "lowTemperature": 52,
    "conditionId": "7",
    "gust": 10,
    "precipitation": 49,
@@ -410,7 +410,7 @@
          "full",
          "dark"
         ],
-        "lastUpdated": "2024-06-25T18:58Z"
+        "lastUpdated": "2022-11-17T18:02Z"
        },
        {
         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -749,7 +749,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-06-25T18:58Z"
+      "lastUpdated": "2022-11-17T18:02Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -1065,6 +1065,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "21",
       "uid": "s:20~l:28~t:21",
@@ -1129,9 +1131,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
     },
     {
      "id": "401873043",
@@ -1384,27 +1384,15 @@
          "displayName": "Running Back",
          "abbreviation": "RB"
         },
-        "status": "Questionable",
+        "status": "Out",
         "injuries": {
-         "status": "Questionable",
-         "date": "2026-11-10T19:02Z",
+         "status": "Out",
+         "date": "2026-11-10T21:38Z",
          "type": {
-          "id": "2",
-          "name": "INJURY_STATUS_QUESTIONABLE",
-          "description": "questionable",
-          "abbreviation": "Q"
-         },
-         "details": {
-          "fantasyStatus": {
-           "description": "QUESTIONABLE",
-           "abbreviation": "QUESTIONABLE",
-           "displayDescription": "Questionable"
-          },
-          "type": "Hamstring",
-          "location": "Leg",
-          "detail": "Not Specified",
-          "side": "Not Specified",
-          "returnDate": "2026-11-12"
+          "id": "4",
+          "name": "INJURY_STATUS_OUT",
+          "description": "out",
+          "abbreviation": "O"
          }
         }
        },
@@ -1624,7 +1612,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-06-25T18:58Z"
+      "lastUpdated": "2022-11-17T18:02Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -2004,68 +1992,7 @@
    "injuries": [
     {
      "status": "Questionable",
-     "date": "2026-11-10T19:02Z",
-     "athlete": {
-      "id": "4696981",
-      "uid": "s:20~l:28~a:4696981",
-      "guid": "0be760c4-3eb7-338a-9b0b-20de5895543c",
-      "lastName": "Skattebo",
-      "fullName": "Cam Skattebo",
-      "displayName": "Cam Skattebo",
-      "shortName": "C. Skattebo",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4696981/cam-skattebo",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4696981.png",
-       "alt": "Cam Skattebo"
-      },
-      "jersey": "44",
-      "position": {
-       "name": "Running Back",
-       "displayName": "Running Back",
-       "abbreviation": "RB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4696981?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Hamstring",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-11-12"
-     }
-    },
-    {
-     "status": "Questionable",
-     "date": "2026-11-10T18:38Z",
+     "date": "2026-11-10T21:39Z",
      "athlete": {
       "id": "4433970",
       "uid": "s:20~l:28~a:4433970",
@@ -2110,18 +2037,55 @@
       "name": "INJURY_STATUS_QUESTIONABLE",
       "description": "questionable",
       "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
+     }
+    },
+    {
+     "status": "Out",
+     "date": "2026-11-10T21:38Z",
+     "athlete": {
+      "id": "4696981",
+      "uid": "s:20~l:28~a:4696981",
+      "guid": "0be760c4-3eb7-338a-9b0b-20de5895543c",
+      "lastName": "Skattebo",
+      "fullName": "Cam Skattebo",
+      "displayName": "Cam Skattebo",
+      "shortName": "C. Skattebo",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4696981/cam-skattebo",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4696981.png",
+       "alt": "Cam Skattebo"
       },
-      "type": "Hip",
-      "location": "Leg",
-      "detail": "Bruise",
-      "side": "Not Specified",
-      "returnDate": "2026-11-12"
+      "jersey": "44",
+      "position": {
+       "name": "Running Back",
+       "displayName": "Running Back",
+       "abbreviation": "RB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4696981?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "4",
+      "name": "INJURY_STATUS_OUT",
+      "description": "out",
+      "abbreviation": "O"
      }
     },
     {
@@ -2341,7 +2305,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-06-25T18:58Z"
+      "lastUpdated": "2022-11-17T18:02Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -2698,7 +2662,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "Draft Kings",
+    "name": "DraftKings",
     "priority": 1,
     "logos": [
      {
@@ -2749,7 +2713,7 @@
       "home",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_1",
      "text": "Home Bet",
@@ -2773,7 +2737,7 @@
       "away",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_3",
      "text": "Away Bet",
@@ -2913,7 +2877,7 @@
         "home",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_1",
        "text": "Home Bet",
@@ -2945,7 +2909,7 @@
         "away",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_3",
        "text": "Away Bet",
@@ -3180,7 +3144,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-06-25T18:58Z"
+      "lastUpdated": "2022-11-17T18:02Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -3277,6 +3241,17 @@
    "records": []
   }
  ],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "19",
+   "gameProjection": "50.1"
+  },
+  "awayTeam": {
+   "id": "28",
+   "gameProjection": "49.5"
+  }
+ },
  "winprobability": [],
  "news": {
   "header": "NFL News",
@@ -3301,21 +3276,10 @@
     "dataSourceIdentifier": "bfbfa442722b8",
     "type": "Story",
     "headline": "2026 NFL trade deadline updates: Josh Downs, Kirk Cousins on the move",
-    "description": "The NFL trade deadline ended at 4 p.m. ET. We followed the action around all 18 deals, including six on Tuesday.",
-    "lastModified": "2026-11-10T21:21:39Z",
-    "published": "2026-11-10T21:21:39Z",
+    "description": "We're officially past the NFL trade deadline. We followed the action on 18 in-season deals, including six on Tuesday.",
+    "lastModified": "2026-11-10T22:16:58Z",
+    "published": "2026-11-10T22:16:58Z",
     "images": [
-     {
-      "dataSourceIdentifier": "bcf87d176fdaf",
-      "id": 50445986,
-      "type": "header",
-      "name": "Ryan Neuzil [608x342]",
-      "alt": "Ryan Neuzil",
-      "credit": "Derick Hingle/Icon Sportswire",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1110/r1744182_608x342_16-9.jpg"
-     },
      {
       "dataSourceIdentifier": "5d5d216a126e6",
       "id": 50445472,
@@ -3328,39 +3292,6 @@
       "url": "https://a.espncdn.com/photo/2026/1110/r1744149_608x342_16-9.jpg"
      },
      {
-      "dataSourceIdentifier": "1c1c80c07e371",
-      "id": 50444312,
-      "type": "header",
-      "name": "Kirk Cousins [608x342]",
-      "alt": "Kirk Cousins",
-      "credit": "Brooke Sutton/Getty Images",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1110/r1744086_608x342_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "9ad89b2d7341b",
-      "id": 50444415,
-      "type": "header",
-      "name": "Keenan Allen [608x342]",
-      "alt": "Keenan Allen",
-      "credit": "Lauren Leigh Bacho/Getty Images",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1110/r1744088_2_608x342_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "0c1f9f84a3482",
-      "id": 50442988,
-      "type": "header",
-      "name": "FOR TRACKER: Arnold Ebiketie [608x342]",
-      "alt": "FOR TRACKER: Arnold Ebiketie",
-      "credit": "Andy Lewis/Icon Sportswire",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1110/r1744010_608x342_16-9.jpg"
-     },
-     {
       "dataSourceIdentifier": "d7e4d0a41514b",
       "id": 50435616,
       "type": "header",
@@ -3370,6 +3301,28 @@
       "height": 342,
       "width": 608,
       "url": "https://a.espncdn.com/photo/2026/1109/r1743722_2_608x342_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "f61378c22becc",
+      "id": 50434412,
+      "type": "header",
+      "name": "Andre Cisco [608x342]",
+      "alt": "Andre Cisco",
+      "credit": "Sarah Stier/Getty Images",
+      "height": 342,
+      "width": 608,
+      "url": "https://a.espncdn.com/photo/2026/1109/r1743628_608x342_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "6fca6fe0e452f",
+      "id": 50434286,
+      "type": "header",
+      "name": "Davon Godchaux [608x342]",
+      "alt": "Davon Godchaux",
+      "credit": "David Banks-Imagn Images",
+      "height": 342,
+      "width": 608,
+      "url": "https://a.espncdn.com/photo/2026/1109/r1743622_608x342_16-9.jpg"
      },
      {
       "type": "Media",
@@ -3465,431 +3418,15 @@
     "premium": false
    },
    {
-    "id": 49803708,
-    "nowId": "1-49803708",
-    "contentKey": "49803708-1-6-1",
-    "dataSourceIdentifier": "eb4e9778b01e5",
-    "type": "Story",
-    "headline": "Fantasy football flex and superflex rankings for Week 10",
-    "description": "Trying to decide between a couple of closely ranked players this week? Eric Karabell's ranks are here to help.",
-    "lastModified": "2026-11-10T21:07:31Z",
-    "published": "2026-11-10T21:07:31Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "362dfa2f15493",
-      "id": 50442537,
-      "type": "header",
-      "name": "Woody Marks [1296x729]",
-      "alt": "Woody Marks, Houston Texans running back",
-      "credit": "Kirby Lee/Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1018/r1732405_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "fe98aaadd6a17",
-      "id": 50007233,
-      "type": "header",
-      "name": "Detroit Lions wide receiver Jameson Williams [1296x729]",
-      "caption": "Jameson Williams is off to a slow start with six catches for 78 yards and no touchdowns for a Lions team that has 62 points in two games.",
-      "alt": "Jameson Williams",
-      "credit": "Scott W. Grau/Icon Sportswire",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0902/r1710593_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "6b132320463f7",
-      "id": 50174553,
-      "type": "header",
-      "name": "Denzel Boston [1296x729]",
-      "alt": "Denzel Boston, Cleveland Browns wide receiver",
-      "credit": "AP Photo/Sue Ogrocki",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0928/r1723051_2_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Are the Rams' running backs worth starting in fantasy?",
-      "caption": "Are the Rams' running backs worth starting in fantasy?",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1108/dm_261108_Corum-Kyren/dm_261108_Corum-Kyren.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 141870,
-      "type": "topic",
-      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
-      "description": "news - fantasy",
-      "sportId": 0,
-      "topicId": 240
-     },
-     {
-      "id": 696457,
-      "type": "contributor",
-      "guid": "81fb2165-06b4-383f-a557-f86bffde1ba8",
-      "description": "Eric Karabell",
-      "slug": "eric-karabell",
-      "contributor": {
-       "id": 907,
-       "description": "Eric Karabell"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "Eric Karabell",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/49803708"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=49803708"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=49803708"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/id/49803708/fantasy-football-superflex-rankings-2026-qb-rb-wr-te"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50445819,
-    "nowId": "1-50445819",
-    "contentKey": "50445819-1-5-1",
-    "dataSourceIdentifier": "ed9f6c17616ff",
-    "type": "HeadlineNews",
-    "headline": "Dolphins put QB Malik Willis on IR with groin injury",
-    "description": "The Dolphins have put quarterback Malik Wills on injured reserve because of a groin injury. He's eligible to return in Week 14",
-    "lastModified": "2026-11-10T21:21:06Z",
-    "published": "2026-11-10T21:21:06Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "68a28fd6a679c",
-      "id": 50168901,
-      "type": "header",
-      "name": "Malik Willis [1296x729]",
-      "caption": "Dolphins quarterback Malik Willis, who ranks 31st in the NFL with a 56.2% completion percentage and 23rd in quarterback rating, will remain the team's starter, coach Jeff Hafley said Monday.",
-      "credit": "Carmen Mandato/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1012/r1729869_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Who stepped up for Dolphins in loss?",
-      "caption": "Marcel Louis-Jacques breaks down the Dolphins' 19-9 loss to the Lions.",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1108/dm_261108_Dolphins_postgame_1108/dm_261108_Dolphins_postgame_1108.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2258,
-      "type": "team",
-      "uid": "s:20~l:28~t:15",
-      "guid": "af33088b-1e19-d27d-dbc0-354fd7151703",
-      "description": "Miami Dolphins",
-      "sportId": 28,
-      "teamId": 15,
-      "team": {
-       "id": 15,
-       "description": "Miami Dolphins",
-       "abbreviation": "MIA",
-       "shortDisplayName": "Dolphins",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     },
-     {
-      "id": 529420,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4242512",
-      "guid": "77d56116-fed8-b61e-d8d8-9a30107e2104",
-      "description": "Malik Willis",
-      "sportId": 28,
-      "athleteId": 4242512,
-      "athlete": {
-       "id": 4242512,
-       "description": "Malik Willis",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4242512/malik-willis"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4242512/malik-willis"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50445819"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50445819"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50445819"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50445819/dolphins-put-qb-malik-willis-ir-groin-injury"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50445818,
-    "nowId": "1-50445818",
-    "contentKey": "50445818-1-293-1",
-    "dataSourceIdentifier": "c28384d389624",
-    "type": "Media",
-    "headline": "Orlovsky perplexed by the Colts not trading Jonathan Taylor",
-    "description": "Orlovsky perplexed by the Colts not trading Jonathan Taylor",
-    "lastModified": "2026-11-10T21:17:26Z",
-    "published": "2026-11-10T21:17:26Z",
-    "images": [
-     {
-      "name": "Orlovsky perplexed by the Colts not trading Jonathan Taylor",
-      "caption": "Orlovsky perplexed by the Colts not trading Jonathan Taylor",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1110/ss_20261110_160335174_3735570/ss_20261110_160335174_3735570.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 696234,
-      "type": "contributor",
-      "guid": "959b9f14-40dc-331c-80ef-e0e227c13b42",
-      "description": "Dan Orlovsky",
-      "slug": "dan-orlovsky",
-      "contributor": {
-       "id": 3936,
-       "description": "Dan Orlovsky"
-      }
-     },
-     {
-      "id": 435130,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4242335",
-      "guid": "ddd8786c-fd5a-4e55-ccc8-6ddf6f1ede33",
-      "description": "Jonathan Taylor",
-      "sportId": 28,
-      "athleteId": 4242335,
-      "athlete": {
-       "id": 4242335,
-       "description": "Jonathan Taylor",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4242335/jonathan-taylor"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4242335/jonathan-taylor"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2942,
-      "type": "team",
-      "uid": "s:20~l:28~t:11",
-      "guid": "582d14eb-da61-e505-cc40-d972a1b60ed1",
-      "description": "Indianapolis Colts",
-      "sportId": 28,
-      "teamId": 11,
-      "team": {
-       "id": 11,
-       "description": "Indianapolis Colts",
-       "abbreviation": "IND",
-       "shortDisplayName": "Colts",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 730035,
-      "type": "editorialindicator",
-      "guid": "765b3968-7a2d-3d80-bded-8ba8b1e1cc03",
-      "description": "Verts - Exclude Content"
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/7c10e256-9001-44a2-ae70-569baae5a037"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50445818"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50445818&videoDSI=c28384d389624"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50445818/orlovsky-perplexed-colts-not-trading-jonathan-taylor",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50445818/orlovsky-perplexed-colts-not-trading-jonathan-taylor",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=c28384d389624"
-       }
-      }
-     }
-    },
-    "premium": false
-   },
-   {
     "id": 50043542,
     "nowId": "1-50043542",
     "contentKey": "50043542-1-6-1",
     "dataSourceIdentifier": "768d0a1ed9c4b",
     "type": "Story",
-    "headline": "NFL trade deadline grades: Deals for Kirk Cousins, Keenan Allen, Jordan Davis",
-    "description": "Was getting Cousins a home run for the Vikings? Did the 49ers make a smart move to pick up Keenan Allen?",
-    "lastModified": "2026-11-10T21:10:52Z",
-    "published": "2026-11-10T21:10:52Z",
+    "headline": "NFL trade deadline grades: Deals for Kirk Cousins, Josh Downs, Daiyan Henley",
+    "description": "Was getting Cousins a home run for the Vikings? Did the Chiefs make a smart move to pick up Josh Downs?",
+    "lastModified": "2026-11-10T22:14:37Z",
+    "published": "2026-11-10T22:14:37Z",
     "images": [
      {
       "dataSourceIdentifier": "36679a89386b2",
@@ -4013,11 +3550,11 @@
      },
      {
       "type": "Media",
-      "name": "Jeff Saturday: Kirk Cousins trade a 'great fit' for Vikings and Raiders",
-      "caption": "Jeff Saturday: Kirk Cousins trade a 'great fit' for Vikings and Raiders",
+      "name": "Mike Tannenbaum: Chiefs' trade for Josh Downs is a 'no-brainer'",
+      "caption": "Mike Tannenbaum: Chiefs' trade for Josh Downs is a 'no-brainer'",
       "height": 324,
       "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1110/ss_20261110_144703134_3735476892/ss_20261110_144703134_3735476892.jpg"
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1110/ss_20261110_154759419_3735560950/ss_20261110_154759419_3735560950.jpg"
      }
     ],
     "categories": [
@@ -4575,129 +4112,83 @@
         }
        }
       }
-     }
-    ],
-    "byline": "Ben Solak and Seth Walder",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50043542"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50043542"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50043542"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50043542/2026-trade-deadline-grades-latest-best-worst-deals"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50445612,
-    "nowId": "1-50445612",
-    "contentKey": "50445612-1-293-1",
-    "dataSourceIdentifier": "14cdc74aaebda",
-    "type": "Media",
-    "headline": "Mike Tannenbaum: Chiefs' trade for Josh Downs is a 'no-brainer'",
-    "description": "Mike Tannenbaum: Chiefs' trade for Josh Downs is a 'no-brainer'",
-    "lastModified": "2026-11-10T21:01:18Z",
-    "published": "2026-11-10T21:01:18Z",
-    "images": [
-     {
-      "name": "Mike Tannenbaum: Chiefs' trade for Josh Downs is a 'no-brainer'",
-      "caption": "Mike Tannenbaum: Chiefs' trade for Josh Downs is a 'no-brainer'",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1110/ss_20261110_154759419_3735560950/ss_20261110_154759419_3735560950.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
      },
      {
-      "id": 711826,
-      "type": "editorialindicator",
-      "guid": "122acb1b-7e9e-31cf-88a1-d2dc784385cf",
-      "description": "2 Star Rating"
-     },
-     {
-      "id": 442393,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4688813",
-      "guid": "07b29d35-1ac5-3571-b142-5743a0a841c0",
-      "description": "Josh Downs",
-      "sportId": 28,
-      "athleteId": 4688813,
-      "athlete": {
-       "id": 4688813,
-       "description": "Josh Downs",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4688813/josh-downs"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4688813/josh-downs"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2942,
+      "id": 2203,
       "type": "team",
-      "uid": "s:20~l:28~t:11",
-      "guid": "582d14eb-da61-e505-cc40-d972a1b60ed1",
-      "description": "Indianapolis Colts",
+      "uid": "s:20~l:28~t:2",
+      "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
+      "description": "Buffalo Bills",
       "sportId": 28,
-      "teamId": 11,
+      "teamId": 2,
       "team": {
-       "id": 11,
-       "description": "Indianapolis Colts",
-       "abbreviation": "IND",
-       "shortDisplayName": "Colts",
+       "id": 2,
+       "description": "Buffalo Bills",
+       "abbreviation": "BUF",
+       "shortDisplayName": "Bills",
        "links": {
         "mobile": {
          "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
+          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
          }
         },
         "web": {
          "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
+          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2610,
+      "type": "team",
+      "uid": "s:20~l:28~t:24",
+      "guid": "84caf62b-c753-71ea-a787-44fd224a4294",
+      "description": "Los Angeles Chargers",
+      "sportId": 28,
+      "teamId": 24,
+      "team": {
+       "id": 24,
+       "description": "Los Angeles Chargers",
+       "abbreviation": "LAC",
+       "shortDisplayName": "Chargers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2432,
+      "type": "team",
+      "uid": "s:20~l:28~t:7",
+      "guid": "51042145-e3c1-0694-ae0d-f720342ff8fc",
+      "description": "Denver Broncos",
+      "sportId": 28,
+      "teamId": 7,
+      "team": {
+       "id": 7,
+       "description": "Denver Broncos",
+       "abbreviation": "DEN",
+       "shortDisplayName": "Broncos",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/den/denver-broncos"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/den/denver-broncos"
          }
         }
        }
@@ -4729,50 +4220,710 @@
         }
        }
       }
-     },
-     {
-      "id": 730035,
-      "type": "editorialindicator",
-      "guid": "765b3968-7a2d-3d80-bded-8ba8b1e1cc03",
-      "description": "Verts - Exclude Content"
      }
     ],
+    "byline": "Ben Solak and Seth Walder",
     "links": {
      "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/48d51634-5d29-46d7-a80c-52f05791fe58"
-      },
       "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50445612"
+       "href": "https://content.core.api.espn.com/v1/sports/news/50043542"
       }
      },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50445612&videoDSI=14cdc74aaebda"
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50043542"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50043542"
      },
      "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50445612/chiefs-trade-josh-downs-no-brainer",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50445612/chiefs-trade-josh-downs-no-brainer",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=14cdc74aaebda"
+      "href": "https://www.espn.com/nfl/story/_/id/50043542/2026-trade-deadline-grades-latest-best-worst-deals"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 47809892,
+    "nowId": "1-47809892",
+    "contentKey": "47809892-1-6-1",
+    "dataSourceIdentifier": "c6078de4614f7",
+    "type": "Story",
+    "headline": "Super Bowl LXI odds: All 32 teams' odds to win the championship",
+    "description": "Every NFL team's win total, as well as odds to win the division, the conference and Super Bowl LXI.",
+    "lastModified": "2026-11-10T22:10:36Z",
+    "published": "2026-11-10T22:10:36Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "613e40a84e44b",
+      "id": 47809781,
+      "type": "header",
+      "name": "SoFi Stadium [608x342]",
+      "caption": "SoFi Stadium will be the site of Super Bowl LXI in 2027, and the game will be broadcast on ESPN for the first time.",
+      "alt": "SoFi Stadium",
+      "credit": "AP Photo/Kyusung Gong, File",
+      "height": 342,
+      "width": 608,
+      "url": "https://a.espncdn.com/photo/2026/0202/r1609489_608x342_16-9.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
        }
       }
+     },
+     {
+      "id": 129297,
+      "type": "topic",
+      "guid": "ffd795dd-dc60-d4c3-f868-831dc2ec21b3",
+      "description": "news - nfl",
+      "sportId": 0,
+      "topicId": 121
+     },
+     {
+      "id": 611584,
+      "type": "league",
+      "guid": "550a1e9e-377e-3019-bf5e-19c027d50a49",
+      "description": "Sports Betting",
+      "sportId": 22000,
+      "leagueId": 22000,
+      "league": {
+       "id": 22000,
+       "description": "Sports Betting"
+      }
+     },
+     {
+      "id": 137817,
+      "type": "topic",
+      "guid": "14f579db-79ec-a898-9405-8fec63e16063",
+      "description": "news \u2013 sports betting",
+      "sportId": 0,
+      "topicId": 179
+     },
+     {
+      "id": 112926,
+      "type": "topic",
+      "guid": "f123f941-21b0-b3d9-7a2b-25c6029f605b",
+      "description": "super bowl",
+      "sportId": 0,
+      "topicId": 4
+     },
+     {
+      "id": 1750,
+      "type": "team",
+      "uid": "s:20~l:28~t:3",
+      "guid": "19d73366-b5a5-cca2-a176-a2c024ce0bb3",
+      "description": "Chicago Bears",
+      "sportId": 28,
+      "teamId": 3,
+      "team": {
+       "id": 3,
+       "description": "Chicago Bears",
+       "abbreviation": "CHI",
+       "shortDisplayName": "Bears",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2996,
+      "type": "team",
+      "uid": "s:20~l:28~t:30",
+      "guid": "ca6fb778-cbf6-d9a3-3e93-01230335fcab",
+      "description": "Jacksonville Jaguars",
+      "sportId": 28,
+      "teamId": 30,
+      "team": {
+       "id": 30,
+       "description": "Jacksonville Jaguars",
+       "abbreviation": "JAX",
+       "shortDisplayName": "Jaguars",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1920,
+      "type": "team",
+      "uid": "s:20~l:28~t:16",
+      "guid": "3db556c9-ed76-a7a5-4ccb-a92fc6db4334",
+      "description": "Minnesota Vikings",
+      "sportId": 28,
+      "teamId": 16,
+      "team": {
+       "id": 16,
+       "description": "Minnesota Vikings",
+       "abbreviation": "MIN",
+       "shortDisplayName": "Vikings",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1861,
+      "type": "team",
+      "uid": "s:20~l:28~t:9",
+      "guid": "06cd3bcf-7a86-53d4-28e7-aa049dd36261",
+      "description": "Green Bay Packers",
+      "sportId": 28,
+      "teamId": 9,
+      "team": {
+       "id": 9,
+       "description": "Green Bay Packers",
+       "abbreviation": "GB",
+       "shortDisplayName": "Packers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1805,
+      "type": "team",
+      "uid": "s:20~l:28~t:8",
+      "guid": "56caffee-178d-f6f2-a076-b277486b8c32",
+      "description": "Detroit Lions",
+      "sportId": 28,
+      "teamId": 8,
+      "team": {
+       "id": 8,
+       "description": "Detroit Lions",
+       "abbreviation": "DET",
+       "shortDisplayName": "Lions",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/det/detroit-lions"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/det/detroit-lions"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1519,
+      "type": "team",
+      "uid": "s:20~l:28~t:14",
+      "guid": "2e1473b2-e269-fd7a-1137-c1edacb85986",
+      "description": "Los Angeles Rams",
+      "sportId": 28,
+      "teamId": 14,
+      "team": {
+       "id": 14,
+       "description": "Los Angeles Rams",
+       "abbreviation": "LAR",
+       "shortDisplayName": "Rams",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1637,
+      "type": "team",
+      "uid": "s:20~l:28~t:25",
+      "guid": "985a261f-296c-c95c-32a5-addc4df75001",
+      "description": "San Francisco 49ers",
+      "sportId": 28,
+      "teamId": 25,
+      "team": {
+       "id": 25,
+       "description": "San Francisco 49ers",
+       "abbreviation": "SF",
+       "shortDisplayName": "49ers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2203,
+      "type": "team",
+      "uid": "s:20~l:28~t:2",
+      "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
+      "description": "Buffalo Bills",
+      "sportId": 28,
+      "teamId": 2,
+      "team": {
+       "id": 2,
+       "description": "Buffalo Bills",
+       "abbreviation": "BUF",
+       "shortDisplayName": "Bills",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696244,
+      "type": "contributor",
+      "guid": "b4b4279f-6f4d-329a-a5c2-1eeceea9f2bb",
+      "description": "Doug Greenberg",
+      "slug": "doug-greenberg",
+      "contributor": {
+       "id": 4050,
+       "description": "Doug Greenberg"
+      }
+     }
+    ],
+    "byline": "Doug Greenberg",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/47809892"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=47809892"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=47809892"
+     },
+     "web": {
+      "href": "https://www.espn.com/espn/betting/story/_/id/47809892/2026-super-bowl-lxi-odds-nfl-sports-betting-season-win-totals-playoffs"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50446573,
+    "nowId": "1-50446573",
+    "contentKey": "50446573-1-5-1",
+    "dataSourceIdentifier": "0968925ac4fc6",
+    "type": "HeadlineNews",
+    "headline": "Giants' Nabers calls Fox analyst Olsen's body language critique a 'lie'",
+    "description": "Giants wide receiver Malik Nabers said Tuesday he posted on social media after the game because he thought the critique from Fox play-by-play man Joe Davis and analyst Greg Olsen about his body language and being a bad teammate was a \"lie.\"",
+    "lastModified": "2026-11-10T22:17:47Z",
+    "published": "2026-11-10T22:17:47Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "28e4a8bd7e0f3",
+      "id": 50429548,
+      "type": "header",
+      "name": "Malik Nabers  [600x400]",
+      "credit": "Caleb Bowlin/Getty Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1109/r1743447_600x400_3-2.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1352,
+      "type": "team",
+      "uid": "s:20~l:28~t:19",
+      "guid": "378600ea-2397-8364-8399-b7c1606a49a7",
+      "description": "New York Giants",
+      "sportId": 28,
+      "teamId": 19,
+      "team": {
+       "id": 19,
+       "description": "New York Giants",
+       "abbreviation": "NYG",
+       "shortDisplayName": "Giants",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 489486,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4595348",
+      "guid": "44a2174b-1d11-3acf-8e75-fe0c13db47a6",
+      "description": "Malik Nabers",
+      "sportId": 28,
+      "athleteId": 4595348,
+      "athlete": {
+       "id": 4595348,
+       "description": "Malik Nabers",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4595348/malik-nabers"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4595348/malik-nabers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696298,
+      "type": "contributor",
+      "guid": "b8dd259e-f5fa-3124-8d1c-5c0caf40d38f",
+      "description": "Jordan Raanan",
+      "slug": "jordan-raanan",
+      "contributor": {
+       "id": 2721,
+       "description": "Jordan Raanan"
+      }
+     }
+    ],
+    "byline": "Jordan Raanan",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50446573"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50446573"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50446573"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50446573/giants-nabers-calls-fox-analyst-olsen-body-language-criticism-lie"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 47879765,
+    "nowId": "1-47879765",
+    "contentKey": "47879765-1-6-1",
+    "dataSourceIdentifier": "4c443b23b37f2",
+    "type": "Story",
+    "headline": "Fantasy football 2026 defensive depth charts",
+    "description": "Your guide to each NFL team's most valuable fantasy defensive players for the 2026 season.",
+    "lastModified": "2026-11-10T22:03:59Z",
+    "published": "2026-11-10T22:03:59Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "b7cc6bcdcabde",
+      "id": 47880274,
+      "type": "header",
+      "name": "Ernest Jones IV [1296x729]",
+      "alt": "Ernest Jones IV, Seattle Seahawks linebacker",
+      "credit": "Jane Gershovich/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2025/0102/r1433853_1296x729_16-9.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 141870,
+      "type": "topic",
+      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
+      "description": "news - fantasy",
+      "sportId": 0,
+      "topicId": 240
+     },
+     {
+      "id": 696414,
+      "type": "contributor",
+      "guid": "a9526b3a-e70d-366c-8a8d-d84a4864a455",
+      "description": "Mike Clay",
+      "slug": "mike-clay",
+      "contributor": {
+       "id": 2377,
+       "description": "Mike Clay"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     }
+    ],
+    "byline": "Mike Clay",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/47879765"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=47879765"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=47879765"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/id/47879765/fantasy-football-2026-defensive-depth-charts"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 47879613,
+    "nowId": "1-47879613",
+    "contentKey": "47879613-1-6-1",
+    "dataSourceIdentifier": "57e29d5c40121",
+    "type": "Story",
+    "headline": "Fantasy football 2026 offensive depth charts",
+    "description": "Your guide to each NFL team's most valuable offensive players from a fantasy standpoint for the 2026 season.",
+    "lastModified": "2026-11-10T22:02:40Z",
+    "published": "2026-11-10T22:02:40Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "524322ed999e6",
+      "id": 47880228,
+      "type": "header",
+      "name": "Kyren Williams [1296x729]",
+      "alt": "Kyren Williams, Los Angeles Rams running back",
+      "credit": "Kara Durrette/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/0121/r1603677_1296x729_16-9.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 141870,
+      "type": "topic",
+      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
+      "description": "news - fantasy",
+      "sportId": 0,
+      "topicId": 240
+     },
+     {
+      "id": 696414,
+      "type": "contributor",
+      "guid": "a9526b3a-e70d-366c-8a8d-d84a4864a455",
+      "description": "Mike Clay",
+      "slug": "mike-clay",
+      "contributor": {
+       "id": 2377,
+       "description": "Mike Clay"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     }
+    ],
+    "byline": "Mike Clay",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/47879613"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=47879613"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=47879613"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/id/47879613/fantasy-football-2026-offensive-depth-charts"
      }
     },
     "premium": false
    }
   ]
- },
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "19",
-   "gameProjection": "50.1"
-  },
-  "awayTeam": {
-   "id": "28",
-   "gameProjection": "49.5"
-  }
  },
  "header": {
   "id": "401873052",
@@ -5073,7 +5224,7 @@
           "full",
           "dark"
          ],
-         "lastUpdated": "2024-06-25T18:58Z"
+         "lastUpdated": "2022-11-17T18:02Z"
         },
         {
          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
@@ -5851,22 +6002,22 @@
     "type": "team"
    },
    {
-    "ticketName": "11/12 vs Commanders 4582 tickets left",
+    "ticketName": "11/12 vs Commanders 4533 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/22 vs Jaguars 4363 tickets left",
+    "ticketName": "11/22 vs Jaguars 4331 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494186?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/29 @ Colts 4178 tickets left",
+    "ticketName": "11/29 @ Colts 4161 tickets left",
     "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/6 vs 49ers 3898 tickets left",
+    "ticketName": "12/6 vs 49ers 4010 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-8-2027/production/6494196?wsUser=717",
     "type": "event"
    },
@@ -5900,7 +6051,7 @@
    "opponentTeamName": "Commanders",
    "currentTeamName": "Giants",
    "venueName": "MetLife Stadium",
-   "summary": "Tickets as low as $75",
+   "summary": "Tickets as low as $79",
    "date": "2026-11-13T01:15Z",
    "dateDay": "Thu",
    "homeAway": "home",
