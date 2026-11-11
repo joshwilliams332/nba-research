@@ -462,6 +462,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "18",
       "uid": "s:20~l:28~t:18",
@@ -526,9 +528,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png"
     },
     {
      "id": "401873016",
@@ -640,8 +640,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "21",
       "uid": "s:20~l:28~t:21",
@@ -706,7 +704,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -798,8 +798,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "11",
       "uid": "s:20~l:28~t:11",
@@ -864,7 +862,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401872988",
@@ -1991,8 +1991,8 @@
    },
    "injuries": [
     {
-     "status": "Questionable",
-     "date": "2026-11-11T02:01Z",
+     "status": "Out",
+     "date": "2026-11-11T01:35Z",
      "athlete": {
       "id": "4921249",
       "uid": "s:20~l:28~a:4921249",
@@ -2033,22 +2033,10 @@
       }
      },
      "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Finger",
-      "location": "Arm",
-      "detail": "Dislocated",
-      "side": "Left",
-      "returnDate": "2026-11-12"
+      "id": "4",
+      "name": "INJURY_STATUS_OUT",
+      "description": "out",
+      "abbreviation": "O"
      }
     },
     {
@@ -2211,16 +2199,16 @@
      }
     },
     {
-     "status": "Questionable",
-     "date": "2026-11-10T00:09Z",
+     "status": "Injured Reserve",
+     "date": "2026-10-27T21:04Z",
      "athlete": {
-      "id": "4725996",
-      "uid": "s:20~l:28~a:4725996",
-      "guid": "df4ecbf0-8676-3fbd-8563-25721d12b4ba",
-      "lastName": "Carter",
-      "fullName": "Abdul Carter",
-      "displayName": "Abdul Carter",
-      "shortName": "A. Carter",
+      "id": "4360516",
+      "uid": "s:20~l:28~a:4360516",
+      "guid": "299f83a3-54ea-c2bc-743a-e84fe4e1de18",
+      "lastName": "Tracy Jr.",
+      "fullName": "Tyrone Tracy Jr.",
+      "displayName": "Tyrone Tracy Jr.",
+      "shortName": "T. Tracy Jr.",
       "links": [
        {
         "rel": [
@@ -2228,22 +2216,22 @@
          "desktop",
          "athlete"
         ],
-        "href": "https://www.espn.com/nfl/player/_/id/4725996/abdul-carter",
+        "href": "https://www.espn.com/nfl/player/_/id/4360516/tyrone-tracy-jr",
         "text": "Player Card"
        }
       ],
       "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4725996.png",
-       "alt": "Abdul Carter"
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4360516.png",
+       "alt": "Tyrone Tracy Jr."
       },
-      "jersey": "3",
+      "jersey": "29",
       "position": {
-       "name": "Linebacker",
-       "displayName": "Linebacker",
-       "abbreviation": "LB"
+       "name": "Running Back",
+       "displayName": "Running Back",
+       "abbreviation": "RB"
       },
       "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4725996?lang=en&region=us"
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4360516?lang=en&region=us"
       },
       "status": {
        "id": "1",
@@ -2253,22 +2241,22 @@
       }
      },
      "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
+      "id": "5",
+      "name": "INJURY_STATUS_IR",
+      "description": "Injured Reserve",
+      "abbreviation": "IR"
      },
      "details": {
       "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
+       "description": "IR",
+       "abbreviation": "IR",
+       "displayDescription": "IR"
       },
-      "type": "Knee",
+      "type": "Hamstring",
       "location": "Leg",
-      "detail": "Not Specified",
+      "detail": "Strain",
       "side": "Not Specified",
-      "returnDate": "2026-11-12"
+      "returnDate": "2026-12-06"
      }
     }
    ]
@@ -2462,8 +2450,8 @@
      }
     },
     {
-     "status": "Questionable",
-     "date": "2026-11-11T14:59Z",
+     "status": "Out",
+     "date": "2026-11-10T23:58Z",
      "athlete": {
       "id": "4567156",
       "uid": "s:20~l:28~a:4567156",
@@ -2504,10 +2492,10 @@
       }
      },
      "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
+      "id": "4",
+      "name": "INJURY_STATUS_OUT",
+      "description": "out",
+      "abbreviation": "O"
      }
     },
     {
@@ -3399,6 +3387,79 @@
    "gameProjection": "49.5"
   }
  },
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Giants Tickets",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/12 vs Commanders 3952 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/22 vs Jaguars 4301 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494186?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/29 @ Colts 4236 tickets left",
+    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/6 vs 49ers 4056 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-8-2027/production/6494196?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 @ Seahawks 2673 tickets left",
+    "ticketLink": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-5-2027/production/6492971?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 vs Browns 6396 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-5-2027/production/6494180?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/28 @ Lions 2364 tickets left",
+    "ticketLink": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-8-2026/production/6489904?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/3 @ Cowboys 12186 tickets left",
+    "ticketLink": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-3-2026/production/6489518?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Eagles 7718 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-2-2027/production/6494174?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Commanders",
+   "currentTeamName": "Giants",
+   "venueName": "MetLife Stadium",
+   "summary": "Tickets as low as $57",
+   "date": "2026-11-13T01:15Z",
+   "dateDay": "Thu",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
+   "venueLink": "https://www.vividseats.com/metlife-stadium-tickets/venue/8136?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
+   "timeValid": true
+  }
+ },
  "news": {
   "header": "NFL News",
   "link": {
@@ -3416,6 +3477,173 @@
   },
   "articles": [
    {
+    "id": 50455318,
+    "nowId": "1-50455318",
+    "contentKey": "50455318-1-5-1",
+    "dataSourceIdentifier": "40c5413fa53d1",
+    "type": "HeadlineNews",
+    "headline": "Sean McVay: Rams optimistic WR Davante Adams will return 'sooner than later'",
+    "description": "The Rams are optimistic that injured wide receiver Davante Adams will return from his hamstring injury \"sooner than later,\" coach Sean McVay said.",
+    "lastModified": "2026-11-11T22:05:07Z",
+    "published": "2026-11-11T22:05:07Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "4e4f775065f86",
+      "id": 50455247,
+      "type": "header",
+      "name": "Davante Adams [1296x729]",
+      "credit": "AP Photo/Caroline Brehman",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1111/r1744556_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Does Puka Nacua's injury put the Rams' season in jeopardy?",
+      "caption": "Does Puka Nacua's injury put the Rams' season in jeopardy?",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1110/ss_20261110_090259493_3735245/ss_20261110_090259493_3735245.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1519,
+      "type": "team",
+      "uid": "s:20~l:28~t:14",
+      "guid": "2e1473b2-e269-fd7a-1137-c1edacb85986",
+      "description": "Los Angeles Rams",
+      "sportId": 28,
+      "teamId": 14,
+      "team": {
+       "id": 14,
+       "description": "Los Angeles Rams",
+       "abbreviation": "LAR",
+       "shortDisplayName": "Rams",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 126492,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:16800",
+      "guid": "d287bc03-47c2-c7f6-6160-e4280c80d2e2",
+      "description": "Davante Adams",
+      "sportId": 28,
+      "athleteId": 16800,
+      "athlete": {
+       "id": 16800,
+       "description": "Davante Adams",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/16800/davante-adams"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/16800/davante-adams"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 392016,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4426515",
+      "guid": "05861488-1bb7-7c32-83eb-d0658a6e2b89",
+      "description": "Puka Nacua",
+      "sportId": 28,
+      "athleteId": 4426515,
+      "athlete": {
+       "id": 4426515,
+       "description": "Puka Nacua",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4426515/puka-nacua"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4426515/puka-nacua"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696392,
+      "type": "contributor",
+      "guid": "4383eeca-02a1-39f1-81c1-32194fcc847e",
+      "description": "Sarah Barshop",
+      "slug": "sarah-barshop",
+      "contributor": {
+       "id": 2722,
+       "description": "Sarah Barshop"
+      }
+     }
+    ],
+    "byline": "Sarah Barshop",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50455318"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50455318"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50455318"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50455318/mcvay-rams-optimistic-wr-adams-return-sooner-later"
+     }
+    },
+    "premium": false
+   },
+   {
     "id": 50455241,
     "nowId": "1-50455241",
     "contentKey": "50455241-1-293-1",
@@ -3423,8 +3651,8 @@
     "type": "Media",
     "headline": "Cardinals coach: Carson Beck's been a pro since he's been here",
     "description": "Cardinals coach: Carson Beck's been a pro since he's been here",
-    "lastModified": "2026-11-11T21:43:00Z",
-    "published": "2026-11-11T21:43:00Z",
+    "lastModified": "2026-11-11T21:52:44Z",
+    "published": "2026-11-11T21:52:44Z",
     "images": [
      {
       "name": "Cardinals coach: Carson Beck's been a pro since he's been here",
@@ -3559,8 +3787,8 @@
     "type": "HeadlineNews",
     "headline": "Cardinals to start rookie QB Carson Beck against Rams",
     "description": "The Cardinals will start their third quarterback in three weeks, with rookie Carson Beck getting the nod for Sunday's home game against the Rams.",
-    "lastModified": "2026-11-11T21:16:58Z",
-    "published": "2026-11-11T21:16:58Z",
+    "lastModified": "2026-11-11T21:46:01Z",
+    "published": "2026-11-11T21:46:01Z",
     "images": [
      {
       "dataSourceIdentifier": "4a53c123b76ee",
@@ -3576,11 +3804,11 @@
      },
      {
       "type": "Media",
-      "name": "Carson Beck next man up for Cardinals",
-      "caption": "Josh Weinfuss explains who will be at quarterback for the Cardinals this week.",
+      "name": "Cardinals coach: Carson Beck's been a pro since he's been here",
+      "caption": "Cardinals coach: Carson Beck's been a pro since he's been here",
       "height": 324,
       "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1109/dm_261109_Cardinals_IA/dm_261109_Cardinals_IA.jpg"
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1111/ss_20261111_163918385_3736900/ss_20261111_163918385_3736900.jpg"
      }
     ],
     "categories": [
@@ -4347,140 +4575,6 @@
         "href": "https://www.espn.com/video/clip?id=42db0e59f0f25"
        }
       }
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50454416,
-    "nowId": "1-50454416",
-    "contentKey": "50454416-1-5-1",
-    "dataSourceIdentifier": "b758a84aafc5f",
-    "type": "HeadlineNews",
-    "headline": "Titans' Calvin Ridley addresses incident with valet at Nashville airport",
-    "description": "Titans WR Calvin Ridley addressed the incident that occurred over the weekend at Nashville International Airport involving a valet as he attempted to recover the keys to his truck.",
-    "lastModified": "2026-11-11T20:22:54Z",
-    "published": "2026-11-11T20:22:54Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "ec0662e686e22",
-      "id": 50442563,
-      "type": "header",
-      "name": "Calvin Ridley [600x400]",
-      "credit": "Jeffrey Brown/Icon Sportswire",
-      "height": 400,
-      "width": 600,
-      "url": "https://a.espncdn.com/photo/2026/1110/r1743982_600x400_3-2.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2886,
-      "type": "team",
-      "uid": "s:20~l:28~t:10",
-      "guid": "0a0aea59-9a5e-01b3-57a3-0151cf4bf393",
-      "description": "Tennessee Titans",
-      "sportId": 28,
-      "teamId": 10,
-      "team": {
-       "id": 10,
-       "description": "Tennessee Titans",
-       "abbreviation": "TEN",
-       "shortDisplayName": "Titans",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 184521,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:3925357",
-      "guid": "4bfb2401-3499-7fb7-2eea-a237345fed6a",
-      "description": "Calvin Ridley",
-      "sportId": 28,
-      "athleteId": 3925357,
-      "athlete": {
-       "id": 3925357,
-       "description": "Calvin Ridley",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3925357/calvin-ridley"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3925357/calvin-ridley"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 696370,
-      "type": "contributor",
-      "guid": "7cd303be-26f1-3ed3-9d37-433aa584a6f2",
-      "description": "Turron Davenport",
-      "slug": "turron-davenport",
-      "contributor": {
-       "id": 3378,
-       "description": "Turron Davenport"
-      }
-     }
-    ],
-    "byline": "Turron Davenport",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50454416"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50454416"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50454416"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50454416/titans-ridley-addresses-incident-valet-airport"
      }
     },
     "premium": false
@@ -5563,79 +5657,6 @@
   }
  },
  "wallclockAvailable": false,
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Giants Tickets",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/12 vs Commanders 4117 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/22 vs Jaguars 4397 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494186?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/29 @ Colts 4238 tickets left",
-    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/6 vs 49ers 4180 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-8-2027/production/6494196?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 @ Seahawks 2673 tickets left",
-    "ticketLink": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-5-2027/production/6492971?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 vs Browns 6396 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-5-2027/production/6494180?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/28 @ Lions 2332 tickets left",
-    "ticketLink": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-8-2026/production/6489904?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/3 @ Cowboys 12186 tickets left",
-    "ticketLink": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-3-2026/production/6489518?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Eagles 7718 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-2-2027/production/6494174?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Commanders",
-   "currentTeamName": "Giants",
-   "venueName": "MetLife Stadium",
-   "summary": "Tickets as low as $61",
-   "date": "2026-11-13T01:15Z",
-   "dateDay": "Thu",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
-   "venueLink": "https://www.vividseats.com/metlife-stadium-tickets/venue/8136?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
-   "timeValid": true
-  }
- },
  "meta": {
   "gp_topic": "gp-football-nfl-401873052",
   "gameSwitcherEnabled": true,
