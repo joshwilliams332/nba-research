@@ -798,6 +798,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "11",
       "uid": "s:20~l:28~t:11",
@@ -862,9 +864,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
     },
     {
      "id": "401872988",
@@ -2329,6 +2329,55 @@
    "injuries": [
     {
      "status": "Out",
+     "date": "2026-11-11T22:06Z",
+     "athlete": {
+      "id": "4567156",
+      "uid": "s:20~l:28~a:4567156",
+      "guid": "25b3cf86-4062-aad3-da05-b3f2fdb48736",
+      "lastName": "Burks",
+      "fullName": "Treylon Burks",
+      "displayName": "Treylon Burks",
+      "shortName": "T. Burks",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4567156/treylon-burks",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4567156.png",
+       "alt": "Treylon Burks"
+      },
+      "jersey": "13",
+      "position": {
+       "name": "Wide Receiver",
+       "displayName": "Wide Receiver",
+       "abbreviation": "WR"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4567156?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "4",
+      "name": "INJURY_STATUS_OUT",
+      "description": "out",
+      "abbreviation": "O"
+     }
+    },
+    {
+     "status": "Out",
      "date": "2026-11-11T20:21Z",
      "athlete": {
       "id": "4361088",
@@ -2447,55 +2496,6 @@
       "detail": "Concussion",
       "side": "Not Specified",
       "returnDate": "2026-11-23"
-     }
-    },
-    {
-     "status": "Out",
-     "date": "2026-11-10T23:58Z",
-     "athlete": {
-      "id": "4567156",
-      "uid": "s:20~l:28~a:4567156",
-      "guid": "25b3cf86-4062-aad3-da05-b3f2fdb48736",
-      "lastName": "Burks",
-      "fullName": "Treylon Burks",
-      "displayName": "Treylon Burks",
-      "shortName": "T. Burks",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4567156/treylon-burks",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4567156.png",
-       "alt": "Treylon Burks"
-      },
-      "jersey": "13",
-      "position": {
-       "name": "Wide Receiver",
-       "displayName": "Wide Receiver",
-       "abbreviation": "WR"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4567156?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "4",
-      "name": "INJURY_STATUS_OUT",
-      "description": "out",
-      "abbreviation": "O"
      }
     },
     {
@@ -3229,237 +3229,7 @@
    "records": []
   }
  ],
- "article": {
-  "id": 50454184,
-  "nowId": "1-50454184",
-  "contentKey": "50454184-1-22-1",
-  "dataSourceIdentifier": "9e13d6e62a6c6",
-  "publishedkey": "nfl401873052",
-  "type": "Preview",
-  "gameId": "401873052",
-  "headline": "J.J. McCarthy makes his first Giants home start against the desperate Commanders",
-  "description": "\u2014 Riffing off John Harbaugh's stated aim of going 1-0 each week, Malik Nabers thinks the New York Giants' game Thursday night against Washington is worth double after their meeting last...",
-  "title": "J.J. McCarthy makes his first Giants home start against the desperate Commanders",
-  "linkText": "J.J. McCarthy makes his first Giants home start against the desperate Commanders",
-  "categorized": "2026-11-11T18:44:35Z",
-  "originallyPosted": "2026-11-11T18:44:34Z",
-  "lastModified": "2026-11-11T18:44:35Z",
-  "published": "2026-11-11T18:44:34Z",
-  "root": "nfl",
-  "section": "NFL",
-  "source": "AP",
-  "images": [],
-  "video": [],
-  "categories": [
-   {
-    "id": 9572,
-    "type": "league",
-    "uid": "s:20~l:28",
-    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-    "description": "NFL",
-    "sportId": 28,
-    "leagueId": 28,
-    "league": {
-     "id": 28,
-     "description": "NFL",
-     "abbreviation": "NFL",
-     "links": {
-      "mobile": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      },
-      "web": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 1352,
-    "type": "team",
-    "uid": "s:20~l:28~t:19",
-    "guid": "378600ea-2397-8364-8399-b7c1606a49a7",
-    "description": "New York Giants",
-    "sportId": 28,
-    "teamId": 19,
-    "team": {
-     "id": 19,
-     "description": "New York Giants",
-     "abbreviation": "NYG",
-     "shortDisplayName": "Giants",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 1462,
-    "type": "team",
-    "uid": "s:20~l:28~t:28",
-    "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
-    "description": "Washington Commanders",
-    "sportId": 28,
-    "teamId": 28,
-    "team": {
-     "id": 28,
-     "description": "Washington Commanders",
-     "abbreviation": "WSH",
-     "shortDisplayName": "Commanders",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
-       }
-      }
-     }
-    }
-   },
-   {
-    "type": "event",
-    "uid": "s:20~l:28~e:401873052",
-    "guid": "af72fe66-bf61-3051-ab12-963220e028dc",
-    "description": "Washington Commanders @ New York Giants",
-    "eventId": 401873052,
-    "event": {
-     "id": 401873052,
-     "sport": "football",
-     "league": "nfl",
-     "description": "Washington Commanders @ New York Giants"
-    }
-   }
-  ],
-  "keywords": [
-   "NFL",
-   "New York Giants",
-   "Washington Commanders",
-   "Washington Commanders @ New York Giants"
-  ],
-  "story": "EAST RUTHERFORD, N.J. -- \u2014 Riffing off John Harbaugh's stated aim of going 1-0 each week, <a href=\"http://www.espn.com/nfl/player/_/id/4595348/malik-nabers\">Malik Nabers</a> thinks the <a href=\"http://www.espn.com/nfl/team/_/name/nyg/new-york-giants\">New York Giants</a>' game Thursday night against Washington is worth double after <a href=\"https://apnews.com/3d83ec95d09274019a0873d3a3fabd35\">their meeting last month</a> ended with <a href=\"https://apnews.com/a310c1eed78b9bc3df1eb17f9f9517f2\">neither team getting a victory</a>.\n\n\r\n              \u201cWe\u2019re trying to go 2-0 since we finished off in a tie last time, which we should have won,\u201d New York's top receiver said.\n\n\r\n              His coach agrees.\n\n\r\n              \u201cThis is for all the marbles,\u201d Harbaugh said. \u201cIt\u2019s a tie right now. This is the tiebreaker.\u201d\n\n\r\n              That is their perspective, but the gap is much wider. Nabers, Harbaugh and the <a href=\"https://apnews.com/article/ny-giants-nfc-east-b1af6e854f37989ea6ce231a654329e8\">Giants at 5-2-1</a> are looking to pad their lead atop the mediocre NFC East, while the 2-5-1 Commanders are playing to keep their fading hopes going and save their season.\n\n\r\n              \u201cThis is a very important one for the team: Stay in the fight,\u201d Washington offensive lineman <a href=\"http://www.espn.com/nfl/player/_/id/4262199/sam-cosmi\">Sam Cosmi</a> said. \"They\u2019re the divisional leaders, so it is a must-win in that aspect of things. Any time we lose, we just continuously dig a deeper hole. ... From now on, I think a lot of these games are going to be must-win games to have our name in the running for playoffs.\u201d\n\n\r\n              Despite losing their most important player on offense, quarterback <a href=\"http://www.espn.com/nfl/player/_/id/4689114/jaxson-dart\">Jaxson Dart</a>, and defense, linebacker <a href=\"http://www.espn.com/nfl/player/_/id/4035631/brian-burns\">Brian Burns</a>, the Giants are in the driver's seat to finish first in the division and host a playoff game. They have a long way to go.\n\n\r\n              The next step toward completing that goal is winning in primetime in QB <a href=\"http://www.espn.com/nfl/player/_/id/4433970/jj-mccarthy\">J.J. McCarthy</a>'s first home start since joining in a trade from Minnesota in late September. McCarthy is set to play despite injuring his right hip Sunday at Philadelphia and returning to finish the game.\n\n\r\n              \u201cThe importance is to be out there as much as I possibly can,\u201d said McCarthy, whose rookie year in 2024 was wiped out by torn meniscus in his right knee and last season with the Vikings limited to 10 games by multiple other injuries. \u201cNo matter what happens, no matter what narratives one can draw, it\u2019s being out there with my brothers and doing whatever I can to help the team be successful.\u201d\n\n\r\n              McCarthy is facing a familiar look, given that Washington defensive coordinator Daronte Jones was an assistant on staff in Minnesota from 2023-25 under Brian Flores. The Commanders rank third-worst in the NFL against the pass.\n\n\r\n              \u201cJust keep watching the film, seeing what he does, understanding how they\u2019re going to use him in that scheme,\u201d said Commanders cornerback <a href=\"http://www.espn.com/nfl/player/_/id/4428414/mike-sainristil\">Mike Sainristil</a>, who was college teammates with McCarthy when they won the national title at Michigan. \"Coach is going to do a great job to make sure we\u2019re going to be set up the right way to go out there and execute. We just have to make sure as players we do that.\u201d\n\n\r\n              <hl2>Need to know</hl2>\r\n              Washington (2-5-1) at N.Y. Giants (5-2-1)\n\n\r\n              When/where to watch: Thursday, 8:15 p.m. EST, Amazon Prime.\n\n\r\n              Latest odds: Giants by 2\u00bd.\n\n\r\n              Against the spread: Commanders 4-4; Giants 6-2.\n\n\r\n              Last week: Commanders lost to Rams 20-13; Giants beat Eagles 19-11.\n\n\r\n              Last meeting: Giants and Commanders tied 27-27 on Oct. 11 at Washington.\n\n\r\n              Series record: Giants lead 108-75-6.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Giants running back <a href=\"http://www.espn.com/nfl/player/_/id/4696981/cam-skattebo\">Cam Skattebo</a> vs. the Commanders defense. Rain is in the forecast, and Skattebo is good to go after tearing a hamstring muscle in overtime Oct. 25 at Houston and missing the Eagles game. Washington is actually 12th in the league against the rush, and Skattebo could again get the bulk of the carries, especially after no trade materialized for <a href=\"http://www.espn.com/nfl/player/_/id/4242335/jonathan-taylor\">Jonathan Taylor</a>.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 Washington won the previous four meetings before the tie earlier this season. The last time the Giants beat the Commanders was Nov. 19, 2023.\n\n\r\n              \u2014 The Commanders last won a Thursday night game in 2022.\n\n\r\n              \u2014 <a href=\"http://www.espn.com/nfl/player/_/id/4426348/jayden-daniels\">Jayden Daniels</a> is one of only 33 quarterbacks who have thrown at least 110 passes this season without an interception.\n\n\r\n              \u2014 Running back <a href=\"http://www.espn.com/nfl/player/_/id/4697815/rachaad-white\">Rachaad White</a> has 83 yards on 17 carries over the past two weeks.\n\n\r\n              \u2014 Receiver <a href=\"http://www.espn.com/nfl/player/_/id/2976212/stefon-diggs\">Stefon Diggs</a> is one touchdown catch away from being the 30th player in league history to 80 in his career.\n\n\r\n              \u2014 Linebacker <a href=\"http://www.espn.com/nfl/player/_/id/5081807/sonny-styles\">Sonny Styles</a>, taken with the seventh pick in the draft, is the only rookie with 13-plus tackles in three games.\n\n\r\n              \u2014 McCarthy is 43 of 68 for 622 yards, a TD and an interception with the Giants. That includes a relief appearance and two starts.\n\n\r\n              \u2014 Without Skattebo and Tyrone Tracy, the Giants had only 51 yards rushing from running backs at Philadelphia.\n\n\r\n              \u2014 Nabers had his streak of 100-yard receiving games snapped at four by catching five passes for 43 against the Eagles.\n\n\r\n              \u2014 Rookie linebacker <a href=\"http://www.espn.com/nfl/player/_/id/4950400/arvell-reese\">Arvell Reese</a>, taken with the fifth pick, is the only player this season with 65-plus tackles, eight or more of them for loss, along with at least one interception.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Andrew Gillis in Ashburn, Virginia, contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
-  "allowContentReactions": false,
-  "allowSearch": true,
-  "isLiveBlog": false,
-  "links": {
-   "api": {
-    "self": {
-     "href": "https://content.core.api.espn.com/v1/sports/news/50454184"
-    }
-   },
-   "app": {
-    "sportscenter": {
-     "href": "sportscenter://x-callback-url/showStory?uid=50454184"
-    }
-   },
-   "mobile": {
-    "href": "http://m.espn.go.com/nfl/story?storyId=50454184"
-   },
-   "web": {
-    "href": "http://www.espn.com/nfl/preview?gameId=401873052"
-   }
-  },
-  "premium": false
- },
  "winprobability": [],
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "19",
-   "gameProjection": "50.1"
-  },
-  "awayTeam": {
-   "id": "28",
-   "gameProjection": "49.5"
-  }
- },
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Giants Tickets",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/12 vs Commanders 3952 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/22 vs Jaguars 4301 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494186?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/29 @ Colts 4236 tickets left",
-    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/6 vs 49ers 4056 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-8-2027/production/6494196?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 @ Seahawks 2673 tickets left",
-    "ticketLink": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-5-2027/production/6492971?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 vs Browns 6396 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-5-2027/production/6494180?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/28 @ Lions 2364 tickets left",
-    "ticketLink": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-8-2026/production/6489904?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/3 @ Cowboys 12186 tickets left",
-    "ticketLink": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-3-2026/production/6489518?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Eagles 7718 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-2-2027/production/6494174?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Commanders",
-   "currentTeamName": "Giants",
-   "venueName": "MetLife Stadium",
-   "summary": "Tickets as low as $57",
-   "date": "2026-11-13T01:15Z",
-   "dateDay": "Thu",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
-   "venueLink": "https://www.vividseats.com/metlife-stadium-tickets/venue/8136?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
-   "timeValid": true
-  }
- },
  "news": {
   "header": "NFL News",
   "link": {
@@ -3477,6 +3247,291 @@
   },
   "articles": [
    {
+    "id": 50455771,
+    "nowId": "1-50455771",
+    "contentKey": "50455771-1-5-1",
+    "dataSourceIdentifier": "84e9093d4c0a5",
+    "type": "HeadlineNews",
+    "headline": "Kirk Cousins says call with Kevin O'Connell convinced him to OK Vikings trade",
+    "description": "Kirk Cousins has rejoined the Vikings after not quite three years away, relishing his familiarity with the Twin Cities area, the people in the organization.",
+    "lastModified": "2026-11-11T23:23:35Z",
+    "published": "2026-11-11T23:23:35Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "503e4cd2c1d39",
+      "id": 50455716,
+      "type": "header",
+      "name": "Kirk Cousins [1296x729]",
+      "caption": "Kirk Cousins says he wasn't interested in starting over so his familiarity with coach Kevin O'Connell makes the trade to the Vikings a good fit.",
+      "credit": "AP Photo/Abbie Parr",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1111/r1744583_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Stephen A. has some words for Kevin O'Connell after Vikings trade for Kirk Cousins",
+      "caption": "Stephen A. has some words for Kevin O'Connell after Vikings trade for Kirk Cousins",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1111/ss_20261111_102055953_3736672627/ss_20261111_102055953_3736672627.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1920,
+      "type": "team",
+      "uid": "s:20~l:28~t:16",
+      "guid": "3db556c9-ed76-a7a5-4ccb-a92fc6db4334",
+      "description": "Minnesota Vikings",
+      "sportId": 28,
+      "teamId": 16,
+      "team": {
+       "id": 16,
+       "description": "Minnesota Vikings",
+       "abbreviation": "MIN",
+       "shortDisplayName": "Vikings",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 103992,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:14880",
+      "guid": "53bec012-c2ed-bc7c-a8d5-438611f9faa1",
+      "description": "Kirk Cousins",
+      "sportId": 28,
+      "athleteId": 14880,
+      "athlete": {
+       "id": 14880,
+       "description": "Kirk Cousins",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/14880/kirk-cousins"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/14880/kirk-cousins"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 698426,
+      "type": "contributor",
+      "guid": "5241557e-e83a-3754-aace-665eca5b4994",
+      "description": "Kevin Seifert",
+      "slug": "kevin-seifert",
+      "contributor": {
+       "id": 1300,
+       "description": "Kevin Seifert"
+      }
+     }
+    ],
+    "byline": "Kevin Seifert",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50455771"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50455771"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50455771"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50455771/kirk-cousins-reintroduced-vikings-starting-qb"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50455698,
+    "nowId": "1-50455698",
+    "contentKey": "50455698-1-5-1",
+    "dataSourceIdentifier": "546f8efbc8612",
+    "type": "HeadlineNews",
+    "headline": "New Bills safety Amani Hooker will be 'ready to go' vs. Jets",
+    "description": "Amani Cooper said he's confident he'll be able to pick up defensive coordinator Jim Leonhard's scheme by kickoff vs. the Jets.",
+    "lastModified": "2026-11-11T23:22:53Z",
+    "published": "2026-11-11T23:22:53Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "94caa535983b2",
+      "id": 50445977,
+      "type": "header",
+      "name": "Amani Hooker [600x600]",
+      "credit": "Trevor Ruszkowski/Imagn Images",
+      "height": 600,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1110/r1744179_600x600_1-1.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 2203,
+      "type": "team",
+      "uid": "s:20~l:28~t:2",
+      "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
+      "description": "Buffalo Bills",
+      "sportId": 28,
+      "teamId": 2,
+      "team": {
+       "id": 2,
+       "description": "Buffalo Bills",
+       "abbreviation": "BUF",
+       "shortDisplayName": "Bills",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 380279,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4036134",
+      "guid": "9aa8328a-fed6-d975-0c16-97f8a6da99db",
+      "description": "Amani Hooker",
+      "sportId": 28,
+      "athleteId": 4036134,
+      "athlete": {
+       "id": 4036134,
+       "description": "Amani Hooker",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4036134/amani-hooker"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4036134/amani-hooker"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     },
+     {
+      "id": 849849,
+      "type": "contributor",
+      "guid": "8d264ab7-9b5b-3edf-a446-a22b1da9fa44",
+      "description": "Nick Suss",
+      "slug": "nick-suss",
+      "contributor": {
+       "id": 4415,
+       "description": "Nick Suss"
+      }
+     }
+    ],
+    "byline": "Nick Suss",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50455698"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50455698"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50455698"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50455698/new-bills-safety-amani-hooker-ready-go-vs-jets"
+     }
+    },
+    "premium": false
+   },
+   {
     "id": 50455318,
     "nowId": "1-50455318",
     "contentKey": "50455318-1-5-1",
@@ -3484,8 +3539,8 @@
     "type": "HeadlineNews",
     "headline": "Sean McVay: Rams optimistic WR Davante Adams will return 'sooner than later'",
     "description": "The Rams are optimistic that injured wide receiver Davante Adams will return from his hamstring injury \"sooner than later,\" coach Sean McVay said.",
-    "lastModified": "2026-11-11T22:05:07Z",
-    "published": "2026-11-11T22:05:07Z",
+    "lastModified": "2026-11-11T23:21:59Z",
+    "published": "2026-11-11T23:21:59Z",
     "images": [
      {
       "dataSourceIdentifier": "4e4f775065f86",
@@ -3787,8 +3842,8 @@
     "type": "HeadlineNews",
     "headline": "Cardinals to start rookie QB Carson Beck against Rams",
     "description": "The Cardinals will start their third quarterback in three weeks, with rookie Carson Beck getting the nod for Sunday's home game against the Rams.",
-    "lastModified": "2026-11-11T21:46:01Z",
-    "published": "2026-11-11T21:46:01Z",
+    "lastModified": "2026-11-11T22:47:54Z",
+    "published": "2026-11-11T22:47:54Z",
     "images": [
      {
       "dataSourceIdentifier": "4a53c123b76ee",
@@ -3966,8 +4021,20 @@
         }
        }
       }
+     },
+     {
+      "id": 696416,
+      "type": "contributor",
+      "guid": "ff2bd78b-f473-3bf6-bd0e-12c35dabe606",
+      "description": "Josh Weinfuss",
+      "slug": "josh-weinfuss",
+      "contributor": {
+       "id": 2330,
+       "description": "Josh Weinfuss"
+      }
      }
     ],
+    "byline": "Josh Weinfuss",
     "links": {
      "api": {
       "self": {
@@ -4129,457 +4196,165 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50454187,
-    "nowId": "1-50454187",
-    "contentKey": "50454187-1-6-1",
-    "dataSourceIdentifier": "0fb6545859e52",
-    "type": "Story",
-    "headline": "NFL survivor power rankings: Why this is the week to use the Rams or the Bills",
-    "description": "ESPN NFL survivor pool strategy, predictions and ranking the top seven options for Week 10.",
-    "lastModified": "2026-11-11T21:19:32Z",
-    "published": "2026-11-11T21:19:32Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "331e198b6cabd",
-      "id": 50454102,
-      "type": "header",
-      "name": "Aaron Donald Myles Garrett [1296x729]",
-      "caption": "Aaron Donald (left) and Myles Garrett (right) are a fearsome duo on the Rams' defensive line.",
-      "credit": "Randy Litzinger/Icon Sportswire",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1111/r1744487_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Mike Clay: Blake Corum has been one of the luckiest RBs in the NFL",
-      "caption": "Mike Clay: Blake Corum has been one of the luckiest RBs in the NFL",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1110/ss_20261110_105505204_3735307/ss_20261110_105505204_3735307.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 611584,
-      "type": "league",
-      "guid": "550a1e9e-377e-3019-bf5e-19c027d50a49",
-      "description": "Sports Betting",
-      "sportId": 22000,
-      "leagueId": 22000,
-      "league": {
-       "id": 22000,
-       "description": "Sports Betting"
-      }
-     },
-     {
-      "id": 141870,
-      "type": "topic",
-      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
-      "description": "news - fantasy",
-      "sportId": 0,
-      "topicId": 240
-     },
-     {
-      "id": 152381,
-      "type": "topic",
-      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
-      "description": "news - fantasy football",
-      "sportId": 0,
-      "topicId": 401
-     },
-     {
-      "id": 129297,
-      "type": "topic",
-      "guid": "ffd795dd-dc60-d4c3-f868-831dc2ec21b3",
-      "description": "news - nfl",
-      "sportId": 0,
-      "topicId": 121
-     },
-     {
-      "id": 137817,
-      "type": "topic",
-      "guid": "14f579db-79ec-a898-9405-8fec63e16063",
-      "description": "news \u2013 sports betting",
-      "sportId": 0,
-      "topicId": 179
-     },
-     {
-      "id": 1519,
-      "type": "team",
-      "uid": "s:20~l:28~t:14",
-      "guid": "2e1473b2-e269-fd7a-1137-c1edacb85986",
-      "description": "Los Angeles Rams",
-      "sportId": 28,
-      "teamId": 14,
-      "team": {
-       "id": 14,
-       "description": "Los Angeles Rams",
-       "abbreviation": "LAR",
-       "shortDisplayName": "Rams",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2203,
-      "type": "team",
-      "uid": "s:20~l:28~t:2",
-      "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
-      "description": "Buffalo Bills",
-      "sportId": 28,
-      "teamId": 2,
-      "team": {
-       "id": 2,
-       "description": "Buffalo Bills",
-       "abbreviation": "BUF",
-       "shortDisplayName": "Bills",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1693,
-      "type": "team",
-      "uid": "s:20~l:28~t:26",
-      "guid": "3767a23c-a17d-294f-288a-9086ad1f0680",
-      "description": "Seattle Seahawks",
-      "sportId": 28,
-      "teamId": 26,
-      "team": {
-       "id": 26,
-       "description": "Seattle Seahawks",
-       "abbreviation": "SEA",
-       "shortDisplayName": "Seahawks",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sea/seattle-seahawks"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sea/seattle-seahawks"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2996,
-      "type": "team",
-      "uid": "s:20~l:28~t:30",
-      "guid": "ca6fb778-cbf6-d9a3-3e93-01230335fcab",
-      "description": "Jacksonville Jaguars",
-      "sportId": 28,
-      "teamId": 30,
-      "team": {
-       "id": 30,
-       "description": "Jacksonville Jaguars",
-       "abbreviation": "JAX",
-       "shortDisplayName": "Jaguars",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2830,
-      "type": "team",
-      "uid": "s:20~l:28~t:33",
-      "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
-      "description": "Baltimore Ravens",
-      "sportId": 28,
-      "teamId": 33,
-      "team": {
-       "id": 33,
-       "description": "Baltimore Ravens",
-       "abbreviation": "BAL",
-       "shortDisplayName": "Ravens",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 3053,
-      "type": "team",
-      "uid": "s:20~l:28~t:34",
-      "guid": "595690b3-2161-4913-a7a7-814af2fd2621",
-      "description": "Houston Texans",
-      "sportId": 28,
-      "teamId": 34,
-      "team": {
-       "id": 34,
-       "description": "Houston Texans",
-       "abbreviation": "HOU",
-       "shortDisplayName": "Texans",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2942,
-      "type": "team",
-      "uid": "s:20~l:28~t:11",
-      "guid": "582d14eb-da61-e505-cc40-d972a1b60ed1",
-      "description": "Indianapolis Colts",
-      "sportId": 28,
-      "teamId": 11,
-      "team": {
-       "id": 11,
-       "description": "Indianapolis Colts",
-       "abbreviation": "IND",
-       "shortDisplayName": "Colts",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 701964,
-      "type": "contributor",
-      "guid": "8130302d-391c-30df-971d-5c42233d9cc5",
-      "description": "Mackenzie Kraemer columnist profile",
-      "slug": "mackenzie-kraemer-columnist-profile",
-      "contributor": {
-       "id": 2553,
-       "description": "Mackenzie Kraemer columnist profile"
-      }
-     }
-    ],
-    "byline": "Mackenzie Kraemer",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50454187"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50454187"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=50454187"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/id/50454187/nfl-survivor-week-10-survivor-pool-strategy-advice-picks"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50454635,
-    "nowId": "1-50454635",
-    "contentKey": "50454635-1-293-1",
-    "dataSourceIdentifier": "42db0e59f0f25",
-    "type": "Media",
-    "headline": "Zac Taylor says Bengals take responsibility for failed trade with Eagles",
-    "description": "Zac Taylor says Bengals take responsibility for failed trade with Eagles",
-    "lastModified": "2026-11-11T20:01:45Z",
-    "published": "2026-11-11T20:01:45Z",
-    "images": [
-     {
-      "name": "Zac Taylor says Bengals take responsibility for failed trade with Eagles",
-      "caption": "Zac Taylor says Bengals take responsibility for failed trade with Eagles",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1111/ss_20261111_145213583_3736820/ss_20261111_145213583_3736820.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2664,
-      "type": "team",
-      "uid": "s:20~l:28~t:4",
-      "guid": "75b8623b-8926-b411-0476-3d3602b78523",
-      "description": "Cincinnati Bengals",
-      "sportId": 28,
-      "teamId": 4,
-      "team": {
-       "id": 4,
-       "description": "Cincinnati Bengals",
-       "abbreviation": "CIN",
-       "shortDisplayName": "Bengals",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 711827,
-      "type": "editorialindicator",
-      "guid": "26380a67-7938-32a0-9c82-33abab9f7ad4",
-      "description": "3 Star Rating"
-     },
-     {
-      "id": 730035,
-      "type": "editorialindicator",
-      "guid": "765b3968-7a2d-3d80-bded-8ba8b1e1cc03",
-      "description": "Verts - Exclude Content"
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/0313be30-4f5f-4a46-9f6c-c7df7f8154b6"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50454635"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50454635&videoDSI=42db0e59f0f25"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50454635/zac-taylor-says-bengals-take-responsibility-failed-trade-eagles",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50454635/zac-taylor-says-bengals-take-responsibility-failed-trade-eagles",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=42db0e59f0f25"
-       }
-      }
-     }
-    },
-    "premium": false
    }
   ]
+ },
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "19",
+   "gameProjection": "50.1"
+  },
+  "awayTeam": {
+   "id": "28",
+   "gameProjection": "49.5"
+  }
+ },
+ "article": {
+  "id": 50454184,
+  "nowId": "1-50454184",
+  "contentKey": "50454184-1-22-1",
+  "dataSourceIdentifier": "9e13d6e62a6c6",
+  "publishedkey": "nfl401873052",
+  "type": "Preview",
+  "gameId": "401873052",
+  "headline": "J.J. McCarthy makes his first Giants home start against the desperate Commanders",
+  "description": "\u2014 Riffing off John Harbaugh's stated aim of going 1-0 each week, Malik Nabers thinks the New York Giants' game Thursday night against Washington is worth double after their meeting last...",
+  "title": "J.J. McCarthy makes his first Giants home start against the desperate Commanders",
+  "linkText": "J.J. McCarthy makes his first Giants home start against the desperate Commanders",
+  "categorized": "2026-11-11T18:44:35Z",
+  "originallyPosted": "2026-11-11T18:44:34Z",
+  "lastModified": "2026-11-11T18:44:35Z",
+  "published": "2026-11-11T18:44:34Z",
+  "root": "nfl",
+  "section": "NFL",
+  "source": "AP",
+  "images": [],
+  "video": [],
+  "categories": [
+   {
+    "id": 9572,
+    "type": "league",
+    "uid": "s:20~l:28",
+    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+    "description": "NFL",
+    "sportId": 28,
+    "leagueId": 28,
+    "league": {
+     "id": 28,
+     "description": "NFL",
+     "abbreviation": "NFL",
+     "links": {
+      "mobile": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      },
+      "web": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 1352,
+    "type": "team",
+    "uid": "s:20~l:28~t:19",
+    "guid": "378600ea-2397-8364-8399-b7c1606a49a7",
+    "description": "New York Giants",
+    "sportId": 28,
+    "teamId": 19,
+    "team": {
+     "id": 19,
+     "description": "New York Giants",
+     "abbreviation": "NYG",
+     "shortDisplayName": "Giants",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 1462,
+    "type": "team",
+    "uid": "s:20~l:28~t:28",
+    "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
+    "description": "Washington Commanders",
+    "sportId": 28,
+    "teamId": 28,
+    "team": {
+     "id": 28,
+     "description": "Washington Commanders",
+     "abbreviation": "WSH",
+     "shortDisplayName": "Commanders",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "event",
+    "uid": "s:20~l:28~e:401873052",
+    "guid": "af72fe66-bf61-3051-ab12-963220e028dc",
+    "description": "Washington Commanders @ New York Giants",
+    "eventId": 401873052,
+    "event": {
+     "id": 401873052,
+     "sport": "football",
+     "league": "nfl",
+     "description": "Washington Commanders @ New York Giants"
+    }
+   }
+  ],
+  "keywords": [
+   "NFL",
+   "New York Giants",
+   "Washington Commanders",
+   "Washington Commanders @ New York Giants"
+  ],
+  "story": "EAST RUTHERFORD, N.J. -- \u2014 Riffing off John Harbaugh's stated aim of going 1-0 each week, <a href=\"http://www.espn.com/nfl/player/_/id/4595348/malik-nabers\">Malik Nabers</a> thinks the <a href=\"http://www.espn.com/nfl/team/_/name/nyg/new-york-giants\">New York Giants</a>' game Thursday night against Washington is worth double after <a href=\"https://apnews.com/3d83ec95d09274019a0873d3a3fabd35\">their meeting last month</a> ended with <a href=\"https://apnews.com/a310c1eed78b9bc3df1eb17f9f9517f2\">neither team getting a victory</a>.\n\n\r\n              \u201cWe\u2019re trying to go 2-0 since we finished off in a tie last time, which we should have won,\u201d New York's top receiver said.\n\n\r\n              His coach agrees.\n\n\r\n              \u201cThis is for all the marbles,\u201d Harbaugh said. \u201cIt\u2019s a tie right now. This is the tiebreaker.\u201d\n\n\r\n              That is their perspective, but the gap is much wider. Nabers, Harbaugh and the <a href=\"https://apnews.com/article/ny-giants-nfc-east-b1af6e854f37989ea6ce231a654329e8\">Giants at 5-2-1</a> are looking to pad their lead atop the mediocre NFC East, while the 2-5-1 Commanders are playing to keep their fading hopes going and save their season.\n\n\r\n              \u201cThis is a very important one for the team: Stay in the fight,\u201d Washington offensive lineman <a href=\"http://www.espn.com/nfl/player/_/id/4262199/sam-cosmi\">Sam Cosmi</a> said. \"They\u2019re the divisional leaders, so it is a must-win in that aspect of things. Any time we lose, we just continuously dig a deeper hole. ... From now on, I think a lot of these games are going to be must-win games to have our name in the running for playoffs.\u201d\n\n\r\n              Despite losing their most important player on offense, quarterback <a href=\"http://www.espn.com/nfl/player/_/id/4689114/jaxson-dart\">Jaxson Dart</a>, and defense, linebacker <a href=\"http://www.espn.com/nfl/player/_/id/4035631/brian-burns\">Brian Burns</a>, the Giants are in the driver's seat to finish first in the division and host a playoff game. They have a long way to go.\n\n\r\n              The next step toward completing that goal is winning in primetime in QB <a href=\"http://www.espn.com/nfl/player/_/id/4433970/jj-mccarthy\">J.J. McCarthy</a>'s first home start since joining in a trade from Minnesota in late September. McCarthy is set to play despite injuring his right hip Sunday at Philadelphia and returning to finish the game.\n\n\r\n              \u201cThe importance is to be out there as much as I possibly can,\u201d said McCarthy, whose rookie year in 2024 was wiped out by torn meniscus in his right knee and last season with the Vikings limited to 10 games by multiple other injuries. \u201cNo matter what happens, no matter what narratives one can draw, it\u2019s being out there with my brothers and doing whatever I can to help the team be successful.\u201d\n\n\r\n              McCarthy is facing a familiar look, given that Washington defensive coordinator Daronte Jones was an assistant on staff in Minnesota from 2023-25 under Brian Flores. The Commanders rank third-worst in the NFL against the pass.\n\n\r\n              \u201cJust keep watching the film, seeing what he does, understanding how they\u2019re going to use him in that scheme,\u201d said Commanders cornerback <a href=\"http://www.espn.com/nfl/player/_/id/4428414/mike-sainristil\">Mike Sainristil</a>, who was college teammates with McCarthy when they won the national title at Michigan. \"Coach is going to do a great job to make sure we\u2019re going to be set up the right way to go out there and execute. We just have to make sure as players we do that.\u201d\n\n\r\n              <hl2>Need to know</hl2>\r\n              Washington (2-5-1) at N.Y. Giants (5-2-1)\n\n\r\n              When/where to watch: Thursday, 8:15 p.m. EST, Amazon Prime.\n\n\r\n              Latest odds: Giants by 2\u00bd.\n\n\r\n              Against the spread: Commanders 4-4; Giants 6-2.\n\n\r\n              Last week: Commanders lost to Rams 20-13; Giants beat Eagles 19-11.\n\n\r\n              Last meeting: Giants and Commanders tied 27-27 on Oct. 11 at Washington.\n\n\r\n              Series record: Giants lead 108-75-6.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Giants running back <a href=\"http://www.espn.com/nfl/player/_/id/4696981/cam-skattebo\">Cam Skattebo</a> vs. the Commanders defense. Rain is in the forecast, and Skattebo is good to go after tearing a hamstring muscle in overtime Oct. 25 at Houston and missing the Eagles game. Washington is actually 12th in the league against the rush, and Skattebo could again get the bulk of the carries, especially after no trade materialized for <a href=\"http://www.espn.com/nfl/player/_/id/4242335/jonathan-taylor\">Jonathan Taylor</a>.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 Washington won the previous four meetings before the tie earlier this season. The last time the Giants beat the Commanders was Nov. 19, 2023.\n\n\r\n              \u2014 The Commanders last won a Thursday night game in 2022.\n\n\r\n              \u2014 <a href=\"http://www.espn.com/nfl/player/_/id/4426348/jayden-daniels\">Jayden Daniels</a> is one of only 33 quarterbacks who have thrown at least 110 passes this season without an interception.\n\n\r\n              \u2014 Running back <a href=\"http://www.espn.com/nfl/player/_/id/4697815/rachaad-white\">Rachaad White</a> has 83 yards on 17 carries over the past two weeks.\n\n\r\n              \u2014 Receiver <a href=\"http://www.espn.com/nfl/player/_/id/2976212/stefon-diggs\">Stefon Diggs</a> is one touchdown catch away from being the 30th player in league history to 80 in his career.\n\n\r\n              \u2014 Linebacker <a href=\"http://www.espn.com/nfl/player/_/id/5081807/sonny-styles\">Sonny Styles</a>, taken with the seventh pick in the draft, is the only rookie with 13-plus tackles in three games.\n\n\r\n              \u2014 McCarthy is 43 of 68 for 622 yards, a TD and an interception with the Giants. That includes a relief appearance and two starts.\n\n\r\n              \u2014 Without Skattebo and Tyrone Tracy, the Giants had only 51 yards rushing from running backs at Philadelphia.\n\n\r\n              \u2014 Nabers had his streak of 100-yard receiving games snapped at four by catching five passes for 43 against the Eagles.\n\n\r\n              \u2014 Rookie linebacker <a href=\"http://www.espn.com/nfl/player/_/id/4950400/arvell-reese\">Arvell Reese</a>, taken with the fifth pick, is the only player this season with 65-plus tackles, eight or more of them for loss, along with at least one interception.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Andrew Gillis in Ashburn, Virginia, contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
+  "allowContentReactions": false,
+  "allowSearch": true,
+  "isLiveBlog": false,
+  "links": {
+   "api": {
+    "self": {
+     "href": "https://content.core.api.espn.com/v1/sports/news/50454184"
+    }
+   },
+   "app": {
+    "sportscenter": {
+     "href": "sportscenter://x-callback-url/showStory?uid=50454184"
+    }
+   },
+   "mobile": {
+    "href": "http://m.espn.go.com/nfl/story?storyId=50454184"
+   },
+   "web": {
+    "href": "http://www.espn.com/nfl/preview?gameId=401873052"
+   }
+  },
+  "premium": false
  },
  "header": {
   "id": "401873052",
@@ -5657,6 +5432,79 @@
   }
  },
  "wallclockAvailable": false,
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Giants Tickets",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/12 vs Commanders 3936 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/22 vs Jaguars 4287 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494186?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/29 @ Colts 4246 tickets left",
+    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/6 vs 49ers 4044 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-8-2027/production/6494196?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 @ Seahawks 2673 tickets left",
+    "ticketLink": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-5-2027/production/6492971?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 vs Browns 6396 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-5-2027/production/6494180?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/28 @ Lions 2364 tickets left",
+    "ticketLink": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-8-2026/production/6489904?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/3 @ Cowboys 12751 tickets left",
+    "ticketLink": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-3-2026/production/6489518?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Eagles 7718 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-2-2027/production/6494174?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Commanders",
+   "currentTeamName": "Giants",
+   "venueName": "MetLife Stadium",
+   "summary": "Tickets as low as $58",
+   "date": "2026-11-13T01:15Z",
+   "dateDay": "Thu",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
+   "venueLink": "https://www.vividseats.com/metlife-stadium-tickets/venue/8136?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
+   "timeValid": true
+  }
+ },
  "meta": {
   "gp_topic": "gp-football-nfl-401873052",
   "gameSwitcherEnabled": true,
