@@ -114,15 +114,24 @@ KEY_LABEL = {
 # Regular season, playoffs and play-in. Preseason (1) is left out.
 SEASON_TYPES = {2, 3, 5}
 
-# The Odds API prop markets, in the order credits are spent on them.
+# The Odds API prop markets. The free plan covers about one market a day for the whole slate, so the morning pull
+# rotates the first market day by day through rebounds, assists, threes and points (1 credit per game each), and adds
+# the next ones in that order when credits allow.
+# On 2,004 real lines (Oct 28 - Nov 9, 2026) the model's leans hit 56% / 59% / 57% on rebounds / assists / threes
+# but 52% on points, so points no longer goes first every day (Nov 11, 2026).
 MARKETS = [("player_points", "pts"), ("player_rebounds", "reb"), ("player_assists", "ast"), ("player_threes", "fg3m")]
+ROTATION = ["reb", "ast", "fg3m", "pts"]
 CREDIT_RESERVE = 10        # never spend the last few credits of the month
 # The free Odds API key is shared with the Mingus football site. Each month this many credits are left for it
 # (spread over the month, so the share for the days still to come is always held back). 0 in the NFL off-season;
 # override with the repo variable ODDS_OTHER_SPORTS_CREDITS.
-OTHER_SPORTS_CREDITS = int(os.environ.get("ODDS_OTHER_SPORTS_CREDITS") or 200)
-# The pre-tip "closing" pull: points only, for games tipping within this many minutes.
+# 140 = what football actually used (about 30 a week, Nov 2026; Josh, Nov 11). Raise it if football adds markets.
+OTHER_SPORTS_CREDITS = int(os.environ.get("ODDS_OTHER_SPORTS_CREDITS") or 140)
+# The pre-tip "closing" pull: points only, for games tipping within this many minutes. Off since Nov 11, 2026: it
+# spent a second credit on every game's points (about a third of basketball's credits) and those credits now buy
+# more stats in the morning pull. Old -close.json files still feed line movement and CLV for those days.
 CLOSE_MARKETS = [("player_points", "pts")]
+CLOSE_PULL = False
 CLOSE_WINDOW_MIN = 100
 PROPS_EARLIEST_HOUR = 10   # ET; books post most NBA props by late morning
 
@@ -737,17 +746,25 @@ def daily_budget(remaining, today, other=None):
     return int(max(0, remaining - CREDIT_RESERVE - held) / days_left)
 
 
+def market_order(today):
+    """Today's markets in the order credits are spent on them: the ROTATION stat for this day first, then the rest in
+    rotation order."""
+    k = today.toordinal() % len(ROTATION)
+    order = ROTATION[k:] + ROTATION[:k] + [s for _, s in MARKETS if s not in ROTATION]
+    by_stat = {s: m for m, s in MARKETS}
+    return [(by_stat[s], s) for s in order]
+
+
 def plan_markets(remaining, n_events, today):
     """How many prop markets (and events) the morning pull can cover.
 
-    Each event costs 1 credit per market. Out of today's share (see daily_budget), one credit per game is set
-    aside for the pre-tip closing pull (points only) when the share covers at least two credits per game;
-    otherwise the morning pull, which matters more, gets everything. Markets are then added in MARKETS order
-    while they fit."""
+    Each event costs 1 credit per market. With the closing pull on (CLOSE_PULL), one credit per game is set aside
+    for it when today's share (see daily_budget) covers at least two credits per game. Markets are then added in
+    market_order(today) while they fit."""
     if remaining is None or n_events == 0:
         return 0, 0
     budget = daily_budget(remaining, today)
-    if budget >= 2 * n_events:
+    if CLOSE_PULL and budget >= 2 * n_events:
         budget -= n_events
     markets = min(len(MARKETS), budget // n_events)
     if markets:
@@ -841,12 +858,13 @@ def build_props(store, games, players, today, now_et, offline, key):
         log(f"Props: events failed ({e})")
         return None, status
     n_markets, n_events = plan_markets(usage.get("remaining"), len(matched), today)
-    markets = [m for m, _ in MARKETS[:n_markets]]
+    order = market_order(today)
+    markets = [m for m, _ in order[:n_markets]]
     log(f"Props: {len(matched)} games, credits left {usage.get('remaining')}, pulling {markets} for {n_events}")
 
     roster = roster_keys(todays, players)
     snap = {"date": today.isoformat(), "fetched": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "markets": [s for m, s in MARKETS[:n_markets]], "games": {}}
+            "markets": [s for m, s in order[:n_markets]], "games": {}}
     for ev, g in matched[:n_events]:
         try:
             snap["games"][g["id"]] = api.props(ev, markets, roster)
@@ -879,7 +897,7 @@ def build_close(store, games, players, today, now_utc, offline, key):
     snap = read_json(path) or {"date": today.isoformat(), "markets": [s for _, s in CLOSE_MARKETS],
                                "games": {}, "fetched": {}}
     todays = [g for g in games if g["d"] == today.isoformat()]
-    due = close_due(todays, now_utc, snap["games"])
+    due = close_due(todays, now_utc, snap["games"]) if CLOSE_PULL else []
     if offline or not key or not due:
         if due:
             log(f"Closing lines: {len(due)} game(s) due, skipped ({'offline' if offline else 'no ODDS_API_KEY'})")

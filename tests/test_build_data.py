@@ -94,15 +94,33 @@ class PropsTests(unittest.TestCase):
         self.assertEqual(b.daily_budget(50, date(2026, 11, 15), other=200), 0)
 
     def test_plan_spreads_credits_over_the_month(self):
-        # 400 credits, 10 days left in October, 8 games: 39/day, 8 set aside for closing lines -> 31 -> 3 markets
-        self.assertEqual(b.plan_markets(400, 8, date(2026, 10, 22)), (3, 8))
-        # 500 credits on Nov 1 (30 days), 8 games: 16/day -> 8 for closing lines, 8 for the morning (points only)
-        self.assertEqual(b.plan_markets(500, 8, date(2026, 11, 1)), (1, 8))
+        # 400 credits, 10 days left in October, 8 games: 39/day -> all 4 markets (no closing pull since Nov 11)
+        self.assertEqual(b.plan_markets(400, 8, date(2026, 10, 22)), (4, 8))
+        # 500 credits on Nov 1 (30 days), 8 games: 16/day -> 2 markets for every game
+        self.assertEqual(b.plan_markets(500, 8, date(2026, 11, 1)), (2, 8))
         # A thin day (12/day for 8 games) keeps everything for the morning pull
         self.assertEqual(b.plan_markets(370, 8, date(2026, 11, 1)), (1, 8))
         # 100 credits over 31 days: 2/day -> points only, for 2 games
         self.assertEqual(b.plan_markets(100, 8, date(2026, 12, 1)), (1, 2))
         self.assertEqual(b.plan_markets(5, 8, date(2026, 12, 1)), (0, 0))
+
+    def test_closing_pull_no_longer_takes_a_second_credit(self):
+        # With the closing pull on, 16/day for 8 games kept 8 back for pre-tip points; now the morning gets all 16.
+        self.assertFalse(b.CLOSE_PULL)
+        b.CLOSE_PULL = True
+        try:
+            self.assertEqual(b.plan_markets(500, 8, date(2026, 11, 1)), (1, 8))
+        finally:
+            b.CLOSE_PULL = False
+
+    def test_market_order_rotates_the_first_stat_daily(self):
+        firsts = [b.market_order(date(2026, 11, d))[0][1] for d in (11, 12, 13, 14, 15)]
+        self.assertEqual(sorted(firsts[:4]), ["ast", "fg3m", "pts", "reb"])   # each stat leads once in four days
+        self.assertEqual(firsts[4], firsts[0])
+        for d in (11, 12, 13, 14):
+            order = b.market_order(date(2026, 11, d))
+            self.assertEqual(sorted(s for _, s in order), ["ast", "fg3m", "pts", "reb"])
+            self.assertEqual(dict(order)["player_threes"], "fg3m")
 
     def test_parse_props_prefers_draftkings(self):
         def book(key, point, over):

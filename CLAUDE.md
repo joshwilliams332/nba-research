@@ -20,17 +20,19 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - ESPN site API (no key): scoreboard per ET day (games, records, quarter scores, DraftKings game lines),
   summary per final game (box score; `pickcenter` as a line fallback), injuries. Our abbreviations are the
   standard ones (GSW, NYK, NOP, SAS, UTA, WAS); `ALIASES` maps ESPN's.
-- The Odds API (`ODDS_API_KEY` repo secret, free tier 500 credits/month): props only. Two pulls per ET day:
-  the morning "open" pull after 10:00 ET (`store/odds/props/YYYY-MM-DD.json`) and a points-only "close" pull for
-  games tipping within 100 minutes (`YYYY-MM-DD-close.json`; `close_due` skips games already captured, so extra
-  cron runs are free). 1 credit per game per market. `daily_budget()` spreads what's left (minus a reserve) over the
-  days left in the month; `plan_markets()` sets aside 1 credit/game for the close pull when the share allows,
-  `plan_close()` caps the close pull at the share. Busy days can borrow from later days but never overspend.
-  The key is shared with the Mingus football site: `OTHER_SPORTS_CREDITS` (200/month, repo variable
-  `ODDS_OTHER_SPORTS_CREDITS`, 0 in the NFL off-season) is held back pro rata for the days left in the month, so
-  basketball can't eat football's share. Whatever football spends shows up in the remaining count automatically.
-  Limiting to one sportsbook doesn't save credits (up to 10 books = 1 region), so all US books are pulled and
-  DraftKings is shown first.
+- The Odds API (`ODDS_API_KEY` repo secret, free tier 500 credits/month): props only. One morning pull per ET day
+  after 10:00 ET (`store/odds/props/YYYY-MM-DD.json`), 1 credit per game per market. `daily_budget()` spreads what's
+  left (minus a reserve) over the days left in the month; `plan_markets()` covers as many markets as fit for every game,
+  in `market_order(today)`: rebounds / assists / threes / points take turns as the first market, one a day (since
+  Nov 11, 2026; points went first every day before, and the model's leans on real lines hit 56-59% on reb / ast / threes
+  vs 52% on points). The pre-tip points-only "close" pull (`build_close`, `-close.json`) is off (`CLOSE_PULL = False`)
+  since Nov 11: it spent a second credit per game on points, about a third of basketball's credits. Old close files
+  still feed line movement / CLV for their days. The key is shared with the Mingus football site:
+  `OTHER_SPORTS_CREDITS` (140/month since Nov 11 = football's actual use, ~30/week; repo variable
+  `ODDS_OTHER_SPORTS_CREDITS` overrides it, 0 in the NFL off-season) is held back pro rata for the days left in the
+  month, so basketball can't eat football's share. Whatever football spends shows up in the remaining count
+  automatically. Limiting to one sportsbook doesn't save credits (up to 10 books = 1 region), so all US books are
+  pulled and DraftKings is shown first.
 - Seasons are named by their ending year like ESPN (2026-27 = 2027). Last season + this season are loaded.
 
 ## Conventions
