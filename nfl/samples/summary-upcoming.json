@@ -462,8 +462,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "18",
       "uid": "s:20~l:28~t:18",
@@ -528,7 +526,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873016",
@@ -1154,8 +1154,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "14",
       "uid": "s:20~l:28~t:14",
@@ -1220,7 +1218,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   }
@@ -1991,8 +1991,8 @@
    },
    "injuries": [
     {
-     "status": "Out",
-     "date": "2026-11-11T01:35Z",
+     "status": "Questionable",
+     "date": "2026-11-11T02:01Z",
      "athlete": {
       "id": "4921249",
       "uid": "s:20~l:28~a:4921249",
@@ -2033,10 +2033,10 @@
       }
      },
      "type": {
-      "id": "4",
-      "name": "INJURY_STATUS_OUT",
-      "description": "out",
-      "abbreviation": "O"
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
      },
      "details": {
       "fantasyStatus": {
@@ -2341,6 +2341,67 @@
    "injuries": [
     {
      "status": "Questionable",
+     "date": "2026-11-11T01:42Z",
+     "athlete": {
+      "id": "4361088",
+      "uid": "s:20~l:28~a:4361088",
+      "guid": "f05eb7f2-c307-d929-d5d1-30de8f83a54e",
+      "lastName": "Yankoff",
+      "fullName": "Colson Yankoff",
+      "displayName": "Colson Yankoff",
+      "shortName": "C. Yankoff",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4361088/colson-yankoff",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4361088.png",
+       "alt": "Colson Yankoff"
+      },
+      "jersey": "80",
+      "position": {
+       "name": "Tight End",
+       "displayName": "Tight End",
+       "abbreviation": "TE"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4361088?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Knee",
+      "location": "Leg",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-12"
+     }
+    },
+    {
+     "status": "Questionable",
      "date": "2026-11-11T01:01Z",
      "athlete": {
       "id": "4567156",
@@ -2457,67 +2518,6 @@
       "type": "Concussion",
       "location": "Head",
       "detail": "Concussion",
-      "side": "Not Specified",
-      "returnDate": "2026-11-12"
-     }
-    },
-    {
-     "status": "Questionable",
-     "date": "2026-11-09T22:43Z",
-     "athlete": {
-      "id": "4361088",
-      "uid": "s:20~l:28~a:4361088",
-      "guid": "f05eb7f2-c307-d929-d5d1-30de8f83a54e",
-      "lastName": "Yankoff",
-      "fullName": "Colson Yankoff",
-      "displayName": "Colson Yankoff",
-      "shortName": "C. Yankoff",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4361088/colson-yankoff",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4361088.png",
-       "alt": "Colson Yankoff"
-      },
-      "jersey": "80",
-      "position": {
-       "name": "Tight End",
-       "displayName": "Tight End",
-       "abbreviation": "TE"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4361088?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Not Specified",
       "side": "Not Specified",
       "returnDate": "2026-11-12"
      }
@@ -5446,6 +5446,12 @@
   }
  },
  "wallclockAvailable": false,
+ "meta": {
+  "gp_topic": "gp-football-nfl-401873052",
+  "gameSwitcherEnabled": true,
+  "picker_topic": "picker-football-nfl",
+  "gameState": "pre"
+ },
  "ticketsInfo": {
   "tickets": [
    {
@@ -5459,17 +5465,17 @@
     "type": "team"
    },
    {
-    "ticketName": "11/12 vs Commanders 4439 tickets left",
+    "ticketName": "11/12 vs Commanders 4398 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/22 vs Jaguars 4259 tickets left",
+    "ticketName": "11/22 vs Jaguars 4249 tickets left",
     "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494186?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/29 @ Colts 4180 tickets left",
+    "ticketName": "11/29 @ Colts 4193 tickets left",
     "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717",
     "type": "event"
    },
@@ -5518,12 +5524,6 @@
    "teamLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
    "timeValid": true
   }
- },
- "meta": {
-  "gp_topic": "gp-football-nfl-401873052",
-  "gameSwitcherEnabled": true,
-  "picker_topic": "picker-football-nfl",
-  "gameState": "pre"
  },
  "standings": {
   "fullViewLink": {
