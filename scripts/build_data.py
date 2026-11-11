@@ -115,11 +115,12 @@ KEY_LABEL = {
 SEASON_TYPES = {2, 3, 5}
 
 # The Odds API prop markets. The free plan covers about one market a day for the whole slate, so the morning pull
-# rotates the first market day by day (rebounds, assists, points) and adds threes after them when credits allow.
+# rotates the first market day by day through rebounds, assists, threes and points (1 credit per game each), and adds
+# the next ones in that order when credits allow.
 # On 2,004 real lines (Oct 28 - Nov 9, 2026) the model's leans hit 56% / 59% / 57% on rebounds / assists / threes
 # but 52% on points, so points no longer goes first every day (Nov 11, 2026).
 MARKETS = [("player_points", "pts"), ("player_rebounds", "reb"), ("player_assists", "ast"), ("player_threes", "fg3m")]
-ROTATION = ["reb", "ast", "pts"]
+ROTATION = ["reb", "ast", "fg3m", "pts"]
 CREDIT_RESERVE = 10        # never spend the last few credits of the month
 # The free Odds API key is shared with the Mingus football site. Each month this many credits are left for it
 # (spread over the month, so the share for the days still to come is always held back). 0 in the NFL off-season;
@@ -746,8 +747,8 @@ def daily_budget(remaining, today, other=None):
 
 
 def market_order(today):
-    """Today's markets in the order credits are spent on them: the ROTATION stat for this day first, then the other
-    two, then threes."""
+    """Today's markets in the order credits are spent on them: the ROTATION stat for this day first, then the rest in
+    rotation order."""
     k = today.toordinal() % len(ROTATION)
     order = ROTATION[k:] + ROTATION[:k] + [s for _, s in MARKETS if s not in ROTATION]
     by_stat = {s: m for m, s in MARKETS}

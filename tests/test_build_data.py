@@ -114,13 +114,13 @@ class PropsTests(unittest.TestCase):
             b.CLOSE_PULL = False
 
     def test_market_order_rotates_the_first_stat_daily(self):
-        firsts = [b.market_order(date(2026, 11, d))[0][1] for d in (11, 12, 13, 14)]
-        self.assertEqual(sorted(firsts[:3]), ["ast", "pts", "reb"])          # each of the three once in three days
-        self.assertEqual(firsts[3], firsts[0])
-        for d in (11, 12, 13):
-            order = [s for _, s in b.market_order(date(2026, 11, d))]
-            self.assertEqual(sorted(order), ["ast", "fg3m", "pts", "reb"])
-            self.assertEqual(order[-1], "fg3m")
+        firsts = [b.market_order(date(2026, 11, d))[0][1] for d in (11, 12, 13, 14, 15)]
+        self.assertEqual(sorted(firsts[:4]), ["ast", "fg3m", "pts", "reb"])   # each stat leads once in four days
+        self.assertEqual(firsts[4], firsts[0])
+        for d in (11, 12, 13, 14):
+            order = b.market_order(date(2026, 11, d))
+            self.assertEqual(sorted(s for _, s in order), ["ast", "fg3m", "pts", "reb"])
+            self.assertEqual(dict(order)["player_threes"], "fg3m")
 
     def test_parse_props_prefers_draftkings(self):
         def book(key, point, over):

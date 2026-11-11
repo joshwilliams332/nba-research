@@ -23,7 +23,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - The Odds API (`ODDS_API_KEY` repo secret, free tier 500 credits/month): props only. One morning pull per ET day
   after 10:00 ET (`store/odds/props/YYYY-MM-DD.json`), 1 credit per game per market. `daily_budget()` spreads what's
   left (minus a reserve) over the days left in the month; `plan_markets()` covers as many markets as fit for every game,
-  in `market_order(today)`: rebounds / assists / points rotate as the first market day by day, threes last (since
+  in `market_order(today)`: rebounds / assists / threes / points take turns as the first market, one a day (since
   Nov 11, 2026; points went first every day before, and the model's leans on real lines hit 56-59% on reb / ast / threes
   vs 52% on points). The pre-tip points-only "close" pull (`build_close`, `-close.json`) is off (`CLOSE_PULL = False`)
   since Nov 11: it spent a second credit per game on points, about a third of basketball's credits. Old close files
