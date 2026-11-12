@@ -284,8 +284,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "22",
       "uid": "s:20~l:28~t:22",
@@ -350,7 +348,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401872988",
@@ -462,8 +462,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "18",
       "uid": "s:20~l:28~t:18",
@@ -528,7 +526,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873016",
@@ -3229,6 +3229,7 @@
    "records": []
   }
  ],
+ "winprobability": [],
  "predictor": {
   "header": "Matchup Predictor",
   "homeTeam": {
@@ -3240,7 +3241,6 @@
    "gameProjection": "49.5"
   }
  },
- "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -6163,6 +6163,79 @@
    ]
   }
  },
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Giants Tickets",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/12 vs Commanders 2954 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/22 vs Jaguars 4276 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494186?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/29 @ Colts 4252 tickets left",
+    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/6 vs 49ers 4015 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-8-2027/production/6494196?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 @ Seahawks 2729 tickets left",
+    "ticketLink": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-5-2027/production/6492971?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 vs Browns 6396 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-5-2027/production/6494180?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/28 @ Lions 2364 tickets left",
+    "ticketLink": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-8-2026/production/6489904?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/3 @ Cowboys 12751 tickets left",
+    "ticketLink": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-3-2026/production/6489518?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Eagles 7718 tickets left",
+    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-2-2027/production/6494174?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Commanders",
+   "currentTeamName": "Giants",
+   "venueName": "MetLife Stadium",
+   "summary": "Tickets as low as $62",
+   "date": "2026-11-13T01:15Z",
+   "dateDay": "Thu",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
+   "venueLink": "https://www.vividseats.com/metlife-stadium-tickets/venue/8136?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
+   "timeValid": true
+  }
+ },
  "article": {
   "id": 50454184,
   "nowId": "1-50454184",
@@ -6310,79 +6383,6 @@
   "premium": false
  },
  "wallclockAvailable": false,
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Giants Tickets",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/12 vs Commanders 2954 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/22 vs Jaguars 4276 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494186?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/29 @ Colts 4252 tickets left",
-    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/6 vs 49ers 4015 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-8-2027/production/6494196?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 @ Seahawks 2729 tickets left",
-    "ticketLink": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-5-2027/production/6492971?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 vs Browns 6396 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-5-2027/production/6494180?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/28 @ Lions 2364 tickets left",
-    "ticketLink": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-8-2026/production/6489904?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/3 @ Cowboys 12751 tickets left",
-    "ticketLink": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-3-2026/production/6489518?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Eagles 7718 tickets left",
-    "ticketLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-2-2027/production/6494174?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Commanders",
-   "currentTeamName": "Giants",
-   "venueName": "MetLife Stadium",
-   "summary": "Tickets as low as $62",
-   "date": "2026-11-13T01:15Z",
-   "dateDay": "Thu",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717",
-   "venueLink": "https://www.vividseats.com/metlife-stadium-tickets/venue/8136?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/new-york-giants-tickets--sports-nfl-football/performer/599?wsUser=717",
-   "timeValid": true
-  }
- },
  "meta": {
   "gp_topic": "gp-football-nfl-401873052",
   "gameSwitcherEnabled": true,
