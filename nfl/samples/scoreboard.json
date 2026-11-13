@@ -554,6 +554,11 @@
          "value": 7.0,
          "displayValue": "7",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -695,6 +700,11 @@
          "value": 10.0,
          "displayValue": "10",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -724,71 +734,75 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730522103",
+       "id": "4018730522257",
        "type": {
-        "id": "65",
-        "text": "End of Half",
-        "abbreviation": "EH"
+        "id": "74",
+        "text": "Official Timeout",
+        "abbreviation": "Off TO"
        },
-       "text": "END QUARTER 2",
+       "text": "Official Timeout at 12:24.",
        "scoreValue": 0,
        "team": {
         "id": "19"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.4035,
-        "awayWinPercentage": 0.5965,
+        "homeWinPercentage": 0.4536,
+        "awayWinPercentage": 0.5464,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "1 play, -1 yard, 0:05",
+        "description": "3 plays, -15 yards, 2:36",
         "start": {
-         "yardLine": 35,
-         "text": "NYG 35"
+         "yardLine": 79,
+         "text": "WSH 21"
         },
         "end": {
-         "yardLine": 35,
-         "text": "NYG 35"
+         "yardLine": 94,
+         "text": "WSH 6"
         },
         "timeElapsed": {
-         "displayValue": "0:05"
+         "displayValue": "2:36"
         },
-        "result": "END OF HALF"
+        "result": "PUNT"
        },
        "start": {
-        "yardLine": 34,
+        "yardLine": 45,
         "team": {
          "id": "19"
         }
        },
        "end": {
-        "yardLine": 34,
+        "yardLine": 45,
         "team": {
          "id": "19"
         }
        }
       },
       "down": 1,
-      "yardLine": 34,
-      "distance": 11,
+      "yardLine": 45,
+      "distance": 10,
+      "downDistanceText": "1st & 10 at NYG 45",
+      "shortDownDistanceText": "1st & 10",
+      "possessionText": "NYG 45",
       "isRedZone": false,
       "homeTimeouts": 3,
-      "awayTimeouts": 3
+      "awayTimeouts": 3,
+      "possession": "19"
      },
      "status": {
-      "clock": 0.0,
-      "displayClock": "0:00",
-      "period": 2,
+      "clock": 744.0,
+      "displayClock": "12:24",
+      "period": 3,
       "type": {
-       "id": "23",
-       "name": "STATUS_HALFTIME",
+       "id": "2",
+       "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
-       "description": "Halftime",
-       "detail": "Halftime",
-       "shortDetail": "Halftime"
+       "description": "In Progress",
+       "detail": "12:24 - 3rd Quarter",
+       "shortDetail": "12:24 - 3rd"
       },
       "isTBDFlex": false
      },
@@ -1011,17 +1025,17 @@
     }
    },
    "status": {
-    "clock": 0.0,
-    "displayClock": "0:00",
-    "period": 2,
+    "clock": 744.0,
+    "displayClock": "12:24",
+    "period": 3,
     "type": {
-     "id": "23",
-     "name": "STATUS_HALFTIME",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
-     "description": "Halftime",
-     "detail": "Halftime",
-     "shortDetail": "Halftime"
+     "description": "In Progress",
+     "detail": "12:24 - 3rd Quarter",
+     "shortDetail": "12:24 - 3rd"
     }
    }
   },
@@ -2242,6 +2256,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "3-6"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "1-4"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-2"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -2363,24 +2395,6 @@
           }
          ]
         }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "3-6"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "1-4"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-2"
-        }
        ]
       },
       {
@@ -2493,24 +2507,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "6-2"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "4-0"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-2"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -2631,6 +2627,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "6-2"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "4-0"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-2"
         }
        ]
       }
@@ -2791,8 +2805,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $108",
-       "numberAvailable": 2676,
+       "summary": "Tickets as low as $110",
+       "numberAvailable": 2651,
        "links": [
         {
          "href": "https://www.vividseats.com/atlanta-falcons-tickets-atlanta-mercedes-benz-stadium-3-9-2026/production/6487188?wsUser=717"
@@ -3321,24 +3335,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "5-4"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "3-0"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-4"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -3459,6 +3455,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "5-4"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "3-0"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-4"
         }
        ]
       },
@@ -3871,7 +3885,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $30",
-       "numberAvailable": 4942,
+       "numberAvailable": 4929,
        "links": [
         {
          "href": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-4-2026/production/6489427?wsUser=717"
@@ -4950,7 +4964,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $313",
-       "numberAvailable": 2934,
+       "numberAvailable": 2915,
        "links": [
         {
          "href": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-3-2026/production/6489937?wsUser=717"
@@ -5210,35 +5224,11 @@
         "under": {
          "close": {
           "line": "u41.5",
-          "odds": "-105",
-          "link": {
-           "language": "en-US",
-           "rel": [
-            "under",
-            "desktop",
-            "bets"
-           ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118179%3Foutcomes%3D0OU84695612U4150_3",
-           "text": "Under Odds",
-           "shortText": "Under Odds",
-           "isExternal": true,
-           "isPremium": false,
-           "tracking": {
-            "campaign": "betting-integrations",
-            "tags": {
-             "league": "nfl",
-             "sport": "football",
-             "gameId": 401873060,
-             "betSide": "under",
-             "betType": "straight",
-             "betDetails": "Under:41.5"
-            }
-           }
-          }
+          "odds": "OFF"
          },
          "open": {
           "line": "u45.5",
-          "odds": "-110"
+          "odds": "OFF"
          }
         }
        },
@@ -5479,6 +5469,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "1-7"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "0-4"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "1-3"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -5600,24 +5608,6 @@
           }
          ]
         }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "1-7"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "0-4"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "1-3"
-        }
        ]
       },
       {
@@ -5730,6 +5720,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "6-2"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "4-1"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-1"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -5850,24 +5858,6 @@
            }
           }
          ]
-        }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "6-2"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "4-1"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-1"
         }
        ]
       }
@@ -8187,7 +8177,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $31",
-       "numberAvailable": 3975,
+       "numberAvailable": 3947,
        "links": [
         {
          "href": "https://www.vividseats.com/new-orleans-saints-tickets-new-orleans-caesars-superdome-3-3-2027/production/6493127?wsUser=717"
@@ -8967,6 +8957,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "7-1"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "3-1"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "4-0"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -9087,24 +9095,6 @@
            }
           }
          ]
-        }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "7-1"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "3-1"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "4-0"
         }
        ]
       }
@@ -10345,7 +10335,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $172",
-       "numberAvailable": 2956,
+       "numberAvailable": 2941,
        "links": [
         {
          "href": "https://www.vividseats.com/las-vegas-raiders-tickets-las-vegas-allegiant-stadium-3-7-2026/production/6491254?wsUser=717"
@@ -11421,8 +11411,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $38",
-       "numberAvailable": 3419,
+       "summary": "Tickets as low as $41",
+       "numberAvailable": 3444,
        "links": [
         {
          "href": "https://www.vividseats.com/arizona-cardinals-tickets-glendale-state-farm-stadium-3-7-2026/production/6487027?wsUser=717"
@@ -12500,8 +12490,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $230",
-       "numberAvailable": 3329,
+       "summary": "Tickets as low as $236",
+       "numberAvailable": 3303,
        "links": [
         {
          "href": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-8-2026/production/6489549?wsUser=717"
@@ -14659,7 +14649,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $38",
-       "numberAvailable": 6154,
+       "numberAvailable": 6177,
        "links": [
         {
          "href": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717"
