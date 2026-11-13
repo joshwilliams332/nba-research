@@ -425,7 +425,7 @@
      "timeValid": true,
      "neutralSite": false,
      "conferenceCompetition": false,
-     "playByPlayAvailable": false,
+     "playByPlayAvailable": true,
      "recent": true,
      "venue": {
       "id": "3839",
@@ -544,10 +544,22 @@
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/nyg.png"
        },
        "score": "0",
+       "linescores": [
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 1
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 2
+        }
+       ],
+       "statistics": [],
        "curatedRank": {
         "current": 99
        },
-       "statistics": [],
        "records": [
         {
          "name": "overall",
@@ -564,128 +576,6 @@
          "name": "Road",
          "type": "road",
          "summary": "2-1-1"
-        }
-       ],
-       "leaders": [
-        {
-         "name": "passingLeader",
-         "displayName": "Passing Leader",
-         "shortDisplayName": "PASS",
-         "abbreviation": "PYDS",
-         "leaders": [
-          {
-           "displayValue": "96/166, 1028 YDS, 8 TD, 5 INT",
-           "value": 1028.0,
-           "athlete": {
-            "id": "2969939",
-            "fullName": "Jameis Winston",
-            "displayName": "Jameis Winston",
-            "shortName": "J. Winston",
-            "links": [
-             {
-              "rel": [
-               "playercard",
-               "desktop",
-               "athlete"
-              ],
-              "href": "https://www.espn.com/nfl/player/_/id/2969939/jameis-winston"
-             }
-            ],
-            "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2969939.png",
-            "jersey": "19",
-            "position": {
-             "abbreviation": "QB"
-            },
-            "team": {
-             "id": "19"
-            },
-            "active": true
-           },
-           "team": {
-            "id": "19"
-           }
-          }
-         ]
-        },
-        {
-         "name": "rushingLeader",
-         "displayName": "Rushing Leader",
-         "shortDisplayName": "RUSH",
-         "abbreviation": "RYDS",
-         "leaders": [
-          {
-           "displayValue": "39 CAR, 111 YDS, 1 TD",
-           "value": 111.0,
-           "athlete": {
-            "id": "4040761",
-            "fullName": "Devin Singletary",
-            "displayName": "Devin Singletary",
-            "shortName": "D. Singletary",
-            "links": [
-             {
-              "rel": [
-               "playercard",
-               "desktop",
-               "athlete"
-              ],
-              "href": "https://www.espn.com/nfl/player/_/id/4040761/devin-singletary"
-             }
-            ],
-            "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4040761.png",
-            "jersey": "26",
-            "position": {
-             "abbreviation": "RB"
-            },
-            "team": {
-             "id": "19"
-            },
-            "active": true
-           },
-           "team": {
-            "id": "19"
-           }
-          }
-         ]
-        },
-        {
-         "name": "receivingLeader",
-         "displayName": "Receiving Leader",
-         "shortDisplayName": "REC",
-         "abbreviation": "RECYDS",
-         "leaders": [
-          {
-           "displayValue": "53 REC, 648 YDS, 2 TD",
-           "value": 648.0,
-           "athlete": {
-            "id": "4595348",
-            "fullName": "Malik Nabers",
-            "displayName": "Malik Nabers",
-            "shortName": "M. Nabers",
-            "links": [
-             {
-              "rel": [
-               "playercard",
-               "desktop",
-               "athlete"
-              ],
-              "href": "https://www.espn.com/nfl/player/_/id/4595348/malik-nabers"
-             }
-            ],
-            "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4595348.png",
-            "jersey": "1",
-            "position": {
-             "abbreviation": "WR"
-            },
-            "team": {
-             "id": "19"
-            },
-            "active": true
-           },
-           "team": {
-            "id": "19"
-           }
-          }
-         ]
         }
        ]
       },
@@ -794,11 +684,23 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/wsh.png"
        },
-       "score": "0",
+       "score": "3",
+       "linescores": [
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 1
+        },
+        {
+         "value": 3.0,
+         "displayValue": "3",
+         "period": 2
+        }
+       ],
+       "statistics": [],
        "curatedRank": {
         "current": 99
        },
-       "statistics": [],
        "records": [
         {
          "name": "overall",
@@ -816,144 +718,100 @@
          "type": "road",
          "summary": "0-3"
         }
-       ],
-       "leaders": [
-        {
-         "name": "passingLeader",
-         "displayName": "Passing Leader",
-         "shortDisplayName": "PASS",
-         "abbreviation": "PYDS",
-         "leaders": [
-          {
-           "displayValue": "115/180, 1250 YDS, 7 TD",
-           "value": 1250.0,
-           "athlete": {
-            "id": "4426348",
-            "fullName": "Jayden Daniels",
-            "displayName": "Jayden Daniels",
-            "shortName": "J. Daniels",
-            "links": [
-             {
-              "rel": [
-               "playercard",
-               "desktop",
-               "athlete"
-              ],
-              "href": "https://www.espn.com/nfl/player/_/id/4426348/jayden-daniels"
-             }
-            ],
-            "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426348.png",
-            "jersey": "5",
-            "position": {
-             "abbreviation": "QB"
-            },
-            "team": {
-             "id": "28"
-            },
-            "active": true
-           },
-           "team": {
-            "id": "28"
-           }
-          }
-         ]
-        },
-        {
-         "name": "rushingLeader",
-         "displayName": "Rushing Leader",
-         "shortDisplayName": "RUSH",
-         "abbreviation": "RYDS",
-         "leaders": [
-          {
-           "displayValue": "31 CAR, 252 YDS, 2 TD",
-           "value": 252.0,
-           "athlete": {
-            "id": "4426348",
-            "fullName": "Jayden Daniels",
-            "displayName": "Jayden Daniels",
-            "shortName": "J. Daniels",
-            "links": [
-             {
-              "rel": [
-               "playercard",
-               "desktop",
-               "athlete"
-              ],
-              "href": "https://www.espn.com/nfl/player/_/id/4426348/jayden-daniels"
-             }
-            ],
-            "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426348.png",
-            "jersey": "5",
-            "position": {
-             "abbreviation": "QB"
-            },
-            "team": {
-             "id": "28"
-            },
-            "active": true
-           },
-           "team": {
-            "id": "28"
-           }
-          }
-         ]
-        },
-        {
-         "name": "receivingLeader",
-         "displayName": "Receiving Leader",
-         "shortDisplayName": "REC",
-         "abbreviation": "RECYDS",
-         "leaders": [
-          {
-           "displayValue": "30 REC, 303 YDS, 5 TD",
-           "value": 303.0,
-           "athlete": {
-            "id": "2976212",
-            "fullName": "Stefon Diggs",
-            "displayName": "Stefon Diggs",
-            "shortName": "S. Diggs",
-            "links": [
-             {
-              "rel": [
-               "playercard",
-               "desktop",
-               "athlete"
-              ],
-              "href": "https://www.espn.com/nfl/player/_/id/2976212/stefon-diggs"
-             }
-            ],
-            "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2976212.png",
-            "jersey": "3",
-            "position": {
-             "abbreviation": "WR"
-            },
-            "team": {
-             "id": "28"
-            },
-            "active": true
-           },
-           "team": {
-            "id": "28"
-           }
-          }
-         ]
-        }
        ]
       }
      ],
      "notes": [],
+     "situation": {
+      "lastPlay": {
+       "id": "4018730521357",
+       "type": {
+        "id": "24",
+        "text": "Pass Reception",
+        "abbreviation": "REC"
+       },
+       "text": " J.McCarthy pass short middle to I.Likely to 50 for 11 yards (F.Luvu; Q.Martin).",
+       "scoreValue": 0,
+       "team": {
+        "id": "19"
+       },
+       "probability": {
+        "tiePercentage": 0.0,
+        "homeWinPercentage": 0.4714,
+        "awayWinPercentage": 0.5286,
+        "secondsLeft": 0
+       },
+       "statYardage": 11,
+       "drive": {
+        "description": "4 plays, 22 yards, 1:32",
+        "start": {
+         "yardLine": 28,
+         "text": "NYG 28"
+        },
+        "timeElapsed": {
+         "displayValue": "1:32"
+        }
+       },
+       "start": {
+        "yardLine": 39,
+        "team": {
+         "id": "19"
+        }
+       },
+       "end": {
+        "yardLine": 50,
+        "team": {
+         "id": "19"
+        }
+       },
+       "athletesInvolved": [
+        {
+         "id": "3127273",
+         "fullName": "Frankie Luvu",
+         "displayName": "Frankie Luvu",
+         "shortName": "F. Luvu",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/3127273/frankie-luvu"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3127273.png",
+         "jersey": "4",
+         "position": "LB",
+         "team": {
+          "id": "28"
+         }
+        }
+       ]
+      },
+      "down": 1,
+      "yardLine": 50,
+      "distance": 10,
+      "downDistanceText": "1st & 10 at 50",
+      "shortDownDistanceText": "1st & 10",
+      "possessionText": "50",
+      "isRedZone": false,
+      "homeTimeouts": 3,
+      "awayTimeouts": 3,
+      "possession": "19"
+     },
      "status": {
-      "clock": 0.0,
-      "displayClock": "0:00",
-      "period": 0,
+      "clock": 531.0,
+      "displayClock": "8:51",
+      "period": 2,
       "type": {
-       "id": "1",
-       "name": "STATUS_SCHEDULED",
-       "state": "pre",
+       "id": "2",
+       "name": "STATUS_IN_PROGRESS",
+       "state": "in",
        "completed": false,
-       "description": "Scheduled",
-       "detail": "Thu, November 12th at 8:15 PM EST",
-       "shortDetail": "11/12 - 8:15 PM EST"
+       "description": "In Progress",
+       "detail": "8:51 - 2nd Quarter",
+       "shortDetail": "8:51 - 2nd"
       },
       "isTBDFlex": false
      },
@@ -973,13 +831,13 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "1250 YDS, 7 TD",
-         "value": 1250.0,
+         "displayValue": "9/14, 77 YDS",
+         "value": 77.0,
          "athlete": {
-          "id": "4426348",
-          "fullName": "Jayden Daniels",
-          "displayName": "Jayden Daniels",
-          "shortName": "J. Daniels",
+          "id": "4433970",
+          "fullName": "J.J. McCarthy",
+          "displayName": "J.J. McCarthy",
+          "shortName": "J.J. McCarthy",
           "links": [
            {
             "rel": [
@@ -987,21 +845,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4426348/jayden-daniels"
+            "href": "https://www.espn.com/nfl/player/_/id/4433970/jj-mccarthy"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426348.png",
-          "jersey": "5",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4433970.png",
+          "jersey": "18",
           "position": {
            "abbreviation": "QB"
           },
           "team": {
-           "id": "28"
+           "id": "19"
           },
           "active": true
          },
          "team": {
-          "id": "28"
+          "id": "19"
          }
         }
        ]
@@ -1013,13 +871,13 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "31 CAR, 252 YDS, 2 TD",
-         "value": 252.0,
+         "displayValue": "4 CAR, 24 YDS",
+         "value": 24.0,
          "athlete": {
-          "id": "4426348",
-          "fullName": "Jayden Daniels",
-          "displayName": "Jayden Daniels",
-          "shortName": "J. Daniels",
+          "id": "4696981",
+          "fullName": "Cam Skattebo",
+          "displayName": "Cam Skattebo",
+          "shortName": "C. Skattebo",
           "links": [
            {
             "rel": [
@@ -1027,21 +885,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4426348/jayden-daniels"
+            "href": "https://www.espn.com/nfl/player/_/id/4696981/cam-skattebo"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426348.png",
-          "jersey": "5",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4696981.png",
+          "jersey": "44",
           "position": {
-           "abbreviation": "QB"
+           "abbreviation": "RB"
           },
           "team": {
-           "id": "28"
+           "id": "19"
           },
           "active": true
          },
          "team": {
-          "id": "28"
+          "id": "19"
          }
         }
        ]
@@ -1053,13 +911,13 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "53 REC, 648 YDS, 2 TD",
-         "value": 648.0,
+         "displayValue": "2 REC, 37 YDS",
+         "value": 37.0,
          "athlete": {
-          "id": "4595348",
-          "fullName": "Malik Nabers",
-          "displayName": "Malik Nabers",
-          "shortName": "M. Nabers",
+          "id": "4696981",
+          "fullName": "Cam Skattebo",
+          "displayName": "Cam Skattebo",
+          "shortName": "C. Skattebo",
           "links": [
            {
             "rel": [
@@ -1067,13 +925,13 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4595348/malik-nabers"
+            "href": "https://www.espn.com/nfl/player/_/id/4696981/cam-skattebo"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4595348.png",
-          "jersey": "1",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4696981.png",
+          "jersey": "44",
           "position": {
-           "abbreviation": "WR"
+           "abbreviation": "RB"
           },
           "team": {
            "id": "19"
@@ -1095,20 +953,6 @@
        "periods": 1
       }
      },
-     "tickets": [
-      {
-       "summary": "Tickets as low as $40",
-       "numberAvailable": 1610,
-       "links": [
-        {
-         "href": "https://www.vividseats.com/new-york-giants-tickets-east-rutherford-metlife-stadium-3-3-2027/production/6494176?wsUser=717"
-        },
-        {
-         "href": "https://www.vividseats.com/metlife-stadium-tickets/venue/8136?wsUser=717"
-        }
-       ]
-      }
-     ],
      "startDate": "2026-11-13T01:15Z",
      "broadcast": "Prime Video",
      "geoBroadcasts": [
@@ -1128,306 +972,6 @@
        "region": "us"
       }
      ],
-     "odds": [
-      {
-       "provider": {
-        "id": "100",
-        "name": "Draft Kings",
-        "priority": 1,
-        "logos": [
-         {
-          "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
-          "rel": [
-           "light"
-          ]
-         },
-         {
-          "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
-          "rel": [
-           "dark"
-          ]
-         }
-        ],
-        "displayName": "Draft Kings"
-       },
-       "details": "NYG -1.5",
-       "overUnder": 40.5,
-       "spread": -1.5,
-       "awayTeamOdds": {
-        "favorite": false,
-        "underdog": true,
-        "team": {
-         "id": "28",
-         "uid": "s:20~l:28~t:28",
-         "abbreviation": "WSH",
-         "name": "Commanders",
-         "displayName": "Washington Commanders",
-         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png"
-        },
-        "favoriteAtOpen": false
-       },
-       "homeTeamOdds": {
-        "favorite": true,
-        "underdog": false,
-        "team": {
-         "id": "19",
-         "uid": "s:20~l:28~t:19",
-         "abbreviation": "NYG",
-         "name": "Giants",
-         "displayName": "New York Giants",
-         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png"
-        },
-        "favoriteAtOpen": true
-       },
-       "moneyline": {
-        "displayName": "Moneyline",
-        "shortDisplayName": "ML",
-        "home": {
-         "close": {
-          "odds": "-125",
-          "link": {
-           "language": "en-US",
-           "rel": [
-            "home",
-            "desktop",
-            "bets",
-            "draft-kings"
-           ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_1",
-           "text": "Home Bet",
-           "shortText": "Home Bet",
-           "isExternal": true,
-           "isPremium": false,
-           "tracking": {
-            "campaign": "betting-integrations",
-            "tags": {
-             "league": "nfl",
-             "sport": "football",
-             "gameId": 401873052,
-             "betSide": "home",
-             "betType": "straight"
-            }
-           }
-          }
-         },
-         "open": {
-          "odds": "-125"
-         }
-        },
-        "away": {
-         "close": {
-          "odds": "+105",
-          "link": {
-           "language": "en-US",
-           "rel": [
-            "away",
-            "desktop",
-            "bets",
-            "draft-kings"
-           ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0ML84695535_3",
-           "text": "Away Bet",
-           "shortText": "Away Bet",
-           "isExternal": true,
-           "isPremium": false,
-           "tracking": {
-            "campaign": "betting-integrations",
-            "tags": {
-             "league": "nfl",
-             "sport": "football",
-             "gameId": 401873052,
-             "betSide": "away",
-             "betType": "straight"
-            }
-           }
-          }
-         },
-         "open": {
-          "odds": "+105"
-         }
-        }
-       },
-       "pointSpread": {
-        "displayName": "Spread",
-        "shortDisplayName": "Spread",
-        "home": {
-         "close": {
-          "line": "-1.5",
-          "odds": "-115",
-          "link": {
-           "language": "en-US",
-           "rel": [
-            "homeSpread",
-            "desktop",
-            "bets"
-           ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0HC84695535N150_1",
-           "text": "Home Point Spread",
-           "shortText": "Home Point Spread",
-           "isExternal": true,
-           "isPremium": false,
-           "tracking": {
-            "campaign": "betting-integrations",
-            "tags": {
-             "league": "nfl",
-             "sport": "football",
-             "gameId": 401873052,
-             "betSide": "none",
-             "betType": "straight",
-             "betDetails": "Spread:NYG-1.5"
-            }
-           }
-          }
-         },
-         "open": {
-          "line": "-1.5",
-          "odds": "-110"
-         }
-        },
-        "away": {
-         "close": {
-          "line": "+1.5",
-          "odds": "-105",
-          "link": {
-           "language": "en-US",
-           "rel": [
-            "awaySpread",
-            "desktop",
-            "bets"
-           ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0HC84695535P150_3",
-           "text": "Away Point Spread",
-           "shortText": "Away Point Spread",
-           "isExternal": true,
-           "isPremium": false,
-           "tracking": {
-            "campaign": "betting-integrations",
-            "tags": {
-             "league": "nfl",
-             "sport": "football",
-             "gameId": 401873052,
-             "betSide": "none",
-             "betType": "straight",
-             "betDetails": "Spread:WSH+1.5"
-            }
-           }
-          }
-         },
-         "open": {
-          "line": "+1.5",
-          "odds": "-110"
-         }
-        }
-       },
-       "total": {
-        "displayName": "Total",
-        "shortDisplayName": "Total",
-        "over": {
-         "close": {
-          "line": "o40.5",
-          "odds": "-115",
-          "link": {
-           "language": "en-US",
-           "rel": [
-            "over",
-            "desktop",
-            "bets"
-           ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0OU84695535O4050_1",
-           "text": "Over Odds",
-           "shortText": "Over Odds",
-           "isExternal": true,
-           "isPremium": false,
-           "tracking": {
-            "campaign": "betting-integrations",
-            "tags": {
-             "league": "nfl",
-             "sport": "football",
-             "gameId": 401873052,
-             "betSide": "over",
-             "betType": "straight",
-             "betDetails": "Over:40.5"
-            }
-           }
-          }
-         },
-         "open": {
-          "line": "o47.5",
-          "odds": "-110"
-         }
-        },
-        "under": {
-         "close": {
-          "line": "u40.5",
-          "odds": "-105",
-          "link": {
-           "language": "en-US",
-           "rel": [
-            "under",
-            "desktop",
-            "bets"
-           ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102%3Foutcomes%3D0OU84695535U4050_3",
-           "text": "Under Odds",
-           "shortText": "Under Odds",
-           "isExternal": true,
-           "isPremium": false,
-           "tracking": {
-            "campaign": "betting-integrations",
-            "tags": {
-             "league": "nfl",
-             "sport": "football",
-             "gameId": 401873052,
-             "betSide": "under",
-             "betType": "straight",
-             "betDetails": "Under:40.5"
-            }
-           }
-          }
-         },
-         "open": {
-          "line": "u47.5",
-          "odds": "-110"
-         }
-        }
-       },
-       "link": {
-        "language": "en-US",
-        "rel": [
-         "game",
-         "desktop",
-         "bets"
-        ],
-        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118102",
-        "text": "See More Odds",
-        "shortText": "Game",
-        "isExternal": true,
-        "isPremium": false,
-        "tracking": {
-         "campaign": "betting-integrations",
-         "tags": {
-          "league": "nfl",
-          "sport": "football",
-          "gameId": 401873052,
-          "betSide": "none",
-          "betType": "straight"
-         }
-        }
-       },
-       "header": {
-        "logo": {
-         "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
-         "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
-         "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
-         "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
-        },
-        "text": "Game Odds"
-       },
-       "footer": {
-        "disclaimer": "GAMBLING PROBLEM? CALL 1-800-GAMBLER or 1-800-MY-RESET, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Call 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD), 1-800-981-0023 (PR). 21+ and present in most states. (18+ DC/KY/NH/PR/WY). Void in ONT. Eligibility restrictions apply. Terms: draftkings.com/sportsbook. On behalf of Boot Hill Casino (KS). Pass-thru of per wager tax may apply in IL."
-       }
-      }
-     ],
      "highlights": []
     }
    ],
@@ -1435,28 +979,54 @@
     {
      "language": "en-US",
      "rel": [
-      "summary",
+      "live",
       "desktop",
       "event"
      ],
-     "href": "https://www.espn.com/nfl/game/_/gameId/401873052/commanders-giants",
+     "href": "https://www.espn.com/nfl/game?gameId=401873052",
      "text": "Gamecast",
      "shortText": "Gamecast",
+     "isExternal": false,
+     "isPremium": false
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "boxscore",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/boxscore/_/gameId/401873052",
+     "text": "Box Score",
+     "shortText": "Box Score",
+     "isExternal": false,
+     "isPremium": false
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "pbp",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/playbyplay/_/gameId/401873052",
+     "text": "Play-by-Play",
+     "shortText": "Play-by-Play",
      "isExternal": false,
      "isPremium": false
     }
    ],
    "weather": {
-    "displayValue": "Showers",
-    "temperature": 52,
-    "highTemperature": 52,
-    "conditionId": "12",
+    "displayValue": "7",
+    "temperature": 48,
+    "highTemperature": 48,
+    "conditionId": "Cloudy",
     "link": {
      "language": "en-US",
      "rel": [
       "07073"
      ],
-     "href": "http://www.accuweather.com/en/us/metlife-stadium-nj/07073/hourly-weather-forecast/52866_poi?day=1&hbhhour=20&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/metlife-stadium-nj/07073/current-weather/52866_poi?lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -1464,17 +1034,17 @@
     }
    },
    "status": {
-    "clock": 0.0,
-    "displayClock": "0:00",
-    "period": 0,
+    "clock": 531.0,
+    "displayClock": "8:51",
+    "period": 2,
     "type": {
-     "id": "1",
-     "name": "STATUS_SCHEDULED",
-     "state": "pre",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "state": "in",
      "completed": false,
-     "description": "Scheduled",
-     "detail": "Thu, November 12th at 8:15 PM EST",
-     "shortDetail": "11/12 - 8:15 PM EST"
+     "description": "In Progress",
+     "detail": "8:51 - 2nd Quarter",
+     "shortDetail": "8:51 - 2nd"
     }
    }
   },
@@ -2181,8 +1751,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $363",
-       "numberAvailable": 1242,
+       "summary": "Tickets as low as $356",
+       "numberAvailable": 1229,
        "links": [
         {
          "href": "https://www.vividseats.com/detroit-lions-tickets-allianz-arena-11-15-2026--sports-nfl-football/production/7027930?wsUser=717"
@@ -2216,7 +1786,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -2231,10 +1801,11 @@
            "dark"
           ]
          }
-        ]
+        ],
+        "displayName": "DraftKings"
        },
        "details": "DET -2.5",
-       "overUnder": 51.5,
+       "overUnder": 50.5,
        "spread": -2.5,
        "awayTeamOdds": {
         "favorite": false,
@@ -2267,14 +1838,14 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-155",
+          "odds": "-148",
           "link": {
            "language": "en-US",
            "rel": [
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118220%3Foutcomes%3D0ML84695653_1",
            "text": "Home Bet",
@@ -2299,14 +1870,14 @@
         },
         "away": {
          "close": {
-          "odds": "+130",
+          "odds": "+124",
           "link": {
            "language": "en-US",
            "rel": [
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118220%3Foutcomes%3D0ML84695653_3",
            "text": "Away Bet",
@@ -2407,8 +1978,8 @@
         "shortDisplayName": "Total",
         "over": {
          "close": {
-          "line": "o51.5",
-          "odds": "+100",
+          "line": "o50.5",
+          "odds": "-102",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2416,7 +1987,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118220%3Foutcomes%3D0OU84695653O5150_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118220%3Foutcomes%3D0OU84695653O5050_1",
            "text": "Over Odds",
            "shortText": "Over Odds",
            "isExternal": true,
@@ -2429,7 +2000,7 @@
              "gameId": 401873053,
              "betSide": "over",
              "betType": "straight",
-             "betDetails": "Over:51.5"
+             "betDetails": "Over:50.5"
             }
            }
           }
@@ -2441,8 +2012,8 @@
         },
         "under": {
          "close": {
-          "line": "u51.5",
-          "odds": "-120",
+          "line": "u50.5",
+          "odds": "-118",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2450,7 +2021,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118220%3Foutcomes%3D0OU84695653U5150_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118220%3Foutcomes%3D0OU84695653U5050_3",
            "text": "Under Odds",
            "shortText": "Under Odds",
            "isExternal": true,
@@ -2463,7 +2034,7 @@
              "gameId": 401873053,
              "betSide": "under",
              "betType": "straight",
-             "betDetails": "Under:51.5"
+             "betDetails": "Under:50.5"
             }
            }
           }
@@ -3244,7 +2815,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $108",
-       "numberAvailable": 2759,
+       "numberAvailable": 2676,
        "links": [
         {
          "href": "https://www.vividseats.com/atlanta-falcons-tickets-atlanta-mercedes-benz-stadium-3-9-2026/production/6487188?wsUser=717"
@@ -3278,7 +2849,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -3336,7 +2907,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118132%3Foutcomes%3D0ML84695565_1",
            "text": "Home Bet",
@@ -3368,7 +2939,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118132%3Foutcomes%3D0ML84695565_3",
            "text": "Away Bet",
@@ -3799,13 +3370,13 @@
          "abbreviation": "PYDS",
          "leaders": [
           {
-           "displayValue": "22/34, 299 YDS, 2 TD",
-           "value": 299.0,
+           "displayValue": "163/249, 1806 YDS, 7 TD, 3 INT",
+           "value": 1806.0,
            "athlete": {
-            "id": "4432762",
-            "fullName": "Shedeur Sanders",
-            "displayName": "Shedeur Sanders",
-            "shortName": "S. Sanders",
+            "id": "3122840",
+            "fullName": "Deshaun Watson",
+            "displayName": "Deshaun Watson",
+            "shortName": "D. Watson",
             "links": [
              {
               "rel": [
@@ -3813,11 +3384,11 @@
                "desktop",
                "athlete"
               ],
-              "href": "https://www.espn.com/nfl/player/_/id/4432762/shedeur-sanders"
+              "href": "https://www.espn.com/nfl/player/_/id/3122840/deshaun-watson"
              }
             ],
-            "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432762.png",
-            "jersey": "2",
+            "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3122840.png",
+            "jersey": "4",
             "position": {
              "abbreviation": "QB"
             },
@@ -4322,8 +3893,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $26",
-       "numberAvailable": 5009,
+       "summary": "Tickets as low as $30",
+       "numberAvailable": 4956,
        "links": [
         {
          "href": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-4-2026/production/6489427?wsUser=717"
@@ -4357,7 +3928,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -4415,7 +3986,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118093%3Foutcomes%3D0ML84695526_1",
            "text": "Home Bet",
@@ -4447,7 +4018,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118093%3Foutcomes%3D0ML84695526_3",
            "text": "Away Bet",
@@ -5401,8 +4972,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $320",
-       "numberAvailable": 3008,
+       "summary": "Tickets as low as $313",
+       "numberAvailable": 2944,
        "links": [
         {
          "href": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-3-2026/production/6489937?wsUser=717"
@@ -5436,7 +5007,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -5454,7 +5025,7 @@
         ]
        },
        "details": "GB -3",
-       "overUnder": 42.5,
+       "overUnder": 41.5,
        "spread": -3.0,
        "awayTeamOdds": {
         "favorite": false,
@@ -5487,14 +5058,14 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-155",
+          "odds": "-148",
           "link": {
            "language": "en-US",
            "rel": [
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118179%3Foutcomes%3D0ML84695612_1",
            "text": "Home Bet",
@@ -5519,14 +5090,14 @@
         },
         "away": {
          "close": {
-          "odds": "+130",
+          "odds": "+124",
           "link": {
            "language": "en-US",
            "rel": [
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118179%3Foutcomes%3D0ML84695612_3",
            "text": "Away Bet",
@@ -5556,7 +5127,7 @@
         "home": {
          "close": {
           "line": "-3",
-          "odds": "-110",
+          "odds": "-105",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5590,7 +5161,7 @@
         "away": {
          "close": {
           "line": "+3",
-          "odds": "-110",
+          "odds": "-115",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5627,8 +5198,8 @@
         "shortDisplayName": "Total",
         "over": {
          "close": {
-          "line": "o42.5",
-          "odds": "-105",
+          "line": "o41.5",
+          "odds": "-115",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5636,7 +5207,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118179%3Foutcomes%3D0OU84695612O4250_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118179%3Foutcomes%3D0OU84695612O4150_1",
            "text": "Over Odds",
            "shortText": "Over Odds",
            "isExternal": true,
@@ -5649,7 +5220,7 @@
              "gameId": 401873060,
              "betSide": "over",
              "betType": "straight",
-             "betDetails": "Over:42.5"
+             "betDetails": "Over:41.5"
             }
            }
           }
@@ -5661,8 +5232,8 @@
         },
         "under": {
          "close": {
-          "line": "u42.5",
-          "odds": "-115",
+          "line": "u41.5",
+          "odds": "-105",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5670,7 +5241,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118179%3Foutcomes%3D0OU84695612U4250_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118179%3Foutcomes%3D0OU84695612U4150_3",
            "text": "Under Odds",
            "shortText": "Under Odds",
            "isExternal": true,
@@ -5683,7 +5254,7 @@
              "gameId": 401873060,
              "betSide": "under",
              "betType": "straight",
-             "betDetails": "Under:42.5"
+             "betDetails": "Under:41.5"
             }
            }
           }
@@ -6182,6 +5753,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "6-2"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "4-1"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-1"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -6302,24 +5891,6 @@
            }
           }
          ]
-        }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "6-2"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "4-1"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-1"
         }
        ]
       }
@@ -6480,8 +6051,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $23",
-       "numberAvailable": 1840,
+       "summary": "Tickets as low as $24",
+       "numberAvailable": 1839,
        "links": [
         {
          "href": "https://www.vividseats.com/tennessee-titans-tickets-nashville-nissan-stadium-3-3-2027/production/6493541?wsUser=717"
@@ -6515,7 +6086,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -6573,7 +6144,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118232%3Foutcomes%3D0ML84695675_1",
            "text": "Home Bet",
@@ -6605,7 +6176,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118232%3Foutcomes%3D0ML84695675_3",
            "text": "Away Bet",
@@ -7560,7 +7131,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $29",
-       "numberAvailable": 2933,
+       "numberAvailable": 2883,
        "links": [
         {
          "href": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-6-2026/production/6490119?wsUser=717"
@@ -7594,7 +7165,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -7652,7 +7223,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118270%3Foutcomes%3D0ML84695713_1",
            "text": "Home Bet",
@@ -7684,7 +7255,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118270%3Foutcomes%3D0ML84695713_3",
            "text": "Away Bet",
@@ -8639,7 +8210,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $31",
-       "numberAvailable": 4007,
+       "numberAvailable": 3999,
        "links": [
         {
          "href": "https://www.vividseats.com/new-orleans-saints-tickets-new-orleans-caesars-superdome-3-3-2027/production/6493127?wsUser=717"
@@ -8673,7 +8244,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -8731,7 +8302,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118165%3Foutcomes%3D0ML84695598_1",
            "text": "Home Bet",
@@ -8763,7 +8334,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118165%3Foutcomes%3D0ML84695598_3",
            "text": "Away Bet",
@@ -9717,8 +9288,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $157",
-       "numberAvailable": 2751,
+       "summary": "Tickets as low as $159",
+       "numberAvailable": 2741,
        "links": [
         {
          "href": "https://www.vividseats.com/new-york-jets-tickets-east-rutherford-metlife-stadium-3-6-2027/production/6494612?wsUser=717"
@@ -9752,7 +9323,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -9810,7 +9381,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118183%3Foutcomes%3D0ML84695616_1",
            "text": "Home Bet",
@@ -9842,7 +9413,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118183%3Foutcomes%3D0ML84695616_3",
            "text": "Away Bet",
@@ -10797,7 +10368,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $172",
-       "numberAvailable": 3043,
+       "numberAvailable": 2970,
        "links": [
         {
          "href": "https://www.vividseats.com/las-vegas-raiders-tickets-las-vegas-allegiant-stadium-3-7-2026/production/6491254?wsUser=717"
@@ -10831,7 +10402,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -10889,7 +10460,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118249%3Foutcomes%3D0ML84695692_1",
            "text": "Home Bet",
@@ -10921,7 +10492,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118249%3Foutcomes%3D0ML84695692_3",
            "text": "Away Bet",
@@ -11874,7 +11445,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $38",
-       "numberAvailable": 3505,
+       "numberAvailable": 3419,
        "links": [
         {
          "href": "https://www.vividseats.com/arizona-cardinals-tickets-glendale-state-farm-stadium-3-7-2026/production/6487027?wsUser=717"
@@ -11908,7 +11479,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -11966,7 +11537,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118111%3Foutcomes%3D0ML84695544_1",
            "text": "Home Bet",
@@ -11998,7 +11569,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118111%3Foutcomes%3D0ML84695544_3",
            "text": "Away Bet",
@@ -12952,8 +12523,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $231",
-       "numberAvailable": 3347,
+       "summary": "Tickets as low as $230",
+       "numberAvailable": 3329,
        "links": [
         {
          "href": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-8-2026/production/6489549?wsUser=717"
@@ -12987,7 +12558,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -13045,7 +12616,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118134%3Foutcomes%3D0ML84695567_1",
            "text": "Home Bet",
@@ -13077,7 +12648,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118134%3Foutcomes%3D0ML84695567_3",
            "text": "Away Bet",
@@ -14031,8 +13602,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $271",
-       "numberAvailable": 1535,
+       "summary": "Tickets as low as $274",
+       "numberAvailable": 1506,
        "links": [
         {
          "href": "https://www.vividseats.com/pittsburgh-steelers-tickets-cincinnati-paycor-stadium-3-3-2026/production/6489006?wsUser=717"
@@ -14066,7 +13637,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -14124,7 +13695,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118114%3Foutcomes%3D0ML84695547_1",
            "text": "Home Bet",
@@ -14156,7 +13727,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118114%3Foutcomes%3D0ML84695547_3",
            "text": "Away Bet",
@@ -15110,8 +14681,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $36",
-       "numberAvailable": 6500,
+       "summary": "Tickets as low as $38",
+       "numberAvailable": 6154,
        "links": [
         {
          "href": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717"
@@ -15147,7 +14718,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -15205,7 +14776,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_1",
            "text": "Home Bet",
@@ -15237,7 +14808,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_3",
            "text": "Away Bet",
@@ -15495,7 +15066,7 @@
  ],
  "provider": {
   "id": "100",
-  "name": "Draft Kings",
+  "name": "DraftKings",
   "priority": 1,
   "logos": [
    {
@@ -15511,6 +15082,6 @@
     ]
    }
   ],
-  "displayName": "Draft Kings"
+  "displayName": "DraftKings"
  }
 }
