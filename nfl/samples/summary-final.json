@@ -23636,124 +23636,6 @@
     },
     {
      "status": "Questionable",
-     "date": "2026-11-13T00:08Z",
-     "athlete": {
-      "id": "4360939",
-      "uid": "s:20~l:28~a:4360939",
-      "guid": "10e66c22-b136-20d0-805b-11758a932fb9",
-      "lastName": "Bateman",
-      "fullName": "Rashod Bateman",
-      "displayName": "Rashod Bateman",
-      "shortName": "R. Bateman",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4360939/rashod-bateman",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4360939.png",
-       "alt": "Rashod Bateman"
-      },
-      "jersey": "7",
-      "position": {
-       "name": "Wide Receiver",
-       "displayName": "Wide Receiver",
-       "abbreviation": "WR"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4360939?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "returnDate": "2026-11-16"
-     }
-    },
-    {
-     "status": "Questionable",
-     "date": "2026-11-12T23:43Z",
-     "athlete": {
-      "id": "4832793",
-      "uid": "s:20~l:28~a:4832793",
-      "guid": "f7003cfe-f478-373c-80f1-ad96cb7fe6c0",
-      "lastName": "Ioane",
-      "fullName": "Olaivavega Ioane",
-      "displayName": "Olaivavega Ioane",
-      "shortName": "O. Ioane",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4832793/olaivavega-ioane",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4832793.png",
-       "alt": "Olaivavega Ioane"
-      },
-      "jersey": "71",
-      "position": {
-       "name": "Guard",
-       "displayName": "Guard",
-       "abbreviation": "G"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4832793?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "returnDate": "2026-11-16"
-     }
-    },
-    {
-     "status": "Questionable",
      "date": "2026-11-06T03:14Z",
      "athlete": {
       "id": "4426372",
@@ -23808,6 +23690,128 @@
       },
       "type": "Hamstring",
       "location": "Leg",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-16"
+     }
+    },
+    {
+     "status": "Injured Reserve",
+     "date": "2026-11-05T21:20Z",
+     "athlete": {
+      "id": "4035671",
+      "uid": "s:20~l:28~a:4035671",
+      "guid": "749ba0ed-1951-e15d-e708-5e95557294de",
+      "lastName": "Huntley",
+      "fullName": "Tyler Huntley",
+      "displayName": "Tyler Huntley",
+      "shortName": "T. Huntley",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4035671/tyler-huntley",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4035671.png",
+       "alt": "Tyler Huntley"
+      },
+      "jersey": "5",
+      "position": {
+       "name": "Quarterback",
+       "displayName": "Quarterback",
+       "abbreviation": "QB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4035671?lang=en&region=us"
+      },
+      "status": {
+       "id": "13",
+       "name": "Day-To-Day",
+       "type": "day-to-day",
+       "abbreviation": "Day-To-Day"
+      }
+     },
+     "type": {
+      "id": "5",
+      "name": "INJURY_STATUS_IR",
+      "description": "Injured Reserve",
+      "abbreviation": "IR"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "IR",
+       "abbreviation": "IR",
+       "displayDescription": "IR"
+      },
+      "type": "Toe",
+      "location": "Leg",
+      "detail": "Sprain",
+      "side": "Right",
+      "returnDate": "2027-02-15"
+     }
+    },
+    {
+     "status": "Injured Reserve",
+     "date": "2026-11-05T01:10Z",
+     "athlete": {
+      "id": "4685526",
+      "uid": "s:20~l:28~a:4685526",
+      "guid": "5ba8accf-3628-3600-a87f-d46192f50537",
+      "lastName": "Randall",
+      "fullName": "Adam Randall",
+      "displayName": "Adam Randall",
+      "shortName": "A. Randall",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4685526/adam-randall",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4685526.png",
+       "alt": "Adam Randall"
+      },
+      "jersey": "23",
+      "position": {
+       "name": "Running Back",
+       "displayName": "Running Back",
+       "abbreviation": "RB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4685526?lang=en&region=us"
+      },
+      "status": {
+       "id": "13",
+       "name": "Day-To-Day",
+       "type": "day-to-day",
+       "abbreviation": "Day-To-Day"
+      }
+     },
+     "type": {
+      "id": "5",
+      "name": "INJURY_STATUS_IR",
+      "description": "Injured Reserve",
+      "abbreviation": "IR"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "IR-R",
+       "abbreviation": "IR-R",
+       "displayDescription": "IR-R"
+      },
+      "type": "Neck",
+      "location": "Head",
       "detail": "Not Specified",
       "side": "Not Specified",
       "returnDate": "2026-11-16"
@@ -23998,66 +24002,7 @@
       "location": "Arm",
       "detail": "Not Specified",
       "side": "Not Specified",
-      "returnDate": "2026-11-15"
-     }
-    },
-    {
-     "status": "Questionable",
-     "date": "2026-11-11T21:25Z",
-     "athlete": {
-      "id": "4572704",
-      "uid": "s:20~l:28~a:4572704",
-      "guid": "0980c4a8-e610-8804-c0d9-485dfa9273db",
-      "lastName": "Combs",
-      "fullName": "Branson Combs",
-      "displayName": "Branson Combs",
-      "shortName": "B. Combs",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4572704/branson-combs",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4572704.png",
-       "alt": "Branson Combs"
-      },
-      "jersey": "50",
-      "position": {
-       "name": "Linebacker",
-       "displayName": "Linebacker",
-       "abbreviation": "LB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4572704?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Shoulder",
-      "location": "Arm",
-      "returnDate": "2026-11-15"
+      "returnDate": "2026-11-22"
      }
     },
     {
@@ -24120,16 +24065,16 @@
      }
     },
     {
-     "status": "Questionable",
-     "date": "2026-11-11T21:24Z",
+     "status": "Out",
+     "date": "2026-11-05T23:48Z",
      "athlete": {
-      "id": "4048231",
-      "uid": "s:20~l:28~a:4048231",
-      "guid": "ba6b08b0-4638-b786-9cf0-0aba83e640ea",
-      "lastName": "Cleveland",
-      "fullName": "Ezra Cleveland",
-      "displayName": "Ezra Cleveland",
-      "shortName": "E. Cleveland",
+      "id": "4877475",
+      "uid": "s:20~l:28~a:4877475",
+      "guid": "b2ceae52-b42c-35b2-880a-52de4f6a124b",
+      "lastName": "Silmon-Craig",
+      "fullName": "Cam'Ron Silmon-Craig",
+      "displayName": "Cam'Ron Silmon-Craig",
+      "shortName": "C. Silmon-Craig",
       "links": [
        {
         "rel": [
@@ -24137,22 +24082,22 @@
          "desktop",
          "athlete"
         ],
-        "href": "https://www.espn.com/nfl/player/_/id/4048231/ezra-cleveland",
+        "href": "https://www.espn.com/nfl/player/_/id/4877475/camron-silmon-craig",
         "text": "Player Card"
        }
       ],
       "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4048231.png",
-       "alt": "Ezra Cleveland"
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4877475.png",
+       "alt": "Cam'Ron Silmon-Craig"
       },
-      "jersey": "76",
+      "jersey": "42",
       "position": {
-       "name": "Guard",
-       "displayName": "Guard",
-       "abbreviation": "G"
+       "name": "Safety",
+       "displayName": "Safety",
+       "abbreviation": "S"
       },
       "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4048231?lang=en&region=us"
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4877475?lang=en&region=us"
       },
       "status": {
        "id": "1",
@@ -24162,20 +24107,83 @@
       }
      },
      "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
+      "id": "4",
+      "name": "INJURY_STATUS_OUT",
+      "description": "out",
+      "abbreviation": "O"
      },
      "details": {
       "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
+       "description": "INACTIVE",
+       "abbreviation": "INACTIVE",
+       "displayDescription": "Inactive"
       },
-      "type": "Knee",
-      "location": "Leg",
+      "type": "Coach's Decision",
+      "location": "Other",
+      "detail": "Not Specified",
+      "side": "Not Specified",
       "returnDate": "2026-11-15"
+     }
+    },
+    {
+     "status": "Injured Reserve",
+     "date": "2026-11-04T01:11Z",
+     "athlete": {
+      "id": "2970716",
+      "uid": "s:20~l:28~a:2970716",
+      "guid": "c6cb4633-7945-434b-7d56-2e79dad0267b",
+      "lastName": "Murray",
+      "fullName": "Eric Murray",
+      "displayName": "Eric Murray",
+      "shortName": "E. Murray",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/2970716/eric-murray",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/2970716.png",
+       "alt": "Eric Murray"
+      },
+      "jersey": "29",
+      "position": {
+       "name": "Safety",
+       "displayName": "Safety",
+       "abbreviation": "S"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/530737?lang=en&region=us"
+      },
+      "status": {
+       "id": "13",
+       "name": "Day-To-Day",
+       "type": "day-to-day",
+       "abbreviation": "Day-To-Day"
+      }
+     },
+     "type": {
+      "id": "5",
+      "name": "INJURY_STATUS_IR",
+      "description": "Injured Reserve",
+      "abbreviation": "IR"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "IR",
+       "abbreviation": "IR",
+       "displayDescription": "IR"
+      },
+      "type": "Elbow",
+      "location": "Arm",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2027-02-15"
      }
     }
    ]
@@ -25363,830 +25371,6 @@
    }
   }
  ],
- "header": {
-  "id": "401873037",
-  "uid": "s:20~l:28~e:401873037",
-  "season": {
-   "year": 2026,
-   "current": true,
-   "type": 2
-  },
-  "timeValid": true,
-  "competitions": [
-   {
-    "id": "401873037",
-    "uid": "s:20~l:28~e:401873037~c:401873037",
-    "date": "2026-11-06T01:15Z",
-    "neutralSite": false,
-    "conferenceCompetition": false,
-    "boxscoreAvailable": true,
-    "commentaryAvailable": false,
-    "liveAvailable": false,
-    "onWatchESPN": false,
-    "recent": false,
-    "wallclockAvailable": true,
-    "boxscoreSource": "full",
-    "playByPlaySource": "full",
-    "competitors": [
-     {
-      "id": "33",
-      "uid": "s:20~l:28~t:33",
-      "order": 0,
-      "homeAway": "home",
-      "winner": false,
-      "team": {
-       "id": "33",
-       "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
-       "uid": "s:20~l:28~t:33",
-       "location": "Baltimore",
-       "name": "Ravens",
-       "nickname": "Ravens",
-       "abbreviation": "BAL",
-       "displayName": "Baltimore Ravens",
-       "color": "29126f",
-       "alternateColor": "000000",
-       "logos": [
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "default"
-         ],
-         "lastUpdated": "2024-06-25T18:44Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/bal.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:44Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard"
-         ],
-         "lastUpdated": "2024-06-25T18:45Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/bal.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:44Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/grayscale.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "grayscale"
-         ],
-         "lastUpdated": "2026-03-31T12:53Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        }
-       ],
-       "links": [
-        {
-         "rel": [
-          "clubhouse",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens",
-         "text": "Clubhouse"
-        }
-       ]
-      },
-      "score": "10",
-      "linescores": [
-       {
-        "displayValue": "3"
-       },
-       {
-        "displayValue": "0"
-       },
-       {
-        "displayValue": "0"
-       },
-       {
-        "displayValue": "7"
-       }
-      ],
-      "record": [
-       {
-        "type": "total",
-        "summary": "4-5",
-        "displayValue": "4-5"
-       },
-       {
-        "type": "home",
-        "summary": "1-3",
-        "displayValue": "1-3"
-       }
-      ],
-      "possession": false
-     },
-     {
-      "id": "30",
-      "uid": "s:20~l:28~t:30",
-      "order": 1,
-      "homeAway": "away",
-      "winner": true,
-      "team": {
-       "id": "30",
-       "guid": "ca6fb778-cbf6-d9a3-3e93-01230335fcab",
-       "uid": "s:20~l:28~t:30",
-       "location": "Jacksonville",
-       "name": "Jaguars",
-       "nickname": "Jaguars",
-       "abbreviation": "JAX",
-       "displayName": "Jacksonville Jaguars",
-       "color": "007487",
-       "alternateColor": "d7a22a",
-       "logos": [
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "default"
-         ],
-         "lastUpdated": "2024-06-25T18:50Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/jax.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:50Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard"
-         ],
-         "lastUpdated": "2024-06-25T18:50Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/jax.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:50Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/grayscale.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "grayscale"
-         ],
-         "lastUpdated": "2026-03-31T12:52Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        }
-       ],
-       "links": [
-        {
-         "rel": [
-          "clubhouse",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars",
-         "text": "Clubhouse"
-        }
-       ]
-      },
-      "score": "33",
-      "linescores": [
-       {
-        "displayValue": "10"
-       },
-       {
-        "displayValue": "7"
-       },
-       {
-        "displayValue": "3"
-       },
-       {
-        "displayValue": "13"
-       }
-      ],
-      "record": [
-       {
-        "type": "total",
-        "summary": "6-2",
-        "displayValue": "6-2"
-       },
-       {
-        "type": "road",
-        "summary": "2-1",
-        "displayValue": "2-1"
-       }
-      ],
-      "possession": false
-     }
-    ],
-    "status": {
-     "type": {
-      "id": "3",
-      "name": "STATUS_FINAL",
-      "state": "post",
-      "completed": true,
-      "description": "Final",
-      "detail": "Final",
-      "shortDetail": "Final"
-     },
-     "isTBDFlex": false
-    },
-    "broadcasts": [
-     {
-      "type": {
-       "id": "4",
-       "shortName": "Streaming"
-      },
-      "market": {
-       "id": "1",
-       "type": "National"
-      },
-      "media": {
-       "shortName": "Prime Video"
-      },
-      "lang": "en",
-      "region": "us",
-      "isNational": true
-     }
-    ],
-    "boxscoreMinutes": true
-   }
-  ],
-  "links": [
-   {
-    "rel": [
-     "summary",
-     "desktop",
-     "event"
-    ],
-    "href": "https://www.espn.com/nfl/game/_/gameId/401873037/jaguars-ravens",
-    "text": "Gamecast",
-    "shortText": "Summary",
-    "isExternal": false,
-    "isPremium": false
-   },
-   {
-    "rel": [
-     "recap",
-     "desktop",
-     "event"
-    ],
-    "href": "https://www.espn.com/nfl/recap?gameId=401873037",
-    "text": "Recap",
-    "shortText": "Recap",
-    "isExternal": false,
-    "isPremium": false
-   },
-   {
-    "rel": [
-     "boxscore",
-     "desktop",
-     "event"
-    ],
-    "href": "https://www.espn.com/nfl/boxscore/_/gameId/401873037",
-    "text": "Box Score",
-    "shortText": "Box Score",
-    "isExternal": false,
-    "isPremium": false
-   },
-   {
-    "rel": [
-     "pbp",
-     "desktop",
-     "event"
-    ],
-    "href": "https://www.espn.com/nfl/playbyplay/_/gameId/401873037",
-    "text": "Play-by-Play",
-    "shortText": "Play-by-Play",
-    "isExternal": false,
-    "isPremium": false
-   },
-   {
-    "rel": [
-     "teamstats",
-     "desktop",
-     "event"
-    ],
-    "href": "https://www.espn.com/nfl/matchup?gameId=401873037",
-    "text": "Team Stats",
-    "shortText": "Team Stats",
-    "isExternal": false,
-    "isPremium": false
-   }
-  ],
-  "week": 9,
-  "league": {
-   "id": "28",
-   "uid": "s:20~l:28",
-   "name": "National Football League",
-   "abbreviation": "NFL",
-   "shortName": "NFL",
-   "slug": "nfl",
-   "isTournament": false,
-   "links": [
-    {
-     "rel": [
-      "index",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/",
-     "text": "Index"
-    },
-    {
-     "rel": [
-      "index",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28",
-     "text": "Index"
-    },
-    {
-     "rel": [
-      "schedule",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/schedule",
-     "text": "Schedule"
-    },
-    {
-     "rel": [
-      "schedule",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
-     "text": "Schedule"
-    },
-    {
-     "rel": [
-      "standings",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/standings",
-     "text": "Standings"
-    },
-    {
-     "rel": [
-      "standings",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=standings",
-     "text": "Standings"
-    },
-    {
-     "rel": [
-      "rankings",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/powerrankings",
-     "text": "Power Rankings"
-    },
-    {
-     "rel": [
-      "scores",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/scoreboard",
-     "text": "Scores"
-    },
-    {
-     "rel": [
-      "scores",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
-     "text": "Scores"
-    },
-    {
-     "rel": [
-      "stats",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/stats",
-     "text": "Stats"
-    },
-    {
-     "rel": [
-      "stats",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=stats",
-     "text": "Stats"
-    },
-    {
-     "rel": [
-      "teams",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/teams",
-     "text": "Teams"
-    },
-    {
-     "rel": [
-      "athletes",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/players",
-     "text": "Players"
-    },
-    {
-     "rel": [
-      "injuries",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/injuries",
-     "text": "Injuries"
-    },
-    {
-     "rel": [
-      "odds",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/odds",
-     "text": "Odds"
-    },
-    {
-     "rel": [
-      "odds",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=odds",
-     "text": "Odds"
-    },
-    {
-     "rel": [
-      "playoff-bracket",
-      "desktop",
-      "league"
-     ],
-     "href": "https://www.espn.com/nfl/playoff-bracket",
-     "text": "Bracket"
-    },
-    {
-     "rel": [
-      "playoff-bracket",
-      "sportscenter",
-      "app",
-      "league"
-     ],
-     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=bracket",
-     "text": "Bracket"
-    },
-    {
-     "rel": [
-      "freeagency",
-      "desktop",
-      "league"
-     ],
-     "href": "https://insider.espn.com/nfl/freeagency/",
-     "text": "Freeagency"
-    }
-   ],
-   "logos": [
-    {
-     "href": "https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png",
-     "rel": [
-      "full",
-      "default"
-     ]
-    },
-    {
-     "href": "https://a.espncdn.com/i/teamlogos/leagues/500-dark/nfl.png",
-     "rel": [
-      "full",
-      "dark"
-     ]
-    }
-   ]
-  }
- },
  "news": {
   "header": "NFL News",
   "link": {
@@ -26204,6 +25388,726 @@
   },
   "articles": [
    {
+    "id": 50475505,
+    "nowId": "1-50475505",
+    "contentKey": "50475505-1-6-1",
+    "dataSourceIdentifier": "9395fb15ac883",
+    "type": "Story",
+    "headline": "Seahawks are hurting with injuries, but two players will return vs. Raiders",
+    "description": "QB Drew Lock will start again for Darnold. LB Uchenna Nwosu and WR Rashid Shaheed will return to the field in Las Vegas.",
+    "lastModified": "2026-11-14T00:33:45Z",
+    "published": "2026-11-14T00:33:45Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "88d3c437aa150",
+      "id": 50475173,
+      "type": "header",
+      "name": "Drew Lock [608x342]",
+      "credit": "Steph Chambers/Getty Images)",
+      "height": 342,
+      "width": 608,
+      "url": "https://a.espncdn.com/photo/2026/1113/r1745471_608x342_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Drew Lock set to start vs. Raiders",
+      "caption": "Brady Henderson reports Drew Lock is set to start against the Raiders in Week 10 despite dealing with injuries.",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1112/dm_261112_IA_Seahawks_16x9/dm_261112_IA_Seahawks_16x9.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1693,
+      "type": "team",
+      "uid": "s:20~l:28~t:26",
+      "guid": "3767a23c-a17d-294f-288a-9086ad1f0680",
+      "description": "Seattle Seahawks",
+      "sportId": 28,
+      "teamId": 26,
+      "team": {
+       "id": 26,
+       "description": "Seattle Seahawks",
+       "abbreviation": "SEA",
+       "shortDisplayName": "Seahawks",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/sea/seattle-seahawks"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/sea/seattle-seahawks"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 379932,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3924327",
+      "guid": "0b8ae860-a909-6cdb-db2d-8e3fe1b28d83",
+      "description": "Drew Lock",
+      "sportId": 28,
+      "athleteId": 3924327,
+      "athlete": {
+       "id": 3924327,
+       "description": "Drew Lock",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3924327/drew-lock"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3924327/drew-lock"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 530161,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4032473",
+      "guid": "8a0eaa42-1bfb-09dd-b3b8-2572d1301eb1",
+      "description": "Rashid Shaheed",
+      "sportId": 28,
+      "athleteId": 4032473,
+      "athlete": {
+       "id": 4032473,
+       "description": "Rashid Shaheed",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4032473/rashid-shaheed"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4032473/rashid-shaheed"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 184656,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3120358",
+      "guid": "1d728632-57e5-4a79-d286-cf7a440eb8eb",
+      "description": "Uchenna Nwosu",
+      "sportId": 28,
+      "athleteId": 3120358,
+      "athlete": {
+       "id": 3120358,
+       "description": "Uchenna Nwosu",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3120358/uchenna-nwosu"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3120358/uchenna-nwosu"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 184497,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3912547",
+      "guid": "938f19a1-ef9b-618c-2365-d55291e0fcc6",
+      "description": "Sam Darnold",
+      "sportId": 28,
+      "athleteId": 3912547,
+      "athlete": {
+       "id": 3912547,
+       "description": "Sam Darnold",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3912547/sam-darnold"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3912547/sam-darnold"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 138774,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:2971622",
+      "guid": "4ea23eac-ad50-dfe7-6864-0cf74b7cf6b1",
+      "description": "Leonard Williams",
+      "sportId": 28,
+      "athleteId": 2971622,
+      "athlete": {
+       "id": 2971622,
+       "description": "Leonard Williams",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/2971622/leonard-williams"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/2971622/leonard-williams"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696377,
+      "type": "contributor",
+      "guid": "30f83980-4ee4-338b-a7dc-3d67220efd61",
+      "description": "Brady Henderson",
+      "slug": "brady-henderson",
+      "contributor": {
+       "id": 3118,
+       "description": "Brady Henderson"
+      }
+     }
+    ],
+    "byline": "Brady Henderson",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50475505"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50475505"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50475505"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50475505/seahawks-raiders-week-10-darnold-lock-shaheed-returns"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50462045,
+    "nowId": "1-50462045",
+    "contentKey": "50462045-1-6-1",
+    "dataSourceIdentifier": "9a3444f6591b2",
+    "type": "Story",
+    "headline": "Fantasy football Week 10 inactives: Who's in and who's out?",
+    "description": "Updated inactives and analysis based on the latest reports and official announcements leading up to kickoff.",
+    "lastModified": "2026-11-14T01:01:08Z",
+    "published": "2026-11-14T01:01:08Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "e7fa97f69adf4",
+      "id": 50472905,
+      "type": "header",
+      "name": "Bhayshul Tuten [576x324]",
+      "caption": "Will Bhayshul Tuten be the one to lead the way in the Jaguars backfield?",
+      "alt": "Bhayshul Tuten #33 of the Jacksonville Jaguars celebrates with Ameer Abdullah #20 after scoring a touchdown against the Baltimore Ravens.",
+      "credit": "Patrick Smith/Getty Images",
+      "height": 324,
+      "width": 576,
+      "url": "https://a.espncdn.com/photo/2026/1113/r1745316_576x324_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "9f7d35cc74d6a",
+      "id": 50472927,
+      "type": "header",
+      "name": "George Pickens [576x324]",
+      "caption": "Is George Pickens ready to return to the Cowboys huddle in Week 10?",
+      "alt": "Dallas Cowboys wide receiver George Pickens (3) runs with the ball after making a catch against Arizona Cardinals linebacker Cody Simon (0) during an NFL football game in Arlington, Texas.",
+      "credit": "AP",
+      "height": 324,
+      "width": 576,
+      "url": "https://a.espncdn.com/photo/2026/1113/r1745318_576x324_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Why Dopp doesn\u2019t like the Lions matchup for Corey Kiner",
+      "caption": "Why Dopp doesn\u2019t like the Lions matchup for Corey Kiner",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1110/ss_20261110_105234350_3735305/ss_20261110_105234350_3735305.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 141870,
+      "type": "topic",
+      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
+      "description": "news - fantasy",
+      "sportId": 0,
+      "topicId": 240
+     },
+     {
+      "id": 152381,
+      "type": "topic",
+      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
+      "description": "news - fantasy football",
+      "sportId": 0,
+      "topicId": 401
+     },
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409228,
+      "type": "topic",
+      "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d",
+      "description": "fantasy",
+      "sportId": 0,
+      "topicId": 785
+     },
+     {
+      "id": 848862,
+      "type": "contributor",
+      "guid": "3de9fce6-6aa7-3562-b497-2b4f5d90d27a",
+      "description": "Michael F Florio",
+      "slug": "michael-f-florio",
+      "contributor": {
+       "id": 4414,
+       "description": "Michael F Florio"
+      }
+     }
+    ],
+    "byline": "Michael F. Florio",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50462045"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50462045"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=50462045"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/page/FFSundayInactives-50462045/fantasy-football-injuries-nfl-week-10-inactive-active"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50475033,
+    "nowId": "1-50475033",
+    "contentKey": "50475033-1-5-1",
+    "dataSourceIdentifier": "012de77df33b1",
+    "type": "HeadlineNews",
+    "headline": "49ers OT Williams, LB Greenlaw questionable, WR Evans out vs. Cowboys",
+    "description": "The 49ers are listing left tackle Trent Williams and linebacker Dre Greenlaw as questionable for Sunday's game against the Cowboys, while receiver Mike Evans has been ruled out.",
+    "lastModified": "2026-11-13T23:06:06Z",
+    "published": "2026-11-13T23:06:06Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "8c52270152d92",
+      "id": 47439886,
+      "type": "header",
+      "name": "Trent Williams [600x400]",
+      "credit": "Icon Sportswire",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2025/1229/r1594560_600x400_3-2.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Stephen A. is not having Marcus Spears' Cowboys optimism",
+      "caption": "Stephen A. is not having Marcus Spears' Cowboys optimism",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1113/ss_20261113_125231440_3739440/ss_20261113_125231440_3739440.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1637,
+      "type": "team",
+      "uid": "s:20~l:28~t:25",
+      "guid": "985a261f-296c-c95c-32a5-addc4df75001",
+      "description": "San Francisco 49ers",
+      "sportId": 28,
+      "teamId": 25,
+      "team": {
+       "id": 25,
+       "description": "San Francisco 49ers",
+       "abbreviation": "SF",
+       "shortDisplayName": "49ers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 73982,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:13241",
+      "guid": "569156ee-309b-ce78-c1ac-1e9494943ce2",
+      "description": "Trent Williams",
+      "sportId": 28,
+      "athleteId": 13241,
+      "athlete": {
+       "id": 13241,
+       "description": "Trent Williams",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/13241/trent-williams"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/13241/trent-williams"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 380096,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3916903",
+      "guid": "22bed4b5-a5ad-ccac-e96e-4ba5bd7d1173",
+      "description": "Dre Greenlaw",
+      "sportId": 28,
+      "athleteId": 3916903,
+      "athlete": {
+       "id": 3916903,
+       "description": "Dre Greenlaw",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3916903/dre-greenlaw"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3916903/dre-greenlaw"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 126377,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:16737",
+      "guid": "5073fc58-91c1-4e3d-826d-af754f9f40c7",
+      "description": "Mike Evans",
+      "sportId": 28,
+      "athleteId": 16737,
+      "athlete": {
+       "id": 16737,
+       "description": "Mike Evans",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/16737/mike-evans"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/16737/mike-evans"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696302,
+      "type": "contributor",
+      "guid": "138f8e60-058f-3c5a-9eb4-7dcd2f50d36d",
+      "description": "Nick Wagoner",
+      "slug": "nick-wagoner",
+      "contributor": {
+       "id": 2313,
+       "description": "Nick Wagoner"
+      }
+     }
+    ],
+    "byline": "Nick Wagoner",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50475033"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50475033"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50475033"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50475033/49ers-williams-greenlaw-questionable-evans-vs-cowboys"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50474994,
+    "nowId": "1-50474994",
+    "contentKey": "50474994-1-293-1",
+    "dataSourceIdentifier": "7fe897becdf40",
+    "type": "Media",
+    "headline": "When will Lamar Jackson return to the field?",
+    "description": "Jamison Hensley provides an update on Jackson's thumb injury post surgery, projecting a potential return as early as Week 16.",
+    "lastModified": "2026-11-13T22:48:46Z",
+    "published": "2026-11-13T22:48:46Z",
+    "images": [
+     {
+      "name": "When will Lamar Jackson return to the field?",
+      "caption": "Jamison Hensley provides an update on Jackson's thumb injury post surgery, projecting a potential return as early as Week 16.",
+      "alt": "",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1113/dm_261113_11-13_Ravens_IA/dm_261113_11-13_Ravens_IA.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 2830,
+      "type": "team",
+      "uid": "s:20~l:28~t:33",
+      "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
+      "description": "Baltimore Ravens",
+      "sportId": 28,
+      "teamId": 33,
+      "team": {
+       "id": 33,
+       "description": "Baltimore Ravens",
+       "abbreviation": "BAL",
+       "shortDisplayName": "Ravens",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 184545,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3916387",
+      "guid": "7d76fbb1-1c5e-d9f4-954f-cad43f720ae2",
+      "description": "Lamar Jackson",
+      "sportId": 28,
+      "athleteId": 3916387,
+      "athlete": {
+       "id": 3916387,
+       "description": "Lamar Jackson",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3916387/lamar-jackson"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3916387/lamar-jackson"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 711824,
+      "type": "editorialindicator",
+      "guid": "d348c764-47d9-3e31-bd75-d39dfde52c26",
+      "description": "SC4U  - Eligible"
+     },
+     {
+      "id": 718171,
+      "type": "editorialindicator",
+      "guid": "2a4cc294-9e85-38be-b7ed-12d8b3f3c646",
+      "description": "SC4U - InstantAnalysis"
+     }
+    ],
+    "links": {
+     "api": {
+      "artwork": {
+       "href": "https://artwork.api.espn.com/artwork/collections/media/3cccd313-2cbe-4ebf-a51e-cfb2717b1cea"
+      },
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/video/clips/50474994"
+      }
+     },
+     "sportscenter": {
+      "href": "sportscenter://x-callback-url/showVideo?videoID=50474994&videoDSI=7fe897becdf40"
+     },
+     "web": {
+      "href": "https://www.espn.com/video/clip/_/id/50474994/when-lamar-jackson-return-field",
+      "self": {
+       "href": "https://www.espn.com/video/clip/_/id/50474994/when-lamar-jackson-return-field",
+       "dsi": {
+        "href": "https://www.espn.com/video/clip?id=7fe897becdf40"
+       }
+      }
+     }
+    },
+    "premium": false
+   },
+   {
     "id": 50474753,
     "nowId": "1-50474753",
     "contentKey": "50474753-1-5-1",
@@ -26211,8 +26115,8 @@
     "type": "HeadlineNews",
     "headline": "Vikings to start reacquired QB Kirk Cousins vs. Packers",
     "description": "Coach Kevin O'Connell called Kirk Cousins' ability to get reacquainted with the Vikings' offense \"impressive.\"",
-    "lastModified": "2026-11-13T22:20:36Z",
-    "published": "2026-11-13T22:20:36Z",
+    "lastModified": "2026-11-13T22:41:55Z",
+    "published": "2026-11-13T22:41:55Z",
     "images": [
      {
       "dataSourceIdentifier": "688e2dd53900d",
@@ -26355,327 +26259,48 @@
     "premium": false
    },
    {
-    "id": 50474564,
-    "nowId": "1-50474564",
-    "contentKey": "50474564-1-5-1",
-    "dataSourceIdentifier": "75f1b93184737",
-    "type": "HeadlineNews",
-    "headline": "NFL outlines steps in Jalen Hurts investigation in letter to senator",
-    "description": "The NFL provided some additional details about the investigation into how Jalen Hurts' blood clots were handled in response to an inquiry from a U.S. senator.",
-    "lastModified": "2026-11-13T22:23:25Z",
-    "published": "2026-11-13T22:23:25Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "678f1391bbfb4",
-      "id": 50219378,
-      "type": "header",
-      "name": "Jalen Hurts [1296x729]",
-      "alt": "Jalen Hurts",
-      "credit": "Andy Lewis/Icon Sportswire/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1019/r1732959_1296x729_16-9.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 435090,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4040715",
-      "guid": "caceb80c-6350-a107-9fcf-7c7bd1b4edd8",
-      "description": "Jalen Hurts",
-      "sportId": 28,
-      "athleteId": 4040715,
-      "athlete": {
-       "id": 4040715,
-       "description": "Jalen Hurts",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4040715/jalen-hurts"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4040715/jalen-hurts"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1407,
-      "type": "team",
-      "uid": "s:20~l:28~t:21",
-      "guid": "d1a9b001-1df7-fbd7-ae4c-6ca7065286ec",
-      "description": "Philadelphia Eagles",
-      "sportId": 28,
-      "teamId": 21,
-      "team": {
-       "id": 21,
-       "description": "Philadelphia Eagles",
-       "abbreviation": "PHI",
-       "shortDisplayName": "Eagles",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     },
-     {
-      "id": 696391,
-      "type": "contributor",
-      "guid": "e28af6cd-603c-3042-a666-1dfbc724a082",
-      "description": "Tim McManus",
-      "slug": "tim-mcmanus",
-      "contributor": {
-       "id": 2723,
-       "description": "Tim McManus"
-      }
-     }
-    ],
-    "byline": "Tim McManus",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50474564"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50474564"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50474564"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50474564/nfl-outlines-aspects-jalen-hurts-investigation-senator"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50474246,
-    "nowId": "1-50474246",
-    "contentKey": "50474246-1-293-1",
-    "dataSourceIdentifier": "fa942c66e4b7b",
+    "id": 50474656,
+    "nowId": "1-50474656",
+    "contentKey": "50474656-1-293-1",
+    "dataSourceIdentifier": "e6a2d01b3bdb3",
     "type": "Media",
-    "headline": "Andy Reid delivers injury update on Kenneth Walker III",
-    "description": "Andy Reid delivers injury update on Kenneth Walker III",
-    "lastModified": "2026-11-13T21:15:49Z",
-    "published": "2026-11-13T21:15:49Z",
+    "headline": "Colts look to take advantage of Dolphins without QB Malik Willis",
+    "description": "Stephen Holder previews the Colts matchup against he Dolphins with new faces on offense post the NFL trade deadline.",
+    "lastModified": "2026-11-13T22:47:11Z",
+    "published": "2026-11-13T22:47:11Z",
     "images": [
      {
-      "name": "Andy Reid delivers injury update on Kenneth Walker III",
-      "caption": "Andy Reid delivers injury update on Kenneth Walker III",
+      "name": "Colts look to take advantage of Dolphins without QB Malik Willis",
+      "caption": "Stephen Holder previews the Colts matchup against he Dolphins with new faces on offense post the NFL trade deadline.",
       "alt": "",
       "height": 324,
       "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1113/ss_20261113_155720389_3739591/ss_20261113_155720389_3739591.jpg"
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1113/dm_261113_11-13_Colts_IA/dm_261113_11-13_Colts_IA.jpg"
      }
     ],
     "categories": [
      {
-      "id": 2496,
+      "id": 2942,
       "type": "team",
-      "uid": "s:20~l:28~t:12",
-      "guid": "f68f2343-8ceb-7a02-740d-af6338be21d2",
-      "description": "Kansas City Chiefs",
+      "uid": "s:20~l:28~t:11",
+      "guid": "582d14eb-da61-e505-cc40-d972a1b60ed1",
+      "description": "Indianapolis Colts",
       "sportId": 28,
-      "teamId": 12,
+      "teamId": 11,
       "team": {
-       "id": 12,
-       "description": "Kansas City Chiefs",
-       "abbreviation": "KC",
-       "shortDisplayName": "Chiefs",
+       "id": 11,
+       "description": "Indianapolis Colts",
+       "abbreviation": "IND",
+       "shortDisplayName": "Colts",
        "links": {
         "mobile": {
          "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/kc/kansas-city-chiefs"
+          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
          }
         },
         "web": {
          "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/kc/kansas-city-chiefs"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 711826,
-      "type": "editorialindicator",
-      "guid": "122acb1b-7e9e-31cf-88a1-d2dc784385cf",
-      "description": "2 Star Rating"
-     },
-     {
-      "id": 529577,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4567048",
-      "guid": "c0a76b7f-7b5d-be73-5e81-258439651478",
-      "description": "Kenneth Walker III",
-      "sportId": 28,
-      "athleteId": 4567048,
-      "athlete": {
-       "id": 4567048,
-       "description": "Kenneth Walker III",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4567048/kenneth-walker-iii"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4567048/kenneth-walker-iii"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 730035,
-      "type": "editorialindicator",
-      "guid": "765b3968-7a2d-3d80-bded-8ba8b1e1cc03",
-      "description": "Verts - Exclude Content"
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/9624204a-dd2a-41b3-8a44-9effffd3e842"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50474246"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50474246&videoDSI=fa942c66e4b7b"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50474246/andy-reid-delivers-injury-update-kenneth-walker-iii",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50474246/andy-reid-delivers-injury-update-kenneth-walker-iii",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=fa942c66e4b7b"
-       }
-      }
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50473949,
-    "nowId": "1-50473949",
-    "contentKey": "50473949-1-293-1",
-    "dataSourceIdentifier": "20e66eeddee1e",
-    "type": "Media",
-    "headline": "Panthers looking to build momentum",
-    "description": "Mike Kaye previews the Panthers matchup against the Saints as the true second half of the NFL season begins.",
-    "lastModified": "2026-11-13T20:22:32Z",
-    "published": "2026-11-13T20:22:32Z",
-    "images": [
-     {
-      "name": "Panthers looking to build momentum",
-      "caption": "Mike Kaye previews the Panthers matchup against the Saints as the true second half of the NFL season begins.",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1113/dm_261113_11-13_Panthers_IA/dm_261113_11-13_Panthers_IA.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 2146,
-      "type": "team",
-      "uid": "s:20~l:28~t:29",
-      "guid": "647c27bf-ab86-550e-5b83-91c29e73e4a9",
-      "description": "Carolina Panthers",
-      "sportId": 28,
-      "teamId": 29,
-      "team": {
-       "id": 29,
-       "description": "Carolina Panthers",
-       "abbreviation": "CAR",
-       "shortDisplayName": "Panthers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/car/carolina-panthers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/car/carolina-panthers"
+          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
          }
         }
        }
@@ -26723,1548 +26348,29 @@
     "links": {
      "api": {
       "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/6f6d07cb-169b-4a12-ba47-29babaab69c0"
+       "href": "https://artwork.api.espn.com/artwork/collections/media/b10eb9bc-74d3-47a9-828e-1406051e7148"
       },
       "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50473949"
+       "href": "https://content.core.api.espn.com/v1/video/clips/50474656"
       }
      },
      "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50473949&videoDSI=20e66eeddee1e"
+      "href": "sportscenter://x-callback-url/showVideo?videoID=50474656&videoDSI=e6a2d01b3bdb3"
      },
      "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50473949/panthers-looking-build-momentum",
+      "href": "https://www.espn.com/video/clip/_/id/50474656/colts-look-take-advantage-dolphins-qb-malik-willis",
       "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50473949/panthers-looking-build-momentum",
+       "href": "https://www.espn.com/video/clip/_/id/50474656/colts-look-take-advantage-dolphins-qb-malik-willis",
        "dsi": {
-        "href": "https://www.espn.com/video/clip?id=20e66eeddee1e"
+        "href": "https://www.espn.com/video/clip?id=e6a2d01b3bdb3"
        }
       }
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50473665,
-    "nowId": "1-50473665",
-    "contentKey": "50473665-1-293-1",
-    "dataSourceIdentifier": "081164a75b711",
-    "type": "Media",
-    "headline": "Jeffery Simmons has high praise for Caleb Williams",
-    "description": "Jeffery Simmons has high praise for Caleb Williams",
-    "lastModified": "2026-11-13T19:57:28Z",
-    "published": "2026-11-13T19:57:28Z",
-    "images": [
-     {
-      "name": "Jeffery Simmons has high praise for Caleb Williams",
-      "caption": "Jeffery Simmons has high praise for Caleb Williams",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1113/ss_20261113_144034442_3739521/ss_20261113_144034442_3739521.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 756051,
-      "type": "series",
-      "guid": "4f64cb02-e572-42a9-8894-c4da6dde4a4d",
-      "description": "The Rich Eisen Show",
-      "series": {
-       "description": "The Rich Eisen Show"
-      }
-     },
-     {
-      "id": 379823,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4035369",
-      "guid": "3d2c970c-ba26-bcf9-3e98-bd833dd57be6",
-      "description": "Jeffery Simmons",
-      "sportId": 28,
-      "athleteId": 4035369,
-      "athlete": {
-       "id": 4035369,
-       "description": "Jeffery Simmons",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4035369/jeffery-simmons"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4035369/jeffery-simmons"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 492854,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4431611",
-      "guid": "dd15176c-3004-333f-beaa-149216c42968",
-      "description": "Caleb Williams",
-      "sportId": 28,
-      "athleteId": 4431611,
-      "athlete": {
-       "id": 4431611,
-       "description": "Caleb Williams",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4431611/caleb-williams"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4431611/caleb-williams"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1750,
-      "type": "team",
-      "uid": "s:20~l:28~t:3",
-      "guid": "19d73366-b5a5-cca2-a176-a2c024ce0bb3",
-      "description": "Chicago Bears",
-      "sportId": 28,
-      "teamId": 3,
-      "team": {
-       "id": 3,
-       "description": "Chicago Bears",
-       "abbreviation": "CHI",
-       "shortDisplayName": "Bears",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 730035,
-      "type": "editorialindicator",
-      "guid": "765b3968-7a2d-3d80-bded-8ba8b1e1cc03",
-      "description": "Verts - Exclude Content"
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/84e26457-f843-4eef-b4bd-5c64b75607cf"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50473665"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50473665&videoDSI=081164a75b711"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50473665/jeffery-simmons-high-praise-caleb-williams",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50473665/jeffery-simmons-high-praise-caleb-williams",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=081164a75b711"
-       }
-      }
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50448015,
-    "nowId": "1-50448015",
-    "contentKey": "50448015-1-6-1",
-    "dataSourceIdentifier": "8c0697d3339bb",
-    "type": "Story",
-    "headline": "NFL Week 10 uniforms: Titans debut Rivalries look, Ravens go all-black",
-    "description": "Here's a look at what each NFL team is wearing in Week 10, led by the Tennessee Titans' Rivalries look.",
-    "lastModified": "2026-11-13T19:27:16Z",
-    "published": "2026-11-13T19:27:16Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "b89a9c26394fe",
-      "id": 50455917,
-      "type": "header",
-      "name": "NFL week 10 uniforms [1296x729]",
-      "alt": "Baltimore Ravens; Tennessee Titans",
-      "credit": "Baltimore Ravens; Tennessee Titans",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1111/16x9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "46a5f02ccb247",
-      "id": 49943903,
-      "type": "header",
-      "name": "NFL Uniforms Week 7 - Arizona Cardinals [1296x1296]",
-      "credit": "Norm Hall/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0914/r1716754_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "dd1f72d6d8f1d",
-      "id": 50151656,
-      "type": "header",
-      "name": "NFL Uniforms week 5 - Bills [1296x1296]",
-      "credit": "Lauren Leigh Bacho/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1010/r1728918_1296x1296cc.jpg"
-     },
-     {
-      "dataSourceIdentifier": "eee8da90d8107",
-      "id": 49944514,
-      "type": "header",
-      "name": "NFL Uniforms week 10 - Bengals [1296x1296]",
-      "credit": "Michael Owens/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0914/r1716787_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "66f8ffb4ab42e",
-      "id": 49944491,
-      "type": "header",
-      "name": "NFL Uniforms week 10 - Dallas Cowboys [1296x1296]",
-      "credit": "Sam Hodde/Getty Images)",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0914/r1716782_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "520642f45caa3",
-      "id": 49944651,
-      "type": "header",
-      "name": "NFL Uniforms week 2 - Green Bay Packers [1296x1296]",
-      "credit": "Kevin Sabitus/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0924/r1716797_3_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "84c6615b5a217",
-      "id": 49874675,
-      "type": "header",
-      "name": "Indianapolis Colts week 1 uniforms [1296x1296]",
-      "credit": "Andy Lyons/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0909/r1713547_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "e007b7f67528c",
-      "id": 49874664,
-      "type": "header",
-      "name": "Las Vegas Raiders week 1 uniforms [1296x1296]",
-      "credit": "Candice Ward/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0909/r1713549_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "840ea8879ab10",
-      "id": 49944915,
-      "type": "header",
-      "name": "NFL Uniforms week 4 - chargers [1296x1296]",
-      "credit": "Michael Owens/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0915/r1716813_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "a6db650976447",
-      "id": 49945732,
-      "type": "header",
-      "name": "NFL Uniforms week 10 - Saints [1296x1296]",
-      "credit": "Perry Knotts/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0915/r1716858_2_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "b5cb464e86052",
-      "id": 49945759,
-      "type": "header",
-      "name": "NFL Uniforms week 9 - Giants [1296x1296]",
-      "credit": "Patrick McDermott/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0915/r1716861_3_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "0f60de4fa05c1",
-      "id": 49874599,
-      "type": "header",
-      "name": "Pittsburgh Steelers week 1 uniforms [1296x1296]",
-      "credit": "Joe Sargent/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0909/r1713556_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "887d6b5dbc738",
-      "id": 49946277,
-      "type": "header",
-      "name": "NFL Uniforms week 10 - 49ers [1296x1296]",
-      "credit": "Brooke Sutton/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0915/r1716893_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "032e3543a2a3e",
-      "id": 50044199,
-      "type": "header",
-      "name": "NFL uniforms week 3 - Commanders [1296x1296]",
-      "credit": "Scott Taetsch/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0927/r1722533_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "6bda05e061331",
-      "id": 50455888,
-      "type": "header",
-      "name": "NFL uniforms week 10 Titans [1296x1296]",
-      "credit": "Tennessee Titans",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1111/r1744591_1296x1296cc.jpg"
-     },
-     {
-      "dataSourceIdentifier": "2ce2cc7ff0ede",
-      "id": 50035259,
-      "type": "header",
-      "name": "NFL Uniforms week 3 - Seahawks [1296x1296]",
-      "credit": "Perry Knotts/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0926/r1722121_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "ce0daa2cf6993",
-      "id": 50455903,
-      "type": "header",
-      "name": "NFL uniforms week 10 jets [1296x1296]",
-      "credit": "Ishika Samant/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1111/r1744590_1296x1296cc.jpg"
-     },
-     {
-      "dataSourceIdentifier": "f03ac18976db9",
-      "id": 50455843,
-      "type": "header",
-      "name": "Baltimore Ravens week 10 uni [1296x1296]",
-      "credit": "Baltimore Ravens",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1111/r1744587_1296x1296cc.jpg"
-     },
-     {
-      "dataSourceIdentifier": "c155fe7cc69f7",
-      "id": 50060614,
-      "type": "header",
-      "name": "NFL Uniforms week 4 - Browns [1296x1296]",
-      "credit": "Lauren Leigh Bacho/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0929/r1723572_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "29b359c2270df",
-      "id": 49874682,
-      "type": "header",
-      "name": "Houston Texans week 1 uniforms [1296x1296]",
-      "credit": "Katelyn Mulcahy/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0909/r1713546_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "0730671004e2f",
-      "id": 50069416,
-      "type": "header",
-      "name": "NFL Uniforms week 3 - Rams [1296x1296]",
-      "credit": "Brooke Sutton/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0930/r1724025_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "4be7096fc5271",
-      "id": 50181727,
-      "type": "header",
-      "name": "NFL Uniforms week 5 - Falcons [1296x1296]",
-      "credit": "Logan Bowles/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1014/r1730630_1296x1296cc.jpg"
-     },
-     {
-      "dataSourceIdentifier": "ca2eaea6396f6",
-      "id": 49916892,
-      "type": "header",
-      "name": "NFL Uniforms week 1 - Miami Dolphins [1296x1296]",
-      "credit": "Kenneth Richmond/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0912/r1715473_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "e1d37d7af743e",
-      "id": 50092177,
-      "type": "header",
-      "name": "NFL Uniforms week 4 - Patriots [1296x1296]",
-      "credit": "Timothy T Ludwig/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1003/r1725400_2_1296x1296_1-1.jpg"
-     },
-     {
-      "dataSourceIdentifier": "54ff50aeff008",
-      "id": 49982023,
-      "type": "header",
-      "name": "NFL Uniforms week 2 - Panthers [1296x1296]",
-      "credit": "Jared C. Tilton/Getty Images",
-      "height": 1296,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0919/r1719097_1296x1296_1-1.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1583,
-      "type": "team",
-      "uid": "s:20~l:28~t:22",
-      "guid": "8fc7b962-95e1-3cb8-6a7d-b499de9ad546",
-      "description": "Arizona Cardinals",
-      "sportId": 28,
-      "teamId": 22,
-      "team": {
-       "id": 22,
-       "description": "Arizona Cardinals",
-       "abbreviation": "ARI",
-       "shortDisplayName": "Cardinals",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ari/arizona-cardinals"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ari/arizona-cardinals"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1979,
-      "type": "team",
-      "uid": "s:20~l:28~t:1",
-      "guid": "49fd392a-86fe-4df3-1b77-9bbfa18b2ad5",
-      "description": "Atlanta Falcons",
-      "sportId": 28,
-      "teamId": 1,
-      "team": {
-       "id": 1,
-       "description": "Atlanta Falcons",
-       "abbreviation": "ATL",
-       "shortDisplayName": "Falcons",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/atl/atlanta-falcons"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/atl/atlanta-falcons"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2830,
-      "type": "team",
-      "uid": "s:20~l:28~t:33",
-      "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
-      "description": "Baltimore Ravens",
-      "sportId": 28,
-      "teamId": 33,
-      "team": {
-       "id": 33,
-       "description": "Baltimore Ravens",
-       "abbreviation": "BAL",
-       "shortDisplayName": "Ravens",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2203,
-      "type": "team",
-      "uid": "s:20~l:28~t:2",
-      "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
-      "description": "Buffalo Bills",
-      "sportId": 28,
-      "teamId": 2,
-      "team": {
-       "id": 2,
-       "description": "Buffalo Bills",
-       "abbreviation": "BUF",
-       "shortDisplayName": "Bills",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2146,
-      "type": "team",
-      "uid": "s:20~l:28~t:29",
-      "guid": "647c27bf-ab86-550e-5b83-91c29e73e4a9",
-      "description": "Carolina Panthers",
-      "sportId": 28,
-      "teamId": 29,
-      "team": {
-       "id": 29,
-       "description": "Carolina Panthers",
-       "abbreviation": "CAR",
-       "shortDisplayName": "Panthers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/car/carolina-panthers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/car/carolina-panthers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1750,
-      "type": "team",
-      "uid": "s:20~l:28~t:3",
-      "guid": "19d73366-b5a5-cca2-a176-a2c024ce0bb3",
-      "description": "Chicago Bears",
-      "sportId": 28,
-      "teamId": 3,
-      "team": {
-       "id": 3,
-       "description": "Chicago Bears",
-       "abbreviation": "CHI",
-       "shortDisplayName": "Bears",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2664,
-      "type": "team",
-      "uid": "s:20~l:28~t:4",
-      "guid": "75b8623b-8926-b411-0476-3d3602b78523",
-      "description": "Cincinnati Bengals",
-      "sportId": 28,
-      "teamId": 4,
-      "team": {
-       "id": 4,
-       "description": "Cincinnati Bengals",
-       "abbreviation": "CIN",
-       "shortDisplayName": "Bengals",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2719,
-      "type": "team",
-      "uid": "s:20~l:28~t:5",
-      "guid": "539babc5-e5fb-753b-8ae1-c15032a91ef4",
-      "description": "Cleveland Browns",
-      "sportId": 28,
-      "teamId": 5,
-      "team": {
-       "id": 5,
-       "description": "Cleveland Browns",
-       "abbreviation": "CLE",
-       "shortDisplayName": "Browns",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cle/cleveland-browns"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cle/cleveland-browns"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1298,
-      "type": "team",
-      "uid": "s:20~l:28~t:6",
-      "guid": "b0fc8fb7-9dbe-e574-9008-6f0ee7c6b234",
-      "description": "Dallas Cowboys",
-      "sportId": 28,
-      "teamId": 6,
-      "team": {
-       "id": 6,
-       "description": "Dallas Cowboys",
-       "abbreviation": "DAL",
-       "shortDisplayName": "Cowboys",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/dal/dallas-cowboys"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/dal/dallas-cowboys"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2432,
-      "type": "team",
-      "uid": "s:20~l:28~t:7",
-      "guid": "51042145-e3c1-0694-ae0d-f720342ff8fc",
-      "description": "Denver Broncos",
-      "sportId": 28,
-      "teamId": 7,
-      "team": {
-       "id": 7,
-       "description": "Denver Broncos",
-       "abbreviation": "DEN",
-       "shortDisplayName": "Broncos",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/den/denver-broncos"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/den/denver-broncos"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1805,
-      "type": "team",
-      "uid": "s:20~l:28~t:8",
-      "guid": "56caffee-178d-f6f2-a076-b277486b8c32",
-      "description": "Detroit Lions",
-      "sportId": 28,
-      "teamId": 8,
-      "team": {
-       "id": 8,
-       "description": "Detroit Lions",
-       "abbreviation": "DET",
-       "shortDisplayName": "Lions",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/det/detroit-lions"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/det/detroit-lions"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1861,
-      "type": "team",
-      "uid": "s:20~l:28~t:9",
-      "guid": "06cd3bcf-7a86-53d4-28e7-aa049dd36261",
-      "description": "Green Bay Packers",
-      "sportId": 28,
-      "teamId": 9,
-      "team": {
-       "id": 9,
-       "description": "Green Bay Packers",
-       "abbreviation": "GB",
-       "shortDisplayName": "Packers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 3053,
-      "type": "team",
-      "uid": "s:20~l:28~t:34",
-      "guid": "595690b3-2161-4913-a7a7-814af2fd2621",
-      "description": "Houston Texans",
-      "sportId": 28,
-      "teamId": 34,
-      "team": {
-       "id": 34,
-       "description": "Houston Texans",
-       "abbreviation": "HOU",
-       "shortDisplayName": "Texans",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2942,
-      "type": "team",
-      "uid": "s:20~l:28~t:11",
-      "guid": "582d14eb-da61-e505-cc40-d972a1b60ed1",
-      "description": "Indianapolis Colts",
-      "sportId": 28,
-      "teamId": 11,
-      "team": {
-       "id": 11,
-       "description": "Indianapolis Colts",
-       "abbreviation": "IND",
-       "shortDisplayName": "Colts",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2996,
-      "type": "team",
-      "uid": "s:20~l:28~t:30",
-      "guid": "ca6fb778-cbf6-d9a3-3e93-01230335fcab",
-      "description": "Jacksonville Jaguars",
-      "sportId": 28,
-      "teamId": 30,
-      "team": {
-       "id": 30,
-       "description": "Jacksonville Jaguars",
-       "abbreviation": "JAX",
-       "shortDisplayName": "Jaguars",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2496,
-      "type": "team",
-      "uid": "s:20~l:28~t:12",
-      "guid": "f68f2343-8ceb-7a02-740d-af6338be21d2",
-      "description": "Kansas City Chiefs",
-      "sportId": 28,
-      "teamId": 12,
-      "team": {
-       "id": 12,
-       "description": "Kansas City Chiefs",
-       "abbreviation": "KC",
-       "shortDisplayName": "Chiefs",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/kc/kansas-city-chiefs"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/kc/kansas-city-chiefs"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2553,
-      "type": "team",
-      "uid": "s:20~l:28~t:13",
-      "guid": "b18540eb-6f2b-534c-e7f9-9bd930518da9",
-      "description": "Las Vegas Raiders",
-      "sportId": 28,
-      "teamId": 13,
-      "team": {
-       "id": 13,
-       "description": "Las Vegas Raiders",
-       "abbreviation": "LV",
-       "shortDisplayName": "Raiders",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2610,
-      "type": "team",
-      "uid": "s:20~l:28~t:24",
-      "guid": "84caf62b-c753-71ea-a787-44fd224a4294",
-      "description": "Los Angeles Chargers",
-      "sportId": 28,
-      "teamId": 24,
-      "team": {
-       "id": 24,
-       "description": "Los Angeles Chargers",
-       "abbreviation": "LAC",
-       "shortDisplayName": "Chargers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1519,
-      "type": "team",
-      "uid": "s:20~l:28~t:14",
-      "guid": "2e1473b2-e269-fd7a-1137-c1edacb85986",
-      "description": "Los Angeles Rams",
-      "sportId": 28,
-      "teamId": 14,
-      "team": {
-       "id": 14,
-       "description": "Los Angeles Rams",
-       "abbreviation": "LAR",
-       "shortDisplayName": "Rams",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2258,
-      "type": "team",
-      "uid": "s:20~l:28~t:15",
-      "guid": "af33088b-1e19-d27d-dbc0-354fd7151703",
-      "description": "Miami Dolphins",
-      "sportId": 28,
-      "teamId": 15,
-      "team": {
-       "id": 15,
-       "description": "Miami Dolphins",
-       "abbreviation": "MIA",
-       "shortDisplayName": "Dolphins",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1920,
-      "type": "team",
-      "uid": "s:20~l:28~t:16",
-      "guid": "3db556c9-ed76-a7a5-4ccb-a92fc6db4334",
-      "description": "Minnesota Vikings",
-      "sportId": 28,
-      "teamId": 16,
-      "team": {
-       "id": 16,
-       "description": "Minnesota Vikings",
-       "abbreviation": "MIN",
-       "shortDisplayName": "Vikings",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/min/minnesota-vikings"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2321,
-      "type": "team",
-      "uid": "s:20~l:28~t:17",
-      "guid": "0078f353-fe3e-67ed-a42c-43cca0568e21",
-      "description": "New England Patriots",
-      "sportId": 28,
-      "teamId": 17,
-      "team": {
-       "id": 17,
-       "description": "New England Patriots",
-       "abbreviation": "NE",
-       "shortDisplayName": "Patriots",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2035,
-      "type": "team",
-      "uid": "s:20~l:28~t:18",
-      "guid": "97d2f6c9-2f22-459c-306a-046941ccab2a",
-      "description": "New Orleans Saints",
-      "sportId": 28,
-      "teamId": 18,
-      "team": {
-       "id": 18,
-       "description": "New Orleans Saints",
-       "abbreviation": "NO",
-       "shortDisplayName": "Saints",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1352,
-      "type": "team",
-      "uid": "s:20~l:28~t:19",
-      "guid": "378600ea-2397-8364-8399-b7c1606a49a7",
-      "description": "New York Giants",
-      "sportId": 28,
-      "teamId": 19,
-      "team": {
-       "id": 19,
-       "description": "New York Giants",
-       "abbreviation": "NYG",
-       "shortDisplayName": "Giants",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyg/new-york-giants"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2378,
-      "type": "team",
-      "uid": "s:20~l:28~t:20",
-      "guid": "732d3caf-b350-1e34-48c6-b7cebb4a0d88",
-      "description": "New York Jets",
-      "sportId": 28,
-      "teamId": 20,
-      "team": {
-       "id": 20,
-       "description": "New York Jets",
-       "abbreviation": "NYJ",
-       "shortDisplayName": "Jets",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyj/new-york-jets"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyj/new-york-jets"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1407,
-      "type": "team",
-      "uid": "s:20~l:28~t:21",
-      "guid": "d1a9b001-1df7-fbd7-ae4c-6ca7065286ec",
-      "description": "Philadelphia Eagles",
-      "sportId": 28,
-      "teamId": 21,
-      "team": {
-       "id": 21,
-       "description": "Philadelphia Eagles",
-       "abbreviation": "PHI",
-       "shortDisplayName": "Eagles",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2776,
-      "type": "team",
-      "uid": "s:20~l:28~t:23",
-      "guid": "debcd592-8d53-71f1-fc15-5c8b8ef9df6e",
-      "description": "Pittsburgh Steelers",
-      "sportId": 28,
-      "teamId": 23,
-      "team": {
-       "id": 23,
-       "description": "Pittsburgh Steelers",
-       "abbreviation": "PIT",
-       "shortDisplayName": "Steelers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1637,
-      "type": "team",
-      "uid": "s:20~l:28~t:25",
-      "guid": "985a261f-296c-c95c-32a5-addc4df75001",
-      "description": "San Francisco 49ers",
-      "sportId": 28,
-      "teamId": 25,
-      "team": {
-       "id": 25,
-       "description": "San Francisco 49ers",
-       "abbreviation": "SF",
-       "shortDisplayName": "49ers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1693,
-      "type": "team",
-      "uid": "s:20~l:28~t:26",
-      "guid": "3767a23c-a17d-294f-288a-9086ad1f0680",
-      "description": "Seattle Seahawks",
-      "sportId": 28,
-      "teamId": 26,
-      "team": {
-       "id": 26,
-       "description": "Seattle Seahawks",
-       "abbreviation": "SEA",
-       "shortDisplayName": "Seahawks",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sea/seattle-seahawks"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sea/seattle-seahawks"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2091,
-      "type": "team",
-      "uid": "s:20~l:28~t:27",
-      "guid": "13e8b157-a75a-ff24-ae91-fa3d52ddf204",
-      "description": "Tampa Bay Buccaneers",
-      "sportId": 28,
-      "teamId": 27,
-      "team": {
-       "id": 27,
-       "description": "Tampa Bay Buccaneers",
-       "abbreviation": "TB",
-       "shortDisplayName": "Buccaneers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/tb/tampa-bay-buccaneers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/tb/tampa-bay-buccaneers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2886,
-      "type": "team",
-      "uid": "s:20~l:28~t:10",
-      "guid": "0a0aea59-9a5e-01b3-57a3-0151cf4bf393",
-      "description": "Tennessee Titans",
-      "sportId": 28,
-      "teamId": 10,
-      "team": {
-       "id": 10,
-       "description": "Tennessee Titans",
-       "abbreviation": "TEN",
-       "shortDisplayName": "Titans",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1462,
-      "type": "team",
-      "uid": "s:20~l:28~t:28",
-      "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
-      "description": "Washington Commanders",
-      "sportId": 28,
-      "teamId": 28,
-      "team": {
-       "id": 28,
-       "description": "Washington Commanders",
-       "abbreviation": "WSH",
-       "shortDisplayName": "Commanders",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 696224,
-      "type": "contributor",
-      "guid": "a64fe5e2-0d9e-3aa3-8dd1-89b39e7d3d95",
-      "description": "Anthony Gharib",
-      "slug": "anthony-gharib",
-      "contributor": {
-       "id": 3959,
-       "description": "Anthony Gharib"
-      }
-     }
-    ],
-    "byline": "Anthony Gharib",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50448015"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50448015"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50448015"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50448015/nfl-week-10-uniforms"
      }
     },
     "premium": false
    }
   ]
  },
- "article": {
-  "id": 50396460,
-  "nowId": "1-50396460",
-  "contentKey": "50396460-1-21-1",
-  "dataSourceIdentifier": "f216fa85c1ae1",
-  "publishedkey": "nfl401873037",
-  "type": "Recap",
-  "gameId": "401873037",
-  "headline": "Jaguars thrash the depleted Ravens 33-10 for their 5th win in 6 games",
-  "description": "\u2014 With their top two quarterbacks injured, the Baltimore Ravens were prepared to use any trick necessary in their attempt to keep the game competitive against Jacksonville. That included snapping the ball directly to Derrick Henry on quite a few...",
-  "linkText": "Jaguars thrash the depleted Ravens 33-10 for their 5th win in 6 games",
-  "categorized": "2026-11-06T05:37:35Z",
-  "originallyPosted": "2026-11-06T04:11:34Z",
-  "lastModified": "2026-11-06T05:37:34Z",
-  "published": "2026-11-06T04:11:34Z",
-  "section": "NFL",
-  "source": "AP",
-  "images": [
-   {
-    "type": "Media",
-    "name": "Justice Hill shows off his speed on a 65-yard TD",
-    "caption": "Justice Hill shows off his speed on a 65-yard TD",
-    "height": 324,
-    "width": 576,
-    "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1105/36b43468f2414c5ebaca1bffdc1fbbf01397/36b43468f2414c5ebaca1bffdc1fbbf01397.jpg"
-   }
-  ],
-  "video": [],
-  "categories": [
-   {
-    "id": 9572,
-    "type": "league",
-    "uid": "s:20~l:28",
-    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-    "description": "NFL",
-    "sportId": 28,
-    "leagueId": 28,
-    "league": {
-     "id": 28,
-     "description": "NFL",
-     "abbreviation": "NFL",
-     "links": {
-      "mobile": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      },
-      "web": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2830,
-    "type": "team",
-    "uid": "s:20~l:28~t:33",
-    "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
-    "description": "Baltimore Ravens",
-    "sportId": 28,
-    "teamId": 33,
-    "team": {
-     "id": 33,
-     "description": "Baltimore Ravens",
-     "abbreviation": "BAL",
-     "shortDisplayName": "Ravens",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2996,
-    "type": "team",
-    "uid": "s:20~l:28~t:30",
-    "guid": "ca6fb778-cbf6-d9a3-3e93-01230335fcab",
-    "description": "Jacksonville Jaguars",
-    "sportId": 28,
-    "teamId": 30,
-    "team": {
-     "id": 30,
-     "description": "Jacksonville Jaguars",
-     "abbreviation": "JAX",
-     "shortDisplayName": "Jaguars",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
-       }
-      }
-     }
-    }
-   },
-   {
-    "type": "event",
-    "uid": "s:20~l:28~e:401873037",
-    "guid": "8a4d3e73-aacd-3c4c-893f-a634f27264ef",
-    "description": "Jacksonville Jaguars @ Baltimore Ravens",
-    "eventId": 401873037,
-    "event": {
-     "id": 401873037,
-     "sport": "football",
-     "league": "nfl",
-     "description": "Jacksonville Jaguars @ Baltimore Ravens",
-     "links": {
-      "mobile": {
-       "event": {
-        "href": "https://www.espn.com/nfl/game/_/gameId/401873037"
-       }
-      },
-      "web": {
-       "event": {
-        "href": "https://www.espn.com/nfl/game/_/gameId/401873037"
-       }
-      }
-     }
-    }
-   }
-  ],
-  "keywords": [
-   "NFL",
-   "Baltimore Ravens",
-   "Jacksonville Jaguars",
-   "Jacksonville Jaguars @ Baltimore Ravens"
-  ],
-  "story": "BALTIMORE -- \u2014 With their top two quarterbacks injured, the <a href=\"http://www.espn.com/nfl/team/_/name/bal/baltimore-ravens\">Baltimore Ravens</a> were prepared to use any trick necessary in their attempt to keep the game competitive against Jacksonville. That included snapping the ball directly to <a href=\"http://www.espn.com/nfl/player/_/id/3043078/derrick-henry\">Derrick Henry</a> on quite a few occasions.\n\n\r\n              The Jaguars were ready.\n\n\r\n              \u201cWe practiced Wildcat a ton,\u201d Jacksonville coach Liam Coen said.\n\n\r\n              <a href=\"http://www.espn.com/nfl/player/_/id/4360310/trevor-lawrence\">Trevor Lawrence</a> threw for 242 yards and a touchdown, and the Jaguars had little trouble with <a href=\"http://www.espn.com/nfl/player/_/id/4429582/joe-fagnano\">Joe Fagnano</a> and the Ravens in a 33-10 victory. Normally, a Thursday night game presents a preparation challenge for the visiting team, but it was Baltimore that looked like it could have used a longer break with quarterbacks <a href=\"http://www.espn.com/nfl/player/_/id/3916387/lamar-jackson\">Lamar Jackson</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4035671/tyler-huntley\">Tyler Huntley</a> injured.\n\n\r\n              There was little the Ravens could do but start Fagnano, a 25-year-old rookie who made his debut last weekend against Buffalo. He threw for only 60 yards against the Jags. Baltimore (4-5) has lost four straight.\n\n\r\n              With their top two quarterbacks on injured reserve \u2014 and Fagnano has been dealing with an ankle issue \u2014 the Ravens now await <a href=\"https://apnews.com/article/brissett-jackson-huntley-cardinals-ravens-trade-3f34dcce6532c77aa3602046068c69ba\"><a href=\"http://www.espn.com/nfl/player/_/id/2578570/jacoby-brissett\">Jacoby Brissett</a>'s arrival</a> as they try to prevent their season from falling apart completely.\n\n\r\n              \u201cTough situation for our guys. But I just told them, there\u2019s no excuses,\u201d Baltimore coach Jesse Minter said. \u201cThere\u2019s no, \u2018Whatever, we don\u2019t have this guy, we don\u2019t have that guy.\u2019\u201d\n\n\r\n              Jacksonville (6-2) did not need to do anything extraordinary to beat a badly weakened Baltimore team. The Jaguars mostly took care of the ball on a rainy night and avoided any extreme risks. The Jags have won five of their last six to take command of the AFC South, where they have a 3 1/2-game lead.\n\n\r\n              Jacksonville drove 77 yards on the game's first possession, taking a 7-0 advantage on a 1-yard touchdown run by <a href=\"http://www.espn.com/nfl/player/_/id/4882093/bhayshul-tuten\">Bhayshul Tuten</a>.\n\n\r\n              \u201cThat opening drive was huge, just to set the tone,\u201d Lawrence said. \u201cEspecially when you get the ball first ... that's something that's important, is to be able to go and get points right away.\u201d\n\n\r\n              The Ravens tried to be creative, repeatedly running Wildcat-style plays with Henry. Baltimore managed a field goal on its first drive but nothing more until late in the game.\n\n\r\n              It was still close near the end of the first half, but Lawrence found <a href=\"http://www.espn.com/nfl/player/_/id/4432620/parker-washington\">Parker Washington</a> for <a href=\"https://x.com/Jaguars/status/2118530820080308422\">a 50-yard scoring strike</a> with 58 seconds left in the second quarter. That made it 17-3 at the half.\n\n\r\n              \u201cI just think he was very on when it was really a game,\u201d Coen said of Lawrence. \u201cWhen it was mattering and things were going and it's a back-and-forth football game early on, he was extremely sharp, accurate and played, again, a really solid football game for us.\u201d\n\n\r\n              It was 20-3 when a fumble gave Baltimore the ball at midfield in the third quarter, but the Ravens immediately turned the ball over on downs and the boos came cascading down from the crowd.\n\n\r\n              \u201cThey have every right to boo or do whatever they want to do. Obviously, us in here, we have to stay together, be on one accord, and just keep on relying on each other,\u201d tight end <a href=\"http://www.espn.com/nfl/player/_/id/3116365/mark-andrews\">Mark Andrews</a> said. \u201cYou\u2019ve got to be there for your brother. And that\u2019s what we\u2019re going to do is keep it in house and continue to fight for one another. And we\u2019ll see how this thing shakes out.\u201d\n\n\r\n              Fagnano went 10 of 18 with two second-half interceptions. Baltimore also lost a fumble on a kick return, which led to <a href=\"http://www.espn.com/nfl/player/_/id/4362619/chris-rodriguez-jr\">Chris Rodriguez Jr</a>.'s 2-yard touchdown run with 7:26 left in the game that made it 33-3.\n\n\r\n              <a href=\"http://www.espn.com/nfl/player/_/id/4038441/justice-hill\">Justice Hill</a> broke free for a 65-yard touchdown run 11 seconds later \u2014 Baltimore's first TD after halftime since Week 5. Hill finished with 85 yards on nine carries, snapping Jacksonville's 24-game streak of not allowing a 75-yard rusher.\n\n\r\n              <hl2>Not competitive</hl2>\r\n              It's the first time in franchise history the Ravens have lost three straight games by at least 20 points. In 2015, Baltimore was routed 35-6 by Seattle and 34-14 by Kansas City in consecutive weeks, but the Ravens won the game after that.\n\n\r\n              Baltimore lost 35-13 to Cincinnati and 36-10 to Buffalo before Thursday's game.\n\n\r\n              <hl2>Injuries</hl2>\r\n              In addition to their problems at quarterback, the Ravens were without starting cornerback <a href=\"http://www.espn.com/nfl/player/_/id/4601278/nate-wiggins\">Nate Wiggins</a>, who had been listed with an illness earlier in the week.\n\n\r\n              Baltimore also lost star safety <a href=\"http://www.espn.com/nfl/player/_/id/4575517/kyle-hamilton\">Kyle Hamilton</a> to a hip injury.\n\n\r\n              <hl2>Up next</hl2>\r\n              Jaguars: At Tennessee on Nov. 15.\n\n\r\n              Ravens: Host the <a href=\"http://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers\">Los Angeles Chargers</a> on Nov. 16.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
-  "allowComments": true,
-  "allowContentReactions": false,
-  "allowSearch": true,
-  "isLiveBlog": false,
-  "links": {
-   "api": {
-    "self": {
-     "href": "https://content.core.api.espn.com/v1/sports/news/50396460"
-    }
-   },
-   "app": {
-    "sportscenter": {
-     "href": "sportscenter://x-callback-url/showStory?uid=50396460"
-    }
-   },
-   "mobile": {
-    "href": "http://m.espn.go.com/nfl/story?storyId=50396460"
-   },
-   "web": {
-    "href": "http://www.espn.com/nfl/recap?gameId=401873037"
-   }
-  },
-  "premium": false
- },
- "videos": [],
- "wallclockAvailable": true,
  "winprobability": [
   {
    "homeWinPercentage": 0.1893,
@@ -29102,6 +27208,998 @@
    "playId": "4018730373851"
   }
  ],
+ "header": {
+  "id": "401873037",
+  "uid": "s:20~l:28~e:401873037",
+  "season": {
+   "year": 2026,
+   "current": true,
+   "type": 2
+  },
+  "timeValid": true,
+  "competitions": [
+   {
+    "id": "401873037",
+    "uid": "s:20~l:28~e:401873037~c:401873037",
+    "date": "2026-11-06T01:15Z",
+    "neutralSite": false,
+    "conferenceCompetition": false,
+    "boxscoreAvailable": true,
+    "commentaryAvailable": false,
+    "liveAvailable": false,
+    "onWatchESPN": false,
+    "recent": false,
+    "wallclockAvailable": true,
+    "boxscoreSource": "full",
+    "playByPlaySource": "full",
+    "competitors": [
+     {
+      "id": "33",
+      "uid": "s:20~l:28~t:33",
+      "order": 0,
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "33",
+       "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
+       "uid": "s:20~l:28~t:33",
+       "location": "Baltimore",
+       "name": "Ravens",
+       "nickname": "Ravens",
+       "abbreviation": "BAL",
+       "displayName": "Baltimore Ravens",
+       "color": "29126f",
+       "alternateColor": "000000",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T18:44Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/bal.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T18:44Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T18:45Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/bal.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T18:44Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/grayscale.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "grayscale"
+         ],
+         "lastUpdated": "2026-03-31T12:53Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/primary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/38248455-3da4-84e4-8090-98b5cc38ffdc/logos/secondary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        }
+       ],
+       "links": [
+        {
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens",
+         "text": "Clubhouse"
+        }
+       ]
+      },
+      "score": "10",
+      "linescores": [
+       {
+        "displayValue": "3"
+       },
+       {
+        "displayValue": "0"
+       },
+       {
+        "displayValue": "0"
+       },
+       {
+        "displayValue": "7"
+       }
+      ],
+      "record": [
+       {
+        "type": "total",
+        "summary": "4-5",
+        "displayValue": "4-5"
+       },
+       {
+        "type": "home",
+        "summary": "1-3",
+        "displayValue": "1-3"
+       }
+      ],
+      "possession": false
+     },
+     {
+      "id": "30",
+      "uid": "s:20~l:28~t:30",
+      "order": 1,
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "30",
+       "guid": "ca6fb778-cbf6-d9a3-3e93-01230335fcab",
+       "uid": "s:20~l:28~t:30",
+       "location": "Jacksonville",
+       "name": "Jaguars",
+       "nickname": "Jaguars",
+       "abbreviation": "JAX",
+       "displayName": "Jacksonville Jaguars",
+       "color": "007487",
+       "alternateColor": "d7a22a",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T18:50Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/jax.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T18:50Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T18:50Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/jax.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T18:50Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/grayscale.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "grayscale"
+         ],
+         "lastUpdated": "2026-03-31T12:52Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/primary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/ca6fb778-cbf6-d9a3-3e93-01230335fcab/logos/secondary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        }
+       ],
+       "links": [
+        {
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars",
+         "text": "Clubhouse"
+        }
+       ]
+      },
+      "score": "33",
+      "linescores": [
+       {
+        "displayValue": "10"
+       },
+       {
+        "displayValue": "7"
+       },
+       {
+        "displayValue": "3"
+       },
+       {
+        "displayValue": "13"
+       }
+      ],
+      "record": [
+       {
+        "type": "total",
+        "summary": "6-2",
+        "displayValue": "6-2"
+       },
+       {
+        "type": "road",
+        "summary": "2-1",
+        "displayValue": "2-1"
+       }
+      ],
+      "possession": false
+     }
+    ],
+    "status": {
+     "type": {
+      "id": "3",
+      "name": "STATUS_FINAL",
+      "state": "post",
+      "completed": true,
+      "description": "Final",
+      "detail": "Final",
+      "shortDetail": "Final"
+     },
+     "isTBDFlex": false
+    },
+    "broadcasts": [
+     {
+      "type": {
+       "id": "4",
+       "shortName": "Streaming"
+      },
+      "market": {
+       "id": "1",
+       "type": "National"
+      },
+      "media": {
+       "shortName": "Prime Video"
+      },
+      "lang": "en",
+      "region": "us",
+      "isNational": true
+     }
+    ],
+    "boxscoreMinutes": true
+   }
+  ],
+  "links": [
+   {
+    "rel": [
+     "summary",
+     "desktop",
+     "event"
+    ],
+    "href": "https://www.espn.com/nfl/game/_/gameId/401873037/jaguars-ravens",
+    "text": "Gamecast",
+    "shortText": "Summary",
+    "isExternal": false,
+    "isPremium": false
+   },
+   {
+    "rel": [
+     "recap",
+     "desktop",
+     "event"
+    ],
+    "href": "https://www.espn.com/nfl/recap?gameId=401873037",
+    "text": "Recap",
+    "shortText": "Recap",
+    "isExternal": false,
+    "isPremium": false
+   },
+   {
+    "rel": [
+     "boxscore",
+     "desktop",
+     "event"
+    ],
+    "href": "https://www.espn.com/nfl/boxscore/_/gameId/401873037",
+    "text": "Box Score",
+    "shortText": "Box Score",
+    "isExternal": false,
+    "isPremium": false
+   },
+   {
+    "rel": [
+     "pbp",
+     "desktop",
+     "event"
+    ],
+    "href": "https://www.espn.com/nfl/playbyplay/_/gameId/401873037",
+    "text": "Play-by-Play",
+    "shortText": "Play-by-Play",
+    "isExternal": false,
+    "isPremium": false
+   },
+   {
+    "rel": [
+     "teamstats",
+     "desktop",
+     "event"
+    ],
+    "href": "https://www.espn.com/nfl/matchup?gameId=401873037",
+    "text": "Team Stats",
+    "shortText": "Team Stats",
+    "isExternal": false,
+    "isPremium": false
+   }
+  ],
+  "week": 9,
+  "league": {
+   "id": "28",
+   "uid": "s:20~l:28",
+   "name": "National Football League",
+   "abbreviation": "NFL",
+   "shortName": "NFL",
+   "slug": "nfl",
+   "isTournament": false,
+   "links": [
+    {
+     "rel": [
+      "index",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/",
+     "text": "Index"
+    },
+    {
+     "rel": [
+      "index",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28",
+     "text": "Index"
+    },
+    {
+     "rel": [
+      "schedule",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/schedule",
+     "text": "Schedule"
+    },
+    {
+     "rel": [
+      "schedule",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
+     "text": "Schedule"
+    },
+    {
+     "rel": [
+      "standings",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/standings",
+     "text": "Standings"
+    },
+    {
+     "rel": [
+      "standings",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=standings",
+     "text": "Standings"
+    },
+    {
+     "rel": [
+      "rankings",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/powerrankings",
+     "text": "Power Rankings"
+    },
+    {
+     "rel": [
+      "scores",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/scoreboard",
+     "text": "Scores"
+    },
+    {
+     "rel": [
+      "scores",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
+     "text": "Scores"
+    },
+    {
+     "rel": [
+      "stats",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/stats",
+     "text": "Stats"
+    },
+    {
+     "rel": [
+      "stats",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=stats",
+     "text": "Stats"
+    },
+    {
+     "rel": [
+      "teams",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/teams",
+     "text": "Teams"
+    },
+    {
+     "rel": [
+      "athletes",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/players",
+     "text": "Players"
+    },
+    {
+     "rel": [
+      "injuries",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/injuries",
+     "text": "Injuries"
+    },
+    {
+     "rel": [
+      "odds",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/odds",
+     "text": "Odds"
+    },
+    {
+     "rel": [
+      "odds",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=odds",
+     "text": "Odds"
+    },
+    {
+     "rel": [
+      "playoff-bracket",
+      "desktop",
+      "league"
+     ],
+     "href": "https://www.espn.com/nfl/playoff-bracket",
+     "text": "Bracket"
+    },
+    {
+     "rel": [
+      "playoff-bracket",
+      "sportscenter",
+      "app",
+      "league"
+     ],
+     "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=bracket",
+     "text": "Bracket"
+    },
+    {
+     "rel": [
+      "freeagency",
+      "desktop",
+      "league"
+     ],
+     "href": "https://insider.espn.com/nfl/freeagency/",
+     "text": "Freeagency"
+    }
+   ],
+   "logos": [
+    {
+     "href": "https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png",
+     "rel": [
+      "full",
+      "default"
+     ]
+    },
+    {
+     "href": "https://a.espncdn.com/i/teamlogos/leagues/500-dark/nfl.png",
+     "rel": [
+      "full",
+      "dark"
+     ]
+    }
+   ]
+  }
+ },
+ "article": {
+  "id": 50396460,
+  "nowId": "1-50396460",
+  "contentKey": "50396460-1-21-1",
+  "dataSourceIdentifier": "f216fa85c1ae1",
+  "publishedkey": "nfl401873037",
+  "type": "Recap",
+  "gameId": "401873037",
+  "headline": "Jaguars thrash the depleted Ravens 33-10 for their 5th win in 6 games",
+  "description": "\u2014 With their top two quarterbacks injured, the Baltimore Ravens were prepared to use any trick necessary in their attempt to keep the game competitive against Jacksonville. That included snapping the ball directly to Derrick Henry on quite a few...",
+  "linkText": "Jaguars thrash the depleted Ravens 33-10 for their 5th win in 6 games",
+  "categorized": "2026-11-06T05:37:35Z",
+  "originallyPosted": "2026-11-06T04:11:34Z",
+  "lastModified": "2026-11-06T05:37:34Z",
+  "published": "2026-11-06T04:11:34Z",
+  "section": "NFL",
+  "source": "AP",
+  "images": [
+   {
+    "type": "Media",
+    "name": "Justice Hill shows off his speed on a 65-yard TD",
+    "caption": "Justice Hill shows off his speed on a 65-yard TD",
+    "height": 324,
+    "width": 576,
+    "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1105/36b43468f2414c5ebaca1bffdc1fbbf01397/36b43468f2414c5ebaca1bffdc1fbbf01397.jpg"
+   }
+  ],
+  "video": [],
+  "categories": [
+   {
+    "id": 9572,
+    "type": "league",
+    "uid": "s:20~l:28",
+    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+    "description": "NFL",
+    "sportId": 28,
+    "leagueId": 28,
+    "league": {
+     "id": 28,
+     "description": "NFL",
+     "abbreviation": "NFL",
+     "links": {
+      "mobile": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      },
+      "web": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2830,
+    "type": "team",
+    "uid": "s:20~l:28~t:33",
+    "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
+    "description": "Baltimore Ravens",
+    "sportId": 28,
+    "teamId": 33,
+    "team": {
+     "id": 33,
+     "description": "Baltimore Ravens",
+     "abbreviation": "BAL",
+     "shortDisplayName": "Ravens",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2996,
+    "type": "team",
+    "uid": "s:20~l:28~t:30",
+    "guid": "ca6fb778-cbf6-d9a3-3e93-01230335fcab",
+    "description": "Jacksonville Jaguars",
+    "sportId": 28,
+    "teamId": 30,
+    "team": {
+     "id": 30,
+     "description": "Jacksonville Jaguars",
+     "abbreviation": "JAX",
+     "shortDisplayName": "Jaguars",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/jax/jacksonville-jaguars"
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "event",
+    "uid": "s:20~l:28~e:401873037",
+    "guid": "8a4d3e73-aacd-3c4c-893f-a634f27264ef",
+    "description": "Jacksonville Jaguars @ Baltimore Ravens",
+    "eventId": 401873037,
+    "event": {
+     "id": 401873037,
+     "sport": "football",
+     "league": "nfl",
+     "description": "Jacksonville Jaguars @ Baltimore Ravens",
+     "links": {
+      "mobile": {
+       "event": {
+        "href": "https://www.espn.com/nfl/game/_/gameId/401873037"
+       }
+      },
+      "web": {
+       "event": {
+        "href": "https://www.espn.com/nfl/game/_/gameId/401873037"
+       }
+      }
+     }
+    }
+   }
+  ],
+  "keywords": [
+   "NFL",
+   "Baltimore Ravens",
+   "Jacksonville Jaguars",
+   "Jacksonville Jaguars @ Baltimore Ravens"
+  ],
+  "story": "BALTIMORE -- \u2014 With their top two quarterbacks injured, the <a href=\"http://www.espn.com/nfl/team/_/name/bal/baltimore-ravens\">Baltimore Ravens</a> were prepared to use any trick necessary in their attempt to keep the game competitive against Jacksonville. That included snapping the ball directly to <a href=\"http://www.espn.com/nfl/player/_/id/3043078/derrick-henry\">Derrick Henry</a> on quite a few occasions.\n\n\r\n              The Jaguars were ready.\n\n\r\n              \u201cWe practiced Wildcat a ton,\u201d Jacksonville coach Liam Coen said.\n\n\r\n              <a href=\"http://www.espn.com/nfl/player/_/id/4360310/trevor-lawrence\">Trevor Lawrence</a> threw for 242 yards and a touchdown, and the Jaguars had little trouble with <a href=\"http://www.espn.com/nfl/player/_/id/4429582/joe-fagnano\">Joe Fagnano</a> and the Ravens in a 33-10 victory. Normally, a Thursday night game presents a preparation challenge for the visiting team, but it was Baltimore that looked like it could have used a longer break with quarterbacks <a href=\"http://www.espn.com/nfl/player/_/id/3916387/lamar-jackson\">Lamar Jackson</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4035671/tyler-huntley\">Tyler Huntley</a> injured.\n\n\r\n              There was little the Ravens could do but start Fagnano, a 25-year-old rookie who made his debut last weekend against Buffalo. He threw for only 60 yards against the Jags. Baltimore (4-5) has lost four straight.\n\n\r\n              With their top two quarterbacks on injured reserve \u2014 and Fagnano has been dealing with an ankle issue \u2014 the Ravens now await <a href=\"https://apnews.com/article/brissett-jackson-huntley-cardinals-ravens-trade-3f34dcce6532c77aa3602046068c69ba\"><a href=\"http://www.espn.com/nfl/player/_/id/2578570/jacoby-brissett\">Jacoby Brissett</a>'s arrival</a> as they try to prevent their season from falling apart completely.\n\n\r\n              \u201cTough situation for our guys. But I just told them, there\u2019s no excuses,\u201d Baltimore coach Jesse Minter said. \u201cThere\u2019s no, \u2018Whatever, we don\u2019t have this guy, we don\u2019t have that guy.\u2019\u201d\n\n\r\n              Jacksonville (6-2) did not need to do anything extraordinary to beat a badly weakened Baltimore team. The Jaguars mostly took care of the ball on a rainy night and avoided any extreme risks. The Jags have won five of their last six to take command of the AFC South, where they have a 3 1/2-game lead.\n\n\r\n              Jacksonville drove 77 yards on the game's first possession, taking a 7-0 advantage on a 1-yard touchdown run by <a href=\"http://www.espn.com/nfl/player/_/id/4882093/bhayshul-tuten\">Bhayshul Tuten</a>.\n\n\r\n              \u201cThat opening drive was huge, just to set the tone,\u201d Lawrence said. \u201cEspecially when you get the ball first ... that's something that's important, is to be able to go and get points right away.\u201d\n\n\r\n              The Ravens tried to be creative, repeatedly running Wildcat-style plays with Henry. Baltimore managed a field goal on its first drive but nothing more until late in the game.\n\n\r\n              It was still close near the end of the first half, but Lawrence found <a href=\"http://www.espn.com/nfl/player/_/id/4432620/parker-washington\">Parker Washington</a> for <a href=\"https://x.com/Jaguars/status/2118530820080308422\">a 50-yard scoring strike</a> with 58 seconds left in the second quarter. That made it 17-3 at the half.\n\n\r\n              \u201cI just think he was very on when it was really a game,\u201d Coen said of Lawrence. \u201cWhen it was mattering and things were going and it's a back-and-forth football game early on, he was extremely sharp, accurate and played, again, a really solid football game for us.\u201d\n\n\r\n              It was 20-3 when a fumble gave Baltimore the ball at midfield in the third quarter, but the Ravens immediately turned the ball over on downs and the boos came cascading down from the crowd.\n\n\r\n              \u201cThey have every right to boo or do whatever they want to do. Obviously, us in here, we have to stay together, be on one accord, and just keep on relying on each other,\u201d tight end <a href=\"http://www.espn.com/nfl/player/_/id/3116365/mark-andrews\">Mark Andrews</a> said. \u201cYou\u2019ve got to be there for your brother. And that\u2019s what we\u2019re going to do is keep it in house and continue to fight for one another. And we\u2019ll see how this thing shakes out.\u201d\n\n\r\n              Fagnano went 10 of 18 with two second-half interceptions. Baltimore also lost a fumble on a kick return, which led to <a href=\"http://www.espn.com/nfl/player/_/id/4362619/chris-rodriguez-jr\">Chris Rodriguez Jr</a>.'s 2-yard touchdown run with 7:26 left in the game that made it 33-3.\n\n\r\n              <a href=\"http://www.espn.com/nfl/player/_/id/4038441/justice-hill\">Justice Hill</a> broke free for a 65-yard touchdown run 11 seconds later \u2014 Baltimore's first TD after halftime since Week 5. Hill finished with 85 yards on nine carries, snapping Jacksonville's 24-game streak of not allowing a 75-yard rusher.\n\n\r\n              <hl2>Not competitive</hl2>\r\n              It's the first time in franchise history the Ravens have lost three straight games by at least 20 points. In 2015, Baltimore was routed 35-6 by Seattle and 34-14 by Kansas City in consecutive weeks, but the Ravens won the game after that.\n\n\r\n              Baltimore lost 35-13 to Cincinnati and 36-10 to Buffalo before Thursday's game.\n\n\r\n              <hl2>Injuries</hl2>\r\n              In addition to their problems at quarterback, the Ravens were without starting cornerback <a href=\"http://www.espn.com/nfl/player/_/id/4601278/nate-wiggins\">Nate Wiggins</a>, who had been listed with an illness earlier in the week.\n\n\r\n              Baltimore also lost star safety <a href=\"http://www.espn.com/nfl/player/_/id/4575517/kyle-hamilton\">Kyle Hamilton</a> to a hip injury.\n\n\r\n              <hl2>Up next</hl2>\r\n              Jaguars: At Tennessee on Nov. 15.\n\n\r\n              Ravens: Host the <a href=\"http://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers\">Los Angeles Chargers</a> on Nov. 16.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
+  "allowComments": true,
+  "allowContentReactions": false,
+  "allowSearch": true,
+  "isLiveBlog": false,
+  "links": {
+   "api": {
+    "self": {
+     "href": "https://content.core.api.espn.com/v1/sports/news/50396460"
+    }
+   },
+   "app": {
+    "sportscenter": {
+     "href": "sportscenter://x-callback-url/showStory?uid=50396460"
+    }
+   },
+   "mobile": {
+    "href": "http://m.espn.go.com/nfl/story?storyId=50396460"
+   },
+   "web": {
+    "href": "http://www.espn.com/nfl/recap?gameId=401873037"
+   }
+  },
+  "premium": false
+ },
+ "videos": [],
+ "wallclockAvailable": true,
  "meta": {
   "gp_topic": "gp-football-nfl-401873037",
   "gameSwitcherEnabled": true,
