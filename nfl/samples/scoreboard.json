@@ -559,6 +559,11 @@
          "value": 0.0,
          "displayValue": "0",
          "period": 3
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -689,7 +694,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/sea.png"
        },
-       "score": "14",
+       "score": "21",
        "linescores": [
         {
          "value": 7.0,
@@ -702,9 +707,14 @@
          "period": 2
         },
         {
-         "value": 7.0,
-         "displayValue": "7",
+         "value": 14.0,
+         "displayValue": "14",
          "period": 3
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -734,72 +744,93 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730622124",
+       "id": "4018730622995",
        "type": {
-        "id": "74",
-        "text": "Official Timeout",
-        "abbreviation": "Off TO"
+        "id": "3",
+        "text": "Pass Incompletion"
        },
-       "text": "Official Timeout at 09:28.",
+       "text": " (Shotgun) F.Mendoza pass incomplete short left to T.Tucker.",
        "scoreValue": 0,
        "team": {
-        "id": "26"
+        "id": "13"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.2325,
-        "awayWinPercentage": 0.7675,
+        "homeWinPercentage": 0.0319,
+        "awayWinPercentage": 0.9681,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "8 plays, 87 yards, 3:59",
+        "description": "2 plays, -7 yards, 0:36",
         "start": {
-         "yardLine": 87,
-         "text": "SEA 13"
-        },
-        "end": {
-         "yardLine": 0,
-         "text": "LV 0"
+         "yardLine": 13,
+         "text": "LV 13"
         },
         "timeElapsed": {
-         "displayValue": "3:59"
-        },
-        "result": "TD"
+         "displayValue": "0:36"
+        }
        },
        "start": {
-        "yardLine": 65,
+        "yardLine": 6,
         "team": {
-         "id": "26"
+         "id": "13"
         }
        },
        "end": {
-        "yardLine": 65,
+        "yardLine": 6,
         "team": {
-         "id": "26"
+         "id": "13"
         }
-       }
+       },
+       "athletesInvolved": [
+        {
+         "id": "4428718",
+         "fullName": "Tre Tucker",
+         "displayName": "Tre Tucker",
+         "shortName": "T. Tucker",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/4428718/tre-tucker"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4428718.png",
+         "jersey": "1",
+         "position": "WR",
+         "team": {
+          "id": "13"
+         }
+        }
+       ]
       },
-      "down": -1,
-      "yardLine": 65,
-      "distance": 0,
-      "isRedZone": true,
+      "down": 3,
+      "yardLine": 6,
+      "distance": 17,
+      "downDistanceText": "3rd & 17 at LV 6",
+      "shortDownDistanceText": "3rd & 17",
+      "possessionText": "LV 6",
+      "isRedZone": false,
       "homeTimeouts": 3,
       "awayTimeouts": 3,
-      "possession": "26"
+      "possession": "13"
      },
      "status": {
-      "clock": 568.0,
-      "displayClock": "9:28",
-      "period": 3,
+      "clock": 694.0,
+      "displayClock": "11:34",
+      "period": 4,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "9:28 - 3rd Quarter",
-       "shortDetail": "9:28 - 3rd"
+       "detail": "11:34 - 4th Quarter",
+       "shortDetail": "11:34 - 4th"
       },
       "isTBDFlex": false
      },
@@ -819,8 +850,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "7/9, 123 YDS, 1 TD",
-         "value": 123.0,
+         "displayValue": "13/16, 224 YDS, 2 TD",
+         "value": 224.0,
          "athlete": {
           "id": "3924327",
           "fullName": "Drew Lock",
@@ -859,8 +890,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "11 CAR, 53 YDS",
-         "value": 53.0,
+         "displayValue": "16 CAR, 92 YDS",
+         "value": 92.0,
          "athlete": {
           "id": "4426385",
           "fullName": "Zach Charbonnet",
@@ -899,8 +930,8 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "3 REC, 64 YDS",
-         "value": 64.0,
+         "displayValue": "7 REC, 155 YDS, 1 TD",
+         "value": 155.0,
          "athlete": {
           "id": "4430878",
           "fullName": "Jaxon Smith-Njigba",
@@ -1005,10 +1036,10 @@
     }
    ],
    "weather": {
-    "displayValue": "2",
+    "displayValue": "3",
     "temperature": 66,
     "highTemperature": 66,
-    "conditionId": "Mostly sunny",
+    "conditionId": "Partly sunny",
     "link": {
      "language": "en-US",
      "rel": [
@@ -1022,18 +1053,78 @@
     }
    },
    "status": {
-    "clock": 568.0,
-    "displayClock": "9:28",
-    "period": 3,
+    "clock": 694.0,
+    "displayClock": "11:34",
+    "period": 4,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "9:28 - 3rd Quarter",
-     "shortDetail": "9:28 - 3rd"
+     "detail": "11:34 - 4th Quarter",
+     "shortDetail": "11:34 - 4th"
     }
+   },
+   "tuneInPrompt": {
+    "id": "4d4d221b8cb83",
+    "isAutomated": false,
+    "title": "Big-Play Clinic",
+    "description": "Tune-in 401873062 prompt",
+    "caption": "Jaxon Smith-Njigba has 155 receiving yards through 3 quarters.",
+    "dateModified": "2026-11-15T23:12:10Z",
+    "rating": "Unrated",
+    "shortText": "Jaxon Smith-Njigba has 155 receiving yards through 3 quarters.",
+    "longText": "Jaxon Smith-Njigba has 155 receiving yards through 3 quarters.",
+    "images": [
+     {
+      "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4430878.png",
+      "alt": "Jaxon Smith-Njigba"
+     }
+    ],
+    "imageType": "playerHeadshot",
+    "backgroundImages": [
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+      "width": 500,
+      "height": 500,
+      "rel": [
+       "full",
+       "default"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/sea.png",
+      "width": 500,
+      "height": 500,
+      "rel": [
+       "full",
+       "dark"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
+      "width": 500,
+      "height": 500,
+      "rel": [
+       "full",
+       "scoreboard"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/sea.png",
+      "width": 500,
+      "height": 500,
+      "rel": [
+       "full",
+       "scoreboard",
+       "dark"
+      ]
+     }
+    ],
+    "color": "002a5c",
+    "alternateColor": "69be28",
+    "categoryGuid": "edf87204-0e8c-331c-ac63-c6e04a89ee76"
    }
   },
   {
@@ -1192,6 +1283,16 @@
          "value": 0.0,
          "displayValue": "0",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -1322,7 +1423,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lar.png"
        },
-       "score": "17",
+       "score": "31",
        "linescores": [
         {
          "value": 3.0,
@@ -1333,6 +1434,16 @@
          "value": 14.0,
          "displayValue": "14",
          "period": 2
+        },
+        {
+         "value": 14.0,
+         "displayValue": "14",
+         "period": 3
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -1362,71 +1473,70 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730612167",
+       "id": "4018730613040",
        "type": {
-        "id": "65",
-        "text": "End of Half",
-        "abbreviation": "EH"
+        "id": "2",
+        "text": "End Period",
+        "abbreviation": "EP"
        },
-       "text": "END QUARTER 2",
+       "text": "END QUARTER 3",
        "scoreValue": 0,
        "team": {
-        "id": "22"
+        "id": "14"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.0512,
-        "awayWinPercentage": 0.9488,
+        "homeWinPercentage": 0.001,
+        "awayWinPercentage": 0.999,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "1 play, -1 yard, 0:13",
+        "description": "6 plays, 20 yards, 4:04",
         "start": {
-         "yardLine": 35,
-         "text": "ARI 35"
-        },
-        "end": {
-         "yardLine": 35,
-         "text": "ARI 35"
+         "yardLine": 44,
+         "text": "ARI 44"
         },
         "timeElapsed": {
-         "displayValue": "0:13"
-        },
-        "result": "END OF HALF"
+         "displayValue": "4:04"
+        }
        },
        "start": {
-        "yardLine": 34,
+        "yardLine": 24,
         "team": {
-         "id": "22"
+         "id": "14"
         }
        },
        "end": {
-        "yardLine": 34,
+        "yardLine": 24,
         "team": {
-         "id": "22"
+         "id": "14"
         }
        }
       },
-      "down": 1,
-      "yardLine": 34,
-      "distance": 11,
+      "down": 4,
+      "yardLine": 24,
+      "distance": 4,
+      "downDistanceText": "4th & 4 at ARI 24",
+      "shortDownDistanceText": "4th & 4",
+      "possessionText": "ARI 24",
       "isRedZone": false,
       "homeTimeouts": 3,
-      "awayTimeouts": 3
+      "awayTimeouts": 3,
+      "possession": "14"
      },
      "status": {
-      "clock": 0.0,
-      "displayClock": "0:00",
-      "period": 2,
+      "clock": 900.0,
+      "displayClock": "15:00",
+      "period": 4,
       "type": {
-       "id": "23",
-       "name": "STATUS_HALFTIME",
+       "id": "2",
+       "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
-       "description": "Halftime",
-       "detail": "Halftime",
-       "shortDetail": "Halftime"
+       "description": "In Progress",
+       "detail": "15:00 - 4th Quarter",
+       "shortDetail": "15:00 - 4th"
       },
       "isTBDFlex": false
      },
@@ -1446,8 +1556,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "15/23, 176 YDS, 2 TD, 1 INT",
-         "value": 176.0,
+         "displayValue": "18/26, 249 YDS, 3 TD, 1 INT",
+         "value": 249.0,
          "athlete": {
           "id": "12483",
           "fullName": "Matthew Stafford",
@@ -1486,8 +1596,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "8 CAR, 46 YDS",
-         "value": 46.0,
+         "displayValue": "17 CAR, 100 YDS, 1 TD",
+         "value": 100.0,
          "athlete": {
           "id": "4429096",
           "fullName": "Blake Corum",
@@ -1526,13 +1636,13 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "2 REC, 40 YDS, 1 TD",
-         "value": 40.0,
+         "displayValue": "3 REC, 81 YDS",
+         "value": 81.0,
          "athlete": {
-          "id": "4386544",
-          "fullName": "Xavier Smith",
-          "displayName": "Xavier Smith",
-          "shortName": "X. Smith",
+          "id": "4710855",
+          "fullName": "Konata Mumpfield",
+          "displayName": "Konata Mumpfield",
+          "shortName": "K. Mumpfield",
           "links": [
            {
             "rel": [
@@ -1540,11 +1650,11 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4386544/xavier-smith"
+            "href": "https://www.espn.com/nfl/player/_/id/4710855/konata-mumpfield"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4386544.png",
-          "jersey": "14",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4710855.png",
+          "jersey": "4",
           "position": {
            "abbreviation": "WR"
           },
@@ -1633,8 +1743,8 @@
    ],
    "weather": {
     "displayValue": "1",
-    "temperature": 76,
-    "highTemperature": 76,
+    "temperature": 77,
+    "highTemperature": 77,
     "conditionId": "Sunny",
     "link": {
      "language": "en-US",
@@ -1649,18 +1759,189 @@
     }
    },
    "status": {
-    "clock": 0.0,
-    "displayClock": "0:00",
-    "period": 2,
+    "clock": 900.0,
+    "displayClock": "15:00",
+    "period": 4,
     "type": {
-     "id": "23",
-     "name": "STATUS_HALFTIME",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
-     "description": "Halftime",
-     "detail": "Halftime",
-     "shortDetail": "Halftime"
+     "description": "In Progress",
+     "detail": "15:00 - 4th Quarter",
+     "shortDetail": "15:00 - 4th"
     }
+   },
+   "tuneInPrompt": {
+    "id": "14ebaba1245c2",
+    "isAutomated": false,
+    "title": "Team Dominance",
+    "description": "Tune-in Prompt 401873061",
+    "caption": "Can't be stopped: Three straight touchdown drives.",
+    "dateModified": "2026-11-15T23:02:48Z",
+    "rating": "Unrated",
+    "shortText": "Can't be stopped: Three straight touchdown drives.",
+    "longText": "Can't be stopped: Three straight touchdown drives.",
+    "images": [
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
+      "width": 500,
+      "height": 500,
+      "rel": [
+       "full",
+       "default"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/lar.png",
+      "width": 500,
+      "height": 500,
+      "rel": [
+       "full",
+       "dark"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
+      "width": 500,
+      "height": 500,
+      "rel": [
+       "full",
+       "scoreboard"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lar.png",
+      "width": 500,
+      "height": 500,
+      "rel": [
+       "full",
+       "scoreboard",
+       "dark"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/grayscale.png",
+      "width": 500,
+      "height": 500,
+      "rel": [
+       "full",
+       "grayscale"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/primary_logo_on_white_color.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "primary_logo_on_white_color"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/primary_logo_on_black_color.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "primary_logo_on_black_color"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/primary_logo_on_primary_color.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "primary_logo_on_primary_color"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/primary_logo_on_secondary_color.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "primary_logo_on_secondary_color"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/primary_logo_black.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "primary_logo_black"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/primary_logo_white.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "primary_logo_white"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/secondary_logo_on_white_color.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "secondary_logo_on_white_color"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/secondary_logo_on_black_color.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "secondary_logo_on_black_color"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/secondary_logo_on_primary_color.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "secondary_logo_on_primary_color"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/secondary_logo_on_secondary_color.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "secondary_logo_on_secondary_color"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/secondary_logo_black.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "secondary_logo_black"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/guid/2e1473b2-e269-fd7a-1137-c1edacb85986/logos/secondary_logo_white.png",
+      "width": 4096,
+      "height": 4096,
+      "rel": [
+       "full",
+       "secondary_logo_white"
+      ]
+     }
+    ],
+    "imageType": "teamLogo",
+    "color": "003594",
+    "alternateColor": "ffd100",
+    "categoryGuid": "2e1473b2-e269-fd7a-1137-c1edacb85986"
    }
   },
   {
@@ -1819,6 +2100,11 @@
          "value": 6.0,
          "displayValue": "6",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -1949,7 +2235,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/sf.png"
        },
-       "score": "17",
+       "score": "24",
        "linescores": [
         {
          "value": 7.0,
@@ -1960,6 +2246,11 @@
          "value": 10.0,
          "displayValue": "10",
          "period": 2
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -1989,75 +2280,94 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730632034",
+       "id": "4018730632665",
        "type": {
-        "id": "74",
-        "text": "Official Timeout",
-        "abbreviation": "Off TO"
+        "id": "24",
+        "text": "Pass Reception",
+        "abbreviation": "REC"
        },
-       "text": "Official Timeout at 01:10.",
+       "text": " (Shotgun) D.Prescott pass short left to I.Abanikanda to SF 34 for 2 yards (D.Greenlaw).",
        "scoreValue": 0,
        "team": {
-        "id": "25"
+        "id": "6"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.364,
-        "awayWinPercentage": 0.636,
+        "homeWinPercentage": 0.2247,
+        "awayWinPercentage": 0.7753,
         "secondsLeft": 0
        },
-       "statYardage": 0,
+       "statYardage": 2,
        "drive": {
-        "description": "3 plays, 8 yards, 1:16",
+        "description": "5 plays, 38 yards, 2:39",
         "start": {
-         "yardLine": 35,
-         "text": "DAL 35"
-        },
-        "end": {
-         "yardLine": 43,
-         "text": "DAL 43"
+         "yardLine": 28,
+         "text": "DAL 28"
         },
         "timeElapsed": {
-         "displayValue": "1:16"
-        },
-        "result": "PUNT"
+         "displayValue": "2:39"
+        }
        },
        "start": {
-        "yardLine": 80,
+        "yardLine": 64,
         "team": {
-         "id": "25"
+         "id": "6"
         }
        },
        "end": {
-        "yardLine": 80,
+        "yardLine": 66,
         "team": {
-         "id": "25"
+         "id": "6"
         }
-       }
+       },
+       "athletesInvolved": [
+        {
+         "id": "4429202",
+         "fullName": "Israel Abanikanda",
+         "displayName": "Israel Abanikanda",
+         "shortName": "I. Abanikanda",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/4429202/israel-abanikanda"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429202.png",
+         "jersey": "37",
+         "position": "RB",
+         "team": {
+          "id": "6"
+         }
+        }
+       ]
       },
-      "down": 1,
-      "yardLine": 80,
-      "distance": 10,
-      "downDistanceText": "1st & 10 at SF 20",
-      "shortDownDistanceText": "1st & 10",
-      "possessionText": "SF 20",
+      "down": 3,
+      "yardLine": 66,
+      "distance": 6,
+      "downDistanceText": "3rd & 6 at SF 34",
+      "shortDownDistanceText": "3rd & 6",
+      "possessionText": "SF 34",
       "isRedZone": false,
-      "homeTimeouts": 2,
-      "awayTimeouts": 2,
-      "possession": "25"
+      "homeTimeouts": 3,
+      "awayTimeouts": 3,
+      "possession": "6"
      },
      "status": {
-      "clock": 70.0,
-      "displayClock": "1:10",
-      "period": 2,
+      "clock": 571.0,
+      "displayClock": "9:31",
+      "period": 3,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "1:10 - 2nd Quarter",
-       "shortDetail": "1:10 - 2nd"
+       "detail": "9:31 - 3rd Quarter",
+       "shortDetail": "9:31 - 3rd"
       },
       "isTBDFlex": false
      },
@@ -2077,8 +2387,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "10/13, 195 YDS, 2 TD",
-         "value": 195.0,
+         "displayValue": "15/20, 270 YDS, 2 TD",
+         "value": 270.0,
          "athlete": {
           "id": "4361741",
           "fullName": "Brock Purdy",
@@ -2117,8 +2427,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "11 CAR, 45 YDS",
-         "value": 45.0,
+         "displayValue": "12 CAR, 49 YDS",
+         "value": 49.0,
          "athlete": {
           "id": "4361579",
           "fullName": "Javonte Williams",
@@ -2157,8 +2467,8 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "6 REC, 97 YDS, 2 TD",
-         "value": 97.0,
+         "displayValue": "7 REC, 104 YDS, 2 TD",
+         "value": 104.0,
          "athlete": {
           "id": "4426354",
           "fullName": "George Pickens",
@@ -2263,10 +2573,10 @@
     }
    ],
    "weather": {
-    "displayValue": "7",
-    "temperature": 48,
-    "highTemperature": 48,
-    "conditionId": "Cloudy",
+    "displayValue": "12",
+    "temperature": 47,
+    "highTemperature": 47,
+    "conditionId": "A shower",
     "link": {
      "language": "en-US",
      "rel": [
@@ -2280,17 +2590,17 @@
     }
    },
    "status": {
-    "clock": 70.0,
-    "displayClock": "1:10",
-    "period": 2,
+    "clock": 571.0,
+    "displayClock": "9:31",
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "1:10 - 2nd Quarter",
-     "shortDetail": "1:10 - 2nd"
+     "detail": "9:31 - 3rd Quarter",
+     "shortDetail": "9:31 - 3rd"
     }
    }
   },
@@ -2322,7 +2632,7 @@
      "neutralSite": true,
      "conferenceCompetition": false,
      "playByPlayAvailable": true,
-     "recent": true,
+     "recent": false,
      "venue": {
       "id": "11930",
       "fullName": "FC Bayern Munich Stadium",
@@ -3760,7 +4070,7 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Patrick Mahomes threw five touchdown passes, including one to newly acquired Josh Downs and two to rookie Emmett Johnson, and the Kansas City Chiefs beat the struggling Atlanta...",
+       "description": "\u2014 Some new names had the Kansas City Chiefs looking very young \u2014 and very strong.",
        "shortLinkText": "Mahomes throws 5 TD passes and rookie Johnson runs for 101 yards as Chiefs overwhelm Falcons 35-13",
        "video": [
         {
@@ -4468,6 +4778,116 @@
        "region": "us"
       }
      ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Deshaun Watson can talk all he wants about how playing the Houston Texans is just another game.",
+       "shortLinkText": "Deshaun Watson throws for 312 yards against his old team as the Browns rally past the Texans 27-24",
+       "video": [
+        {
+         "id": 50493959,
+         "source": "espn",
+         "headline": "Houston Texans vs. Cleveland Browns: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.jpg",
+         "duration": 58,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261115_NFL_houston_texans_vs_cleveland_browns_game_highlights",
+          "trackingName": "NFL_One-Play (Houston Texans vs. Cleveland Browns: Game Highlights) 2026/11/15 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/b897abbb-da00-4f3f-b167-68c19d083147"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50493959"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/b897abbb-da00-4f3f-b167-68c19d083147/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493959/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50493959"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/b897abbb-da00-4f3f-b167-68c19d083147/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493959/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/b897abbb-da00-4f3f-b167-68c19d083147/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493959/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/b897abbb-da00-4f3f-b167-68c19d083147/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50493959&videoDSI=921ed1147b134"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50493959/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50493959/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=921ed1147b134"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
      "highlights": [
       {
        "id": 50493959,
@@ -4581,116 +5001,6 @@
         "trackingId": "dm_20261115_NFL_houston_texans_vs_cleveland_browns_game_highlights",
         "trackingName": "NFL_One-Play (Houston Texans vs. Cleveland Browns: Game Highlights) 2026/11/15 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Quinshon Judkins barreled into the end zone from 5 yards out with 53 seconds remaining, and the resilient Cleveland Browns stunned the Houston Texans 27-24 on Sunday.",
-       "shortLinkText": "Deshaun Watson throws for 312 yards against his old team as the Browns rally past the Texans 27-24",
-       "video": [
-        {
-         "id": 50493959,
-         "source": "espn",
-         "headline": "Houston Texans vs. Cleveland Browns: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.jpg",
-         "duration": 58,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261115_NFL_houston_texans_vs_cleveland_browns_game_highlights",
-          "trackingName": "NFL_One-Play (Houston Texans vs. Cleveland Browns: Game Highlights) 2026/11/15 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/b897abbb-da00-4f3f-b167-68c19d083147"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50493959"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/b897abbb-da00-4f3f-b167-68c19d083147/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493959/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50493959"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/b897abbb-da00-4f3f-b167-68c19d083147/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493959/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/b897abbb-da00-4f3f-b167-68c19d083147/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493959/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/b897abbb-da00-4f3f-b167-68c19d083147/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/b0827c8e-90a1-4899-bae9-5037cf8e1560/b0827c8e-90a1-4899-bae9-5037cf8e1560.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50493959&videoDSI=921ed1147b134"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50493959/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50493959/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=921ed1147b134"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
@@ -5412,7 +5722,7 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Kirk Cousins threw two touchdown passes to start his second stint with Minnesota and Levi Drake Rodriguez had two of the Vikings\u2019 eight sacks in a 30-10 victory over the Green Bay Packers on Sunday.",
+       "description": "\u2014 Kirk Cousins began his second stint with Minnesota by showing just how much of a difference he can make for the Vikings' offense.",
        "shortLinkText": "Kirk Cousins has triumphant return as Vikings sack Jordan Love 8 times in 30-10 win over Packers",
        "video": [
         {
@@ -6238,7 +6548,7 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Trevor Lawrence threw for 352 yards and three touchdowns as the Jacksonville Jaguars beat the ",
+       "description": "\u2014 Trevor Lawrence has found a way to play even better, and he's elevating the Jacksonville offense right along with him.",
        "shortLinkText": "Trevor Lawrence lights up the Titans as the Jaguars roll 40-23 for a sixth win in 7 games",
        "video": [
         {
@@ -7064,7 +7374,7 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Daniel Jones threw a touchdown pass, Seth McGowan scored on a 4-yard run and Adetomiwa Adebawore recovered a fumble in the end zone Sunday to help the Indianapolis Colts hold on for a 24-22 victory over the Miami Dolphins.",
+       "description": "\u2014 The Indianapolis Colts got the respite they needed.",
        "shortLinkText": "Colts' struggling offense does just enough to beat Dolphins 24-22 and snap 5-game skid",
        "video": [
         {
@@ -9605,8 +9915,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $289",
-       "numberAvailable": 747,
+       "summary": "Tickets as low as $298",
+       "numberAvailable": 624,
        "links": [
         {
          "href": "https://www.vividseats.com/pittsburgh-steelers-tickets-cincinnati-paycor-stadium-3-3-2026/production/6489006?wsUser=717"
@@ -11342,8 +11652,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $36",
-       "numberAvailable": 5168,
+       "summary": "Tickets as low as $37",
+       "numberAvailable": 5116,
        "links": [
         {
          "href": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717"
