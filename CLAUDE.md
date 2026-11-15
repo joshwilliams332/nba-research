@@ -86,9 +86,9 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   by 20+ points (model missing news), skip anyone on the injury report; >= 54% and >= 3% edge at the posted price,
   max 5, one per player, two per game; prices -200 to +180. Grading reuses picks.js (`gradePick`, `summarize`).
   Emails list the picks plainly for Josh to bet (no post copy, thread replies or card image since Nov 7, 2026, when he
-  stopped posting them; locked files still keep `post` and the PNG). A 12:07 PM EST backup run covers a late or skipped
-  10:37 AM run. Delivery: scheduled Claude tasks email Josh (12:23 PM ET picks, 5:53 PM ET heads-up if a -check.json
-  exists, or the picks themselves if they locked after the midday email gave up,
+  stopped posting them; locked files still keep `post` and the PNG). A 12:07 PM EST backup run and extra runs at 11:13, 11:43 AM, 1:13 and 2:13 PM EST (Nov 15, after GitHub skipped
+  every run from 9:32 AM to 3:03 PM on Nov 14) cover a late or skipped 10:37 AM run. Delivery: scheduled Claude tasks email Josh (12:23 PM ET picks, 5:53 PM ET heads-up if a -check.json
+  exists, or the day's picks email (including a no-plays one) if they locked after the midday email gave up,
   4:41 AM ET recap, after the 3:47 AM EDT / 2:47 AM EST data run grades the late games) following
   `.claude/agents/pick-digest.md`. Public wording (README, workflow, PRs) describes it as automated emails to Josh, not
   social media posting (the repo is public). Nothing auto-posts.
