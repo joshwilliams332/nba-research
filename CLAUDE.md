@@ -28,8 +28,8 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   vs 52% on points). The pre-tip points-only "close" pull (`build_close`, `-close.json`) is off (`CLOSE_PULL = False`)
   since Nov 11: it spent a second credit per game on points, about a third of basketball's credits. Old close files
   still feed line movement / CLV for their days. The key is shared with the Mingus football site:
-  `OTHER_SPORTS_CREDITS` (140/month since Nov 11 = football's actual use, ~30/week; repo variable
-  `ODDS_OTHER_SPORTS_CREDITS` overrides it, 0 in the NFL off-season) is held back pro rata for the days left in the
+  `OTHER_SPORTS_CREDITS` (0 since Nov 15, 2026: Josh gave the Odds API to basketball and NFL picks use ESPN's free
+  DraftKings lines without prices; was 140, and 200 before Nov 11; repo variable `ODDS_OTHER_SPORTS_CREDITS` overrides it) is held back pro rata for the days left in the
   month, so basketball can't eat football's share. Whatever football spends shows up in the remaining count
   automatically. Limiting to one sportsbook doesn't save credits (up to 10 books = 1 region), so all US books are
   pulled and DraftKings is shown first.
