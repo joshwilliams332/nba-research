@@ -104,6 +104,18 @@ class PropsTests(unittest.TestCase):
         self.assertEqual(b.plan_markets(100, 8, date(2026, 12, 1)), (1, 2))
         self.assertEqual(b.plan_markets(5, 8, date(2026, 12, 1)), (0, 0))
 
+    def test_leftover_credits_buy_a_second_stat_for_some_games(self):
+        # Nov 15: 294 left over 16 days = 17 a day. 8 games -> 2 stats each (16); 10 games -> 2 for 7, 1 for 3 (17).
+        self.assertEqual(b.plan_per_game(294, 8, date(2026, 11, 15)), [3] + [2] * 7)
+        self.assertEqual(b.plan_per_game(294, 10, date(2026, 11, 15)), [2] * 7 + [1] * 3)
+        self.assertEqual(sum(b.plan_per_game(294, 10, date(2026, 11, 15))), 17)
+        # Plenty: never more than the four markets
+        self.assertEqual(b.plan_per_game(5000, 3, date(2026, 11, 15)), [4, 4, 4])
+        # Thin: one stat for as many games as fit
+        self.assertEqual(b.plan_per_game(100, 8, date(2026, 12, 1)), [1, 1])
+        self.assertEqual(b.plan_per_game(5, 8, date(2026, 12, 1)), [])
+        self.assertEqual(b.plan_per_game(None, 8, date(2026, 12, 1)), [])
+
     def test_closing_pull_no_longer_takes_a_second_credit(self):
         # With the closing pull on, 16/day for 8 games kept 8 back for pre-tip points; now the morning gets all 16.
         self.assertFalse(b.CLOSE_PULL)

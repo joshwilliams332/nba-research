@@ -773,6 +773,22 @@ def plan_markets(remaining, n_events, today):
     return (1, budget) if budget else (0, 0)
 
 
+def plan_per_game(remaining, n_events, today):
+    """How many markets each of today's games gets (a list, one count per game in pull order). Every game gets the
+    same base (as plan_markets); credits left over go one extra market per game, in order, so a 10-game night with
+    17 credits pulls 2 stats for 7 games and 1 for the other 3 instead of leaving 7 credits unspent."""
+    if remaining is None or n_events == 0:
+        return []
+    budget = daily_budget(remaining, today)
+    if CLOSE_PULL and budget >= 2 * n_events:
+        budget -= n_events
+    base = min(len(MARKETS), budget // n_events)
+    if not base:
+        return [1] * min(budget, n_events)
+    extra = budget - base * n_events if base < len(MARKETS) else 0
+    return [min(len(MARKETS), base + (1 if i < extra else 0)) for i in range(n_events)]
+
+
 def plan_close(remaining, n_due, today):
     """How many of the games due for a closing pull today's share of credits allows (1 credit each)."""
     if remaining is None or n_due == 0:
@@ -858,17 +874,18 @@ def build_props(store, games, players, today, now_et, offline, key):
     except Exception as e:
         log(f"Props: events failed ({e})")
         return None, status
-    n_markets, n_events = plan_markets(usage.get("remaining"), len(matched), today)
+    counts = plan_per_game(usage.get("remaining"), len(matched), today)
     order = market_order(today)
-    markets = [m for m, _ in order[:n_markets]]
-    log(f"Props: {len(matched)} games, credits left {usage.get('remaining')}, pulling {markets} for {n_events}")
+    n_markets = max(counts, default=0)
+    log(f"Props: {len(matched)} games, credits left {usage.get('remaining')}, pulling "
+        f"{[s for _, s in order[:n_markets]]} ({sum(counts)} credits; markets per game {counts})")
 
     roster = roster_keys(todays, players)
     snap = {"date": today.isoformat(), "fetched": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "markets": [s for m, s in order[:n_markets]], "games": {}}
-    for ev, g in matched[:n_events]:
+    for (ev, g), k in zip(matched, counts):
         try:
-            snap["games"][g["id"]] = api.props(ev, markets, roster)
+            snap["games"][g["id"]] = api.props(ev, [m for m, _ in order[:k]], roster)
         except Exception as e:
             log(f"  {g['a']}@{g['h']}: {e}")
     write_json(usage_path, usage, pretty=True)
