@@ -23513,6 +23513,67 @@
    },
    "injuries": [
     {
+     "status": "Injured Reserve",
+     "date": "2026-11-14T23:40Z",
+     "athlete": {
+      "id": "4685526",
+      "uid": "s:20~l:28~a:4685526",
+      "guid": "5ba8accf-3628-3600-a87f-d46192f50537",
+      "lastName": "Randall",
+      "fullName": "Adam Randall",
+      "displayName": "Adam Randall",
+      "shortName": "A. Randall",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4685526/adam-randall",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4685526.png",
+       "alt": "Adam Randall"
+      },
+      "jersey": "23",
+      "position": {
+       "name": "Running Back",
+       "displayName": "Running Back",
+       "abbreviation": "RB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4685526?lang=en&region=us"
+      },
+      "status": {
+       "id": "13",
+       "name": "Day-To-Day",
+       "type": "day-to-day",
+       "abbreviation": "Day-To-Day"
+      }
+     },
+     "type": {
+      "id": "5",
+      "name": "INJURY_STATUS_IR",
+      "description": "Injured Reserve",
+      "abbreviation": "IR"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "IR-R",
+       "abbreviation": "IR-R",
+       "displayDescription": "IR-R"
+      },
+      "type": "Neck",
+      "location": "Head",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-16"
+     }
+    },
+    {
      "status": "Out",
      "date": "2026-11-14T19:16Z",
      "athlete": {
@@ -23754,67 +23815,6 @@
       "detail": "Sprain",
       "side": "Right",
       "returnDate": "2027-02-15"
-     }
-    },
-    {
-     "status": "Injured Reserve",
-     "date": "2026-11-05T01:10Z",
-     "athlete": {
-      "id": "4685526",
-      "uid": "s:20~l:28~a:4685526",
-      "guid": "5ba8accf-3628-3600-a87f-d46192f50537",
-      "lastName": "Randall",
-      "fullName": "Adam Randall",
-      "displayName": "Adam Randall",
-      "shortName": "A. Randall",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4685526/adam-randall",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4685526.png",
-       "alt": "Adam Randall"
-      },
-      "jersey": "23",
-      "position": {
-       "name": "Running Back",
-       "displayName": "Running Back",
-       "abbreviation": "RB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4685526?lang=en&region=us"
-      },
-      "status": {
-       "id": "13",
-       "name": "Day-To-Day",
-       "type": "day-to-day",
-       "abbreviation": "Day-To-Day"
-      }
-     },
-     "type": {
-      "id": "5",
-      "name": "INJURY_STATUS_IR",
-      "description": "Injured Reserve",
-      "abbreviation": "IR"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "IR-R",
-       "abbreviation": "IR-R",
-       "displayDescription": "IR-R"
-      },
-      "type": "Neck",
-      "location": "Head",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-11-16"
      }
     }
    ]
@@ -24590,1101 +24590,6 @@
    "records": []
   }
  ],
- "news": {
-  "header": "NFL News",
-  "link": {
-   "language": "en",
-   "rel": [
-    "index",
-    "desktop",
-    "league"
-   ],
-   "href": "https://www.espn.com/nfl/",
-   "text": "All NFL News",
-   "shortText": "All News",
-   "isExternal": false,
-   "isPremium": false
-  },
-  "articles": [
-   {
-    "id": 50482239,
-    "nowId": "1-50482239",
-    "contentKey": "50482239-1-5-1",
-    "dataSourceIdentifier": "6555bd56ab9ae",
-    "type": "HeadlineNews",
-    "headline": "Steelers activate DT Derrick Harmon from IR ahead of key Bengals clash",
-    "description": "The Steelers have activated defensive tackle Derrick Harmon from injured reserve after he missed the past four games with a foot injury.",
-    "lastModified": "2026-11-14T20:41:30Z",
-    "published": "2026-11-14T20:41:30Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "584e062e67b41",
-      "id": 46044199,
-      "type": "header",
-      "name": "Harmon [1296x729]",
-      "credit": "Mark Alberti/Icon Sportswire",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2025/0822/r1534997_1296x729_16-9.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2776,
-      "type": "team",
-      "uid": "s:20~l:28~t:23",
-      "guid": "debcd592-8d53-71f1-fc15-5c8b8ef9df6e",
-      "description": "Pittsburgh Steelers",
-      "sportId": 28,
-      "teamId": 23,
-      "team": {
-       "id": 23,
-       "description": "Pittsburgh Steelers",
-       "abbreviation": "PIT",
-       "shortDisplayName": "Steelers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 492694,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4682980",
-      "guid": "dda3e155-2461-3379-8a26-0218bf5962c7",
-      "description": "Derrick Harmon",
-      "sportId": 28,
-      "athleteId": 4682980,
-      "athlete": {
-       "id": 4682980,
-       "description": "Derrick Harmon",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4682980/derrick-harmon"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4682980/derrick-harmon"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     }
-    ],
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50482239"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50482239"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50482239"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50482239/steelers-activate-dt-derrick-harmon-injured-reserve"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50481864,
-    "nowId": "1-50481864",
-    "contentKey": "50481864-1-5-1",
-    "dataSourceIdentifier": "4b31baa2f1148",
-    "type": "HeadlineNews",
-    "headline": "DE Danielle Hunter, LB Azeez Al-Shaair among Texans ruled out vs. Browns",
-    "description": "The Texans will be without a number of key starters -- including running back David Montgomery and All-Pro defensive end Danielle Hunter -- when they travel to face the Browns.",
-    "lastModified": "2026-11-14T20:05:23Z",
-    "published": "2026-11-14T20:05:23Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "4f4c1b18a754f",
-      "id": 29202037,
-      "type": "header",
-      "name": "Texans logo [1296x729]",
-      "credit": "Kirby Lee-USA TODAY Sports",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2020/0520/r700769_1296x729_16-9.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 3053,
-      "type": "team",
-      "uid": "s:20~l:28~t:34",
-      "guid": "595690b3-2161-4913-a7a7-814af2fd2621",
-      "description": "Houston Texans",
-      "sportId": 28,
-      "teamId": 34,
-      "team": {
-       "id": 34,
-       "description": "Houston Texans",
-       "abbreviation": "HOU",
-       "shortDisplayName": "Texans",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 381308,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:3919117",
-      "guid": "3ce75e87-2c6d-5a79-e349-2caa21b3cb07",
-      "description": "Azeez Al-Shaair",
-      "sportId": 28,
-      "athleteId": 3919117,
-      "athlete": {
-       "id": 3919117,
-       "description": "Azeez Al-Shaair",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3919117/azeez-al-shaair"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3919117/azeez-al-shaair"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 138823,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:2976560",
-      "guid": "258aad67-a3d9-14d7-ae74-1eafcb1069dc",
-      "description": "Danielle Hunter",
-      "sportId": 28,
-      "athleteId": 2976560,
-      "athlete": {
-       "id": 2976560,
-       "description": "Danielle Hunter",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/2976560/danielle-hunter"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/2976560/danielle-hunter"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 380054,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4035538",
-      "guid": "c9be5cd2-4e6a-86b1-3c08-ab4e44e6b3bf",
-      "description": "David Montgomery",
-      "sportId": 28,
-      "athleteId": 4035538,
-      "athlete": {
-       "id": 4035538,
-       "description": "David Montgomery",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4035538/david-montgomery"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4035538/david-montgomery"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 538298,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4839498",
-      "guid": "df74356b-f443-31c6-aa14-edca38ac9cbc",
-      "description": "Keylan Rutledge",
-      "sportId": 28,
-      "athleteId": 4839498,
-      "athlete": {
-       "id": 4839498,
-       "description": "Keylan Rutledge",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4839498/keylan-rutledge"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4839498/keylan-rutledge"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 499124,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4432708",
-      "guid": "7a24e799-fc0e-395e-b740-4ecee71a3c53",
-      "description": "Marvin Harrison Jr",
-      "sportId": 28,
-      "athleteId": 4432708,
-      "athlete": {
-       "id": 4432708,
-       "description": "Marvin Harrison Jr",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4432708/marvin-harrison-jr"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4432708/marvin-harrison-jr"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     },
-     {
-      "id": 698737,
-      "type": "contributor",
-      "guid": "ff38a289-37df-35fc-b04d-1b75c41e73d9",
-      "description": "DJ Bien-Aime",
-      "slug": "dj-bien-aime",
-      "contributor": {
-       "id": 3921,
-       "description": "DJ Bien-Aime"
-      }
-     }
-    ],
-    "byline": "DJ Bien-Aime",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50481864"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50481864"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50481864"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50481864/rb-montgomery-de-hunter-texans-ruled-vs-browns"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50462045,
-    "nowId": "1-50462045",
-    "contentKey": "50462045-1-6-1",
-    "dataSourceIdentifier": "9a3444f6591b2",
-    "type": "Story",
-    "headline": "Fantasy football Week 10 inactives: Who's in and who's out?",
-    "description": "Updated inactives and analysis based on the latest reports and official announcements leading up to kickoff.",
-    "lastModified": "2026-11-14T19:43:10Z",
-    "published": "2026-11-14T19:43:10Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "f6b5d1604761b",
-      "id": 50481866,
-      "type": "header",
-      "name": "David Montgomery [1296x729]",
-      "caption": "David Montgomery, who hasn't played in a game since Oct. 11, has been ruled out for Week 10.",
-      "alt": "C.J. Stroud #7 of the Houston Texans hands off to David Montgomery #32 during the first quarter against the Buffalo Bills of the game at NRG Stadium on September 13, 2026 in Houston, Texas.",
-      "credit": "Tim Warner/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1114/r1745797_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "e7fa97f69adf4",
-      "id": 50472905,
-      "type": "header",
-      "name": "Bhayshul Tuten [576x324]",
-      "caption": "Will Bhayshul Tuten be the one to lead the way in the Jaguars backfield?",
-      "alt": "Bhayshul Tuten #33 of the Jacksonville Jaguars celebrates with Ameer Abdullah #20 after scoring a touchdown against the Baltimore Ravens.",
-      "credit": "Patrick Smith/Getty Images",
-      "height": 324,
-      "width": 576,
-      "url": "https://a.espncdn.com/photo/2026/1113/r1745316_576x324_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "9f7d35cc74d6a",
-      "id": 50472927,
-      "type": "header",
-      "name": "George Pickens [576x324]",
-      "caption": "Is George Pickens ready to return to the Cowboys huddle in Week 10?",
-      "alt": "Dallas Cowboys wide receiver George Pickens (3) runs with the ball after making a catch against Arizona Cardinals linebacker Cody Simon (0) during an NFL football game in Arlington, Texas.",
-      "credit": "AP",
-      "height": 324,
-      "width": 576,
-      "url": "https://a.espncdn.com/photo/2026/1113/r1745318_576x324_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Why Dopp doesn\u2019t like the Lions matchup for Corey Kiner",
-      "caption": "Why Dopp doesn\u2019t like the Lions matchup for Corey Kiner",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1110/ss_20261110_105234350_3735305/ss_20261110_105234350_3735305.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 141870,
-      "type": "topic",
-      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
-      "description": "news - fantasy",
-      "sportId": 0,
-      "topicId": 240
-     },
-     {
-      "id": 152381,
-      "type": "topic",
-      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
-      "description": "news - fantasy football",
-      "sportId": 0,
-      "topicId": 401
-     },
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 409228,
-      "type": "topic",
-      "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d",
-      "description": "fantasy",
-      "sportId": 0,
-      "topicId": 785
-     },
-     {
-      "id": 848862,
-      "type": "contributor",
-      "guid": "3de9fce6-6aa7-3562-b497-2b4f5d90d27a",
-      "description": "Michael F Florio",
-      "slug": "michael-f-florio",
-      "contributor": {
-       "id": 4414,
-       "description": "Michael F Florio"
-      }
-     }
-    ],
-    "byline": "Michael F. Florio",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50462045"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50462045"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=50462045"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFSundayInactives-50462045/fantasy-football-injuries-nfl-week-10-inactive-active"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50481450,
-    "nowId": "1-50481450",
-    "contentKey": "50481450-1-5-1",
-    "dataSourceIdentifier": "2557d1d9782f1",
-    "type": "HeadlineNews",
-    "headline": "Panthers WR Xavier Legette, out since Week 2 with knee injury, activated from IR",
-    "description": "Panthers wide receiver Xavier Legette, sidelined since injuring his knee in a Week 2 blowout win over the Falcons, has been activated from injured reserve.",
-    "lastModified": "2026-11-14T19:06:19Z",
-    "published": "2026-11-14T19:06:19Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "12e4bbcb61fc8",
-      "id": 49529186,
-      "type": "header",
-      "name": "Xavier Legette [1296x729]",
-      "credit": "AP Photo/Scott Kinser",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0804/r1697539_1296x729_16-9.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 394065,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4430034",
-      "guid": "a286b774-0d65-9813-67aa-945ba3567e4e",
-      "description": "Xavier Legette",
-      "sportId": 28,
-      "athleteId": 4430034,
-      "athlete": {
-       "id": 4430034,
-       "description": "Xavier Legette",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4430034/xavier-legette"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4430034/xavier-legette"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2146,
-      "type": "team",
-      "uid": "s:20~l:28~t:29",
-      "guid": "647c27bf-ab86-550e-5b83-91c29e73e4a9",
-      "description": "Carolina Panthers",
-      "sportId": 28,
-      "teamId": 29,
-      "team": {
-       "id": 29,
-       "description": "Carolina Panthers",
-       "abbreviation": "CAR",
-       "shortDisplayName": "Panthers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/car/carolina-panthers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/car/carolina-panthers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     }
-    ],
-    "byline": "Mike Kaye",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50481450"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50481450"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50481450"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50481450/panthers-xavier-legette-week-2-activated-ir"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 40699880,
-    "nowId": "1-40699880",
-    "contentKey": "40699880-1-6-1",
-    "dataSourceIdentifier": "3b5ddc54255df",
-    "type": "Story",
-    "headline": "Fantasy buzz: Does Emmett Johnson have RB1 upside while Kenneth Walker III sits?",
-    "description": "Kansas City rookie Emmett Johnson is expected to be thrust into a starting role for Week 10 with Kenneth Walker III ruled out.",
-    "lastModified": "2026-11-14T18:56:52Z",
-    "published": "2026-11-14T18:56:52Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "ddccf9d427850",
-      "id": 50481177,
-      "type": "header",
-      "name": "Emmett Johnson [1296x729]",
-      "caption": "Emmett Johnson takes over as Kansas City's lead back with Kenneth Walker III sidelined on Sunday.",
-      "alt": "Emmett Johnson #10 of the Kansas City Chiefs runs with the ball in the fourth quarter of an NFL game between the New York Jets and Kansas City Chiefs on Nov 8, 2026 at Arrowhead Stadium in Kansas City, MO.",
-      "credit": "Scott Winters/Icon Sportswire",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1114/r1745753_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "b3232194f094a",
-      "id": 50471154,
-      "type": "header",
-      "name": "Isaiah Likely for Buzz (261113) [1296x729]",
-      "caption": "Isaiah Likely scored 27.7 fantasy points on Thursday night, his fourth game this season with at least 20 points and his fifth in which he was targeted at least 10 times.",
-      "alt": "New York Giants tight end Isaiah Likely (9) runs the ball toward the end zone for a touchdown during the second half of an NFL football game against the Washington Commanders in East Rutherford, N.J.",
-      "credit": "AP Photo/Seth Wenig",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1113/r1745227_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "6267ae46228a7",
-      "id": 50462392,
-      "type": "header",
-      "name": "Jonah Coleman [1296x729]",
-      "caption": "Broncos RB Jonah Coleman is a priority fantasy trade target as he has taken over the Broncos backfield.",
-      "alt": "Denver Broncos running back Jonah Coleman celebrates after scoring against the Carolina Panthers during the second half of an NFL football game in Charlotte, N.C., Sunday, Nov. 8, 2026.",
-      "credit": "AP Photo/Scott Kinser",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1112/r1744826_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "2620df8b9fd17",
-      "id": 50453003,
-      "type": "header",
-      "name": "Parker Washington [1296x729]",
-      "caption": "Parker Washington of the Jacksonville Jaguars caught this ball for a touchdown.",
-      "alt": "Jacksonville Jaguars wide receiver Parker Washington (11) catches a pass before running for a touchdown against the Baltimore Ravens during the first half of an NFL football game.",
-      "credit": "AP Photo/Stephanie Scarbrough",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1111/r1744429_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "21a7dab801297",
-      "id": 50446207,
-      "type": "header",
-      "name": "Malik Willis [1296x729]",
-      "caption": "Malik Willis of the Miami Dolphins will miss at least the next four weeks.",
-      "credit": "Carmen Mandato/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1110/r1744196_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "5a4adeabe2124",
-      "id": 50441484,
-      "type": "header",
-      "name": "James Cook III [576x324]",
-      "caption": "James Cook III got the ball 31 times on Monday night, which was enough volume to have a solid fantasy outing.",
-      "alt": "Buffalo Bills running back James Cook III (4) scores a touchdown at the end of a 5-yard run during the fourth quarter of a NFL game between the Minnesota Vikings and Buffalo Bills.",
-      "credit": "Nick Wosika/Icon Sportswire",
-      "height": 324,
-      "width": 576,
-      "url": "https://a.espncdn.com/photo/2026/1110/r1743919_576x324_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "8e69a82cad5b8",
-      "id": 50436078,
-      "type": "header",
-      "name": "Puka Nacua for Buzz injury (261109) [1296x729]",
-      "caption": "Puka Nacua was once again the focal point of the Rams passing attack on Sunday against the Commanders, catching 14 passes for 150 yards and a touchdown.  He was injured on a carry in the Rams' final offensive play of the game.",
-      "alt": "Puka Nacua #12 of the Los Angeles Rams runs the ball against the Washington Commanders during the fourth quarter at Northwest Stadium on November 08, 2026 in Landover, Maryland.",
-      "credit": "Patrick Smith/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1109/r1743744_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "a9149c6ec574f",
-      "id": 50435819,
-      "type": "header",
-      "name": "Michael Wilson for Buzz injury (261109) [1296x729]",
-      "caption": "Michael Wilson was the Cardinals' leading wide receiver through Week 9 with 51 catches, 546 yards and two touchdowns.  Trey McBride leads the team in all three of those categories.",
-      "alt": "Michael Wilson #14 of the Arizona Cardinals warms up before a game against the Seattle Seahawks at Lumen Field on November 08, 2026 in Seattle, Washington.",
-      "credit": "Olivia Vanni/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1109/r1743729_1296x729_16-9.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 141870,
-      "type": "topic",
-      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
-      "description": "news - fantasy",
-      "sportId": 0,
-      "topicId": 240
-     },
-     {
-      "id": 152381,
-      "type": "topic",
-      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
-      "description": "news - fantasy football",
-      "sportId": 0,
-      "topicId": 401
-     },
-     {
-      "id": 536855,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4832955",
-      "guid": "4cf4e789-4e24-35b7-be5f-cdb8e734da13",
-      "description": "Emmett Johnson",
-      "sportId": 28,
-      "athleteId": 4832955,
-      "athlete": {
-       "id": 4832955,
-       "description": "Emmett Johnson",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4832955/emmett-johnson"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4832955/emmett-johnson"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 529577,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4567048",
-      "guid": "c0a76b7f-7b5d-be73-5e81-258439651478",
-      "description": "Kenneth Walker III",
-      "sportId": 28,
-      "athleteId": 4567048,
-      "athlete": {
-       "id": 4567048,
-       "description": "Kenneth Walker III",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4567048/kenneth-walker-iii"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4567048/kenneth-walker-iii"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 489557,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4431431",
-      "guid": "9e203f94-bcd5-32ba-9f25-e982073036d7",
-      "description": "Corey Kiner",
-      "sportId": 28,
-      "athleteId": 4431431,
-      "athlete": {
-       "id": 4431431,
-       "description": "Corey Kiner",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4431431/corey-kiner"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4431431/corey-kiner"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 449562,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4696044",
-      "guid": "18da8955-6970-39eb-bc40-a716f476a1d3",
-      "description": "Kaelon Black",
-      "sportId": 28,
-      "athleteId": 4696044,
-      "athlete": {
-       "id": 4696044,
-       "description": "Kaelon Black",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4696044/kaelon-black"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4696044/kaelon-black"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/40699880"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=40699880"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=40699880"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/id/40699880/fantasy-football-injuries-position-battles-nfl-news-analysis"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 49797082,
-    "nowId": "1-49797082",
-    "contentKey": "49797082-1-6-1",
-    "dataSourceIdentifier": "a41e6ab4bbd28",
-    "type": "Story",
-    "headline": "Fantasy football rankings Week 10: PPR and superflex",
-    "description": "Weekly composite ranks for each position in PPR and IDP formats, as well as Eric Karabell's superflex ranks.",
-    "lastModified": "2026-11-14T18:19:14Z",
-    "published": "2026-11-14T18:19:14Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "a24fab4e36256",
-      "id": 50117894,
-      "type": "header",
-      "name": "Josh Allen [1296x729]",
-      "credit": "Carolyn Kaster/AP",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1004/r1725951_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "6be65b10eb61d",
-      "id": 50297256,
-      "type": "header",
-      "name": "Kenneth Walker III [1296x729]",
-      "alt": "Chiefs player in white jersey with red helmet and #9 pumping his arms while running with the ball",
-      "credit": "Chris Unger/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1006/r1727003_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "588e09fb3832c",
-      "id": 49817526,
-      "type": "header",
-      "name": "Justin Jefferson [1296x729]",
-      "alt": "Justin Jefferson, Minnesota Vikings wide receiver",
-      "credit": "Matt Krohn-Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711051_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "f2c2db0f9e992",
-      "id": 49942886,
-      "type": "header",
-      "name": "Jonathan Taylor [1296x729]",
-      "alt": "Jonathan Taylor, Indianapolis Colts running back",
-      "credit": "Andy Lyons/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0914/r1716699_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Why there's fantasy risk with Jordan Love vs. Vikings",
-      "caption": "Why there's fantasy risk with Jordan Love vs. Vikings",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1112/ss_20261112_110414292_3738106675/ss_20261112_110414292_3738106675.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 141870,
-      "type": "topic",
-      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
-      "description": "news - fantasy",
-      "sportId": 0,
-      "topicId": 240
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/49797082"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=49797082"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=49797082"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26main-49797082/fantasy-football-rankings-2026-qb-rb-wr-te-dst"
-     }
-    },
-    "premium": false
-   }
-  ]
- },
  "scoringPlays": [
   {
    "id": "401873037218",
@@ -26470,843 +25375,906 @@
    }
   }
  ],
- "winprobability": [
-  {
-   "homeWinPercentage": 0.1893,
-   "tiePercentage": 0.0,
-   "playId": "4018730371"
-  },
-  {
-   "homeWinPercentage": 0.1797,
-   "tiePercentage": 0.0,
-   "playId": "40187303741"
-  },
-  {
-   "homeWinPercentage": 0.1822,
-   "tiePercentage": 0.0,
-   "playId": "40187303769"
-  },
-  {
-   "homeWinPercentage": 0.1337,
-   "tiePercentage": 0.0,
-   "playId": "40187303794"
-  },
-  {
-   "homeWinPercentage": 0.1356,
-   "tiePercentage": 0.0,
-   "playId": "401873037119"
-  },
-  {
-   "homeWinPercentage": 0.1172,
-   "tiePercentage": 0.0,
-   "playId": "401873037141"
-  },
-  {
-   "homeWinPercentage": 0.1205,
-   "tiePercentage": 0.0,
-   "playId": "401873037171"
-  },
-  {
-   "homeWinPercentage": 0.1266,
-   "tiePercentage": 0.0,
-   "playId": "401873037196"
-  },
-  {
-   "homeWinPercentage": 0.1113,
-   "tiePercentage": 0.0,
-   "playId": "401873037218"
-  },
-  {
-   "homeWinPercentage": 0.1104,
-   "tiePercentage": 0.0,
-   "playId": "401873037249"
-  },
-  {
-   "homeWinPercentage": 0.1178,
-   "tiePercentage": 0.0,
-   "playId": "401873037256"
-  },
-  {
-   "homeWinPercentage": 0.121,
-   "tiePercentage": 0.0,
-   "playId": "401873037286"
-  },
-  {
-   "homeWinPercentage": 0.1274,
-   "tiePercentage": 0.0,
-   "playId": "401873037310"
-  },
-  {
-   "homeWinPercentage": 0.1409,
-   "tiePercentage": 0.0,
-   "playId": "401873037334"
-  },
-  {
-   "homeWinPercentage": 0.1377,
-   "tiePercentage": 0.0,
-   "playId": "401873037359"
-  },
-  {
-   "homeWinPercentage": 0.1411,
-   "tiePercentage": 0.0,
-   "playId": "401873037386"
-  },
-  {
-   "homeWinPercentage": 0.1266,
-   "tiePercentage": 0.0,
-   "playId": "401873037412"
-  },
-  {
-   "homeWinPercentage": 0.1165,
-   "tiePercentage": 0.0,
-   "playId": "401873037439"
-  },
-  {
-   "homeWinPercentage": 0.1372,
-   "tiePercentage": 0.0,
-   "playId": "401873037480"
-  },
-  {
-   "homeWinPercentage": 0.1372,
-   "tiePercentage": 0.0,
-   "playId": "401873037491"
-  },
-  {
-   "homeWinPercentage": 0.1291,
-   "tiePercentage": 0.0,
-   "playId": "401873037502"
-  },
-  {
-   "homeWinPercentage": 0.1181,
-   "tiePercentage": 0.0,
-   "playId": "401873037526"
-  },
-  {
-   "homeWinPercentage": 0.1184,
-   "tiePercentage": 0.0,
-   "playId": "401873037551"
-  },
-  {
-   "homeWinPercentage": 0.1241,
-   "tiePercentage": 0.0,
-   "playId": "401873037573"
-  },
-  {
-   "homeWinPercentage": 0.1482,
-   "tiePercentage": 0.0,
-   "playId": "401873037595"
-  },
-  {
-   "homeWinPercentage": 0.1123,
-   "tiePercentage": 0.0,
-   "playId": "401873037618"
-  },
-  {
-   "homeWinPercentage": 0.1101,
-   "tiePercentage": 0.0,
-   "playId": "401873037642"
-  },
-  {
-   "homeWinPercentage": 0.1005,
-   "tiePercentage": 0.0,
-   "playId": "401873037664"
-  },
-  {
-   "homeWinPercentage": 0.1112,
-   "tiePercentage": 0.0,
-   "playId": "401873037689"
-  },
-  {
-   "homeWinPercentage": 0.1107,
-   "tiePercentage": 0.0,
-   "playId": "401873037712"
-  },
-  {
-   "homeWinPercentage": 0.1249,
-   "tiePercentage": 0.0,
-   "playId": "401873037734"
-  },
-  {
-   "homeWinPercentage": 0.1174,
-   "tiePercentage": 0.0,
-   "playId": "401873037757"
-  },
-  {
-   "homeWinPercentage": 0.1174,
-   "tiePercentage": 0.0,
-   "playId": "401873037767"
-  },
-  {
-   "homeWinPercentage": 0.1107,
-   "tiePercentage": 0.0,
-   "playId": "401873037777"
-  },
-  {
-   "homeWinPercentage": 0.1119,
-   "tiePercentage": 0.0,
-   "playId": "401873037818"
-  },
-  {
-   "homeWinPercentage": 0.1174,
-   "tiePercentage": 0.0,
-   "playId": "401873037840"
-  },
-  {
-   "homeWinPercentage": 0.1172,
-   "tiePercentage": 0.0,
-   "playId": "401873037865"
-  },
-  {
-   "homeWinPercentage": 0.1176,
-   "tiePercentage": 0.0,
-   "playId": "401873037887"
-  },
-  {
-   "homeWinPercentage": 0.1118,
-   "tiePercentage": 0.0,
-   "playId": "401873037907"
-  },
-  {
-   "homeWinPercentage": 0.1256,
-   "tiePercentage": 0.0,
-   "playId": "401873037930"
-  },
-  {
-   "homeWinPercentage": 0.1232,
-   "tiePercentage": 0.0,
-   "playId": "401873037955"
-  },
-  {
-   "homeWinPercentage": 0.1297,
-   "tiePercentage": 0.0,
-   "playId": "401873037981"
-  },
-  {
-   "homeWinPercentage": 0.1358,
-   "tiePercentage": 0.0,
-   "playId": "4018730371003"
-  },
-  {
-   "homeWinPercentage": 0.1378,
-   "tiePercentage": 0.0,
-   "playId": "4018730371025"
-  },
-  {
-   "homeWinPercentage": 0.1266,
-   "tiePercentage": 0.0,
-   "playId": "4018730371051"
-  },
-  {
-   "homeWinPercentage": 0.1186,
-   "tiePercentage": 0.0,
-   "playId": "4018730371075"
-  },
-  {
-   "homeWinPercentage": 0.1234,
-   "tiePercentage": 0.0,
-   "playId": "4018730371099"
-  },
-  {
-   "homeWinPercentage": 0.1111,
-   "tiePercentage": 0.0,
-   "playId": "4018730371124"
-  },
-  {
-   "homeWinPercentage": 0.1214,
-   "tiePercentage": 0.0,
-   "playId": "4018730371145"
-  },
-  {
-   "homeWinPercentage": 0.1215,
-   "tiePercentage": 0.0,
-   "playId": "4018730371155"
-  },
-  {
-   "homeWinPercentage": 0.1395,
-   "tiePercentage": 0.0,
-   "playId": "4018730371165"
-  },
-  {
-   "homeWinPercentage": 0.1341,
-   "tiePercentage": 0.0,
-   "playId": "4018730371197"
-  },
-  {
-   "homeWinPercentage": 0.1132,
-   "tiePercentage": 0.0,
-   "playId": "4018730371219"
-  },
-  {
-   "homeWinPercentage": 0.1168,
-   "tiePercentage": 0.0,
-   "playId": "4018730371244"
-  },
-  {
-   "homeWinPercentage": 0.1225,
-   "tiePercentage": 0.0,
-   "playId": "4018730371266"
-  },
-  {
-   "homeWinPercentage": 0.1334,
-   "tiePercentage": 0.0,
-   "playId": "4018730371289"
-  },
-  {
-   "homeWinPercentage": 0.1225,
-   "tiePercentage": 0.0,
-   "playId": "4018730371312"
-  },
-  {
-   "homeWinPercentage": 0.1226,
-   "tiePercentage": 0.0,
-   "playId": "4018730371322"
-  },
-  {
-   "homeWinPercentage": 0.1184,
-   "tiePercentage": 0.0,
-   "playId": "4018730371332"
-  },
-  {
-   "homeWinPercentage": 0.1293,
-   "tiePercentage": 0.0,
-   "playId": "4018730371361"
-  },
-  {
-   "homeWinPercentage": 0.1087,
-   "tiePercentage": 0.0,
-   "playId": "4018730371385"
-  },
-  {
-   "homeWinPercentage": 0.109,
-   "tiePercentage": 0.0,
-   "playId": "4018730371397"
-  },
-  {
-   "homeWinPercentage": 0.1325,
-   "tiePercentage": 0.0,
-   "playId": "4018730371409"
-  },
-  {
-   "homeWinPercentage": 0.1241,
-   "tiePercentage": 0.0,
-   "playId": "4018730371440"
-  },
-  {
-   "homeWinPercentage": 0.1227,
-   "tiePercentage": 0.0,
-   "playId": "4018730371463"
-  },
-  {
-   "homeWinPercentage": 0.1413,
-   "tiePercentage": 0.0,
-   "playId": "4018730371488"
-  },
-  {
-   "homeWinPercentage": 0.1316,
-   "tiePercentage": 0.0,
-   "playId": "4018730371522"
-  },
-  {
-   "homeWinPercentage": 0.1279,
-   "tiePercentage": 0.0,
-   "playId": "4018730371549"
-  },
-  {
-   "homeWinPercentage": 0.1155,
-   "tiePercentage": 0.0,
-   "playId": "4018730371571"
-  },
-  {
-   "homeWinPercentage": 0.1169,
-   "tiePercentage": 0.0,
-   "playId": "4018730371594"
-  },
-  {
-   "homeWinPercentage": 0.1059,
-   "tiePercentage": 0.0,
-   "playId": "4018730371612"
-  },
-  {
-   "homeWinPercentage": 0.106,
-   "tiePercentage": 0.0,
-   "playId": "4018730371628"
-  },
-  {
-   "homeWinPercentage": 0.1192,
-   "tiePercentage": 0.0,
-   "playId": "4018730371643"
-  },
-  {
-   "homeWinPercentage": 0.0991,
-   "tiePercentage": 0.0,
-   "playId": "4018730371674"
-  },
-  {
-   "homeWinPercentage": 0.1042,
-   "tiePercentage": 0.0,
-   "playId": "4018730371699"
-  },
-  {
-   "homeWinPercentage": 0.0483,
-   "tiePercentage": 0.0,
-   "playId": "4018730371721"
-  },
-  {
-   "homeWinPercentage": 0.0428,
-   "tiePercentage": 0.0,
-   "playId": "4018730371755"
-  },
-  {
-   "homeWinPercentage": 0.0512,
-   "tiePercentage": 0.0,
-   "playId": "4018730371762"
-  },
-  {
-   "homeWinPercentage": 0.0504,
-   "tiePercentage": 0.0,
-   "playId": "4018730371792"
-  },
-  {
-   "homeWinPercentage": 0.0531,
-   "tiePercentage": 0.0,
-   "playId": "4018730371822"
-  },
-  {
-   "homeWinPercentage": 0.0462,
-   "tiePercentage": 0.0,
-   "playId": "4018730371847"
-  },
-  {
-   "homeWinPercentage": 0.0437,
-   "tiePercentage": 0.0,
-   "playId": "4018730371871"
-  },
-  {
-   "homeWinPercentage": 0.0438,
-   "tiePercentage": 0.0,
-   "playId": "4018730371883"
-  },
-  {
-   "homeWinPercentage": 0.0457,
-   "tiePercentage": 0.0,
-   "playId": "4018730371895"
-  },
-  {
-   "homeWinPercentage": 0.0469,
-   "tiePercentage": 0.0,
-   "playId": "4018730371922"
-  },
-  {
-   "homeWinPercentage": 0.0445,
-   "tiePercentage": 0.0,
-   "playId": "4018730371944"
-  },
-  {
-   "homeWinPercentage": 0.0538,
-   "tiePercentage": 0.0,
-   "playId": "4018730371964"
-  },
-  {
-   "homeWinPercentage": 0.0461,
-   "tiePercentage": 0.0,
-   "playId": "4018730371987"
-  },
-  {
-   "homeWinPercentage": 0.0417,
-   "tiePercentage": 0.0,
-   "playId": "4018730372013"
-  },
-  {
-   "homeWinPercentage": 0.0397,
-   "tiePercentage": 0.0,
-   "playId": "4018730372037"
-  },
-  {
-   "homeWinPercentage": 0.0269,
-   "tiePercentage": 0.0,
-   "playId": "4018730372060"
-  },
-  {
-   "homeWinPercentage": 0.0305,
-   "tiePercentage": 0.0,
-   "playId": "4018730372087"
-  },
-  {
-   "homeWinPercentage": 0.0331,
-   "tiePercentage": 0.0,
-   "playId": "4018730372110"
-  },
-  {
-   "homeWinPercentage": 0.0339,
-   "tiePercentage": 0.0,
-   "playId": "4018730372121"
-  },
-  {
-   "homeWinPercentage": 0.0366,
-   "tiePercentage": 0.0,
-   "playId": "4018730372132"
-  },
-  {
-   "homeWinPercentage": 0.0298,
-   "tiePercentage": 0.0,
-   "playId": "4018730372162"
-  },
-  {
-   "homeWinPercentage": 0.0298,
-   "tiePercentage": 0.0,
-   "playId": "4018730372172"
-  },
-  {
-   "homeWinPercentage": 0.032,
-   "tiePercentage": 0.0,
-   "playId": "4018730372182"
-  },
-  {
-   "homeWinPercentage": 0.0285,
-   "tiePercentage": 0.0,
-   "playId": "4018730372217"
-  },
-  {
-   "homeWinPercentage": 0.0222,
-   "tiePercentage": 0.0,
-   "playId": "4018730372239"
-  },
-  {
-   "homeWinPercentage": 0.0224,
-   "tiePercentage": 0.0,
-   "playId": "4018730372277"
-  },
-  {
-   "homeWinPercentage": 0.0236,
-   "tiePercentage": 0.0,
-   "playId": "4018730372302"
-  },
-  {
-   "homeWinPercentage": 0.024,
-   "tiePercentage": 0.0,
-   "playId": "4018730372327"
-  },
-  {
-   "homeWinPercentage": 0.0239,
-   "tiePercentage": 0.0,
-   "playId": "4018730372337"
-  },
-  {
-   "homeWinPercentage": 0.0262,
-   "tiePercentage": 0.0,
-   "playId": "4018730372347"
-  },
-  {
-   "homeWinPercentage": 0.028,
-   "tiePercentage": 0.0,
-   "playId": "4018730372379"
-  },
-  {
-   "homeWinPercentage": 0.029,
-   "tiePercentage": 0.0,
-   "playId": "4018730372403"
-  },
-  {
-   "homeWinPercentage": 0.0292,
-   "tiePercentage": 0.0,
-   "playId": "4018730372425"
-  },
-  {
-   "homeWinPercentage": 0.0272,
-   "tiePercentage": 0.0,
-   "playId": "4018730372450"
-  },
-  {
-   "homeWinPercentage": 0.0271,
-   "tiePercentage": 0.0,
-   "playId": "4018730372463"
-  },
-  {
-   "homeWinPercentage": 0.0253,
-   "tiePercentage": 0.0,
-   "playId": "4018730372476"
-  },
-  {
-   "homeWinPercentage": 0.0215,
-   "tiePercentage": 0.0,
-   "playId": "4018730372509"
-  },
-  {
-   "homeWinPercentage": 0.0182,
-   "tiePercentage": 0.0,
-   "playId": "4018730372531"
-  },
-  {
-   "homeWinPercentage": 0.0152,
-   "tiePercentage": 0.0,
-   "playId": "4018730372554"
-  },
-  {
-   "homeWinPercentage": 0.015,
-   "tiePercentage": 0.0,
-   "playId": "4018730372567"
-  },
-  {
-   "homeWinPercentage": 0.013,
-   "tiePercentage": 0.0,
-   "playId": "4018730372580"
-  },
-  {
-   "homeWinPercentage": 0.0284,
-   "tiePercentage": 0.0,
-   "playId": "4018730372612"
-  },
-  {
-   "homeWinPercentage": 0.0312,
-   "tiePercentage": 0.0,
-   "playId": "4018730372653"
-  },
-  {
-   "homeWinPercentage": 0.0272,
-   "tiePercentage": 0.0,
-   "playId": "4018730372677"
-  },
-  {
-   "homeWinPercentage": 0.0191,
-   "tiePercentage": 0.0,
-   "playId": "4018730372713"
-  },
-  {
-   "homeWinPercentage": 0.0122,
-   "tiePercentage": 0.0,
-   "playId": "4018730372735"
-  },
-  {
-   "homeWinPercentage": 0.0121,
-   "tiePercentage": 0.0,
-   "playId": "4018730372749"
-  },
-  {
-   "homeWinPercentage": 0.0123,
-   "tiePercentage": 0.0,
-   "playId": "4018730372763"
-  },
-  {
-   "homeWinPercentage": 0.013,
-   "tiePercentage": 0.0,
-   "playId": "4018730372792"
-  },
-  {
-   "homeWinPercentage": 0.0091,
-   "tiePercentage": 0.0,
-   "playId": "4018730372814"
-  },
-  {
-   "homeWinPercentage": 0.0084,
-   "tiePercentage": 0.0,
-   "playId": "4018730372839"
-  },
-  {
-   "homeWinPercentage": 0.0079,
-   "tiePercentage": 0.0,
-   "playId": "4018730372864"
-  },
-  {
-   "homeWinPercentage": 0.0076,
-   "tiePercentage": 0.0,
-   "playId": "4018730372891"
-  },
-  {
-   "homeWinPercentage": 0.0075,
-   "tiePercentage": 0.0,
-   "playId": "4018730372920"
-  },
-  {
-   "homeWinPercentage": 0.0097,
-   "tiePercentage": 0.0,
-   "playId": "4018730372946"
-  },
-  {
-   "homeWinPercentage": 0.0061,
-   "tiePercentage": 0.0,
-   "playId": "4018730372968"
-  },
-  {
-   "homeWinPercentage": 0.0061,
-   "tiePercentage": 0.0,
-   "playId": "4018730372978"
-  },
-  {
-   "homeWinPercentage": 0.0066,
-   "tiePercentage": 0.0,
-   "playId": "4018730372988"
-  },
-  {
-   "homeWinPercentage": 0.0013,
-   "tiePercentage": 0.0,
-   "playId": "4018730373018"
-  },
-  {
-   "homeWinPercentage": 0.0011,
-   "tiePercentage": 0.0,
-   "playId": "4018730373045"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373070"
-  },
-  {
-   "homeWinPercentage": 0.0011,
-   "tiePercentage": 0.0,
-   "playId": "4018730373092"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373120"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373130"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373140"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373170"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373236"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373259"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373284"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373306"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373328"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373350"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373372"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373438"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373473"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373490"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373530"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373553"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373575"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373597"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373619"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373638"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373660"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373682"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373712"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373734"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373756"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373767"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373778"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373807"
-  },
-  {
-   "homeWinPercentage": 0.001,
-   "tiePercentage": 0.0,
-   "playId": "4018730373829"
-  },
-  {
-   "homeWinPercentage": 0.0,
-   "tiePercentage": 0.0,
-   "playId": "4018730373851"
-  }
- ],
+ "news": {
+  "header": "NFL News",
+  "link": {
+   "language": "en",
+   "rel": [
+    "index",
+    "desktop",
+    "league"
+   ],
+   "href": "https://www.espn.com/nfl/",
+   "text": "All NFL News",
+   "shortText": "All News",
+   "isExternal": false,
+   "isPremium": false
+  },
+  "articles": [
+   {
+    "id": 50433086,
+    "nowId": "1-50433086",
+    "contentKey": "50433086-1-6-1",
+    "dataSourceIdentifier": "b016ce0f5ff1f",
+    "type": "Story",
+    "headline": "Fantasy playbook: Week 10 Shadow Reports, lineup locks and projected scores",
+    "description": "An all-encompassing look at the matchups to exploit or avoid and lineup locks in fantasy, as well as projected scores for all NFL games.",
+    "lastModified": "2026-11-15T00:49:57Z",
+    "published": "2026-11-15T00:49:57Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "6037f1b893610",
+      "id": 50461064,
+      "type": "header",
+      "name": "DK Metcalf [576x324]",
+      "caption": "DK Metcalf has had trouble finding his fantasy footing this season.",
+      "alt": "Cleveland Browns cornerback Denzel Ward (right) intercepts a pass intended for Pittsburgh Steelers wide receiver DK Metcalf (4).",
+      "credit": "Charles LeClaire-Imagn Images",
+      "height": 324,
+      "width": 576,
+      "url": "https://a.espncdn.com/photo/2026/1112/r1744753_576x324_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "ccae17e2cdb59",
+      "id": 50460807,
+      "type": "header",
+      "name": "Jayden Daniels [576x324]",
+      "caption": "Can Jayden Daniels recapture the magic he had in the first meeting between the Commanders and Giants?",
+      "alt": "Washington Commanders quarterback Jayden Daniels (5) runs with the ball against the New York Giants during the first half of an NFL football game, Sunday, Sept. 7, 2025, in Landover, Md.",
+      "credit": "AP",
+      "height": 324,
+      "width": 576,
+      "url": "https://a.espncdn.com/photo/2026/1112/r1744740_576x324_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Should managers start Geno Smith over Jordan Love? Dopp and Clay debate",
+      "caption": "Should managers start Geno Smith over Jordan Love? Dopp and Clay debate",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1111/ss_20261111_105241846_3736696/ss_20261111_105241846_3736696.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 152381,
+      "type": "topic",
+      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
+      "description": "news - fantasy football",
+      "sportId": 0,
+      "topicId": 401
+     },
+     {
+      "id": 141870,
+      "type": "topic",
+      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
+      "description": "news - fantasy",
+      "sportId": 0,
+      "topicId": 240
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409228,
+      "type": "topic",
+      "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d",
+      "description": "fantasy",
+      "sportId": 0,
+      "topicId": 785
+     },
+     {
+      "id": 696414,
+      "type": "contributor",
+      "guid": "a9526b3a-e70d-366c-8a8d-d84a4864a455",
+      "description": "Mike Clay",
+      "slug": "mike-clay",
+      "contributor": {
+       "id": 2377,
+       "description": "Mike Clay"
+      }
+     }
+    ],
+    "byline": "Mike Clay",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50433086"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50433086"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=50433086"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/id/50433086/fantasy-playbook-projections-lineup-locks-week-10-shadow"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50472215,
+    "nowId": "1-50472215",
+    "contentKey": "50472215-1-6-1",
+    "dataSourceIdentifier": "a6a613d649c9d",
+    "type": "Story",
+    "headline": "DraftKings DFS cheat sheet: Best values for Sunday's main slate",
+    "description": "Build a winning DFS lineup with our DraftKings NFL Week 10 cheat sheet identifying the best stacks and values",
+    "lastModified": "2026-11-15T00:40:19Z",
+    "published": "2026-11-15T00:40:19Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "d43e3994ad2eb",
+      "id": 50480790,
+      "type": "header",
+      "name": "Josh Allen [1296x729]",
+      "caption": "Josh Allen is one of the top options this week as the Bills play the Jets.",
+      "alt": "Josh Allen #17 of the Buffalo Bills celebrates after a touchdown against the Baltimore Ravens during an NFL football game at Highmark Stadium on November 1, 2026 in Orchard Park, New York.",
+      "credit": "Michael Owens/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1114/r1745710_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Daniel Dopp's Week 10 DraftKings tournament lineup",
+      "caption": "Daniel Dopp's Week 10 DraftKings tournament lineup",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1113/dm_261113_dfs_dopp/dm_261113_dfs_dopp.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 141870,
+      "type": "topic",
+      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
+      "description": "news - fantasy",
+      "sportId": 0,
+      "topicId": 240
+     },
+     {
+      "id": 152381,
+      "type": "topic",
+      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
+      "description": "news - fantasy football",
+      "sportId": 0,
+      "topicId": 401
+     },
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 137817,
+      "type": "topic",
+      "guid": "14f579db-79ec-a898-9405-8fec63e16063",
+      "description": "news \u2013 sports betting",
+      "sportId": 0,
+      "topicId": 179
+     },
+     {
+      "id": 696414,
+      "type": "contributor",
+      "guid": "a9526b3a-e70d-366c-8a8d-d84a4864a455",
+      "description": "Mike Clay",
+      "slug": "mike-clay",
+      "contributor": {
+       "id": 2377,
+       "description": "Mike Clay"
+      }
+     }
+    ],
+    "byline": "Mike Clay",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50472215"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50472215"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=50472215"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/id/50472215/draftkings-nfl-dfs-values-week-10"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50483551,
+    "nowId": "1-50483551",
+    "contentKey": "50483551-1-5-1",
+    "dataSourceIdentifier": "9f26507f1dc56",
+    "type": "HeadlineNews",
+    "headline": "Saints RB Travis Etienne Jr. activated off IR for game vs. Panthers",
+    "description": "The New Orleans Saints activated running back Travis Etienne Jr. off injured reserve prior to their game against the Carolina Panthers, the team announced Saturday.",
+    "lastModified": "2026-11-14T22:13:44Z",
+    "published": "2026-11-14T22:13:44Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "b2737d2c495cd",
+      "id": 50079169,
+      "type": "header",
+      "name": "Travis Etienne [600x400]",
+      "credit": "AP Photo/Ella Hall",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1001/r1724629_600x400_3-2.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2035,
+      "type": "team",
+      "uid": "s:20~l:28~t:18",
+      "guid": "97d2f6c9-2f22-459c-306a-046941ccab2a",
+      "description": "New Orleans Saints",
+      "sportId": 28,
+      "teamId": 18,
+      "team": {
+       "id": 18,
+       "description": "New Orleans Saints",
+       "abbreviation": "NO",
+       "shortDisplayName": "Saints",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696390,
+      "type": "contributor",
+      "guid": "20a90658-548b-3df5-9b3f-d35801f93fd1",
+      "description": "Katherine Terrell",
+      "slug": "katherine-terrell",
+      "contributor": {
+       "id": 2725,
+       "description": "Katherine Terrell"
+      }
+     }
+    ],
+    "byline": "Katherine Terrell",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50483551"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50483551"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50483551"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50483551/saints-rb-travis-etienne-activated-ir-game-vs-panthers"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50483113,
+    "nowId": "1-50483113",
+    "contentKey": "50483113-1-5-1",
+    "dataSourceIdentifier": "a678e9be8243c",
+    "type": "HeadlineNews",
+    "headline": "Patriots place RB TreVeyon Henderson on IR with still unexplained illness",
+    "description": "The Patriots placed RB TreVeyon Henderson on injured reserve while he deals with an unexplained neurological issue.",
+    "lastModified": "2026-11-15T00:55:25Z",
+    "published": "2026-11-15T00:55:25Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "8e0075ccb05f8",
+      "id": 49990655,
+      "type": "header",
+      "name": "Treveyon Henderson [600x400]",
+      "alt": "Treveyon Henderson",
+      "credit": "Maddie Meyer/Getty Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/0920/r1719562_600x400_3-2.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     },
+     {
+      "id": 492605,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4432710",
+      "guid": "714eed1f-95d7-3242-83da-3b34074b4424",
+      "description": "TreVeyon Henderson",
+      "sportId": 28,
+      "athleteId": 4432710,
+      "athlete": {
+       "id": 4432710,
+       "description": "TreVeyon Henderson",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4432710/treveyon-henderson"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4432710/treveyon-henderson"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2321,
+      "type": "team",
+      "uid": "s:20~l:28~t:17",
+      "guid": "0078f353-fe3e-67ed-a42c-43cca0568e21",
+      "description": "New England Patriots",
+      "sportId": 28,
+      "teamId": 17,
+      "team": {
+       "id": 17,
+       "description": "New England Patriots",
+       "abbreviation": "NE",
+       "shortDisplayName": "Patriots",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696440,
+      "type": "contributor",
+      "guid": "bdee10fe-a1a2-3ced-87dd-43089bf47931",
+      "description": "Mike Reiss",
+      "slug": "mike-reiss",
+      "contributor": {
+       "id": 1800,
+       "description": "Mike Reiss"
+      }
+     }
+    ],
+    "byline": "Mike Reiss",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50483113"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50483113"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50483113"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50483113/patriots-place-rb-henderson-ir-unexplained-illness"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50482239,
+    "nowId": "1-50482239",
+    "contentKey": "50482239-1-5-1",
+    "dataSourceIdentifier": "6555bd56ab9ae",
+    "type": "HeadlineNews",
+    "headline": "Steelers activate DT Derrick Harmon from IR ahead of key Bengals clash",
+    "description": "The Steelers have activated defensive tackle Derrick Harmon from injured reserve after he missed the past four games with a foot injury.",
+    "lastModified": "2026-11-14T20:41:30Z",
+    "published": "2026-11-14T20:41:30Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "584e062e67b41",
+      "id": 46044199,
+      "type": "header",
+      "name": "Harmon [1296x729]",
+      "credit": "Mark Alberti/Icon Sportswire",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2025/0822/r1534997_1296x729_16-9.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2776,
+      "type": "team",
+      "uid": "s:20~l:28~t:23",
+      "guid": "debcd592-8d53-71f1-fc15-5c8b8ef9df6e",
+      "description": "Pittsburgh Steelers",
+      "sportId": 28,
+      "teamId": 23,
+      "team": {
+       "id": 23,
+       "description": "Pittsburgh Steelers",
+       "abbreviation": "PIT",
+       "shortDisplayName": "Steelers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 492694,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4682980",
+      "guid": "dda3e155-2461-3379-8a26-0218bf5962c7",
+      "description": "Derrick Harmon",
+      "sportId": 28,
+      "athleteId": 4682980,
+      "athlete": {
+       "id": 4682980,
+       "description": "Derrick Harmon",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4682980/derrick-harmon"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4682980/derrick-harmon"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     }
+    ],
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50482239"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50482239"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50482239"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50482239/steelers-activate-dt-derrick-harmon-injured-reserve"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50481864,
+    "nowId": "1-50481864",
+    "contentKey": "50481864-1-5-1",
+    "dataSourceIdentifier": "4b31baa2f1148",
+    "type": "HeadlineNews",
+    "headline": "DE Danielle Hunter, LB Azeez Al-Shaair among Texans ruled out vs. Browns",
+    "description": "The Texans will be without a number of key starters -- including running back David Montgomery and All-Pro defensive end Danielle Hunter -- when they travel to face the Browns.",
+    "lastModified": "2026-11-14T20:05:23Z",
+    "published": "2026-11-14T20:05:23Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "4f4c1b18a754f",
+      "id": 29202037,
+      "type": "header",
+      "name": "Texans logo [1296x729]",
+      "credit": "Kirby Lee-USA TODAY Sports",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2020/0520/r700769_1296x729_16-9.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 3053,
+      "type": "team",
+      "uid": "s:20~l:28~t:34",
+      "guid": "595690b3-2161-4913-a7a7-814af2fd2621",
+      "description": "Houston Texans",
+      "sportId": 28,
+      "teamId": 34,
+      "team": {
+       "id": 34,
+       "description": "Houston Texans",
+       "abbreviation": "HOU",
+       "shortDisplayName": "Texans",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 381308,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3919117",
+      "guid": "3ce75e87-2c6d-5a79-e349-2caa21b3cb07",
+      "description": "Azeez Al-Shaair",
+      "sportId": 28,
+      "athleteId": 3919117,
+      "athlete": {
+       "id": 3919117,
+       "description": "Azeez Al-Shaair",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3919117/azeez-al-shaair"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3919117/azeez-al-shaair"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 138823,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:2976560",
+      "guid": "258aad67-a3d9-14d7-ae74-1eafcb1069dc",
+      "description": "Danielle Hunter",
+      "sportId": 28,
+      "athleteId": 2976560,
+      "athlete": {
+       "id": 2976560,
+       "description": "Danielle Hunter",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/2976560/danielle-hunter"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/2976560/danielle-hunter"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 380054,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4035538",
+      "guid": "c9be5cd2-4e6a-86b1-3c08-ab4e44e6b3bf",
+      "description": "David Montgomery",
+      "sportId": 28,
+      "athleteId": 4035538,
+      "athlete": {
+       "id": 4035538,
+       "description": "David Montgomery",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4035538/david-montgomery"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4035538/david-montgomery"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 538298,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4839498",
+      "guid": "df74356b-f443-31c6-aa14-edca38ac9cbc",
+      "description": "Keylan Rutledge",
+      "sportId": 28,
+      "athleteId": 4839498,
+      "athlete": {
+       "id": 4839498,
+       "description": "Keylan Rutledge",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4839498/keylan-rutledge"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4839498/keylan-rutledge"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 499124,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4432708",
+      "guid": "7a24e799-fc0e-395e-b740-4ecee71a3c53",
+      "description": "Marvin Harrison Jr",
+      "sportId": 28,
+      "athleteId": 4432708,
+      "athlete": {
+       "id": 4432708,
+       "description": "Marvin Harrison Jr",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4432708/marvin-harrison-jr"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4432708/marvin-harrison-jr"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     },
+     {
+      "id": 698737,
+      "type": "contributor",
+      "guid": "ff38a289-37df-35fc-b04d-1b75c41e73d9",
+      "description": "DJ Bien-Aime",
+      "slug": "dj-bien-aime",
+      "contributor": {
+       "id": 3921,
+       "description": "DJ Bien-Aime"
+      }
+     }
+    ],
+    "byline": "DJ Bien-Aime",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50481864"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50481864"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50481864"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50481864/rb-montgomery-de-hunter-texans-ruled-vs-browns"
+     }
+    },
+    "premium": false
+   }
+  ]
+ },
  "header": {
   "id": "401873037",
   "uid": "s:20~l:28~e:401873037",
@@ -28299,6 +27267,843 @@
  },
  "videos": [],
  "wallclockAvailable": true,
+ "winprobability": [
+  {
+   "homeWinPercentage": 0.1893,
+   "tiePercentage": 0.0,
+   "playId": "4018730371"
+  },
+  {
+   "homeWinPercentage": 0.1797,
+   "tiePercentage": 0.0,
+   "playId": "40187303741"
+  },
+  {
+   "homeWinPercentage": 0.1822,
+   "tiePercentage": 0.0,
+   "playId": "40187303769"
+  },
+  {
+   "homeWinPercentage": 0.1337,
+   "tiePercentage": 0.0,
+   "playId": "40187303794"
+  },
+  {
+   "homeWinPercentage": 0.1356,
+   "tiePercentage": 0.0,
+   "playId": "401873037119"
+  },
+  {
+   "homeWinPercentage": 0.1172,
+   "tiePercentage": 0.0,
+   "playId": "401873037141"
+  },
+  {
+   "homeWinPercentage": 0.1205,
+   "tiePercentage": 0.0,
+   "playId": "401873037171"
+  },
+  {
+   "homeWinPercentage": 0.1266,
+   "tiePercentage": 0.0,
+   "playId": "401873037196"
+  },
+  {
+   "homeWinPercentage": 0.1113,
+   "tiePercentage": 0.0,
+   "playId": "401873037218"
+  },
+  {
+   "homeWinPercentage": 0.1104,
+   "tiePercentage": 0.0,
+   "playId": "401873037249"
+  },
+  {
+   "homeWinPercentage": 0.1178,
+   "tiePercentage": 0.0,
+   "playId": "401873037256"
+  },
+  {
+   "homeWinPercentage": 0.121,
+   "tiePercentage": 0.0,
+   "playId": "401873037286"
+  },
+  {
+   "homeWinPercentage": 0.1274,
+   "tiePercentage": 0.0,
+   "playId": "401873037310"
+  },
+  {
+   "homeWinPercentage": 0.1409,
+   "tiePercentage": 0.0,
+   "playId": "401873037334"
+  },
+  {
+   "homeWinPercentage": 0.1377,
+   "tiePercentage": 0.0,
+   "playId": "401873037359"
+  },
+  {
+   "homeWinPercentage": 0.1411,
+   "tiePercentage": 0.0,
+   "playId": "401873037386"
+  },
+  {
+   "homeWinPercentage": 0.1266,
+   "tiePercentage": 0.0,
+   "playId": "401873037412"
+  },
+  {
+   "homeWinPercentage": 0.1165,
+   "tiePercentage": 0.0,
+   "playId": "401873037439"
+  },
+  {
+   "homeWinPercentage": 0.1372,
+   "tiePercentage": 0.0,
+   "playId": "401873037480"
+  },
+  {
+   "homeWinPercentage": 0.1372,
+   "tiePercentage": 0.0,
+   "playId": "401873037491"
+  },
+  {
+   "homeWinPercentage": 0.1291,
+   "tiePercentage": 0.0,
+   "playId": "401873037502"
+  },
+  {
+   "homeWinPercentage": 0.1181,
+   "tiePercentage": 0.0,
+   "playId": "401873037526"
+  },
+  {
+   "homeWinPercentage": 0.1184,
+   "tiePercentage": 0.0,
+   "playId": "401873037551"
+  },
+  {
+   "homeWinPercentage": 0.1241,
+   "tiePercentage": 0.0,
+   "playId": "401873037573"
+  },
+  {
+   "homeWinPercentage": 0.1482,
+   "tiePercentage": 0.0,
+   "playId": "401873037595"
+  },
+  {
+   "homeWinPercentage": 0.1123,
+   "tiePercentage": 0.0,
+   "playId": "401873037618"
+  },
+  {
+   "homeWinPercentage": 0.1101,
+   "tiePercentage": 0.0,
+   "playId": "401873037642"
+  },
+  {
+   "homeWinPercentage": 0.1005,
+   "tiePercentage": 0.0,
+   "playId": "401873037664"
+  },
+  {
+   "homeWinPercentage": 0.1112,
+   "tiePercentage": 0.0,
+   "playId": "401873037689"
+  },
+  {
+   "homeWinPercentage": 0.1107,
+   "tiePercentage": 0.0,
+   "playId": "401873037712"
+  },
+  {
+   "homeWinPercentage": 0.1249,
+   "tiePercentage": 0.0,
+   "playId": "401873037734"
+  },
+  {
+   "homeWinPercentage": 0.1174,
+   "tiePercentage": 0.0,
+   "playId": "401873037757"
+  },
+  {
+   "homeWinPercentage": 0.1174,
+   "tiePercentage": 0.0,
+   "playId": "401873037767"
+  },
+  {
+   "homeWinPercentage": 0.1107,
+   "tiePercentage": 0.0,
+   "playId": "401873037777"
+  },
+  {
+   "homeWinPercentage": 0.1119,
+   "tiePercentage": 0.0,
+   "playId": "401873037818"
+  },
+  {
+   "homeWinPercentage": 0.1174,
+   "tiePercentage": 0.0,
+   "playId": "401873037840"
+  },
+  {
+   "homeWinPercentage": 0.1172,
+   "tiePercentage": 0.0,
+   "playId": "401873037865"
+  },
+  {
+   "homeWinPercentage": 0.1176,
+   "tiePercentage": 0.0,
+   "playId": "401873037887"
+  },
+  {
+   "homeWinPercentage": 0.1118,
+   "tiePercentage": 0.0,
+   "playId": "401873037907"
+  },
+  {
+   "homeWinPercentage": 0.1256,
+   "tiePercentage": 0.0,
+   "playId": "401873037930"
+  },
+  {
+   "homeWinPercentage": 0.1232,
+   "tiePercentage": 0.0,
+   "playId": "401873037955"
+  },
+  {
+   "homeWinPercentage": 0.1297,
+   "tiePercentage": 0.0,
+   "playId": "401873037981"
+  },
+  {
+   "homeWinPercentage": 0.1358,
+   "tiePercentage": 0.0,
+   "playId": "4018730371003"
+  },
+  {
+   "homeWinPercentage": 0.1378,
+   "tiePercentage": 0.0,
+   "playId": "4018730371025"
+  },
+  {
+   "homeWinPercentage": 0.1266,
+   "tiePercentage": 0.0,
+   "playId": "4018730371051"
+  },
+  {
+   "homeWinPercentage": 0.1186,
+   "tiePercentage": 0.0,
+   "playId": "4018730371075"
+  },
+  {
+   "homeWinPercentage": 0.1234,
+   "tiePercentage": 0.0,
+   "playId": "4018730371099"
+  },
+  {
+   "homeWinPercentage": 0.1111,
+   "tiePercentage": 0.0,
+   "playId": "4018730371124"
+  },
+  {
+   "homeWinPercentage": 0.1214,
+   "tiePercentage": 0.0,
+   "playId": "4018730371145"
+  },
+  {
+   "homeWinPercentage": 0.1215,
+   "tiePercentage": 0.0,
+   "playId": "4018730371155"
+  },
+  {
+   "homeWinPercentage": 0.1395,
+   "tiePercentage": 0.0,
+   "playId": "4018730371165"
+  },
+  {
+   "homeWinPercentage": 0.1341,
+   "tiePercentage": 0.0,
+   "playId": "4018730371197"
+  },
+  {
+   "homeWinPercentage": 0.1132,
+   "tiePercentage": 0.0,
+   "playId": "4018730371219"
+  },
+  {
+   "homeWinPercentage": 0.1168,
+   "tiePercentage": 0.0,
+   "playId": "4018730371244"
+  },
+  {
+   "homeWinPercentage": 0.1225,
+   "tiePercentage": 0.0,
+   "playId": "4018730371266"
+  },
+  {
+   "homeWinPercentage": 0.1334,
+   "tiePercentage": 0.0,
+   "playId": "4018730371289"
+  },
+  {
+   "homeWinPercentage": 0.1225,
+   "tiePercentage": 0.0,
+   "playId": "4018730371312"
+  },
+  {
+   "homeWinPercentage": 0.1226,
+   "tiePercentage": 0.0,
+   "playId": "4018730371322"
+  },
+  {
+   "homeWinPercentage": 0.1184,
+   "tiePercentage": 0.0,
+   "playId": "4018730371332"
+  },
+  {
+   "homeWinPercentage": 0.1293,
+   "tiePercentage": 0.0,
+   "playId": "4018730371361"
+  },
+  {
+   "homeWinPercentage": 0.1087,
+   "tiePercentage": 0.0,
+   "playId": "4018730371385"
+  },
+  {
+   "homeWinPercentage": 0.109,
+   "tiePercentage": 0.0,
+   "playId": "4018730371397"
+  },
+  {
+   "homeWinPercentage": 0.1325,
+   "tiePercentage": 0.0,
+   "playId": "4018730371409"
+  },
+  {
+   "homeWinPercentage": 0.1241,
+   "tiePercentage": 0.0,
+   "playId": "4018730371440"
+  },
+  {
+   "homeWinPercentage": 0.1227,
+   "tiePercentage": 0.0,
+   "playId": "4018730371463"
+  },
+  {
+   "homeWinPercentage": 0.1413,
+   "tiePercentage": 0.0,
+   "playId": "4018730371488"
+  },
+  {
+   "homeWinPercentage": 0.1316,
+   "tiePercentage": 0.0,
+   "playId": "4018730371522"
+  },
+  {
+   "homeWinPercentage": 0.1279,
+   "tiePercentage": 0.0,
+   "playId": "4018730371549"
+  },
+  {
+   "homeWinPercentage": 0.1155,
+   "tiePercentage": 0.0,
+   "playId": "4018730371571"
+  },
+  {
+   "homeWinPercentage": 0.1169,
+   "tiePercentage": 0.0,
+   "playId": "4018730371594"
+  },
+  {
+   "homeWinPercentage": 0.1059,
+   "tiePercentage": 0.0,
+   "playId": "4018730371612"
+  },
+  {
+   "homeWinPercentage": 0.106,
+   "tiePercentage": 0.0,
+   "playId": "4018730371628"
+  },
+  {
+   "homeWinPercentage": 0.1192,
+   "tiePercentage": 0.0,
+   "playId": "4018730371643"
+  },
+  {
+   "homeWinPercentage": 0.0991,
+   "tiePercentage": 0.0,
+   "playId": "4018730371674"
+  },
+  {
+   "homeWinPercentage": 0.1042,
+   "tiePercentage": 0.0,
+   "playId": "4018730371699"
+  },
+  {
+   "homeWinPercentage": 0.0483,
+   "tiePercentage": 0.0,
+   "playId": "4018730371721"
+  },
+  {
+   "homeWinPercentage": 0.0428,
+   "tiePercentage": 0.0,
+   "playId": "4018730371755"
+  },
+  {
+   "homeWinPercentage": 0.0512,
+   "tiePercentage": 0.0,
+   "playId": "4018730371762"
+  },
+  {
+   "homeWinPercentage": 0.0504,
+   "tiePercentage": 0.0,
+   "playId": "4018730371792"
+  },
+  {
+   "homeWinPercentage": 0.0531,
+   "tiePercentage": 0.0,
+   "playId": "4018730371822"
+  },
+  {
+   "homeWinPercentage": 0.0462,
+   "tiePercentage": 0.0,
+   "playId": "4018730371847"
+  },
+  {
+   "homeWinPercentage": 0.0437,
+   "tiePercentage": 0.0,
+   "playId": "4018730371871"
+  },
+  {
+   "homeWinPercentage": 0.0438,
+   "tiePercentage": 0.0,
+   "playId": "4018730371883"
+  },
+  {
+   "homeWinPercentage": 0.0457,
+   "tiePercentage": 0.0,
+   "playId": "4018730371895"
+  },
+  {
+   "homeWinPercentage": 0.0469,
+   "tiePercentage": 0.0,
+   "playId": "4018730371922"
+  },
+  {
+   "homeWinPercentage": 0.0445,
+   "tiePercentage": 0.0,
+   "playId": "4018730371944"
+  },
+  {
+   "homeWinPercentage": 0.0538,
+   "tiePercentage": 0.0,
+   "playId": "4018730371964"
+  },
+  {
+   "homeWinPercentage": 0.0461,
+   "tiePercentage": 0.0,
+   "playId": "4018730371987"
+  },
+  {
+   "homeWinPercentage": 0.0417,
+   "tiePercentage": 0.0,
+   "playId": "4018730372013"
+  },
+  {
+   "homeWinPercentage": 0.0397,
+   "tiePercentage": 0.0,
+   "playId": "4018730372037"
+  },
+  {
+   "homeWinPercentage": 0.0269,
+   "tiePercentage": 0.0,
+   "playId": "4018730372060"
+  },
+  {
+   "homeWinPercentage": 0.0305,
+   "tiePercentage": 0.0,
+   "playId": "4018730372087"
+  },
+  {
+   "homeWinPercentage": 0.0331,
+   "tiePercentage": 0.0,
+   "playId": "4018730372110"
+  },
+  {
+   "homeWinPercentage": 0.0339,
+   "tiePercentage": 0.0,
+   "playId": "4018730372121"
+  },
+  {
+   "homeWinPercentage": 0.0366,
+   "tiePercentage": 0.0,
+   "playId": "4018730372132"
+  },
+  {
+   "homeWinPercentage": 0.0298,
+   "tiePercentage": 0.0,
+   "playId": "4018730372162"
+  },
+  {
+   "homeWinPercentage": 0.0298,
+   "tiePercentage": 0.0,
+   "playId": "4018730372172"
+  },
+  {
+   "homeWinPercentage": 0.032,
+   "tiePercentage": 0.0,
+   "playId": "4018730372182"
+  },
+  {
+   "homeWinPercentage": 0.0285,
+   "tiePercentage": 0.0,
+   "playId": "4018730372217"
+  },
+  {
+   "homeWinPercentage": 0.0222,
+   "tiePercentage": 0.0,
+   "playId": "4018730372239"
+  },
+  {
+   "homeWinPercentage": 0.0224,
+   "tiePercentage": 0.0,
+   "playId": "4018730372277"
+  },
+  {
+   "homeWinPercentage": 0.0236,
+   "tiePercentage": 0.0,
+   "playId": "4018730372302"
+  },
+  {
+   "homeWinPercentage": 0.024,
+   "tiePercentage": 0.0,
+   "playId": "4018730372327"
+  },
+  {
+   "homeWinPercentage": 0.0239,
+   "tiePercentage": 0.0,
+   "playId": "4018730372337"
+  },
+  {
+   "homeWinPercentage": 0.0262,
+   "tiePercentage": 0.0,
+   "playId": "4018730372347"
+  },
+  {
+   "homeWinPercentage": 0.028,
+   "tiePercentage": 0.0,
+   "playId": "4018730372379"
+  },
+  {
+   "homeWinPercentage": 0.029,
+   "tiePercentage": 0.0,
+   "playId": "4018730372403"
+  },
+  {
+   "homeWinPercentage": 0.0292,
+   "tiePercentage": 0.0,
+   "playId": "4018730372425"
+  },
+  {
+   "homeWinPercentage": 0.0272,
+   "tiePercentage": 0.0,
+   "playId": "4018730372450"
+  },
+  {
+   "homeWinPercentage": 0.0271,
+   "tiePercentage": 0.0,
+   "playId": "4018730372463"
+  },
+  {
+   "homeWinPercentage": 0.0253,
+   "tiePercentage": 0.0,
+   "playId": "4018730372476"
+  },
+  {
+   "homeWinPercentage": 0.0215,
+   "tiePercentage": 0.0,
+   "playId": "4018730372509"
+  },
+  {
+   "homeWinPercentage": 0.0182,
+   "tiePercentage": 0.0,
+   "playId": "4018730372531"
+  },
+  {
+   "homeWinPercentage": 0.0152,
+   "tiePercentage": 0.0,
+   "playId": "4018730372554"
+  },
+  {
+   "homeWinPercentage": 0.015,
+   "tiePercentage": 0.0,
+   "playId": "4018730372567"
+  },
+  {
+   "homeWinPercentage": 0.013,
+   "tiePercentage": 0.0,
+   "playId": "4018730372580"
+  },
+  {
+   "homeWinPercentage": 0.0284,
+   "tiePercentage": 0.0,
+   "playId": "4018730372612"
+  },
+  {
+   "homeWinPercentage": 0.0312,
+   "tiePercentage": 0.0,
+   "playId": "4018730372653"
+  },
+  {
+   "homeWinPercentage": 0.0272,
+   "tiePercentage": 0.0,
+   "playId": "4018730372677"
+  },
+  {
+   "homeWinPercentage": 0.0191,
+   "tiePercentage": 0.0,
+   "playId": "4018730372713"
+  },
+  {
+   "homeWinPercentage": 0.0122,
+   "tiePercentage": 0.0,
+   "playId": "4018730372735"
+  },
+  {
+   "homeWinPercentage": 0.0121,
+   "tiePercentage": 0.0,
+   "playId": "4018730372749"
+  },
+  {
+   "homeWinPercentage": 0.0123,
+   "tiePercentage": 0.0,
+   "playId": "4018730372763"
+  },
+  {
+   "homeWinPercentage": 0.013,
+   "tiePercentage": 0.0,
+   "playId": "4018730372792"
+  },
+  {
+   "homeWinPercentage": 0.0091,
+   "tiePercentage": 0.0,
+   "playId": "4018730372814"
+  },
+  {
+   "homeWinPercentage": 0.0084,
+   "tiePercentage": 0.0,
+   "playId": "4018730372839"
+  },
+  {
+   "homeWinPercentage": 0.0079,
+   "tiePercentage": 0.0,
+   "playId": "4018730372864"
+  },
+  {
+   "homeWinPercentage": 0.0076,
+   "tiePercentage": 0.0,
+   "playId": "4018730372891"
+  },
+  {
+   "homeWinPercentage": 0.0075,
+   "tiePercentage": 0.0,
+   "playId": "4018730372920"
+  },
+  {
+   "homeWinPercentage": 0.0097,
+   "tiePercentage": 0.0,
+   "playId": "4018730372946"
+  },
+  {
+   "homeWinPercentage": 0.0061,
+   "tiePercentage": 0.0,
+   "playId": "4018730372968"
+  },
+  {
+   "homeWinPercentage": 0.0061,
+   "tiePercentage": 0.0,
+   "playId": "4018730372978"
+  },
+  {
+   "homeWinPercentage": 0.0066,
+   "tiePercentage": 0.0,
+   "playId": "4018730372988"
+  },
+  {
+   "homeWinPercentage": 0.0013,
+   "tiePercentage": 0.0,
+   "playId": "4018730373018"
+  },
+  {
+   "homeWinPercentage": 0.0011,
+   "tiePercentage": 0.0,
+   "playId": "4018730373045"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373070"
+  },
+  {
+   "homeWinPercentage": 0.0011,
+   "tiePercentage": 0.0,
+   "playId": "4018730373092"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373120"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373130"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373140"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373170"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373236"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373259"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373284"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373306"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373328"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373350"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373372"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373438"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373473"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373490"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373530"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373553"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373575"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373597"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373619"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373638"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373660"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373682"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373712"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373734"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373756"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373767"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373778"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373807"
+  },
+  {
+   "homeWinPercentage": 0.001,
+   "tiePercentage": 0.0,
+   "playId": "4018730373829"
+  },
+  {
+   "homeWinPercentage": 0.0,
+   "tiePercentage": 0.0,
+   "playId": "4018730373851"
+  }
+ ],
  "meta": {
   "gp_topic": "gp-football-nfl-401873037",
   "gameSwitcherEnabled": true,
