@@ -125,8 +125,9 @@ CREDIT_RESERVE = 10        # never spend the last few credits of the month
 # The free Odds API key is shared with the Mingus football site. Each month this many credits are left for it
 # (spread over the month, so the share for the days still to come is always held back). 0 in the NFL off-season;
 # override with the repo variable ODDS_OTHER_SPORTS_CREDITS.
-# 140 = what football actually used (about 30 a week, Nov 2026; Josh, Nov 11). Raise it if football adds markets.
-OTHER_SPORTS_CREDITS = int(os.environ.get("ODDS_OTHER_SPORTS_CREDITS") or 140)
+# 0 since Nov 15, 2026 (Josh): the Odds API is basketball's alone; NFL picks use ESPN's free DraftKings lines without
+# prices. Football's pulls, if any are still scheduled, still come out of `remaining` automatically.
+OTHER_SPORTS_CREDITS = int(os.environ.get("ODDS_OTHER_SPORTS_CREDITS") or 0)
 # The pre-tip "closing" pull: points only, for games tipping within this many minutes. Off since Nov 11, 2026: it
 # spent a second credit on every game's points (about a third of basketball's credits) and those credits now buy
 # more stats in the morning pull. Old -close.json files still feed line movement and CLV for those days.
