@@ -35,8 +35,9 @@ Picks (DATE = today, the midday task):
    short email saying the picks didn't lock yet, with the status line. A later picks task re-checks in the afternoon.
 
 Late picks (DATE = today, the afternoon task): if `DATE.json` exists and its `lockedAt` is after 1:30 PM ET (the
-midday task had given up), send its email (or `DATE-check.json`'s if that exists) exactly as written. Otherwise send
-nothing: the midday task already sent the picks, or there are none. Never poll.
+midday task had given up), send its email (or `DATE-check.json`'s if that exists) exactly as written, including a
+"no plays" email when `.picks` is empty, so the midday "didn't lock yet" email always gets an answer. Skip it if
+today's picks email was already sent. Otherwise send nothing: the midday task already sent the picks. Never poll.
 
 Heads-up (DATE = today, the late-afternoon task): send `DATE-check.json`'s email exactly as written if it exists
 (injury news or a line moved against a pick after the morning lock). Otherwise send nothing. Never poll.
