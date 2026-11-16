@@ -284,6 +284,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "1",
       "uid": "s:20~l:28~t:1",
@@ -348,9 +350,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png"
     },
     {
      "id": "401872997",
@@ -551,6 +551,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "2",
       "uid": "s:20~l:28~t:2",
@@ -615,9 +617,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png"
     },
     {
      "id": "401873037",
@@ -640,6 +640,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "30",
       "uid": "s:20~l:28~t:30",
@@ -704,9 +706,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"
     }
    ]
   },
@@ -887,6 +887,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "7",
       "uid": "s:20~l:28~t:7",
@@ -951,9 +953,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png"
     },
     {
      "id": "401873006",
@@ -2700,7 +2700,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "Draft Kings",
+    "name": "DraftKings",
     "priority": 1,
     "logos": [
      {
@@ -2751,7 +2751,7 @@
       "home",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_1",
      "text": "Home Bet",
@@ -2775,7 +2775,7 @@
       "away",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_3",
      "text": "Away Bet",
@@ -2915,7 +2915,7 @@
         "home",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_1",
        "text": "Home Bet",
@@ -2947,7 +2947,7 @@
         "away",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_3",
        "text": "Away Bet",
@@ -3279,6 +3279,17 @@
    "records": []
   }
  ],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "33",
+   "gameProjection": "43.5"
+  },
+  "awayTeam": {
+   "id": "24",
+   "gameProjection": "56.1"
+  }
+ },
  "winprobability": [],
  "news": {
   "header": "NFL News",
@@ -5355,15 +5366,72 @@
    }
   ]
  },
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "33",
-   "gameProjection": "43.5"
-  },
-  "awayTeam": {
-   "id": "24",
-   "gameProjection": "56.1"
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Ravens Tickets",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets--sports-nfl-football/performer/60?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/16 vs Chargers 5074 tickets left",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/22 @ Panthers 2028 tickets left",
+    "ticketLink": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-6-2026/production/6488723?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/29 @ Texans 4014 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 vs Buccaneers 6713 tickets left",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-6-2026/production/6487492?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 @ Steelers 2818 tickets left",
+    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-1-2027/production/6495077?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/27 vs Browns 6835 tickets left",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-2-2026/production/6487385?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/31 @ Bengals 4203 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-1-2026/production/6488960?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Steelers 7883 tickets left",
+    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-3-2026/production/6487388?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Chargers",
+   "currentTeamName": "Ravens",
+   "venueName": "M&T Bank Stadium",
+   "summary": "Tickets as low as $44",
+   "date": "2026-11-17T01:15Z",
+   "dateDay": "Mon",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717",
+   "venueLink": "https://www.vividseats.com/mt-bank-stadium-tickets/venue/1371?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/baltimore-ravens-tickets--sports-nfl-football/performer/60?wsUser=717",
+   "timeValid": true
   }
  },
  "header": {
@@ -6597,74 +6665,6 @@
   "premium": false
  },
  "wallclockAvailable": false,
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Ravens Tickets",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets--sports-nfl-football/performer/60?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/16 vs Chargers 5134 tickets left",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/22 @ Panthers 2046 tickets left",
-    "ticketLink": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-6-2026/production/6488723?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/29 @ Texans 4006 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 vs Buccaneers 6713 tickets left",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-6-2026/production/6487492?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 @ Steelers 2818 tickets left",
-    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-1-2027/production/6495077?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/27 vs Browns 6835 tickets left",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-2-2026/production/6487385?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/31 @ Bengals 4203 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-1-2026/production/6488960?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Steelers 7883 tickets left",
-    "ticketLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-3-2026/production/6487388?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Chargers",
-   "currentTeamName": "Ravens",
-   "venueName": "M&T Bank Stadium",
-   "summary": "Tickets as low as $44",
-   "date": "2026-11-17T01:15Z",
-   "dateDay": "Mon",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/baltimore-ravens-tickets-baltimore-mt-bank-stadium-3-8-2026/production/6487949?wsUser=717",
-   "venueLink": "https://www.vividseats.com/mt-bank-stadium-tickets/venue/1371?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/baltimore-ravens-tickets--sports-nfl-football/performer/60?wsUser=717",
-   "timeValid": true
-  }
- },
  "meta": {
   "gp_topic": "gp-football-nfl-401873065",
   "gameSwitcherEnabled": true,
@@ -6968,7 +6968,7 @@
           "full",
           "default"
          ],
-         "lastUpdated": "2024-09-22T22:51Z"
+         "lastUpdated": "2020-02-25T17:01Z"
         },
         {
          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lv.png",
