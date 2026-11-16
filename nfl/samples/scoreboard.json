@@ -543,7 +543,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/cin.png"
        },
-       "score": "17",
+       "score": "24",
        "linescores": [
         {
          "value": 3.0,
@@ -551,9 +551,14 @@
          "period": 1
         },
         {
-         "value": 14.0,
-         "displayValue": "14",
+         "value": 21.0,
+         "displayValue": "21",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -695,6 +700,11 @@
          "value": 3.0,
          "displayValue": "3",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -724,93 +734,75 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730642037",
+       "id": "4018730642499",
        "type": {
-        "id": "3",
-        "text": "Pass Incompletion"
+        "id": "74",
+        "text": "Official Timeout",
+        "abbreviation": "Off TO"
        },
-       "text": " (No Huddle, Shotgun) J.Burrow pass incomplete short left to T.Higgins.",
+       "text": "Official Timeout at 10:46.",
        "scoreValue": 0,
        "team": {
         "id": "4"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.9376,
-        "awayWinPercentage": 0.06240000000000001,
+        "homeWinPercentage": 0.9852,
+        "awayWinPercentage": 0.014800000000000035,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "2 plays, 5 yards, 0:30",
+        "description": "7 plays, -4 yards, 4:14",
         "start": {
-         "yardLine": 43,
-         "text": "CIN 43"
+         "yardLine": 67,
+         "text": "PIT 33"
+        },
+        "end": {
+         "yardLine": 71,
+         "text": "PIT 29"
         },
         "timeElapsed": {
-         "displayValue": "0:30"
-        }
+         "displayValue": "4:14"
+        },
+        "result": "PUNT"
        },
        "start": {
-        "yardLine": 48,
+        "yardLine": 22,
         "team": {
          "id": "4"
         }
        },
        "end": {
-        "yardLine": 48,
+        "yardLine": 22,
         "team": {
          "id": "4"
         }
-       },
-       "athletesInvolved": [
-        {
-         "id": "4239993",
-         "fullName": "Tee Higgins",
-         "displayName": "Tee Higgins",
-         "shortName": "T. Higgins",
-         "links": [
-          {
-           "rel": [
-            "playercard",
-            "desktop",
-            "athlete"
-           ],
-           "href": "https://www.espn.com/nfl/player/_/id/4239993/tee-higgins"
-          }
-         ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239993.png",
-         "jersey": "5",
-         "position": "WR",
-         "team": {
-          "id": "4"
-         }
-        }
-       ]
+       }
       },
-      "down": 3,
-      "yardLine": 48,
-      "distance": 5,
-      "downDistanceText": "3rd & 5 at CIN 48",
-      "shortDownDistanceText": "3rd & 5",
-      "possessionText": "CIN 48",
+      "down": 1,
+      "yardLine": 22,
+      "distance": 10,
+      "downDistanceText": "1st & 10 at CIN 22",
+      "shortDownDistanceText": "1st & 10",
+      "possessionText": "CIN 22",
       "isRedZone": false,
-      "homeTimeouts": 0,
-      "awayTimeouts": 2,
+      "homeTimeouts": 3,
+      "awayTimeouts": 3,
       "possession": "4"
      },
      "status": {
-      "clock": 55.0,
-      "displayClock": "0:55",
-      "period": 2,
+      "clock": 646.0,
+      "displayClock": "10:46",
+      "period": 3,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "0:55 - 2nd Quarter",
-       "shortDetail": "0:55 - 2nd"
+       "detail": "10:46 - 3rd Quarter",
+       "shortDetail": "10:46 - 3rd"
       },
       "isTBDFlex": false
      },
@@ -830,8 +822,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "22/28, 250 YDS, 2 TD",
-         "value": 250.0,
+         "displayValue": "26/34, 302 YDS, 3 TD",
+         "value": 302.0,
          "athlete": {
           "id": "3915511",
           "fullName": "Joe Burrow",
@@ -910,8 +902,8 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "6 REC, 135 YDS",
-         "value": 135.0,
+         "displayValue": "7 REC, 146 YDS",
+         "value": 146.0,
          "athlete": {
           "id": "4362628",
           "fullName": "Ja'Marr Chase",
@@ -1016,10 +1008,10 @@
     }
    ],
    "weather": {
-    "displayValue": "38",
-    "temperature": 43,
-    "highTemperature": 43,
-    "conditionId": "Mostly cloudy",
+    "displayValue": "34",
+    "temperature": 38,
+    "highTemperature": 38,
+    "conditionId": "Mostly clear",
     "link": {
      "language": "en-US",
      "rel": [
@@ -1033,17 +1025,17 @@
     }
    },
    "status": {
-    "clock": 55.0,
-    "displayClock": "0:55",
-    "period": 2,
+    "clock": 646.0,
+    "displayClock": "10:46",
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "0:55 - 2nd Quarter",
-     "shortDetail": "0:55 - 2nd"
+     "detail": "10:46 - 3rd Quarter",
+     "shortDetail": "10:46 - 3rd"
     }
    }
   },
@@ -1569,116 +1561,6 @@
        "region": "us"
       }
      ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Amon-Ra St. Brown wore lederhosen, carried a German flag onto the field, and then went out and scored two touchdowns.",
-       "shortLinkText": "St. Brown and Gibbs score 2 TDs each in Lions' 35-10 rout of Patriots after Maye injured in Munich",
-       "video": [
-        {
-         "id": 50491455,
-         "source": "espn",
-         "headline": "New England Patriots vs. Detroit Lions: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.jpg",
-         "duration": 65,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261115_NFL_new_england_patriots_vs_detroit_lions_game_highlights",
-          "trackingName": "NFL_One-Play (New England Patriots vs. Detroit Lions: Game Highlights) 2026/11/15 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/78335017-0db6-4ad0-b169-86728991cf62"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50491455"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/78335017-0db6-4ad0-b169-86728991cf62/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50491455/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50491455"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/78335017-0db6-4ad0-b169-86728991cf62/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50491455/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/78335017-0db6-4ad0-b169-86728991cf62/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50491455/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/78335017-0db6-4ad0-b169-86728991cf62/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50491455&videoDSI=7858dc54e6e94"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50491455/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50491455/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=7858dc54e6e94"
-            }
-           }
-          }
-         }
-        }
-       ]
-      }
-     ],
      "highlights": [
       {
        "id": 50491455,
@@ -1793,6 +1675,116 @@
         "trackingName": "NFL_One-Play (New England Patriots vs. Detroit Lions: Game Highlights) 2026/11/15 ESHEET"
        }
       }
+     ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Amon-Ra St. Brown wore lederhosen, carried a German flag onto the field, and then went out and scored two touchdowns.",
+       "shortLinkText": "St. Brown and Gibbs score 2 TDs each in Lions' 35-10 rout of Patriots after Maye injured in Munich",
+       "video": [
+        {
+         "id": 50491455,
+         "source": "espn",
+         "headline": "New England Patriots vs. Detroit Lions: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.jpg",
+         "duration": 65,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261115_NFL_new_england_patriots_vs_detroit_lions_game_highlights",
+          "trackingName": "NFL_One-Play (New England Patriots vs. Detroit Lions: Game Highlights) 2026/11/15 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/78335017-0db6-4ad0-b169-86728991cf62"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50491455"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/78335017-0db6-4ad0-b169-86728991cf62/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50491455/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50491455"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/78335017-0db6-4ad0-b169-86728991cf62/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50491455/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/78335017-0db6-4ad0-b169-86728991cf62/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50491455/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/78335017-0db6-4ad0-b169-86728991cf62/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/4724cf8f-e040-448b-a175-ddfa35499b9a/4724cf8f-e040-448b-a175-ddfa35499b9a.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50491455&videoDSI=7858dc54e6e94"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50491455/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50491455/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=7858dc54e6e94"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
      ]
     }
    ],
@@ -1905,7 +1897,7 @@
      "neutralSite": false,
      "conferenceCompetition": false,
      "playByPlayAvailable": true,
-     "recent": true,
+     "recent": false,
      "venue": {
       "id": "5348",
       "fullName": "Mercedes-Benz Stadium",
@@ -7351,6 +7343,116 @@
        "region": "us"
       }
      ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Josh Allen and the Buffalo Bills are off to the franchise's best start in 35 years.",
+       "shortLinkText": "Josh Allen powers Bills past Jets 31-12 for best start in 35 years. New York loses Geno Smith twice",
+       "video": [
+        {
+         "id": 50493724,
+         "source": "espn",
+         "headline": "Bills make easy work of Jets",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.jpg",
+         "duration": 62,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261115_NFL_bills_make_easy_work_of_jets",
+          "trackingName": "COM_NFL Highlight (Bills make easy work of Jets) 2026/11/15 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/8e552223-5cc0-4888-a793-c94544784cb1"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50493724"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50493724"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/8e552223-5cc0-4888-a793-c94544784cb1/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50493724&videoDSI=491eba3fbcd9d"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=491eba3fbcd9d"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
      "highlights": [
       {
        "id": 50493724,
@@ -7464,116 +7566,6 @@
         "trackingId": "dm_20261115_NFL_bills_make_easy_work_of_jets",
         "trackingName": "COM_NFL Highlight (Bills make easy work of Jets) 2026/11/15 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Josh Allen and the Buffalo Bills are off to the franchise's best start in 35 years.",
-       "shortLinkText": "Josh Allen powers Bills past Jets 31-12 for best start in 35 years. New York loses Geno Smith twice",
-       "video": [
-        {
-         "id": 50493724,
-         "source": "espn",
-         "headline": "Bills make easy work of Jets",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.jpg",
-         "duration": 62,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261115_NFL_bills_make_easy_work_of_jets",
-          "trackingName": "COM_NFL Highlight (Bills make easy work of Jets) 2026/11/15 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/8e552223-5cc0-4888-a793-c94544784cb1"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50493724"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50493724"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/8e552223-5cc0-4888-a793-c94544784cb1/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50493724&videoDSI=491eba3fbcd9d"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=491eba3fbcd9d"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
@@ -10655,14 +10647,14 @@
        "region": "us"
       }
      ],
+     "highlights": [],
      "headlines": [
       {
        "type": "Recap",
        "description": "\u2014 Even after Jayden Daniels threw two interceptions and it looked like the Washington Commanders were hurtling toward a painful loss at the New York Giants, teammates remembered what it was like when the franchise quarterback burst onto the scene in...",
        "shortLinkText": "Jayden Daniels and Commanders rally to stun the Giants 24-21 and keep their hopes alive"
       }
-     ],
-     "highlights": []
+     ]
     }
    ],
    "links": [
@@ -11470,7 +11462,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -11486,7 +11478,7 @@
           ]
          }
         ],
-        "displayName": "Draft Kings"
+        "displayName": "DraftKings"
        },
        "details": "BAL -4.5",
        "overUnder": 38.5,
@@ -11529,7 +11521,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_1",
            "text": "Home Bet",
@@ -11561,7 +11553,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_3",
            "text": "Away Bet",
@@ -11819,7 +11811,7 @@
  ],
  "provider": {
   "id": "100",
-  "name": "Draft Kings",
+  "name": "DraftKings",
   "priority": 1,
   "logos": [
    {
@@ -11835,6 +11827,6 @@
     ]
    }
   ],
-  "displayName": "Draft Kings"
+  "displayName": "DraftKings"
  }
 }
