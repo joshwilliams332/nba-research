@@ -724,57 +724,52 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730641108",
+       "id": "4018730641595",
        "type": {
-        "id": "52",
-        "text": "Punt",
-        "abbreviation": "PUNT"
+        "id": "24",
+        "text": "Pass Reception",
+        "abbreviation": "REC"
        },
-       "text": "C.Johnston punts 54 yards to CIN 31, Center-C.Kuntz. D.Meyers to CIN 29 for -2 yards (C.Bruener; P.Wilson).PENALTY on CIN-R.Yeast, Offensive Holding, 10 yards, enforced at CIN 31.",
+       "text": " (Shotgun) J.Burrow pass short right to T.Higgins to PIT 2 for 14 yards (P.Queen).",
        "scoreValue": 0,
        "team": {
         "id": "4"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.8782,
-        "awayWinPercentage": 0.12180000000000002,
+        "homeWinPercentage": 0.9343,
+        "awayWinPercentage": 0.06569999999999998,
         "secondsLeft": 0
        },
-       "statYardage": -10,
+       "statYardage": 14,
        "drive": {
-        "description": "3 plays, -5 yards, 1:38",
+        "description": "3 plays, 78 yards, 1:18",
         "start": {
-         "yardLine": 80,
-         "text": "PIT 20"
-        },
-        "end": {
-         "yardLine": 85,
-         "text": "PIT 15"
+         "yardLine": 20,
+         "text": "CIN 20"
         },
         "timeElapsed": {
-         "displayValue": "1:38"
-        },
-        "result": "PUNT"
+         "displayValue": "1:18"
+        }
        },
        "start": {
-        "yardLine": 85,
+        "yardLine": 84,
         "team": {
-         "id": "23"
+         "id": "4"
         }
        },
        "end": {
-        "yardLine": 21,
+        "yardLine": 98,
         "team": {
          "id": "4"
         }
        },
        "athletesInvolved": [
         {
-         "id": "4361652",
-         "fullName": "Payton Wilson",
-         "displayName": "Payton Wilson",
-         "shortName": "P. Wilson",
+         "id": "4239993",
+         "fullName": "Tee Higgins",
+         "displayName": "Tee Higgins",
+         "shortName": "T. Higgins",
          "links": [
           {
            "rel": [
@@ -782,32 +777,32 @@
             "desktop",
             "athlete"
            ],
-           "href": "https://www.espn.com/nfl/player/_/id/4361652/payton-wilson"
+           "href": "https://www.espn.com/nfl/player/_/id/4239993/tee-higgins"
           }
          ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361652.png",
-         "jersey": "41",
-         "position": "LB",
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239993.png",
+         "jersey": "5",
+         "position": "WR",
          "team": {
-          "id": "23"
+          "id": "4"
          }
         }
        ]
       },
       "down": 1,
-      "yardLine": 21,
-      "distance": 10,
-      "downDistanceText": "1st & 10 at CIN 21",
-      "shortDownDistanceText": "1st & 10",
-      "possessionText": "CIN 21",
-      "isRedZone": false,
+      "yardLine": 98,
+      "distance": 2,
+      "downDistanceText": "1st & Goal at PIT 2",
+      "shortDownDistanceText": "1st & Goal",
+      "possessionText": "PIT 2",
+      "isRedZone": true,
       "homeTimeouts": 2,
       "awayTimeouts": 3,
       "possession": "4"
      },
      "status": {
-      "clock": 789.0,
-      "displayClock": "13:09",
+      "clock": 424.0,
+      "displayClock": "7:04",
       "period": 2,
       "type": {
        "id": "2",
@@ -815,8 +810,8 @@
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "13:09 - 2nd Quarter",
-       "shortDetail": "13:09 - 2nd"
+       "detail": "7:04 - 2nd Quarter",
+       "shortDetail": "7:04 - 2nd"
       },
       "isTBDFlex": false
      },
@@ -836,8 +831,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "15/18, 125 YDS, 1 TD",
-         "value": 125.0,
+         "displayValue": "20/25, 244 YDS, 1 TD",
+         "value": 244.0,
          "athlete": {
           "id": "3915511",
           "fullName": "Joe Burrow",
@@ -876,8 +871,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "3 CAR, 12 YDS",
-         "value": 12.0,
+         "displayValue": "4 CAR, 23 YDS",
+         "value": 23.0,
          "athlete": {
           "id": "4362238",
           "fullName": "Chase Brown",
@@ -916,8 +911,8 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "4 REC, 47 YDS",
-         "value": 47.0,
+         "displayValue": "6 REC, 135 YDS",
+         "value": 135.0,
          "athlete": {
           "id": "4362628",
           "fullName": "Ja'Marr Chase",
@@ -1023,8 +1018,8 @@
    ],
    "weather": {
     "displayValue": "34",
-    "temperature": 44,
-    "highTemperature": 44,
+    "temperature": 41,
+    "highTemperature": 41,
     "conditionId": "Mostly clear",
     "link": {
      "language": "en-US",
@@ -1039,8 +1034,8 @@
     }
    },
    "status": {
-    "clock": 789.0,
-    "displayClock": "13:09",
+    "clock": 424.0,
+    "displayClock": "7:04",
     "period": 2,
     "type": {
      "id": "2",
@@ -1048,8 +1043,8 @@
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "13:09 - 2nd Quarter",
-     "shortDetail": "13:09 - 2nd"
+     "detail": "7:04 - 2nd Quarter",
+     "shortDetail": "7:04 - 2nd"
     }
    }
   },
@@ -2401,6 +2396,116 @@
        "region": "us"
       }
      ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Some new names had the Kansas City Chiefs looking very young \u2014 and very strong.",
+       "shortLinkText": "Mahomes throws 5 TD passes and rookie Johnson runs for 101 yards as Chiefs overwhelm Falcons 35-13",
+       "video": [
+        {
+         "id": 50493995,
+         "source": "espn",
+         "headline": "Kansas City Chiefs vs. Atlanta Falcons: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.jpg",
+         "duration": 78,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261115_NFL_kansas_city_chiefs_vs_atlanta_falcons_game_highlights",
+          "trackingName": "NFL_One-Play (Kansas City Chiefs vs. Atlanta Falcons: Game Highlights) 2026/11/15 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50493995"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493995/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50493995"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493995/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493995/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50493995&videoDSI=ed019f7192994"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50493995/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50493995/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=ed019f7192994"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
      "highlights": [
       {
        "id": 50493995,
@@ -2514,116 +2619,6 @@
         "trackingId": "dm_20261115_NFL_kansas_city_chiefs_vs_atlanta_falcons_game_highlights",
         "trackingName": "NFL_One-Play (Kansas City Chiefs vs. Atlanta Falcons: Game Highlights) 2026/11/15 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Some new names had the Kansas City Chiefs looking very young \u2014 and very strong.",
-       "shortLinkText": "Mahomes throws 5 TD passes and rookie Johnson runs for 101 yards as Chiefs overwhelm Falcons 35-13",
-       "video": [
-        {
-         "id": 50493995,
-         "source": "espn",
-         "headline": "Kansas City Chiefs vs. Atlanta Falcons: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.jpg",
-         "duration": 78,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261115_NFL_kansas_city_chiefs_vs_atlanta_falcons_game_highlights",
-          "trackingName": "NFL_One-Play (Kansas City Chiefs vs. Atlanta Falcons: Game Highlights) 2026/11/15 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50493995"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493995/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50493995"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493995/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493995/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/7df53f34-a3b6-4dbb-ad93-e0d59774d6d2/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/538055ea-4b87-43d8-9be8-828316a9a8e6/538055ea-4b87-43d8-9be8-828316a9a8e6.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50493995&videoDSI=ed019f7192994"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50493995/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50493995/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=ed019f7192994"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
@@ -10890,24 +10885,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "4-5"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "1-3"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "3-2"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -11028,6 +11005,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "4-5"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "1-3"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "3-2"
         }
        ]
       },
@@ -11476,7 +11471,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "DraftKings",
+        "name": "Draft Kings",
         "priority": 1,
         "logos": [
          {
@@ -11492,7 +11487,7 @@
           ]
          }
         ],
-        "displayName": "DraftKings"
+        "displayName": "Draft Kings"
        },
        "details": "BAL -4.5",
        "overUnder": 38.5,
@@ -11535,7 +11530,7 @@
             "home",
             "desktop",
             "bets",
-            "draftkings"
+            "draft-kings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_1",
            "text": "Home Bet",
@@ -11567,7 +11562,7 @@
             "away",
             "desktop",
             "bets",
-            "draftkings"
+            "draft-kings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118177%3Foutcomes%3D0ML84695610_3",
            "text": "Away Bet",
@@ -11825,7 +11820,7 @@
  ],
  "provider": {
   "id": "100",
-  "name": "DraftKings",
+  "name": "Draft Kings",
   "priority": 1,
   "logos": [
    {
@@ -11841,6 +11836,6 @@
     ]
    }
   ],
-  "displayName": "DraftKings"
+  "displayName": "Draft Kings"
  }
 }
