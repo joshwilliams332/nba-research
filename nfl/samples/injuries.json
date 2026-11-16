@@ -1,5 +1,5 @@
 {
- "timestamp": "2026-11-16T09:47:10Z",
+ "timestamp": "2026-11-16T13:10:59Z",
  "status": "success",
  "season": {
   "year": 2026,
@@ -318817,11 +318817,11 @@
    "displayName": "New England Patriots",
    "injuries": [
     {
-     "id": "648046",
-     "longComment": "After exiting Sunday's loss to the Lions with an ankle injury, Maye now appears likely to miss additional time beyond the Patriots' Week 11 bye. His status for New England's next game against the Chargers is thus in doubt pending the results of the additional testing. Tommy DeVito entered in relief of Maye against Detroit and was ineffective, competing just 12 of 24 pass attempts for 81 yards, one touchdown and an interception. New England appears to be in big trouble on offense.",
-     "shortComment": "Maye (ankle) will undergo additional testing, but the Patriots expect him to be out for a while, SNF on NBC reports.",
-     "status": "Questionable",
-     "date": "2026-11-16T01:28Z",
+     "id": "648131",
+     "longComment": "Maye, who was forced out of Sunday's loss to the Lions in Munich with what the Patriots at the time reported as an ankle injury, is slated to seek additional medical information, with Rapoport suggesting that it's even possible the QB will miss the rest of the season. In the event that he does miss time following New England's Week 11 bye, Tommy DeVito -- who replaced Maye on Sunday -- and Behren Morton are currently next in line for the team's signal-caller snaps. Moreover, while the NFL trade deadline has come and gone, it's still possible that the 5-5 Patriots could explore options at the position via other team's practice squads or by considering one of the remaining available veteran free agents.",
+     "shortComment": "Maye is believed to have sustained a significant lower-leg injury that could sideline him for an extended period of time, Ian Rapoport of NFL Network and ESPN reports.",
+     "status": "Doubtful",
+     "date": "2026-11-16T12:24Z",
      "athlete": {
       "firstName": "Drake",
       "lastName": "Maye",
@@ -319390,14 +319390,14 @@
       "notes": {
        "items": [
         {
-         "id": "648046",
+         "id": "648131",
          "type": "news",
-         "date": "2026-11-16T01:28Z",
-         "headline": "Maye (ankle) will undergo additional testing, but the Patriots expect him to be out for a while, SNF on NBC reports.",
-         "text": "After exiting Sunday's loss to the Lions with an ankle injury, Maye now appears likely to miss additional time beyond the Patriots' Week 11 bye. His status for New England's next game against the Chargers is thus in doubt pending the results of the additional testing. Tommy DeVito entered in relief of Maye against Detroit and was ineffective, competing just 12 of 24 pass attempts for 81 yards, one touchdown and an interception. New England appears to be in big trouble on offense.",
+         "date": "2026-11-16T12:24Z",
+         "headline": "Maye is believed to have sustained a significant lower-leg injury that could sideline him for an extended period of time, Ian Rapoport of NFL Network and ESPN reports.",
+         "text": "Maye, who was forced out of Sunday's loss to the Lions in Munich with what the Patriots at the time reported as an ankle injury, is slated to seek additional medical information, with Rapoport suggesting that it's even possible the QB will miss the rest of the season. In the event that he does miss time following New England's Week 11 bye, Tommy DeVito -- who replaced Maye on Sunday -- and Behren Morton are currently next in line for the team's signal-caller snaps. Moreover, while the NFL trade deadline has come and gone, it's still possible that the 5-5 Patriots could explore options at the position via other team's practice squads or by considering one of the remaining available veteran free agents.",
          "source": "RotoWire",
          "injury": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/athletes/4431452/injuries/648046?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/athletes/4431452/injuries/648131?lang=en&region=us"
          }
         }
        ]
@@ -319415,15 +319415,15 @@
       "state": "basic"
      },
      "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
+      "id": "3",
+      "name": "INJURY_STATUS_DOUBTFUL",
+      "description": "doubtful",
+      "abbreviation": "D"
      },
      "details": {
       "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE"
+       "description": "DOUBTFUL",
+       "abbreviation": "DOUBTFUL"
       },
       "type": "Ankle",
       "location": "Leg",
