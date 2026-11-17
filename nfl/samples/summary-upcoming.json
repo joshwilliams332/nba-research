@@ -176,18 +176,18 @@
    ]
   },
   "weather": {
-   "temperature": 67,
-   "highTemperature": 67,
-   "lowTemperature": 67,
-   "conditionId": "36",
-   "gust": 2,
+   "temperature": 69,
+   "highTemperature": 69,
+   "lowTemperature": 69,
+   "conditionId": "34",
+   "gust": 10,
    "precipitation": 0,
    "link": {
     "language": "en-US",
     "rel": [
      "77054"
     ],
-    "href": "http://www.accuweather.com/en/us/nrg-stadium-tx/77002/hourly-weather-forecast/43039_poi?day=4&hbhhour=19&lang=en-us",
+    "href": "http://www.accuweather.com/en/us/nrg-stadium-tx/77002/hourly-weather-forecast/43039_poi?day=3&hbhhour=19&lang=en-us",
     "text": "Weather",
     "shortText": "Weather",
     "isExternal": true,
@@ -373,8 +373,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "30",
       "uid": "s:20~l:28~t:30",
@@ -439,7 +437,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873016",
@@ -462,8 +462,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "19",
       "uid": "s:20~l:28~t:19",
@@ -528,7 +526,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873046",
@@ -798,6 +798,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "10",
       "uid": "s:20~l:28~t:10",
@@ -862,9 +864,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
     },
     {
      "id": "401873014",
@@ -976,6 +976,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "30",
       "uid": "s:20~l:28~t:30",
@@ -1040,9 +1042,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"
     },
     {
      "id": "401873040",
@@ -1154,6 +1154,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "15",
       "uid": "s:20~l:28~t:15",
@@ -1218,9 +1220,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png"
     }
    ]
   }
@@ -2759,7 +2759,7 @@
     "favorite": false,
     "underdog": true,
     "moneyLine": 470,
-    "spreadOdds": -110.0,
+    "spreadOdds": -105.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/11?lang=en&region=us"
     },
@@ -2770,7 +2770,7 @@
     "favorite": true,
     "underdog": false,
     "moneyLine": -650,
-    "spreadOdds": -110.0,
+    "spreadOdds": -115.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/34?lang=en&region=us"
     },
@@ -3010,7 +3010,7 @@
     "home": {
      "close": {
       "line": "-11.5",
-      "odds": "-110",
+      "odds": "-115",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3044,7 +3044,7 @@
     "away": {
      "close": {
       "line": "+11.5",
-      "odds": "-110",
+      "odds": "-105",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3312,6 +3312,18 @@
    "records": []
   }
  ],
+ "winprobability": [],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "34",
+   "gameProjection": "74.4"
+  },
+  "awayTeam": {
+   "id": "11",
+   "gameProjection": "25.4"
+  }
+ },
  "news": {
   "header": "NFL News",
   "link": {
@@ -3328,6 +3340,333 @@
    "isPremium": false
   },
   "articles": [
+   {
+    "id": 50508744,
+    "nowId": "1-50508744",
+    "contentKey": "50508744-1-5-1",
+    "dataSourceIdentifier": "efb0e6e20d069",
+    "type": "HeadlineNews",
+    "headline": "Kyle Hamilton says Ravens 'disgracing' standards after losing to 0-8 Chargers",
+    "description": "Pro Bowl safety Kyle Hamilton vented after the Ravens' 23-20 loss to the previously winless Chargers on Monday night, which was one of the most embarrassing defeats in team history.",
+    "lastModified": "2026-11-17T08:52:50Z",
+    "published": "2026-11-17T08:52:50Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "da65aec7b679c",
+      "id": 50508733,
+      "type": "header",
+      "name": "Kyle Hamilton  [600x400]",
+      "credit": "Patrick Smith/Getty Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1117/r1747000_600x400_3-2.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Chargers stun Ravens, pick up first win on MNF",
+      "caption": "Chargers stun Ravens, pick up first win on MNF",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1116/4940034c263e4b06aab33d5d977dc0c91402/4940034c263e4b06aab33d5d977dc0c91402.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2830,
+      "type": "team",
+      "uid": "s:20~l:28~t:33",
+      "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
+      "description": "Baltimore Ravens",
+      "sportId": 28,
+      "teamId": 33,
+      "team": {
+       "id": 33,
+       "description": "Baltimore Ravens",
+       "abbreviation": "BAL",
+       "shortDisplayName": "Ravens",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2610,
+      "type": "team",
+      "uid": "s:20~l:28~t:24",
+      "guid": "84caf62b-c753-71ea-a787-44fd224a4294",
+      "description": "Los Angeles Chargers",
+      "sportId": 28,
+      "teamId": 24,
+      "team": {
+       "id": 24,
+       "description": "Los Angeles Chargers",
+       "abbreviation": "LAC",
+       "shortDisplayName": "Chargers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 529352,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4575517",
+      "guid": "b528bb83-eea2-8d7f-db71-0fd0d32f8c2f",
+      "description": "Kyle Hamilton",
+      "sportId": 28,
+      "athleteId": 4575517,
+      "athlete": {
+       "id": 4575517,
+       "description": "Kyle Hamilton",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4575517/kyle-hamilton"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4575517/kyle-hamilton"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696306,
+      "type": "contributor",
+      "guid": "9e75a49e-54ea-333b-b3e4-5ddc7b66f32d",
+      "description": "Jamison Hensley",
+      "slug": "jamison-hensley",
+      "contributor": {
+       "id": 2078,
+       "description": "Jamison Hensley"
+      }
+     }
+    ],
+    "byline": "Jamison Hensley",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50508744"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50508744"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50508744"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50508744/kyle-hamilton-says-ravens-disgracing-standards-loss-previously-winless-chargers"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50508438,
+    "nowId": "1-50508438",
+    "contentKey": "50508438-1-5-1",
+    "dataSourceIdentifier": "84e1ab5575045",
+    "type": "HeadlineNews",
+    "headline": "Chargers relieved after beating Ravens for first win of season",
+    "description": "The Chargers beat the Ravens 23-30 on Monday night to earn their first win since Week 16 of last season, bringing a franchise-wide sigh of relief.",
+    "lastModified": "2026-11-17T08:21:10Z",
+    "published": "2026-11-17T08:21:10Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "32145a1323635",
+      "id": 50508451,
+      "type": "header",
+      "name": "Justin Herbert (10) celebrates with fans [600x400]",
+      "credit": "Stephanie Scarbrough/AP",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1117/r1746992_600x400_3-2.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Chargers stun Ravens, pick up first win on MNF",
+      "caption": "Chargers stun Ravens, pick up first win on MNF",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1116/4940034c263e4b06aab33d5d977dc0c91402/4940034c263e4b06aab33d5d977dc0c91402.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2610,
+      "type": "team",
+      "uid": "s:20~l:28~t:24",
+      "guid": "84caf62b-c753-71ea-a787-44fd224a4294",
+      "description": "Los Angeles Chargers",
+      "sportId": 28,
+      "teamId": 24,
+      "team": {
+       "id": 24,
+       "description": "Los Angeles Chargers",
+       "abbreviation": "LAC",
+       "shortDisplayName": "Chargers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2830,
+      "type": "team",
+      "uid": "s:20~l:28~t:33",
+      "guid": "38248455-3da4-84e4-8090-98b5cc38ffdc",
+      "description": "Baltimore Ravens",
+      "sportId": 28,
+      "teamId": 33,
+      "team": {
+       "id": 33,
+       "description": "Baltimore Ravens",
+       "abbreviation": "BAL",
+       "shortDisplayName": "Ravens",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/bal/baltimore-ravens"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 435043,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4038941",
+      "guid": "ec880cbc-1490-cdae-548f-f844104974ae",
+      "description": "Justin Herbert",
+      "sportId": 28,
+      "athleteId": 4038941,
+      "athlete": {
+       "id": 4038941,
+       "description": "Justin Herbert",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
+         }
+        }
+       }
+      }
+     }
+    ],
+    "byline": "Jeff Legwold",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50508438"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50508438"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50508438"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50508438/chargers-relieved-beating-ravens-first-win-season"
+     }
+    },
+    "premium": false
+   },
    {
     "id": 50507977,
     "nowId": "1-50507977",
@@ -3485,8 +3824,8 @@
     "type": "Story",
     "headline": "Justin Herbert, defense help lift Chargers past Ravens on MNF",
     "description": "The Chargers' defense stifles Baltimore's running backs, and Justin Herbert steps up in Los Angeles' first win.",
-    "lastModified": "2026-11-17T05:15:33Z",
-    "published": "2026-11-17T05:15:33Z",
+    "lastModified": "2026-11-17T06:03:19Z",
+    "published": "2026-11-17T06:03:19Z",
     "images": [
      {
       "dataSourceIdentifier": "385afe39179c7",
@@ -3689,9 +4028,9 @@
     "dataSourceIdentifier": "354afa31bd8d0",
     "type": "Recap",
     "headline": "Chargers bully the Ravens at the line of scrimmage and earn their first win of the season, 23-20",
-    "description": "\u2014 Justin Herbert and Omarion Hampton ran for first-half touchdowns, and the Los Angeles Chargers earned their first win of the season, manhandling Baltimore at the line of scrimmage in a 23-20 victory over the Ravens on Monday night.",
-    "lastModified": "2026-11-17T04:32:47Z",
-    "published": "2026-11-17T04:32:47Z",
+    "description": "\u2014 The Los Angeles Chargers finally won a game \u2014 with the type of smashmouth performance that has brought Jim Harbaugh so much success during his coaching career.",
+    "lastModified": "2026-11-17T06:04:47Z",
+    "published": "2026-11-17T06:04:47Z",
     "images": [
      {
       "type": "stitcher",
@@ -4181,310 +4520,8 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50507501,
-    "nowId": "1-50507501",
-    "contentKey": "50507501-1-293-1",
-    "dataSourceIdentifier": "1f9ef785cd075",
-    "type": "Media",
-    "headline": "Bo Nix and Eli do some quality trolling of Peyton's rushing game",
-    "description": "Bo Nix and Eli do some quality trolling of Peyton's rushing game",
-    "lastModified": "2026-11-17T03:45:46Z",
-    "published": "2026-11-17T03:45:46Z",
-    "images": [
-     {
-      "name": "Bo Nix and Eli do some quality trolling of Peyton's rushing game",
-      "caption": "Bo Nix and Eli do some quality trolling of Peyton's rushing game",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1116/ss_20261116_222531410_37460101365/ss_20261116_222531410_37460101365.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 549664,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4426338",
-      "guid": "f9de7512-a950-3317-816b-abe094068409",
-      "description": "Bo Nix",
-      "sportId": 28,
-      "athleteId": 4426338,
-      "athlete": {
-       "id": 4426338,
-       "description": "Bo Nix",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4426338/bo-nix"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4426338/bo-nix"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2951,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:1428",
-      "guid": "78d91edb-3223-7991-5793-36664e222d79",
-      "description": "Peyton Manning",
-      "sportId": 28,
-      "athleteId": 1428,
-      "athlete": {
-       "id": 1428,
-       "description": "Peyton Manning",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/1428/peyton-manning"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/1428/peyton-manning"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 14061,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:5526",
-      "guid": "629fd2c1-6c50-e8e3-b307-99a84fab0d67",
-      "description": "Eli Manning",
-      "sportId": 28,
-      "athleteId": 5526,
-      "athlete": {
-       "id": 5526,
-       "description": "Eli Manning",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/5526/eli-manning"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/5526/eli-manning"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/9f9c5bb4-77c5-44e1-b9ca-b14b71a903d1"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50507501"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50507501&videoDSI=1f9ef785cd075"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50507501/bo-nix-eli-do-some-quality-trolling-peyton-rushing-game",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50507501/bo-nix-eli-do-some-quality-trolling-peyton-rushing-game",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=1f9ef785cd075"
-       }
-      }
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50506869,
-    "nowId": "1-50506869",
-    "contentKey": "50506869-1-5-1",
-    "dataSourceIdentifier": "e6b40686e782f",
-    "type": "HeadlineNews",
-    "headline": "Rams center Coleman Shelton out 4-6 weeks with hamstring injury",
-    "description": "Coleman Shelton strained his hamstring in the second quarter of the Rams' Week 10 victory over the Cardinals.",
-    "lastModified": "2026-11-17T02:37:21Z",
-    "published": "2026-11-17T02:37:21Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "8d9c44665d141",
-      "id": 35869269,
-      "type": "header",
-      "name": " Coleman Shelton  [600x400]",
-      "caption": "The Rams agreed to a two-year contract with offensive lineman Coleman Shelton.",
-      "credit": "(Photo by Jevone Moore/Icon Sportswire)",
-      "height": 400,
-      "width": 600,
-      "url": "https://a.espncdn.com/photo/2023/0316/r1145241_600x400_3-2.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1519,
-      "type": "team",
-      "uid": "s:20~l:28~t:14",
-      "guid": "2e1473b2-e269-fd7a-1137-c1edacb85986",
-      "description": "Los Angeles Rams",
-      "sportId": 28,
-      "teamId": 14,
-      "team": {
-       "id": 14,
-       "description": "Los Angeles Rams",
-       "abbreviation": "LAR",
-       "shortDisplayName": "Rams",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 185824,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:3052180",
-      "guid": "c97e1ed6-c707-c098-a54d-2cd95a814ba2",
-      "description": "Coleman Shelton",
-      "sportId": 28,
-      "athleteId": 3052180,
-      "athlete": {
-       "id": 3052180,
-       "description": "Coleman Shelton",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3052180/coleman-shelton"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3052180/coleman-shelton"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 696392,
-      "type": "contributor",
-      "guid": "4383eeca-02a1-39f1-81c1-32194fcc847e",
-      "description": "Sarah Barshop",
-      "slug": "sarah-barshop",
-      "contributor": {
-       "id": 2722,
-       "description": "Sarah Barshop"
-      }
-     }
-    ],
-    "byline": "Sarah Barshop",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50506869"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50506869"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50506869"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50506869/rams-coleman-shelton-4-6-weeks-hamstring-injury"
-     }
-    },
-    "premium": false
    }
   ]
- },
- "winprobability": [],
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "34",
-   "gameProjection": "74.5"
-  },
-  "awayTeam": {
-   "id": "11",
-   "gameProjection": "25.3"
-  }
  },
  "header": {
   "id": "401873066",
@@ -5004,7 +5041,7 @@
        "favorite": false,
        "underdog": true,
        "moneyLine": 470,
-       "spreadOdds": -110.0,
+       "spreadOdds": -105.0,
        "open": {
         "favorite": false,
         "pointSpread": {
@@ -5034,12 +5071,12 @@
          "american": "+11.5"
         },
         "spread": {
-         "value": 1.9,
-         "displayValue": "10/11",
-         "alternateDisplayValue": "-110",
-         "decimal": 1.9,
-         "fraction": "10/11",
-         "american": "-110"
+         "value": 1.95,
+         "displayValue": "20/21",
+         "alternateDisplayValue": "-105",
+         "decimal": 1.95,
+         "fraction": "20/21",
+         "american": "-105"
         },
         "moneyLine": {
          "value": 5.7,
@@ -5058,7 +5095,7 @@
        "favorite": true,
        "underdog": false,
        "moneyLine": -650,
-       "spreadOdds": -110.0,
+       "spreadOdds": -115.0,
        "open": {
         "favorite": true,
         "pointSpread": {
@@ -5088,12 +5125,12 @@
          "american": "-11.5"
         },
         "spread": {
-         "value": 1.9,
-         "displayValue": "10/11",
-         "alternateDisplayValue": "-110",
-         "decimal": 1.9,
-         "fraction": "10/11",
-         "american": "-110"
+         "value": 1.86,
+         "displayValue": "20/23",
+         "alternateDisplayValue": "-115",
+         "decimal": 1.86,
+         "fraction": "20/23",
+         "american": "-115"
         },
         "moneyLine": {
          "value": 1.15,
@@ -5277,8 +5314,8 @@
        },
        {
         "type": {
-         "id": "12",
-         "name": "Total Rushing Yards (incl. overtime)"
+         "id": "13",
+         "name": "Total Receiving Yards (incl. overtime)"
         }
        }
       ]
@@ -5563,12 +5600,12 @@
     "type": "team"
    },
    {
-    "ticketName": "11/19 vs Colts 3592 tickets left",
+    "ticketName": "11/19 vs Colts 3559 tickets left",
     "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/29 vs Ravens 3962 tickets left",
+    "ticketName": "11/29 vs Ravens 3954 tickets left",
     "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
     "type": "event"
    },
@@ -5578,17 +5615,17 @@
     "type": "event"
    },
    {
-    "ticketName": "12/13 @ Commanders 6538 tickets left",
+    "ticketName": "12/13 @ Commanders 6514 tickets left",
     "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-6-2026/production/6493325?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/20 vs Jaguars 5735 tickets left",
+    "ticketName": "12/20 vs Jaguars 5676 tickets left",
     "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-2-2026/production/6490002?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/24 @ Eagles 5363 tickets left",
+    "ticketName": "12/24 @ Eagles 5346 tickets left",
     "ticketLink": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-6-2027/production/6495008?wsUser=717",
     "type": "event"
    },
