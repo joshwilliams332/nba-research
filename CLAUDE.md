@@ -56,7 +56,15 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   `mateStrength` 0.5 -> 0.3 and `otherTeamWeight` 0.6 (previous-team games count less), both better on 2025-26,
   2026-27 and real lines. Tested and rejected: treating rotation players who missed the team's last few games as out
   when ESPN doesn't list them (made projections worse at K = 2, 3 and 5), and skipping picks with a key teammate out and
-  under 5 games without him (those spots did no worse on real lines); the digest names them as "thin evidence" instead. `scripts/backtest.js` (workflow step) writes
+  under 5 games without him (those spots did no worse on real lines); the digest names them as "thin evidence" instead.
+  **Real-line check, Nov 17, 2026 (2,955 graded lines Oct 28 - Nov 16, `scripts/experiments/line-anchor.js`):** by log
+  loss the model's own chances (0.700 first week, 0.713 since) are worse than a coin flip (0.693) and the books' no-vig
+  chances (0.684 / 0.689); its biggest disagreements with the books lose most (15-20 points apart: 39% since Nov 3).
+  Tested and rejected: shorter half-lives, wider dispersion, halving its confidence. Anchoring on the books' line
+  (book mean + k x (model - book)) helps on the tuning week at k 0.1-0.3 but not on the held-out weeks (only rebounds
+  held up, barely), so the current model adds nothing over the books. Rebuild plan: keep the books' line as the
+  baseline and add one tested adjustment at a time (shot-volume points, implied team total / blowout risk, starters
+  and minutes, opponent injuries, a later lock after injury news); ship only what beats the books on held-out weeks. `scripts/backtest.js` (workflow step) writes
   `site/data/model.json` for `model.html`. Node loads the helpers via `Object.assign(globalThis, require(...))`;
   never declare common.js names with `var`/`const` in other asset files (they share one global scope in the browser).
 - Line movement / CLV (`site/assets/lines.js`, tested in `tests/lines.test.js`): props.json props carry `open` and
