@@ -23513,6 +23513,124 @@
    },
    "injuries": [
     {
+     "status": "Questionable",
+     "date": "2026-11-17T03:49Z",
+     "athlete": {
+      "id": "4035245",
+      "uid": "s:20~l:28~a:4035245",
+      "guid": "a8afffbe-1ef7-d550-3682-2ab77ba91511",
+      "lastName": "Madubuike",
+      "fullName": "Nnamdi Madubuike",
+      "displayName": "Nnamdi Madubuike",
+      "shortName": "N. Madubuike",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4035245/nnamdi-madubuike",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4035245.png",
+       "alt": "Nnamdi Madubuike"
+      },
+      "jersey": "92",
+      "position": {
+       "name": "Defensive Tackle",
+       "displayName": "Defensive Tackle",
+       "abbreviation": "DT"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4035245?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Hamstring",
+      "location": "Leg",
+      "returnDate": "2026-11-22"
+     }
+    },
+    {
+     "status": "Questionable",
+     "date": "2026-11-17T03:27Z",
+     "athlete": {
+      "id": "4832793",
+      "uid": "s:20~l:28~a:4832793",
+      "guid": "f7003cfe-f478-373c-80f1-ad96cb7fe6c0",
+      "lastName": "Ioane",
+      "fullName": "Olaivavega Ioane",
+      "displayName": "Olaivavega Ioane",
+      "shortName": "O. Ioane",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4832793/olaivavega-ioane",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4832793.png",
+       "alt": "Olaivavega Ioane"
+      },
+      "jersey": "71",
+      "position": {
+       "name": "Guard",
+       "displayName": "Guard",
+       "abbreviation": "G"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4832793?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Shoulder",
+      "location": "Arm",
+      "returnDate": "2026-11-16"
+     }
+    },
+    {
      "status": "Out",
      "date": "2026-11-17T00:09Z",
      "athlete": {
@@ -23568,8 +23686,9 @@
       },
       "type": "Coach's Decision",
       "location": "Other",
+      "detail": "Not Specified",
       "side": "Not Specified",
-      "returnDate": "2026-11-16"
+      "returnDate": "2026-11-22"
      }
     },
     {
@@ -23691,128 +23810,6 @@
       "location": "Other",
       "detail": "Not Specified",
       "side": "Not Specified",
-      "returnDate": "2026-11-22"
-     }
-    },
-    {
-     "status": "Out",
-     "date": "2026-11-16T23:47Z",
-     "athlete": {
-      "id": "5088338",
-      "uid": "s:20~l:28~a:5088338",
-      "guid": "0e684a08-ee98-3fd7-95e3-6e0824b4fa21",
-      "lastName": "Sarratt",
-      "fullName": "Elijah Sarratt",
-      "displayName": "Elijah Sarratt",
-      "shortName": "E. Sarratt",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/5088338/elijah-sarratt",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/5088338.png",
-       "alt": "Elijah Sarratt"
-      },
-      "jersey": "13",
-      "position": {
-       "name": "Wide Receiver",
-       "displayName": "Wide Receiver",
-       "abbreviation": "WR"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/5088338?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "4",
-      "name": "INJURY_STATUS_OUT",
-      "description": "out",
-      "abbreviation": "O"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "INACTIVE",
-       "abbreviation": "INACTIVE",
-       "displayDescription": "Inactive"
-      },
-      "type": "Coach's Decision",
-      "location": "Other",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-11-22"
-     }
-    },
-    {
-     "status": "Out",
-     "date": "2026-11-16T23:47Z",
-     "athlete": {
-      "id": "3858276",
-      "uid": "s:20~l:28~a:3858276",
-      "guid": "a0e18bee-84d1-c113-d53d-b9f2ce04b7d1",
-      "lastName": "Hawkins",
-      "fullName": "Jaylinn Hawkins",
-      "displayName": "Jaylinn Hawkins",
-      "shortName": "J. Hawkins",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/3858276/jaylinn-hawkins",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/3858276.png",
-       "alt": "Jaylinn Hawkins"
-      },
-      "jersey": "21",
-      "position": {
-       "name": "Safety",
-       "displayName": "Safety",
-       "abbreviation": "S"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/3858276?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "4",
-      "name": "INJURY_STATUS_OUT",
-      "description": "out",
-      "abbreviation": "O"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "INACTIVE",
-       "abbreviation": "INACTIVE",
-       "displayDescription": "Inactive"
-      },
-      "type": "Knee",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Left",
       "returnDate": "2026-11-22"
      }
     }
@@ -24219,7 +24216,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "Draft Kings",
+    "name": "DraftKings",
     "priority": 1,
     "logos": [
      {
@@ -24270,7 +24267,7 @@
       "home",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_1",
      "text": "Home Bet",
@@ -24284,7 +24281,7 @@
       "away",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118164%3Foutcomes%3D0ML84695597_3",
      "text": "Away Bet",
@@ -25391,6 +25388,153 @@
   },
   "articles": [
    {
+    "id": 50507501,
+    "nowId": "1-50507501",
+    "contentKey": "50507501-1-293-1",
+    "dataSourceIdentifier": "1f9ef785cd075",
+    "type": "Media",
+    "headline": "Bo Nix and Eli do some quality trolling of Peyton's rushing game",
+    "description": "Bo Nix and Eli do some quality trolling of Peyton's rushing game",
+    "lastModified": "2026-11-17T03:45:46Z",
+    "published": "2026-11-17T03:45:46Z",
+    "images": [
+     {
+      "name": "Bo Nix and Eli do some quality trolling of Peyton's rushing game",
+      "caption": "Bo Nix and Eli do some quality trolling of Peyton's rushing game",
+      "alt": "",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1116/ss_20261116_222531410_37460101365/ss_20261116_222531410_37460101365.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 549664,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4426338",
+      "guid": "f9de7512-a950-3317-816b-abe094068409",
+      "description": "Bo Nix",
+      "sportId": 28,
+      "athleteId": 4426338,
+      "athlete": {
+       "id": 4426338,
+       "description": "Bo Nix",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4426338/bo-nix"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4426338/bo-nix"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2951,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:1428",
+      "guid": "78d91edb-3223-7991-5793-36664e222d79",
+      "description": "Peyton Manning",
+      "sportId": 28,
+      "athleteId": 1428,
+      "athlete": {
+       "id": 1428,
+       "description": "Peyton Manning",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/1428/peyton-manning"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/1428/peyton-manning"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 14061,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:5526",
+      "guid": "629fd2c1-6c50-e8e3-b307-99a84fab0d67",
+      "description": "Eli Manning",
+      "sportId": 28,
+      "athleteId": 5526,
+      "athlete": {
+       "id": 5526,
+       "description": "Eli Manning",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/5526/eli-manning"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/5526/eli-manning"
+         }
+        }
+       }
+      }
+     }
+    ],
+    "links": {
+     "api": {
+      "artwork": {
+       "href": "https://artwork.api.espn.com/artwork/collections/media/9f9c5bb4-77c5-44e1-b9ca-b14b71a903d1"
+      },
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/video/clips/50507501"
+      }
+     },
+     "sportscenter": {
+      "href": "sportscenter://x-callback-url/showVideo?videoID=50507501&videoDSI=1f9ef785cd075"
+     },
+     "web": {
+      "href": "https://www.espn.com/video/clip/_/id/50507501/bo-nix-eli-do-some-quality-trolling-peyton-rushing-game",
+      "self": {
+       "href": "https://www.espn.com/video/clip/_/id/50507501/bo-nix-eli-do-some-quality-trolling-peyton-rushing-game",
+       "dsi": {
+        "href": "https://www.espn.com/video/clip?id=1f9ef785cd075"
+       }
+      }
+     }
+    },
+    "premium": false
+   },
+   {
     "id": 50506869,
     "nowId": "1-50506869",
     "contentKey": "50506869-1-5-1",
@@ -25398,8 +25542,8 @@
     "type": "HeadlineNews",
     "headline": "Rams center Coleman Shelton out 4-6 weeks with hamstring injury",
     "description": "Coleman Shelton strained his hamstring in the second quarter of the Rams' Week 10 victory over the Cardinals.",
-    "lastModified": "2026-11-17T02:12:48Z",
-    "published": "2026-11-17T02:12:48Z",
+    "lastModified": "2026-11-17T02:37:21Z",
+    "published": "2026-11-17T02:37:21Z",
     "images": [
      {
       "dataSourceIdentifier": "8d9c44665d141",
@@ -25540,9 +25684,9 @@
     "dataSourceIdentifier": "51780beb817ad",
     "type": "Story",
     "headline": "Mike McCarthy on Steelers' blowout loss: 'Needs to stop there'",
-    "description": "After a deflating loss at Cincinnati, Pittsburgh now faces a Week 11 gut-check game at the Eagles on Sunday.",
-    "lastModified": "2026-11-17T01:47:06Z",
-    "published": "2026-11-17T01:47:06Z",
+    "description": "After a deflating loss at Cincinnati, Pittsburgh faces a Week 11 gut-check game at the Eagles on Sunday.",
+    "lastModified": "2026-11-17T02:52:26Z",
+    "published": "2026-11-17T02:52:26Z",
     "images": [
      {
       "dataSourceIdentifier": "a512f99c53c2b",
@@ -27014,138 +27158,6 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50504017,
-    "nowId": "1-50504017",
-    "contentKey": "50504017-1-6-1",
-    "dataSourceIdentifier": "57fda3bfd6ae9",
-    "type": "Story",
-    "headline": "Behind Raiders fans' tribute to Fernando Mendoza's mother",
-    "description": "Tom Joanides' social media campaign became a meaningful tribute when Mendoza scored in his first NFL start.",
-    "lastModified": "2026-11-16T23:13:41Z",
-    "published": "2026-11-16T23:13:41Z",
-    "images": [
-     {
-      "type": "Media",
-      "name": "Seattle Seahawks vs. Las Vegas Raiders: Game Highlights",
-      "caption": "Seattle Seahawks vs. Las Vegas Raiders: Game Highlights",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1116/fa6621c5-2440-4448-9b9c-30ef4dd54f67/fa6621c5-2440-4448-9b9c-30ef4dd54f67.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2553,
-      "type": "team",
-      "uid": "s:20~l:28~t:13",
-      "guid": "b18540eb-6f2b-534c-e7f9-9bd930518da9",
-      "description": "Las Vegas Raiders",
-      "sportId": 28,
-      "teamId": 13,
-      "team": {
-       "id": 13,
-       "description": "Las Vegas Raiders",
-       "abbreviation": "LV",
-       "shortDisplayName": "Raiders",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 542097,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4837248",
-      "guid": "2d69f2b3-fc07-332b-bd84-8793a3a1b74a",
-      "description": "Fernando Mendoza",
-      "sportId": 28,
-      "athleteId": 4837248,
-      "athlete": {
-       "id": 4837248,
-       "description": "Fernando Mendoza",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4837248/fernando-mendoza"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4837248/fernando-mendoza"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 704689,
-      "type": "contributor",
-      "guid": "b01f248b-d634-36a1-95d7-36c479b8a8b6",
-      "description": "Ryan McFadden",
-      "slug": "ryan-mcfadden",
-      "contributor": {
-       "id": 4152,
-       "description": "Ryan McFadden"
-      }
-     }
-    ],
-    "byline": "Ryan McFadden",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50504017"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50504017"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50504017"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50504017/raiders-fans-seated-fernando-mendoza-touchdown-tribute"
-     }
-    },
-    "premium": false
    }
   ]
  },
@@ -27315,7 +27327,6 @@
   },
   "premium": false
  },
- "videos": [],
  "winprobability": [
   {
    "homeWinPercentage": 0.1893,
@@ -28153,6 +28164,7 @@
    "playId": "4018730373851"
   }
  ],
+ "videos": [],
  "header": {
   "id": "401873037",
   "uid": "s:20~l:28~e:401873037",

@@ -543,7 +543,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/bal.png"
        },
-       "score": "7",
+       "score": "20",
        "linescores": [
         {
          "value": 0.0,
@@ -551,9 +551,19 @@
          "period": 1
         },
         {
+         "value": 10.0,
+         "displayValue": "10",
+         "period": 2
+        },
+        {
+         "value": 3.0,
+         "displayValue": "3",
+         "period": 3
+        },
+        {
          "value": 7.0,
          "displayValue": "7",
-         "period": 2
+         "period": 4
         }
        ],
        "statistics": [],
@@ -684,7 +694,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lac.png"
        },
-       "score": "10",
+       "score": "23",
        "linescores": [
         {
          "value": 10.0,
@@ -692,9 +702,19 @@
          "period": 1
         },
         {
-         "value": 0.0,
-         "displayValue": "0",
+         "value": 7.0,
+         "displayValue": "7",
          "period": 2
+        },
+        {
+         "value": 3.0,
+         "displayValue": "3",
+         "period": 3
+        },
+        {
+         "value": 3.0,
+         "displayValue": "3",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -724,70 +744,93 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730651791",
+       "id": "4018730653950",
        "type": {
-        "id": "75",
-        "text": "Two-minute warning",
-        "abbreviation": "2Min Warn"
+        "id": "3",
+        "text": "Pass Incompletion"
        },
-       "text": "Two-Minute Warning",
+       "text": "(Shotgun) J.Brissett pass incomplete short right to J.Lane (D.Henley).",
        "scoreValue": 0,
        "team": {
-        "id": "24"
+        "id": "33"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.2994,
-        "awayWinPercentage": 0.7006,
+        "homeWinPercentage": 0.2603,
+        "awayWinPercentage": 0.7397,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "12 plays, 47 yards, 7:31",
+        "description": "2 plays, 14 yards, 0:09",
         "start": {
-         "yardLine": 48,
-         "text": "BAL 48"
+         "yardLine": 25,
+         "text": "BAL 25"
         },
         "timeElapsed": {
-         "displayValue": "7:31"
+         "displayValue": "0:09"
         }
        },
        "start": {
-        "yardLine": 1,
+        "yardLine": 39,
         "team": {
-         "id": "24"
+         "id": "33"
         }
        },
        "end": {
-        "yardLine": 1,
+        "yardLine": 39,
         "team": {
-         "id": "24"
+         "id": "33"
         }
-       }
+       },
+       "athletesInvolved": [
+        {
+         "id": "4870847",
+         "fullName": "Ja'Kobi Lane",
+         "displayName": "Ja'Kobi Lane",
+         "shortName": "J. Lane",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/4870847/jakobi-lane"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4870847.png",
+         "jersey": "6",
+         "position": "WR",
+         "team": {
+          "id": "33"
+         }
+        }
+       ]
       },
-      "down": 4,
-      "yardLine": 1,
-      "distance": 1,
-      "downDistanceText": "4th & Goal at BAL 1",
-      "shortDownDistanceText": "4th & Goal",
-      "possessionText": "BAL 1",
-      "isRedZone": true,
-      "homeTimeouts": 3,
-      "awayTimeouts": 2,
-      "possession": "24"
+      "down": 2,
+      "yardLine": 39,
+      "distance": 10,
+      "downDistanceText": "2nd & 10 at BAL 39",
+      "shortDownDistanceText": "2nd & 10",
+      "possessionText": "BAL 39",
+      "isRedZone": false,
+      "homeTimeouts": 2,
+      "awayTimeouts": 3,
+      "possession": "33"
      },
      "status": {
-      "clock": 126.0,
-      "displayClock": "2:06",
-      "period": 2,
+      "clock": 135.0,
+      "displayClock": "2:15",
+      "period": 4,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "2:06 - 2nd Quarter",
-       "shortDetail": "2:06 - 2nd"
+       "detail": "2:15 - 4th Quarter",
+       "shortDetail": "2:15 - 4th"
       },
       "isTBDFlex": false
      },
@@ -807,13 +850,13 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "6/9, 91 YDS",
-         "value": 91.0,
+         "displayValue": "31/46, 304 YDS, 1 INT",
+         "value": 304.0,
          "athlete": {
-          "id": "4038941",
-          "fullName": "Justin Herbert",
-          "displayName": "Justin Herbert",
-          "shortName": "J. Herbert",
+          "id": "2578570",
+          "fullName": "Jacoby Brissett",
+          "displayName": "Jacoby Brissett",
+          "shortName": "J. Brissett",
           "links": [
            {
             "rel": [
@@ -821,21 +864,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
+            "href": "https://www.espn.com/nfl/player/_/id/2578570/jacoby-brissett"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038941.png",
-          "jersey": "10",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2578570.png",
+          "jersey": "11",
           "position": {
            "abbreviation": "QB"
           },
           "team": {
-           "id": "24"
+           "id": "33"
           },
           "active": true
          },
          "team": {
-          "id": "24"
+          "id": "33"
          }
         }
        ]
@@ -847,13 +890,13 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "6 CAR, 45 YDS, 1 TD",
-         "value": 45.0,
+         "displayValue": "19 CAR, 97 YDS, 1 TD",
+         "value": 97.0,
          "athlete": {
-          "id": "4038941",
-          "fullName": "Justin Herbert",
-          "displayName": "Justin Herbert",
-          "shortName": "J. Herbert",
+          "id": "4685382",
+          "fullName": "Omarion Hampton",
+          "displayName": "Omarion Hampton",
+          "shortName": "O. Hampton",
           "links": [
            {
             "rel": [
@@ -861,13 +904,13 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
+            "href": "https://www.espn.com/nfl/player/_/id/4685382/omarion-hampton"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038941.png",
-          "jersey": "10",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685382.png",
+          "jersey": "8",
           "position": {
-           "abbreviation": "QB"
+           "abbreviation": "RB"
           },
           "team": {
            "id": "24"
@@ -1008,8 +1051,8 @@
    ],
    "weather": {
     "displayValue": "33",
-    "temperature": 48,
-    "highTemperature": 48,
+    "temperature": 44,
+    "highTemperature": 44,
     "conditionId": "Clear",
     "link": {
      "language": "en-US",
@@ -1024,17 +1067,17 @@
     }
    },
    "status": {
-    "clock": 126.0,
-    "displayClock": "2:06",
-    "period": 2,
+    "clock": 135.0,
+    "displayClock": "2:15",
+    "period": 4,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "2:06 - 2nd Quarter",
-     "shortDetail": "2:06 - 2nd"
+     "detail": "2:15 - 4th Quarter",
+     "shortDetail": "2:15 - 4th"
     }
    }
   },
