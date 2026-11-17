@@ -70,7 +70,15 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   league, 75% mixed with the old projection, x1.05; tuned on 2025-26) improved points in both seasons (log score
   +0.010 / +0.009, MAE 4.81 -> 4.79 this season) and on real points lines (0.6931 -> 0.6921) but still trails the books
   (0.6911). Rejected: implied team total from the spread / total (worse every stat), blowout minutes cut on big spreads
-  (no change), this-season-only games (worse). The model over-projects points this season by ~0.8 (unexplained yet). `scripts/backtest.js` (workflow step) writes
+  (no change), this-season-only games (worse). The model over-projects points this season by ~0.8 (unexplained yet).
+  **Step 3, Nov 17 (`scripts/experiments/minutes.js`, same player-games):** projected minutes miss by ~4.9 (2025-26) /
+  5.3 (this season); starters play ~0.8-1.0 more than projected, bench players ~0.7 (last season) / 1.9 (this season)
+  fewer, which is most of this season's points over-projection. A last-game starter +3% / bench -4% or -8% correction
+  helps points and assists but hurts rebounds and threes last season (not shipped); last-game role minutes and a
+  back-to-back cut don't help. Knowing tonight's starters (only known near tip, from the box score here) is the biggest
+  gain found: log score +0.011 / +0.027 points, +0.006 / +0.015 assists, +0.005 / +0.012 rebounds; knowing which
+  regulars sat adds about +0.002-0.004. So the late news the books trade on is where the model loses; a later lock
+  with lineups is the next thing to test (old pre-tip points pulls, Nov 1-10, give closing lines to score against). `scripts/backtest.js` (workflow step) writes
   `site/data/model.json` for `model.html`. Node loads the helpers via `Object.assign(globalThis, require(...))`;
   never declare common.js names with `var`/`const` in other asset files (they share one global scope in the browser).
 - Line movement / CLV (`site/assets/lines.js`, tested in `tests/lines.test.js`): props.json props carry `open` and
