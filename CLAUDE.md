@@ -64,7 +64,13 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   (book mean + k x (model - book)) helps on the tuning week at k 0.1-0.3 but not on the held-out weeks (only rebounds
   held up, barely), so the current model adds nothing over the books. Rebuild plan: keep the books' line as the
   baseline and add one tested adjustment at a time (shot-volume points, implied team total / blowout risk, starters
-  and minutes, opponent injuries, a later lock after injury news); ship only what beats the books on held-out weeks. `scripts/backtest.js` (workflow step) writes
+  and minutes, opponent injuries, a later lock after injury news); ship only what beats the books on held-out weeks.
+  **Step 2, Nov 17 (`scripts/experiments/features.js`, every player-game of 2025-26 and 2026-27, scored on the actual
+  result; past prop lines aren't available):** shot-volume points (2PA / 3PA / FTA per minute x make rates shrunk to the
+  league, 75% mixed with the old projection, x1.05; tuned on 2025-26) improved points in both seasons (log score
+  +0.010 / +0.009, MAE 4.81 -> 4.79 this season) and on real points lines (0.6931 -> 0.6921) but still trails the books
+  (0.6911). Rejected: implied team total from the spread / total (worse every stat), blowout minutes cut on big spreads
+  (no change), this-season-only games (worse). The model over-projects points this season by ~0.8 (unexplained yet). `scripts/backtest.js` (workflow step) writes
   `site/data/model.json` for `model.html`. Node loads the helpers via `Object.assign(globalThis, require(...))`;
   never declare common.js names with `var`/`const` in other asset files (they share one global scope in the browser).
 - Line movement / CLV (`site/assets/lines.js`, tested in `tests/lines.test.js`): props.json props carry `open` and
