@@ -543,12 +543,17 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/bal.png"
        },
-       "score": "0",
+       "score": "7",
        "linescores": [
         {
          "value": 0.0,
          "displayValue": "0",
          "period": 1
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 2
         }
        ],
        "statistics": [],
@@ -679,12 +684,17 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lac.png"
        },
-       "score": "7",
+       "score": "10",
        "linescores": [
         {
-         "value": 7.0,
-         "displayValue": "7",
+         "value": 10.0,
+         "displayValue": "10",
          "period": 1
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 2
         }
        ],
        "statistics": [],
@@ -714,94 +724,70 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "401873065886",
+       "id": "4018730651791",
        "type": {
-        "id": "5",
-        "text": "Rush",
-        "abbreviation": "RUSH"
+        "id": "75",
+        "text": "Two-minute warning",
+        "abbreviation": "2Min Warn"
        },
-       "text": " O.Hampton left end to BLT 24 for 7 yards (R.Smith).",
+       "text": "Two-Minute Warning",
        "scoreValue": 0,
        "team": {
         "id": "24"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.2155,
-        "awayWinPercentage": 0.7845,
+        "homeWinPercentage": 0.2994,
+        "awayWinPercentage": 0.7006,
         "secondsLeft": 0
        },
-       "statYardage": 7,
+       "statYardage": 0,
        "drive": {
-        "description": "4 plays, 36 yards, 1:32",
+        "description": "12 plays, 47 yards, 7:31",
         "start": {
-         "yardLine": 60,
-         "text": "LAC 40"
+         "yardLine": 48,
+         "text": "BAL 48"
         },
         "timeElapsed": {
-         "displayValue": "1:32"
+         "displayValue": "7:31"
         }
        },
        "start": {
-        "yardLine": 31,
+        "yardLine": 1,
         "team": {
          "id": "24"
         }
        },
        "end": {
-        "yardLine": 24,
+        "yardLine": 1,
         "team": {
          "id": "24"
         }
-       },
-       "athletesInvolved": [
-        {
-         "id": "4685382",
-         "fullName": "Omarion Hampton",
-         "displayName": "Omarion Hampton",
-         "shortName": "O. Hampton",
-         "links": [
-          {
-           "rel": [
-            "playercard",
-            "desktop",
-            "athlete"
-           ],
-           "href": "https://www.espn.com/nfl/player/_/id/4685382/omarion-hampton"
-          }
-         ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685382.png",
-         "jersey": "8",
-         "position": "RB",
-         "team": {
-          "id": "24"
-         }
-        }
-       ]
+       }
       },
-      "down": 3,
-      "yardLine": 24,
-      "distance": 8,
-      "downDistanceText": "3rd & 8 at BAL 24",
-      "shortDownDistanceText": "3rd & 8",
-      "possessionText": "BAL 24",
-      "isRedZone": false,
+      "down": 4,
+      "yardLine": 1,
+      "distance": 1,
+      "downDistanceText": "4th & Goal at BAL 1",
+      "shortDownDistanceText": "4th & Goal",
+      "possessionText": "BAL 1",
+      "isRedZone": true,
       "homeTimeouts": 3,
-      "awayTimeouts": 3,
+      "awayTimeouts": 2,
       "possession": "24"
      },
      "status": {
-      "clock": 187.0,
-      "displayClock": "3:07",
-      "period": 1,
+      "clock": 126.0,
+      "displayClock": "2:06",
+      "period": 2,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "3:07 - 1st Quarter",
-       "shortDetail": "3:07 - 1st"
+       "detail": "2:06 - 2nd Quarter",
+       "shortDetail": "2:06 - 2nd"
       },
       "isTBDFlex": false
      },
@@ -821,8 +807,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "3/6, 58 YDS",
-         "value": 58.0,
+         "displayValue": "6/9, 91 YDS",
+         "value": 91.0,
          "athlete": {
           "id": "4038941",
           "fullName": "Justin Herbert",
@@ -861,13 +847,13 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "4 CAR, 26 YDS",
-         "value": 26.0,
+         "displayValue": "6 CAR, 45 YDS, 1 TD",
+         "value": 45.0,
          "athlete": {
-          "id": "4685382",
-          "fullName": "Omarion Hampton",
-          "displayName": "Omarion Hampton",
-          "shortName": "O. Hampton",
+          "id": "4038941",
+          "fullName": "Justin Herbert",
+          "displayName": "Justin Herbert",
+          "shortName": "J. Herbert",
           "links": [
            {
             "rel": [
@@ -875,13 +861,13 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4685382/omarion-hampton"
+            "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685382.png",
-          "jersey": "8",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038941.png",
+          "jersey": "10",
           "position": {
-           "abbreviation": "RB"
+           "abbreviation": "QB"
           },
           "team": {
            "id": "24"
@@ -901,8 +887,8 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "2 REC, 53 YDS",
-         "value": 53.0,
+         "displayValue": "5 REC, 86 YDS",
+         "value": 86.0,
          "athlete": {
           "id": "4686612",
           "fullName": "Tre' Harris",
@@ -1022,8 +1008,8 @@
    ],
    "weather": {
     "displayValue": "33",
-    "temperature": 47,
-    "highTemperature": 47,
+    "temperature": 48,
+    "highTemperature": 48,
     "conditionId": "Clear",
     "link": {
      "language": "en-US",
@@ -1038,17 +1024,17 @@
     }
    },
    "status": {
-    "clock": 187.0,
-    "displayClock": "3:07",
-    "period": 1,
+    "clock": 126.0,
+    "displayClock": "2:06",
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "3:07 - 1st Quarter",
-     "shortDetail": "3:07 - 1st"
+     "detail": "2:06 - 2nd Quarter",
+     "shortDetail": "2:06 - 2nd"
     }
    }
   },
@@ -7953,116 +7939,6 @@
        "region": "us"
       }
      ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Josh Allen and the Buffalo Bills are off to the franchise's best start in 35 years.",
-       "shortLinkText": "Josh Allen powers Bills past Jets 31-12 for best start in 35 years. New York loses Geno Smith twice",
-       "video": [
-        {
-         "id": 50493724,
-         "source": "espn",
-         "headline": "Bills make easy work of Jets",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.jpg",
-         "duration": 62,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261115_NFL_bills_make_easy_work_of_jets",
-          "trackingName": "COM_NFL Highlight (Bills make easy work of Jets) 2026/11/15 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/8e552223-5cc0-4888-a793-c94544784cb1"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50493724"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50493724"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/8e552223-5cc0-4888-a793-c94544784cb1/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50493724&videoDSI=491eba3fbcd9d"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=491eba3fbcd9d"
-            }
-           }
-          }
-         }
-        }
-       ]
-      }
-     ],
      "highlights": [
       {
        "id": 50493724,
@@ -8176,6 +8052,116 @@
         "trackingId": "dm_20261115_NFL_bills_make_easy_work_of_jets",
         "trackingName": "COM_NFL Highlight (Bills make easy work of Jets) 2026/11/15 ESHEET"
        }
+      }
+     ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Josh Allen and the Buffalo Bills are off to the franchise's best start in 35 years.",
+       "shortLinkText": "Josh Allen powers Bills past Jets 31-12 for best start in 35 years. New York loses Geno Smith twice",
+       "video": [
+        {
+         "id": 50493724,
+         "source": "espn",
+         "headline": "Bills make easy work of Jets",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.jpg",
+         "duration": 62,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261115_NFL_bills_make_easy_work_of_jets",
+          "trackingName": "COM_NFL Highlight (Bills make easy work of Jets) 2026/11/15 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/8e552223-5cc0-4888-a793-c94544784cb1"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50493724"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50493724"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/8e552223-5cc0-4888-a793-c94544784cb1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/8e552223-5cc0-4888-a793-c94544784cb1/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1115/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94/c9dca6e9-5e92-4fe2-84a6-88c71d77fa94.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50493724&videoDSI=491eba3fbcd9d"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50493724/bills-make-easy-work-jets",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=491eba3fbcd9d"
+            }
+           }
+          }
+         }
+        }
+       ]
       }
      ]
     }
