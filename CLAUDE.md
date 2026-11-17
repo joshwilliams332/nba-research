@@ -56,7 +56,38 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   `mateStrength` 0.5 -> 0.3 and `otherTeamWeight` 0.6 (previous-team games count less), both better on 2025-26,
   2026-27 and real lines. Tested and rejected: treating rotation players who missed the team's last few games as out
   when ESPN doesn't list them (made projections worse at K = 2, 3 and 5), and skipping picks with a key teammate out and
-  under 5 games without him (those spots did no worse on real lines); the digest names them as "thin evidence" instead. `scripts/backtest.js` (workflow step) writes
+  under 5 games without him (those spots did no worse on real lines); the digest names them as "thin evidence" instead.
+  **Real-line check, Nov 17, 2026 (2,955 graded lines Oct 28 - Nov 16, `scripts/experiments/line-anchor.js`):** by log
+  loss the model's own chances (0.700 first week, 0.713 since) are worse than a coin flip (0.693) and the books' no-vig
+  chances (0.684 / 0.689); its biggest disagreements with the books lose most (15-20 points apart: 39% since Nov 3).
+  Tested and rejected: shorter half-lives, wider dispersion, halving its confidence. Anchoring on the books' line
+  (book mean + k x (model - book)) helps on the tuning week at k 0.1-0.3 but not on the held-out weeks (only rebounds
+  held up, barely), so the current model adds nothing over the books. Rebuild plan: keep the books' line as the
+  baseline and add one tested adjustment at a time (shot-volume points, implied team total / blowout risk, starters
+  and minutes, opponent injuries, a later lock after injury news); ship only what beats the books on held-out weeks.
+  **Step 2, Nov 17 (`scripts/experiments/features.js`, every player-game of 2025-26 and 2026-27, scored on the actual
+  result; past prop lines aren't available):** shot-volume points (2PA / 3PA / FTA per minute x make rates shrunk to the
+  league, 75% mixed with the old projection, x1.05; tuned on 2025-26) improved points in both seasons (log score
+  +0.010 / +0.009, MAE 4.81 -> 4.79 this season) and on real points lines (0.6931 -> 0.6921) but still trails the books
+  (0.6911). Rejected: implied team total from the spread / total (worse every stat), blowout minutes cut on big spreads
+  (no change), this-season-only games (worse). The model over-projects points this season by ~0.8 (unexplained yet).
+  **Step 3, Nov 17 (`scripts/experiments/minutes.js`, same player-games):** projected minutes miss by ~4.9 (2025-26) /
+  5.3 (this season); starters play ~0.8-1.0 more than projected, bench players ~0.7 (last season) / 1.9 (this season)
+  fewer, which is most of this season's points over-projection. A last-game starter +3% / bench -4% or -8% correction
+  helps points and assists but hurts rebounds and threes last season (not shipped); last-game role minutes and a
+  back-to-back cut don't help. Knowing tonight's starters (only known near tip, from the box score here) is the biggest
+  gain found: log score +0.011 / +0.027 points, +0.006 / +0.015 assists, +0.005 / +0.012 rebounds; knowing which
+  regulars sat adds about +0.002-0.004. So the late news the books trade on is where the model loses; a later lock
+  with lineups is the next thing to test (old pre-tip points pulls, Nov 1-10, give closing lines to score against).
+  **Step 4, Nov 17 (`scripts/experiments/late-lock.js`, 604 pre-tip points lines Oct 28 - Nov 10):** closing lines are
+  sharper than morning lines on the same props (log loss 0.6876 vs 0.6916; 220 of 466 lines moved). Against the close
+  (0.6900) the model alone only gets worse; the model with tonight's starters, nudging the books' line 10-20%, scores
+  0.6896-0.6897: level with the close, within noise. **Conclusion after steps 1-4: no input found beats the books; a
+  later lock would make our numbers about as good as the closing line, not better.** One positive (`scripts/experiments/line-moves.js`,
+  272 points props whose line moved before tip): when the model leans 5% / 10% / 15%+ off the morning books, the line
+  moves its way 64% / 64% / 72% of the time (closing line value), yet those sides still lost on results. Small sample;
+  CLV is the usual long-run sign of an edge, so tracking it is worth it. ESPN's free DraftKings NBA prop lines could
+  supply closing lines without credits (as NFL Lab does). `scripts/backtest.js` (workflow step) writes
   `site/data/model.json` for `model.html`. Node loads the helpers via `Object.assign(globalThis, require(...))`;
   never declare common.js names with `var`/`const` in other asset files (they share one global scope in the browser).
 - Line movement / CLV (`site/assets/lines.js`, tested in `tests/lines.test.js`): props.json props carry `open` and
