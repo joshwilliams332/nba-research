@@ -444,6 +444,7 @@
        "type": "team",
        "order": 0,
        "homeAway": "home",
+       "winner": false,
        "team": {
         "id": "33",
         "uid": "s:20~l:28~t:33",
@@ -573,14 +574,14 @@
        "records": [
         {
          "name": "overall",
-         "abbreviation": "Any",
+         "abbreviation": "Game",
          "type": "total",
-         "summary": "4-5"
+         "summary": "4-6"
         },
         {
          "name": "Home",
          "type": "home",
-         "summary": "1-3"
+         "summary": "1-4"
         },
         {
          "name": "Road",
@@ -595,6 +596,7 @@
        "type": "team",
        "order": 1,
        "homeAway": "away",
+       "winner": true,
        "team": {
         "id": "24",
         "uid": "s:20~l:28~t:24",
@@ -724,9 +726,9 @@
        "records": [
         {
          "name": "overall",
-         "abbreviation": "Any",
+         "abbreviation": "Game",
          "type": "total",
-         "summary": "0-8"
+         "summary": "1-8"
         },
         {
          "name": "Home",
@@ -736,101 +738,24 @@
         {
          "name": "Road",
          "type": "road",
-         "summary": "0-4"
+         "summary": "1-4"
         }
        ]
       }
      ],
      "notes": [],
-     "situation": {
-      "lastPlay": {
-       "id": "4018730653950",
-       "type": {
-        "id": "3",
-        "text": "Pass Incompletion"
-       },
-       "text": "(Shotgun) J.Brissett pass incomplete short right to J.Lane (D.Henley).",
-       "scoreValue": 0,
-       "team": {
-        "id": "33"
-       },
-       "probability": {
-        "tiePercentage": 0.0,
-        "homeWinPercentage": 0.2603,
-        "awayWinPercentage": 0.7397,
-        "secondsLeft": 0
-       },
-       "statYardage": 0,
-       "drive": {
-        "description": "2 plays, 14 yards, 0:09",
-        "start": {
-         "yardLine": 25,
-         "text": "BAL 25"
-        },
-        "timeElapsed": {
-         "displayValue": "0:09"
-        }
-       },
-       "start": {
-        "yardLine": 39,
-        "team": {
-         "id": "33"
-        }
-       },
-       "end": {
-        "yardLine": 39,
-        "team": {
-         "id": "33"
-        }
-       },
-       "athletesInvolved": [
-        {
-         "id": "4870847",
-         "fullName": "Ja'Kobi Lane",
-         "displayName": "Ja'Kobi Lane",
-         "shortName": "J. Lane",
-         "links": [
-          {
-           "rel": [
-            "playercard",
-            "desktop",
-            "athlete"
-           ],
-           "href": "https://www.espn.com/nfl/player/_/id/4870847/jakobi-lane"
-          }
-         ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4870847.png",
-         "jersey": "6",
-         "position": "WR",
-         "team": {
-          "id": "33"
-         }
-        }
-       ]
-      },
-      "down": 2,
-      "yardLine": 39,
-      "distance": 10,
-      "downDistanceText": "2nd & 10 at BAL 39",
-      "shortDownDistanceText": "2nd & 10",
-      "possessionText": "BAL 39",
-      "isRedZone": false,
-      "homeTimeouts": 2,
-      "awayTimeouts": 3,
-      "possession": "33"
-     },
      "status": {
-      "clock": 135.0,
-      "displayClock": "2:15",
+      "clock": 0.0,
+      "displayClock": "0:00",
       "period": 4,
       "type": {
-       "id": "2",
-       "name": "STATUS_IN_PROGRESS",
-       "state": "in",
-       "completed": false,
-       "description": "In Progress",
-       "detail": "2:15 - 4th Quarter",
-       "shortDetail": "2:15 - 4th"
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
       },
       "isTBDFlex": false
      },
@@ -850,8 +775,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "31/46, 304 YDS, 1 INT",
-         "value": 304.0,
+         "displayValue": "33/49, 340 YDS, 1 INT",
+         "value": 340.0,
          "athlete": {
           "id": "2578570",
           "fullName": "Jacoby Brissett",
@@ -890,8 +815,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "19 CAR, 97 YDS, 1 TD",
-         "value": 97.0,
+         "displayValue": "22 CAR, 105 YDS, 1 TD",
+         "value": 105.0,
          "athlete": {
           "id": "4685382",
           "fullName": "Omarion Hampton",
@@ -993,18 +918,132 @@
        "region": "us"
       }
      ],
-     "highlights": []
+     "highlights": [
+      {
+       "id": 50507744,
+       "cerebroId": "6afbd60af1fa107919723d66",
+       "source": "espn",
+       "headline": "Chargers stun Ravens, pick up first win on MNF",
+       "description": "Chargers stun Ravens, pick up first win on MNF",
+       "lastModified": "2026-11-17T04:24:23Z",
+       "originalPublishDate": "2026-11-17T04:20:27Z",
+       "duration": 66,
+       "timeRestrictions": {
+        "embargoDate": "2026-11-17T04:20:25Z",
+        "expirationDate": "2026-11-19T04:20:25Z"
+       },
+       "deviceRestrictions": {
+        "devices": [
+         "settop",
+         "tablet",
+         "handset",
+         "ipad",
+         "desktop"
+        ],
+        "type": "whitelist"
+       },
+       "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1116/4940034c263e4b06aab33d5d977dc0c91402/4940034c263e4b06aab33d5d977dc0c91402.jpg",
+       "links": {
+        "api": {
+         "artwork": {
+          "href": "https://artwork.api.espn.com/artwork/collections/media/4a1c9467-10cc-4202-99f5-d396bd7ca08b"
+         },
+         "self": {
+          "href": "https://content.core.api.espn.com/v1/video/clips/50507744"
+         }
+        },
+        "mobile": {
+         "href": "https://watch.auth.api.espn.com/video/auth/brightcove/4a1c9467-10cc-4202-99f5-d396bd7ca08b/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50507744/chargers-stun-ravens-pick-first-win-mnf",
+         "alert": {
+          "href": "https://m.espn.com/general/video/videoAlert?vid=50507744"
+         },
+         "progressiveDownload": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/4a1c9467-10cc-4202-99f5-d396bd7ca08b/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50507744/chargers-stun-ravens-pick-first-win-mnf"
+         },
+         "source": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9.mp4"
+         },
+         "streaming": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/4a1c9467-10cc-4202-99f5-d396bd7ca08b/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50507744/chargers-stun-ravens-pick-first-win-mnf"
+         }
+        },
+        "source": {
+         "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9.mp4",
+         "HD": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9.mp4"
+         },
+         "HLS": {
+          "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9/playlist.m3u8",
+          "9x16": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9/playlist.m3u8"
+          },
+          "HD": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9/playlist.m3u8"
+          },
+          "cmaf": {
+           "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9/playlist.m3u8",
+           "9x16": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9/playlist.m3u8"
+           },
+           "cmb": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9/playlist.m3u8"
+           }
+          },
+          "cmb": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9/playlist.m3u8"
+          },
+          "shield": {
+           "href": "https://watch.auth.api.espn.com/video/auth/media/4a1c9467-10cc-4202-99f5-d396bd7ca08b/asset"
+          }
+         },
+         "flash": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9.mp4"
+         },
+         "full": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9.mp4"
+         },
+         "mezzanine": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1117/4940034c-263e-4b06-aab3-3d5d977dc0c9/4940034c-263e-4b06-aab3-3d5d977dc0c9.mp4"
+         }
+        },
+        "sportscenter": {
+         "href": "sportscenter://x-callback-url/showVideo?videoID=50507744&videoDSI=6fc6a2d96f2ff"
+        },
+        "web": {
+         "href": "https://www.espn.com/video/clip/_/id/50507744/chargers-stun-ravens-pick-first-win-mnf",
+         "self": {
+          "href": "https://www.espn.com/video/clip/_/id/50507744/chargers-stun-ravens-pick-first-win-mnf",
+          "dsi": {
+           "href": "https://www.espn.com/video/clip?id=6fc6a2d96f2ff"
+          }
+         }
+        }
+       },
+       "ad": {
+        "bundle": "nfl_one_plays",
+        "sport": "nfl"
+       },
+       "tracking": {
+        "coverageType": "Final Game Highlight",
+        "leagueName": "NFL",
+        "program": "espnnfl",
+        "sportName": "football",
+        "trackingId": "dm_20261117_NFL_chargers_stun_ravens_pick_up_first_win_on_mnf",
+        "trackingName": "NFL_One-Play (Chargers stun Ravens, pick up first win on MNF) 2026/11/17 ESHEET"
+       }
+      }
+     ]
     }
    ],
    "links": [
     {
      "language": "en-US",
      "rel": [
-      "live",
+      "summary",
       "desktop",
       "event"
      ],
-     "href": "https://www.espn.com/nfl/game?gameId=401873065",
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873065/chargers-ravens",
      "text": "Gamecast",
      "shortText": "Gamecast",
      "isExternal": false,
@@ -1049,35 +1088,18 @@
      "isPremium": false
     }
    ],
-   "weather": {
-    "displayValue": "33",
-    "temperature": 44,
-    "highTemperature": 44,
-    "conditionId": "Clear",
-    "link": {
-     "language": "en-US",
-     "rel": [
-      "21230"
-     ],
-     "href": "http://www.accuweather.com/en/us/m-t-bank-stadium-md/21202/current-weather/43035_poi?lang=en-us",
-     "text": "Weather",
-     "shortText": "Weather",
-     "isExternal": true,
-     "isPremium": false
-    }
-   },
    "status": {
-    "clock": 135.0,
-    "displayClock": "2:15",
+    "clock": 0.0,
+    "displayClock": "0:00",
     "period": 4,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
-     "state": "in",
-     "completed": false,
-     "description": "In Progress",
-     "detail": "2:15 - 4th Quarter",
-     "shortDetail": "2:15 - 4th"
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    }
   },
@@ -11286,6 +11308,116 @@
        "region": "us"
       }
      ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Joe Burrow and the Cincinnati Bengals didn't wither under the prime-time spotlight.",
+       "shortLinkText": "Joe Burrow and Bengals dominate Steelers 38-18 to take AFC North lead alone",
+       "video": [
+        {
+         "id": 50498452,
+         "source": "espn",
+         "headline": "Burrow throws 4 TDs as Bengals blow out Steelers",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.jpg",
+         "duration": 64,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261116_NFL_burrow_throws_4_tds_as_bengals_blow_out_steelers_3818",
+          "trackingName": "NFL_One-Play (Burrow throws 4 TDs as Bengals blow out Steelers) 2026/11/16 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/179b35e0-92d5-42c3-bbfd-5a1732b764e6"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50498452"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/179b35e0-92d5-42c3-bbfd-5a1732b764e6/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50498452"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/179b35e0-92d5-42c3-bbfd-5a1732b764e6/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/179b35e0-92d5-42c3-bbfd-5a1732b764e6/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/179b35e0-92d5-42c3-bbfd-5a1732b764e6/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50498452&videoDSI=930ce9662a93a"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=930ce9662a93a"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
      "highlights": [
       {
        "id": 50498452,
@@ -11399,116 +11531,6 @@
         "trackingId": "dm_20261116_NFL_burrow_throws_4_tds_as_bengals_blow_out_steelers_3818",
         "trackingName": "NFL_One-Play (Burrow throws 4 TDs as Bengals blow out Steelers) 2026/11/16 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Joe Burrow and the Cincinnati Bengals didn't wither under the prime-time spotlight.",
-       "shortLinkText": "Joe Burrow and Bengals dominate Steelers 38-18 to take AFC North lead alone",
-       "video": [
-        {
-         "id": 50498452,
-         "source": "espn",
-         "headline": "Burrow throws 4 TDs as Bengals blow out Steelers",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.jpg",
-         "duration": 64,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261116_NFL_burrow_throws_4_tds_as_bengals_blow_out_steelers_3818",
-          "trackingName": "NFL_One-Play (Burrow throws 4 TDs as Bengals blow out Steelers) 2026/11/16 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/179b35e0-92d5-42c3-bbfd-5a1732b764e6"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50498452"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/179b35e0-92d5-42c3-bbfd-5a1732b764e6/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50498452"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/179b35e0-92d5-42c3-bbfd-5a1732b764e6/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/179b35e0-92d5-42c3-bbfd-5a1732b764e6/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/179b35e0-92d5-42c3-bbfd-5a1732b764e6/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1116/7f18b309-91d8-4927-95b8-35abb9484dd2/7f18b309-91d8-4927-95b8-35abb9484dd2.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50498452&videoDSI=930ce9662a93a"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50498452/burrow-throws-4-tds-bengals-blow-steelers",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=930ce9662a93a"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
