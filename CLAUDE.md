@@ -83,7 +83,11 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   sharper than morning lines on the same props (log loss 0.6876 vs 0.6916; 220 of 466 lines moved). Against the close
   (0.6900) the model alone only gets worse; the model with tonight's starters, nudging the books' line 10-20%, scores
   0.6896-0.6897: level with the close, within noise. **Conclusion after steps 1-4: no input found beats the books; a
-  later lock would make our numbers about as good as the closing line, not better.** `scripts/backtest.js` (workflow step) writes
+  later lock would make our numbers about as good as the closing line, not better.** One positive (`scripts/experiments/line-moves.js`,
+  272 points props whose line moved before tip): when the model leans 5% / 10% / 15%+ off the morning books, the line
+  moves its way 64% / 64% / 72% of the time (closing line value), yet those sides still lost on results. Small sample;
+  CLV is the usual long-run sign of an edge, so tracking it is worth it. ESPN's free DraftKings NBA prop lines could
+  supply closing lines without credits (as NFL Lab does). `scripts/backtest.js` (workflow step) writes
   `site/data/model.json` for `model.html`. Node loads the helpers via `Object.assign(globalThis, require(...))`;
   never declare common.js names with `var`/`const` in other asset files (they share one global scope in the browser).
 - Line movement / CLV (`site/assets/lines.js`, tested in `tests/lines.test.js`): props.json props carry `open` and
