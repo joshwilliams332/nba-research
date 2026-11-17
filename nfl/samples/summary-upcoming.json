@@ -373,8 +373,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "30",
       "uid": "s:20~l:28~t:30",
@@ -439,7 +437,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873016",
@@ -551,6 +551,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "24",
       "uid": "s:20~l:28~t:24",
@@ -615,9 +617,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png"
     },
     {
      "id": "401873056",
@@ -640,6 +640,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "5",
       "uid": "s:20~l:28~t:5",
@@ -704,9 +706,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
     }
    ]
   },
@@ -798,8 +798,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "10",
       "uid": "s:20~l:28~t:10",
@@ -864,7 +862,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873014",
@@ -1154,6 +1154,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "15",
       "uid": "s:20~l:28~t:15",
@@ -1218,9 +1220,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png"
     }
    ]
   }
@@ -1567,7 +1567,7 @@
         "status": "Injured Reserve",
         "injuries": {
          "status": "Injured Reserve",
-         "date": "2026-11-17T16:40Z",
+         "date": "2026-11-17T01:03Z",
          "type": {
           "id": "5",
           "name": "INJURY_STATUS_IR",
@@ -1577,8 +1577,7 @@
          "details": {
           "fantasyStatus": {
            "description": "IR",
-           "abbreviation": "IR",
-           "displayDescription": "IR"
+           "abbreviation": "IR"
           },
           "type": "Groin",
           "location": "Groin",
@@ -2209,67 +2208,6 @@
      }
     },
     {
-     "status": "Injured Reserve",
-     "date": "2026-11-17T16:40Z",
-     "athlete": {
-      "id": "3919117",
-      "uid": "s:20~l:28~a:3919117",
-      "guid": "3ce75e87-2c6d-5a79-e349-2caa21b3cb07",
-      "lastName": "Al-Shaair",
-      "fullName": "Azeez Al-Shaair",
-      "displayName": "Azeez Al-Shaair",
-      "shortName": "A. Al-Shaair",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/3919117/azeez-al-shaair",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/3919117.png",
-       "alt": "Azeez Al-Shaair"
-      },
-      "jersey": "0",
-      "position": {
-       "name": "Linebacker",
-       "displayName": "Linebacker",
-       "abbreviation": "LB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/3919117?lang=en&region=us"
-      },
-      "status": {
-       "id": "13",
-       "name": "Day-To-Day",
-       "type": "day-to-day",
-       "abbreviation": "Day-To-Day"
-      }
-     },
-     "type": {
-      "id": "5",
-      "name": "INJURY_STATUS_IR",
-      "description": "Injured Reserve",
-      "abbreviation": "IR"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "IR",
-       "abbreviation": "IR",
-       "displayDescription": "IR"
-      },
-      "type": "Groin",
-      "location": "Groin",
-      "detail": "Surgery",
-      "side": "Not Specified",
-      "returnDate": "2026-12-20"
-     }
-    },
-    {
      "status": "Questionable",
      "date": "2026-11-17T12:19Z",
      "athlete": {
@@ -2324,6 +2262,67 @@
        "displayDescription": "Questionable"
       },
       "type": "Hamstring",
+      "location": "Leg",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-19"
+     }
+    },
+    {
+     "status": "Questionable",
+     "date": "2026-11-17T12:19Z",
+     "athlete": {
+      "id": "4362504",
+      "uid": "s:20~l:28~a:4362504",
+      "guid": "1f1316c2-69bc-83a0-ec78-fe5c15c04546",
+      "lastName": "Jordan",
+      "fullName": "Brevin Jordan",
+      "displayName": "Brevin Jordan",
+      "shortName": "B. Jordan",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4362504/brevin-jordan",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4362504.png",
+       "alt": "Brevin Jordan"
+      },
+      "jersey": "9",
+      "position": {
+       "name": "Tight End",
+       "displayName": "Tight End",
+       "abbreviation": "TE"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4362504?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Foot",
       "location": "Leg",
       "detail": "Not Specified",
       "side": "Not Specified",
@@ -4129,6 +4128,74 @@
   }
  },
  "winprobability": [],
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Texans Tickets",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/19 vs Colts 3315 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/29 vs Ravens 3950 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/6 @ Steelers 3148 tickets left",
+    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-7-2027/production/6495159?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 @ Commanders 6523 tickets left",
+    "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-6-2026/production/6493325?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 vs Jaguars 5676 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-2-2026/production/6490002?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/24 @ Eagles 5346 tickets left",
+    "ticketLink": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-6-2027/production/6495008?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/4 @ Packers 2397 tickets left",
+    "ticketLink": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-8-2026/production/6489962?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Titans 6050 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-3-2026/production/6490014?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Colts",
+   "currentTeamName": "Texans",
+   "venueName": "Reliant Stadium",
+   "summary": "Tickets as low as $41",
+   "date": "2026-11-20T01:15Z",
+   "dateDay": "Thu",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
+   "venueLink": "https://www.vividseats.com/nrg-stadium-tickets/venue/2411?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
+   "timeValid": true
+  }
+ },
  "header": {
   "id": "401873066",
   "uid": "s:20~l:28~e:401873066",
@@ -5198,74 +5265,6 @@
   "gameSwitcherEnabled": true,
   "picker_topic": "picker-football-nfl",
   "gameState": "pre"
- },
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Texans Tickets",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/19 vs Colts 3315 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/29 vs Ravens 3958 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/6 @ Steelers 3148 tickets left",
-    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-7-2027/production/6495159?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 @ Commanders 6503 tickets left",
-    "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-6-2026/production/6493325?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 vs Jaguars 5676 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-2-2026/production/6490002?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/24 @ Eagles 5346 tickets left",
-    "ticketLink": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-6-2027/production/6495008?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/4 @ Packers 2397 tickets left",
-    "ticketLink": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-8-2026/production/6489962?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Titans 6050 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-3-2026/production/6490014?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Colts",
-   "currentTeamName": "Texans",
-   "venueName": "Reliant Stadium",
-   "summary": "Tickets as low as $41",
-   "date": "2026-11-20T01:15Z",
-   "dateDay": "Thu",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
-   "venueLink": "https://www.vividseats.com/nrg-stadium-tickets/venue/2411?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
-   "timeValid": true
-  }
  },
  "standings": {
   "fullViewLink": {
