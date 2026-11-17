@@ -78,7 +78,12 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
   back-to-back cut don't help. Knowing tonight's starters (only known near tip, from the box score here) is the biggest
   gain found: log score +0.011 / +0.027 points, +0.006 / +0.015 assists, +0.005 / +0.012 rebounds; knowing which
   regulars sat adds about +0.002-0.004. So the late news the books trade on is where the model loses; a later lock
-  with lineups is the next thing to test (old pre-tip points pulls, Nov 1-10, give closing lines to score against). `scripts/backtest.js` (workflow step) writes
+  with lineups is the next thing to test (old pre-tip points pulls, Nov 1-10, give closing lines to score against).
+  **Step 4, Nov 17 (`scripts/experiments/late-lock.js`, 604 pre-tip points lines Oct 28 - Nov 10):** closing lines are
+  sharper than morning lines on the same props (log loss 0.6876 vs 0.6916; 220 of 466 lines moved). Against the close
+  (0.6900) the model alone only gets worse; the model with tonight's starters, nudging the books' line 10-20%, scores
+  0.6896-0.6897: level with the close, within noise. **Conclusion after steps 1-4: no input found beats the books; a
+  later lock would make our numbers about as good as the closing line, not better.** `scripts/backtest.js` (workflow step) writes
   `site/data/model.json` for `model.html`. Node loads the helpers via `Object.assign(globalThis, require(...))`;
   never declare common.js names with `var`/`const` in other asset files (they share one global scope in the browser).
 - Line movement / CLV (`site/assets/lines.js`, tested in `tests/lines.test.js`): props.json props carry `open` and
