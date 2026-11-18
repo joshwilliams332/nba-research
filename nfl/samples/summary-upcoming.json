@@ -462,8 +462,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "19",
       "uid": "s:20~l:28~t:19",
@@ -528,7 +526,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873046",
@@ -551,8 +551,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "24",
       "uid": "s:20~l:28~t:24",
@@ -617,7 +615,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873056",
@@ -640,8 +640,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "5",
       "uid": "s:20~l:28~t:5",
@@ -706,7 +704,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -798,6 +798,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "10",
       "uid": "s:20~l:28~t:10",
@@ -862,9 +864,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
     },
     {
      "id": "401873014",
@@ -976,8 +976,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "30",
       "uid": "s:20~l:28~t:30",
@@ -1042,7 +1040,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873040",
@@ -1154,8 +1154,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "15",
       "uid": "s:20~l:28~t:15",
@@ -1220,7 +1218,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   }
@@ -3310,6 +3310,18 @@
    "records": []
   }
  ],
+ "winprobability": [],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "34",
+   "gameProjection": "74.4"
+  },
+  "awayTeam": {
+   "id": "11",
+   "gameProjection": "25.4"
+  }
+ },
  "news": {
   "header": "NFL News",
   "link": {
@@ -4041,18 +4053,6 @@
    }
   ]
  },
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "34",
-   "gameProjection": "74.4"
-  },
-  "awayTeam": {
-   "id": "11",
-   "gameProjection": "25.4"
-  }
- },
- "winprobability": [],
  "header": {
   "id": "401873066",
   "uid": "s:20~l:28~e:401873066",
@@ -5135,7 +5135,7 @@
     "type": "event"
    },
    {
-    "ticketName": "11/29 vs Ravens 3937 tickets left",
+    "ticketName": "11/29 vs Ravens 3936 tickets left",
     "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
     "type": "event"
    },
@@ -5145,7 +5145,7 @@
     "type": "event"
    },
    {
-    "ticketName": "12/13 @ Commanders 6634 tickets left",
+    "ticketName": "12/13 @ Commanders 6611 tickets left",
     "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-6-2026/production/6493325?wsUser=717",
     "type": "event"
    },
@@ -5155,7 +5155,7 @@
     "type": "event"
    },
    {
-    "ticketName": "12/24 @ Eagles 5346 tickets left",
+    "ticketName": "12/24 @ Eagles 5305 tickets left",
     "ticketLink": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-6-2027/production/6495008?wsUser=717",
     "type": "event"
    },
