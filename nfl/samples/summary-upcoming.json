@@ -373,8 +373,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "30",
       "uid": "s:20~l:28~t:30",
@@ -439,7 +437,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873016",
@@ -798,8 +798,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "10",
       "uid": "s:20~l:28~t:10",
@@ -864,7 +862,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873014",
@@ -887,8 +887,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "16",
       "uid": "s:20~l:28~t:16",
@@ -953,7 +951,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873028",
@@ -1065,8 +1065,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "6",
       "uid": "s:20~l:28~t:6",
@@ -1131,7 +1129,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873059",
@@ -2731,7 +2731,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "Draft Kings",
+    "name": "DraftKings",
     "priority": 1,
     "logos": [
      {
@@ -2782,7 +2782,7 @@
       "home",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118011%3Foutcomes%3D0ML84695444_1",
      "text": "Home Bet",
@@ -2806,7 +2806,7 @@
       "away",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118011%3Foutcomes%3D0ML84695444_3",
      "text": "Away Bet",
@@ -2946,7 +2946,7 @@
         "home",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118011%3Foutcomes%3D0ML84695444_1",
        "text": "Home Bet",
@@ -2978,7 +2978,7 @@
         "away",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118011%3Foutcomes%3D0ML84695444_3",
        "text": "Away Bet",
@@ -3310,18 +3310,6 @@
    "records": []
   }
  ],
- "winprobability": [],
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "34",
-   "gameProjection": "74.4"
-  },
-  "awayTeam": {
-   "id": "11",
-   "gameProjection": "25.4"
-  }
- },
  "news": {
   "header": "NFL News",
   "link": {
@@ -4053,74 +4041,18 @@
    }
   ]
  },
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Texans Tickets",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/19 vs Colts 3210 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/29 vs Ravens 3937 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/6 @ Steelers 3159 tickets left",
-    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-7-2027/production/6495159?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 @ Commanders 6637 tickets left",
-    "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-6-2026/production/6493325?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 vs Jaguars 5676 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-2-2026/production/6490002?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/24 @ Eagles 5346 tickets left",
-    "ticketLink": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-6-2027/production/6495008?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/4 @ Packers 2381 tickets left",
-    "ticketLink": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-8-2026/production/6489962?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Titans 6050 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-3-2026/production/6490014?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Colts",
-   "currentTeamName": "Texans",
-   "venueName": "Reliant Stadium",
-   "summary": "Tickets as low as $42",
-   "date": "2026-11-20T01:15Z",
-   "dateDay": "Thu",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
-   "venueLink": "https://www.vividseats.com/nrg-stadium-tickets/venue/2411?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
-   "timeValid": true
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "34",
+   "gameProjection": "74.4"
+  },
+  "awayTeam": {
+   "id": "11",
+   "gameProjection": "25.4"
   }
  },
+ "winprobability": [],
  "header": {
   "id": "401873066",
   "uid": "s:20~l:28~e:401873066",
@@ -5185,6 +5117,74 @@
   }
  },
  "wallclockAvailable": false,
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Texans Tickets",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/19 vs Colts 3211 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/29 vs Ravens 3937 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/6 @ Steelers 3159 tickets left",
+    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-7-2027/production/6495159?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 @ Commanders 6634 tickets left",
+    "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-6-2026/production/6493325?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 vs Jaguars 5676 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-2-2026/production/6490002?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/24 @ Eagles 5346 tickets left",
+    "ticketLink": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-6-2027/production/6495008?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/4 @ Packers 2381 tickets left",
+    "ticketLink": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-8-2026/production/6489962?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Titans 6050 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-3-2026/production/6490014?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Colts",
+   "currentTeamName": "Texans",
+   "venueName": "Reliant Stadium",
+   "summary": "Tickets as low as $42",
+   "date": "2026-11-20T01:15Z",
+   "dateDay": "Thu",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
+   "venueLink": "https://www.vividseats.com/nrg-stadium-tickets/venue/2411?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
+   "timeValid": true
+  }
+ },
  "meta": {
   "gp_topic": "gp-football-nfl-401873066",
   "gameSwitcherEnabled": true,
