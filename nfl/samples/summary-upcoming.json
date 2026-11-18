@@ -462,8 +462,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "19",
       "uid": "s:20~l:28~t:19",
@@ -528,7 +526,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873046",
@@ -551,8 +551,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "24",
       "uid": "s:20~l:28~t:24",
@@ -617,7 +615,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873056",
@@ -640,8 +640,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "5",
       "uid": "s:20~l:28~t:5",
@@ -706,7 +704,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -976,8 +976,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "30",
       "uid": "s:20~l:28~t:30",
@@ -1042,7 +1040,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873040",
@@ -1065,8 +1065,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "6",
       "uid": "s:20~l:28~t:6",
@@ -1131,7 +1129,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873059",
@@ -1154,8 +1154,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "15",
       "uid": "s:20~l:28~t:15",
@@ -1220,7 +1218,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   }
@@ -2398,6 +2398,67 @@
    },
    "injuries": [
     {
+     "status": "Injured Reserve",
+     "date": "2026-11-18T00:24Z",
+     "athlete": {
+      "id": "4601021",
+      "uid": "s:20~l:28~a:4601021",
+      "guid": "6605c873-92dc-3b38-9e88-25a482d38031",
+      "lastName": "Carlies",
+      "fullName": "Jaylon Carlies",
+      "displayName": "Jaylon Carlies",
+      "shortName": "J. Carlies",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4601021/jaylon-carlies",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4601021.png",
+       "alt": "Jaylon Carlies"
+      },
+      "jersey": "57",
+      "position": {
+       "name": "Linebacker",
+       "displayName": "Linebacker",
+       "abbreviation": "LB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4601021?lang=en&region=us"
+      },
+      "status": {
+       "id": "13",
+       "name": "Day-To-Day",
+       "type": "day-to-day",
+       "abbreviation": "Day-To-Day"
+      }
+     },
+     "type": {
+      "id": "5",
+      "name": "INJURY_STATUS_IR",
+      "description": "Injured Reserve",
+      "abbreviation": "IR"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "IR",
+       "abbreviation": "IR",
+       "displayDescription": "IR"
+      },
+      "type": "Neck",
+      "location": "Head",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-12-27"
+     }
+    },
+    {
      "status": "Questionable",
      "date": "2026-11-17T21:34Z",
      "athlete": {
@@ -2456,67 +2517,6 @@
       "detail": "Not Specified",
       "side": "Not Specified",
       "returnDate": "2026-11-19"
-     }
-    },
-    {
-     "status": "Injured Reserve",
-     "date": "2026-11-17T19:40Z",
-     "athlete": {
-      "id": "4601021",
-      "uid": "s:20~l:28~a:4601021",
-      "guid": "6605c873-92dc-3b38-9e88-25a482d38031",
-      "lastName": "Carlies",
-      "fullName": "Jaylon Carlies",
-      "displayName": "Jaylon Carlies",
-      "shortName": "J. Carlies",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4601021/jaylon-carlies",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4601021.png",
-       "alt": "Jaylon Carlies"
-      },
-      "jersey": "57",
-      "position": {
-       "name": "Linebacker",
-       "displayName": "Linebacker",
-       "abbreviation": "LB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4601021?lang=en&region=us"
-      },
-      "status": {
-       "id": "13",
-       "name": "Day-To-Day",
-       "type": "day-to-day",
-       "abbreviation": "Day-To-Day"
-      }
-     },
-     "type": {
-      "id": "5",
-      "name": "INJURY_STATUS_IR",
-      "description": "Injured Reserve",
-      "abbreviation": "IR"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "IR",
-       "abbreviation": "IR",
-       "displayDescription": "IR"
-      },
-      "type": "Neck",
-      "location": "Head",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-12-27"
      }
     },
     {
@@ -2732,7 +2732,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1,
     "logos": [
      {
@@ -2757,7 +2757,7 @@
    "awayTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 500,
+    "moneyLine": 525,
     "spreadOdds": -112.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/11?lang=en&region=us"
@@ -2768,7 +2768,7 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -700,
+    "moneyLine": -750,
     "spreadOdds": -108.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/34?lang=en&region=us"
@@ -2783,7 +2783,7 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118011%3Foutcomes%3D0ML84695444_1",
      "text": "Home Bet",
@@ -2807,7 +2807,7 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118011%3Foutcomes%3D0ML84695444_3",
      "text": "Away Bet",
@@ -2940,14 +2940,14 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "-700",
+      "odds": "-750",
       "link": {
        "language": "en-US",
        "rel": [
         "home",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118011%3Foutcomes%3D0ML84695444_1",
        "text": "Home Bet",
@@ -2972,14 +2972,14 @@
     },
     "away": {
      "close": {
-      "odds": "+500",
+      "odds": "+525",
       "link": {
        "language": "en-US",
        "rel": [
         "away",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118011%3Foutcomes%3D0ML84695444_3",
        "text": "Away Bet",
@@ -3311,6 +3311,17 @@
    "records": []
   }
  ],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "34",
+   "gameProjection": "74.4"
+  },
+  "awayTeam": {
+   "id": "11",
+   "gameProjection": "25.4"
+  }
+ },
  "news": {
   "header": "NFL News",
   "link": {
@@ -3327,6 +3338,140 @@
    "isPremium": false
   },
   "articles": [
+   {
+    "id": 50515291,
+    "nowId": "1-50515291",
+    "contentKey": "50515291-1-5-1",
+    "dataSourceIdentifier": "b5455fc040f74",
+    "type": "HeadlineNews",
+    "headline": "Bears QB Caleb Williams has moved on from 4-INT game, but frustration lingers",
+    "description": "Caleb Williams spent his bye week resting his ailing hamstring, supporting his close friend Pete Crow-Armstrong as the Cubs outfielder was named NL MVP, and putting one of the worst games of his career in the rearview mirror.",
+    "lastModified": "2026-11-18T00:54:46Z",
+    "published": "2026-11-18T00:54:46Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "e1889a9e2ceb3",
+      "id": 50515267,
+      "type": "header",
+      "name": "Caleb Williams [600x400]",
+      "credit": "Talia Sprague/Imagn Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1118/r1747377_600x400_3-2.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1750,
+      "type": "team",
+      "uid": "s:20~l:28~t:3",
+      "guid": "19d73366-b5a5-cca2-a176-a2c024ce0bb3",
+      "description": "Chicago Bears",
+      "sportId": 28,
+      "teamId": 3,
+      "team": {
+       "id": 3,
+       "description": "Chicago Bears",
+       "abbreviation": "CHI",
+       "shortDisplayName": "Bears",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 492854,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4431611",
+      "guid": "dd15176c-3004-333f-beaa-149216c42968",
+      "description": "Caleb Williams",
+      "sportId": 28,
+      "athleteId": 4431611,
+      "athlete": {
+       "id": 4431611,
+       "description": "Caleb Williams",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4431611/caleb-williams"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4431611/caleb-williams"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696378,
+      "type": "contributor",
+      "guid": "62542aff-50b7-3753-881e-e1e90708e353",
+      "description": "Courtney Cronin",
+      "slug": "courtney-cronin",
+      "contributor": {
+       "id": 3108,
+       "description": "Courtney Cronin"
+      }
+     }
+    ],
+    "byline": "Courtney Cronin",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50515291"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50515291"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50515291"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50515291/bears-caleb-williams-moved-4-interception-game-frustration-lingers"
+     }
+    },
+    "premium": false
+   },
    {
     "id": 50514282,
     "nowId": "1-50514282",
@@ -3946,256 +4091,10 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50513594,
-    "nowId": "1-50513594",
-    "contentKey": "50513594-1-5-1",
-    "dataSourceIdentifier": "be32c59f6f87e",
-    "type": "HeadlineNews",
-    "headline": "Titans put WR Wan'Dale Robinson on IR due to ankle injury",
-    "description": "The Titans placed wide receiver Wan'Dale Robinson on injured reserve Tuesday.",
-    "lastModified": "2026-11-17T23:03:44Z",
-    "published": "2026-11-17T23:03:44Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "a7f3c3c015b3a",
-      "id": 50513542,
-      "type": "header",
-      "name": "Wan'Dale Robinson [1296x729]",
-      "credit": "Steve Roberts-Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1117/r1747252_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Titans' defensive issues cost them the win",
-      "caption": "Turron Davenport recaps the Titans' defensive missteps in their loss to the Jaguars.",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1115/dm_261115_16x9_Titans_IA_1/dm_261115_16x9_Titans_IA_1.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2886,
-      "type": "team",
-      "uid": "s:20~l:28~t:10",
-      "guid": "0a0aea59-9a5e-01b3-57a3-0151cf4bf393",
-      "description": "Tennessee Titans",
-      "sportId": 28,
-      "teamId": 10,
-      "team": {
-       "id": 10,
-       "description": "Tennessee Titans",
-       "abbreviation": "TEN",
-       "shortDisplayName": "Titans",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 529582,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4569587",
-      "guid": "8dc02010-f5af-f9d0-a382-58bd2200ae8d",
-      "description": "Wan'Dale Robinson",
-      "sportId": 28,
-      "athleteId": 4569587,
-      "athlete": {
-       "id": 4569587,
-       "description": "Wan'Dale Robinson",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4569587/wandale-robinson"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4569587/wandale-robinson"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 439265,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4431353",
-      "guid": "95fd5442-7ba0-3721-9e1d-3c6c85493ef2",
-      "description": "Xavier Restrepo",
-      "sportId": 28,
-      "athleteId": 4431353,
-      "athlete": {
-       "id": 4431353,
-       "description": "Xavier Restrepo",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4431353/xavier-restrepo"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4431353/xavier-restrepo"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 696370,
-      "type": "contributor",
-      "guid": "7cd303be-26f1-3ed3-9d37-433aa584a6f2",
-      "description": "Turron Davenport",
-      "slug": "turron-davenport",
-      "contributor": {
-       "id": 3378,
-       "description": "Turron Davenport"
-      }
-     }
-    ],
-    "byline": "Turron Davenport",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50513594"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50513594"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50513594"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50513594/titans-put-wr-wandale-robinson-ankle-ir"
-     }
-    },
-    "premium": false
    }
   ]
  },
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "34",
-   "gameProjection": "74.4"
-  },
-  "awayTeam": {
-   "id": "11",
-   "gameProjection": "25.4"
-  }
- },
  "winprobability": [],
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Texans Tickets",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/19 vs Colts 3315 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "11/29 vs Ravens 3950 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/6 @ Steelers 3148 tickets left",
-    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-7-2027/production/6495159?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 @ Commanders 6523 tickets left",
-    "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-6-2026/production/6493325?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 vs Jaguars 5676 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-2-2026/production/6490002?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/24 @ Eagles 5346 tickets left",
-    "ticketLink": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-6-2027/production/6495008?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/4 @ Packers 2397 tickets left",
-    "ticketLink": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-8-2026/production/6489962?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Titans 6050 tickets left",
-    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-3-2026/production/6490014?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Colts",
-   "currentTeamName": "Texans",
-   "venueName": "Reliant Stadium",
-   "summary": "Tickets as low as $41",
-   "date": "2026-11-20T01:15Z",
-   "dateDay": "Thu",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
-   "venueLink": "https://www.vividseats.com/nrg-stadium-tickets/venue/2411?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
-   "timeValid": true
-  }
- },
  "header": {
   "id": "401873066",
   "uid": "s:20~l:28~e:401873066",
@@ -4713,7 +4612,7 @@
       "awayTeamOdds": {
        "favorite": false,
        "underdog": true,
-       "moneyLine": 500,
+       "moneyLine": 525,
        "spreadOdds": -112.0,
        "open": {
         "favorite": false,
@@ -4752,12 +4651,12 @@
          "american": "-112"
         },
         "moneyLine": {
-         "value": 6.0,
-         "displayValue": "5/1",
-         "alternateDisplayValue": "+500",
-         "decimal": 6.0,
-         "fraction": "5/1",
-         "american": "+500"
+         "value": 6.25,
+         "displayValue": "21/4",
+         "alternateDisplayValue": "+525",
+         "decimal": 6.25,
+         "fraction": "21/4",
+         "american": "+525"
         }
        },
        "team": {
@@ -4767,7 +4666,7 @@
       "homeTeamOdds": {
        "favorite": true,
        "underdog": false,
-       "moneyLine": -700,
+       "moneyLine": -750,
        "spreadOdds": -108.0,
        "open": {
         "favorite": true,
@@ -4806,12 +4705,12 @@
          "american": "-108"
         },
         "moneyLine": {
-         "value": 1.14,
-         "displayValue": "1/7",
-         "alternateDisplayValue": "-700",
-         "decimal": 1.14,
-         "fraction": "1/7",
-         "american": "-700"
+         "value": 1.13,
+         "displayValue": "2/15",
+         "alternateDisplayValue": "-750",
+         "decimal": 1.13,
+         "fraction": "2/15",
+         "american": "-750"
         }
        },
        "team": {
@@ -5260,6 +5159,74 @@
   }
  },
  "wallclockAvailable": false,
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Texans Tickets",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/19 vs Colts 3248 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "11/29 vs Ravens 3950 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/6 @ Steelers 3152 tickets left",
+    "ticketLink": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-7-2027/production/6495159?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 @ Commanders 6498 tickets left",
+    "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-6-2026/production/6493325?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 vs Jaguars 5676 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-2-2026/production/6490002?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/24 @ Eagles 5346 tickets left",
+    "ticketLink": "https://www.vividseats.com/philadelphia-eagles-tickets-philadelphia-lincoln-financial-field-3-6-2027/production/6495008?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/4 @ Packers 2397 tickets left",
+    "ticketLink": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-8-2026/production/6489962?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Titans 6050 tickets left",
+    "ticketLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-3-2026/production/6490014?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Colts",
+   "currentTeamName": "Texans",
+   "venueName": "Reliant Stadium",
+   "summary": "Tickets as low as $41",
+   "date": "2026-11-20T01:15Z",
+   "dateDay": "Thu",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-1-2026/production/6489988?wsUser=717",
+   "venueLink": "https://www.vividseats.com/nrg-stadium-tickets/venue/2411?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/houston-texans-tickets--sports-nfl-football/performer/2559?wsUser=717",
+   "timeValid": true
+  }
+ },
  "meta": {
   "gp_topic": "gp-football-nfl-401873066",
   "gameSwitcherEnabled": true,
