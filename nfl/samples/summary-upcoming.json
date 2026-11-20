@@ -605,6 +605,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "20",
       "uid": "s:20~l:28~t:20",
@@ -669,9 +671,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png"
     }
    ]
   },
@@ -763,6 +763,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "4",
       "uid": "s:20~l:28~t:4",
@@ -827,9 +829,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png"
     },
     {
      "id": "401873015",
@@ -852,8 +852,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "20",
       "uid": "s:20~l:28~t:20",
@@ -918,7 +916,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873034",
@@ -1030,6 +1030,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "8",
       "uid": "s:20~l:28~t:8",
@@ -1094,9 +1096,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png"
     },
     {
      "id": "401873059",
@@ -1119,6 +1119,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "11",
       "uid": "s:20~l:28~t:11",
@@ -1183,9 +1185,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
     }
    ]
   }
@@ -1979,6 +1979,128 @@
    },
    "injuries": [
     {
+     "status": "Questionable",
+     "date": "2026-11-20T22:18Z",
+     "athlete": {
+      "id": "4036060",
+      "uid": "s:20~l:28~a:4036060",
+      "guid": "418fb708-0da6-23a1-4f46-799ef29a83af",
+      "lastName": "Hamlin",
+      "fullName": "Damar Hamlin",
+      "displayName": "Damar Hamlin",
+      "shortName": "D. Hamlin",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4036060/damar-hamlin",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4036060.png",
+       "alt": "Damar Hamlin"
+      },
+      "jersey": "3",
+      "position": {
+       "name": "Safety",
+       "displayName": "Safety",
+       "abbreviation": "S"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4036060?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Toe",
+      "location": "Leg",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-22"
+     }
+    },
+    {
+     "status": "Questionable",
+     "date": "2026-11-20T22:16Z",
+     "athlete": {
+      "id": "4573699",
+      "uid": "s:20~l:28~a:4573699",
+      "guid": "4fe2c646-8b68-42e8-687c-8832bbc5ebee",
+      "lastName": "Hawes",
+      "fullName": "Jackson Hawes",
+      "displayName": "Jackson Hawes",
+      "shortName": "J. Hawes",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4573699/jackson-hawes",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4573699.png",
+       "alt": "Jackson Hawes"
+      },
+      "jersey": "85",
+      "position": {
+       "name": "Tight End",
+       "displayName": "Tight End",
+       "abbreviation": "TE"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4573699?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Shoulder",
+      "location": "Arm",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-22"
+     }
+    },
+    {
      "status": "Out",
      "date": "2026-11-20T19:56Z",
      "athlete": {
@@ -2158,126 +2280,6 @@
       "location": "Arm",
       "detail": "Not Specified",
       "side": "Not Specified",
-      "returnDate": "2026-11-22"
-     }
-    },
-    {
-     "status": "Questionable",
-     "date": "2026-11-20T01:04Z",
-     "athlete": {
-      "id": "4401823",
-      "uid": "s:20~l:28~a:4401823",
-      "guid": "4524d8e0-21ae-4993-8729-891738af1f4b",
-      "lastName": "Alford",
-      "fullName": "Dee Alford",
-      "displayName": "Dee Alford",
-      "shortName": "D. Alford",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4401823/dee-alford",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4401823.png",
-       "alt": "Dee Alford"
-      },
-      "jersey": "23",
-      "position": {
-       "name": "Cornerback",
-       "displayName": "Cornerback",
-       "abbreviation": "CB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4401823?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Concussion",
-      "location": "Head",
-      "detail": "Concussion",
-      "side": "Not Specified",
-      "returnDate": "2026-11-22"
-     }
-    },
-    {
-     "status": "Questionable",
-     "date": "2026-11-19T21:35Z",
-     "athlete": {
-      "id": "4684527",
-      "uid": "s:20~l:28~a:4684527",
-      "guid": "9ff2d26e-f4d4-3bca-a197-e49721700a6b",
-      "lastName": "Sanders",
-      "fullName": "T.J. Sanders",
-      "displayName": "T.J. Sanders",
-      "shortName": "T.J. Sanders",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4684527/tj-sanders",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4684527.png",
-       "alt": "T.J. Sanders"
-      },
-      "jersey": "98",
-      "position": {
-       "name": "Defensive Tackle",
-       "displayName": "Defensive Tackle",
-       "abbreviation": "DT"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4684527?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Shoulder",
-      "location": "Arm",
       "returnDate": "2026-11-22"
      }
     }
@@ -3241,6 +3243,7 @@
    "records": []
   }
  ],
+ "winprobability": [],
  "predictor": {
   "header": "Matchup Predictor",
   "homeTeam": {
@@ -3252,7 +3255,6 @@
    "gameProjection": "5.1"
   }
  },
- "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -3455,8 +3457,8 @@
     "type": "HeadlineNews",
     "headline": "Raiders TE Brock Bowers (ankle, quad) listed as questionable",
     "description": "Las Vegas Raiders tight end Brock Bowers (ankle/quad) is questionable for Sunday's divisional matchup against the Denver Broncos, coach Klint Kubiak said Friday.",
-    "lastModified": "2026-11-20T22:19:17Z",
-    "published": "2026-11-20T22:19:17Z",
+    "lastModified": "2026-11-20T22:23:03Z",
+    "published": "2026-11-20T22:23:03Z",
     "images": [
      {
       "dataSourceIdentifier": "b1852ccdc1552",
@@ -3740,8 +3742,8 @@
     "type": "HeadlineNews",
     "headline": "Police investigate man's death after alleged altercation at 49ers-Cowboys game",
     "description": "Police are investigating the death of a man who was allegedly involved in an altercation before Sunday's game between the Cowboys and 49ers at AT&T Stadium.",
-    "lastModified": "2026-11-20T22:04:44Z",
-    "published": "2026-11-20T22:04:44Z",
+    "lastModified": "2026-11-20T22:37:47Z",
+    "published": "2026-11-20T22:37:47Z",
     "images": [
      {
       "dataSourceIdentifier": "9f46258ec1ced",
@@ -6386,27 +6388,27 @@
     "type": "team"
    },
    {
-    "ticketName": "11/22 vs Dolphins 1741 tickets left",
+    "ticketName": "11/22 vs Dolphins 1752 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-1-2026/production/6488199?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/26 vs Chiefs 2748 tickets left",
+    "ticketName": "11/26 vs Chiefs 2752 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-6-2026/production/6488364?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/6 @ Patriots 2406 tickets left",
+    "ticketName": "12/6 @ Patriots 2400 tickets left",
     "ticketLink": "https://www.vividseats.com/new-england-patriots-tickets-foxborough-gillette-stadium-3-1-2027/production/6492590?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/13 @ Packers 1411 tickets left",
+    "ticketName": "12/13 @ Packers 1415 tickets left",
     "ticketLink": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-5-2026/production/6489941?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/19 vs Bears 2287 tickets left",
+    "ticketName": "12/19 vs Bears 2290 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-7-2026/production/6488375?wsUser=717",
     "type": "event"
    },
@@ -6430,7 +6432,7 @@
    "opponentTeamName": "Dolphins",
    "currentTeamName": "Bills",
    "venueName": "Highmark Stadium",
-   "summary": "Tickets as low as $233",
+   "summary": "Tickets as low as $225",
    "date": "2026-11-22T18:00Z",
    "dateDay": "Sun",
    "homeAway": "home",
