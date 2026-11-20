@@ -142,7 +142,6 @@
  "gameInfo": {
   "venue": {
    "id": "11938",
-   "guid": "ba8067e2-948d-3305-98c1-5beba313e909",
    "fullName": "Highmark Stadium",
    "address": {
     "city": "Orchard Park",
@@ -250,8 +249,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "14",
       "uid": "s:20~l:28~t:14",
@@ -316,7 +313,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873005",
@@ -339,8 +338,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "13",
       "uid": "s:20~l:28~t:13",
@@ -405,7 +402,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873026",
@@ -428,6 +427,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "33",
       "uid": "s:20~l:28~t:33",
@@ -492,9 +493,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png"
     },
     {
      "id": "401873051",
@@ -643,7 +642,7 @@
          "full",
          "dark"
         ],
-        "lastUpdated": "2024-06-25T18:59Z"
+        "lastUpdated": "2024-10-30T17:29Z"
        },
        {
         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png",
@@ -892,7 +891,7 @@
          "full",
          "dark"
         ],
-        "lastUpdated": "2024-06-25T18:59Z"
+        "lastUpdated": "2024-10-30T17:29Z"
        },
        {
         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png",
@@ -2353,6 +2352,67 @@
    },
    "injuries": [
     {
+     "status": "Out",
+     "date": "2026-11-20T23:48Z",
+     "athlete": {
+      "id": "4430681",
+      "uid": "s:20~l:28~a:4430681",
+      "guid": "b59d7e7b-8e9a-50bc-e8c5-f193aca5558a",
+      "lastName": "Wayne",
+      "fullName": "Jared Wayne",
+      "displayName": "Jared Wayne",
+      "shortName": "J. Wayne",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4430681/jared-wayne",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4430681.png",
+       "alt": "Jared Wayne"
+      },
+      "jersey": "86",
+      "position": {
+       "name": "Wide Receiver",
+       "displayName": "Wide Receiver",
+       "abbreviation": "WR"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4430681?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "4",
+      "name": "INJURY_STATUS_OUT",
+      "description": "out",
+      "abbreviation": "O"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "OUT",
+       "abbreviation": "OUT",
+       "displayDescription": "Out"
+      },
+      "type": "Quadriceps",
+      "location": "Leg",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-29"
+     }
+    },
+    {
      "status": "Doubtful",
      "date": "2026-11-20T20:56Z",
      "athlete": {
@@ -2411,67 +2471,6 @@
       "detail": "Not Specified",
       "side": "Not Specified",
       "returnDate": "2026-11-22"
-     }
-    },
-    {
-     "status": "Out",
-     "date": "2026-11-20T20:55Z",
-     "athlete": {
-      "id": "4430681",
-      "uid": "s:20~l:28~a:4430681",
-      "guid": "b59d7e7b-8e9a-50bc-e8c5-f193aca5558a",
-      "lastName": "Wayne",
-      "fullName": "Jared Wayne",
-      "displayName": "Jared Wayne",
-      "shortName": "J. Wayne",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4430681/jared-wayne",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4430681.png",
-       "alt": "Jared Wayne"
-      },
-      "jersey": "86",
-      "position": {
-       "name": "Wide Receiver",
-       "displayName": "Wide Receiver",
-       "abbreviation": "WR"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4430681?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "4",
-      "name": "INJURY_STATUS_OUT",
-      "description": "out",
-      "abbreviation": "O"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "OUT",
-       "abbreviation": "OUT",
-       "displayDescription": "Out"
-      },
-      "type": "Quadriceps",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-11-29"
      }
     },
     {
@@ -2665,7 +2664,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "Draft Kings",
+    "name": "DraftKings",
     "priority": 1,
     "logos": [
      {
@@ -2701,7 +2700,7 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -1660,
+    "moneyLine": -1640,
     "spreadOdds": -107.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/2?lang=en&region=us"
@@ -2716,7 +2715,7 @@
       "home",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118202%3Foutcomes%3D0ML84695635_1",
      "text": "Home Bet",
@@ -2740,7 +2739,7 @@
       "away",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118202%3Foutcomes%3D0ML84695635_3",
      "text": "Away Bet",
@@ -2873,14 +2872,14 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "-1660",
+      "odds": "-1640",
       "link": {
        "language": "en-US",
        "rel": [
         "home",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118202%3Foutcomes%3D0ML84695635_1",
        "text": "Home Bet",
@@ -2912,7 +2911,7 @@
         "away",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118202%3Foutcomes%3D0ML84695635_3",
        "text": "Away Bet",
@@ -3244,6 +3243,153 @@
    "records": []
   }
  ],
+ "article": {
+  "id": 50534558,
+  "nowId": "1-50534558",
+  "contentKey": "50534558-1-22-1",
+  "dataSourceIdentifier": "e65125cb896f7",
+  "publishedkey": "nfl401873070",
+  "type": "Preview",
+  "gameId": "401873070",
+  "headline": "Bills get chance to feast on another backup QB with Kyle McCord and Miami Dolphins up next",
+  "description": "\u2014 Ed Oliver bristled at the notion of the Bills\u2019 defensive turnaround being the result of Buffalo spending the past three weeks feasting on backup...",
+  "title": "Bills get chance to feast on another backup QB with Kyle McCord and Miami Dolphins up next",
+  "linkText": "Bills get chance to feast on another backup QB with Kyle McCord and Miami Dolphins up next",
+  "categorized": "2026-11-19T22:24:33Z",
+  "originallyPosted": "2026-11-19T22:24:32Z",
+  "lastModified": "2026-11-19T22:24:33Z",
+  "published": "2026-11-19T22:24:32Z",
+  "root": "nfl",
+  "section": "NFL",
+  "source": "AP",
+  "images": [],
+  "video": [],
+  "categories": [
+   {
+    "id": 9572,
+    "type": "league",
+    "uid": "s:20~l:28",
+    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+    "description": "NFL",
+    "sportId": 28,
+    "leagueId": 28,
+    "league": {
+     "id": 28,
+     "description": "NFL",
+     "abbreviation": "NFL",
+     "links": {
+      "mobile": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      },
+      "web": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2203,
+    "type": "team",
+    "uid": "s:20~l:28~t:2",
+    "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
+    "description": "Buffalo Bills",
+    "sportId": 28,
+    "teamId": 2,
+    "team": {
+     "id": 2,
+     "description": "Buffalo Bills",
+     "abbreviation": "BUF",
+     "shortDisplayName": "Bills",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2258,
+    "type": "team",
+    "uid": "s:20~l:28~t:15",
+    "guid": "af33088b-1e19-d27d-dbc0-354fd7151703",
+    "description": "Miami Dolphins",
+    "sportId": 28,
+    "teamId": 15,
+    "team": {
+     "id": 15,
+     "description": "Miami Dolphins",
+     "abbreviation": "MIA",
+     "shortDisplayName": "Dolphins",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "event",
+    "uid": "s:20~l:28~e:401873070",
+    "guid": "3ce27fe0-d15b-3a7a-9ed7-8c6fa479bda1",
+    "description": "Miami Dolphins @ Buffalo Bills",
+    "eventId": 401873070,
+    "event": {
+     "id": 401873070,
+     "sport": "football",
+     "league": "nfl",
+     "description": "Miami Dolphins @ Buffalo Bills"
+    }
+   }
+  ],
+  "keywords": [
+   "NFL",
+   "Buffalo Bills",
+   "Miami Dolphins",
+   "Miami Dolphins @ Buffalo Bills"
+  ],
+  "story": "ORCHARD PARK, N.Y. -- \u2014 <a href=\"http://www.espn.com/nfl/player/_/id/4039303/ed-oliver\">Ed Oliver</a> bristled at the notion of the Bills\u2019 defensive turnaround being the result of Buffalo spending the past three weeks <a href=\"https://apnews.com/article/bills-analysis-week-10-f02b93ed75a6352c18a8bed49e7caca0\">feasting on backup quarterbacks</a> \u2014 and another on deck with Miami hitting town on Sunday.\n\n\r\n              \u201cWho cares. I mean, if I got to choose who I could play I guess it would be a starter. But you don\u2019t get to choose,\u201d the defensive tackle said. \u201cAll we get to choose is to take advantage of our opportunities.\u201d\n\n\r\n              The AFC-leading Bills (8-1) have certainly done that over a three-game stretch in which they\u2019ve allowed one touchdown and a combined 28 points. That\u2019s a marked improvement for a defense that allowed 28.5 points per outing through its first six games.\n\n\r\n              A contributing factor could well be the level of competition, with Buffalo having faced the likes of <a href=\"https://apnews.com/article/ravens-bills-score-42602e5aee03ae0d088093686e45db17\">Baltimore\u2019s <a href=\"http://www.espn.com/nfl/player/_/id/4035671/tyler-huntley\">Tyler Huntley</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4429582/joe-fagnano\">Joe Fagnano</a></a>, Minnesota\u2019s <a href=\"http://www.espn.com/nfl/player/_/id/2573079/carson-wentz\">Carson Wentz</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4573398/max-brosmer\">Max Brosmer</a>, and <a href=\"http://www.espn.com/nfl/team/_/name/nyj/new-york-jets\">New York Jets</a> rookie <a href=\"http://www.espn.com/nfl/player/_/id/4685413/cade-klubnik\">Cade Klubnik</a>, who took over after <a href=\"http://www.espn.com/nfl/player/_/id/15864/geno-smith\">Geno Smith</a> was sidelined <a href=\"https://apnews.com/article/bills-jets-score-allen-klubnik-e9dd4c1c36a4018b0d27f5c1df727c94\">in Buffalo\u2019s 31-12 win last weekend</a>.\n\n\r\n              And now come the Dolphins (1-8), with <a href=\"https://apnews.com/article/dolphins-analysis-willis-mccord-gonzalez-d1def859a0c081ac9c565c5f4d7bb159\"><a href=\"http://www.espn.com/nfl/player/_/id/4433971/kyle-mccord\">Kyle McCord</a> set to make his second career start</a> in place of <a href=\"http://www.espn.com/nfl/player/_/id/4242512/malik-willis\">Malik Willis</a>.\n\n\r\n              Bills coach Joe Brady declined to speculate on the injury-filled state of the AFC East's quarterbacks that also includes New England's <a href=\"http://www.espn.com/nfl/player/_/id/4431452/drake-maye\">Drake Maye</a> \u2014 so long as <a href=\"http://www.espn.com/nfl/player/_/id/17102/josh-allen\">Josh Allen</a> is not among them.\n\n\r\n              A healthy Allen, the NFL\u2019s active leader among QBs with 131 consecutive starts, is why the Bills are once again Super Bowl contenders. And Allen isn\u2019t looking any further beyond Sunday, even with a Thanksgiving night showdown looming against Kansas City.\n\n\r\n              \u201cThis isn\u2019t just a cakewalk. It\u2019s a team that\u2019s hungry. They\u2019re looking to upset,\u201d he said. \u201cAnd the way their defense is playing gives them a shot every game they\u2019re in.\u201d\n\n\r\n              The rebuilding Dolphins have improved since dropping their first three games by a combined score of 86-36.\n\n\r\n              Four of their past five losses have been one-score outings, and in a 19-9 loss to Detroit two weeks ago, they limited the NFL\u2019s third-ranked offense to a season-low 270-yards.\n\n\r\n              Injuries are an issue, with Miami losing its <a href=\"https://apnews.com/article/dolphins-injuries-biggers-phillips-4b88e3b84b148c88311ddeb3445d35c5\">top three defensive linemen</a> over a two-week stretch.\n\n\r\n              For rookie coach Jeff Hafley, the injuries represent the next challenge for a team that\u2019s faced plenty of growing pains already.\n\n\r\n              \u201cIt doesn\u2019t mean that you\u2019re not sad and disappointed, but you have to move on and you can\u2019t look back,\u201d Hafley said. \n\n\r\n              With 39 players with three or fewer seasons of experience, Dolphins rookie linebacker <a href=\"http://www.espn.com/nfl/player/_/id/4566094/jacob-rodriguez\">Jacob Rodriguez</a> is part of a youth movement that has few ties to Miami\u2019s past struggles against Buffalo. Including playoffs, the Bills have won 14 of the past 16 meetings and 10 straight at home.\n\n\r\n              \u201cTraditionally, we haven\u2019t done very well playing up there. But we have to find a way to change that,\u201d Rodriguez said.\n\n\r\n              <hl2>Need to know</hl2>\r\n              Miami (1-8) at Buffalo (8-1).\n\n\r\n              When/where to watch: Sunday, 1 p.m. EST, CBS.\n\n\r\n              Latest odds: Bills by 16 1/2\n\n\r\n              Against the spread: Dolphins 5-4; Bills 7-2.\n\n\r\n              Last week: Dolphins lost to Colts 24-22; Bills beat Jets 31-12.\n\n\r\n              Last meeting: Dolphins beat Bills 33-13 on Nov. 9, 2025, at Miami.\n\n\r\n              Series record: Dolphins lead 63-61-1.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Bills RB James Cook vs. Dolphins D. Cook is one game shy of becoming the NFL\u2019s second player to score a TD and top 75 yards rushing in nine straight outings. Washington\u2019s Terry Allen leads the list with a 10-game streak spanning the 1995-96 seasons. And Cook faces a depleted Dolphins front that allowed 172 yards rushing against the Colts.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 Buffalo\u2019s 10 straight home wins against Miami is the longest against any opponent in team history. Buffalo hasn\u2019t lost to Miami at home since a 34-31 overtime decision on Dec. 24, 2016, in what became Rex Ryan\u2019s last game as Bills coach.\n\n\r\n              \u2014 The Bills have a chance to open 9-1 or better for just the fifth time in team history, and first since a 10-1 start in 1991.\n\n\r\n              \u2014 Allen\u2019s 14 wins and 45 TDs passing against Miami are the most against any opponent in his nine-year career.\n\n\r\n              \u2014 Allen is one rushing TD from the 100th of his career, including playoffs. Only five players, all running backs, have scored that many through their first nine seasons.\n\n\r\n              \u2014 Buffalo has not trailed over the span of 217 minutes and 13 seconds, going back to the second quarter of a 33-30 win at Las Vegas on Oct. 25.\n\n\r\n              \u2014 The Dolphins are off to their worst start since going 0-13 to open 2007.\n\n\r\n              \u2014 McCord\u2019s 209 yards passing against Indianapolis were the second most by a player in his Dolphins\u2019 debut.\n\n\r\n              \u2014 Miami has allowed just three TDs rushing in its past six outings, and seven overall.\n\n\r\n              \u2014 The Dolphins have seven interceptions, with six by rookies, led by safety Michael Taaffe\u2019s three.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Alanis Thames in Miami contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
+  "allowContentReactions": false,
+  "allowSearch": true,
+  "isLiveBlog": false,
+  "links": {
+   "api": {
+    "self": {
+     "href": "https://content.core.api.espn.com/v1/sports/news/50534558"
+    }
+   },
+   "app": {
+    "sportscenter": {
+     "href": "sportscenter://x-callback-url/showStory?uid=50534558"
+    }
+   },
+   "mobile": {
+    "href": "http://m.espn.go.com/nfl/story?storyId=50534558"
+   },
+   "web": {
+    "href": "http://www.espn.com/nfl/preview?gameId=401873070"
+   }
+  },
+  "premium": false
+ },
+ "winprobability": [],
  "predictor": {
   "header": "Matchup Predictor",
   "homeTeam": {
@@ -3255,7 +3401,6 @@
    "gameProjection": "5.1"
   }
  },
- "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -3272,6 +3417,309 @@
    "isPremium": false
   },
   "articles": [
+   {
+    "id": 50530832,
+    "nowId": "1-50530832",
+    "contentKey": "50530832-1-6-1",
+    "dataSourceIdentifier": "c22263ad231df",
+    "type": "Story",
+    "headline": "Fantasy football Week 11 inactives: Who's in and who's out?",
+    "description": "Updated inactives and analysis based on the latest reports and official announcements leading up to kickoff.",
+    "lastModified": "2026-11-20T23:38:28Z",
+    "published": "2026-11-20T23:38:28Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "5bd40ebbc34e3",
+      "id": 50542474,
+      "type": "header",
+      "name": "Kenneth Walker III [576x324]",
+      "caption": "With a quick turnaround to Thanksgiving, the Chiefs are likely to rest Kenneth Walker III this weekend.",
+      "alt": "Kansas City Chiefs running back Kenneth Walker III (9) carries the ball as New York Jets linebacker Kingsley Enagbare (52) defends during the third quarter.",
+      "credit": "Jay Biggerstaff-Imagn Images",
+      "height": 324,
+      "width": 576,
+      "url": "https://a.espncdn.com/photo/2026/1120/r1748614_576x324_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "a4f778b9734ab",
+      "id": 50542436,
+      "type": "header",
+      "name": "T.J. Hockenson [576x324]",
+      "caption": "If T.J. Hockenson suits up on Sunday night, he'll be a solid TE option in fantasy.",
+      "alt": "Minnesota Vikings tight end T.J. Hockenson (87) runs with the ball during a NFL game.",
+      "credit": "Nick Wosika/Icon Sportswire",
+      "height": 324,
+      "width": 576,
+      "url": "https://a.espncdn.com/photo/2026/1120/r1748613_576x324_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Yates, Clay disagree over Ollie Gordon II in Week 11",
+      "caption": "Yates, Clay disagree over Ollie Gordon II in Week 11",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1120/ss_20261120_110007186_3750991/ss_20261120_110007186_3750991.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 141870,
+      "type": "topic",
+      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
+      "description": "news - fantasy",
+      "sportId": 0,
+      "topicId": 240
+     },
+     {
+      "id": 152381,
+      "type": "topic",
+      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
+      "description": "news - fantasy football",
+      "sportId": 0,
+      "topicId": 401
+     },
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409228,
+      "type": "topic",
+      "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d",
+      "description": "fantasy",
+      "sportId": 0,
+      "topicId": 785
+     },
+     {
+      "id": 848862,
+      "type": "contributor",
+      "guid": "3de9fce6-6aa7-3562-b497-2b4f5d90d27a",
+      "description": "Michael F Florio",
+      "slug": "michael-f-florio",
+      "contributor": {
+       "id": 4414,
+       "description": "Michael F Florio"
+      }
+     }
+    ],
+    "byline": "Michael F. Florio",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50530832"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50530832"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=50530832"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/page/FFSundayInactives-50530832/fantasy-football-injuries-nfl-week-11-inactive-active"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50544261,
+    "nowId": "1-50544261",
+    "contentKey": "50544261-1-5-1",
+    "dataSourceIdentifier": "9d6002f560b98",
+    "type": "HeadlineNews",
+    "headline": "Back at practice again, Bengals QB Burrow optimistic he'll be at full strength",
+    "description": "A full participant at practice for the second straight day despite the bug that he has battled, Bengals quarterback Joe Burrow is optimistic that he'll be at full strength when Cincinnati plays the Washington Commanders on \"Monday Night Football.\"",
+    "lastModified": "2026-11-20T23:37:55Z",
+    "published": "2026-11-20T23:37:55Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "1b2cb14ac3987",
+      "id": 50544186,
+      "type": "header",
+      "name": "Joe Burrow [600x600]",
+      "credit": "Icon Sportswire",
+      "height": 600,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1120/r1748742_600x600_1-1.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2664,
+      "type": "team",
+      "uid": "s:20~l:28~t:4",
+      "guid": "75b8623b-8926-b411-0476-3d3602b78523",
+      "description": "Cincinnati Bengals",
+      "sportId": 28,
+      "teamId": 4,
+      "team": {
+       "id": 4,
+       "description": "Cincinnati Bengals",
+       "abbreviation": "CIN",
+       "shortDisplayName": "Bengals",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1462,
+      "type": "team",
+      "uid": "s:20~l:28~t:28",
+      "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
+      "description": "Washington Commanders",
+      "sportId": 28,
+      "teamId": 28,
+      "team": {
+       "id": 28,
+       "description": "Washington Commanders",
+       "abbreviation": "WSH",
+       "shortDisplayName": "Commanders",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 435000,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:3915511",
+      "guid": "e6957db5-5b2e-a82d-c788-d889115d9772",
+      "description": "Joe Burrow",
+      "sportId": 28,
+      "athleteId": 3915511,
+      "athlete": {
+       "id": 3915511,
+       "description": "Joe Burrow",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3915511/joe-burrow"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/3915511/joe-burrow"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 698667,
+      "type": "contributor",
+      "guid": "5ba7177a-701a-3abe-bdcd-f4d70f8c4cb0",
+      "description": "Ben Baby",
+      "slug": "ben-baby",
+      "contributor": {
+       "id": 3821,
+       "description": "Ben Baby"
+      }
+     }
+    ],
+    "byline": "Ben Baby",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50544261"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50544261"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50544261"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50544261/burrow-practices-again-full-strength-mnf"
+     }
+    },
+    "premium": false
+   },
    {
     "id": 50514892,
     "nowId": "1-50514892",
@@ -4892,345 +5340,6 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50543613,
-    "nowId": "1-50543613",
-    "contentKey": "50543613-1-5-1",
-    "dataSourceIdentifier": "f278fb977c281",
-    "type": "HeadlineNews",
-    "headline": "Police investigate man's death after alleged altercation at 49ers-Cowboys game",
-    "description": "Police are investigating the death of a man who was allegedly involved in an altercation before Sunday's game between the Cowboys and 49ers at AT&T Stadium.",
-    "lastModified": "2026-11-20T22:37:47Z",
-    "published": "2026-11-20T22:37:47Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "9f46258ec1ced",
-      "id": 14756141,
-      "type": "header",
-      "name": "Dallas Cowboys logo\n [1296x729]",
-      "alt": "Dallas Cowboys logo",
-      "credit": "AP Photo/Sharon Ellman",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2016/0210/r53349_1296x729_16-9.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 1298,
-      "type": "team",
-      "uid": "s:20~l:28~t:6",
-      "guid": "b0fc8fb7-9dbe-e574-9008-6f0ee7c6b234",
-      "description": "Dallas Cowboys",
-      "sportId": 28,
-      "teamId": 6,
-      "team": {
-       "id": 6,
-       "description": "Dallas Cowboys",
-       "abbreviation": "DAL",
-       "shortDisplayName": "Cowboys",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/dal/dallas-cowboys"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/dal/dallas-cowboys"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1637,
-      "type": "team",
-      "uid": "s:20~l:28~t:25",
-      "guid": "985a261f-296c-c95c-32a5-addc4df75001",
-      "description": "San Francisco 49ers",
-      "sportId": 28,
-      "teamId": 25,
-      "team": {
-       "id": 25,
-       "description": "San Francisco 49ers",
-       "abbreviation": "SF",
-       "shortDisplayName": "49ers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     },
-     {
-      "id": 696310,
-      "type": "contributor",
-      "guid": "a1f6ce35-0e83-3559-a7fd-ff8cb4fc8f25",
-      "description": "Todd Archer",
-      "slug": "todd-archer",
-      "contributor": {
-       "id": 1915,
-       "description": "Todd Archer"
-      }
-     }
-    ],
-    "byline": "Todd Archer",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50543613"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50543613"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50543613"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50543613/police-investigate-man-death-incident-cowboys-game"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50543381,
-    "nowId": "1-50543381",
-    "contentKey": "50543381-1-5-1",
-    "dataSourceIdentifier": "33977e423d335",
-    "type": "HeadlineNews",
-    "headline": "Bills TE Dalton Kincaid doubtful to play vs. Dolphins",
-    "description": "Bills starting tight end Dalton Kincaid, their leading receiver, is listed as doubtful for Sunday's game against the Dolphins due to thumb and ankle injuries.",
-    "lastModified": "2026-11-20T21:49:40Z",
-    "published": "2026-11-20T21:49:40Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "563e188441d01",
-      "id": 40617048,
-      "type": "header",
-      "name": "Dalton Kincaid [1296x729]",
-      "caption": "Dalton Kincaid looks to build upon the flashes he showed as a rookie.",
-      "alt": "Buffalo Bills tight end Dalton Kincaid runs with the ball against the Cincinnati Bengals during the first half of an NFL football game, Sunday, Nov. 5, 2023, in Cincinnati.",
-      "credit": "AP Photo/Darron Cummings",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2024/0722/r1361693_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "TE Kincaid, Bills' leading receiver, doubtful to play vs. Dolphins",
-      "caption": "TE Kincaid, Bills' leading receiver, doubtful to play vs. Dolphins",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1120/765fe002-d747-4d7d-9c40-8e18bd80f50c/765fe002-d747-4d7d-9c40-8e18bd80f50c.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 216534,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4385690",
-      "guid": "d4652b30-6ba5-b261-e946-eb83b36a9b88",
-      "description": "Dalton Kincaid",
-      "sportId": 28,
-      "athleteId": 4385690,
-      "athlete": {
-       "id": 4385690,
-       "description": "Dalton Kincaid",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2203,
-      "type": "team",
-      "uid": "s:20~l:28~t:2",
-      "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
-      "description": "Buffalo Bills",
-      "sportId": 28,
-      "teamId": 2,
-      "team": {
-       "id": 2,
-       "description": "Buffalo Bills",
-       "abbreviation": "BUF",
-       "shortDisplayName": "Bills",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 529604,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4379778",
-      "guid": "540fc1a9-bf7d-f24d-ae8a-dcbd8d365dcd",
-      "description": "Christian Benford",
-      "sportId": 28,
-      "athleteId": 4379778,
-      "athlete": {
-       "id": 4379778,
-       "description": "Christian Benford",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4379778/christian-benford"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4379778/christian-benford"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 390611,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4568624",
-      "guid": "5b7c4620-e5a8-b329-99c4-1b81e127413b",
-      "description": "Dorian Williams",
-      "sportId": 28,
-      "athleteId": 4568624,
-      "athlete": {
-       "id": 4568624,
-       "description": "Dorian Williams",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4568624/dorian-williams"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4568624/dorian-williams"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 849849,
-      "type": "contributor",
-      "guid": "8d264ab7-9b5b-3edf-a446-a22b1da9fa44",
-      "description": "Nick Suss",
-      "slug": "nick-suss",
-      "contributor": {
-       "id": 4415,
-       "description": "Nick Suss"
-      }
-     }
-    ],
-    "byline": "Nick Suss",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50543381"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50543381"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50543381"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50543381/bills-te-dalton-kincaid-doubtful-play-vs-dolphins"
-     }
-    },
-    "premium": false
    }
   ]
  },
@@ -5805,7 +5914,7 @@
       "homeTeamOdds": {
        "favorite": true,
        "underdog": false,
-       "moneyLine": -1660,
+       "moneyLine": -1640,
        "spreadOdds": -107.0,
        "open": {
         "favorite": true,
@@ -5845,11 +5954,11 @@
         },
         "moneyLine": {
          "value": 1.06,
-         "displayValue": "5/83",
-         "alternateDisplayValue": "-1660",
+         "displayValue": "5/82",
+         "alternateDisplayValue": "-1640",
          "decimal": 1.06,
-         "fraction": "5/83",
-         "american": "-1660"
+         "fraction": "5/82",
+         "american": "-1640"
         }
        },
        "team": {
@@ -6309,152 +6418,6 @@
    ]
   }
  },
- "article": {
-  "id": 50534558,
-  "nowId": "1-50534558",
-  "contentKey": "50534558-1-22-1",
-  "dataSourceIdentifier": "e65125cb896f7",
-  "publishedkey": "nfl401873070",
-  "type": "Preview",
-  "gameId": "401873070",
-  "headline": "Bills get chance to feast on another backup QB with Kyle McCord and Miami Dolphins up next",
-  "description": "\u2014 Ed Oliver bristled at the notion of the Bills\u2019 defensive turnaround being the result of Buffalo spending the past three weeks feasting on backup...",
-  "title": "Bills get chance to feast on another backup QB with Kyle McCord and Miami Dolphins up next",
-  "linkText": "Bills get chance to feast on another backup QB with Kyle McCord and Miami Dolphins up next",
-  "categorized": "2026-11-19T22:24:33Z",
-  "originallyPosted": "2026-11-19T22:24:32Z",
-  "lastModified": "2026-11-19T22:24:33Z",
-  "published": "2026-11-19T22:24:32Z",
-  "root": "nfl",
-  "section": "NFL",
-  "source": "AP",
-  "images": [],
-  "video": [],
-  "categories": [
-   {
-    "id": 9572,
-    "type": "league",
-    "uid": "s:20~l:28",
-    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-    "description": "NFL",
-    "sportId": 28,
-    "leagueId": 28,
-    "league": {
-     "id": 28,
-     "description": "NFL",
-     "abbreviation": "NFL",
-     "links": {
-      "mobile": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      },
-      "web": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2203,
-    "type": "team",
-    "uid": "s:20~l:28~t:2",
-    "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
-    "description": "Buffalo Bills",
-    "sportId": 28,
-    "teamId": 2,
-    "team": {
-     "id": 2,
-     "description": "Buffalo Bills",
-     "abbreviation": "BUF",
-     "shortDisplayName": "Bills",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/buf/buffalo-bills"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2258,
-    "type": "team",
-    "uid": "s:20~l:28~t:15",
-    "guid": "af33088b-1e19-d27d-dbc0-354fd7151703",
-    "description": "Miami Dolphins",
-    "sportId": 28,
-    "teamId": 15,
-    "team": {
-     "id": 15,
-     "description": "Miami Dolphins",
-     "abbreviation": "MIA",
-     "shortDisplayName": "Dolphins",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
-       }
-      }
-     }
-    }
-   },
-   {
-    "type": "event",
-    "uid": "s:20~l:28~e:401873070",
-    "guid": "3ce27fe0-d15b-3a7a-9ed7-8c6fa479bda1",
-    "description": "Miami Dolphins @ Buffalo Bills",
-    "eventId": 401873070,
-    "event": {
-     "id": 401873070,
-     "sport": "football",
-     "league": "nfl",
-     "description": "Miami Dolphins @ Buffalo Bills"
-    }
-   }
-  ],
-  "keywords": [
-   "NFL",
-   "Buffalo Bills",
-   "Miami Dolphins",
-   "Miami Dolphins @ Buffalo Bills"
-  ],
-  "story": "ORCHARD PARK, N.Y. -- \u2014 <a href=\"http://www.espn.com/nfl/player/_/id/4039303/ed-oliver\">Ed Oliver</a> bristled at the notion of the Bills\u2019 defensive turnaround being the result of Buffalo spending the past three weeks <a href=\"https://apnews.com/article/bills-analysis-week-10-f02b93ed75a6352c18a8bed49e7caca0\">feasting on backup quarterbacks</a> \u2014 and another on deck with Miami hitting town on Sunday.\n\n\r\n              \u201cWho cares. I mean, if I got to choose who I could play I guess it would be a starter. But you don\u2019t get to choose,\u201d the defensive tackle said. \u201cAll we get to choose is to take advantage of our opportunities.\u201d\n\n\r\n              The AFC-leading Bills (8-1) have certainly done that over a three-game stretch in which they\u2019ve allowed one touchdown and a combined 28 points. That\u2019s a marked improvement for a defense that allowed 28.5 points per outing through its first six games.\n\n\r\n              A contributing factor could well be the level of competition, with Buffalo having faced the likes of <a href=\"https://apnews.com/article/ravens-bills-score-42602e5aee03ae0d088093686e45db17\">Baltimore\u2019s <a href=\"http://www.espn.com/nfl/player/_/id/4035671/tyler-huntley\">Tyler Huntley</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4429582/joe-fagnano\">Joe Fagnano</a></a>, Minnesota\u2019s <a href=\"http://www.espn.com/nfl/player/_/id/2573079/carson-wentz\">Carson Wentz</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4573398/max-brosmer\">Max Brosmer</a>, and <a href=\"http://www.espn.com/nfl/team/_/name/nyj/new-york-jets\">New York Jets</a> rookie <a href=\"http://www.espn.com/nfl/player/_/id/4685413/cade-klubnik\">Cade Klubnik</a>, who took over after <a href=\"http://www.espn.com/nfl/player/_/id/15864/geno-smith\">Geno Smith</a> was sidelined <a href=\"https://apnews.com/article/bills-jets-score-allen-klubnik-e9dd4c1c36a4018b0d27f5c1df727c94\">in Buffalo\u2019s 31-12 win last weekend</a>.\n\n\r\n              And now come the Dolphins (1-8), with <a href=\"https://apnews.com/article/dolphins-analysis-willis-mccord-gonzalez-d1def859a0c081ac9c565c5f4d7bb159\"><a href=\"http://www.espn.com/nfl/player/_/id/4433971/kyle-mccord\">Kyle McCord</a> set to make his second career start</a> in place of <a href=\"http://www.espn.com/nfl/player/_/id/4242512/malik-willis\">Malik Willis</a>.\n\n\r\n              Bills coach Joe Brady declined to speculate on the injury-filled state of the AFC East's quarterbacks that also includes New England's <a href=\"http://www.espn.com/nfl/player/_/id/4431452/drake-maye\">Drake Maye</a> \u2014 so long as <a href=\"http://www.espn.com/nfl/player/_/id/17102/josh-allen\">Josh Allen</a> is not among them.\n\n\r\n              A healthy Allen, the NFL\u2019s active leader among QBs with 131 consecutive starts, is why the Bills are once again Super Bowl contenders. And Allen isn\u2019t looking any further beyond Sunday, even with a Thanksgiving night showdown looming against Kansas City.\n\n\r\n              \u201cThis isn\u2019t just a cakewalk. It\u2019s a team that\u2019s hungry. They\u2019re looking to upset,\u201d he said. \u201cAnd the way their defense is playing gives them a shot every game they\u2019re in.\u201d\n\n\r\n              The rebuilding Dolphins have improved since dropping their first three games by a combined score of 86-36.\n\n\r\n              Four of their past five losses have been one-score outings, and in a 19-9 loss to Detroit two weeks ago, they limited the NFL\u2019s third-ranked offense to a season-low 270-yards.\n\n\r\n              Injuries are an issue, with Miami losing its <a href=\"https://apnews.com/article/dolphins-injuries-biggers-phillips-4b88e3b84b148c88311ddeb3445d35c5\">top three defensive linemen</a> over a two-week stretch.\n\n\r\n              For rookie coach Jeff Hafley, the injuries represent the next challenge for a team that\u2019s faced plenty of growing pains already.\n\n\r\n              \u201cIt doesn\u2019t mean that you\u2019re not sad and disappointed, but you have to move on and you can\u2019t look back,\u201d Hafley said. \n\n\r\n              With 39 players with three or fewer seasons of experience, Dolphins rookie linebacker <a href=\"http://www.espn.com/nfl/player/_/id/4566094/jacob-rodriguez\">Jacob Rodriguez</a> is part of a youth movement that has few ties to Miami\u2019s past struggles against Buffalo. Including playoffs, the Bills have won 14 of the past 16 meetings and 10 straight at home.\n\n\r\n              \u201cTraditionally, we haven\u2019t done very well playing up there. But we have to find a way to change that,\u201d Rodriguez said.\n\n\r\n              <hl2>Need to know</hl2>\r\n              Miami (1-8) at Buffalo (8-1).\n\n\r\n              When/where to watch: Sunday, 1 p.m. EST, CBS.\n\n\r\n              Latest odds: Bills by 16 1/2\n\n\r\n              Against the spread: Dolphins 5-4; Bills 7-2.\n\n\r\n              Last week: Dolphins lost to Colts 24-22; Bills beat Jets 31-12.\n\n\r\n              Last meeting: Dolphins beat Bills 33-13 on Nov. 9, 2025, at Miami.\n\n\r\n              Series record: Dolphins lead 63-61-1.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Bills RB James Cook vs. Dolphins D. Cook is one game shy of becoming the NFL\u2019s second player to score a TD and top 75 yards rushing in nine straight outings. Washington\u2019s Terry Allen leads the list with a 10-game streak spanning the 1995-96 seasons. And Cook faces a depleted Dolphins front that allowed 172 yards rushing against the Colts.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 Buffalo\u2019s 10 straight home wins against Miami is the longest against any opponent in team history. Buffalo hasn\u2019t lost to Miami at home since a 34-31 overtime decision on Dec. 24, 2016, in what became Rex Ryan\u2019s last game as Bills coach.\n\n\r\n              \u2014 The Bills have a chance to open 9-1 or better for just the fifth time in team history, and first since a 10-1 start in 1991.\n\n\r\n              \u2014 Allen\u2019s 14 wins and 45 TDs passing against Miami are the most against any opponent in his nine-year career.\n\n\r\n              \u2014 Allen is one rushing TD from the 100th of his career, including playoffs. Only five players, all running backs, have scored that many through their first nine seasons.\n\n\r\n              \u2014 Buffalo has not trailed over the span of 217 minutes and 13 seconds, going back to the second quarter of a 33-30 win at Las Vegas on Oct. 25.\n\n\r\n              \u2014 The Dolphins are off to their worst start since going 0-13 to open 2007.\n\n\r\n              \u2014 McCord\u2019s 209 yards passing against Indianapolis were the second most by a player in his Dolphins\u2019 debut.\n\n\r\n              \u2014 Miami has allowed just three TDs rushing in its past six outings, and seven overall.\n\n\r\n              \u2014 The Dolphins have seven interceptions, with six by rookies, led by safety Michael Taaffe\u2019s three.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Alanis Thames in Miami contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
-  "allowContentReactions": false,
-  "allowSearch": true,
-  "isLiveBlog": false,
-  "links": {
-   "api": {
-    "self": {
-     "href": "https://content.core.api.espn.com/v1/sports/news/50534558"
-    }
-   },
-   "app": {
-    "sportscenter": {
-     "href": "sportscenter://x-callback-url/showStory?uid=50534558"
-    }
-   },
-   "mobile": {
-    "href": "http://m.espn.go.com/nfl/story?storyId=50534558"
-   },
-   "web": {
-    "href": "http://www.espn.com/nfl/preview?gameId=401873070"
-   }
-  },
-  "premium": false
- },
  "wallclockAvailable": false,
  "ticketsInfo": {
   "tickets": [
@@ -6469,27 +6432,27 @@
     "type": "team"
    },
    {
-    "ticketName": "11/22 vs Dolphins 1752 tickets left",
+    "ticketName": "11/22 vs Dolphins 1720 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-1-2026/production/6488199?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/26 vs Chiefs 2752 tickets left",
+    "ticketName": "11/26 vs Chiefs 2761 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-6-2026/production/6488364?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/6 @ Patriots 2400 tickets left",
+    "ticketName": "12/6 @ Patriots 2396 tickets left",
     "ticketLink": "https://www.vividseats.com/new-england-patriots-tickets-foxborough-gillette-stadium-3-1-2027/production/6492590?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/13 @ Packers 1415 tickets left",
+    "ticketName": "12/13 @ Packers 1417 tickets left",
     "ticketLink": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-5-2026/production/6489941?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/19 vs Bears 2290 tickets left",
+    "ticketName": "12/19 vs Bears 2285 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-7-2026/production/6488375?wsUser=717",
     "type": "event"
    },
