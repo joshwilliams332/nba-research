@@ -153,9 +153,9 @@
    "images": []
   },
   "weather": {
-   "temperature": 65,
-   "highTemperature": 65,
-   "lowTemperature": 45,
+   "temperature": 66,
+   "highTemperature": 66,
+   "lowTemperature": 46,
    "conditionId": "3",
    "precipitation": 3
   }
@@ -605,8 +605,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "20",
       "uid": "s:20~l:28~t:20",
@@ -671,7 +669,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -763,8 +763,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "4",
       "uid": "s:20~l:28~t:4",
@@ -829,7 +827,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873015",
@@ -852,6 +852,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "20",
       "uid": "s:20~l:28~t:20",
@@ -916,9 +918,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png"
     },
     {
      "id": "401873034",
@@ -1119,6 +1119,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "11",
       "uid": "s:20~l:28~t:11",
@@ -1183,9 +1185,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
     }
    ]
   }
@@ -1418,8 +1418,7 @@
          "details": {
           "fantasyStatus": {
            "description": "DOUBTFUL",
-           "abbreviation": "DOUBTFUL",
-           "displayDescription": "Doubtful"
+           "abbreviation": "DOUBTFUL"
           },
           "type": "Thumb",
           "location": "Arm",
@@ -1980,6 +1979,65 @@
    "injuries": [
     {
      "status": "Questionable",
+     "date": "2026-11-21T18:54Z",
+     "athlete": {
+      "id": "4039303",
+      "uid": "s:20~l:28~a:4039303",
+      "guid": "0a4a252b-ac67-b6de-319b-7f7b39b25345",
+      "lastName": "Oliver",
+      "fullName": "Ed Oliver",
+      "displayName": "Ed Oliver",
+      "shortName": "E. Oliver",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4039303/ed-oliver",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4039303.png",
+       "alt": "Ed Oliver"
+      },
+      "jersey": "91",
+      "position": {
+       "name": "Defensive Tackle",
+       "displayName": "Defensive Tackle",
+       "abbreviation": "DT"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4039303?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Oblique",
+      "location": "Torso",
+      "returnDate": "2026-11-22"
+     }
+    },
+    {
+     "status": "Questionable",
      "date": "2026-11-20T22:18Z",
      "athlete": {
       "id": "4036060",
@@ -2221,67 +2279,6 @@
       "side": "Not Specified",
       "returnDate": "2026-11-26"
      }
-    },
-    {
-     "status": "Doubtful",
-     "date": "2026-11-20T18:16Z",
-     "athlete": {
-      "id": "4385690",
-      "uid": "s:20~l:28~a:4385690",
-      "guid": "d4652b30-6ba5-b261-e946-eb83b36a9b88",
-      "lastName": "Kincaid",
-      "fullName": "Dalton Kincaid",
-      "displayName": "Dalton Kincaid",
-      "shortName": "D. Kincaid",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4385690.png",
-       "alt": "Dalton Kincaid"
-      },
-      "jersey": "86",
-      "position": {
-       "name": "Tight End",
-       "displayName": "Tight End",
-       "abbreviation": "TE"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4385690?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "3",
-      "name": "INJURY_STATUS_DOUBTFUL",
-      "description": "doubtful",
-      "abbreviation": "D"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "DOUBTFUL",
-       "abbreviation": "DOUBTFUL",
-       "displayDescription": "Doubtful"
-      },
-      "type": "Thumb",
-      "location": "Arm",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-11-22"
-     }
     }
    ]
   },
@@ -2351,6 +2348,65 @@
     ]
    },
    "injuries": [
+    {
+     "status": "Questionable",
+     "date": "2026-11-21T19:56Z",
+     "athlete": {
+      "id": "4036660",
+      "uid": "s:20~l:28~a:4036660",
+      "guid": "300a758f-8d51-481c-dde1-3b6a711aab05",
+      "lastName": "Baker Jr.",
+      "fullName": "Darrell Baker Jr.",
+      "displayName": "Darrell Baker Jr.",
+      "shortName": "D. Baker Jr.",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4036660/darrell-baker-jr",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4036660.png",
+       "alt": "Darrell Baker Jr."
+      },
+      "jersey": "22",
+      "position": {
+       "name": "Cornerback",
+       "displayName": "Cornerback",
+       "abbreviation": "CB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4036660?lang=en&region=us"
+      },
+      "status": {
+       "id": "13",
+       "name": "Day-To-Day",
+       "type": "day-to-day",
+       "abbreviation": "Day-To-Day"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Knee",
+      "location": "Leg",
+      "returnDate": "2026-11-22"
+     }
+    },
     {
      "status": "Doubtful",
      "date": "2026-11-21T01:26Z",
@@ -2592,67 +2648,6 @@
       "location": "Leg",
       "returnDate": "2026-11-22"
      }
-    },
-    {
-     "status": "Out",
-     "date": "2026-11-20T23:48Z",
-     "athlete": {
-      "id": "4430681",
-      "uid": "s:20~l:28~a:4430681",
-      "guid": "b59d7e7b-8e9a-50bc-e8c5-f193aca5558a",
-      "lastName": "Wayne",
-      "fullName": "Jared Wayne",
-      "displayName": "Jared Wayne",
-      "shortName": "J. Wayne",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4430681/jared-wayne",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4430681.png",
-       "alt": "Jared Wayne"
-      },
-      "jersey": "86",
-      "position": {
-       "name": "Wide Receiver",
-       "displayName": "Wide Receiver",
-       "abbreviation": "WR"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4430681?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "4",
-      "name": "INJURY_STATUS_OUT",
-      "description": "out",
-      "abbreviation": "O"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "OUT",
-       "abbreviation": "OUT",
-       "displayDescription": "Out"
-      },
-      "type": "Quadriceps",
-      "location": "Leg",
-      "detail": "Not Specified",
-      "side": "Not Specified",
-      "returnDate": "2026-11-29"
-     }
     }
    ]
   }
@@ -2687,7 +2682,7 @@
    "awayTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 920,
+    "moneyLine": 880,
     "spreadOdds": -112.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/15?lang=en&region=us"
@@ -2698,7 +2693,7 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -1640,
+    "moneyLine": -1540,
     "spreadOdds": -107.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/2?lang=en&region=us"
@@ -2870,7 +2865,7 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "-1640",
+      "odds": "-1540",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2902,7 +2897,7 @@
     },
     "away": {
      "close": {
-      "odds": "+920",
+      "odds": "+880",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3270,6 +3265,873 @@
   },
   "articles": [
    {
+    "id": 50530832,
+    "nowId": "1-50530832",
+    "contentKey": "50530832-1-6-1",
+    "dataSourceIdentifier": "c22263ad231df",
+    "type": "Story",
+    "headline": "Fantasy football Week 11 inactives: Who's in and who's out?",
+    "description": "Updated inactives and analysis based on the latest reports and official announcements leading up to kickoff.",
+    "lastModified": "2026-11-21T20:32:44Z",
+    "published": "2026-11-21T20:32:44Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "5bd40ebbc34e3",
+      "id": 50542474,
+      "type": "header",
+      "name": "Kenneth Walker III [576x324]",
+      "caption": "With a quick turnaround to Thanksgiving, the Chiefs are likely to rest Kenneth Walker III this weekend.",
+      "alt": "Kansas City Chiefs running back Kenneth Walker III (9) carries the ball as New York Jets linebacker Kingsley Enagbare (52) defends during the third quarter.",
+      "credit": "Jay Biggerstaff-Imagn Images",
+      "height": 324,
+      "width": 576,
+      "url": "https://a.espncdn.com/photo/2026/1120/r1748614_576x324_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "a4f778b9734ab",
+      "id": 50542436,
+      "type": "header",
+      "name": "T.J. Hockenson [576x324]",
+      "caption": "If T.J. Hockenson suits up on Sunday night, he'll be a solid TE option in fantasy.",
+      "alt": "Minnesota Vikings tight end T.J. Hockenson (87) runs with the ball during a NFL game.",
+      "credit": "Nick Wosika/Icon Sportswire",
+      "height": 324,
+      "width": 576,
+      "url": "https://a.espncdn.com/photo/2026/1120/r1748613_576x324_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Yates, Clay disagree over Ollie Gordon II in Week 11",
+      "caption": "Yates, Clay disagree over Ollie Gordon II in Week 11",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1120/ss_20261120_110007186_3750991/ss_20261120_110007186_3750991.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 141870,
+      "type": "topic",
+      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
+      "description": "news - fantasy",
+      "sportId": 0,
+      "topicId": 240
+     },
+     {
+      "id": 152381,
+      "type": "topic",
+      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
+      "description": "news - fantasy football",
+      "sportId": 0,
+      "topicId": 401
+     },
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409228,
+      "type": "topic",
+      "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d",
+      "description": "fantasy",
+      "sportId": 0,
+      "topicId": 785
+     },
+     {
+      "id": 848862,
+      "type": "contributor",
+      "guid": "3de9fce6-6aa7-3562-b497-2b4f5d90d27a",
+      "description": "Michael F Florio",
+      "slug": "michael-f-florio",
+      "contributor": {
+       "id": 4414,
+       "description": "Michael F Florio"
+      }
+     }
+    ],
+    "byline": "Michael F. Florio",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50530832"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50530832"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=50530832"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/page/FFSundayInactives-50530832/fantasy-football-injuries-nfl-week-11-inactive-active"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50553035,
+    "nowId": "1-50553035",
+    "contentKey": "50553035-1-5-1",
+    "dataSourceIdentifier": "d7b01b823dab7",
+    "type": "HeadlineNews",
+    "headline": "Cardinals rule out rookie Carson Beck, turn to 40-year-old Josh Johnson vs. Chiefs",
+    "description": "Cardinals rookie quarterback Carson Beck has been downgraded to out, paving the way for 40-year-old Josh Johnson to start against the Chiefs.",
+    "lastModified": "2026-11-21T20:45:48Z",
+    "published": "2026-11-21T20:45:48Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "6a078a1d4215a",
+      "id": 50553115,
+      "type": "header",
+      "name": "261115 josh johnson photo [1296x729]",
+      "caption": "Josh Johnson was 1-1 as a fill-in starter for the Commanders in 2025.",
+      "credit": "AP Photo/Ross D. Franklin, File",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1121/r1749119_1296x729_16-9.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 37596,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:11394",
+      "guid": "96322b1f-0f69-3e12-403e-9c34305a58fb",
+      "description": "Josh Johnson",
+      "sportId": 28,
+      "athleteId": 11394,
+      "athlete": {
+       "id": 11394,
+       "description": "Josh Johnson",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/11394/josh-johnson"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/11394/josh-johnson"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1583,
+      "type": "team",
+      "uid": "s:20~l:28~t:22",
+      "guid": "8fc7b962-95e1-3cb8-6a7d-b499de9ad546",
+      "description": "Arizona Cardinals",
+      "sportId": 28,
+      "teamId": 22,
+      "team": {
+       "id": 22,
+       "description": "Arizona Cardinals",
+       "abbreviation": "ARI",
+       "shortDisplayName": "Cardinals",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/ari/arizona-cardinals"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/ari/arizona-cardinals"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 439276,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4430841",
+      "guid": "baca19aa-8fab-3a5e-9bb0-6cfcbcbc1b57",
+      "description": "Carson Beck",
+      "sportId": 28,
+      "athleteId": 4430841,
+      "athlete": {
+       "id": 4430841,
+       "description": "Carson Beck",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4430841/carson-beck"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4430841/carson-beck"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     },
+     {
+      "id": 696416,
+      "type": "contributor",
+      "guid": "ff2bd78b-f473-3bf6-bd0e-12c35dabe606",
+      "description": "Josh Weinfuss",
+      "slug": "josh-weinfuss",
+      "contributor": {
+       "id": 2330,
+       "description": "Josh Weinfuss"
+      }
+     }
+    ],
+    "byline": "Josh Weinfuss",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50553035"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50553035"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50553035"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50553035/cardinals-downgrade-qb-carson-beck-josh-johnson-set-start"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50552701,
+    "nowId": "1-50552701",
+    "contentKey": "50552701-1-5-1",
+    "dataSourceIdentifier": "958609b3595ee",
+    "type": "HeadlineNews",
+    "headline": "Steelers activate WR Roman Wilson off IR for Eagles game",
+    "description": "The Steelers have activated wide receiver Roman Wilson from injured reserve ahead of Sunday's game against the Eagles.",
+    "lastModified": "2026-11-21T20:54:35Z",
+    "published": "2026-11-21T20:54:35Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "95a721ec530d0",
+      "id": 50165244,
+      "type": "header",
+      "name": "Roman Wilson [600x400]",
+      "credit": "Lauren Leigh Bacho/Getty Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1012/r1729619_600x400_3-2.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Sources: Steelers to activate WR Wilson off IR for Eagles game",
+      "caption": "Sources: Steelers to activate WR Wilson off IR for Eagles game",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1121/94944f9b-bc55-4b9e-912c-e26808962ec7/94944f9b-bc55-4b9e-912c-e26808962ec7.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2776,
+      "type": "team",
+      "uid": "s:20~l:28~t:23",
+      "guid": "debcd592-8d53-71f1-fc15-5c8b8ef9df6e",
+      "description": "Pittsburgh Steelers",
+      "sportId": 28,
+      "teamId": 23,
+      "team": {
+       "id": 23,
+       "description": "Pittsburgh Steelers",
+       "abbreviation": "PIT",
+       "shortDisplayName": "Steelers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 443979,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4431492",
+      "guid": "26f43986-7674-3ef9-b523-f3f66dbd16a4",
+      "description": "Roman Wilson",
+      "sportId": 28,
+      "athleteId": 4431492,
+      "athlete": {
+       "id": 4431492,
+       "description": "Roman Wilson",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4431492/roman-wilson"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4431492/roman-wilson"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 447687,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4694237",
+      "guid": "c594fa98-bf7e-39ae-a32b-eb664a8e7a36",
+      "description": "Max Hurleman",
+      "sportId": 28,
+      "athleteId": 4694237,
+      "athlete": {
+       "id": 4694237,
+       "description": "Max Hurleman",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4694237/max-hurleman"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4694237/max-hurleman"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 435184,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4035687",
+      "guid": "f9ac7a55-5934-2bf7-e70a-9c1d04cac2eb",
+      "description": "Michael Pittman Jr",
+      "sportId": 28,
+      "athleteId": 4035687,
+      "athlete": {
+       "id": 4035687,
+       "description": "Michael Pittman Jr",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4035687/michael-pittman-jr"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4035687/michael-pittman-jr"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     }
+    ],
+    "byline": "Brooke Pryor",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50552701"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50552701"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50552701"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50552701/sources-steelers-activate-wr-roman-wilson-ir-eagles-game"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50551434,
+    "nowId": "1-50551434",
+    "contentKey": "50551434-1-5-1",
+    "dataSourceIdentifier": "5cda3e0ea9918",
+    "type": "HeadlineNews",
+    "headline": "Titans DL Jaylen Harrell hospitalized after car accident in Tampa",
+    "description": "Titans defensive lineman Jaylen Harrell was involved in a serious car accident Friday and remains hospitalized, according to the team.",
+    "lastModified": "2026-11-21T18:31:47Z",
+    "published": "2026-11-21T18:31:47Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "f2945907fa175",
+      "id": 50551421,
+      "type": "header",
+      "name": "Jaylen Harrell [600x400]",
+      "credit": "AP Photo/George Walker IV",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1121/r1749044_600x400_3-2.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2886,
+      "type": "team",
+      "uid": "s:20~l:28~t:10",
+      "guid": "0a0aea59-9a5e-01b3-57a3-0151cf4bf393",
+      "description": "Tennessee Titans",
+      "sportId": 28,
+      "teamId": 10,
+      "team": {
+       "id": 10,
+       "description": "Tennessee Titans",
+       "abbreviation": "TEN",
+       "shortDisplayName": "Titans",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/ten/tennessee-titans"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 443976,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4429058",
+      "guid": "e0106a08-215f-3873-827e-9da159da2350",
+      "description": "Jaylen Harrell",
+      "sportId": 28,
+      "athleteId": 4429058,
+      "athlete": {
+       "id": 4429058,
+       "description": "Jaylen Harrell",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4429058/jaylen-harrell"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4429058/jaylen-harrell"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     },
+     {
+      "id": 696370,
+      "type": "contributor",
+      "guid": "7cd303be-26f1-3ed3-9d37-433aa584a6f2",
+      "description": "Turron Davenport",
+      "slug": "turron-davenport",
+      "contributor": {
+       "id": 3378,
+       "description": "Turron Davenport"
+      }
+     }
+    ],
+    "byline": "Turron Davenport",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50551434"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50551434"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50551434"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50551434/titans-dl-jaylen-harrell-hospitalized-car-accident-tampa"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50550852,
+    "nowId": "1-50550852",
+    "contentKey": "50550852-1-293-1",
+    "dataSourceIdentifier": "170cd22914045",
+    "type": "Media",
+    "headline": "South Carolina legend Alshon Jeffery discusses Georgia rivalry",
+    "description": "Jeffery joins SEC Network's Marion Crowder on SEC Nation to preview the Gamecocks' matchup against the Bulldogs and explain how Shane Beamer recruited him to South Carolina.",
+    "lastModified": "2026-11-21T17:13:41Z",
+    "published": "2026-11-21T17:13:41Z",
+    "images": [
+     {
+      "name": "South Carolina legend Alshon Jeffery discusses Georgia rivalry",
+      "caption": "Jeffery joins SEC Network's Marion Crowder on SEC Nation to preview the Gamecocks' matchup against the Bulldogs and explain how Shane Beamer recruited him to South Carolina.",
+      "alt": "",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1121/dm_261121_SEC_NCF_Interview_Alshon_joins_Nation_261121/dm_261121_SEC_NCF_Interview_Alshon_joins_Nation_261121.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 103791,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:14912",
+      "guid": "c3ab7b08-1e7a-a5ba-d171-256ab4445512",
+      "description": "Alshon Jeffery",
+      "sportId": 28,
+      "athleteId": 14912,
+      "athlete": {
+       "id": 14912,
+       "description": "Alshon Jeffery",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/14912/alshon-jeffery"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/14912/alshon-jeffery"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1091,
+      "type": "team",
+      "uid": "s:20~l:23~t:61",
+      "guid": "4351fef8-fe69-53b1-ea57-72684b36ec35",
+      "description": "Georgia Bulldogs",
+      "sportId": 23,
+      "teamId": 61,
+      "team": {
+       "id": 61,
+       "description": "Georgia Bulldogs",
+       "abbreviation": "UGA",
+       "shortDisplayName": "Georgia",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/college-football/team/_/id/61/georgia-bulldogs"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/college-football/team/_/id/61/georgia-bulldogs"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 61,
+      "type": "team",
+      "guid": "429cd0c4-212a-3660-9508-9e74776b5442",
+      "description": "University of Georgia",
+      "sportId": 3170,
+      "teamId": 61,
+      "team": {
+       "id": 61,
+       "description": "University of Georgia",
+       "abbreviation": "Georgia",
+       "shortDisplayName": "Georgia"
+      }
+     },
+     {
+      "id": 9571,
+      "type": "league",
+      "uid": "s:20~l:23",
+      "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e",
+      "description": "NCAA Football",
+      "sportId": 23,
+      "leagueId": 23,
+      "league": {
+       "id": 23,
+       "description": "NCAA Football",
+       "abbreviation": "NCAAF",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/college-football/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/college-football/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 126329,
+      "type": "topic",
+      "guid": "78632891-79dd-a9ab-c720-008c86f843de",
+      "description": "sec network",
+      "sportId": 0,
+      "topicId": 89
+     },
+     {
+      "id": 1094,
+      "type": "team",
+      "uid": "s:20~l:23~t:2579",
+      "guid": "6509690a-8cf2-b255-5af7-b6a1a1010ac4",
+      "description": "South Carolina Gamecocks",
+      "sportId": 23,
+      "teamId": 2579,
+      "team": {
+       "id": 2579,
+       "description": "South Carolina Gamecocks",
+       "abbreviation": "SC",
+       "shortDisplayName": "South Carolina",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/college-football/team/_/id/2579/south-carolina-gamecocks"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/college-football/team/_/id/2579/south-carolina-gamecocks"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2579,
+      "type": "team",
+      "guid": "9a4406c8-9b7f-35b3-858d-2041019203a8",
+      "description": "University of South Carolina",
+      "sportId": 3170,
+      "teamId": 2579,
+      "team": {
+       "id": 2579,
+       "description": "University of South Carolina",
+       "abbreviation": "South Carolina",
+       "shortDisplayName": "South Carolina"
+      }
+     },
+     {
+      "type": "event",
+      "uid": "s:20~l:23~e:401856753",
+      "guid": "d7da2ced-0e5e-3e23-8884-1a8063ff6f80",
+      "description": "Georgia Bulldogs @ South Carolina Gamecocks",
+      "eventId": 401856753,
+      "event": {
+       "id": 401856753,
+       "sport": "football",
+       "league": "college-football",
+       "description": "Georgia Bulldogs @ South Carolina Gamecocks"
+      }
+     }
+    ],
+    "links": {
+     "api": {
+      "artwork": {
+       "href": "https://artwork.api.espn.com/artwork/collections/media/6869ceed-ed7a-4460-a6b7-933b778ede96"
+      },
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/video/clips/50550852"
+      }
+     },
+     "sportscenter": {
+      "href": "sportscenter://x-callback-url/showVideo?videoID=50550852&videoDSI=170cd22914045"
+     },
+     "web": {
+      "href": "https://www.espn.com/video/clip/_/id/50550852/south-carolina-legend-alshon-jeffery-discusses-georgia-rivalry",
+      "self": {
+       "href": "https://www.espn.com/video/clip/_/id/50550852/south-carolina-legend-alshon-jeffery-discusses-georgia-rivalry",
+       "dsi": {
+        "href": "https://www.espn.com/video/clip?id=170cd22914045"
+       }
+      }
+     }
+    },
+    "premium": false
+   },
+   {
     "id": 50549761,
     "nowId": "1-50549761",
     "contentKey": "50549761-1-5-1",
@@ -3379,602 +4241,6 @@
      },
      "web": {
       "href": "https://www.espn.com/nfl/story/_/id/50549761/mark-davis-upset-father-portrayal-movie-madden"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50507366,
-    "nowId": "1-50507366",
-    "contentKey": "50507366-1-6-1",
-    "dataSourceIdentifier": "f46f901f51dc3",
-    "type": "Story",
-    "headline": "Fantasy football flex and superflex rankings for Week 11",
-    "description": "Trying to decide between a couple of closely ranked players this week? Eric Karabell's ranks are here to help.",
-    "lastModified": "2026-11-21T14:12:31Z",
-    "published": "2026-11-21T14:12:31Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "5e08b8f3a0624",
-      "id": 50507383,
-      "type": "header",
-      "name": "Jordyn Tyson [1296x729]",
-      "alt": "Jordyn Tyson, New Orleans Saints wide receiver",
-      "credit": "Ella Hall/AP Photo",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1109/r1743618_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "362dfa2f15493",
-      "id": 50442537,
-      "type": "header",
-      "name": "Woody Marks [1296x729]",
-      "alt": "Woody Marks, Houston Texans running back",
-      "credit": "Kirby Lee/Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1018/r1732405_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "fe98aaadd6a17",
-      "id": 50007233,
-      "type": "header",
-      "name": "Detroit Lions wide receiver Jameson Williams [1296x729]",
-      "caption": "Jameson Williams is off to a slow start with six catches for 78 yards and no touchdowns for a Lions team that has 62 points in two games.",
-      "alt": "Jameson Williams",
-      "credit": "Scott W. Grau/Icon Sportswire",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0902/r1710593_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "6b132320463f7",
-      "id": 50174553,
-      "type": "header",
-      "name": "Denzel Boston [1296x729]",
-      "alt": "Denzel Boston, Cleveland Browns wide receiver",
-      "credit": "AP Photo/Sue Ogrocki",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0928/r1723051_2_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Why Jordyn Tyson is firmly on the flex radar",
-      "caption": "Why Jordyn Tyson is firmly on the flex radar",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1115/dm_261115_ffia_jordyntyson/dm_261115_ffia_jordyntyson.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 141870,
-      "type": "topic",
-      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
-      "description": "news - fantasy",
-      "sportId": 0,
-      "topicId": 240
-     },
-     {
-      "id": 696457,
-      "type": "contributor",
-      "guid": "81fb2165-06b4-383f-a557-f86bffde1ba8",
-      "description": "Eric Karabell",
-      "slug": "eric-karabell",
-      "contributor": {
-       "id": 907,
-       "description": "Eric Karabell"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "Eric Karabell",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50507366"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50507366"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=50507366"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/id/50507366/fantasy-football-superflex-rankings-2026-qb-rb-wr-te"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 49797082,
-    "nowId": "1-49797082",
-    "contentKey": "49797082-1-6-1",
-    "dataSourceIdentifier": "a41e6ab4bbd28",
-    "type": "Story",
-    "headline": "Fantasy football rankings Week 11: PPR and superflex",
-    "description": "Weekly composite ranks for each position in PPR and IDP formats, as well as Eric Karabell's superflex ranks.",
-    "lastModified": "2026-11-21T14:10:30Z",
-    "published": "2026-11-21T14:10:30Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "588e09fb3832c",
-      "id": 49817526,
-      "type": "header",
-      "name": "Justin Jefferson [1296x729]",
-      "alt": "Justin Jefferson, Minnesota Vikings wide receiver",
-      "credit": "Matt Krohn-Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711051_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "a24fab4e36256",
-      "id": 50117894,
-      "type": "header",
-      "name": "Josh Allen [1296x729]",
-      "credit": "Carolyn Kaster/AP",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1004/r1725951_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "6be65b10eb61d",
-      "id": 50297256,
-      "type": "header",
-      "name": "Kenneth Walker III [1296x729]",
-      "alt": "Chiefs player in white jersey with red helmet and #9 pumping his arms while running with the ball",
-      "credit": "Chris Unger/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1006/r1727003_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "f2c2db0f9e992",
-      "id": 49942886,
-      "type": "header",
-      "name": "Jonathan Taylor [1296x729]",
-      "alt": "Jonathan Taylor, Indianapolis Colts running back",
-      "credit": "Andy Lyons/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0914/r1716699_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Why Jordyn Tyson is firmly on the flex radar",
-      "caption": "Why Jordyn Tyson is firmly on the flex radar",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1115/dm_261115_ffia_jordyntyson/dm_261115_ffia_jordyntyson.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 141870,
-      "type": "topic",
-      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
-      "description": "news - fantasy",
-      "sportId": 0,
-      "topicId": 240
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/49797082"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=49797082"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=49797082"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26main-49797082/fantasy-football-rankings-2026-qb-rb-wr-te-dst"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50506844,
-    "nowId": "1-50506844",
-    "contentKey": "50506844-1-6-1",
-    "dataSourceIdentifier": "cacd8df78b48e",
-    "type": "Story",
-    "headline": "Fantasy football rankings for Week 11: Running back",
-    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
-    "lastModified": "2026-11-21T14:09:58Z",
-    "published": "2026-11-21T14:09:58Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "bd21d9a31c266",
-      "id": 50116946,
-      "type": "header",
-      "name": "Jahmyr Gibbs [1296x729]",
-      "alt": "Jahmyr Gibbs #0 of the Detroit Lions runs the ball against the New York Jets during the second quarter at Ford Field on September 27, 2026 in Detroit, Michigan.",
-      "credit": "Nic Antaya/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0927/r1722612_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "519f695ea5875",
-      "id": 50174405,
-      "type": "header",
-      "name": "Kenneth Walker III [1296x729]",
-      "alt": "Kenneth Walker III, Kansas City Chiefs running back",
-      "credit": "Kevin Sabitus/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0922/r1720547_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "68855ddab625a",
-      "id": 49817418,
-      "type": "header",
-      "name": "Saquon Barkley [1296x729]",
-      "alt": "Saquon Barkley, Philadelphia Eagles running back",
-      "credit": "Ronald Martinez/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711047_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "How impressive has Tony Pollard been in fantasy recently?",
-      "caption": "How impressive has Tony Pollard been in fantasy recently?",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1116/ss_20261116_110817665_3745187697/ss_20261116_110817665_3745187697.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50506844"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50506844"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=50506844"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-50506844/nfl-fantasy-football-rankings-2026-rb-running-back"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50506830,
-    "nowId": "1-50506830",
-    "contentKey": "50506830-1-6-1",
-    "dataSourceIdentifier": "51fe5a6f663e6",
-    "type": "Story",
-    "headline": "Fantasy football rankings for Week 11: Wide receiver",
-    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
-    "lastModified": "2026-11-21T14:09:39Z",
-    "published": "2026-11-21T14:09:39Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "0297460dcb6cb",
-      "id": 49817677,
-      "type": "header",
-      "name": "CeeDee Lamb [1296x729]",
-      "alt": "CeeDee Lamb, Dallas Cowboys wide receiver",
-      "credit": "Kevin Jairaj-Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711058_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Eric Moody: Parker Washington firmly on the WR1 radar in Week 11",
-      "caption": "Eric Moody: Parker Washington firmly on the WR1 radar in Week 11",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1115/dm_261115_fantasy_parkerwashington/dm_261115_fantasy_parkerwashington.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50506830"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50506830"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=50506830"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-50506830/nfl-fantasy-football-rankings-2026-wr-wide-receiver"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50506789,
-    "nowId": "1-50506789",
-    "contentKey": "50506789-1-6-1",
-    "dataSourceIdentifier": "2eac9e2a0adfb",
-    "type": "Story",
-    "headline": "Fantasy football rankings for Week 11: D/ST",
-    "description": "Fantasy football rankings from Matt Bowen, Mike Clay, Tristan H. Cockcroft, Daniel Dopp, Eric Karabell, Liz Loza, Eric Moody and Field Yates.",
-    "lastModified": "2026-11-21T14:09:15Z",
-    "published": "2026-11-21T14:09:15Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "493086bab89eb",
-      "id": 49817957,
-      "type": "header",
-      "name": "Texans defense [1296x729]",
-      "alt": "Will Anderson Jr. and Danielle Hunter, Houston Texans edge rushers",
-      "credit": "Troy Taormina-Imagn Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/0903/r1711074_1296x729_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "431d427687d29",
-      "id": 50297659,
-      "type": "header",
-      "name": "Vikings defense [1296x729]",
-      "alt": "Minnesota Vikings defensive players, in purple uniforms and helmets, dancing after a big play",
-      "credit": "Stephen Maturen/Getty Images",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1027/r1736992_1296x729_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "Why Cockcroft likes the Jets D/ST for Week 11",
-      "caption": "Why Cockcroft likes the Jets D/ST for Week 11",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1117/dm_261117_jets_defense/dm_261117_jets_defense.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 12024,
-      "type": "league",
-      "uid": "s:20~l:3080",
-      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
-      "description": "Fantasy NFL",
-      "sportId": 3080,
-      "leagueId": 3080,
-      "league": {
-       "id": 3080,
-       "description": "Fantasy NFL",
-       "abbreviation": "NFLFD"
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "byline": "ESPN Fantasy",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50506789"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50506789"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/wireless/story?storyId=50506789"
-     },
-     "web": {
-      "href": "https://www.espn.com/fantasy/football/story/_/page/FFWeeklyPlayerRank26-50506789/nfl-fantasy-football-rankings-2026-dst-defense"
      }
     },
     "premium": false
@@ -4498,7 +4764,7 @@
       "awayTeamOdds": {
        "favorite": false,
        "underdog": true,
-       "moneyLine": 920,
+       "moneyLine": 880,
        "spreadOdds": -112.0,
        "open": {
         "favorite": false,
@@ -4537,12 +4803,12 @@
          "american": "-112"
         },
         "moneyLine": {
-         "value": 10.2,
-         "displayValue": "46/5",
-         "alternateDisplayValue": "+920",
-         "decimal": 10.2,
-         "fraction": "46/5",
-         "american": "+920"
+         "value": 9.8,
+         "displayValue": "44/5",
+         "alternateDisplayValue": "+880",
+         "decimal": 9.8,
+         "fraction": "44/5",
+         "american": "+880"
         }
        },
        "team": {
@@ -4552,7 +4818,7 @@
       "homeTeamOdds": {
        "favorite": true,
        "underdog": false,
-       "moneyLine": -1640,
+       "moneyLine": -1540,
        "spreadOdds": -107.0,
        "open": {
         "favorite": true,
@@ -4592,11 +4858,11 @@
         },
         "moneyLine": {
          "value": 1.06,
-         "displayValue": "5/82",
-         "alternateDisplayValue": "-1640",
+         "displayValue": "5/77",
+         "alternateDisplayValue": "-1540",
          "decimal": 1.06,
-         "fraction": "5/82",
-         "american": "-1640"
+         "fraction": "5/77",
+         "american": "-1540"
         }
        },
        "team": {
@@ -5216,32 +5482,32 @@
     "type": "team"
    },
    {
-    "ticketName": "11/22 vs Dolphins 1471 tickets left",
+    "ticketName": "11/22 vs Dolphins 2488 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-1-2026/production/6488199?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/26 vs Chiefs 2944 tickets left",
+    "ticketName": "11/26 vs Chiefs 2946 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-6-2026/production/6488364?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/6 @ Patriots 2394 tickets left",
+    "ticketName": "12/6 @ Patriots 2389 tickets left",
     "ticketLink": "https://www.vividseats.com/new-england-patriots-tickets-foxborough-gillette-stadium-3-1-2027/production/6492590?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/13 @ Packers 1387 tickets left",
+    "ticketName": "12/13 @ Packers 1375 tickets left",
     "ticketLink": "https://www.vividseats.com/green-bay-packers-tickets-green-bay-lambeau-field-3-5-2026/production/6489941?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/19 vs Bears 2279 tickets left",
+    "ticketName": "12/19 vs Bears 2263 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-7-2026/production/6488375?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/25 @ Broncos 2544 tickets left",
+    "ticketName": "12/25 @ Broncos 2521 tickets left",
     "ticketLink": "https://www.vividseats.com/denver-broncos-tickets-denver-empower-field-at-mile-high-3-4-2026/production/6489674?wsUser=717",
     "type": "event"
    },
@@ -5260,7 +5526,7 @@
    "opponentTeamName": "Dolphins",
    "currentTeamName": "Bills",
    "venueName": "Highmark Stadium",
-   "summary": "Tickets as low as $221",
+   "summary": "Tickets as low as $239",
    "date": "2026-11-22T18:00Z",
    "dateDay": "Sun",
    "homeAway": "home",
