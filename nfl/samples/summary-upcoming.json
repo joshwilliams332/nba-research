@@ -142,6 +142,7 @@
  "gameInfo": {
   "venue": {
    "id": "11938",
+   "guid": "ba8067e2-948d-3305-98c1-5beba313e909",
    "fullName": "Highmark Stadium",
    "address": {
     "city": "Orchard Park",
@@ -249,6 +250,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "14",
       "uid": "s:20~l:28~t:14",
@@ -313,9 +316,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png"
     },
     {
      "id": "401873005",
@@ -605,6 +606,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "20",
       "uid": "s:20~l:28~t:20",
@@ -669,9 +672,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png"
     }
    ]
   },
@@ -941,6 +942,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "17",
       "uid": "s:20~l:28~t:17",
@@ -1005,9 +1008,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png"
     },
     {
      "id": "401873042",
@@ -1030,8 +1031,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "8",
       "uid": "s:20~l:28~t:8",
@@ -1096,7 +1095,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873059",
@@ -2662,7 +2663,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1,
     "logos": [
      {
@@ -2713,7 +2714,7 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118202%3Foutcomes%3D0ML84695635_1",
      "text": "Home Bet",
@@ -2737,7 +2738,7 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118202%3Foutcomes%3D0ML84695635_3",
      "text": "Away Bet",
@@ -2877,7 +2878,7 @@
         "home",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118202%3Foutcomes%3D0ML84695635_1",
        "text": "Home Bet",
@@ -2909,7 +2910,7 @@
         "away",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118202%3Foutcomes%3D0ML84695635_3",
        "text": "Away Bet",
@@ -3241,6 +3242,18 @@
    "records": []
   }
  ],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "2",
+   "gameProjection": "94.8"
+  },
+  "awayTeam": {
+   "id": "15",
+   "gameProjection": "5.1"
+  }
+ },
+ "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -5183,18 +5196,6 @@
    }
   ]
  },
- "winprobability": [],
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "2",
-   "gameProjection": "94.8"
-  },
-  "awayTeam": {
-   "id": "15",
-   "gameProjection": "5.1"
-  }
- },
  "header": {
   "id": "401873070",
   "uid": "s:20~l:28~e:401873070",
@@ -6430,17 +6431,17 @@
     "type": "team"
    },
    {
-    "ticketName": "11/22 vs Dolphins 1615 tickets left",
+    "ticketName": "11/22 vs Dolphins 1102 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-1-2026/production/6488199?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/26 vs Chiefs 2723 tickets left",
+    "ticketName": "11/26 vs Chiefs 2333 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-6-2026/production/6488364?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/6 @ Patriots 2406 tickets left",
+    "ticketName": "12/6 @ Patriots 2402 tickets left",
     "ticketLink": "https://www.vividseats.com/new-england-patriots-tickets-foxborough-gillette-stadium-3-1-2027/production/6492590?wsUser=717",
     "type": "event"
    },
@@ -6450,7 +6451,7 @@
     "type": "event"
    },
    {
-    "ticketName": "12/19 vs Bears 2281 tickets left",
+    "ticketName": "12/19 vs Bears 1815 tickets left",
     "ticketLink": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-7-2026/production/6488375?wsUser=717",
     "type": "event"
    },
@@ -6474,7 +6475,7 @@
    "opponentTeamName": "Dolphins",
    "currentTeamName": "Bills",
    "venueName": "Highmark Stadium",
-   "summary": "Tickets as low as $219",
+   "summary": "Tickets as low as $221",
    "date": "2026-11-22T18:00Z",
    "dateDay": "Sun",
    "homeAway": "home",
