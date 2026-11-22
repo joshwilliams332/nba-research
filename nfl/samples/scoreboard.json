@@ -593,7 +593,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lac.png"
        },
-       "score": "10",
+       "score": "17",
        "linescores": [
         {
          "value": 3.0,
@@ -604,6 +604,16 @@
          "value": 7.0,
          "displayValue": "7",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -734,7 +744,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/nyj.png"
        },
-       "score": "17",
+       "score": "27",
        "linescores": [
         {
          "value": 3.0,
@@ -745,6 +755,16 @@
          "value": 14.0,
          "displayValue": "14",
          "period": 2
+        },
+        {
+         "value": 3.0,
+         "displayValue": "3",
+         "period": 3
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -774,71 +794,94 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730741991",
+       "id": "4018730743601",
        "type": {
-        "id": "65",
-        "text": "End of Half",
-        "abbreviation": "EH"
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
        },
-       "text": "END QUARTER 2",
+       "text": " (No Huddle, Shotgun) J.Herbert scrambles up the middle to NYJ 6 for 5 yards (D.Ponds).",
        "scoreValue": 0,
        "team": {
         "id": "24"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.3652,
-        "awayWinPercentage": 0.6348,
+        "homeWinPercentage": 0.1154,
+        "awayWinPercentage": 0.8846,
         "secondsLeft": 0
        },
-       "statYardage": 0,
+       "statYardage": 5,
        "drive": {
-        "description": "12 plays, 72 yards, 3:07",
+        "description": "15 plays, 57 yards, 7:06",
         "start": {
-         "yardLine": 28,
-         "text": "LAC 28"
-        },
-        "end": {
-         "yardLine": 100,
-         "text": "NYJ 0"
+         "yardLine": 37,
+         "text": "LAC 37"
         },
         "timeElapsed": {
-         "displayValue": "3:07"
-        },
-        "result": "TD"
+         "displayValue": "7:06"
+        }
        },
        "start": {
-        "yardLine": 35,
+        "yardLine": 89,
         "team": {
          "id": "24"
         }
        },
        "end": {
-        "yardLine": 35,
+        "yardLine": 94,
         "team": {
          "id": "24"
         }
-       }
+       },
+       "athletesInvolved": [
+        {
+         "id": "4038941",
+         "fullName": "Justin Herbert",
+         "displayName": "Justin Herbert",
+         "shortName": "J. Herbert",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4038941.png",
+         "jersey": "10",
+         "position": "QB",
+         "team": {
+          "id": "24"
+         }
+        }
+       ]
       },
-      "down": 1,
-      "yardLine": 35,
-      "distance": 10,
-      "isRedZone": false,
+      "down": 3,
+      "yardLine": 94,
+      "distance": 6,
+      "downDistanceText": "3rd & Goal at NYJ 6",
+      "shortDownDistanceText": "3rd & Goal",
+      "possessionText": "NYJ 6",
+      "isRedZone": true,
       "homeTimeouts": 3,
-      "awayTimeouts": 3
+      "awayTimeouts": 3,
+      "possession": "24"
      },
      "status": {
-      "clock": 0.0,
-      "displayClock": "0:00",
-      "period": 2,
+      "clock": 160.0,
+      "displayClock": "2:40",
+      "period": 4,
       "type": {
-       "id": "23",
-       "name": "STATUS_HALFTIME",
+       "id": "2",
+       "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
-       "description": "Halftime",
-       "detail": "Halftime",
-       "shortDetail": "Halftime"
+       "description": "In Progress",
+       "detail": "2:40 - 4th Quarter",
+       "shortDetail": "2:40 - 4th"
       },
       "isTBDFlex": false
      },
@@ -858,8 +901,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "10/11, 112 YDS, 2 TD",
-         "value": 112.0,
+         "displayValue": "17/21, 176 YDS, 3 TD",
+         "value": 176.0,
          "athlete": {
           "id": "15864",
           "fullName": "Geno Smith",
@@ -898,8 +941,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "8 CAR, 40 YDS",
-         "value": 40.0,
+         "displayValue": "14 CAR, 89 YDS",
+         "value": 89.0,
          "athlete": {
           "id": "4685382",
           "fullName": "Omarion Hampton",
@@ -938,13 +981,13 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "2 REC, 30 YDS",
-         "value": 30.0,
+         "displayValue": "3 REC, 39 YDS",
+         "value": 39.0,
          "athlete": {
-          "id": "4597500",
-          "fullName": "Adonai Mitchell",
-          "displayName": "Adonai Mitchell",
-          "shortName": "A. Mitchell",
+          "id": "4569618",
+          "fullName": "Garrett Wilson",
+          "displayName": "Garrett Wilson",
+          "shortName": "G. Wilson",
           "links": [
            {
             "rel": [
@@ -952,11 +995,11 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4597500/adonai-mitchell"
+            "href": "https://www.espn.com/nfl/player/_/id/4569618/garrett-wilson"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4597500.png",
-          "jersey": "15",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569618.png",
+          "jersey": "5",
           "position": {
            "abbreviation": "WR"
           },
@@ -1044,10 +1087,10 @@
     }
    ],
    "weather": {
-    "displayValue": "1",
-    "temperature": 67,
-    "highTemperature": 67,
-    "conditionId": "Sunny",
+    "displayValue": "2",
+    "temperature": 65,
+    "highTemperature": 65,
+    "conditionId": "Mostly sunny",
     "link": {
      "language": "en-US",
      "rel": [
@@ -1061,17 +1104,17 @@
     }
    },
    "status": {
-    "clock": 0.0,
-    "displayClock": "0:00",
-    "period": 2,
+    "clock": 160.0,
+    "displayClock": "2:40",
+    "period": 4,
     "type": {
-     "id": "23",
-     "name": "STATUS_HALFTIME",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
-     "description": "Halftime",
-     "detail": "Halftime",
-     "shortDetail": "Halftime"
+     "description": "In Progress",
+     "detail": "2:40 - 4th Quarter",
+     "shortDetail": "2:40 - 4th"
     }
    }
   },
@@ -1231,6 +1274,11 @@
          "value": 14.0,
          "displayValue": "14",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -1361,7 +1409,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lv.png"
        },
-       "score": "0",
+       "score": "10",
        "linescores": [
         {
          "value": 0.0,
@@ -1369,9 +1417,14 @@
          "period": 1
         },
         {
+         "value": 10.0,
+         "displayValue": "10",
+         "period": 2
+        },
+        {
          "value": 0.0,
          "displayValue": "0",
-         "period": 2
+         "period": 3
         }
        ],
        "statistics": [],
@@ -1401,70 +1454,94 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730751494",
+       "id": "4018730752857",
        "type": {
-        "id": "74",
-        "text": "Official Timeout",
-        "abbreviation": "Off TO"
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
        },
-       "text": "Official Timeout at 09:09.",
+       "text": "M.Washington up the middle to DEN 19 for 2 yards (M.Roach; J.McMillian).",
        "scoreValue": 0,
        "team": {
         "id": "13"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.9703,
-        "awayWinPercentage": 0.02969999999999995,
+        "homeWinPercentage": 0.8289,
+        "awayWinPercentage": 0.17110000000000003,
         "secondsLeft": 0
        },
-       "statYardage": 0,
+       "statYardage": 2,
        "drive": {
-        "description": "5 plays, 25 yards, 1:26",
+        "description": "4 plays, 20 yards, 1:54",
         "start": {
-         "yardLine": 75,
-         "text": "LV 25"
+         "yardLine": 39,
+         "text": "DEN 39"
         },
         "timeElapsed": {
-         "displayValue": "1:26"
+         "displayValue": "1:54"
         }
        },
        "start": {
-        "yardLine": 50,
+        "yardLine": 21,
         "team": {
          "id": "13"
         }
        },
        "end": {
-        "yardLine": 50,
+        "yardLine": 19,
         "team": {
          "id": "13"
         }
-       }
+       },
+       "athletesInvolved": [
+        {
+         "id": "4686658",
+         "fullName": "Mike Washington Jr.",
+         "displayName": "Mike Washington Jr.",
+         "shortName": "M. Washington Jr.",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/4686658/mike-washington-jr"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4686658.png",
+         "jersey": "4",
+         "position": "RB",
+         "team": {
+          "id": "13"
+         }
+        }
+       ]
       },
       "down": 3,
-      "yardLine": 50,
-      "distance": 3,
-      "downDistanceText": "3rd & 3 at 50",
-      "shortDownDistanceText": "3rd & 3",
-      "possessionText": "50",
-      "isRedZone": false,
+      "yardLine": 19,
+      "distance": 2,
+      "downDistanceText": "3rd & 2 at DEN 19",
+      "shortDownDistanceText": "3rd & 2",
+      "possessionText": "DEN 19",
+      "isRedZone": true,
       "homeTimeouts": 3,
-      "awayTimeouts": 2,
+      "awayTimeouts": 3,
       "possession": "13"
      },
      "status": {
-      "clock": 549.0,
-      "displayClock": "9:09",
-      "period": 2,
+      "clock": 361.0,
+      "displayClock": "6:01",
+      "period": 3,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "9:09 - 2nd Quarter",
-       "shortDetail": "9:09 - 2nd"
+       "detail": "6:01 - 3rd Quarter",
+       "shortDetail": "6:01 - 3rd"
       },
       "isTBDFlex": false
      },
@@ -1484,8 +1561,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "10/15, 130 YDS, 1 TD",
-         "value": 130.0,
+         "displayValue": "15/27, 160 YDS, 1 TD, 1 INT",
+         "value": 160.0,
          "athlete": {
           "id": "4426338",
           "fullName": "Bo Nix",
@@ -1524,13 +1601,13 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "7 CAR, 29 YDS, 1 TD",
-         "value": 29.0,
+         "displayValue": "10 CAR, 76 YDS",
+         "value": 76.0,
          "athlete": {
-          "id": "4702555",
-          "fullName": "Jonah Coleman",
-          "displayName": "Jonah Coleman",
-          "shortName": "J. Coleman",
+          "id": "4890973",
+          "fullName": "Ashton Jeanty",
+          "displayName": "Ashton Jeanty",
+          "shortName": "A. Jeanty",
           "links": [
            {
             "rel": [
@@ -1538,21 +1615,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4702555/jonah-coleman"
+            "href": "https://www.espn.com/nfl/player/_/id/4890973/ashton-jeanty"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4702555.png",
-          "jersey": "20",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4890973.png",
+          "jersey": "2",
           "position": {
            "abbreviation": "RB"
           },
           "team": {
-           "id": "7"
+           "id": "13"
           },
           "active": true
          },
          "team": {
-          "id": "7"
+          "id": "13"
          }
         }
        ]
@@ -1564,13 +1641,13 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "2 REC, 43 YDS",
-         "value": 43.0,
+         "displayValue": "3 REC, 78 YDS, 1 TD",
+         "value": 78.0,
          "athlete": {
-          "id": "4372016",
-          "fullName": "Jaylen Waddle",
-          "displayName": "Jaylen Waddle",
-          "shortName": "J. Waddle",
+          "id": "4890973",
+          "fullName": "Ashton Jeanty",
+          "displayName": "Ashton Jeanty",
+          "shortName": "A. Jeanty",
           "links": [
            {
             "rel": [
@@ -1578,21 +1655,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4372016/jaylen-waddle"
+            "href": "https://www.espn.com/nfl/player/_/id/4890973/ashton-jeanty"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372016.png",
-          "jersey": "17",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4890973.png",
+          "jersey": "2",
           "position": {
-           "abbreviation": "WR"
+           "abbreviation": "RB"
           },
           "team": {
-           "id": "7"
+           "id": "13"
           },
           "active": true
          },
          "team": {
-          "id": "7"
+          "id": "13"
          }
         }
        ]
@@ -1670,10 +1747,10 @@
     }
    ],
    "weather": {
-    "displayValue": "2",
-    "temperature": 41,
-    "highTemperature": 41,
-    "conditionId": "Mostly sunny",
+    "displayValue": "6",
+    "temperature": 40,
+    "highTemperature": 40,
+    "conditionId": "Mostly cloudy",
     "link": {
      "language": "en-US",
      "rel": [
@@ -1687,17 +1764,17 @@
     }
    },
    "status": {
-    "clock": 549.0,
-    "displayClock": "9:09",
-    "period": 2,
+    "clock": 361.0,
+    "displayClock": "6:01",
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "9:09 - 2nd Quarter",
-     "shortDetail": "9:09 - 2nd"
+     "detail": "6:01 - 3rd Quarter",
+     "shortDetail": "6:01 - 3rd"
     }
    }
   },
@@ -1846,7 +1923,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/nyg.png"
        },
-       "score": "10",
+       "score": "20",
        "linescores": [
         {
          "value": 10.0,
@@ -1854,9 +1931,14 @@
          "period": 1
         },
         {
+         "value": 10.0,
+         "displayValue": "10",
+         "period": 2
+        },
+        {
          "value": 0.0,
          "displayValue": "0",
-         "period": 2
+         "period": 3
         }
        ],
        "statistics": [],
@@ -1987,7 +2069,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/jax.png"
        },
-       "score": "3",
+       "score": "6",
        "linescores": [
         {
          "value": 3.0,
@@ -1995,9 +2077,14 @@
          "period": 1
         },
         {
+         "value": 3.0,
+         "displayValue": "3",
+         "period": 2
+        },
+        {
          "value": 0.0,
          "displayValue": "0",
-         "period": 2
+         "period": 3
         }
        ],
        "statistics": [],
@@ -2027,52 +2114,52 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730691428",
+       "id": "4018730692935",
        "type": {
-        "id": "5",
-        "text": "Rush",
-        "abbreviation": "RUSH"
+        "id": "24",
+        "text": "Pass Reception",
+        "abbreviation": "REC"
        },
-       "text": " C.Rodriguez right guard to NYG 38 for 4 yards (S.Harris).",
+       "text": " (Shotgun) J.McCarthy pass short middle to J.Hyatt to NYG 48 for 4 yards (F.Oluokun).",
        "scoreValue": 0,
        "team": {
-        "id": "30"
+        "id": "19"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.3213,
-        "awayWinPercentage": 0.6787000000000001,
+        "homeWinPercentage": 0.8632,
+        "awayWinPercentage": 0.13680000000000003,
         "secondsLeft": 0
        },
        "statYardage": 4,
        "drive": {
-        "description": "6 plays, 37 yards, 2:10",
+        "description": "6 plays, 25 yards, 2:56",
         "start": {
-         "yardLine": 75,
-         "text": "JAX 25"
+         "yardLine": 23,
+         "text": "NYG 23"
         },
         "timeElapsed": {
-         "displayValue": "2:10"
+         "displayValue": "2:56"
         }
        },
        "start": {
-        "yardLine": 42,
+        "yardLine": 44,
         "team": {
-         "id": "30"
+         "id": "19"
         }
        },
        "end": {
-        "yardLine": 38,
+        "yardLine": 48,
         "team": {
-         "id": "30"
+         "id": "19"
         }
        },
        "athletesInvolved": [
         {
-         "id": "4362619",
-         "fullName": "Chris Rodriguez Jr.",
-         "displayName": "Chris Rodriguez Jr.",
-         "shortName": "C. Rodriguez Jr.",
+         "id": "4692590",
+         "fullName": "Jalin Hyatt",
+         "displayName": "Jalin Hyatt",
+         "shortName": "J. Hyatt",
          "links": [
           {
            "rel": [
@@ -2080,41 +2167,41 @@
             "desktop",
             "athlete"
            ],
-           "href": "https://www.espn.com/nfl/player/_/id/4362619/chris-rodriguez-jr"
+           "href": "https://www.espn.com/nfl/player/_/id/4692590/jalin-hyatt"
           }
          ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362619.png",
-         "jersey": "24",
-         "position": "RB",
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4692590.png",
+         "jersey": "81",
+         "position": "WR",
          "team": {
-          "id": "30"
+          "id": "19"
          }
         }
        ]
       },
-      "down": 2,
-      "yardLine": 38,
-      "distance": 6,
-      "downDistanceText": "2nd & 6 at NYG 38",
-      "shortDownDistanceText": "2nd & 6",
-      "possessionText": "NYG 38",
+      "down": 1,
+      "yardLine": 48,
+      "distance": 10,
+      "downDistanceText": "1st & 10 at NYG 48",
+      "shortDownDistanceText": "1st & 10",
+      "possessionText": "NYG 48",
       "isRedZone": false,
       "homeTimeouts": 2,
       "awayTimeouts": 3,
-      "possession": "30"
+      "possession": "19"
      },
      "status": {
-      "clock": 897.0,
-      "displayClock": "14:57",
-      "period": 2,
+      "clock": 373.0,
+      "displayClock": "6:13",
+      "period": 3,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "14:57 - 2nd Quarter",
-       "shortDetail": "14:57 - 2nd"
+       "detail": "6:13 - 3rd Quarter",
+       "shortDetail": "6:13 - 3rd"
       },
       "isTBDFlex": false
      },
@@ -2134,13 +2221,13 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "5/10, 54 YDS, 1 INT",
-         "value": 54.0,
+         "displayValue": "15/24, 131 YDS, 1 TD",
+         "value": 131.0,
          "athlete": {
-          "id": "4360310",
-          "fullName": "Trevor Lawrence",
-          "displayName": "Trevor Lawrence",
-          "shortName": "T. Lawrence",
+          "id": "4433970",
+          "fullName": "J.J. McCarthy",
+          "displayName": "J.J. McCarthy",
+          "shortName": "J.J. McCarthy",
           "links": [
            {
             "rel": [
@@ -2148,21 +2235,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4360310/trevor-lawrence"
+            "href": "https://www.espn.com/nfl/player/_/id/4433970/jj-mccarthy"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360310.png",
-          "jersey": "16",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4433970.png",
+          "jersey": "18",
           "position": {
            "abbreviation": "QB"
           },
           "team": {
-           "id": "30"
+           "id": "19"
           },
           "active": true
          },
          "team": {
-          "id": "30"
+          "id": "19"
          }
         }
        ]
@@ -2174,13 +2261,13 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "3 CAR, 27 YDS",
-         "value": 27.0,
+         "displayValue": "4 CAR, 38 YDS",
+         "value": 38.0,
          "athlete": {
-          "id": "4362619",
-          "fullName": "Chris Rodriguez Jr.",
-          "displayName": "Chris Rodriguez Jr.",
-          "shortName": "C. Rodriguez Jr.",
+          "id": "4433970",
+          "fullName": "J.J. McCarthy",
+          "displayName": "J.J. McCarthy",
+          "shortName": "J.J. McCarthy",
           "links": [
            {
             "rel": [
@@ -2188,21 +2275,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4362619/chris-rodriguez-jr"
+            "href": "https://www.espn.com/nfl/player/_/id/4433970/jj-mccarthy"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362619.png",
-          "jersey": "24",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4433970.png",
+          "jersey": "18",
           "position": {
-           "abbreviation": "RB"
+           "abbreviation": "QB"
           },
           "team": {
-           "id": "30"
+           "id": "19"
           },
           "active": true
          },
          "team": {
-          "id": "30"
+          "id": "19"
          }
         }
        ]
@@ -2214,13 +2301,13 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "2 REC, 26 YDS",
-         "value": 26.0,
+         "displayValue": "6 REC, 47 YDS, 1 TD",
+         "value": 47.0,
          "athlete": {
-          "id": "4432620",
-          "fullName": "Parker Washington",
-          "displayName": "Parker Washington",
-          "shortName": "P. Washington",
+          "id": "4595348",
+          "fullName": "Malik Nabers",
+          "displayName": "Malik Nabers",
+          "shortName": "M. Nabers",
           "links": [
            {
             "rel": [
@@ -2228,21 +2315,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4432620/parker-washington"
+            "href": "https://www.espn.com/nfl/player/_/id/4595348/malik-nabers"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432620.png",
-          "jersey": "11",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4595348.png",
+          "jersey": "1",
           "position": {
            "abbreviation": "WR"
           },
           "team": {
-           "id": "30"
+           "id": "19"
           },
           "active": true
          },
          "team": {
-          "id": "30"
+          "id": "19"
          }
         }
        ]
@@ -2320,10 +2407,10 @@
     }
    ],
    "weather": {
-    "displayValue": "38",
-    "temperature": 60,
-    "highTemperature": 60,
-    "conditionId": "Mostly cloudy",
+    "displayValue": "7",
+    "temperature": 59,
+    "highTemperature": 59,
+    "conditionId": "Cloudy",
     "link": {
      "language": "en-US",
      "rel": [
@@ -2337,17 +2424,17 @@
     }
    },
    "status": {
-    "clock": 897.0,
-    "displayClock": "14:57",
-    "period": 2,
+    "clock": 373.0,
+    "displayClock": "6:13",
+    "period": 3,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "14:57 - 2nd Quarter",
-     "shortDetail": "14:57 - 2nd"
+     "detail": "6:13 - 3rd Quarter",
+     "shortDetail": "6:13 - 3rd"
     }
    }
   },
@@ -2869,12 +2956,229 @@
        "region": "us"
       }
      ],
-     "highlights": [],
+     "highlights": [
+      {
+       "id": 50565047,
+       "cerebroId": "6b035a927f6a5e2e363934b0",
+       "source": "espn",
+       "headline": "Miami Dolphins vs. Buffalo Bills Game Highlights",
+       "description": "Miami Dolphins vs. Buffalo Bills Game Highlights",
+       "lastModified": "2026-11-22T22:58:23Z",
+       "originalPublishDate": "2026-11-22T21:11:47Z",
+       "duration": 57,
+       "timeRestrictions": {
+        "embargoDate": "2026-11-22T21:11:45Z",
+        "expirationDate": "2026-11-24T21:11:45Z"
+       },
+       "deviceRestrictions": {
+        "devices": [
+         "settop",
+         "tablet",
+         "handset",
+         "ipad",
+         "desktop"
+        ],
+        "type": "whitelist"
+       },
+       "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1122/5f96096cd71d45e8aac119c197cf86901076/5f96096cd71d45e8aac119c197cf86901076.jpg",
+       "links": {
+        "api": {
+         "artwork": {
+          "href": "https://artwork.api.espn.com/artwork/collections/media/2442a258-1504-4660-ba4b-9e63392d3fcd"
+         },
+         "self": {
+          "href": "https://content.core.api.espn.com/v1/video/clips/50565047"
+         }
+        },
+        "mobile": {
+         "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
+         "alert": {
+          "href": "https://m.espn.com/general/video/videoAlert?vid=50565047"
+         },
+         "progressiveDownload": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights"
+         },
+         "source": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+         },
+         "streaming": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights"
+         }
+        },
+        "source": {
+         "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4",
+         "HD": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+         },
+         "HLS": {
+          "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8",
+          "9x16": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+          },
+          "HD": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+          },
+          "cmaf": {
+           "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8",
+           "9x16": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+           },
+           "cmb": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+           }
+          },
+          "cmb": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+          },
+          "shield": {
+           "href": "https://watch.auth.api.espn.com/video/auth/media/2442a258-1504-4660-ba4b-9e63392d3fcd/asset"
+          }
+         },
+         "flash": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+         },
+         "full": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+         },
+         "mezzanine": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+         }
+        },
+        "sportscenter": {
+         "href": "sportscenter://x-callback-url/showVideo?videoID=50565047&videoDSI=71e8d5804a03d"
+        },
+        "web": {
+         "href": "https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
+         "self": {
+          "href": "https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
+          "dsi": {
+           "href": "https://www.espn.com/video/clip?id=71e8d5804a03d"
+          }
+         }
+        }
+       },
+       "ad": {
+        "bundle": "sportscenter",
+        "sport": "nfl"
+       },
+       "tracking": {
+        "coverageType": "Final Game Highlight",
+        "leagueName": "NFL",
+        "program": "espnnfl",
+        "sportName": "football",
+        "trackingId": "dm_20261122_NFL_miami_dolphins_vs_buffalo_bills_game_highlights",
+        "trackingName": "NFL_One-Play (Miami Dolphins vs. Buffalo Bills Game Highlights) 2026/11/22 ESHEET"
+       }
+      }
+     ],
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Greg Rousseau had two sacks, including his team-leading 10th this season, and Buffalo's defense bailed out the Bills' sputtering Josh Allen-led offense in a 26-9 win over the injury-depleted division rival Miami Dolphins on Sunday.",
-       "shortLinkText": "Bills' defense feasts in 26-9 win over injury-depleted Dolphins"
+       "description": "\u2014 Stingy as Buffalo has been while not allowing a touchdown over the past 15-plus quarters, defensive tackle Deone Walker remains unsatisfied.",
+       "shortLinkText": "Bills' defense feasts in 26-9 win over injury-depleted Dolphins",
+       "video": [
+        {
+         "id": 50565047,
+         "source": "espn",
+         "headline": "Miami Dolphins vs. Buffalo Bills Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1122/5f96096cd71d45e8aac119c197cf86901076/5f96096cd71d45e8aac119c197cf86901076.jpg",
+         "duration": 57,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261122_NFL_miami_dolphins_vs_buffalo_bills_game_highlights",
+          "trackingName": "NFL_One-Play (Miami Dolphins vs. Buffalo Bills Game Highlights) 2026/11/22 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/2442a258-1504-4660-ba4b-9e63392d3fcd"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50565047"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50565047"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/2442a258-1504-4660-ba4b-9e63392d3fcd/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50565047&videoDSI=71e8d5804a03d"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=71e8d5804a03d"
+            }
+           }
+          }
+         }
+        }
+       ]
       }
      ]
     }
@@ -3596,7 +3900,7 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Jeffery Simmons had three sacks, Caleb Williams threw two touchdown passes and the Chicago Bears beat the New Orleans Saints 21-13 on Sunday for their fifth consecutive win.",
+       "description": "\u2014 Jeffery Simmons delivered once again. That blockbuster trade for the All-Pro defensive tackle is looking like the appropriate price at the moment.",
        "shortLinkText": "Jeffery Simmons gets 3 sacks as the Chicago Bears beat the New Orleans Saints 21-13",
        "video": [
         {
@@ -4422,7 +4726,7 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Dak Prescott threw four touchdown passes and ran for a score, and the Dallas Cowboys reached the end zone on their first six drives in a 51-30 victory over the Tennessee Titans on Sunday.",
+       "description": "\u2014 When one touchdown became two and three and so on, all the way to six, Dak Prescott said the conversation was the same for the offense of the Dallas Cowboys: Just keeping doing it.",
        "shortLinkText": "Dak Prescott accounts for 5 TDs as the Cowboys roll to a 51-30 victory over the Titans",
        "video": [
         {
@@ -5130,116 +5434,6 @@
        "region": "us"
       }
      ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Jared Goff threw two touchdown passes through three quarters and Jahmyr Gibbs ran for two scores in the fourth, helping the Detroit Lions pull away and beat the ",
-       "shortLinkText": "Jared Goff throws 2 TDs, Jahmyr Gibbs runs for 2 more and Lions beat Bucs 31-21 for 6th straight win",
-       "video": [
-        {
-         "id": 50565430,
-         "source": "espn",
-         "headline": "Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.jpg",
-         "duration": 63,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261122_NFL_tampa_bay_buccaneers_vs_detroit_lions_game_highlights",
-          "trackingName": "NFL_One-Play (Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights) 2026/11/22 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/c018fd04-39dd-4b35-9ab9-06353f66e92d"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50565430"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50565430"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50565430&videoDSI=9463dd92e41c3"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50565430/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50565430/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=9463dd92e41c3"
-            }
-           }
-          }
-         }
-        }
-       ]
-      }
-     ],
      "highlights": [
       {
        "id": 50565430,
@@ -5353,6 +5547,116 @@
         "trackingId": "dm_20261122_NFL_tampa_bay_buccaneers_vs_detroit_lions_game_highlights",
         "trackingName": "NFL_One-Play (Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights) 2026/11/22 ESHEET"
        }
+      }
+     ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 The Detroit Lions are finding their groove, leaning on a balanced attack offensively and a steadily improving defense that hasn't been hurt by the losses of ",
+       "shortLinkText": "Jared Goff throws 2 TDs, Jahmyr Gibbs runs for 2 more and Lions beat Bucs 31-21 for 6th straight win",
+       "video": [
+        {
+         "id": 50565430,
+         "source": "espn",
+         "headline": "Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.jpg",
+         "duration": 63,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261122_NFL_tampa_bay_buccaneers_vs_detroit_lions_game_highlights",
+          "trackingName": "NFL_One-Play (Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights) 2026/11/22 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/c018fd04-39dd-4b35-9ab9-06353f66e92d"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50565430"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50565430"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50565430&videoDSI=9463dd92e41c3"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50565430/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50565430/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=9463dd92e41c3"
+            }
+           }
+          }
+         }
+        }
+       ]
       }
      ]
     }
@@ -6741,7 +7045,7 @@
           "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4694237.png",
           "jersey": "84",
           "position": {
-           "abbreviation": "RB"
+           "abbreviation": "WR"
           },
           "team": {
            "id": "23"
@@ -6780,6 +7084,116 @@
        },
        "lang": "en",
        "region": "us"
+      }
+     ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Joe Milton made a perfect throw to DeVonta Smith and the wide receiver rolled out of bounds to get the first down that closed out the Philadelphia Eagles' first win since September.",
+       "shortLinkText": "Eagles snap 7-game losing streak and keep Steelers winless in Philly since 1965 with 19-16 victory",
+       "video": [
+        {
+         "id": 50565318,
+         "source": "espn",
+         "headline": "Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.jpg",
+         "duration": 52,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261122_NFL_pittsburgh_steelers_vs_philadelphia_eagles_game_highlights",
+          "trackingName": "NFL_One-Play (Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights) 2026/11/22 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50565318"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50565318"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50565318&videoDSI=65acffaa13e73"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=65acffaa13e73"
+            }
+           }
+          }
+         }
+        }
+       ]
       }
      ],
      "highlights": [
@@ -6895,116 +7309,6 @@
         "trackingId": "dm_20261122_NFL_pittsburgh_steelers_vs_philadelphia_eagles_game_highlights",
         "trackingName": "NFL_One-Play (Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights) 2026/11/22 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Saquon Barkley ran 38 yards for a touchdown to provide a rare spark for the Eagles and helped Philadelphia snap a seven-game losing streak with a 19-16 win over an ineffective Aaron Rodgers and the Pittsburgh Steelers on Sunday.",
-       "shortLinkText": "Eagles snap 7-game losing streak and keep Steelers winless in Philly since 1965 with 19-16 victory",
-       "video": [
-        {
-         "id": 50565318,
-         "source": "espn",
-         "headline": "Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.jpg",
-         "duration": 52,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261122_NFL_pittsburgh_steelers_vs_philadelphia_eagles_game_highlights",
-          "trackingName": "NFL_One-Play (Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights) 2026/11/22 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50565318"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50565318"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50565318&videoDSI=65acffaa13e73"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=65acffaa13e73"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
@@ -7726,8 +8030,8 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Bryce Young threw for 254 yards and two touchdowns, Chuba Hubbard ran for 120 yards and two more scores and the Carolina Panthers made a late defensive stop to beat Baltimore 35-33 on Sunday, sending the Ravens to their sixth straight loss.",
-       "shortLinkText": "Bryce Young throws 2 TD passes, Chuba Hubbard scores twice as Panthers beat Ravens 35-33",
+       "description": "\u2014 Dave Canales is like most NFL coaches \u2014 he wants to keep his team's focus on the next game and avoid any potential outside distractions.",
+       "shortLinkText": "Bryce Young, Chuba Hubbard help Panthers add to NFC South lead with 35-33 victory over the Ravens",
        "video": [
         {
          "id": 50565408,
@@ -8640,7 +8944,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -8656,11 +8960,11 @@
           ]
          }
         ],
-        "displayName": "Draft Kings"
+        "displayName": "DraftKings"
        },
-       "details": "SF -3.5",
-       "overUnder": 46.5,
-       "spread": -3.5,
+       "details": "SF -4.5",
+       "overUnder": 44.5,
+       "spread": -4.5,
        "awayTeamOdds": {
         "favorite": false,
         "underdog": true,
@@ -8692,14 +8996,14 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-190",
+          "odds": "-205",
           "link": {
            "language": "en-US",
            "rel": [
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0ML84695506_1",
            "text": "Home Bet",
@@ -8724,14 +9028,14 @@
         },
         "away": {
          "close": {
-          "odds": "+159",
+          "odds": "+171",
           "link": {
            "language": "en-US",
            "rel": [
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0ML84695506_3",
            "text": "Away Bet",
@@ -8760,8 +9064,8 @@
         "shortDisplayName": "Spread",
         "home": {
          "close": {
-          "line": "-3.5",
-          "odds": "-112",
+          "line": "-4.5",
+          "odds": "-106",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8769,7 +9073,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0HC84695506N350_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0HC84695506N450_1",
            "text": "Home Point Spread",
            "shortText": "Home Point Spread",
            "isExternal": true,
@@ -8782,7 +9086,7 @@
              "gameId": 401873077,
              "betSide": "none",
              "betType": "straight",
-             "betDetails": "Spread:SF-3.5"
+             "betDetails": "Spread:SF-4.5"
             }
            }
           }
@@ -8794,8 +9098,8 @@
         },
         "away": {
          "close": {
-          "line": "+3.5",
-          "odds": "-107",
+          "line": "+4.5",
+          "odds": "-114",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8803,7 +9107,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0HC84695506P350_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0HC84695506P450_3",
            "text": "Away Point Spread",
            "shortText": "Away Point Spread",
            "isExternal": true,
@@ -8816,7 +9120,7 @@
              "gameId": 401873077,
              "betSide": "none",
              "betType": "straight",
-             "betDetails": "Spread:MIN+3.5"
+             "betDetails": "Spread:MIN+4.5"
             }
            }
           }
@@ -8832,8 +9136,8 @@
         "shortDisplayName": "Total",
         "over": {
          "close": {
-          "line": "o46.5",
-          "odds": "-105",
+          "line": "o44.5",
+          "odds": "-113",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8841,7 +9145,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0OU84695506O4650_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0OU84695506O4450_1",
            "text": "Over Odds",
            "shortText": "Over Odds",
            "isExternal": true,
@@ -8854,7 +9158,7 @@
              "gameId": 401873077,
              "betSide": "over",
              "betType": "straight",
-             "betDetails": "Over:46.5"
+             "betDetails": "Over:44.5"
             }
            }
           }
@@ -8866,8 +9170,8 @@
         },
         "under": {
          "close": {
-          "line": "u46.5",
-          "odds": "-114",
+          "line": "u44.5",
+          "odds": "-106",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8875,7 +9179,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0OU84695506U4650_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118073%3Foutcomes%3D0OU84695506U4450_3",
            "text": "Under Odds",
            "shortText": "Under Odds",
            "isExternal": true,
@@ -8888,7 +9192,7 @@
              "gameId": 401873077,
              "betSide": "under",
              "betType": "straight",
-             "betDetails": "Under:46.5"
+             "betDetails": "Under:44.5"
             }
            }
           }
@@ -10265,8 +10569,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $93",
-       "numberAvailable": 2940,
+       "summary": "Tickets as low as $97",
+       "numberAvailable": 2901,
        "links": [
         {
          "href": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-9-2026/production/6493332?wsUser=717"
@@ -10302,7 +10606,7 @@
       {
        "provider": {
         "id": "100",
-        "name": "Draft Kings",
+        "name": "DraftKings",
         "priority": 1,
         "logos": [
          {
@@ -10360,7 +10664,7 @@
             "home",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118063%3Foutcomes%3D0ML84695496_1",
            "text": "Home Bet",
@@ -10392,7 +10696,7 @@
             "away",
             "desktop",
             "bets",
-            "draft-kings"
+            "draftkings"
            ],
            "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118063%3Foutcomes%3D0ML84695496_3",
            "text": "Away Bet",
@@ -10650,7 +10954,7 @@
  ],
  "provider": {
   "id": "100",
-  "name": "Draft Kings",
+  "name": "DraftKings",
   "priority": 1,
   "logos": [
    {
@@ -10666,6 +10970,6 @@
     ]
    }
   ],
-  "displayName": "Draft Kings"
+  "displayName": "DraftKings"
  }
 }
