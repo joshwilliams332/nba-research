@@ -603,6 +603,11 @@
          "value": 21.0,
          "displayValue": "21",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -744,6 +749,11 @@
          "value": 3.0,
          "displayValue": "3",
          "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
         }
        ],
        "statistics": [],
@@ -778,71 +788,94 @@
      ],
      "situation": {
       "lastPlay": {
-       "id": "4018730772167",
+       "id": "4018730772854",
        "type": {
-        "id": "65",
-        "text": "End of Half",
-        "abbreviation": "EH"
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
        },
-       "text": "END QUARTER 2",
+       "text": " K.Black left tackle to MIN 42 for 1 yard (L.Rodriguez; J.Redmond).",
        "scoreValue": 0,
        "team": {
         "id": "25"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.9573,
-        "awayWinPercentage": 0.04269999999999996,
+        "homeWinPercentage": 0.986,
+        "awayWinPercentage": 0.014000000000000012,
         "secondsLeft": 0
        },
-       "statYardage": 0,
+       "statYardage": 1,
        "drive": {
-        "description": "0 plays, 0 yards, 0:03",
+        "description": "7 plays, 56 yards, 3:42",
         "start": {
-         "yardLine": 0,
-         "text": "SF 0"
-        },
-        "end": {
-         "yardLine": 0,
-         "text": "SF 0"
+         "yardLine": 2,
+         "text": "SF 2"
         },
         "timeElapsed": {
-         "displayValue": "0:03"
-        },
-        "result": "MISSED FG"
+         "displayValue": "3:42"
+        }
        },
        "start": {
-        "yardLine": 61,
+        "yardLine": 57,
         "team": {
          "id": "25"
         }
        },
        "end": {
-        "yardLine": 61,
+        "yardLine": 58,
         "team": {
          "id": "25"
         }
-       }
+       },
+       "athletesInvolved": [
+        {
+         "id": "4696044",
+         "fullName": "Kaelon Black",
+         "displayName": "Kaelon Black",
+         "shortName": "K. Black",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/4696044/kaelon-black"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4696044.png",
+         "jersey": "26",
+         "position": "RB",
+         "team": {
+          "id": "25"
+         }
+        }
+       ]
       },
-      "down": 1,
-      "yardLine": 61,
-      "distance": 10,
+      "down": 2,
+      "yardLine": 58,
+      "distance": 9,
+      "downDistanceText": "2nd & 9 at MIN 42",
+      "shortDownDistanceText": "2nd & 9",
+      "possessionText": "MIN 42",
       "isRedZone": false,
-      "homeTimeouts": 3,
-      "awayTimeouts": 3
+      "homeTimeouts": 2,
+      "awayTimeouts": 3,
+      "possession": "25"
      },
      "status": {
-      "clock": 0.0,
-      "displayClock": "0:00",
-      "period": 2,
+      "clock": 108.0,
+      "displayClock": "1:48",
+      "period": 3,
       "type": {
-       "id": "23",
-       "name": "STATUS_HALFTIME",
+       "id": "2",
+       "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
-       "description": "Halftime",
-       "detail": "Halftime",
-       "shortDetail": "Halftime"
+       "description": "In Progress",
+       "detail": "1:48 - 3rd Quarter",
+       "shortDetail": "1:48 - 3rd"
       },
       "isTBDFlex": false
      },
@@ -862,8 +895,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "12/15, 176 YDS, 3 TD",
-         "value": 176.0,
+         "displayValue": "17/21, 215 YDS, 3 TD",
+         "value": 215.0,
          "athlete": {
           "id": "4361741",
           "fullName": "Brock Purdy",
@@ -902,8 +935,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "9 CAR, 40 YDS",
-         "value": 40.0,
+         "displayValue": "11 CAR, 43 YDS",
+         "value": 43.0,
          "athlete": {
           "id": "3117251",
           "fullName": "Christian McCaffrey",
@@ -942,8 +975,8 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "5 REC, 91 YDS, 1 TD",
-         "value": 91.0,
+         "displayValue": "6 REC, 109 YDS, 1 TD",
+         "value": 109.0,
          "athlete": {
           "id": "16737",
           "fullName": "Mike Evans",
@@ -1048,17 +1081,17 @@
     }
    ],
    "status": {
-    "clock": 0.0,
-    "displayClock": "0:00",
-    "period": 2,
+    "clock": 108.0,
+    "displayClock": "1:48",
+    "period": 3,
     "type": {
-     "id": "23",
-     "name": "STATUS_HALFTIME",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
-     "description": "Halftime",
-     "detail": "Halftime",
-     "shortDetail": "Halftime"
+     "description": "In Progress",
+     "detail": "1:48 - 3rd Quarter",
+     "shortDetail": "1:48 - 3rd"
     }
    }
   },
@@ -5710,116 +5743,6 @@
        "region": "us"
       }
      ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Joe Milton made a perfect throw to DeVonta Smith and the wide receiver rolled out of bounds to get the first down that closed out the Philadelphia Eagles' first win since September.",
-       "shortLinkText": "Eagles snap 7-game losing streak and keep Steelers winless in Philly since 1965 with 19-16 victory",
-       "video": [
-        {
-         "id": 50565318,
-         "source": "espn",
-         "headline": "Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.jpg",
-         "duration": 52,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261122_NFL_pittsburgh_steelers_vs_philadelphia_eagles_game_highlights",
-          "trackingName": "NFL_One-Play (Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights) 2026/11/22 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50565318"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50565318"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50565318&videoDSI=65acffaa13e73"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=65acffaa13e73"
-            }
-           }
-          }
-         }
-        }
-       ]
-      }
-     ],
      "highlights": [
       {
        "id": 50565318,
@@ -5933,6 +5856,116 @@
         "trackingId": "dm_20261122_NFL_pittsburgh_steelers_vs_philadelphia_eagles_game_highlights",
         "trackingName": "NFL_One-Play (Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights) 2026/11/22 ESHEET"
        }
+      }
+     ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Joe Milton made a perfect throw to DeVonta Smith and the wide receiver rolled out of bounds to get the first down that closed out the Philadelphia Eagles' first win since September.",
+       "shortLinkText": "Eagles snap 7-game losing streak and keep Steelers winless in Philly since 1965 with 19-16 victory",
+       "video": [
+        {
+         "id": 50565318,
+         "source": "espn",
+         "headline": "Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.jpg",
+         "duration": 52,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261122_NFL_pittsburgh_steelers_vs_philadelphia_eagles_game_highlights",
+          "trackingName": "NFL_One-Play (Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights) 2026/11/22 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50565318"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50565318"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50565318&videoDSI=65acffaa13e73"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=65acffaa13e73"
+            }
+           }
+          }
+         }
+        }
+       ]
       }
      ]
     }
@@ -9840,14 +9873,14 @@
        "region": "us"
       }
      ],
+     "highlights": [],
      "headlines": [
       {
        "type": "Recap",
        "description": "\u2014 C.J. Stroud had another big game to help the Houston Texans finally get a victory at home.",
        "shortLinkText": "C.J. Stroud throws for 3 TDs as the Texans roll past the Colts 26-3"
       }
-     ],
-     "highlights": []
+     ]
     }
    ],
    "links": [
@@ -10618,8 +10651,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $96",
-       "numberAvailable": 2236,
+       "summary": "Tickets as low as $98",
+       "numberAvailable": 2211,
        "links": [
         {
          "href": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-9-2026/production/6493332?wsUser=717"
