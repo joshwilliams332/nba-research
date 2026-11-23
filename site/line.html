@@ -63,7 +63,7 @@ lab(['players', 'logs', 'injuries']).then(async L => {
     <div class="card" id="est" data-sec="Estimate"></div>
     <div class="windows" id="windows"></div>
     <div class="card" id="stats" data-sec="Stats"></div>
-    <div class="card" id="ins" data-sec="Insights"></div>
+    <div class="card" id="ins" data-sec="Trends"></div>
     <div class="card" id="shots" data-sec="Shot chart"></div>
     <div class="card" id="lineup" data-sec="Lineup"></div>
     <div class="card" id="moves" data-sec="Line movement"></div>`;
@@ -149,7 +149,7 @@ lab(['players', 'logs', 'injuries']).then(async L => {
     const want = st.m;
     let list = [];
     try { list = [g.a, g.h].flatMap(t => teamInsights(L, g, t)).filter(x => x.market === want); } catch (e) { list = []; }
-    el.innerHTML = `<h2>Insights</h2>${list.length ? `<div class="insights" style="margin-top:8px">${list.slice(0, 4).map(x => insightCard(L, x)).join('')}</div>`
+    el.innerHTML = `<h2>Trends</h2>${list.length ? `<div class="insights" style="margin-top:8px">${list.slice(0, 4).map(x => insightCard(L, x)).join('')}</div>`
       : `<p class="muted" style="margin:0">No strong ${esc(MARKETS_GL[want].toLowerCase())} trends for this game (we only show ones that hit 75%+ over 5+ games).</p>`}`;
   }
 

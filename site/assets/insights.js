@@ -1,4 +1,4 @@
-/* Hoop Lab trend finder: turns game logs and lines into short, Outlier-style sentences ("insights").
+/* Hoop Lab trend finder: turns game logs and lines into short trend sentences ("insights").
    Load after common.js. Every split is built from the same filters and windows as the player page
    (applyFilters + windowRates), so an insight's link reproduces its numbers exactly. */
 'use strict';

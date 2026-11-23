@@ -91,7 +91,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
       <span class="amber">amber</span> = fewer than ${SMALL_SAMPLE} games.</p>
     <div class="card" id="chart" data-sec="Stats"></div>
     <div class="card"><details class="filters" id="filters"></details></div>
-    <div class="card" id="support" data-sec="Supporting"></div>
+    <div class="card" id="support" data-sec="Behind the number"></div>
     ${opp ? '<div class="card dvp" id="dvp" data-sec="vs opponent"></div>' : ''}
     <div class="card" id="shots" data-sec="Shot chart"></div>
     ${opp ? '<div class="card" id="keydef" data-sec="Defense"></div>' : ''}
@@ -174,7 +174,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     const s = SUPPORT[st.support];
     const vals = w.rows.map(s.f);
     document.getElementById('support').innerHTML = `
-      <div class="row" style="margin-bottom:8px"><h2 class="grow">Supporting stats</h2></div>
+      <div class="row" style="margin-bottom:8px"><h2 class="grow">Behind the number</h2></div>
       <div class="tabs under">${Object.entries(SUPPORT).map(([k, x]) => `<button data-support="${k}" class="${k === st.support ? 'on' : ''}">${x.label} <small>${fmt1(mean(w.rows.map(x.f)))}</small></button>`).join('')}</div>
       ${bars(w.rows, s.f, null, 'o', 'small')}
       <p class="note">Same games as the chart above. Average ${fmt1(mean(vals))}, median ${fmt1(median(vals))}.</p>`;
@@ -248,7 +248,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
       <p class="note">Colors compare each game to the line above. "Line" is that day's sportsbook line, when one was pulled.</p>`;
   }
 
-  // How tonight's defense handles this stat, by position (Outlier's "Key defense" card).
+  // How tonight's defense handles this stat, by position (the matchup card).
   function renderDvp() {
     const el = document.getElementById('dvp');
     if (!el) return;
@@ -340,7 +340,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
       <p class="note">Their result that night, most recent first (players with 10+ minutes).</p>`;
   }
 
-  // "Key PHI points defense": what the opponent allows per game (all positions) for each part of the stat, ranked.
+  // "How PHI defends points": what the opponent allows per game (all positions) for each part of the stat, ranked.
   const PARTS = { pra: ['pts', 'reb', 'ast'], pr: ['pts', 'reb'], pa: ['pts', 'ast'], ra: ['reb', 'ast'], sb: ['stl', 'blk'] };
   function renderKeyDef() {
     const el = document.getElementById('keydef');
@@ -348,7 +348,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(async L => {
     const base = STATS[st.stat].period ? st.stat.replace(/^(q1|h1)_?/, '') : st.stat;
     const parts = (PARTS[base] || [STATS[base] ? base : 'pts']).filter(c => STATS[c]);
     const rows = parts.map(c => ({ c, r: oppRank(L, opp, 'ALL', c) })).filter(x => x.r && x.r.rank != null);
-    el.innerHTML = `<div class="row"><h2 class="grow">Key ${esc(opp)} ${esc(STATS[base] ? STATS[base].label : '')} defense</h2>${logo(L, opp, 26)}</div>
+    el.innerHTML = `<div class="row"><h2 class="grow">How ${esc(opp)} defends ${esc(STATS[base] ? STATS[base].label.toLowerCase() : '')}</h2>${logo(L, opp, 26)}</div>
       ${rows.length ? `<div class="tablewrap"><table class="data"><tr><th class="l">Per game, all positions</th><th>Rank</th><th>Allowed</th></tr>
         ${rows.map(x => `<tr><td class="l">${esc(STATS[x.c].label)} allowed</td><td><b class="${rankClass(x.r.rank, x.r.of)}">#${x.r.rank}</b></td><td>${fmt1(x.r.per)}</td></tr>`).join('')}</table></div>
         <p class="note">#1 allows the most (best for an over). ${rows[0].r.season === L.meta.season ? 'This season.' : 'Last season (too few games this season so far).'}</p>`

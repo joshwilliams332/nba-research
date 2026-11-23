@@ -424,15 +424,15 @@ function rankClass(rank, of = 30) {
   return rank <= 10 ? 'soft' : rank > of - 10 ? 'tough' : 'mid';
 }
 
-/* "OPP RANK 3 TOR" cell for prop rows. */
+/* "DEF RANK 3 TOR" cell for prop rows. */
 function oppRankCell(L, opp, pos, stat) {
   const bucket = posBucket(pos);
   const r = oppRank(L, opp, bucket, stat);
-  if (!r || r.rank == null) return `<div><small>OPP RANK</small><span class="rate none">-</span></div>`;
+  if (!r || r.rank == null) return `<div><small>DEF RANK</small><span class="rate none">-</span></div>`;
   const who = POS_LABEL[bucket || 'ALL'];
   const yrs = r.season === L.meta.season ? 'this season' : `last season (${opp} has under ${DVP_MIN_GAMES} games this year)`;
   const tip = `${opp} allows ${fmt1(r.per)} ${STATS[stat].short} per game to ${who}, ${r.rank} of ${r.of}, ${yrs}. 1 = allows the most (best for an over).`;
-  return `<div class="opprank ${rankClass(r.rank, r.of)}" title="${esc(tip)}"><small>OPP RANK</small><b>${r.rank}</b> ${esc(opp)}</div>`;
+  return `<div class="opprank ${rankClass(r.rank, r.of)}" title="${esc(tip)}"><small>DEF RANK</small><b>${r.rank}</b> ${esc(opp)}</div>`;
 }
 
 // ---------------------------------------------------------------- teammate boost and confidence

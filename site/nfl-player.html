@@ -115,7 +115,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
       ${bars(w.rows, f(), st.line, st.side)}`;
   }
 
-  // Supporting stats: the volume behind the number (targets and share, carries, pass attempts).
+  // Behind the number: the volume behind the number (targets and share, carries, pass attempts).
   const SUPPORT = {
     tgt: { label: 'Targets', f: r => r.tgt }, tgt_sh: { label: 'Target share', f: r => Math.round((r.tgt_sh || 0) * 100), pct: true },
     rec: { label: 'Receptions', f: r => r.rec }, car: { label: 'Carries', f: r => r.car }, att: { label: 'Pass attempts', f: r => r.att },
@@ -126,7 +126,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
     const keys = supportFor();
     if (!keys.includes(st.support)) st.support = keys[0];
     const w = R[st.win], s = SUPPORT[st.support], vals = w.rows.map(s.f);
-    document.getElementById('support').innerHTML = `<h2>Supporting stats</h2>
+    document.getElementById('support').innerHTML = `<h2>Behind the number</h2>
       <div class="tabs under">${keys.map(k => `<button data-support="${k}" class="${k === st.support ? 'on' : ''}">${SUPPORT[k].label} <small>${fmt1(mean(w.rows.map(SUPPORT[k].f)))}${SUPPORT[k].pct ? '%' : ''}</small></button>`).join('')}</div>
       ${bars(w.rows, s.f, null, 'o', 'small')}
       <p class="note">Same games as the chart above. Average ${fmt1(mean(vals))}${s.pct ? '%' : ''}.</p>`;

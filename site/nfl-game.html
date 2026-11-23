@@ -38,7 +38,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
   document.title = `NFL Lab · ${g.away} @ ${g.home}`;
   document.getElementById('foot').innerHTML = `<p>NFL data: ESPN (scores, DraftKings lines, box scores, injuries) with nflverse history; props from Mingus Picks and DraftKings. Trends describe the past, not the future. For research and fun; 21+ · Gamble responsibly · 1-800-GAMBLER.</p>`;
 
-  // Same layout as Hoop Lab's game page: Odds (Game lines / Player props) · Insights · Matchup.
+  // Same layout as Hoop Lab's game page: Lines (Game lines / Player props) · Trends · Matchup.
   const hash = location.hash.slice(1);
   const st = {
     // A finished game opens on its box score, like Hoop Lab.
@@ -72,7 +72,7 @@ load('nfl/meta', 'nfl/games', 'nfl/teams', 'nfl/teamstats', 'nfl/players', 'nfl/
     <div class="tabs" id="tabs"></div>
     <div id="pane"></div>`;
 
-  const TABS = [['odds', 'Odds'], ['insights', 'Insights'], ['matchup', 'Matchup']];
+  const TABS = [['odds', 'Lines'], ['insights', 'Trends'], ['matchup', 'Matchup']];
   function renderTabs() {
     const tabs = g.state !== 'pre' ? [...TABS, ['box', 'Box score']] : TABS;
     if (st.tab === 'box' && g.state === 'pre') st.tab = 'odds';
