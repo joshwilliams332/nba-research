@@ -178,3 +178,18 @@ test('graded singles combine into a parlay at the book price, replacing the sing
   P.editPick(out, out[1].id, { price: '+265', boost: '25' });
   assert.deepStrictEqual([out[1].price, out[1].boost], [265, 25]);
 });
+
+test('historyGroups: recent weeks on their own, older days by month with weeks inside', () => {
+  const P = require('../site/assets/picks.js');
+  assert.strictEqual(P.weekStart('2026-11-23'), '2026-11-23'); // Monday
+  assert.strictEqual(P.weekStart('2026-11-22'), '2026-11-16'); // Sunday -> that week's Monday
+  const dates = ['2026-11-22', '2026-11-21', '2026-11-16', '2026-11-09', '2026-11-02', '2026-10-31', '2026-10-29'];
+  const g = P.historyGroups(dates.map(date => ({ date })), '2026-11-23', 4);
+  // Weeks of Nov 23 (empty), Nov 16, Nov 9, Nov 2 are recent; Oct 26-Nov 1 is older -> October.
+  assert.deepStrictEqual(g.map(x => x.key), ['w2026-11-16', 'w2026-11-09', 'w2026-11-02', 'mo2026-10']);
+  assert.deepStrictEqual(g[0].items.map(x => x.date), ['2026-11-22', '2026-11-21', '2026-11-16']);
+  assert.strictEqual(g[0].end, '2026-11-22');
+  assert.deepStrictEqual(g[3].weeks.map(w => w.start), ['2026-10-26']);
+  assert.deepStrictEqual(g[3].items.map(x => x.date), ['2026-10-31', '2026-10-29']);
+  assert.deepStrictEqual(P.historyGroups([], '2026-11-23'), []);
+});

@@ -223,6 +223,25 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
         ${canAdd && p.why && st_ === 'open' ? `<small class="pleggame">${esc(p.why)}</small>` : ''}</a>${right}</div>`;
   }
 
+  // Past days / slates grouped into weeks (last 4) and older months with their weeks inside, each with its record.
+  // The newest week starts open. `inner` draws one day or slate.
+  function rangeLabel(w) {
+    const a = fmtDay(w.start, { month: 'short', day: 'numeric' });
+    const b = w.start.slice(0, 7) === w.end.slice(0, 7) ? String(+w.end.slice(8)) : fmtDay(w.end, { month: 'short', day: 'numeric' });
+    return w.start === weekStart(L.meta.today) ? 'This week' : `${a} – ${b}`;
+  }
+  function groupBlock(g, inner, unit, first) {
+    const s = summarize(g.items.flatMap(d => d.rows));
+    const n = g.items.length;
+    const label = g.kind === 'week' ? rangeLabel(g) : fmtDay(g.month + '-15', { month: 'long', year: 'numeric' });
+    const body = g.kind === 'week' ? g.items.map(inner).join('') : g.weeks.map(w => groupBlock(w, inner, unit, false)).join('');
+    return `<details class="pgroup ${g.kind}" data-open="${g.key}"${isOpen(g.key, first) ? ' open' : ''}>
+      <summary><span class="grow">${esc(label)} <small>${n} ${unit}${n === 1 ? '' : 's'}</small></span><span class="pdayrec">${recordLine(s)}</span></summary>
+      ${body}</details>`;
+  }
+  const groupedHistory = (past, inner, unit) =>
+    historyGroups(past, L.meta.today).map((g, i) => groupBlock(g, inner, unit, i === 0)).join('');
+
   function modelCard() {
     if (!model || !(model.history || []).length) return '';
     const keys = savedKeys();
@@ -248,7 +267,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
         <span class="mrec">${recordLine(season)}${season.roi != null ? ` <small>ROI ${pct(season.roi)}</small>` : ''}</span></summary>
       ${todayHtml}
       ${past.length ? `<details class="mall" data-open="history"${isOpen('history', false) ? ' open' : ''}>
-        <summary>See all picks <small>${past.length} day${past.length === 1 ? '' : 's'}</small></summary>${past.map(dayBlock).join('')}</details>` : ''}
+        <summary>See all picks <small>${past.length} day${past.length === 1 ? '' : 's'}</small></summary>${groupedHistory(past, dayBlock, 'day')}</details>` : ''}
       <p class="note"><a href="model.html">How the model works</a> · picks are never edited after they lock.</p>
     </details>`;
   }
@@ -282,7 +301,7 @@ lab(['players', 'logs', 'props', 'proplines']).then(L => {
         <span class="mrec">${recordLine(season)}${season.roi != null ? ` <small>ROI ${pct(season.roi)}</small>` : ''}</span></summary>
       ${upcoming}
       ${past.length ? `<details class="mall" data-open="nflhistory"${isOpen('nflhistory', false) ? ' open' : ''}>
-        <summary>See all picks <small>${past.length} slate${past.length === 1 ? '' : 's'}</small></summary>${past.map(block).join('')}</details>` : ''}
+        <summary>See all picks <small>${past.length} slate${past.length === 1 ? '' : 's'}</small></summary>${groupedHistory(past, block, 'slate')}</details>` : ''}
       <p class="note">Graded here from ESPN box scores (nflverse as backup). Test nights before the official record started are left out.</p>
     </details>`;
   }

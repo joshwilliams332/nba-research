@@ -71,7 +71,7 @@ defends {stat}", DEF RANK, BOOK %, "Value only"; the Props sort bar starts at L1
   `gradeParlay`): built on My picks from 2+ open saved picks, legs copied, price from the legs or what the book shows,
   optional profit boost %; graded like a book (any losing leg loses it; void/push legs drop out and the price is rebuilt;
   all drop out = push). "Hoop Lab model picks" card (collapsible): the model's record since `RECORD_START`, today's
-  picks with one-tap add, and "See all picks" with every past day graded (`site/data/digest.json` = today + history,
+  picks with one-tap add, and "See all picks" with every past day graded, grouped by week for the last 4 weeks (newest open) and by month (with its weeks inside) before that (`historyGroups`, same on the NFL card) (`site/data/digest.json` = today + history,
   written by `digest.js` each run before the deploy). Every saved pick and parlay has an edit button (✎, `editPick`): the price and book you actually got, units, and the line (singles) or boost (parlays); grading and the record use the edits. The parlay builder takes open or already-graded singles (`combineIntoParlay`) and by default removes them, for logging a parlay after the fact at your book's price. Your graded picks are grouped into one drop-down per day; open /
   closed state is kept in `hooplab.picksOpen`. "My picks" is the 5th bottom-nav item;
   Standings lives behind the trophy button in the header.

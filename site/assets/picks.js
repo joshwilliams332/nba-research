@@ -279,6 +279,45 @@ function gradeResult(L, pick) {
 }
 
 /* Record, units and ROI over graded picks. ROI = profit / units risked on decided picks (wins + losses). */
+/* Groups past days (newest first, each with a .date 'YYYY-MM-DD') for the model picks history: the last `weeks`
+   weeks (Monday to Sunday, counting the week of `today`) each get their own group; older days are grouped by month,
+   with that month's weeks inside. Returns [{ kind: 'week', key, start, end, items }
+   | { kind: 'month', key, month: 'YYYY-MM', items, weeks: [week groups] }], newest first. */
+function weekStart(date) {
+  const d = new Date(date + 'T12:00:00Z');
+  d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7));
+  return d.toISOString().slice(0, 10);
+}
+function addDays(date, n) {
+  const d = new Date(date + 'T12:00:00Z');
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+function weekGroups(items) {
+  const out = [];
+  for (const it of items) {
+    const start = weekStart(it.date);
+    let g = out.find(x => x.start === start);
+    if (!g) { g = { kind: 'week', key: `w${start}`, start, end: addDays(start, 6), items: [] }; out.push(g); }
+    g.items.push(it);
+  }
+  return out;
+}
+function historyGroups(items, today, weeks = 4) {
+  const cutoff = addDays(weekStart(today), -7 * (weeks - 1));
+  const recent = items.filter(it => it.date >= cutoff);
+  const older = items.filter(it => it.date < cutoff);
+  const months = [];
+  for (const it of older) {
+    const month = it.date.slice(0, 7);
+    let g = months.find(x => x.month === month);
+    if (!g) { g = { kind: 'month', key: `mo${month}`, month, items: [] }; months.push(g); }
+    g.items.push(it);
+  }
+  for (const m of months) m.weeks = weekGroups(m.items).map(w => ({ ...w, key: `${w.key}-${m.month}` }));
+  return [...weekGroups(recent), ...months];
+}
+
 function summarize(graded) {
   const s = { w: 0, l: 0, p: 0, v: 0, open: 0, profit: 0, risked: 0, roi: null, clvN: 0, clvSum: 0 };
   for (const { pick, grade } of graded) {
@@ -446,5 +485,5 @@ async function sharePNG(canvas, filename) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { parsePrice, editPick, combineIntoParlay, NFL_PICK_STATS, toDecimal, toAmerican, parlayPrice, boostedPrice, makeParlay, validParlay, gradeParlay, gradeResult, pickKey, makePick, validPick, exportPicks, parseImport, mergePicks, payout, settle, gradePick, summarize, closeLine, clvPoints, pickText };
+  module.exports = { historyGroups, weekStart, parsePrice, editPick, combineIntoParlay, NFL_PICK_STATS, toDecimal, toAmerican, parlayPrice, boostedPrice, makeParlay, validParlay, gradeParlay, gradeResult, pickKey, makePick, validPick, exportPicks, parseImport, mergePicks, payout, settle, gradePick, summarize, closeLine, clvPoints, pickText };
 }
