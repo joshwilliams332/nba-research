@@ -778,75 +778,71 @@
      ],
      "situation": {
       "lastPlay": {
-       "id": "4018730771921",
+       "id": "4018730772167",
        "type": {
-        "id": "74",
-        "text": "Official Timeout",
-        "abbreviation": "Off TO"
+        "id": "65",
+        "text": "End of Half",
+        "abbreviation": "EH"
        },
-       "text": "Official Timeout at 00:51.",
+       "text": "END QUARTER 2",
        "scoreValue": 0,
        "team": {
         "id": "25"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.9501,
-        "awayWinPercentage": 0.049900000000000055,
+        "homeWinPercentage": 0.9573,
+        "awayWinPercentage": 0.04269999999999996,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "3 plays, -7 yards, 1:08",
+        "description": "0 plays, 0 yards, 0:03",
         "start": {
-         "yardLine": 71,
-         "text": "MIN 29"
+         "yardLine": 0,
+         "text": "SF 0"
         },
         "end": {
-         "yardLine": 78,
-         "text": "MIN 22"
+         "yardLine": 0,
+         "text": "SF 0"
         },
         "timeElapsed": {
-         "displayValue": "1:08"
+         "displayValue": "0:03"
         },
-        "result": "PUNT"
+        "result": "MISSED FG"
        },
        "start": {
-        "yardLine": 7,
+        "yardLine": 61,
         "team": {
          "id": "25"
         }
        },
        "end": {
-        "yardLine": 7,
+        "yardLine": 61,
         "team": {
          "id": "25"
         }
        }
       },
       "down": 1,
-      "yardLine": 7,
+      "yardLine": 61,
       "distance": 10,
-      "downDistanceText": "1st & 10 at SF 7",
-      "shortDownDistanceText": "1st & 10",
-      "possessionText": "SF 7",
       "isRedZone": false,
-      "homeTimeouts": 2,
-      "awayTimeouts": 3,
-      "possession": "25"
+      "homeTimeouts": 3,
+      "awayTimeouts": 3
      },
      "status": {
-      "clock": 51.0,
-      "displayClock": "0:51",
+      "clock": 0.0,
+      "displayClock": "0:00",
       "period": 2,
       "type": {
-       "id": "2",
-       "name": "STATUS_IN_PROGRESS",
+       "id": "23",
+       "name": "STATUS_HALFTIME",
        "state": "in",
        "completed": false,
-       "description": "In Progress",
-       "detail": "0:51 - 2nd Quarter",
-       "shortDetail": "0:51 - 2nd"
+       "description": "Halftime",
+       "detail": "Halftime",
+       "shortDetail": "Halftime"
       },
       "isTBDFlex": false
      },
@@ -866,8 +862,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "10/12, 166 YDS, 3 TD",
-         "value": 166.0,
+         "displayValue": "12/15, 176 YDS, 3 TD",
+         "value": 176.0,
          "athlete": {
           "id": "4361741",
           "fullName": "Brock Purdy",
@@ -906,8 +902,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "7 CAR, 30 YDS",
-         "value": 30.0,
+         "displayValue": "9 CAR, 40 YDS",
+         "value": 40.0,
          "athlete": {
           "id": "3117251",
           "fullName": "Christian McCaffrey",
@@ -946,8 +942,8 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "4 REC, 81 YDS, 1 TD",
-         "value": 81.0,
+         "displayValue": "5 REC, 91 YDS, 1 TD",
+         "value": 91.0,
          "athlete": {
           "id": "16737",
           "fullName": "Mike Evans",
@@ -1052,17 +1048,17 @@
     }
    ],
    "status": {
-    "clock": 51.0,
-    "displayClock": "0:51",
+    "clock": 0.0,
+    "displayClock": "0:00",
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
+     "id": "23",
+     "name": "STATUS_HALFTIME",
      "state": "in",
      "completed": false,
-     "description": "In Progress",
-     "detail": "0:51 - 2nd Quarter",
-     "shortDetail": "0:51 - 2nd"
+     "description": "Halftime",
+     "detail": "Halftime",
+     "shortDetail": "Halftime"
     }
    }
   },
@@ -1920,7 +1916,7 @@
      "neutralSite": false,
      "conferenceCompetition": false,
      "playByPlayAvailable": true,
-     "recent": true,
+     "recent": false,
      "venue": {
       "id": "3933",
       "fullName": "Soldier Field",
@@ -2410,116 +2406,6 @@
        "region": "us"
       }
      ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Jeffery Simmons delivered once again. That blockbuster trade for the All-Pro defensive tackle is looking like the appropriate price at the moment.",
-       "shortLinkText": "Jeffery Simmons gets 3 sacks as the Chicago Bears beat the New Orleans Saints 21-13",
-       "video": [
-        {
-         "id": 50565012,
-         "source": "espn",
-         "headline": "New Orleans Saints vs. Chicago Bears: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.jpg",
-         "duration": 63,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261122_NFL_new_orleans_saints_vs_chicago_bears_game_highlights",
-          "trackingName": "COM_NFL Highlight (New Orleans Saints vs. Chicago Bears: Game Highlights) 2026/11/22 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/43d8eff5-139d-41ca-a977-869c5766252d"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50565012"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/43d8eff5-139d-41ca-a977-869c5766252d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565012/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50565012"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/43d8eff5-139d-41ca-a977-869c5766252d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565012/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/43d8eff5-139d-41ca-a977-869c5766252d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565012/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/43d8eff5-139d-41ca-a977-869c5766252d/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50565012&videoDSI=0935ab3a4d4c7"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50565012/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50565012/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=0935ab3a4d4c7"
-            }
-           }
-          }
-         }
-        }
-       ]
-      }
-     ],
      "highlights": [
       {
        "id": 50565012,
@@ -2633,6 +2519,116 @@
         "trackingId": "dm_20261122_NFL_new_orleans_saints_vs_chicago_bears_game_highlights",
         "trackingName": "COM_NFL Highlight (New Orleans Saints vs. Chicago Bears: Game Highlights) 2026/11/22 ESHEET"
        }
+      }
+     ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Jeffery Simmons delivered once again. That blockbuster trade for the All-Pro defensive tackle is looking like the appropriate price at the moment.",
+       "shortLinkText": "Jeffery Simmons gets 3 sacks as the Chicago Bears beat the New Orleans Saints 21-13",
+       "video": [
+        {
+         "id": 50565012,
+         "source": "espn",
+         "headline": "New Orleans Saints vs. Chicago Bears: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.jpg",
+         "duration": 63,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261122_NFL_new_orleans_saints_vs_chicago_bears_game_highlights",
+          "trackingName": "COM_NFL Highlight (New Orleans Saints vs. Chicago Bears: Game Highlights) 2026/11/22 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/43d8eff5-139d-41ca-a977-869c5766252d"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50565012"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/43d8eff5-139d-41ca-a977-869c5766252d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565012/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50565012"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/43d8eff5-139d-41ca-a977-869c5766252d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565012/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/43d8eff5-139d-41ca-a977-869c5766252d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565012/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/43d8eff5-139d-41ca-a977-869c5766252d/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/6cdf6369-82e7-446d-b0fd-63104fb4bff0/6cdf6369-82e7-446d-b0fd-63104fb4bff0.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50565012&videoDSI=0935ab3a4d4c7"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50565012/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50565012/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=0935ab3a4d4c7"
+            }
+           }
+          }
+         }
+        }
+       ]
       }
      ]
     }
@@ -5714,6 +5710,116 @@
        "region": "us"
       }
      ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Joe Milton made a perfect throw to DeVonta Smith and the wide receiver rolled out of bounds to get the first down that closed out the Philadelphia Eagles' first win since September.",
+       "shortLinkText": "Eagles snap 7-game losing streak and keep Steelers winless in Philly since 1965 with 19-16 victory",
+       "video": [
+        {
+         "id": 50565318,
+         "source": "espn",
+         "headline": "Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.jpg",
+         "duration": 52,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261122_NFL_pittsburgh_steelers_vs_philadelphia_eagles_game_highlights",
+          "trackingName": "NFL_One-Play (Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights) 2026/11/22 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50565318"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50565318"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50565318&videoDSI=65acffaa13e73"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=65acffaa13e73"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
      "highlights": [
       {
        "id": 50565318,
@@ -5827,116 +5933,6 @@
         "trackingId": "dm_20261122_NFL_pittsburgh_steelers_vs_philadelphia_eagles_game_highlights",
         "trackingName": "NFL_One-Play (Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights) 2026/11/22 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Joe Milton made a perfect throw to DeVonta Smith and the wide receiver rolled out of bounds to get the first down that closed out the Philadelphia Eagles' first win since September.",
-       "shortLinkText": "Eagles snap 7-game losing streak and keep Steelers winless in Philly since 1965 with 19-16 victory",
-       "video": [
-        {
-         "id": 50565318,
-         "source": "espn",
-         "headline": "Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.jpg",
-         "duration": 52,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261122_NFL_pittsburgh_steelers_vs_philadelphia_eagles_game_highlights",
-          "trackingName": "NFL_One-Play (Pittsburgh Steelers vs. Philadelphia Eagles: Game Highlights) 2026/11/22 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50565318"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50565318"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565318/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/30760f69-6278-4c04-b8fd-65a6e9ed7f81/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/a64030ba-32d6-4958-a7a8-19757868d95a/a64030ba-32d6-4958-a7a8-19757868d95a.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50565318&videoDSI=65acffaa13e73"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50565318/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=65acffaa13e73"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
@@ -8310,7 +8306,7 @@
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Rookie Jonah Coleman ran for a season-best 111 yards and three touchdowns and the Denver Broncos beat the Las Vegas Raiders 38-24 on a solemn Sunday in the Mile High City as they honored \u201cOrange Crush\u201d and ESPN great ",
+       "description": "\u2014 Forty years after his retirement from football and 48 hours after his death at age 75, the Denver Broncos set aside a game ball for Tom Jackson...",
        "shortLinkText": "Jonah Coleman powers Broncos past Raiders 38-24 as Denver honors the late Tom Jackson",
        "video": [
         {
@@ -9844,14 +9840,14 @@
        "region": "us"
       }
      ],
-     "highlights": [],
      "headlines": [
       {
        "type": "Recap",
        "description": "\u2014 C.J. Stroud had another big game to help the Houston Texans finally get a victory at home.",
        "shortLinkText": "C.J. Stroud throws for 3 TDs as the Texans roll past the Colts 26-3"
       }
-     ]
+     ],
+     "highlights": []
     }
    ],
    "links": [
@@ -10711,7 +10707,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+241",
+          "odds": "+240",
           "link": {
            "language": "en-US",
            "rel": [
@@ -10743,7 +10739,7 @@
         },
         "away": {
          "close": {
-          "odds": "-296",
+          "odds": "-295",
           "link": {
            "language": "en-US",
            "rel": [
