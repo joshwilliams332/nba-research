@@ -6,6 +6,8 @@ name, with NFL Lab beside it. The repo is public and held to a professional stan
 up-to-date README, and PRs with clear descriptions.
 Josh mostly checks the site on his phone, so every change gets checked at ~390px wide as well as desktop.
 The look is inspired by Outlier, but it uses its own name and branding; never copy another product's logos or marks.
+User-facing labels are our own (Nov 23, 2026): game tabs Lines · Trends · Matchup, "Behind the number", "How {OPP}
+defends {stat}", DEF RANK, BOOK %, "Value only"; the Props sort bar starts at L10. Don't reintroduce Outlier's wording.
 
 ## How work ships
 - Branch, PR into `main`, merge. Merging deploys via `.github/workflows/update-and-deploy.yml` (also runs 5x/day
@@ -40,7 +42,7 @@ The look is inspired by Outlier, but it uses its own name and branding; never co
 - All hit-rate math lives in `site/assets/common.js` (`outcome`, `tally`, `windowRates`, `applyFilters`,
   `lineResults`, `teamSplits`) and is unit tested in `tests/common.test.js`.
 - Game-line trends are judged against the current game's number (team's last 10 vs tonight's spread / total),
-  matching how Outlier shows them. ATS / O/U records on the Matchup tab use each game's own closing line.
+  the way most prop tools show them. ATS / O/U records on the Matchup tab use each game's own closing line.
 - With no sportsbook line, a player gets a "typical" line: floor(L10 average) + 0.5, always labeled as such.
 - Insights (`site/assets/insights.js`, tested in `tests/insights.test.js`): kept when a side hits >= 75% over >= 5 games,
   ranked by Wilson lower bound, best 2 per player stat / team market (one per split family). Player splits reuse

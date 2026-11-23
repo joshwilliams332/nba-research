@@ -63,7 +63,7 @@ lab(['players', 'logs', 'props', 'injuries', 'proplines']).then(L => {
     <div class="tabs" id="tabs"></div>
     <div id="pane"></div>`;
 
-  const tabs = [['odds', 'Odds'], ['insights', 'Insights'], ['matchup', 'Matchup']];
+  const tabs = [['odds', 'Lines'], ['insights', 'Trends'], ['matchup', 'Matchup']];
   if (g.state !== 'pre') tabs.push(['box', 'Box score']);
   let tab = params().get('tab') || (final ? 'box' : 'odds');
   let sub = 'lines', stat = 'pts', season = L.meta.season, term = '';
