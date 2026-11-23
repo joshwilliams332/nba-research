@@ -284,6 +284,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "T",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "19",
       "uid": "s:20~l:28~t:19",
@@ -348,9 +350,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
     },
     {
      "id": "401873008",
@@ -640,6 +640,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "19",
       "uid": "s:20~l:28~t:19",
@@ -704,9 +706,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
     }
    ]
   },
@@ -976,8 +976,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "10",
       "uid": "s:20~l:28~t:10",
@@ -1042,7 +1040,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873038",
@@ -1065,8 +1065,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "1",
       "uid": "s:20~l:28~t:1",
@@ -1131,7 +1129,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873064",
@@ -2696,12 +2696,12 @@
    "details": "CIN -6",
    "overUnder": 54.5,
    "spread": 6.0,
-   "overOdds": -116.0,
-   "underOdds": -103.0,
+   "overOdds": -117.0,
+   "underOdds": -102.0,
    "awayTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -296,
+    "moneyLine": -302,
     "spreadOdds": -113.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/4?lang=en&region=us"
@@ -2712,7 +2712,7 @@
    "homeTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 242,
+    "moneyLine": 246,
     "spreadOdds": -107.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/28?lang=en&region=us"
@@ -2884,7 +2884,7 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "+242",
+      "odds": "+246",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2916,7 +2916,7 @@
     },
     "away": {
      "close": {
-      "odds": "-296",
+      "odds": "-302",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3025,7 +3025,7 @@
     "over": {
      "close": {
       "line": "o54.5",
-      "odds": "-116",
+      "odds": "-117",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3059,7 +3059,7 @@
     "under": {
      "close": {
       "line": "u54.5",
-      "odds": "-103",
+      "odds": "-102",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3255,7 +3255,6 @@
    "records": []
   }
  ],
- "winprobability": [],
  "predictor": {
   "header": "Matchup Predictor",
   "homeTeam": {
@@ -3267,6 +3266,7 @@
    "gameProjection": "74.5"
   }
  },
+ "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -6980,161 +6980,6 @@
    }
   ]
  },
- "article": {
-  "id": 50535480,
-  "nowId": "1-50535480",
-  "contentKey": "50535480-1-22-1",
-  "dataSourceIdentifier": "cb79942aef2a9",
-  "publishedkey": "nfl401873078",
-  "type": "Preview",
-  "gameId": "401873078",
-  "headline": "Commanders' defense preparing for high-flying Bengals offense",
-  "description": "\u2014 Washington Commanders coach Dan Quinn knows the challenge facing his defense for Monday night's game against the Cincinnati Bengals.",
-  "title": "Commanders' defense preparing for high-flying Bengals offense",
-  "linkText": "Commanders' defense preparing for high-flying Bengals offense",
-  "categorized": "2026-11-22T21:30:48Z",
-  "originallyPosted": "2026-11-20T00:07:41Z",
-  "lastModified": "2026-11-20T00:07:43Z",
-  "published": "2026-11-20T00:07:41Z",
-  "root": "nfl",
-  "section": "NFL",
-  "source": "AP",
-  "images": [
-   {
-    "type": "Media",
-    "name": "Is Burrow's illness any cause for concern?",
-    "caption": "Ben Baby breaks down if Joe Burrow missing practice due to illness is a concern.",
-    "height": 324,
-    "width": 576,
-    "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1119/dm_261119_Bengals_Burrow_sick_IA/dm_261119_Bengals_Burrow_sick_IA.jpg"
-   }
-  ],
-  "video": [],
-  "categories": [
-   {
-    "id": 9572,
-    "type": "league",
-    "uid": "s:20~l:28",
-    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-    "description": "NFL",
-    "sportId": 28,
-    "leagueId": 28,
-    "league": {
-     "id": 28,
-     "description": "NFL",
-     "abbreviation": "NFL",
-     "links": {
-      "mobile": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      },
-      "web": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 1462,
-    "type": "team",
-    "uid": "s:20~l:28~t:28",
-    "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
-    "description": "Washington Commanders",
-    "sportId": 28,
-    "teamId": 28,
-    "team": {
-     "id": 28,
-     "description": "Washington Commanders",
-     "abbreviation": "WSH",
-     "shortDisplayName": "Commanders",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2664,
-    "type": "team",
-    "uid": "s:20~l:28~t:4",
-    "guid": "75b8623b-8926-b411-0476-3d3602b78523",
-    "description": "Cincinnati Bengals",
-    "sportId": 28,
-    "teamId": 4,
-    "team": {
-     "id": 4,
-     "description": "Cincinnati Bengals",
-     "abbreviation": "CIN",
-     "shortDisplayName": "Bengals",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-       }
-      }
-     }
-    }
-   },
-   {
-    "type": "event",
-    "uid": "s:20~l:28~e:401873078",
-    "guid": "da4346e3-b4b0-3ba7-b7e4-594f7dfd6bfb",
-    "description": "Cincinnati Bengals @ Washington Commanders",
-    "eventId": 401873078,
-    "event": {
-     "id": 401873078,
-     "sport": "football",
-     "league": "nfl",
-     "description": "Cincinnati Bengals @ Washington Commanders"
-    }
-   }
-  ],
-  "keywords": [
-   "NFL",
-   "Washington Commanders",
-   "Cincinnati Bengals",
-   "Cincinnati Bengals @ Washington Commanders"
-  ],
-  "story": "ASHBURN, Va. -- \u2014 <a href=\"http://www.espn.com/nfl/team/_/name/wsh/washington-commanders\">Washington Commanders</a> coach Dan Quinn knows the challenge facing his defense for Monday night's game against the <a href=\"http://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals\">Cincinnati Bengals</a>.\n\n\r\n              When asked on Thursday why Cincinnati quarterback <a href=\"http://www.espn.com/nfl/player/_/id/3915511/joe-burrow\">Joe Burrow</a> and the Bengals' offense has been so good this season against the blitz, Quinn chuckled.\n\n\r\n              \u201cI feel like they\u2019ve been good against everything right now,\u201d Quinn said.\n\n\r\n              Washington's head coach certainly has reason to feel that way.\n\n\r\n              The Bengals are coming off a 38-18 drubbing of the Steelers and have scored at least 31 points in their past five games, and in six of their nine games this season. They currently rank third in the NFL in points per game (30.9).\n\n\r\n              Led by Burrow and the one-two punch at receiver of <a href=\"http://www.espn.com/nfl/player/_/id/4362628/ja'marr-chase\">Ja'Marr Chase</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4239993/tee-higgins\">Tee Higgins</a>, the Bengals have proven to be one of the league's best teams once again on the back of its offense. \n\n\r\n              Burrow has a 74.7% completion rate, is second in the league in yards at 2,795 and first in touchdown passes at 27.\n\n\r\n              \u201cHe\u2019s decisive,\u201d Commanders safety <a href=\"http://www.espn.com/nfl/player/_/id/3125248/jeremy-reaves\">Jeremy Reaves</a> said. \u201cHe\u2019s one of the guys that gets the ball out of his hands quick and trusts what he sees. At the same time, he\u2019s also just going to give his guys a chance. He trusts those two really well. He trusts all those guys really well. He\u2019s going to give those guys the opportunity, and when he does, we got to make the plays that we\u2019re able to make. One of the quickest release points in the game.\u201d\n\n\r\n              Burrow has relied on Chase and Higgins heavily so far this season, as they rank sixth and 11th in receptions, respectively, as well as fourth and sixth in yards.\n\n\r\n              \u201cThose dudes can run anything on the route tree,\" Reaves said. \"They can line up anywhere. They present a challenge to any coverage, two-high, single-high (safety). They do a great job. We just got to be at our best when our best is required. They\u2019re going to give those guys opportunities. Those dudes are two superstars in this business, so they\u2019re going to have opportunities and when we get chances to make plays, we just want to make them.\u201d\n\n\r\n              After an important win over the Giants last week, the Commanders have their hands full against a Bengals team that is aiming for the top seed in the AFC.\n\n\r\n              \u201cIt's a difficult challenge,\u201d Quinn said. \u201cThe running back (<a href=\"http://www.espn.com/nfl/player/_/id/4362238/chase-brown\">Chase Brown</a>) has targets, tight end (<a href=\"http://www.espn.com/nfl/player/_/id/3116164/mike-gesicki\">Mike Gesicki</a>) does down in the red zone. So, everybody\u2019s got difficult downs, so you can\u2019t double up everybody. But you do have to take your shots of where to go and how to go about that. We\u2019ll have our ways, but definitely one of the biggest challenges with them is multiple people, and performing at a high level.\u201d\n\n\r\n              <hl2>Need to know</hl2>\r\n              Cincinnati (7-2) at Washington (3-5-1)\n\n\r\n              When/where to watch: Monday 8:15 p.m. EST, ESPN.\n\n\r\n              Latest odds: Bengals by 6 1/2.\n\n\r\n              Against the spread: Bengals 5-4; Commanders 5-4.\n\n\r\n              Last week: Commanders beat Giants 24-21; Bengals beat the Steelers 38-18.\n\n\r\n              Last meeting: Commanders beat the Bengals 38-33 on Sept. 23, 2024, at Cincinnati.\n\n\r\n              Series record: Commanders lead 6-5-1.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Burrow vs. Commanders pass rush: Washington has a 42.1% blitz rate on opposing drop-backs, the third-highest rate in the league. Burrow has a league-high 73.4% completion rate against the blitz and is tied for fourth in passing touchdowns with nine.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 Cincinnati is looking for its first six-game winning streak since 2022, when it won its last eight games to win the AFC North title.\n\n\r\n              \u2014 Burrow is just the third quarterback in NFL history with at least 20 touchdowns over a five-game span. He also has five straight games with at least four offensive TDs, tied with Peyton Manning\u2019s 2013 run with Denver.\n\n\r\n              \u2014 Chase is averaging 110.5 receiving yards in primetime games. He has surpassed 100 yards in eight of the 17 games.\n\n\r\n              \u2014 Bengals DE <a href=\"http://www.espn.com/nfl/player/_/id/4240754/boye-mafe\">Boye Mafe</a> has 5 \u00bd sacks in his past six games. Cincinnati is tied for ninth in the league in sacks with 26.\n\n\r\n              \u2014 Commanders quarterback <a href=\"http://www.espn.com/nfl/player/_/id/4426348/jayden-daniels\">Jayden Daniels</a> has thrown just two interceptions so far this season. Both game in the team's win last Thursday against the Giants.\n\n\r\n              \u2014 This will be the first matchup between the two since 2024, when they also played on \u201cMonday Night Football.\u201d The Commanders won 38-33 and used that to spur them onto a playoff run that included eight regular-season victories by one score.\n\n\r\n              \u2014 Washington receiver <a href=\"http://www.espn.com/nfl/player/_/id/2976212/stefon-diggs\">Stefon Diggs</a> is coming off his best game with the team. He had six catches for 83 yards and a touchdown in the win over New York.\n\n\r\n              \u2014 The Commanders are looking for their first back-to-back wins since the end of the 2024 season. They won their final five regular-season games, including two playoff games.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
-  "allowContentReactions": false,
-  "allowSearch": true,
-  "isLiveBlog": false,
-  "links": {
-   "api": {
-    "self": {
-     "href": "https://content.core.api.espn.com/v1/sports/news/50535480"
-    }
-   },
-   "app": {
-    "sportscenter": {
-     "href": "sportscenter://x-callback-url/showStory?uid=50535480"
-    }
-   },
-   "mobile": {
-    "href": "http://m.espn.go.com/nfl/story?storyId=50535480"
-   },
-   "web": {
-    "href": "http://www.espn.com/nfl/preview?gameId=401873078"
-   }
-  },
-  "premium": false
- },
  "header": {
   "id": "401873078",
   "uid": "s:20~l:28~e:401873078",
@@ -7652,7 +7497,7 @@
       "awayTeamOdds": {
        "favorite": true,
        "underdog": false,
-       "moneyLine": -296,
+       "moneyLine": -302,
        "spreadOdds": -113.0,
        "open": {
         "favorite": true,
@@ -7692,11 +7537,11 @@
         },
         "moneyLine": {
          "value": 1.33,
-         "displayValue": "25/74",
-         "alternateDisplayValue": "-296",
+         "displayValue": "50/151",
+         "alternateDisplayValue": "-302",
          "decimal": 1.33,
-         "fraction": "25/74",
-         "american": "-296"
+         "fraction": "50/151",
+         "american": "-302"
         }
        },
        "team": {
@@ -7706,7 +7551,7 @@
       "homeTeamOdds": {
        "favorite": false,
        "underdog": true,
-       "moneyLine": 242,
+       "moneyLine": 246,
        "spreadOdds": -107.0,
        "open": {
         "favorite": false,
@@ -7745,12 +7590,12 @@
          "american": "-107"
         },
         "moneyLine": {
-         "value": 3.42,
-         "displayValue": "121/50",
-         "alternateDisplayValue": "+242",
-         "decimal": 3.42,
-         "fraction": "121/50",
-         "american": "+242"
+         "value": 3.46,
+         "displayValue": "123/50",
+         "alternateDisplayValue": "+246",
+         "decimal": 3.46,
+         "fraction": "123/50",
+         "american": "+246"
         }
        },
        "team": {
@@ -7759,20 +7604,20 @@
       },
       "current": {
        "over": {
-        "value": 1.86,
-        "displayValue": "25/29",
-        "alternateDisplayValue": "-116",
-        "decimal": 1.86,
-        "fraction": "25/29",
-        "american": "-116"
+        "value": 1.85,
+        "displayValue": "100/117",
+        "alternateDisplayValue": "-117",
+        "decimal": 1.85,
+        "fraction": "100/117",
+        "american": "-117"
        },
        "under": {
-        "value": 1.97,
-        "displayValue": "100/103",
-        "alternateDisplayValue": "-103",
-        "decimal": 1.97,
-        "fraction": "100/103",
-        "american": "-103"
+        "value": 1.98,
+        "displayValue": "50/51",
+        "alternateDisplayValue": "-102",
+        "decimal": 1.98,
+        "fraction": "50/51",
+        "american": "-102"
        },
        "total": {
         "alternateDisplayValue": "54.5",
@@ -8210,7 +8055,6 @@
    ]
   }
  },
- "wallclockAvailable": false,
  "ticketsInfo": {
   "tickets": [
    {
@@ -8224,22 +8068,22 @@
     "type": "team"
    },
    {
-    "ticketName": "11/23 vs Bengals 2103 tickets left",
+    "ticketName": "11/23 vs Bengals 2101 tickets left",
     "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-9-2026/production/6493332?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "11/29 @ Cardinals 4363 tickets left",
+    "ticketName": "11/29 @ Cardinals 4357 tickets left",
     "ticketLink": "https://www.vividseats.com/arizona-cardinals-tickets-glendale-state-farm-stadium-3-2-2026/production/6486969?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/6 @ Titans 2537 tickets left",
+    "ticketName": "12/6 @ Titans 2539 tickets left",
     "ticketLink": "https://www.vividseats.com/tennessee-titans-tickets-nashville-nissan-stadium-3-7-2027/production/6493568?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/13 vs Texans 6496 tickets left",
+    "ticketName": "12/13 vs Texans 6492 tickets left",
     "ticketLink": "https://www.vividseats.com/washington-commanders-tickets-landover-northwest-stadium-3-6-2026/production/6493325?wsUser=717",
     "type": "event"
    },
@@ -8279,6 +8123,162 @@
    "timeValid": true
   }
  },
+ "article": {
+  "id": 50535480,
+  "nowId": "1-50535480",
+  "contentKey": "50535480-1-22-1",
+  "dataSourceIdentifier": "cb79942aef2a9",
+  "publishedkey": "nfl401873078",
+  "type": "Preview",
+  "gameId": "401873078",
+  "headline": "Commanders' defense preparing for high-flying Bengals offense",
+  "description": "\u2014 Washington Commanders coach Dan Quinn knows the challenge facing his defense for Monday night's game against the Cincinnati Bengals.",
+  "title": "Commanders' defense preparing for high-flying Bengals offense",
+  "linkText": "Commanders' defense preparing for high-flying Bengals offense",
+  "categorized": "2026-11-22T21:30:48Z",
+  "originallyPosted": "2026-11-20T00:07:41Z",
+  "lastModified": "2026-11-20T00:07:43Z",
+  "published": "2026-11-20T00:07:41Z",
+  "root": "nfl",
+  "section": "NFL",
+  "source": "AP",
+  "images": [
+   {
+    "type": "Media",
+    "name": "Is Burrow's illness any cause for concern?",
+    "caption": "Ben Baby breaks down if Joe Burrow missing practice due to illness is a concern.",
+    "height": 324,
+    "width": 576,
+    "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1119/dm_261119_Bengals_Burrow_sick_IA/dm_261119_Bengals_Burrow_sick_IA.jpg"
+   }
+  ],
+  "video": [],
+  "categories": [
+   {
+    "id": 9572,
+    "type": "league",
+    "uid": "s:20~l:28",
+    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+    "description": "NFL",
+    "sportId": 28,
+    "leagueId": 28,
+    "league": {
+     "id": 28,
+     "description": "NFL",
+     "abbreviation": "NFL",
+     "links": {
+      "mobile": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      },
+      "web": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 1462,
+    "type": "team",
+    "uid": "s:20~l:28~t:28",
+    "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
+    "description": "Washington Commanders",
+    "sportId": 28,
+    "teamId": 28,
+    "team": {
+     "id": 28,
+     "description": "Washington Commanders",
+     "abbreviation": "WSH",
+     "shortDisplayName": "Commanders",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2664,
+    "type": "team",
+    "uid": "s:20~l:28~t:4",
+    "guid": "75b8623b-8926-b411-0476-3d3602b78523",
+    "description": "Cincinnati Bengals",
+    "sportId": 28,
+    "teamId": 4,
+    "team": {
+     "id": 4,
+     "description": "Cincinnati Bengals",
+     "abbreviation": "CIN",
+     "shortDisplayName": "Bengals",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "event",
+    "uid": "s:20~l:28~e:401873078",
+    "guid": "da4346e3-b4b0-3ba7-b7e4-594f7dfd6bfb",
+    "description": "Cincinnati Bengals @ Washington Commanders",
+    "eventId": 401873078,
+    "event": {
+     "id": 401873078,
+     "sport": "football",
+     "league": "nfl",
+     "description": "Cincinnati Bengals @ Washington Commanders"
+    }
+   }
+  ],
+  "keywords": [
+   "NFL",
+   "Washington Commanders",
+   "Cincinnati Bengals",
+   "Cincinnati Bengals @ Washington Commanders"
+  ],
+  "story": "ASHBURN, Va. -- \u2014 <a href=\"http://www.espn.com/nfl/team/_/name/wsh/washington-commanders\">Washington Commanders</a> coach Dan Quinn knows the challenge facing his defense for Monday night's game against the <a href=\"http://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals\">Cincinnati Bengals</a>.\n\n\r\n              When asked on Thursday why Cincinnati quarterback <a href=\"http://www.espn.com/nfl/player/_/id/3915511/joe-burrow\">Joe Burrow</a> and the Bengals' offense has been so good this season against the blitz, Quinn chuckled.\n\n\r\n              \u201cI feel like they\u2019ve been good against everything right now,\u201d Quinn said.\n\n\r\n              Washington's head coach certainly has reason to feel that way.\n\n\r\n              The Bengals are coming off a 38-18 drubbing of the Steelers and have scored at least 31 points in their past five games, and in six of their nine games this season. They currently rank third in the NFL in points per game (30.9).\n\n\r\n              Led by Burrow and the one-two punch at receiver of <a href=\"http://www.espn.com/nfl/player/_/id/4362628/ja'marr-chase\">Ja'Marr Chase</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4239993/tee-higgins\">Tee Higgins</a>, the Bengals have proven to be one of the league's best teams once again on the back of its offense. \n\n\r\n              Burrow has a 74.7% completion rate, is second in the league in yards at 2,795 and first in touchdown passes at 27.\n\n\r\n              \u201cHe\u2019s decisive,\u201d Commanders safety <a href=\"http://www.espn.com/nfl/player/_/id/3125248/jeremy-reaves\">Jeremy Reaves</a> said. \u201cHe\u2019s one of the guys that gets the ball out of his hands quick and trusts what he sees. At the same time, he\u2019s also just going to give his guys a chance. He trusts those two really well. He trusts all those guys really well. He\u2019s going to give those guys the opportunity, and when he does, we got to make the plays that we\u2019re able to make. One of the quickest release points in the game.\u201d\n\n\r\n              Burrow has relied on Chase and Higgins heavily so far this season, as they rank sixth and 11th in receptions, respectively, as well as fourth and sixth in yards.\n\n\r\n              \u201cThose dudes can run anything on the route tree,\" Reaves said. \"They can line up anywhere. They present a challenge to any coverage, two-high, single-high (safety). They do a great job. We just got to be at our best when our best is required. They\u2019re going to give those guys opportunities. Those dudes are two superstars in this business, so they\u2019re going to have opportunities and when we get chances to make plays, we just want to make them.\u201d\n\n\r\n              After an important win over the Giants last week, the Commanders have their hands full against a Bengals team that is aiming for the top seed in the AFC.\n\n\r\n              \u201cIt's a difficult challenge,\u201d Quinn said. \u201cThe running back (<a href=\"http://www.espn.com/nfl/player/_/id/4362238/chase-brown\">Chase Brown</a>) has targets, tight end (<a href=\"http://www.espn.com/nfl/player/_/id/3116164/mike-gesicki\">Mike Gesicki</a>) does down in the red zone. So, everybody\u2019s got difficult downs, so you can\u2019t double up everybody. But you do have to take your shots of where to go and how to go about that. We\u2019ll have our ways, but definitely one of the biggest challenges with them is multiple people, and performing at a high level.\u201d\n\n\r\n              <hl2>Need to know</hl2>\r\n              Cincinnati (7-2) at Washington (3-5-1)\n\n\r\n              When/where to watch: Monday 8:15 p.m. EST, ESPN.\n\n\r\n              Latest odds: Bengals by 6 1/2.\n\n\r\n              Against the spread: Bengals 5-4; Commanders 5-4.\n\n\r\n              Last week: Commanders beat Giants 24-21; Bengals beat the Steelers 38-18.\n\n\r\n              Last meeting: Commanders beat the Bengals 38-33 on Sept. 23, 2024, at Cincinnati.\n\n\r\n              Series record: Commanders lead 6-5-1.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Burrow vs. Commanders pass rush: Washington has a 42.1% blitz rate on opposing drop-backs, the third-highest rate in the league. Burrow has a league-high 73.4% completion rate against the blitz and is tied for fourth in passing touchdowns with nine.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 Cincinnati is looking for its first six-game winning streak since 2022, when it won its last eight games to win the AFC North title.\n\n\r\n              \u2014 Burrow is just the third quarterback in NFL history with at least 20 touchdowns over a five-game span. He also has five straight games with at least four offensive TDs, tied with Peyton Manning\u2019s 2013 run with Denver.\n\n\r\n              \u2014 Chase is averaging 110.5 receiving yards in primetime games. He has surpassed 100 yards in eight of the 17 games.\n\n\r\n              \u2014 Bengals DE <a href=\"http://www.espn.com/nfl/player/_/id/4240754/boye-mafe\">Boye Mafe</a> has 5 \u00bd sacks in his past six games. Cincinnati is tied for ninth in the league in sacks with 26.\n\n\r\n              \u2014 Commanders quarterback <a href=\"http://www.espn.com/nfl/player/_/id/4426348/jayden-daniels\">Jayden Daniels</a> has thrown just two interceptions so far this season. Both game in the team's win last Thursday against the Giants.\n\n\r\n              \u2014 This will be the first matchup between the two since 2024, when they also played on \u201cMonday Night Football.\u201d The Commanders won 38-33 and used that to spur them onto a playoff run that included eight regular-season victories by one score.\n\n\r\n              \u2014 Washington receiver <a href=\"http://www.espn.com/nfl/player/_/id/2976212/stefon-diggs\">Stefon Diggs</a> is coming off his best game with the team. He had six catches for 83 yards and a touchdown in the win over New York.\n\n\r\n              \u2014 The Commanders are looking for their first back-to-back wins since the end of the 2024 season. They won their final five regular-season games, including two playoff games.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
+  "allowContentReactions": false,
+  "allowSearch": true,
+  "isLiveBlog": false,
+  "links": {
+   "api": {
+    "self": {
+     "href": "https://content.core.api.espn.com/v1/sports/news/50535480"
+    }
+   },
+   "app": {
+    "sportscenter": {
+     "href": "sportscenter://x-callback-url/showStory?uid=50535480"
+    }
+   },
+   "mobile": {
+    "href": "http://m.espn.go.com/nfl/story?storyId=50535480"
+   },
+   "web": {
+    "href": "http://www.espn.com/nfl/preview?gameId=401873078"
+   }
+  },
+  "premium": false
+ },
+ "wallclockAvailable": false,
  "meta": {
   "gp_topic": "gp-football-nfl-401873078",
   "gameSwitcherEnabled": true,
