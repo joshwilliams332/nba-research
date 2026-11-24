@@ -7,7 +7,7 @@ up-to-date README, and PRs with clear descriptions.
 Josh mostly checks the site on his phone, so every change gets checked at ~390px wide as well as desktop.
 The look is inspired by Outlier, but it uses its own name and branding; never copy another product's logos or marks.
 User-facing labels are our own (Nov 23, 2026): game tabs Lines · Trends · Matchup, "Behind the number", "How {OPP}
-defends {stat}", DEF RANK, BOOK %, "Value only"; the Props sort bar starts at L10. Don't reintroduce Outlier's wording.
+defends {stat}" (the player page's "{Stat} vs {OPP}" card has PRA · PTS · REB · AST chips on combo stats, `st.dvpStat`), DEF RANK, BOOK %, "Value only"; the Props sort bar starts at L10. Don't reintroduce Outlier's wording.
 
 ## How work ships
 - Branch, PR into `main`, merge. Merging deploys via `.github/workflows/update-and-deploy.yml` (also runs 5x/day
