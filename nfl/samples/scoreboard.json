@@ -593,7 +593,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/wsh.png"
        },
-       "score": "16",
+       "score": "19",
        "linescores": [
         {
          "value": 0.0,
@@ -611,8 +611,8 @@
          "period": 3
         },
         {
-         "value": 3.0,
-         "displayValue": "3",
+         "value": 6.0,
+         "displayValue": "6",
          "period": 4
         }
        ],
@@ -744,7 +744,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/cin.png"
        },
-       "score": "17",
+       "score": "20",
        "linescores": [
         {
          "value": 0.0,
@@ -762,8 +762,8 @@
          "period": 3
         },
         {
-         "value": 0.0,
-         "displayValue": "0",
+         "value": 3.0,
+         "displayValue": "3",
          "period": 4
         }
        ],
@@ -794,51 +794,52 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730783586",
+       "id": "4018730783999",
        "type": {
-        "id": "3",
-        "text": "Pass Incompletion"
+        "id": "53",
+        "text": "Kickoff",
+        "abbreviation": "K"
        },
-       "text": "(Shotgun) J.Daniels pass incomplete short left to J.Croskey-Merritt.",
+       "text": "E.McPherson kicks 59 yards from CIN 35 to WAS 6. L.McCaffrey to WAS 27 for 21 yards (R.Yeast).",
        "scoreValue": 0,
        "team": {
         "id": "28"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.2846,
-        "awayWinPercentage": 0.7154,
+        "homeWinPercentage": 0.1656,
+        "awayWinPercentage": 0.8344,
         "secondsLeft": 0
        },
-       "statYardage": 0,
+       "statYardage": 21,
        "drive": {
-        "description": "3 plays, 5 yards, 1:37",
+        "description": "0 plays, 0 yards, 0:00",
         "start": {
-         "yardLine": 20,
-         "text": "WSH 20"
+         "yardLine": 0,
+         "text": "WSH 0"
         },
         "timeElapsed": {
-         "displayValue": "1:37"
+         "displayValue": "0:00"
         }
        },
        "start": {
-        "yardLine": 25,
+        "yardLine": 65,
         "team": {
-         "id": "28"
+         "id": "4"
         }
        },
        "end": {
-        "yardLine": 25,
+        "yardLine": 27,
         "team": {
          "id": "28"
         }
        },
        "athletesInvolved": [
         {
-         "id": "4575131",
-         "fullName": "Jacory Croskey-Merritt",
-         "displayName": "Jacory Croskey-Merritt",
-         "shortName": "J. Croskey-Merritt",
+         "id": "4426948",
+         "fullName": "Luke McCaffrey",
+         "displayName": "Luke McCaffrey",
+         "shortName": "L. McCaffrey",
          "links": [
           {
            "rel": [
@@ -846,32 +847,31 @@
             "desktop",
             "athlete"
            ],
-           "href": "https://www.espn.com/nfl/player/_/id/4575131/jacory-croskey-merritt"
+           "href": "https://www.espn.com/nfl/player/_/id/4426948/luke-mccaffrey"
           }
          ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4575131.png",
-         "jersey": "22",
-         "position": "RB",
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426948.png",
+         "jersey": "11",
+         "position": "WR",
          "team": {
           "id": "28"
          }
         }
        ]
       },
-      "down": 2,
-      "yardLine": 25,
-      "distance": 20,
-      "downDistanceText": "2nd & 20 at WSH 25",
-      "shortDownDistanceText": "2nd & 20",
-      "possessionText": "WSH 25",
+      "down": 1,
+      "yardLine": 27,
+      "distance": 10,
+      "downDistanceText": "1st & 10 at WSH 27",
+      "shortDownDistanceText": "1st & 10",
+      "possessionText": "WSH 27",
       "isRedZone": false,
-      "homeTimeouts": 3,
-      "awayTimeouts": 3,
-      "possession": "28"
+      "homeTimeouts": 0,
+      "awayTimeouts": 2
      },
      "status": {
-      "clock": 413.0,
-      "displayClock": "6:53",
+      "clock": 46.0,
+      "displayClock": "0:46",
       "period": 4,
       "type": {
        "id": "2",
@@ -879,8 +879,8 @@
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "6:53 - 4th Quarter",
-       "shortDetail": "6:53 - 4th"
+       "detail": "0:46 - 4th Quarter",
+       "shortDetail": "0:46 - 4th"
       },
       "isTBDFlex": false
      },
@@ -900,8 +900,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "26/37, 256 YDS, 2 TD",
-         "value": 256.0,
+         "displayValue": "28/40, 300 YDS, 2 TD",
+         "value": 300.0,
          "athlete": {
           "id": "3915511",
           "fullName": "Joe Burrow",
@@ -980,13 +980,13 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "4 REC, 71 YDS",
-         "value": 71.0,
+         "displayValue": "5 REC, 77 YDS",
+         "value": 77.0,
          "athlete": {
-          "id": "3116389",
-          "fullName": "Samaje Perine",
-          "displayName": "Samaje Perine",
-          "shortName": "S. Perine",
+          "id": "3116164",
+          "fullName": "Mike Gesicki",
+          "displayName": "Mike Gesicki",
+          "shortName": "M. Gesicki",
           "links": [
            {
             "rel": [
@@ -994,13 +994,13 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/3116389/samaje-perine"
+            "href": "https://www.espn.com/nfl/player/_/id/3116164/mike-gesicki"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3116389.png",
-          "jersey": "34",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3116164.png",
+          "jersey": "88",
           "position": {
-           "abbreviation": "RB"
+           "abbreviation": "TE"
           },
           "team": {
            "id": "4"
@@ -1101,8 +1101,8 @@
    ],
    "weather": {
     "displayValue": "7",
-    "temperature": 53,
-    "highTemperature": 53,
+    "temperature": 52,
+    "highTemperature": 52,
     "conditionId": "Cloudy",
     "link": {
      "language": "en-US",
@@ -1117,8 +1117,8 @@
     }
    },
    "status": {
-    "clock": 413.0,
-    "displayClock": "6:53",
+    "clock": 46.0,
+    "displayClock": "0:46",
     "period": 4,
     "type": {
      "id": "2",
@@ -1126,8 +1126,8 @@
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "6:53 - 4th Quarter",
-     "shortDetail": "6:53 - 4th"
+     "detail": "0:46 - 4th Quarter",
+     "shortDetail": "0:46 - 4th"
     }
    }
   },
@@ -2246,6 +2246,116 @@
        "region": "us"
       }
      ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Stingy as Buffalo has been while not allowing a touchdown over the past 15-plus quarters, defensive tackle Deone Walker remains unsatisfied.",
+       "shortLinkText": "Bills' defense feasts in 26-9 win over injury-depleted Dolphins",
+       "video": [
+        {
+         "id": 50565047,
+         "source": "espn",
+         "headline": "Miami Dolphins vs. Buffalo Bills Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1122/5f96096cd71d45e8aac119c197cf86901076/5f96096cd71d45e8aac119c197cf86901076.jpg",
+         "duration": 57,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261122_NFL_miami_dolphins_vs_buffalo_bills_game_highlights",
+          "trackingName": "NFL_One-Play (Miami Dolphins vs. Buffalo Bills Game Highlights) 2026/11/22 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/2442a258-1504-4660-ba4b-9e63392d3fcd"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50565047"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50565047"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/2442a258-1504-4660-ba4b-9e63392d3fcd/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50565047&videoDSI=71e8d5804a03d"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=71e8d5804a03d"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
      "highlights": [
       {
        "id": 50565047,
@@ -2359,116 +2469,6 @@
         "trackingId": "dm_20261122_NFL_miami_dolphins_vs_buffalo_bills_game_highlights",
         "trackingName": "NFL_One-Play (Miami Dolphins vs. Buffalo Bills Game Highlights) 2026/11/22 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Stingy as Buffalo has been while not allowing a touchdown over the past 15-plus quarters, defensive tackle Deone Walker remains unsatisfied.",
-       "shortLinkText": "Bills' defense feasts in 26-9 win over injury-depleted Dolphins",
-       "video": [
-        {
-         "id": 50565047,
-         "source": "espn",
-         "headline": "Miami Dolphins vs. Buffalo Bills Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1122/5f96096cd71d45e8aac119c197cf86901076/5f96096cd71d45e8aac119c197cf86901076.jpg",
-         "duration": 57,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261122_NFL_miami_dolphins_vs_buffalo_bills_game_highlights",
-          "trackingName": "NFL_One-Play (Miami Dolphins vs. Buffalo Bills Game Highlights) 2026/11/22 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/2442a258-1504-4660-ba4b-9e63392d3fcd"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50565047"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50565047"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2442a258-1504-4660-ba4b-9e63392d3fcd/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/2442a258-1504-4660-ba4b-9e63392d3fcd/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/5f96096c-d71d-45e8-aac1-19c197cf8690/5f96096c-d71d-45e8-aac1-19c197cf8690.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50565047&videoDSI=71e8d5804a03d"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50565047/miami-dolphins-vs-buffalo-bills-game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=71e8d5804a03d"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
@@ -5550,116 +5550,6 @@
        "region": "us"
       }
      ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Patrick Mahomes slinging touchdown passes to Travis Kelce.",
-       "shortLinkText": "Mahomes throws 3 TD passes, Kelce catches 2 of them, as KC routs Cardinals 34-7 for 3rd straight win",
-       "video": [
-        {
-         "id": 50564550,
-         "source": "espn",
-         "headline": "Arizona Cardinals vs. Kansas City Chiefs: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.jpg",
-         "duration": 74,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261122_NFL_arizona_cardinals_vs_kansas_city_chiefs_game_highlights",
-          "trackingName": "COM_NFL Highlight (Arizona Cardinals vs. Kansas City Chiefs: Game Highlights) 2026/11/22 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/81d1c71f-ee50-4aa6-b401-63e310ce29bb"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50564550"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/81d1c71f-ee50-4aa6-b401-63e310ce29bb/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50564550/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50564550"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/81d1c71f-ee50-4aa6-b401-63e310ce29bb/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50564550/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/81d1c71f-ee50-4aa6-b401-63e310ce29bb/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50564550/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/81d1c71f-ee50-4aa6-b401-63e310ce29bb/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50564550&videoDSI=28d5a1d22625f"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50564550/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50564550/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=28d5a1d22625f"
-            }
-           }
-          }
-         }
-        }
-       ]
-      }
-     ],
      "highlights": [
       {
        "id": 50564550,
@@ -5773,6 +5663,116 @@
         "trackingId": "dm_20261122_NFL_arizona_cardinals_vs_kansas_city_chiefs_game_highlights",
         "trackingName": "COM_NFL Highlight (Arizona Cardinals vs. Kansas City Chiefs: Game Highlights) 2026/11/22 ESHEET"
        }
+      }
+     ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Patrick Mahomes slinging touchdown passes to Travis Kelce.",
+       "shortLinkText": "Mahomes throws 3 TD passes, Kelce catches 2 of them, as KC routs Cardinals 34-7 for 3rd straight win",
+       "video": [
+        {
+         "id": 50564550,
+         "source": "espn",
+         "headline": "Arizona Cardinals vs. Kansas City Chiefs: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.jpg",
+         "duration": 74,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261122_NFL_arizona_cardinals_vs_kansas_city_chiefs_game_highlights",
+          "trackingName": "COM_NFL Highlight (Arizona Cardinals vs. Kansas City Chiefs: Game Highlights) 2026/11/22 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/81d1c71f-ee50-4aa6-b401-63e310ce29bb"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50564550"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/81d1c71f-ee50-4aa6-b401-63e310ce29bb/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50564550/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50564550"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/81d1c71f-ee50-4aa6-b401-63e310ce29bb/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50564550/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/81d1c71f-ee50-4aa6-b401-63e310ce29bb/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50564550/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/81d1c71f-ee50-4aa6-b401-63e310ce29bb/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/f870fbd9-2404-4e9d-aed7-daf8fc4f5748/f870fbd9-2404-4e9d-aed7-daf8fc4f5748.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50564550&videoDSI=28d5a1d22625f"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50564550/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50564550/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=28d5a1d22625f"
+            }
+           }
+          }
+         }
+        }
+       ]
       }
      ]
     }
@@ -10510,6 +10510,116 @@
        "region": "us"
       }
      ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Brock Purdy and the San Francisco 49ers offense turned the much ballyhooed matchup between one of the game's top offenses and the stingiest defenses into...",
+       "shortLinkText": "Brock Purdy carves up the Vikings' D with 3 TD passes in the 49ers' 35-10 win in Mexico City",
+       "video": [
+        {
+         "id": 50569860,
+         "source": "espn",
+         "headline": "49ers blow out Vikings 35-10 in Mexico City\u00a0",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1122/766abe7e79a1408cad5940275e06616d1426/766abe7e79a1408cad5940275e06616d1426.jpg",
+         "duration": 63,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261123_NFL_49ers_blow_out_vikings_3510_in_mexico_city",
+          "trackingName": "NFL_One-Play (49ers blow out Vikings 35-10 in Mexico City ) 2026/11/23 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/2ddc09f2-4d02-4caf-84ff-cf13907d4321"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50569860"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2ddc09f2-4d02-4caf-84ff-cf13907d4321/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50569860"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2ddc09f2-4d02-4caf-84ff-cf13907d4321/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2ddc09f2-4d02-4caf-84ff-cf13907d4321/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/2ddc09f2-4d02-4caf-84ff-cf13907d4321/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50569860&videoDSI=d6c608b8bb5c6"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=d6c608b8bb5c6"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
      "highlights": [
       {
        "id": 50569860,
@@ -10623,116 +10733,6 @@
         "trackingId": "dm_20261123_NFL_49ers_blow_out_vikings_3510_in_mexico_city",
         "trackingName": "NFL_One-Play (49ers blow out Vikings 35-10 in Mexico City ) 2026/11/23 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Brock Purdy and the San Francisco 49ers offense turned the much ballyhooed matchup between one of the game's top offenses and the stingiest defenses into...",
-       "shortLinkText": "Brock Purdy carves up the Vikings' D with 3 TD passes in the 49ers' 35-10 win in Mexico City",
-       "video": [
-        {
-         "id": 50569860,
-         "source": "espn",
-         "headline": "49ers blow out Vikings 35-10 in Mexico City\u00a0",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1122/766abe7e79a1408cad5940275e06616d1426/766abe7e79a1408cad5940275e06616d1426.jpg",
-         "duration": 63,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261123_NFL_49ers_blow_out_vikings_3510_in_mexico_city",
-          "trackingName": "NFL_One-Play (49ers blow out Vikings 35-10 in Mexico City ) 2026/11/23 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/2ddc09f2-4d02-4caf-84ff-cf13907d4321"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50569860"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2ddc09f2-4d02-4caf-84ff-cf13907d4321/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50569860"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2ddc09f2-4d02-4caf-84ff-cf13907d4321/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2ddc09f2-4d02-4caf-84ff-cf13907d4321/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/2ddc09f2-4d02-4caf-84ff-cf13907d4321/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1123/766abe7e-79a1-408c-ad59-40275e06616d/766abe7e-79a1-408c-ad59-40275e06616d.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50569860&videoDSI=d6c608b8bb5c6"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50569860/49ers-blow-vikings-35-10-mexico-city",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=d6c608b8bb5c6"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
