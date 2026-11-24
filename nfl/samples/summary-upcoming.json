@@ -176,9 +176,9 @@
    ]
   },
   "weather": {
-   "temperature": 70,
-   "highTemperature": 70,
-   "lowTemperature": 70,
+   "temperature": 72,
+   "highTemperature": 72,
+   "lowTemperature": 72,
    "conditionId": "34",
    "gust": 7,
    "precipitation": 0,
@@ -187,7 +187,7 @@
     "rel": [
      "90301"
     ],
-    "href": "http://www.accuweather.com/en/us/sofi-stadium-ca/90301/hourly-weather-forecast/209205_poi?day=3&hbhhour=17&lang=en-us",
+    "href": "http://www.accuweather.com/en/us/sofi-stadium-ca/90301/hourly-weather-forecast/209205_poi?day=2&hbhhour=17&lang=en-us",
     "text": "Weather",
     "shortText": "Weather",
     "isExternal": true,
@@ -284,6 +284,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "22",
       "uid": "s:20~l:28~t:22",
@@ -348,9 +350,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png"
     },
     {
      "id": "401873021",
@@ -640,8 +640,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "22",
       "uid": "s:20~l:28~t:22",
@@ -706,7 +704,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -749,7 +749,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-10-30T17:26Z"
+      "lastUpdated": "2024-06-25T18:49Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
@@ -798,8 +798,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "6",
       "uid": "s:20~l:28~t:6",
@@ -864,7 +862,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873020",
@@ -1065,8 +1065,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "17",
       "uid": "s:20~l:28~t:17",
@@ -1131,7 +1129,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873060",
@@ -1623,7 +1623,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-10-30T17:26Z"
+      "lastUpdated": "2024-06-25T18:49Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
@@ -2346,7 +2346,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-10-30T17:26Z"
+      "lastUpdated": "2024-06-25T18:49Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
@@ -2709,7 +2709,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1,
     "logos": [
      {
@@ -2734,8 +2734,8 @@
    "awayTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 114,
-    "spreadOdds": -104.0,
+    "moneyLine": 113,
+    "spreadOdds": -110.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/9?lang=en&region=us"
     },
@@ -2745,8 +2745,8 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -135,
-    "spreadOdds": -115.0,
+    "moneyLine": -134,
+    "spreadOdds": -109.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/14?lang=en&region=us"
     },
@@ -2760,7 +2760,7 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118092%3Foutcomes%3D0ML84695525_1",
      "text": "Home Bet",
@@ -2784,7 +2784,7 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118092%3Foutcomes%3D0ML84695525_3",
      "text": "Away Bet",
@@ -2917,14 +2917,14 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "-135",
+      "odds": "-134",
       "link": {
        "language": "en-US",
        "rel": [
         "home",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118092%3Foutcomes%3D0ML84695525_1",
        "text": "Home Bet",
@@ -2949,14 +2949,14 @@
     },
     "away": {
      "close": {
-      "odds": "+114",
+      "odds": "+113",
       "link": {
        "language": "en-US",
        "rel": [
         "away",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118092%3Foutcomes%3D0ML84695525_3",
        "text": "Away Bet",
@@ -2986,7 +2986,7 @@
     "home": {
      "close": {
       "line": "-2.5",
-      "odds": "-115",
+      "odds": "-109",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3020,7 +3020,7 @@
     "away": {
      "close": {
       "line": "+2.5",
-      "odds": "-104",
+      "odds": "-110",
       "link": {
        "language": "en-US",
        "rel": [
@@ -3191,7 +3191,7 @@
        "full",
        "dark"
       ],
-      "lastUpdated": "2024-10-30T17:26Z"
+      "lastUpdated": "2024-06-25T18:49Z"
      },
      {
       "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
@@ -3288,18 +3288,18 @@
    "records": []
   }
  ],
+ "winprobability": [],
  "predictor": {
   "header": "Matchup Predictor",
   "homeTeam": {
    "id": "14",
-   "gameProjection": "66.8"
+   "gameProjection": "67.2"
   },
   "awayTeam": {
    "id": "9",
-   "gameProjection": "32.9"
+   "gameProjection": "32.6"
   }
  },
- "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -3316,6 +3316,159 @@
    "isPremium": false
   },
   "articles": [
+   {
+    "id": 50580514,
+    "nowId": "1-50580514",
+    "contentKey": "50580514-1-5-1",
+    "dataSourceIdentifier": "f8ec40f3f36a5",
+    "type": "HeadlineNews",
+    "headline": "Jayden Daniels again delivers in 'high-pressure' situation for Commanders",
+    "description": "After failing multiple times in late-game situations earlier this season, Commanders quarterback Jayden Daniels put together a second consecutive winning drive Monday night as Washington kicked a last-second field goal to beat Cincinnati 22-20.",
+    "lastModified": "2026-11-24T08:53:41Z",
+    "published": "2026-11-24T08:53:41Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "614acce315ebe",
+      "id": 50580460,
+      "type": "header",
+      "name": "Jayden Daniels  [600x400]",
+      "credit": "Cooper Neill/Getty Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1124/r1750515_600x400_3-2.jpg"
+     },
+     {
+      "dataSourceIdentifier": "73eba2c6671fe",
+      "id": 50580538,
+      "type": "header",
+      "name": "Jayden Daniels [600x400]",
+      "caption": "\"I think those scars help,\" Commanders coach Dan Quinn said Monday night, referring to Jayden Daniels' ill-advised late-game moments from earlier this season. The quarterback has now led back-to-back game-winning drives, against the Giants and Bengals. \n",
+      "credit": "Geoff Burke/Imagn Images",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1124/r1750517_600x400_3-2.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Commanders pull off improbable win with late catch and walk-off FG",
+      "caption": "Commanders pull off improbable win with late catch and walk-off FG",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1123/3003b28bc9544f378a65368188bb210f1411/3003b28bc9544f378a65368188bb210f1411.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 390109,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4426348",
+      "guid": "f03f3238-b035-6f0e-5844-1529ca021c3a",
+      "description": "Jayden Daniels",
+      "sportId": 28,
+      "athleteId": 4426348,
+      "athlete": {
+       "id": 4426348,
+       "description": "Jayden Daniels",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4426348/jayden-daniels"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4426348/jayden-daniels"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1462,
+      "type": "team",
+      "uid": "s:20~l:28~t:28",
+      "guid": "fbeaf73e-6d6c-cca4-0809-713d9d741f90",
+      "description": "Washington Commanders",
+      "sportId": 28,
+      "teamId": 28,
+      "team": {
+       "id": 28,
+       "description": "Washington Commanders",
+       "abbreviation": "WSH",
+       "shortDisplayName": "Commanders",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/wsh/washington-commanders"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 696301,
+      "type": "contributor",
+      "guid": "6888b558-4336-3c01-93b4-d2a5fa77172d",
+      "description": "John Keim",
+      "slug": "john-keim",
+      "contributor": {
+       "id": 2316,
+       "description": "John Keim"
+      }
+     }
+    ],
+    "byline": "John Keim",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50580514"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50580514"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50580514"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50580514/jayden-daniels-delivers-another-late-game-drive-commanders-win-vs-bengals-mnf"
+     }
+    },
+    "premium": false
+   },
    {
     "id": 50580069,
     "nowId": "1-50580069",
@@ -4553,282 +4706,72 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50578357,
-    "nowId": "1-50578357",
-    "contentKey": "50578357-1-5-1",
-    "dataSourceIdentifier": "2e03802a310dc",
-    "type": "HeadlineNews",
-    "headline": "Seahawks to monitor Sam Darnold status this week before final call vs. 49ers",
-    "description": "The Seahawks still plan to start Sam Darnold against the 49ers but will wait to see how the QB looks in practice Wednesday before making a final call.",
-    "lastModified": "2026-11-24T02:21:45Z",
-    "published": "2026-11-24T02:21:45Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "5d42abc9818fb",
-      "id": 50365443,
-      "type": "header",
-      "name": "Sam Darnold IA [600x600]",
-      "caption": "Quarterback Sam Darnold struggled against the Bears defense in Seattle's Monday night loss.",
-      "credit": "AP Photo/Stephen Brashear",
-      "height": 600,
-      "width": 600,
-      "url": "https://a.espncdn.com/photo/2026/1103/r1740370_600x600_1-1.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1693,
-      "type": "team",
-      "uid": "s:20~l:28~t:26",
-      "guid": "3767a23c-a17d-294f-288a-9086ad1f0680",
-      "description": "Seattle Seahawks",
-      "sportId": 28,
-      "teamId": 26,
-      "team": {
-       "id": 26,
-       "description": "Seattle Seahawks",
-       "abbreviation": "SEA",
-       "shortDisplayName": "Seahawks",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sea/seattle-seahawks"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sea/seattle-seahawks"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     },
-     {
-      "id": 184497,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:3912547",
-      "guid": "938f19a1-ef9b-618c-2365-d55291e0fcc6",
-      "description": "Sam Darnold",
-      "sportId": 28,
-      "athleteId": 3912547,
-      "athlete": {
-       "id": 3912547,
-       "description": "Sam Darnold",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3912547/sam-darnold"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3912547/sam-darnold"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1637,
-      "type": "team",
-      "uid": "s:20~l:28~t:25",
-      "guid": "985a261f-296c-c95c-32a5-addc4df75001",
-      "description": "San Francisco 49ers",
-      "sportId": 28,
-      "teamId": 25,
-      "team": {
-       "id": 25,
-       "description": "San Francisco 49ers",
-       "abbreviation": "SF",
-       "shortDisplayName": "49ers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/sf/san-francisco-49ers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 696377,
-      "type": "contributor",
-      "guid": "30f83980-4ee4-338b-a7dc-3d67220efd61",
-      "description": "Brady Henderson",
-      "slug": "brady-henderson",
-      "contributor": {
-       "id": 3118,
-       "description": "Brady Henderson"
-      }
-     }
-    ],
-    "byline": "Brady Henderson",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50578357"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50578357"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50578357"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50578357/seahawks-holding-final-sam-darnold-call-vs-49ers"
-     }
-    },
-    "premium": false
    }
   ]
  },
- "videos": [
-  {
-   "id": 50575243,
-   "cerebroId": "6b048b227f6a5e2e363a09c1",
-   "source": "espn",
-   "headline": "Adam Schefter: Micah Parsons could make season debut Wednesday night",
-   "description": "Adam Schefter: Micah Parsons could make season debut Wednesday night",
-   "lastModified": "2026-11-23T19:07:14Z",
-   "originalPublishDate": "2026-11-23T18:51:14Z",
-   "duration": 57,
-   "timeRestrictions": {
-    "embargoDate": "2026-11-23T18:51:12Z",
-    "expirationDate": "2026-11-26T01:00:00Z"
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
    },
-   "deviceRestrictions": {
-    "devices": [
-     "settop",
-     "tablet",
-     "handset",
-     "ipad",
-     "desktop"
-    ],
-    "type": "whitelist"
+   {
+    "ticketName": "All Rams Tickets",
+    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets--sports-nfl-football/performer/808?wsUser=717",
+    "type": "team"
    },
-   "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1123/ss_20261123_135115369_3758096842/ss_20261123_135115369_3758096842.jpg",
-   "links": {
-    "api": {
-     "artwork": {
-      "href": "https://artwork.api.espn.com/artwork/collections/media/2f2a3c08-1e4f-4458-b914-440791a89944"
-     },
-     "self": {
-      "href": "https://content.core.api.espn.com/v1/video/clips/50575243"
-     }
-    },
-    "mobile": {
-     "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2f2a3c08-1e4f-4458-b914-440791a89944/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night",
-     "alert": {
-      "href": "https://m.espn.com/general/video/videoAlert?vid=50575243"
-     },
-     "progressiveDownload": {
-      "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2f2a3c08-1e4f-4458-b914-440791a89944/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night"
-     },
-     "source": {
-      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
-     },
-     "streaming": {
-      "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2f2a3c08-1e4f-4458-b914-440791a89944/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night"
-     }
-    },
-    "source": {
-     "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4",
-     "HD": {
-      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
-     },
-     "HLS": {
-      "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096/playlist.m3u8",
-      "HD": {
-       "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096/playlist.m3u8"
-      },
-      "cmaf": {
-       "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096/playlist.m3u8"
-      },
-      "shield": {
-       "href": "https://watch.auth.api.espn.com/video/auth/media/2f2a3c08-1e4f-4458-b914-440791a89944/asset"
-      }
-     },
-     "flash": {
-      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
-     },
-     "full": {
-      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
-     },
-     "mezzanine": {
-      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
-     }
-    },
-    "sportscenter": {
-     "href": "sportscenter://x-callback-url/showVideo?videoID=50575243&videoDSI=a05e2a5dc1214"
-    },
-    "web": {
-     "href": "https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night",
-     "self": {
-      "href": "https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night",
-      "dsi": {
-       "href": "https://www.espn.com/video/clip?id=a05e2a5dc1214"
-      }
-     }
-    }
+   {
+    "ticketName": "11/25 vs Packers 2845 tickets left",
+    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-6-2026/production/6491630?wsUser=717",
+    "type": "event"
    },
-   "ad": {
-    "bundle": "mcafeeespn",
-    "sport": "nfl"
+   {
+    "ticketName": "12/3 vs Chiefs 5705 tickets left",
+    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-7-2026/production/6491638?wsUser=717",
+    "type": "event"
    },
-   "tracking": {
-    "coverageType": "Analysis",
-    "leagueName": "NFL",
-    "program": "The Pat McAfee Show",
-    "sportName": "football",
-    "trackingId": "dm_NFL_adam_schefter_micah_parsons_could_make_season_debut_wednesday_night",
-    "trackingName": "COM_NFL Analysis (Adam Schefter: Micah Parsons could make season debut Wednesday night) 2026/11/23 ESHEET TPMS"
+   {
+    "ticketName": "12/13 @ 49ers 6344 tickets left",
+    "ticketLink": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-2-2027/production/6495873?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 vs Cowboys 4725 tickets left",
+    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-4-2026/production/6491606?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/25 @ Seahawks 4165 tickets left",
+    "ticketLink": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-2-2027/production/6492955?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/3 @ Buccaneers 6724 tickets left",
+    "ticketLink": "https://www.vividseats.com/tampa-bay-buccaneers-tickets-tampa-raymond-james-stadium-3-6-2027/production/6496275?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Seahawks 6423 tickets left",
+    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-1-2026/production/6491548?wsUser=717",
+    "type": "event"
    }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Packers",
+   "currentTeamName": "Rams",
+   "venueName": "SoFi Stadium",
+   "summary": "Tickets as low as $146",
+   "date": "2026-11-26T01:00Z",
+   "dateDay": "Wed",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-6-2026/production/6491630?wsUser=717",
+   "venueLink": "https://www.vividseats.com/sofi-stadium-tickets/venue/21877?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/los-angeles-rams-tickets--sports-nfl-football/performer/808?wsUser=717",
+   "timeValid": true
   }
- ],
+ },
  "header": {
   "id": "401873079",
   "uid": "s:20~l:28~e:401873079",
@@ -5128,7 +5071,7 @@
           "full",
           "dark"
          ],
-         "lastUpdated": "2024-10-30T17:26Z"
+         "lastUpdated": "2024-06-25T18:49Z"
         },
         {
          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
@@ -5346,8 +5289,8 @@
       "awayTeamOdds": {
        "favorite": false,
        "underdog": true,
-       "moneyLine": 114,
-       "spreadOdds": -104.0,
+       "moneyLine": 113,
+       "spreadOdds": -110.0,
        "open": {
         "favorite": false,
         "pointSpread": {
@@ -5377,20 +5320,20 @@
          "american": "+2.5"
         },
         "spread": {
-         "value": 1.96,
-         "displayValue": "25/26",
-         "alternateDisplayValue": "-104",
-         "decimal": 1.96,
-         "fraction": "25/26",
-         "american": "-104"
+         "value": 1.9,
+         "displayValue": "10/11",
+         "alternateDisplayValue": "-110",
+         "decimal": 1.9,
+         "fraction": "10/11",
+         "american": "-110"
         },
         "moneyLine": {
-         "value": 2.14,
-         "displayValue": "57/50",
-         "alternateDisplayValue": "+114",
-         "decimal": 2.14,
-         "fraction": "57/50",
-         "american": "+114"
+         "value": 2.13,
+         "displayValue": "113/100",
+         "alternateDisplayValue": "+113",
+         "decimal": 2.13,
+         "fraction": "113/100",
+         "american": "+113"
         }
        },
        "team": {
@@ -5400,8 +5343,8 @@
       "homeTeamOdds": {
        "favorite": true,
        "underdog": false,
-       "moneyLine": -135,
-       "spreadOdds": -115.0,
+       "moneyLine": -134,
+       "spreadOdds": -109.0,
        "open": {
         "favorite": true,
         "pointSpread": {
@@ -5431,20 +5374,20 @@
          "american": "-2.5"
         },
         "spread": {
-         "value": 1.86,
-         "displayValue": "20/23",
-         "alternateDisplayValue": "-115",
-         "decimal": 1.86,
-         "fraction": "20/23",
-         "american": "-115"
+         "value": 1.91,
+         "displayValue": "100/109",
+         "alternateDisplayValue": "-109",
+         "decimal": 1.91,
+         "fraction": "100/109",
+         "american": "-109"
         },
         "moneyLine": {
          "value": 1.74,
-         "displayValue": "20/27",
-         "alternateDisplayValue": "-135",
+         "displayValue": "50/67",
+         "alternateDisplayValue": "-134",
          "decimal": 1.74,
-         "fraction": "20/27",
-         "american": "-135"
+         "fraction": "50/67",
+         "american": "-134"
         }
        },
        "team": {
@@ -5903,70 +5846,110 @@
    ]
   }
  },
- "wallclockAvailable": false,
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
+ "videos": [
+  {
+   "id": 50575243,
+   "cerebroId": "6b048b227f6a5e2e363a09c1",
+   "source": "espn",
+   "headline": "Adam Schefter: Micah Parsons could make season debut Wednesday night",
+   "description": "Adam Schefter: Micah Parsons could make season debut Wednesday night",
+   "lastModified": "2026-11-23T19:07:14Z",
+   "originalPublishDate": "2026-11-23T18:51:14Z",
+   "duration": 57,
+   "timeRestrictions": {
+    "embargoDate": "2026-11-23T18:51:12Z",
+    "expirationDate": "2026-11-26T01:00:00Z"
    },
-   {
-    "ticketName": "All Rams Tickets",
-    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets--sports-nfl-football/performer/808?wsUser=717",
-    "type": "team"
+   "deviceRestrictions": {
+    "devices": [
+     "settop",
+     "tablet",
+     "handset",
+     "ipad",
+     "desktop"
+    ],
+    "type": "whitelist"
    },
-   {
-    "ticketName": "11/25 vs Packers 2867 tickets left",
-    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-6-2026/production/6491630?wsUser=717",
-    "type": "event"
+   "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1123/ss_20261123_135115369_3758096842/ss_20261123_135115369_3758096842.jpg",
+   "links": {
+    "api": {
+     "artwork": {
+      "href": "https://artwork.api.espn.com/artwork/collections/media/2f2a3c08-1e4f-4458-b914-440791a89944"
+     },
+     "self": {
+      "href": "https://content.core.api.espn.com/v1/video/clips/50575243"
+     }
+    },
+    "mobile": {
+     "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2f2a3c08-1e4f-4458-b914-440791a89944/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night",
+     "alert": {
+      "href": "https://m.espn.com/general/video/videoAlert?vid=50575243"
+     },
+     "progressiveDownload": {
+      "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2f2a3c08-1e4f-4458-b914-440791a89944/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night"
+     },
+     "source": {
+      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
+     },
+     "streaming": {
+      "href": "https://watch.auth.api.espn.com/video/auth/brightcove/2f2a3c08-1e4f-4458-b914-440791a89944/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night"
+     }
+    },
+    "source": {
+     "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4",
+     "HD": {
+      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
+     },
+     "HLS": {
+      "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096/playlist.m3u8",
+      "HD": {
+       "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096/playlist.m3u8"
+      },
+      "cmaf": {
+       "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096/playlist.m3u8"
+      },
+      "shield": {
+       "href": "https://watch.auth.api.espn.com/video/auth/media/2f2a3c08-1e4f-4458-b914-440791a89944/asset"
+      }
+     },
+     "flash": {
+      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
+     },
+     "full": {
+      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
+     },
+     "mezzanine": {
+      "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/2026/1123/ss_20261123_135115369_3758096/ss_20261123_135115369_3758096.mp4"
+     }
+    },
+    "sportscenter": {
+     "href": "sportscenter://x-callback-url/showVideo?videoID=50575243&videoDSI=a05e2a5dc1214"
+    },
+    "web": {
+     "href": "https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night",
+     "self": {
+      "href": "https://www.espn.com/video/clip/_/id/50575243/micah-parsons-make-season-debut-wednesday-night",
+      "dsi": {
+       "href": "https://www.espn.com/video/clip?id=a05e2a5dc1214"
+      }
+     }
+    }
    },
-   {
-    "ticketName": "12/3 vs Chiefs 5686 tickets left",
-    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-7-2026/production/6491638?wsUser=717",
-    "type": "event"
+   "ad": {
+    "bundle": "mcafeeespn",
+    "sport": "nfl"
    },
-   {
-    "ticketName": "12/13 @ 49ers 6365 tickets left",
-    "ticketLink": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-2-2027/production/6495873?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 vs Cowboys 4723 tickets left",
-    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-4-2026/production/6491606?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/25 @ Seahawks 4165 tickets left",
-    "ticketLink": "https://www.vividseats.com/seattle-seahawks-tickets-seattle-lumen-field-3-2-2027/production/6492955?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/3 @ Buccaneers 6724 tickets left",
-    "ticketLink": "https://www.vividseats.com/tampa-bay-buccaneers-tickets-tampa-raymond-james-stadium-3-6-2027/production/6496275?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Seahawks 6423 tickets left",
-    "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-1-2026/production/6491548?wsUser=717",
-    "type": "event"
+   "tracking": {
+    "coverageType": "Analysis",
+    "leagueName": "NFL",
+    "program": "The Pat McAfee Show",
+    "sportName": "football",
+    "trackingId": "dm_NFL_adam_schefter_micah_parsons_could_make_season_debut_wednesday_night",
+    "trackingName": "COM_NFL Analysis (Adam Schefter: Micah Parsons could make season debut Wednesday night) 2026/11/23 ESHEET TPMS"
    }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Packers",
-   "currentTeamName": "Rams",
-   "venueName": "SoFi Stadium",
-   "summary": "Tickets as low as $146",
-   "date": "2026-11-26T01:00Z",
-   "dateDay": "Wed",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-6-2026/production/6491630?wsUser=717",
-   "venueLink": "https://www.vividseats.com/sofi-stadium-tickets/venue/21877?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/los-angeles-rams-tickets--sports-nfl-football/performer/808?wsUser=717",
-   "timeValid": true
   }
- },
+ ],
+ "wallclockAvailable": false,
  "meta": {
   "gp_topic": "gp-football-nfl-401873079",
   "gameSwitcherEnabled": true,
