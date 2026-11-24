@@ -593,7 +593,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/wsh.png"
        },
-       "score": "0",
+       "score": "7",
        "linescores": [
         {
          "value": 0.0,
@@ -601,8 +601,8 @@
          "period": 1
         },
         {
-         "value": 0.0,
-         "displayValue": "0",
+         "value": 7.0,
+         "displayValue": "7",
          "period": 2
         }
        ],
@@ -774,70 +774,71 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730781813",
+       "id": "4018730782015",
        "type": {
-        "id": "21",
-        "text": "Timeout",
-        "abbreviation": "TO"
+        "id": "65",
+        "text": "End of Half",
+        "abbreviation": "EH"
        },
-       "text": "Timeout #3 by CIN at 00:54.",
+       "text": "END QUARTER 2",
        "scoreValue": 0,
        "team": {
-        "id": "28"
+        "id": "4"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.1458,
-        "awayWinPercentage": 0.8542,
+        "homeWinPercentage": 0.2386,
+        "awayWinPercentage": 0.7614,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "6 plays, 41 yards, 0:52",
+        "description": "1 play, -1 yard, 0:12",
         "start": {
-         "yardLine": 21,
-         "text": "WSH 21"
+         "yardLine": 69,
+         "text": "CIN 31"
+        },
+        "end": {
+         "yardLine": 69,
+         "text": "CIN 31"
         },
         "timeElapsed": {
-         "displayValue": "0:52"
-        }
+         "displayValue": "0:12"
+        },
+        "result": "END OF HALF"
        },
        "start": {
-        "yardLine": 62,
+        "yardLine": 70,
         "team": {
-         "id": "28"
+         "id": "4"
         }
        },
        "end": {
-        "yardLine": 62,
+        "yardLine": 70,
         "team": {
-         "id": "28"
+         "id": "4"
         }
        }
       },
-      "down": 2,
-      "yardLine": 62,
-      "distance": 7,
-      "downDistanceText": "2nd & 7 at CIN 38",
-      "shortDownDistanceText": "2nd & 7",
-      "possessionText": "CIN 38",
+      "down": 1,
+      "yardLine": 70,
+      "distance": 11,
       "isRedZone": false,
       "homeTimeouts": 3,
-      "awayTimeouts": 0,
-      "possession": "28"
+      "awayTimeouts": 3
      },
      "status": {
-      "clock": 54.0,
-      "displayClock": "0:54",
+      "clock": 0.0,
+      "displayClock": "0:00",
       "period": 2,
       "type": {
-       "id": "2",
-       "name": "STATUS_IN_PROGRESS",
+       "id": "23",
+       "name": "STATUS_HALFTIME",
        "state": "in",
        "completed": false,
-       "description": "In Progress",
-       "detail": "0:54 - 2nd Quarter",
-       "shortDetail": "0:54 - 2nd"
+       "description": "Halftime",
+       "detail": "Halftime",
+       "shortDetail": "Halftime"
       },
       "isTBDFlex": false
      },
@@ -897,8 +898,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "4 CAR, 21 YDS",
-         "value": 21.0,
+         "displayValue": "5 CAR, 22 YDS, 1 TD",
+         "value": 22.0,
          "athlete": {
           "id": "4575131",
           "fullName": "Jacory Croskey-Merritt",
@@ -1057,10 +1058,10 @@
     }
    ],
    "weather": {
-    "displayValue": "12",
+    "displayValue": "38",
     "temperature": 53,
     "highTemperature": 53,
-    "conditionId": "Light rain",
+    "conditionId": "Mostly cloudy",
     "link": {
      "language": "en-US",
      "rel": [
@@ -1074,17 +1075,17 @@
     }
    },
    "status": {
-    "clock": 54.0,
-    "displayClock": "0:54",
+    "clock": 0.0,
+    "displayClock": "0:00",
     "period": 2,
     "type": {
-     "id": "2",
-     "name": "STATUS_IN_PROGRESS",
+     "id": "23",
+     "name": "STATUS_HALFTIME",
      "state": "in",
      "completed": false,
-     "description": "In Progress",
-     "detail": "0:54 - 2nd Quarter",
-     "shortDetail": "0:54 - 2nd"
+     "description": "Halftime",
+     "detail": "Halftime",
+     "shortDetail": "Halftime"
     }
    }
   },
@@ -4681,6 +4682,116 @@
        "region": "us"
       }
      ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 The Detroit Lions are finding their groove, leaning on a balanced attack offensively and a steadily improving defense that hasn't been hurt by the losses of ",
+       "shortLinkText": "Jared Goff throws 2 TDs, Jahmyr Gibbs runs for 2 more and Lions beat Bucs 31-21 for 6th straight win",
+       "video": [
+        {
+         "id": 50565430,
+         "source": "espn",
+         "headline": "Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.jpg",
+         "duration": 63,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261122_NFL_tampa_bay_buccaneers_vs_detroit_lions_game_highlights",
+          "trackingName": "NFL_One-Play (Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights) 2026/11/22 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/c018fd04-39dd-4b35-9ab9-06353f66e92d"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50565430"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50565430"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50565430&videoDSI=9463dd92e41c3"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50565430/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50565430/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=9463dd92e41c3"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
      "highlights": [
       {
        "id": 50565430,
@@ -4794,116 +4905,6 @@
         "trackingId": "dm_20261122_NFL_tampa_bay_buccaneers_vs_detroit_lions_game_highlights",
         "trackingName": "NFL_One-Play (Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights) 2026/11/22 ESHEET"
        }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 The Detroit Lions are finding their groove, leaning on a balanced attack offensively and a steadily improving defense that hasn't been hurt by the losses of ",
-       "shortLinkText": "Jared Goff throws 2 TDs, Jahmyr Gibbs runs for 2 more and Lions beat Bucs 31-21 for 6th straight win",
-       "video": [
-        {
-         "id": 50565430,
-         "source": "espn",
-         "headline": "Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.jpg",
-         "duration": 63,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261122_NFL_tampa_bay_buccaneers_vs_detroit_lions_game_highlights",
-          "trackingName": "NFL_One-Play (Tampa Bay Buccaneers vs. Detroit Lions: Game Highlights) 2026/11/22 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/c018fd04-39dd-4b35-9ab9-06353f66e92d"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50565430"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50565430"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50565430/game-highlights"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/c018fd04-39dd-4b35-9ab9-06353f66e92d/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1122/e00e71c3-755b-4a2c-853f-3367f6e4ff36/e00e71c3-755b-4a2c-853f-3367f6e4ff36.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50565430&videoDSI=9463dd92e41c3"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50565430/game-highlights",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50565430/game-highlights",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=9463dd92e41c3"
-            }
-           }
-          }
-         }
-        }
-       ]
       }
      ]
     }
