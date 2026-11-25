@@ -284,6 +284,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "22",
       "uid": "s:20~l:28~t:22",
@@ -348,9 +350,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png"
     },
     {
      "id": "401873021",
@@ -640,8 +640,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "22",
       "uid": "s:20~l:28~t:22",
@@ -706,7 +704,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   },
@@ -887,8 +887,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "8",
       "uid": "s:20~l:28~t:8",
@@ -953,7 +951,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873023",
@@ -3288,6 +3288,18 @@
    "records": []
   }
  ],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "14",
+   "gameProjection": "67.2"
+  },
+  "awayTeam": {
+   "id": "9",
+   "gameProjection": "32.6"
+  }
+ },
+ "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -4120,18 +4132,6 @@
    }
   ]
  },
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "14",
-   "gameProjection": "67.2"
-  },
-  "awayTeam": {
-   "id": "9",
-   "gameProjection": "32.6"
-  }
- },
- "winprobability": [],
  "header": {
   "id": "401873079",
   "uid": "s:20~l:28~e:401873079",
@@ -5735,12 +5735,6 @@
   }
  ],
  "wallclockAvailable": false,
- "meta": {
-  "gp_topic": "gp-football-nfl-401873079",
-  "gameSwitcherEnabled": true,
-  "picker_topic": "picker-football-nfl",
-  "gameState": "pre"
- },
  "ticketsInfo": {
   "tickets": [
    {
@@ -5803,6 +5797,12 @@
    "teamLink": "https://www.vividseats.com/los-angeles-rams-tickets--sports-nfl-football/performer/808?wsUser=717",
    "timeValid": true
   }
+ },
+ "meta": {
+  "gp_topic": "gp-football-nfl-401873079",
+  "gameSwitcherEnabled": true,
+  "picker_topic": "picker-football-nfl",
+  "gameState": "pre"
  },
  "standings": {
   "fullViewLink": {
