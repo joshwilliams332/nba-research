@@ -312,6 +312,10 @@ td .logo { vertical-align: middle; margin-right: 4px; }
 .dvp .heads { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 6px 0 12px; }
 .dvp .heads > div { background: var(--card2); border-radius: 12px; padding: 10px 12px; min-width: 0; }
 .dvp tr.me td { background: var(--card2); }
+/* Combo stat split on the matchup card: PRA · PTS · REB · AST. */
+.dvpparts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.dvpparts button { font: inherit; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card2); color: var(--muted); cursor: pointer; }
+.dvpparts button.on { background: var(--accent); border-color: var(--accent); color: #111; }
 @media (max-width: 420px) { .rates.r5 > div { font-size: 12px; } .rates.r5 small { font-size: 9px; letter-spacing: .02em; } }
 
 /* ---------- teammate boost and confidence */
