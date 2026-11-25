@@ -697,6 +697,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "6-4"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "3-2"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "3-2"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -817,24 +835,6 @@
            }
           }
          ]
-        }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "6-4"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "3-2"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "3-2"
         }
        ]
       }
@@ -996,7 +996,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $267",
-       "numberAvailable": 1148,
+       "numberAvailable": 1097,
        "links": [
         {
          "href": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-6-2026/production/6491630?wsUser=717"
@@ -1049,7 +1049,7 @@
         "displayName": "DraftKings"
        },
        "details": "LAR -2.5",
-       "overUnder": 43.5,
+       "overUnder": 44.5,
        "spread": -2.5,
        "awayTeamOdds": {
         "favorite": false,
@@ -1082,7 +1082,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-134",
+          "odds": "-138",
           "link": {
            "language": "en-US",
            "rel": [
@@ -1114,7 +1114,7 @@
         },
         "away": {
          "close": {
-          "odds": "+114",
+          "odds": "+117",
           "link": {
            "language": "en-US",
            "rel": [
@@ -1151,7 +1151,7 @@
         "home": {
          "close": {
           "line": "-2.5",
-          "odds": "-109",
+          "odds": "-113",
           "link": {
            "language": "en-US",
            "rel": [
@@ -1185,7 +1185,7 @@
         "away": {
          "close": {
           "line": "+2.5",
-          "odds": "-110",
+          "odds": "-106",
           "link": {
            "language": "en-US",
            "rel": [
@@ -1222,8 +1222,8 @@
         "shortDisplayName": "Total",
         "over": {
          "close": {
-          "line": "o43.5",
-          "odds": "-121",
+          "line": "o44.5",
+          "odds": "-107",
           "link": {
            "language": "en-US",
            "rel": [
@@ -1231,7 +1231,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118092%3Foutcomes%3D0OU84695525O4350_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118092%3Foutcomes%3D0OU84695525O4450_1",
            "text": "Over Odds",
            "shortText": "Over Odds",
            "isExternal": true,
@@ -1244,7 +1244,7 @@
              "gameId": 401873079,
              "betSide": "over",
              "betType": "straight",
-             "betDetails": "Over:43.5"
+             "betDetails": "Over:44.5"
             }
            }
           }
@@ -1256,8 +1256,8 @@
         },
         "under": {
          "close": {
-          "line": "u43.5",
-          "odds": "+101",
+          "line": "u44.5",
+          "odds": "-112",
           "link": {
            "language": "en-US",
            "rel": [
@@ -1265,7 +1265,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118092%3Foutcomes%3D0OU84695525U4350_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118092%3Foutcomes%3D0OU84695525U4450_3",
            "text": "Under Odds",
            "shortText": "Under Odds",
            "isExternal": true,
@@ -1278,7 +1278,7 @@
              "gameId": 401873079,
              "betSide": "under",
              "betType": "straight",
-             "betDetails": "Under:43.5"
+             "betDetails": "Under:44.5"
             }
            }
           }
@@ -1345,16 +1345,16 @@
     }
    ],
    "weather": {
-    "displayValue": "Mostly clear",
+    "displayValue": "Clear",
     "temperature": 70,
     "highTemperature": 70,
-    "conditionId": "34",
+    "conditionId": "33",
     "link": {
      "language": "en-US",
      "rel": [
       "90301"
      ],
-     "href": "http://www.accuweather.com/en/us/sofi-stadium-ca/90301/hourly-weather-forecast/209205_poi?day=2&hbhhour=17&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/sofi-stadium-ca/90301/hourly-weather-forecast/209205_poi?day=1&hbhhour=17&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -2076,7 +2076,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $279",
-       "numberAvailable": 1303,
+       "numberAvailable": 5344,
        "links": [
         {
          "href": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-1-2026/production/6489807?wsUser=717"
@@ -2230,7 +2230,7 @@
         "home": {
          "close": {
           "line": "+1.5",
-          "odds": "-112",
+          "odds": "-109",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2264,7 +2264,7 @@
         "away": {
          "close": {
           "line": "-1.5",
-          "odds": "-107",
+          "odds": "-110",
           "link": {
            "language": "en-US",
            "rel": [
@@ -3154,8 +3154,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $50",
-       "numberAvailable": 4361,
+       "summary": "Tickets as low as $48",
+       "numberAvailable": 4311,
        "links": [
         {
          "href": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-1-2026/production/6489456?wsUser=717"
@@ -3240,7 +3240,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-471",
+          "odds": "-469",
           "link": {
            "language": "en-US",
            "rel": [
@@ -3272,7 +3272,7 @@
         },
         "away": {
          "close": {
-          "odds": "+365",
+          "odds": "+363",
           "link": {
            "language": "en-US",
            "rel": [
@@ -3381,7 +3381,7 @@
         "over": {
          "close": {
           "line": "o48.5",
-          "odds": "-104",
+          "odds": "-106",
           "link": {
            "language": "en-US",
            "rel": [
@@ -3415,7 +3415,7 @@
         "under": {
          "close": {
           "line": "u48.5",
-          "odds": "-116",
+          "odds": "-113",
           "link": {
            "language": "en-US",
            "rel": [
@@ -3504,15 +3504,15 @@
    ],
    "weather": {
     "displayValue": "Mostly sunny",
-    "temperature": 56,
-    "highTemperature": 56,
+    "temperature": 57,
+    "highTemperature": 57,
     "conditionId": "2",
     "link": {
      "language": "en-US",
      "rel": [
       "76011"
      ],
-     "href": "http://www.accuweather.com/en/us/at-t-stadium-tx/76010/hourly-weather-forecast/53644_poi?day=3&hbhhour=15&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/at-t-stadium-tx/76010/hourly-weather-forecast/53644_poi?day=2&hbhhour=15&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -4234,7 +4234,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $239",
-       "numberAvailable": 2502,
+       "numberAvailable": 2494,
        "links": [
         {
          "href": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-6-2026/production/6488364?wsUser=717"
@@ -4286,7 +4286,7 @@
         ]
        },
        "details": "BUF -3",
-       "overUnder": 47.5,
+       "overUnder": 46.5,
        "spread": -3.0,
        "awayTeamOdds": {
         "favorite": false,
@@ -4319,7 +4319,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-149",
+          "odds": "-150",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4351,7 +4351,7 @@
         },
         "away": {
          "close": {
-          "odds": "+126",
+          "odds": "+127",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4459,8 +4459,8 @@
         "shortDisplayName": "Total",
         "over": {
          "close": {
-          "line": "o47.5",
-          "odds": "-102",
+          "line": "o46.5",
+          "odds": "-117",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4468,7 +4468,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642O4750_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642O4650_1",
            "text": "Over Odds",
            "shortText": "Over Odds",
            "isExternal": true,
@@ -4481,7 +4481,7 @@
              "gameId": 401873082,
              "betSide": "over",
              "betType": "straight",
-             "betDetails": "Over:47.5"
+             "betDetails": "Over:46.5"
             }
            }
           }
@@ -4493,8 +4493,8 @@
         },
         "under": {
          "close": {
-          "line": "u47.5",
-          "odds": "-117",
+          "line": "u46.5",
+          "odds": "-102",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4502,7 +4502,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642U4750_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642U4650_3",
            "text": "Under Odds",
            "shortText": "Under Odds",
            "isExternal": true,
@@ -4515,7 +4515,7 @@
              "gameId": 401873082,
              "betSide": "under",
              "betType": "straight",
-             "betDetails": "Under:47.5"
+             "betDetails": "Under:46.5"
             }
            }
           }
@@ -4582,10 +4582,10 @@
     }
    ],
    "weather": {
-    "displayValue": "Rain",
+    "displayValue": "Cloudy",
     "temperature": 36,
     "highTemperature": 36,
-    "conditionId": "18",
+    "conditionId": "7",
     "link": {
      "language": "en-US",
      "rel": [
@@ -5312,8 +5312,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $131",
-       "numberAvailable": 1621,
+       "summary": "Tickets as low as $130",
+       "numberAvailable": 1619,
        "links": [
         {
          "href": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-6-2027/production/6495152?wsUser=717"
@@ -5398,7 +5398,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+165",
+          "odds": "+171",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5430,7 +5430,7 @@
         },
         "away": {
          "close": {
-          "odds": "-197",
+          "odds": "-204",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5467,7 +5467,7 @@
         "home": {
          "close": {
           "line": "+3.5",
-          "odds": "-112",
+          "odds": "-103",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5501,7 +5501,7 @@
         "away": {
          "close": {
           "line": "-3.5",
-          "odds": "-107",
+          "odds": "-116",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5539,7 +5539,7 @@
         "over": {
          "close": {
           "line": "o36.5",
-          "odds": "-107",
+          "odds": "-104",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5573,7 +5573,7 @@
         "under": {
          "close": {
           "line": "u36.5",
-          "odds": "-112",
+          "odds": "-116",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5661,10 +5661,10 @@
     }
    ],
    "weather": {
-    "displayValue": "Cloudy",
+    "displayValue": "Rain",
     "temperature": 42,
     "highTemperature": 42,
-    "conditionId": "7",
+    "conditionId": "18",
     "link": {
      "language": "en-US",
      "rel": [
@@ -6392,7 +6392,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $106",
-       "numberAvailable": 3733,
+       "numberAvailable": 3735,
        "links": [
         {
          "href": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717"
@@ -7172,24 +7172,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "6-3-1"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "4-2"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-1-1"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -7310,6 +7292,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "6-3-1"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "4-2"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-1-1"
         }
        ]
       }
@@ -7471,7 +7471,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $30",
-       "numberAvailable": 3280,
+       "numberAvailable": 3271,
        "links": [
         {
          "href": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717"
@@ -7556,7 +7556,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+247",
+          "odds": "+246",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8550,7 +8550,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $45",
-       "numberAvailable": 4128,
+       "numberAvailable": 4169,
        "links": [
         {
          "href": "https://www.vividseats.com/miami-dolphins-tickets-miami-gardens-hard-rock-stadium-3-3-2026/production/6492064?wsUser=717"
@@ -9629,7 +9629,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $104",
-       "numberAvailable": 5025,
+       "numberAvailable": 5027,
        "links": [
         {
          "href": "https://www.vividseats.com/minnesota-vikings-tickets-minneapolis-us-bank-stadium-3-7-2027/production/6492314?wsUser=717"
@@ -9714,7 +9714,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-315",
+          "odds": "-324",
           "link": {
            "language": "en-US",
            "rel": [
@@ -9746,7 +9746,7 @@
         },
         "away": {
          "close": {
-          "odds": "+255",
+          "odds": "+262",
           "link": {
            "language": "en-US",
            "rel": [
@@ -9986,7 +9986,7 @@
      "rel": [
       "55415"
      ],
-     "href": "http://www.accuweather.com/en/us/us-bank-stadium-mn/55415/hourly-weather-forecast/35911_poi?day=6&hbhhour=12&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/us-bank-stadium-mn/55415/hourly-weather-forecast/35911_poi?day=5&hbhhour=12&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -10708,7 +10708,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $118",
-       "numberAvailable": 1796,
+       "numberAvailable": 1785,
        "links": [
         {
          "href": "https://www.vividseats.com/jacksonville-jaguars-tickets-jacksonville-everbank-stadium-3-3-2026/production/6490146?wsUser=717"
@@ -11056,10 +11056,10 @@
     }
    ],
    "weather": {
-    "displayValue": "Intermittent clouds",
-    "temperature": 67,
-    "highTemperature": 67,
-    "conditionId": "4",
+    "displayValue": "Partly sunny",
+    "temperature": 66,
+    "highTemperature": 66,
+    "conditionId": "3",
     "link": {
      "language": "en-US",
      "rel": [
@@ -11787,7 +11787,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $65",
-       "numberAvailable": 3306,
+       "numberAvailable": 3305,
        "links": [
         {
          "href": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717"
@@ -11872,7 +11872,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-311",
+          "odds": "-297",
           "link": {
            "language": "en-US",
            "rel": [
@@ -11904,7 +11904,7 @@
         },
         "away": {
          "close": {
-          "odds": "+252",
+          "odds": "+242",
           "link": {
            "language": "en-US",
            "rel": [
@@ -11941,7 +11941,7 @@
         "home": {
          "close": {
           "line": "-7",
-          "odds": "-106",
+          "odds": "-105",
           "link": {
            "language": "en-US",
            "rel": [
@@ -11975,7 +11975,7 @@
         "away": {
          "close": {
           "line": "+7",
-          "odds": "-113",
+          "odds": "-115",
           "link": {
            "language": "en-US",
            "rel": [
@@ -12135,16 +12135,16 @@
     }
    ],
    "weather": {
-    "displayValue": "Intermittent clouds",
+    "displayValue": "Mostly cloudy",
     "temperature": 71,
     "highTemperature": 71,
-    "conditionId": "4",
+    "conditionId": "6",
     "link": {
      "language": "en-US",
      "rel": [
       "77054"
      ],
-     "href": "http://www.accuweather.com/en/us/nrg-stadium-tx/77002/hourly-weather-forecast/43039_poi?day=6&hbhhour=12&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/nrg-stadium-tx/77002/hourly-weather-forecast/43039_poi?day=5&hbhhour=12&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -12866,7 +12866,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $58",
-       "numberAvailable": 3988,
+       "numberAvailable": 3977,
        "links": [
         {
          "href": "https://www.vividseats.com/los-angeles-chargers-tickets-inglewood-sofi-stadium-3-5-2026/production/6491361?wsUser=717"
@@ -13223,7 +13223,7 @@
      "rel": [
       "90301"
      ],
-     "href": "http://www.accuweather.com/en/us/sofi-stadium-ca/90301/hourly-weather-forecast/209205_poi?day=6&hbhhour=13&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/sofi-stadium-ca/90301/hourly-weather-forecast/209205_poi?day=5&hbhhour=13&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -13945,7 +13945,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $29",
-       "numberAvailable": 4149,
+       "numberAvailable": 4157,
        "links": [
         {
          "href": "https://www.vividseats.com/arizona-cardinals-tickets-glendale-state-farm-stadium-3-2-2026/production/6486969?wsUser=717"
@@ -14293,16 +14293,16 @@
     }
    ],
    "weather": {
-    "displayValue": "Sunny",
-    "temperature": 74,
-    "highTemperature": 74,
-    "conditionId": "1",
+    "displayValue": "Mostly sunny",
+    "temperature": 75,
+    "highTemperature": 75,
+    "conditionId": "2",
     "link": {
      "language": "en-US",
      "rel": [
       "85305"
      ],
-     "href": "http://www.accuweather.com/en/us/state-farm-stadium-az/85301/hourly-weather-forecast/53536_poi?day=6&hbhhour=14&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/state-farm-stadium-az/85301/hourly-weather-forecast/53536_poi?day=5&hbhhour=14&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -15024,7 +15024,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $227",
-       "numberAvailable": 4727,
+       "numberAvailable": 4710,
        "links": [
         {
          "href": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-3-2027/production/6495879?wsUser=717"
@@ -15075,9 +15075,9 @@
          }
         ]
        },
-       "details": "SF -3.5",
+       "details": "SF -3",
        "overUnder": 45.5,
-       "spread": -3.5,
+       "spread": -3.0,
        "awayTeamOdds": {
         "favorite": false,
         "underdog": true,
@@ -15109,7 +15109,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-179",
+          "odds": "-177",
           "link": {
            "language": "en-US",
            "rel": [
@@ -15141,7 +15141,7 @@
         },
         "away": {
          "close": {
-          "odds": "+151",
+          "odds": "+149",
           "link": {
            "language": "en-US",
            "rel": [
@@ -15177,8 +15177,8 @@
         "shortDisplayName": "Spread",
         "home": {
          "close": {
-          "line": "-3.5",
-          "odds": "-101",
+          "line": "-3",
+          "odds": "-122",
           "link": {
            "language": "en-US",
            "rel": [
@@ -15186,7 +15186,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118055%3Foutcomes%3D0HC84695488N350_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118055%3Foutcomes%3D0HC84695488N300_1",
            "text": "Home Point Spread",
            "shortText": "Home Point Spread",
            "isExternal": true,
@@ -15199,7 +15199,7 @@
              "gameId": 401873091,
              "betSide": "none",
              "betType": "straight",
-             "betDetails": "Spread:SF-3.5"
+             "betDetails": "Spread:SF-3"
             }
            }
           }
@@ -15211,8 +15211,8 @@
         },
         "away": {
          "close": {
-          "line": "+3.5",
-          "odds": "-118",
+          "line": "+3",
+          "odds": "+102",
           "link": {
            "language": "en-US",
            "rel": [
@@ -15220,7 +15220,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118055%3Foutcomes%3D0HC84695488P350_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118055%3Foutcomes%3D0HC84695488P300_3",
            "text": "Away Point Spread",
            "shortText": "Away Point Spread",
            "isExternal": true,
@@ -15233,7 +15233,7 @@
              "gameId": 401873091,
              "betSide": "none",
              "betType": "straight",
-             "betDetails": "Spread:SEA+3.5"
+             "betDetails": "Spread:SEA+3"
             }
            }
           }
@@ -15250,7 +15250,7 @@
         "over": {
          "close": {
           "line": "o45.5",
-          "odds": "-107",
+          "odds": "-105",
           "link": {
            "language": "en-US",
            "rel": [
@@ -15284,7 +15284,7 @@
         "under": {
          "close": {
           "line": "u45.5",
-          "odds": "-112",
+          "odds": "-114",
           "link": {
            "language": "en-US",
            "rel": [
@@ -15381,7 +15381,7 @@
      "rel": [
       "95054"
      ],
-     "href": "http://www.accuweather.com/en/us/levis-stadium-ca/95050/hourly-weather-forecast/53539_poi?day=6&hbhhour=13&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/levis-stadium-ca/95050/hourly-weather-forecast/53539_poi?day=5&hbhhour=13&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -16103,7 +16103,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $54",
-       "numberAvailable": 6537,
+       "numberAvailable": 6528,
        "links": [
         {
          "href": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-8-2026/production/6489440?wsUser=717"
@@ -17182,7 +17182,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $40",
-       "numberAvailable": 5883,
+       "numberAvailable": 5905,
        "links": [
         {
          "href": "https://www.vividseats.com/tampa-bay-buccaneers-tickets-tampa-raymond-james-stadium-3-2-2027/production/6496258?wsUser=717"
