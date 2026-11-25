@@ -462,8 +462,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "24",
       "uid": "s:20~l:28~t:24",
@@ -528,7 +526,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873043",
@@ -976,8 +976,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "29",
       "uid": "s:20~l:28~t:29",
@@ -1042,7 +1040,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873049",
@@ -1154,8 +1154,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "16",
       "uid": "s:20~l:28~t:16",
@@ -1220,7 +1218,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   }
@@ -3289,6 +3289,17 @@
   }
  ],
  "winprobability": [],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "14",
+   "gameProjection": "67.2"
+  },
+  "awayTeam": {
+   "id": "9",
+   "gameProjection": "32.6"
+  }
+ },
  "news": {
   "header": "NFL News",
   "link": {
@@ -3311,10 +3322,10 @@
     "contentKey": "50587324-1-5-1",
     "dataSourceIdentifier": "fc8da87f0f22c",
     "type": "HeadlineNews",
-    "headline": "Bears' Johnson has no plan to forgo Swift's role in run game despite costly fumbles",
+    "headline": "Bears' Johnson has no plan to stop using Swift in run game despite costly fumbles",
     "description": "Chicago Bears running back D'Andre Swift won't have an extended stay in Ben Johnson's doghouse after fumbling in the fourth quarter against the Saints.",
-    "lastModified": "2026-11-25T00:25:40Z",
-    "published": "2026-11-25T00:25:40Z",
+    "lastModified": "2026-11-25T00:50:49Z",
+    "published": "2026-11-25T00:50:49Z",
     "images": [
      {
       "dataSourceIdentifier": "db4871ea5ebc3",
@@ -4094,17 +4105,6 @@
     "premium": false
    }
   ]
- },
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "14",
-   "gameProjection": "67.2"
-  },
-  "awayTeam": {
-   "id": "9",
-   "gameProjection": "32.6"
-  }
  },
  "header": {
   "id": "401873079",
@@ -5709,6 +5709,12 @@
   }
  ],
  "wallclockAvailable": false,
+ "meta": {
+  "gp_topic": "gp-football-nfl-401873079",
+  "gameSwitcherEnabled": true,
+  "picker_topic": "picker-football-nfl",
+  "gameState": "pre"
+ },
  "ticketsInfo": {
   "tickets": [
    {
@@ -5722,22 +5728,22 @@
     "type": "team"
    },
    {
-    "ticketName": "11/25 vs Packers 2474 tickets left",
+    "ticketName": "11/25 vs Packers 2396 tickets left",
     "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-6-2026/production/6491630?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/3 vs Chiefs 5372 tickets left",
+    "ticketName": "12/3 vs Chiefs 5368 tickets left",
     "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-7-2026/production/6491638?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/13 @ 49ers 6569 tickets left",
+    "ticketName": "12/13 @ 49ers 6570 tickets left",
     "ticketLink": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-2-2027/production/6495873?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/20 vs Cowboys 4363 tickets left",
+    "ticketName": "12/20 vs Cowboys 4360 tickets left",
     "ticketLink": "https://www.vividseats.com/los-angeles-rams-tickets-inglewood-sofi-stadium-3-4-2026/production/6491606?wsUser=717",
     "type": "event"
    },
@@ -5761,7 +5767,7 @@
    "opponentTeamName": "Packers",
    "currentTeamName": "Rams",
    "venueName": "SoFi Stadium",
-   "summary": "Tickets as low as $142",
+   "summary": "Tickets as low as $255",
    "date": "2026-11-26T01:00Z",
    "dateDay": "Wed",
    "homeAway": "home",
@@ -5771,12 +5777,6 @@
    "teamLink": "https://www.vividseats.com/los-angeles-rams-tickets--sports-nfl-football/performer/808?wsUser=717",
    "timeValid": true
   }
- },
- "meta": {
-  "gp_topic": "gp-football-nfl-401873079",
-  "gameSwitcherEnabled": true,
-  "picker_topic": "picker-football-nfl",
-  "gameState": "pre"
  },
  "standings": {
   "fullViewLink": {
