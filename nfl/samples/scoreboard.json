@@ -441,7 +441,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lar.png"
        },
-       "score": "13",
+       "score": "20",
        "linescores": [
         {
          "value": 6.0,
@@ -452,6 +452,16 @@
          "value": 7.0,
          "displayValue": "7",
          "period": 2
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 3
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -582,7 +592,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/gb.png"
        },
-       "score": "3",
+       "score": "13",
        "linescores": [
         {
          "value": 3.0,
@@ -590,9 +600,19 @@
          "period": 1
         },
         {
+         "value": 10.0,
+         "displayValue": "10",
+         "period": 2
+        },
+        {
          "value": 0.0,
          "displayValue": "0",
-         "period": 2
+         "period": 3
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -622,94 +642,70 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730791402",
+       "id": "4018730793020",
        "type": {
-        "id": "5",
-        "text": "Rush",
-        "abbreviation": "RUSH"
+        "id": "74",
+        "text": "Official Timeout",
+        "abbreviation": "Off TO"
        },
-       "text": " (Shotgun) K.Johnson left guard to LA 6 for 3 yards (M.Garrett).",
+       "text": "Official Timeout at 14:47.",
        "scoreValue": 0,
        "team": {
-        "id": "9"
+        "id": "14"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.7892,
-        "awayWinPercentage": 0.2108,
+        "homeWinPercentage": 0.8796,
+        "awayWinPercentage": 0.12039999999999995,
         "secondsLeft": 0
        },
-       "statYardage": 3,
+       "statYardage": 0,
        "drive": {
-        "description": "6 plays, 74 yards, 2:39",
+        "description": "7 plays, 33 yards, 4:00",
         "start": {
-         "yardLine": 80,
-         "text": "GB 20"
+         "yardLine": 17,
+         "text": "LAR 17"
         },
         "timeElapsed": {
-         "displayValue": "2:39"
+         "displayValue": "4:00"
         }
        },
        "start": {
-        "yardLine": 9,
+        "yardLine": 50,
         "team": {
-         "id": "9"
+         "id": "14"
         }
        },
        "end": {
-        "yardLine": 6,
+        "yardLine": 50,
         "team": {
-         "id": "9"
+         "id": "14"
         }
-       },
-       "athletesInvolved": [
-        {
-         "id": "4819231",
-         "fullName": "Kaleb Johnson",
-         "displayName": "Kaleb Johnson",
-         "shortName": "K. Johnson",
-         "links": [
-          {
-           "rel": [
-            "playercard",
-            "desktop",
-            "athlete"
-           ],
-           "href": "https://www.espn.com/nfl/player/_/id/4819231/kaleb-johnson"
-          }
-         ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4819231.png",
-         "jersey": "26",
-         "position": "RB",
-         "team": {
-          "id": "9"
-         }
-        }
-       ]
+       }
       },
       "down": 3,
-      "yardLine": 6,
-      "distance": 6,
-      "downDistanceText": "3rd & Goal at LAR 6",
-      "shortDownDistanceText": "3rd & Goal",
-      "possessionText": "LAR 6",
-      "isRedZone": true,
+      "yardLine": 50,
+      "distance": 2,
+      "downDistanceText": "3rd & 2 at 50",
+      "shortDownDistanceText": "3rd & 2",
+      "possessionText": "50",
+      "isRedZone": false,
       "homeTimeouts": 3,
       "awayTimeouts": 3,
-      "possession": "9"
+      "possession": "14"
      },
      "status": {
-      "clock": 490.0,
-      "displayClock": "8:10",
-      "period": 2,
+      "clock": 887.0,
+      "displayClock": "14:47",
+      "period": 4,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "8:10 - 2nd Quarter",
-       "shortDetail": "8:10 - 2nd"
+       "detail": "14:47 - 4th Quarter",
+       "shortDetail": "14:47 - 4th"
       },
       "isTBDFlex": false
      },
@@ -729,8 +725,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "8/13, 130 YDS",
-         "value": 130.0,
+         "displayValue": "12/21, 154 YDS, 1 TD, 1 INT",
+         "value": 154.0,
          "athlete": {
           "id": "4036378",
           "fullName": "Jordan Love",
@@ -769,8 +765,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "5 CAR, 14 YDS",
-         "value": 14.0,
+         "displayValue": "23 CAR, 86 YDS, 1 TD",
+         "value": 86.0,
          "athlete": {
           "id": "4429096",
           "fullName": "Blake Corum",
@@ -809,13 +805,13 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "3 REC, 59 YDS",
-         "value": 59.0,
+         "displayValue": "4 REC, 69 YDS",
+         "value": 69.0,
          "athlete": {
-          "id": "4248528",
-          "fullName": "Christian Watson",
-          "displayName": "Christian Watson",
-          "shortName": "C. Watson",
+          "id": "4710855",
+          "fullName": "Konata Mumpfield",
+          "displayName": "Konata Mumpfield",
+          "shortName": "K. Mumpfield",
           "links": [
            {
             "rel": [
@@ -823,21 +819,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/4248528/christian-watson"
+            "href": "https://www.espn.com/nfl/player/_/id/4710855/konata-mumpfield"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4248528.png",
-          "jersey": "9",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4710855.png",
+          "jersey": "4",
           "position": {
            "abbreviation": "WR"
           },
           "team": {
-           "id": "9"
+           "id": "14"
           },
           "active": true
          },
          "team": {
-          "id": "9"
+          "id": "14"
          }
         }
        ]
@@ -915,10 +911,10 @@
     }
    ],
    "weather": {
-    "displayValue": "33",
-    "temperature": 67,
-    "highTemperature": 67,
-    "conditionId": "Clear",
+    "displayValue": "35",
+    "temperature": 64,
+    "highTemperature": 64,
+    "conditionId": "Partly cloudy",
     "link": {
      "language": "en-US",
      "rel": [
@@ -932,17 +928,17 @@
     }
    },
    "status": {
-    "clock": 490.0,
-    "displayClock": "8:10",
-    "period": 2,
+    "clock": 887.0,
+    "displayClock": "14:47",
+    "period": 4,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "8:10 - 2nd Quarter",
-     "shortDetail": "8:10 - 2nd"
+     "detail": "14:47 - 4th Quarter",
+     "shortDetail": "14:47 - 4th"
     }
    }
   },
@@ -1646,7 +1642,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $262",
-       "numberAvailable": 3641,
+       "numberAvailable": 3415,
        "links": [
         {
          "href": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-1-2026/production/6489807?wsUser=717"
@@ -1732,7 +1728,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+101",
+          "odds": "+102",
           "link": {
            "language": "en-US",
            "rel": [
@@ -1764,7 +1760,7 @@
         },
         "away": {
          "close": {
-          "odds": "-119",
+          "odds": "-120",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2726,7 +2722,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $51",
-       "numberAvailable": 2637,
+       "numberAvailable": 2596,
        "links": [
         {
          "href": "https://www.vividseats.com/dallas-cowboys-tickets-arlington-att-stadium-3-1-2026/production/6489456?wsUser=717"
@@ -2778,7 +2774,7 @@
         ]
        },
        "details": "DAL -8.5",
-       "overUnder": 47.5,
+       "overUnder": 48.5,
        "spread": -8.5,
        "awayTeamOdds": {
         "favorite": false,
@@ -2811,7 +2807,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-480",
+          "odds": "-471",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2843,7 +2839,7 @@
         },
         "away": {
          "close": {
-          "odds": "+370",
+          "odds": "+364",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2951,8 +2947,8 @@
         "shortDisplayName": "Total",
         "over": {
          "close": {
-          "line": "o47.5",
-          "odds": "-116",
+          "line": "o48.5",
+          "odds": "-106",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2960,7 +2956,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118122%3Foutcomes%3D0OU84695555O4750_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118122%3Foutcomes%3D0OU84695555O4850_1",
            "text": "Over Odds",
            "shortText": "Over Odds",
            "isExternal": true,
@@ -2973,7 +2969,7 @@
              "gameId": 401873080,
              "betSide": "over",
              "betType": "straight",
-             "betDetails": "Over:47.5"
+             "betDetails": "Over:48.5"
             }
            }
           }
@@ -2985,8 +2981,8 @@
         },
         "under": {
          "close": {
-          "line": "u47.5",
-          "odds": "-103",
+          "line": "u48.5",
+          "odds": "-113",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2994,7 +2990,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118122%3Foutcomes%3D0OU84695555U4750_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118122%3Foutcomes%3D0OU84695555U4850_3",
            "text": "Under Odds",
            "shortText": "Under Odds",
            "isExternal": true,
@@ -3007,7 +3003,7 @@
              "gameId": 401873080,
              "betSide": "under",
              "betType": "straight",
-             "betDetails": "Under:47.5"
+             "betDetails": "Under:48.5"
             }
            }
           }
@@ -3805,7 +3801,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $214",
-       "numberAvailable": 1472,
+       "numberAvailable": 1370,
        "links": [
         {
          "href": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-6-2026/production/6488364?wsUser=717"
@@ -3890,7 +3886,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-149",
+          "odds": "-148",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4884,7 +4880,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $107",
-       "numberAvailable": 1601,
+       "numberAvailable": 1567,
        "links": [
         {
          "href": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-6-2027/production/6495152?wsUser=717"
@@ -5962,8 +5958,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $91",
-       "numberAvailable": 3483,
+       "summary": "Tickets as low as $87",
+       "numberAvailable": 3453,
        "links": [
         {
          "href": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717"
@@ -7042,7 +7038,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $22",
-       "numberAvailable": 3023,
+       "numberAvailable": 3008,
        "links": [
         {
          "href": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717"
@@ -7127,7 +7123,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+236",
+          "odds": "+235",
           "link": {
            "language": "en-US",
            "rel": [
@@ -7159,7 +7155,7 @@
         },
         "away": {
          "close": {
-          "odds": "-287",
+          "odds": "-286",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8120,8 +8116,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $42",
-       "numberAvailable": 3903,
+       "summary": "Tickets as low as $44",
+       "numberAvailable": 3910,
        "links": [
         {
          "href": "https://www.vividseats.com/miami-dolphins-tickets-miami-gardens-hard-rock-stadium-3-3-2026/production/6492064?wsUser=717"
@@ -8206,7 +8202,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+178",
+          "odds": "+180",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8238,7 +8234,7 @@
         },
         "away": {
          "close": {
-          "odds": "-213",
+          "odds": "-216",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8275,7 +8271,7 @@
         "home": {
          "close": {
           "line": "+4.5",
-          "odds": "-115",
+          "odds": "-114",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8309,7 +8305,7 @@
         "away": {
          "close": {
           "line": "-4.5",
-          "odds": "-104",
+          "odds": "-105",
           "link": {
            "language": "en-US",
            "rel": [
@@ -9199,8 +9195,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $69",
-       "numberAvailable": 4617,
+       "summary": "Tickets as low as $74",
+       "numberAvailable": 4549,
        "links": [
         {
          "href": "https://www.vividseats.com/minnesota-vikings-tickets-minneapolis-us-bank-stadium-3-7-2027/production/6492314?wsUser=717"
@@ -10279,7 +10275,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $115",
-       "numberAvailable": 1774,
+       "numberAvailable": 1772,
        "links": [
         {
          "href": "https://www.vividseats.com/jacksonville-jaguars-tickets-jacksonville-everbank-stadium-3-3-2026/production/6490146?wsUser=717"
@@ -10364,7 +10360,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-1240",
+          "odds": "-1160",
           "link": {
            "language": "en-US",
            "rel": [
@@ -10396,7 +10392,7 @@
         },
         "away": {
          "close": {
-          "odds": "+770",
+          "odds": "+730",
           "link": {
            "language": "en-US",
            "rel": [
@@ -11357,8 +11353,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $65",
-       "numberAvailable": 3130,
+       "summary": "Tickets as low as $67",
+       "numberAvailable": 3105,
        "links": [
         {
          "href": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717"
@@ -12436,8 +12432,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $59",
-       "numberAvailable": 3771,
+       "summary": "Tickets as low as $58",
+       "numberAvailable": 3727,
        "links": [
         {
          "href": "https://www.vividseats.com/los-angeles-chargers-tickets-inglewood-sofi-stadium-3-5-2026/production/6491361?wsUser=717"
@@ -12554,7 +12550,7 @@
         },
         "away": {
          "close": {
-          "odds": "-115",
+          "odds": "-116",
           "link": {
            "language": "en-US",
            "rel": [
@@ -13515,8 +13511,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $29",
-       "numberAvailable": 3958,
+       "summary": "Tickets as low as $27",
+       "numberAvailable": 3877,
        "links": [
         {
          "href": "https://www.vividseats.com/arizona-cardinals-tickets-glendale-state-farm-stadium-3-2-2026/production/6486969?wsUser=717"
@@ -14595,7 +14591,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $216",
-       "numberAvailable": 4549,
+       "numberAvailable": 4533,
        "links": [
         {
          "href": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-3-2027/production/6495879?wsUser=717"
@@ -15674,7 +15670,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $54",
-       "numberAvailable": 5963,
+       "numberAvailable": 5881,
        "links": [
         {
          "href": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-8-2026/production/6489440?wsUser=717"
@@ -16753,7 +16749,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $40",
-       "numberAvailable": 5688,
+       "numberAvailable": 5658,
        "links": [
         {
          "href": "https://www.vividseats.com/tampa-bay-buccaneers-tickets-tampa-raymond-james-stadium-3-2-2027/production/6496258?wsUser=717"
@@ -16840,7 +16836,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-158",
+          "odds": "-157",
           "link": {
            "language": "en-US",
            "rel": [
@@ -16872,7 +16868,7 @@
         },
         "away": {
          "close": {
-          "odds": "+133",
+          "odds": "+132",
           "link": {
            "language": "en-US",
            "rel": [

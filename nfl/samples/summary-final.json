@@ -21978,6 +21978,67 @@
    "injuries": [
     {
      "status": "Injured Reserve",
+     "date": "2026-11-26T02:48Z",
+     "athlete": {
+      "id": "4685324",
+      "uid": "s:20~l:28~a:4685324",
+      "guid": "947e3ce2-e8d9-36c2-b3f2-f184ee7c1746",
+      "lastName": "Curry",
+      "fullName": "Caden Curry",
+      "displayName": "Caden Curry",
+      "shortName": "C. Curry",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4685324/caden-curry",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4685324.png",
+       "alt": "Caden Curry"
+      },
+      "jersey": "55",
+      "position": {
+       "name": "Linebacker",
+       "displayName": "Linebacker",
+       "abbreviation": "LB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4685324?lang=en&region=us"
+      },
+      "status": {
+       "id": "13",
+       "name": "Day-To-Day",
+       "type": "day-to-day",
+       "abbreviation": "Day-To-Day"
+      }
+     },
+     "type": {
+      "id": "5",
+      "name": "INJURY_STATUS_IR",
+      "description": "Injured Reserve",
+      "abbreviation": "IR"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "IR",
+       "abbreviation": "IR",
+       "displayDescription": "IR"
+      },
+      "type": "Wrist",
+      "location": "Arm",
+      "detail": "Surgery",
+      "side": "Not Specified",
+      "returnDate": "2027-02-15"
+     }
+    },
+    {
+     "status": "Injured Reserve",
      "date": "2026-11-26T01:04Z",
      "athlete": {
       "id": "4361196",
@@ -22216,67 +22277,6 @@
       "detail": "Not Specified",
       "side": "Left",
       "returnDate": "2027-01-10"
-     }
-    },
-    {
-     "status": "Injured Reserve",
-     "date": "2026-11-25T01:36Z",
-     "athlete": {
-      "id": "4685324",
-      "uid": "s:20~l:28~a:4685324",
-      "guid": "947e3ce2-e8d9-36c2-b3f2-f184ee7c1746",
-      "lastName": "Curry",
-      "fullName": "Caden Curry",
-      "displayName": "Caden Curry",
-      "shortName": "C. Curry",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/4685324/caden-curry",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4685324.png",
-       "alt": "Caden Curry"
-      },
-      "jersey": "55",
-      "position": {
-       "name": "Linebacker",
-       "displayName": "Linebacker",
-       "abbreviation": "LB"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4685324?lang=en&region=us"
-      },
-      "status": {
-       "id": "13",
-       "name": "Day-To-Day",
-       "type": "day-to-day",
-       "abbreviation": "Day-To-Day"
-      }
-     },
-     "type": {
-      "id": "5",
-      "name": "INJURY_STATUS_IR",
-      "description": "Injured Reserve",
-      "abbreviation": "IR"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "IR",
-       "abbreviation": "IR",
-       "displayDescription": "IR"
-      },
-      "type": "Wrist",
-      "location": "Arm",
-      "detail": "Surgery",
-      "side": "Not Specified",
-      "returnDate": "2027-02-15"
      }
     }
    ]
@@ -22679,530 +22679,6 @@
    "records": []
   }
  ],
- "scoringPlays": [
-  {
-   "id": "401873066277",
-   "type": {
-    "id": "59",
-    "text": "Field Goal Good",
-    "abbreviation": "FG"
-   },
-   "text": "Spencer Shrader 34 Yd Field Goal ",
-   "awayScore": 3,
-   "homeScore": 0,
-   "period": {
-    "number": 1
-   },
-   "clock": {
-    "value": 643.0,
-    "displayValue": "10:43"
-   },
-   "team": {
-    "id": "11",
-    "uid": "s:20~l:28~t:11",
-    "displayName": "Indianapolis Colts",
-    "abbreviation": "IND",
-    "links": [
-     {
-      "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts",
-      "text": "Clubhouse"
-     },
-     {
-      "href": "https://www.espn.com/nfl/team/schedule/_/name/ind",
-      "text": "Schedule"
-     }
-    ],
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-    "logos": [
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "default"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/ind.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/ind.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     }
-    ]
-   },
-   "scoringType": {
-    "name": "field-goal",
-    "displayName": "Field Goal",
-    "abbreviation": "FG"
-   }
-  },
-  {
-   "id": "401873066834",
-   "type": {
-    "id": "67",
-    "text": "Passing Touchdown",
-    "abbreviation": "TD"
-   },
-   "text": "Nico Collins 42 Yd pass from C.J. Stroud (Ka'imi Fairbairn Kick)",
-   "awayScore": 3,
-   "homeScore": 7,
-   "period": {
-    "number": 1
-   },
-   "clock": {
-    "value": 134.0,
-    "displayValue": "2:14"
-   },
-   "team": {
-    "id": "34",
-    "uid": "s:20~l:28~t:34",
-    "displayName": "Houston Texans",
-    "abbreviation": "HOU",
-    "links": [
-     {
-      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
-      "text": "Clubhouse"
-     },
-     {
-      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
-      "text": "Schedule"
-     }
-    ],
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "logos": [
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "default"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     }
-    ]
-   },
-   "scoringType": {
-    "name": "touchdown",
-    "displayName": "Touchdown",
-    "abbreviation": "TD"
-   }
-  },
-  {
-   "id": "4018730661357",
-   "type": {
-    "id": "67",
-    "text": "Passing Touchdown",
-    "abbreviation": "TD"
-   },
-   "text": "Kayshon Boutte 24 Yd pass from C.J. Stroud (Ka'imi Fairbairn Kick)",
-   "awayScore": 3,
-   "homeScore": 14,
-   "period": {
-    "number": 2
-   },
-   "clock": {
-    "value": 458.0,
-    "displayValue": "7:38"
-   },
-   "team": {
-    "id": "34",
-    "uid": "s:20~l:28~t:34",
-    "displayName": "Houston Texans",
-    "abbreviation": "HOU",
-    "links": [
-     {
-      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
-      "text": "Clubhouse"
-     },
-     {
-      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
-      "text": "Schedule"
-     }
-    ],
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "logos": [
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "default"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     }
-    ]
-   },
-   "scoringType": {
-    "name": "touchdown",
-    "displayName": "Touchdown",
-    "abbreviation": "TD"
-   }
-  },
-  {
-   "id": "4018730662101",
-   "type": {
-    "id": "59",
-    "text": "Field Goal Good",
-    "abbreviation": "FG"
-   },
-   "text": "Ka'imi Fairbairn 27 Yd Field Goal",
-   "awayScore": 3,
-   "homeScore": 17,
-   "period": {
-    "number": 2
-   },
-   "clock": {
-    "value": 15.0,
-    "displayValue": "0:15"
-   },
-   "team": {
-    "id": "34",
-    "uid": "s:20~l:28~t:34",
-    "displayName": "Houston Texans",
-    "abbreviation": "HOU",
-    "links": [
-     {
-      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
-      "text": "Clubhouse"
-     },
-     {
-      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
-      "text": "Schedule"
-     }
-    ],
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "logos": [
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "default"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     }
-    ]
-   },
-   "scoringType": {
-    "name": "field-goal",
-    "displayName": "Field Goal",
-    "abbreviation": "FG"
-   }
-  },
-  {
-   "id": "4018730662392",
-   "type": {
-    "id": "20",
-    "text": "Safety",
-    "abbreviation": "SF"
-   },
-   "text": "Daniel Jones Sacked by Will Anderson Jr. For 7 Yd Loss for Safety",
-   "awayScore": 3,
-   "homeScore": 19,
-   "period": {
-    "number": 3
-   },
-   "clock": {
-    "value": 622.0,
-    "displayValue": "10:22"
-   },
-   "team": {
-    "id": "34",
-    "uid": "s:20~l:28~t:34",
-    "displayName": "Houston Texans",
-    "abbreviation": "HOU",
-    "links": [
-     {
-      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
-      "text": "Clubhouse"
-     },
-     {
-      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
-      "text": "Schedule"
-     }
-    ],
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "logos": [
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "default"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     }
-    ]
-   },
-   "scoringType": {
-    "name": "safety",
-    "displayName": "Safety",
-    "abbreviation": "SF"
-   }
-  },
-  {
-   "id": "4018730662675",
-   "type": {
-    "id": "67",
-    "text": "Passing Touchdown",
-    "abbreviation": "TD"
-   },
-   "text": "Marlin Klein 13 Yd pass from C.J. Stroud (Ka'imi Fairbairn Kick)",
-   "awayScore": 3,
-   "homeScore": 26,
-   "period": {
-    "number": 3
-   },
-   "clock": {
-    "value": 259.0,
-    "displayValue": "4:19"
-   },
-   "team": {
-    "id": "34",
-    "uid": "s:20~l:28~t:34",
-    "displayName": "Houston Texans",
-    "abbreviation": "HOU",
-    "links": [
-     {
-      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
-      "text": "Clubhouse"
-     },
-     {
-      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
-      "text": "Schedule"
-     }
-    ],
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "logos": [
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "default"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard"
-      ],
-      "lastUpdated": "2024-06-25T18:50Z"
-     },
-     {
-      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
-      "width": 500,
-      "height": 500,
-      "alt": "",
-      "rel": [
-       "full",
-       "scoreboard",
-       "dark"
-      ],
-      "lastUpdated": "2024-06-25T18:49Z"
-     }
-    ]
-   },
-   "scoringType": {
-    "name": "touchdown",
-    "displayName": "Touchdown",
-    "abbreviation": "TD"
-   }
-  }
- ],
  "news": {
   "header": "NFL News",
   "link": {
@@ -23220,6 +22696,417 @@
   },
   "articles": [
    {
+    "id": 50600753,
+    "nowId": "1-50600753",
+    "contentKey": "50600753-1-5-1",
+    "dataSourceIdentifier": "68a73bf32036a",
+    "type": "HeadlineNews",
+    "headline": "Rams' Kam Kinchens ejected as hit leaves Packers' Christian Watson concussed",
+    "description": "Rams safety Kam Kinchens was ejected for a hit along the sideline that left Packers wide receiver Christian Watson with a concussion Wednesday night.",
+    "lastModified": "2026-11-26T03:21:06Z",
+    "published": "2026-11-26T03:21:06Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "0100a7947f055",
+      "id": 50600730,
+      "type": "header",
+      "name": "Kinchens  [600x600]",
+      "credit": "AP Photo/Gregory Bull",
+      "height": 600,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1126/r1751489_600x600_1-1.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1861,
+      "type": "team",
+      "uid": "s:20~l:28~t:9",
+      "guid": "06cd3bcf-7a86-53d4-28e7-aa049dd36261",
+      "description": "Green Bay Packers",
+      "sportId": 28,
+      "teamId": 9,
+      "team": {
+       "id": 9,
+       "description": "Green Bay Packers",
+       "abbreviation": "GB",
+       "shortDisplayName": "Packers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1519,
+      "type": "team",
+      "uid": "s:20~l:28~t:14",
+      "guid": "2e1473b2-e269-fd7a-1137-c1edacb85986",
+      "description": "Los Angeles Rams",
+      "sportId": 28,
+      "teamId": 14,
+      "team": {
+       "id": 14,
+       "description": "Los Angeles Rams",
+       "abbreviation": "LAR",
+       "shortDisplayName": "Rams",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 489892,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4596363",
+      "guid": "3f0c4c98-2d41-3a50-b9f7-c28e7e488413",
+      "description": "Kamren Kinchens",
+      "sportId": 28,
+      "athleteId": 4596363,
+      "athlete": {
+       "id": 4596363,
+       "description": "Kamren Kinchens",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4596363/kamren-kinchens"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4596363/kamren-kinchens"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 529534,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4248528",
+      "guid": "8f25b6b0-99c7-1923-dc47-13b3135ba608",
+      "description": "Christian Watson",
+      "sportId": 28,
+      "athleteId": 4248528,
+      "athlete": {
+       "id": 4248528,
+       "description": "Christian Watson",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4248528/christian-watson"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4248528/christian-watson"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     },
+     {
+      "id": 696392,
+      "type": "contributor",
+      "guid": "4383eeca-02a1-39f1-81c1-32194fcc847e",
+      "description": "Sarah Barshop",
+      "slug": "sarah-barshop",
+      "contributor": {
+       "id": 2722,
+       "description": "Sarah Barshop"
+      }
+     }
+    ],
+    "byline": "Sarah Barshop",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50600753"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50600753"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50600753"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50600753/rams-kam-kinchens-ejected-hit-christian-watson"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50600479,
+    "nowId": "1-50600479",
+    "contentKey": "50600479-1-22-1",
+    "dataSourceIdentifier": "816b761024efc",
+    "type": "Preview",
+    "headline": "Buccaneers will need more from Baker Mayfield and struggling passing attack to beat the Panthers",
+    "description": "\u2014 The Tampa Bay Buccaneers didn't need much from Baker Mayfield to rout the Carolina Panthers last month.",
+    "lastModified": "2026-11-26T02:24:54Z",
+    "published": "2026-11-26T02:24:54Z",
+    "images": [
+     {
+      "type": "stitcher",
+      "name": "espn.applewatch.awayhome.1",
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.applewatch.awayhome.1"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.applewatch.homeaway.1",
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.applewatch.homeaway.1"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.awayhome.16x9.1",
+      "ratio": "16x9",
+      "height": 173,
+      "width": 308,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.awayhome.16x9.1"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.homeaway.16x9.1",
+      "ratio": "16x9",
+      "height": 173,
+      "width": 308,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.homeaway.16x9.1"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.awayhome.1x1.1",
+      "ratio": "1x1",
+      "height": 308,
+      "width": 308,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.awayhome.1x1.1"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.homeaway.1x1.1",
+      "ratio": "1x1",
+      "height": 308,
+      "width": 308,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.homeaway.1x1.1"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.awayhome.5x2.1",
+      "ratio": "5x2",
+      "height": 124,
+      "width": 308,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.awayhome.5x2.1"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.homeaway.5x2.1",
+      "ratio": "5x2",
+      "height": 124,
+      "width": 308,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.homeaway.5x2.1"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.awayhome.16x9.2",
+      "ratio": "16x9",
+      "height": 353,
+      "width": 628,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.awayhome.16x9.2"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.homeaway.16x9.2",
+      "ratio": "16x9",
+      "height": 353,
+      "width": 628,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.homeaway.16x9.2"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.awayhome.5x2.2",
+      "ratio": "5x2",
+      "height": 251,
+      "width": 628,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.awayhome.5x2.2"
+     },
+     {
+      "type": "stitcher",
+      "name": "espn.all.homeaway.5x2.2",
+      "ratio": "5x2",
+      "height": 251,
+      "width": 628,
+      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873094.png?templateId=espn.all.homeaway.5x2.2"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2091,
+      "type": "team",
+      "uid": "s:20~l:28~t:27",
+      "guid": "13e8b157-a75a-ff24-ae91-fa3d52ddf204",
+      "description": "Tampa Bay Buccaneers",
+      "sportId": 28,
+      "teamId": 27,
+      "team": {
+       "id": 27,
+       "description": "Tampa Bay Buccaneers",
+       "abbreviation": "TB",
+       "shortDisplayName": "Buccaneers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/tb/tampa-bay-buccaneers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/tb/tampa-bay-buccaneers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2146,
+      "type": "team",
+      "uid": "s:20~l:28~t:29",
+      "guid": "647c27bf-ab86-550e-5b83-91c29e73e4a9",
+      "description": "Carolina Panthers",
+      "sportId": 28,
+      "teamId": 29,
+      "team": {
+       "id": 29,
+       "description": "Carolina Panthers",
+       "abbreviation": "CAR",
+       "shortDisplayName": "Panthers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/car/carolina-panthers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/car/carolina-panthers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "type": "event",
+      "uid": "s:20~l:28~e:401873094",
+      "guid": "0b580ab2-eb7e-345b-90e6-3f196423f3fe",
+      "description": "Carolina Panthers @ Tampa Bay Buccaneers",
+      "eventId": 401873094,
+      "event": {
+       "id": 401873094,
+       "sport": "football",
+       "league": "nfl",
+       "description": "Carolina Panthers @ Tampa Bay Buccaneers"
+      }
+     }
+    ],
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50600479"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50600479"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50600479"
+     },
+     "web": {
+      "href": "http://www.espn.com/nfl/preview?gameId=401873094"
+     }
+    },
+    "premium": false
+   },
+   {
     "id": 50600128,
     "nowId": "1-50600128",
     "contentKey": "50600128-1-5-1",
@@ -23227,8 +23114,8 @@
     "type": "HeadlineNews",
     "headline": "Tony Romo takes job with sports gambling company co-founded by Jake Paul",
     "description": "Former CBS NFL analyst Tony Romo has taken a job with Betr, with the company saying he will make predictions and engage with fans across platforms.",
-    "lastModified": "2026-11-26T01:55:57Z",
-    "published": "2026-11-26T01:55:57Z",
+    "lastModified": "2026-11-26T02:37:43Z",
+    "published": "2026-11-26T02:37:43Z",
     "images": [
      {
       "dataSourceIdentifier": "3a554a271644a",
@@ -23955,362 +23842,533 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50599475,
-    "nowId": "1-50599475",
-    "contentKey": "50599475-1-22-1",
-    "dataSourceIdentifier": "3e7d1a1cb50b8",
-    "type": "Preview",
-    "headline": "Bengals look to get back on track when they host the Saints on a short week",
-    "description": "Most coaches don't like coming off a Monday night game the week of Thanksgiving because of changes to the practice schedule and a short week of preparation becoming even more condensed.",
-    "lastModified": "2026-11-26T00:37:33Z",
-    "published": "2026-11-26T00:37:33Z",
-    "images": [
-     {
-      "type": "stitcher",
-      "name": "espn.applewatch.awayhome.1",
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.applewatch.awayhome.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.applewatch.homeaway.1",
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.applewatch.homeaway.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.16x9.1",
-      "ratio": "16x9",
-      "height": 173,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.awayhome.16x9.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.16x9.1",
-      "ratio": "16x9",
-      "height": 173,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.homeaway.16x9.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.1x1.1",
-      "ratio": "1x1",
-      "height": 308,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.awayhome.1x1.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.1x1.1",
-      "ratio": "1x1",
-      "height": 308,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.homeaway.1x1.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.5x2.1",
-      "ratio": "5x2",
-      "height": 124,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.awayhome.5x2.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.5x2.1",
-      "ratio": "5x2",
-      "height": 124,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.homeaway.5x2.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.16x9.2",
-      "ratio": "16x9",
-      "height": 353,
-      "width": 628,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.awayhome.16x9.2"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.16x9.2",
-      "ratio": "16x9",
-      "height": 353,
-      "width": 628,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.homeaway.16x9.2"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.5x2.2",
-      "ratio": "5x2",
-      "height": 251,
-      "width": 628,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.awayhome.5x2.2"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.5x2.2",
-      "ratio": "5x2",
-      "height": 251,
-      "width": 628,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873087.png?templateId=espn.all.homeaway.5x2.2"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2664,
-      "type": "team",
-      "uid": "s:20~l:28~t:4",
-      "guid": "75b8623b-8926-b411-0476-3d3602b78523",
-      "description": "Cincinnati Bengals",
-      "sportId": 28,
-      "teamId": 4,
-      "team": {
-       "id": 4,
-       "description": "Cincinnati Bengals",
-       "abbreviation": "CIN",
-       "shortDisplayName": "Bengals",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2035,
-      "type": "team",
-      "uid": "s:20~l:28~t:18",
-      "guid": "97d2f6c9-2f22-459c-306a-046941ccab2a",
-      "description": "New Orleans Saints",
-      "sportId": 28,
-      "teamId": 18,
-      "team": {
-       "id": 18,
-       "description": "New Orleans Saints",
-       "abbreviation": "NO",
-       "shortDisplayName": "Saints",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-         }
-        }
-       }
-      }
-     },
-     {
-      "type": "event",
-      "uid": "s:20~l:28~e:401873087",
-      "guid": "a86e3654-f19f-3c34-a29a-b161469f16fd",
-      "description": "New Orleans Saints @ Cincinnati Bengals",
-      "eventId": 401873087,
-      "event": {
-       "id": 401873087,
-       "sport": "football",
-       "league": "nfl",
-       "description": "New Orleans Saints @ Cincinnati Bengals"
-      }
-     }
-    ],
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50599475"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50599475"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50599475"
-     },
-     "web": {
-      "href": "http://www.espn.com/nfl/preview?gameId=401873087"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50599365,
-    "nowId": "1-50599365",
-    "contentKey": "50599365-1-6-1",
-    "dataSourceIdentifier": "0d3f24494140a",
-    "type": "Story",
-    "headline": "Rams vs. Packers: Week 12 NFL game highlights",
-    "description": "Our two team reporters are at SoFi Stadium and they're keeping you updated on all the biggest plays and highlights.",
-    "lastModified": "2026-11-26T00:49:57Z",
-    "published": "2026-11-26T00:49:57Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "4b16cf023c616",
-      "id": 50599584,
-      "type": "header",
-      "name": "Micah Parsons pregame [1296x729]",
-      "credit": "AP Photo/Ryan Sun",
-      "height": 729,
-      "width": 1296,
-      "url": "https://a.espncdn.com/photo/2026/1126/r1751435_1296x729_16-9.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1519,
-      "type": "team",
-      "uid": "s:20~l:28~t:14",
-      "guid": "2e1473b2-e269-fd7a-1137-c1edacb85986",
-      "description": "Los Angeles Rams",
-      "sportId": 28,
-      "teamId": 14,
-      "team": {
-       "id": 14,
-       "description": "Los Angeles Rams",
-       "abbreviation": "LAR",
-       "shortDisplayName": "Rams",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 1861,
-      "type": "team",
-      "uid": "s:20~l:28~t:9",
-      "guid": "06cd3bcf-7a86-53d4-28e7-aa049dd36261",
-      "description": "Green Bay Packers",
-      "sportId": 28,
-      "teamId": 9,
-      "team": {
-       "id": 9,
-       "description": "Green Bay Packers",
-       "abbreviation": "GB",
-       "shortDisplayName": "Packers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 700448,
-      "type": "contributor",
-      "guid": "037de313-2fe3-3e3c-a5f6-da543b98e5d2",
-      "description": "NFL Nation",
-      "slug": "nfl-nation",
-      "contributor": {
-       "id": 3824,
-       "description": "NFL Nation"
-      }
-     }
-    ],
-    "byline": "NFL Nation",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50599365"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50599365"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50599365"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50599365/nfl-week-12-highlights-touchdowns-plays"
-     }
-    },
-    "premium": false
    }
   ]
  },
+ "scoringPlays": [
+  {
+   "id": "401873066277",
+   "type": {
+    "id": "59",
+    "text": "Field Goal Good",
+    "abbreviation": "FG"
+   },
+   "text": "Spencer Shrader 34 Yd Field Goal ",
+   "awayScore": 3,
+   "homeScore": 0,
+   "period": {
+    "number": 1
+   },
+   "clock": {
+    "value": 643.0,
+    "displayValue": "10:43"
+   },
+   "team": {
+    "id": "11",
+    "uid": "s:20~l:28~t:11",
+    "displayName": "Indianapolis Colts",
+    "abbreviation": "IND",
+    "links": [
+     {
+      "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts",
+      "text": "Clubhouse"
+     },
+     {
+      "href": "https://www.espn.com/nfl/team/schedule/_/name/ind",
+      "text": "Schedule"
+     }
+    ],
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+    "logos": [
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "default"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/ind.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/ind.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     }
+    ]
+   },
+   "scoringType": {
+    "name": "field-goal",
+    "displayName": "Field Goal",
+    "abbreviation": "FG"
+   }
+  },
+  {
+   "id": "401873066834",
+   "type": {
+    "id": "67",
+    "text": "Passing Touchdown",
+    "abbreviation": "TD"
+   },
+   "text": "Nico Collins 42 Yd pass from C.J. Stroud (Ka'imi Fairbairn Kick)",
+   "awayScore": 3,
+   "homeScore": 7,
+   "period": {
+    "number": 1
+   },
+   "clock": {
+    "value": 134.0,
+    "displayValue": "2:14"
+   },
+   "team": {
+    "id": "34",
+    "uid": "s:20~l:28~t:34",
+    "displayName": "Houston Texans",
+    "abbreviation": "HOU",
+    "links": [
+     {
+      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
+      "text": "Clubhouse"
+     },
+     {
+      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
+      "text": "Schedule"
+     }
+    ],
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "logos": [
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "default"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     }
+    ]
+   },
+   "scoringType": {
+    "name": "touchdown",
+    "displayName": "Touchdown",
+    "abbreviation": "TD"
+   }
+  },
+  {
+   "id": "4018730661357",
+   "type": {
+    "id": "67",
+    "text": "Passing Touchdown",
+    "abbreviation": "TD"
+   },
+   "text": "Kayshon Boutte 24 Yd pass from C.J. Stroud (Ka'imi Fairbairn Kick)",
+   "awayScore": 3,
+   "homeScore": 14,
+   "period": {
+    "number": 2
+   },
+   "clock": {
+    "value": 458.0,
+    "displayValue": "7:38"
+   },
+   "team": {
+    "id": "34",
+    "uid": "s:20~l:28~t:34",
+    "displayName": "Houston Texans",
+    "abbreviation": "HOU",
+    "links": [
+     {
+      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
+      "text": "Clubhouse"
+     },
+     {
+      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
+      "text": "Schedule"
+     }
+    ],
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "logos": [
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "default"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     }
+    ]
+   },
+   "scoringType": {
+    "name": "touchdown",
+    "displayName": "Touchdown",
+    "abbreviation": "TD"
+   }
+  },
+  {
+   "id": "4018730662101",
+   "type": {
+    "id": "59",
+    "text": "Field Goal Good",
+    "abbreviation": "FG"
+   },
+   "text": "Ka'imi Fairbairn 27 Yd Field Goal",
+   "awayScore": 3,
+   "homeScore": 17,
+   "period": {
+    "number": 2
+   },
+   "clock": {
+    "value": 15.0,
+    "displayValue": "0:15"
+   },
+   "team": {
+    "id": "34",
+    "uid": "s:20~l:28~t:34",
+    "displayName": "Houston Texans",
+    "abbreviation": "HOU",
+    "links": [
+     {
+      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
+      "text": "Clubhouse"
+     },
+     {
+      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
+      "text": "Schedule"
+     }
+    ],
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "logos": [
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "default"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     }
+    ]
+   },
+   "scoringType": {
+    "name": "field-goal",
+    "displayName": "Field Goal",
+    "abbreviation": "FG"
+   }
+  },
+  {
+   "id": "4018730662392",
+   "type": {
+    "id": "20",
+    "text": "Safety",
+    "abbreviation": "SF"
+   },
+   "text": "Daniel Jones Sacked by Will Anderson Jr. For 7 Yd Loss for Safety",
+   "awayScore": 3,
+   "homeScore": 19,
+   "period": {
+    "number": 3
+   },
+   "clock": {
+    "value": 622.0,
+    "displayValue": "10:22"
+   },
+   "team": {
+    "id": "34",
+    "uid": "s:20~l:28~t:34",
+    "displayName": "Houston Texans",
+    "abbreviation": "HOU",
+    "links": [
+     {
+      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
+      "text": "Clubhouse"
+     },
+     {
+      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
+      "text": "Schedule"
+     }
+    ],
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "logos": [
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "default"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     }
+    ]
+   },
+   "scoringType": {
+    "name": "safety",
+    "displayName": "Safety",
+    "abbreviation": "SF"
+   }
+  },
+  {
+   "id": "4018730662675",
+   "type": {
+    "id": "67",
+    "text": "Passing Touchdown",
+    "abbreviation": "TD"
+   },
+   "text": "Marlin Klein 13 Yd pass from C.J. Stroud (Ka'imi Fairbairn Kick)",
+   "awayScore": 3,
+   "homeScore": 26,
+   "period": {
+    "number": 3
+   },
+   "clock": {
+    "value": 259.0,
+    "displayValue": "4:19"
+   },
+   "team": {
+    "id": "34",
+    "uid": "s:20~l:28~t:34",
+    "displayName": "Houston Texans",
+    "abbreviation": "HOU",
+    "links": [
+     {
+      "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans",
+      "text": "Clubhouse"
+     },
+     {
+      "href": "https://www.espn.com/nfl/team/schedule/_/name/hou",
+      "text": "Schedule"
+     }
+    ],
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "logos": [
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "default"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard"
+      ],
+      "lastUpdated": "2024-06-25T18:50Z"
+     },
+     {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/hou.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+       "full",
+       "scoreboard",
+       "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:49Z"
+     }
+    ]
+   },
+   "scoringType": {
+    "name": "touchdown",
+    "displayName": "Touchdown",
+    "abbreviation": "TD"
+   }
+  }
+ ],
  "header": {
   "id": "401873066",
   "uid": "s:20~l:28~e:401873066",
@@ -25135,6 +25193,184 @@
    ]
   }
  },
+ "article": {
+  "id": 50537725,
+  "nowId": "1-50537725",
+  "contentKey": "50537725-1-21-1",
+  "dataSourceIdentifier": "8009380056ffb",
+  "publishedkey": "nfl401873066",
+  "type": "Recap",
+  "gameId": "401873066",
+  "headline": "C.J. Stroud throws for 3 TDs as the Texans roll past the Colts 26-3",
+  "description": "\u2014 C.J. Stroud had another big game to help the Houston Texans finally get a victory at home.",
+  "linkText": "C.J. Stroud throws for 3 TDs as the Texans roll past the Colts 26-3",
+  "categorized": "2026-11-20T05:35:32Z",
+  "originallyPosted": "2026-11-20T04:19:32Z",
+  "lastModified": "2026-11-20T05:35:32Z",
+  "published": "2026-11-20T04:19:32Z",
+  "section": "NFL",
+  "source": "AP",
+  "images": [
+   {
+    "type": "Media",
+    "name": "Texans improve to 4-6 with easy win over the Colts",
+    "caption": "Texans improve to 4-6 with easy win over the Colts",
+    "height": 324,
+    "width": 576,
+    "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1120/f17721f8-3303-4991-b1fe-d1d3f9a71220/f17721f8-3303-4991-b1fe-d1d3f9a71220.jpg"
+   }
+  ],
+  "video": [],
+  "categories": [
+   {
+    "id": 9572,
+    "type": "league",
+    "uid": "s:20~l:28",
+    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+    "description": "NFL",
+    "sportId": 28,
+    "leagueId": 28,
+    "league": {
+     "id": 28,
+     "description": "NFL",
+     "abbreviation": "NFL",
+     "links": {
+      "mobile": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      },
+      "web": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 3053,
+    "type": "team",
+    "uid": "s:20~l:28~t:34",
+    "guid": "595690b3-2161-4913-a7a7-814af2fd2621",
+    "description": "Houston Texans",
+    "sportId": 28,
+    "teamId": 34,
+    "team": {
+     "id": 34,
+     "description": "Houston Texans",
+     "abbreviation": "HOU",
+     "shortDisplayName": "Texans",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2942,
+    "type": "team",
+    "uid": "s:20~l:28~t:11",
+    "guid": "582d14eb-da61-e505-cc40-d972a1b60ed1",
+    "description": "Indianapolis Colts",
+    "sportId": 28,
+    "teamId": 11,
+    "team": {
+     "id": 11,
+     "description": "Indianapolis Colts",
+     "abbreviation": "IND",
+     "shortDisplayName": "Colts",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "event",
+    "uid": "s:20~l:28~e:401873066",
+    "guid": "2432805d-0ce5-3be8-b579-5103f6965006",
+    "description": "Indianapolis Colts @ Houston Texans",
+    "eventId": 401873066,
+    "event": {
+     "id": 401873066,
+     "sport": "football",
+     "league": "nfl",
+     "description": "Indianapolis Colts @ Houston Texans",
+     "links": {
+      "mobile": {
+       "event": {
+        "href": "https://www.espn.com/nfl/game/_/gameId/401873066"
+       }
+      },
+      "web": {
+       "event": {
+        "href": "https://www.espn.com/nfl/game/_/gameId/401873066"
+       }
+      }
+     }
+    }
+   }
+  ],
+  "keywords": [
+   "NFL",
+   "Houston Texans",
+   "Indianapolis Colts",
+   "Indianapolis Colts @ Houston Texans"
+  ],
+  "story": "HOUSTON -- \u2014 <a href=\"http://www.espn.com/nfl/player/_/id/4432577/cj-stroud\">C.J. Stroud</a> had another big game to help the <a href=\"http://www.espn.com/nfl/team/_/name/hou/houston-texans\">Houston Texans</a> finally get a victory at home. \n\n\r\n              Stroud threw for 194 yards and three touchdowns and the Texans used a strong defensive performance to coast to a 26-3 win over the <a href=\"http://www.espn.com/nfl/team/_/name/ind/indianapolis-colts\">Indianapolis Colts</a> on Thursday night.\n\n\r\n              With the roof at Reliant Stadium open for the first time since 2024, the Texans won a home game for the first time this season after losing their first four.\n\n\r\n              \u201cTo have a home game win is very good for us and exciting,\u201d Stroud said. \u201cI think this is a start to something that we need to go on a run with.\u201d\n\n\r\n              Stroud picked apart a Colts secondary that was missing injured starting cornerbacks <a href=\"http://www.espn.com/nfl/player/_/id/4427250/sauce-gardner\">Sauce Gardner</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4037361/charvarius-ward\">Charvarius Ward</a> to help the Texans bounce back from <a href=\"https://apnews.com/article/texans-stroud-ryans-76eebb832b0e9e6744d574f3dbf0f448\">a 27-24 loss to Cleveland</a> last weekend.\n\n\r\n              It was the third straight game in which Stroud had at least three touchdown passes and the fourth in his last five.\n\n\r\n              \u201cC.J. is producing the way he is producing because of the work he put in throughout the offseason,\u201d coach DeMeco Ryans said. \u201cAll of that is paying dividends now. He\u2019s been ready for these moments and he\u2019s been executing at a high level in these moments.\u201d \n\n\r\n              Stroud gave the Texans a 7-3 lead when he connected with <a href=\"http://www.espn.com/nfl/player/_/id/4258173/nico-collins\">Nico Collins</a> <a href=\"https://x.com/HoustonTexans/status/2123595114840736201\">for a 42-yard touchdown</a> late in the first quarter.\n\n\r\n              <a href=\"http://www.espn.com/nfl/player/_/id/4602699/kamari-lassiter\">Kamari Lassiter</a> intercepted <a href=\"http://www.espn.com/nfl/player/_/id/3917792/daniel-jones\">Daniel Jones</a> on the first play of the second quarter. The Texans (4-6) then capped a 12-play, 85-yard drive with a 24-yard TD reception by <a href=\"http://www.espn.com/nfl/player/_/id/4429022/kayshon-boutte\">Kayshon Boutte</a> to extend their lead to 14-3.\n\n\r\n              The Texans were up by 14 early in the third when <a href=\"http://www.espn.com/nfl/player/_/id/4685724/will-anderson-jr\">Will Anderson Jr</a>. sacked Jones in the end zone for a safety that made it 19-3. Anderson leads the NFL with 11\u00bd sacks and had two tackles for loss Thursday to move into first place with 17.\n\n\r\n              \u201cObviously, 51 (Anderson) is a problem,\u201d Indianapolis coach Shane Steichen said. \u201cWe were trying to have a game plan for wherever he was. We were trying to see if he was going right or left. When he was playing right, he was going left. We were trying to keep it away from him as much as we possibly could.\u201d\n\n\r\n              Stroud found rookie <a href=\"http://www.espn.com/nfl/player/_/id/4695705/marlin-klein\">Marlin Klein</a> for a 13-yard TD on the next possession.\n\n\r\n              Ryans was proud of his team for playing a complete game after the Texans fell apart last Sunday against the Browns, blowing a 17-0 lead.\n\n\r\n              \u201cIt\u2019s fulfilling to finally see that happen,\u201d he said. \u201cWe\u2019ve been in these games a ton where we were up at halftime and come out in the second half and for whatever reason not finish. So for them to actually see it and go do it, I think it will bode well for them to gain confidence for showing that they can do it.\u201d \n\n\r\n              Jones was 12 of 27 for 144 yards with the interception as the Colts (3-8) lost for the sixth time in seven games. Anthony Richardson took over with about seven minutes left and didn't complete either of his passes.\n\n\r\n              Steichen was asked if Jones will remain the starter.\n\n\r\n              \u201cWe\u2019ll evaluate everything,\u201d he said. \n\n\r\n              The Colts had their worst offensive performance of the season, finishing with a season-low 167 yards and just 38 yards rushing, which was also their fewest this season. They failed to score a touchdown for the first time since a 24-6 loss to Detroit on Nov. 24, 2024.\n\n\r\n              \u201cI understand where we are as a team,\u201d Jones said. \u201cI understand it\u2019s an issue to score three points. We have to be better offensively. I am the quarterback, and so, I am responsible. I have to play better. I know that. That\u2019s the job.\u201d\n\n\r\n              Houston\u2019s <a href=\"http://www.espn.com/nfl/player/_/id/4035538/david-montgomery\">David Montgomery</a> had 26 carries for a season-high 107 yards in his return after missing four games with a groin injury.\n\n\r\n              The Colts led early after Spencer Shrader\u2019s 34-yard field goal on the game\u2019s first drive. \n\n\r\n              Stroud\u2019s pass was tipped four times by three players before <a href=\"http://www.espn.com/nfl/player/_/id/4905664/aj-haulcy\">A.J. Haulcy</a> intercepted it on Houston\u2019s first possession. But the Colts couldn\u2019t cash in when Shrader\u2019s field goal attempt from 56 yards was wide left.\n\n\r\n              A 62-yard field goal attempt by Shrader was blocked by <a href=\"http://www.espn.com/nfl/player/_/id/4360189/logan-hall\">Logan Hall</a> with about 2\u00bd minutes left in the first half.\n\n\r\n              <hl2>Injuries</hl2>\r\n              Houston DE <a href=\"http://www.espn.com/nfl/player/_/id/4428989/chris-braswell\">Chris Braswell</a> <a href=\"https://apnews.com/article/texans-chris-braswell-injury-3519dc8290cc88b4373c8eee9a5d786d\">was carted off</a> with a right knee injury after the opening kickoff. \u2026 Indianapolis RB <a href=\"http://www.espn.com/nfl/player/_/id/4686468/seth-mcgowan\">Seth McGowan</a> injured his hamstring in the second quarter and didn\u2019t return.\n\n\r\n              <hl2>Up next</hl2>\r\n              Colts: Host the <a href=\"http://www.espn.com/nfl/team/_/name/nyg/new-york-giants\">New York Giants</a> on Nov. 29.\n\n\r\n              Texans: Host Baltimore on Nov. 29.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
+  "allowComments": true,
+  "allowContentReactions": false,
+  "allowSearch": true,
+  "isLiveBlog": false,
+  "links": {
+   "api": {
+    "self": {
+     "href": "https://content.core.api.espn.com/v1/sports/news/50537725"
+    }
+   },
+   "app": {
+    "sportscenter": {
+     "href": "sportscenter://x-callback-url/showStory?uid=50537725"
+    }
+   },
+   "mobile": {
+    "href": "http://m.espn.go.com/nfl/story?storyId=50537725"
+   },
+   "web": {
+    "href": "http://www.espn.com/nfl/recap?gameId=401873066"
+   }
+  },
+  "premium": false
+ },
+ "videos": [],
+ "wallclockAvailable": true,
+ "meta": {
+  "gp_topic": "gp-football-nfl-401873066",
+  "gameSwitcherEnabled": true,
+  "picker_topic": "picker-football-nfl",
+  "lastUpdatedAt": "2026-11-20T04:06:00Z",
+  "firstPlayWallClock": "2026-11-20T01:15:44Z",
+  "lastPlayWallClock": "2026-11-20T04:06:00Z",
+  "gameState": "post",
+  "syncUrl": "https://client.espncdn.com/fauxcast/stats/28/401873066/en/us/"
+ },
  "winprobability": [
   {
    "homeWinPercentage": 0.7478,
@@ -25937,184 +26173,6 @@
    "playId": "4018730663734"
   }
  ],
- "article": {
-  "id": 50537725,
-  "nowId": "1-50537725",
-  "contentKey": "50537725-1-21-1",
-  "dataSourceIdentifier": "8009380056ffb",
-  "publishedkey": "nfl401873066",
-  "type": "Recap",
-  "gameId": "401873066",
-  "headline": "C.J. Stroud throws for 3 TDs as the Texans roll past the Colts 26-3",
-  "description": "\u2014 C.J. Stroud had another big game to help the Houston Texans finally get a victory at home.",
-  "linkText": "C.J. Stroud throws for 3 TDs as the Texans roll past the Colts 26-3",
-  "categorized": "2026-11-20T05:35:32Z",
-  "originallyPosted": "2026-11-20T04:19:32Z",
-  "lastModified": "2026-11-20T05:35:32Z",
-  "published": "2026-11-20T04:19:32Z",
-  "section": "NFL",
-  "source": "AP",
-  "images": [
-   {
-    "type": "Media",
-    "name": "Texans improve to 4-6 with easy win over the Colts",
-    "caption": "Texans improve to 4-6 with easy win over the Colts",
-    "height": 324,
-    "width": 576,
-    "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1120/f17721f8-3303-4991-b1fe-d1d3f9a71220/f17721f8-3303-4991-b1fe-d1d3f9a71220.jpg"
-   }
-  ],
-  "video": [],
-  "categories": [
-   {
-    "id": 9572,
-    "type": "league",
-    "uid": "s:20~l:28",
-    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-    "description": "NFL",
-    "sportId": 28,
-    "leagueId": 28,
-    "league": {
-     "id": 28,
-     "description": "NFL",
-     "abbreviation": "NFL",
-     "links": {
-      "mobile": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      },
-      "web": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 3053,
-    "type": "team",
-    "uid": "s:20~l:28~t:34",
-    "guid": "595690b3-2161-4913-a7a7-814af2fd2621",
-    "description": "Houston Texans",
-    "sportId": 28,
-    "teamId": 34,
-    "team": {
-     "id": 34,
-     "description": "Houston Texans",
-     "abbreviation": "HOU",
-     "shortDisplayName": "Texans",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/hou/houston-texans"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2942,
-    "type": "team",
-    "uid": "s:20~l:28~t:11",
-    "guid": "582d14eb-da61-e505-cc40-d972a1b60ed1",
-    "description": "Indianapolis Colts",
-    "sportId": 28,
-    "teamId": 11,
-    "team": {
-     "id": 11,
-     "description": "Indianapolis Colts",
-     "abbreviation": "IND",
-     "shortDisplayName": "Colts",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
-       }
-      }
-     }
-    }
-   },
-   {
-    "type": "event",
-    "uid": "s:20~l:28~e:401873066",
-    "guid": "2432805d-0ce5-3be8-b579-5103f6965006",
-    "description": "Indianapolis Colts @ Houston Texans",
-    "eventId": 401873066,
-    "event": {
-     "id": 401873066,
-     "sport": "football",
-     "league": "nfl",
-     "description": "Indianapolis Colts @ Houston Texans",
-     "links": {
-      "mobile": {
-       "event": {
-        "href": "https://www.espn.com/nfl/game/_/gameId/401873066"
-       }
-      },
-      "web": {
-       "event": {
-        "href": "https://www.espn.com/nfl/game/_/gameId/401873066"
-       }
-      }
-     }
-    }
-   }
-  ],
-  "keywords": [
-   "NFL",
-   "Houston Texans",
-   "Indianapolis Colts",
-   "Indianapolis Colts @ Houston Texans"
-  ],
-  "story": "HOUSTON -- \u2014 <a href=\"http://www.espn.com/nfl/player/_/id/4432577/cj-stroud\">C.J. Stroud</a> had another big game to help the <a href=\"http://www.espn.com/nfl/team/_/name/hou/houston-texans\">Houston Texans</a> finally get a victory at home. \n\n\r\n              Stroud threw for 194 yards and three touchdowns and the Texans used a strong defensive performance to coast to a 26-3 win over the <a href=\"http://www.espn.com/nfl/team/_/name/ind/indianapolis-colts\">Indianapolis Colts</a> on Thursday night.\n\n\r\n              With the roof at Reliant Stadium open for the first time since 2024, the Texans won a home game for the first time this season after losing their first four.\n\n\r\n              \u201cTo have a home game win is very good for us and exciting,\u201d Stroud said. \u201cI think this is a start to something that we need to go on a run with.\u201d\n\n\r\n              Stroud picked apart a Colts secondary that was missing injured starting cornerbacks <a href=\"http://www.espn.com/nfl/player/_/id/4427250/sauce-gardner\">Sauce Gardner</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4037361/charvarius-ward\">Charvarius Ward</a> to help the Texans bounce back from <a href=\"https://apnews.com/article/texans-stroud-ryans-76eebb832b0e9e6744d574f3dbf0f448\">a 27-24 loss to Cleveland</a> last weekend.\n\n\r\n              It was the third straight game in which Stroud had at least three touchdown passes and the fourth in his last five.\n\n\r\n              \u201cC.J. is producing the way he is producing because of the work he put in throughout the offseason,\u201d coach DeMeco Ryans said. \u201cAll of that is paying dividends now. He\u2019s been ready for these moments and he\u2019s been executing at a high level in these moments.\u201d \n\n\r\n              Stroud gave the Texans a 7-3 lead when he connected with <a href=\"http://www.espn.com/nfl/player/_/id/4258173/nico-collins\">Nico Collins</a> <a href=\"https://x.com/HoustonTexans/status/2123595114840736201\">for a 42-yard touchdown</a> late in the first quarter.\n\n\r\n              <a href=\"http://www.espn.com/nfl/player/_/id/4602699/kamari-lassiter\">Kamari Lassiter</a> intercepted <a href=\"http://www.espn.com/nfl/player/_/id/3917792/daniel-jones\">Daniel Jones</a> on the first play of the second quarter. The Texans (4-6) then capped a 12-play, 85-yard drive with a 24-yard TD reception by <a href=\"http://www.espn.com/nfl/player/_/id/4429022/kayshon-boutte\">Kayshon Boutte</a> to extend their lead to 14-3.\n\n\r\n              The Texans were up by 14 early in the third when <a href=\"http://www.espn.com/nfl/player/_/id/4685724/will-anderson-jr\">Will Anderson Jr</a>. sacked Jones in the end zone for a safety that made it 19-3. Anderson leads the NFL with 11\u00bd sacks and had two tackles for loss Thursday to move into first place with 17.\n\n\r\n              \u201cObviously, 51 (Anderson) is a problem,\u201d Indianapolis coach Shane Steichen said. \u201cWe were trying to have a game plan for wherever he was. We were trying to see if he was going right or left. When he was playing right, he was going left. We were trying to keep it away from him as much as we possibly could.\u201d\n\n\r\n              Stroud found rookie <a href=\"http://www.espn.com/nfl/player/_/id/4695705/marlin-klein\">Marlin Klein</a> for a 13-yard TD on the next possession.\n\n\r\n              Ryans was proud of his team for playing a complete game after the Texans fell apart last Sunday against the Browns, blowing a 17-0 lead.\n\n\r\n              \u201cIt\u2019s fulfilling to finally see that happen,\u201d he said. \u201cWe\u2019ve been in these games a ton where we were up at halftime and come out in the second half and for whatever reason not finish. So for them to actually see it and go do it, I think it will bode well for them to gain confidence for showing that they can do it.\u201d \n\n\r\n              Jones was 12 of 27 for 144 yards with the interception as the Colts (3-8) lost for the sixth time in seven games. Anthony Richardson took over with about seven minutes left and didn't complete either of his passes.\n\n\r\n              Steichen was asked if Jones will remain the starter.\n\n\r\n              \u201cWe\u2019ll evaluate everything,\u201d he said. \n\n\r\n              The Colts had their worst offensive performance of the season, finishing with a season-low 167 yards and just 38 yards rushing, which was also their fewest this season. They failed to score a touchdown for the first time since a 24-6 loss to Detroit on Nov. 24, 2024.\n\n\r\n              \u201cI understand where we are as a team,\u201d Jones said. \u201cI understand it\u2019s an issue to score three points. We have to be better offensively. I am the quarterback, and so, I am responsible. I have to play better. I know that. That\u2019s the job.\u201d\n\n\r\n              Houston\u2019s <a href=\"http://www.espn.com/nfl/player/_/id/4035538/david-montgomery\">David Montgomery</a> had 26 carries for a season-high 107 yards in his return after missing four games with a groin injury.\n\n\r\n              The Colts led early after Spencer Shrader\u2019s 34-yard field goal on the game\u2019s first drive. \n\n\r\n              Stroud\u2019s pass was tipped four times by three players before <a href=\"http://www.espn.com/nfl/player/_/id/4905664/aj-haulcy\">A.J. Haulcy</a> intercepted it on Houston\u2019s first possession. But the Colts couldn\u2019t cash in when Shrader\u2019s field goal attempt from 56 yards was wide left.\n\n\r\n              A 62-yard field goal attempt by Shrader was blocked by <a href=\"http://www.espn.com/nfl/player/_/id/4360189/logan-hall\">Logan Hall</a> with about 2\u00bd minutes left in the first half.\n\n\r\n              <hl2>Injuries</hl2>\r\n              Houston DE <a href=\"http://www.espn.com/nfl/player/_/id/4428989/chris-braswell\">Chris Braswell</a> <a href=\"https://apnews.com/article/texans-chris-braswell-injury-3519dc8290cc88b4373c8eee9a5d786d\">was carted off</a> with a right knee injury after the opening kickoff. \u2026 Indianapolis RB <a href=\"http://www.espn.com/nfl/player/_/id/4686468/seth-mcgowan\">Seth McGowan</a> injured his hamstring in the second quarter and didn\u2019t return.\n\n\r\n              <hl2>Up next</hl2>\r\n              Colts: Host the <a href=\"http://www.espn.com/nfl/team/_/name/nyg/new-york-giants\">New York Giants</a> on Nov. 29.\n\n\r\n              Texans: Host Baltimore on Nov. 29.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
-  "allowComments": true,
-  "allowContentReactions": false,
-  "allowSearch": true,
-  "isLiveBlog": false,
-  "links": {
-   "api": {
-    "self": {
-     "href": "https://content.core.api.espn.com/v1/sports/news/50537725"
-    }
-   },
-   "app": {
-    "sportscenter": {
-     "href": "sportscenter://x-callback-url/showStory?uid=50537725"
-    }
-   },
-   "mobile": {
-    "href": "http://m.espn.go.com/nfl/story?storyId=50537725"
-   },
-   "web": {
-    "href": "http://www.espn.com/nfl/recap?gameId=401873066"
-   }
-  },
-  "premium": false
- },
- "videos": [],
- "wallclockAvailable": true,
- "meta": {
-  "gp_topic": "gp-football-nfl-401873066",
-  "gameSwitcherEnabled": true,
-  "picker_topic": "picker-football-nfl",
-  "lastUpdatedAt": "2026-11-20T04:06:00Z",
-  "firstPlayWallClock": "2026-11-20T01:15:44Z",
-  "lastPlayWallClock": "2026-11-20T04:06:00Z",
-  "gameState": "post",
-  "syncUrl": "https://client.espncdn.com/fauxcast/stats/28/401873066/en/us/"
- },
  "standings": {
   "fullViewLink": {
    "text": "Full Standings",
