@@ -297,832 +297,6 @@
  },
  "events": [
   {
-   "id": "401873079",
-   "uid": "s:20~l:28~e:401873079",
-   "date": "2026-11-26T01:00Z",
-   "name": "Green Bay Packers at Los Angeles Rams",
-   "shortName": "GB @ LAR",
-   "season": {
-    "year": 2026,
-    "type": 2,
-    "slug": "regular-season"
-   },
-   "week": {
-    "number": 12
-   },
-   "competitions": [
-    {
-     "id": "401873079",
-     "uid": "s:20~l:28~e:401873079~c:401873079",
-     "date": "2026-11-26T01:00Z",
-     "attendance": 75211,
-     "type": {
-      "id": "1",
-      "abbreviation": "STD"
-     },
-     "timeValid": true,
-     "neutralSite": false,
-     "conferenceCompetition": false,
-     "playByPlayAvailable": true,
-     "recent": true,
-     "venue": {
-      "id": "7065",
-      "fullName": "SoFi Stadium",
-      "address": {
-       "city": "Inglewood",
-       "state": "CA",
-       "country": "USA"
-      },
-      "indoor": false
-     },
-     "competitors": [
-      {
-       "id": "14",
-       "uid": "s:20~l:28~t:14",
-       "type": "team",
-       "order": 0,
-       "homeAway": "home",
-       "winner": true,
-       "team": {
-        "id": "14",
-        "uid": "s:20~l:28~t:14",
-        "location": "Los Angeles",
-        "name": "Rams",
-        "abbreviation": "LAR",
-        "displayName": "Los Angeles Rams",
-        "shortDisplayName": "Rams",
-        "color": "003594",
-        "alternateColor": "ffd100",
-        "isActive": true,
-        "venue": {
-         "id": "477"
-        },
-        "links": [
-         {
-          "rel": [
-           "clubhouse",
-           "desktop",
-           "team"
-          ],
-          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams",
-          "text": "Clubhouse",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "roster",
-           "desktop",
-           "team"
-          ],
-          "href": "https://www.espn.com/nfl/team/roster/_/name/lar/los-angeles-rams",
-          "text": "Roster",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "roster",
-           "sportscenter",
-           "app",
-           "team"
-          ],
-          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:14&section=roster",
-          "text": "Roster",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "stats",
-           "desktop",
-           "team"
-          ],
-          "href": "https://www.espn.com/nfl/team/stats/_/name/lar/los-angeles-rams",
-          "text": "Statistics",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "stats",
-           "sportscenter",
-           "app",
-           "team"
-          ],
-          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:14&section=stats",
-          "text": "Statistics",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "schedule",
-           "desktop",
-           "team"
-          ],
-          "href": "https://www.espn.com/nfl/team/schedule/_/name/lar",
-          "text": "Schedule",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "schedule",
-           "sportscenter",
-           "app",
-           "team"
-          ],
-          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:14&section=scores",
-          "text": "Schedule",
-          "isExternal": false,
-          "isPremium": false
-         }
-        ],
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
-        "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lar.png"
-       },
-       "score": "26",
-       "linescores": [
-        {
-         "value": 6.0,
-         "displayValue": "6",
-         "period": 1
-        },
-        {
-         "value": 7.0,
-         "displayValue": "7",
-         "period": 2
-        },
-        {
-         "value": 7.0,
-         "displayValue": "7",
-         "period": 3
-        },
-        {
-         "value": 6.0,
-         "displayValue": "6",
-         "period": 4
-        }
-       ],
-       "statistics": [],
-       "curatedRank": {
-        "current": 99
-       },
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Game",
-         "type": "total",
-         "summary": "7-4"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "3-3"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "4-1"
-        }
-       ]
-      },
-      {
-       "id": "9",
-       "uid": "s:20~l:28~t:9",
-       "type": "team",
-       "order": 1,
-       "homeAway": "away",
-       "winner": false,
-       "team": {
-        "id": "9",
-        "uid": "s:20~l:28~t:9",
-        "location": "Green Bay",
-        "name": "Packers",
-        "abbreviation": "GB",
-        "displayName": "Green Bay Packers",
-        "shortDisplayName": "Packers",
-        "color": "204e32",
-        "alternateColor": "ffb612",
-        "isActive": true,
-        "venue": {
-         "id": "3798"
-        },
-        "links": [
-         {
-          "rel": [
-           "clubhouse",
-           "desktop",
-           "team"
-          ],
-          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers",
-          "text": "Clubhouse",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "roster",
-           "desktop",
-           "team"
-          ],
-          "href": "https://www.espn.com/nfl/team/roster/_/name/gb/green-bay-packers",
-          "text": "Roster",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "roster",
-           "sportscenter",
-           "app",
-           "team"
-          ],
-          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:9&section=roster",
-          "text": "Roster",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "stats",
-           "desktop",
-           "team"
-          ],
-          "href": "https://www.espn.com/nfl/team/stats/_/name/gb/green-bay-packers",
-          "text": "Statistics",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "stats",
-           "sportscenter",
-           "app",
-           "team"
-          ],
-          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:9&section=stats",
-          "text": "Statistics",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "schedule",
-           "desktop",
-           "team"
-          ],
-          "href": "https://www.espn.com/nfl/team/schedule/_/name/gb",
-          "text": "Schedule",
-          "isExternal": false,
-          "isPremium": false
-         },
-         {
-          "rel": [
-           "schedule",
-           "sportscenter",
-           "app",
-           "team"
-          ],
-          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:9&section=scores",
-          "text": "Schedule",
-          "isExternal": false,
-          "isPremium": false
-         }
-        ],
-        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
-        "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/gb.png"
-       },
-       "score": "13",
-       "linescores": [
-        {
-         "value": 3.0,
-         "displayValue": "3",
-         "period": 1
-        },
-        {
-         "value": 10.0,
-         "displayValue": "10",
-         "period": 2
-        },
-        {
-         "value": 0.0,
-         "displayValue": "0",
-         "period": 3
-        },
-        {
-         "value": 0.0,
-         "displayValue": "0",
-         "period": 4
-        }
-       ],
-       "statistics": [],
-       "curatedRank": {
-        "current": 99
-       },
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Game",
-         "type": "total",
-         "summary": "6-5"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "3-2"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "3-3"
-        }
-       ]
-      }
-     ],
-     "notes": [],
-     "status": {
-      "clock": 0.0,
-      "displayClock": "0:00",
-      "period": 4,
-      "type": {
-       "id": "3",
-       "name": "STATUS_FINAL",
-       "state": "post",
-       "completed": true,
-       "description": "Final",
-       "detail": "Final",
-       "shortDetail": "Final"
-      },
-      "isTBDFlex": false
-     },
-     "broadcasts": [
-      {
-       "market": "national",
-       "names": [
-        "Netflix"
-       ]
-      }
-     ],
-     "leaders": [
-      {
-       "name": "passingYards",
-       "displayName": "Passing Leader",
-       "shortDisplayName": "PASS",
-       "abbreviation": "PYDS",
-       "leaders": [
-        {
-         "displayValue": "17/29, 198 YDS, 1 TD, 2 INT",
-         "value": 198.0,
-         "athlete": {
-          "id": "4036378",
-          "fullName": "Jordan Love",
-          "displayName": "Jordan Love",
-          "shortName": "J. Love",
-          "links": [
-           {
-            "rel": [
-             "playercard",
-             "desktop",
-             "athlete"
-            ],
-            "href": "https://www.espn.com/nfl/player/_/id/4036378/jordan-love"
-           }
-          ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4036378.png",
-          "jersey": "10",
-          "position": {
-           "abbreviation": "QB"
-          },
-          "team": {
-           "id": "9"
-          },
-          "active": true
-         },
-         "team": {
-          "id": "9"
-         }
-        }
-       ]
-      },
-      {
-       "name": "rushingYards",
-       "displayName": "Rushing Leader",
-       "shortDisplayName": "RUSH",
-       "abbreviation": "RYDS",
-       "leaders": [
-        {
-         "displayValue": "32 CAR, 184 YDS, 1 TD",
-         "value": 184.0,
-         "athlete": {
-          "id": "4429096",
-          "fullName": "Blake Corum",
-          "displayName": "Blake Corum",
-          "shortName": "B. Corum",
-          "links": [
-           {
-            "rel": [
-             "playercard",
-             "desktop",
-             "athlete"
-            ],
-            "href": "https://www.espn.com/nfl/player/_/id/4429096/blake-corum"
-           }
-          ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429096.png",
-          "jersey": "24",
-          "position": {
-           "abbreviation": "RB"
-          },
-          "team": {
-           "id": "14"
-          },
-          "active": true
-         },
-         "team": {
-          "id": "14"
-         }
-        }
-       ]
-      },
-      {
-       "name": "receivingYards",
-       "displayName": "Receiving Leader",
-       "shortDisplayName": "REC",
-       "abbreviation": "RECYDS",
-       "leaders": [
-        {
-         "displayValue": "4 REC, 69 YDS",
-         "value": 69.0,
-         "athlete": {
-          "id": "4710855",
-          "fullName": "Konata Mumpfield",
-          "displayName": "Konata Mumpfield",
-          "shortName": "K. Mumpfield",
-          "links": [
-           {
-            "rel": [
-             "playercard",
-             "desktop",
-             "athlete"
-            ],
-            "href": "https://www.espn.com/nfl/player/_/id/4710855/konata-mumpfield"
-           }
-          ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4710855.png",
-          "jersey": "4",
-          "position": {
-           "abbreviation": "WR"
-          },
-          "team": {
-           "id": "14"
-          },
-          "active": true
-         },
-         "team": {
-          "id": "14"
-         }
-        }
-       ]
-      }
-     ],
-     "format": {
-      "regulation": {
-       "periods": 4
-      },
-      "overtime": {
-       "periods": 1
-      }
-     },
-     "startDate": "2026-11-26T01:00Z",
-     "broadcast": "Netflix",
-     "geoBroadcasts": [
-      {
-       "type": {
-        "id": "4",
-        "shortName": "Streaming"
-       },
-       "market": {
-        "id": "1",
-        "type": "National"
-       },
-       "media": {
-        "shortName": "Netflix"
-       },
-       "lang": "en",
-       "region": "us"
-      }
-     ],
-     "highlights": [
-      {
-       "id": 50601743,
-       "cerebroId": "6b07b938e0b9b66f46f95ab5",
-       "source": "espn",
-       "headline": "Rams pick up important home win over the Packers",
-       "description": "Rams pick up important home win over the Packers",
-       "lastModified": "2026-11-26T04:46:32Z",
-       "originalPublishDate": "2026-11-26T04:44:40Z",
-       "duration": 80,
-       "timeRestrictions": {
-        "embargoDate": "2026-11-26T04:44:38Z",
-        "expirationDate": "2026-11-28T04:44:38Z"
-       },
-       "deviceRestrictions": {
-        "devices": [
-         "settop",
-         "tablet",
-         "handset",
-         "ipad",
-         "desktop"
-        ],
-        "type": "whitelist"
-       },
-       "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.jpg",
-       "links": {
-        "api": {
-         "artwork": {
-          "href": "https://artwork.api.espn.com/artwork/collections/media/3a252012-938b-4f86-8c86-74ecd137c985"
-         },
-         "self": {
-          "href": "https://content.core.api.espn.com/v1/video/clips/50601743"
-         }
-        },
-        "mobile": {
-         "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
-         "alert": {
-          "href": "https://m.espn.com/general/video/videoAlert?vid=50601743"
-         },
-         "progressiveDownload": {
-          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers"
-         },
-         "source": {
-          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-         },
-         "streaming": {
-          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers"
-         }
-        },
-        "source": {
-         "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4",
-         "HD": {
-          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-         },
-         "HLS": {
-          "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8",
-          "9x16": {
-           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-          },
-          "HD": {
-           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-          },
-          "cmaf": {
-           "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8",
-           "9x16": {
-            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-           },
-           "cmb": {
-            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-           }
-          },
-          "cmb": {
-           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-          },
-          "shield": {
-           "href": "https://watch.auth.api.espn.com/video/auth/media/3a252012-938b-4f86-8c86-74ecd137c985/asset"
-          }
-         },
-         "flash": {
-          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-         },
-         "full": {
-          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-         },
-         "mezzanine": {
-          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-         }
-        },
-        "sportscenter": {
-         "href": "sportscenter://x-callback-url/showVideo?videoID=50601743&videoDSI=99d23d78703aa"
-        },
-        "web": {
-         "href": "https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
-         "self": {
-          "href": "https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
-          "dsi": {
-           "href": "https://www.espn.com/video/clip?id=99d23d78703aa"
-          }
-         }
-        }
-       },
-       "ad": {
-        "bundle": "nfl_one_plays",
-        "sport": "nfl"
-       },
-       "tracking": {
-        "coverageType": "Final Game Highlight",
-        "leagueName": "NFL",
-        "program": "espnnfl",
-        "sportName": "football",
-        "trackingId": "dm_20261126_NFL_rams_pick_up_important_home_win_over_the_packers",
-        "trackingName": "COM_NFL Highlight (Rams pick up important home win over the Packers) 2026/11/26 ESHEET"
-       }
-      }
-     ],
-     "headlines": [
-      {
-       "type": "Recap",
-       "description": "\u2014 Blake Corum rushed for a career-high 184 yards and a touchdown, Kyren Williams ran for another score and the Los Angeles Rams used a relentless ground game to pound out their fifth consecutive...",
-       "shortLinkText": "Blake Corum leads Rams' dominant rushing attack in their 5th straight win, 26-13 over Packers",
-       "video": [
-        {
-         "id": 50601743,
-         "source": "espn",
-         "headline": "Rams pick up important home win over the Packers",
-         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.jpg",
-         "duration": 80,
-         "tracking": {
-          "coverageType": "Final Game Highlight",
-          "leagueName": "NFL",
-          "program": "espnnfl",
-          "sportName": "football",
-          "trackingId": "dm_20261126_NFL_rams_pick_up_important_home_win_over_the_packers",
-          "trackingName": "COM_NFL Highlight (Rams pick up important home win over the Packers) 2026/11/26 ESHEET"
-         },
-         "deviceRestrictions": {
-          "devices": [
-           "settop",
-           "tablet",
-           "handset",
-           "ipad",
-           "desktop"
-          ],
-          "type": "whitelist"
-         },
-         "links": {
-          "api": {
-           "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/3a252012-938b-4f86-8c86-74ecd137c985"
-           },
-           "self": {
-            "href": "https://content.core.api.espn.com/v1/video/clips/50601743"
-           }
-          },
-          "mobile": {
-           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
-           "alert": {
-            "href": "https://m.espn.com/general/video/videoAlert?vid=50601743"
-           },
-           "progressiveDownload": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers"
-           },
-           "source": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-           },
-           "streaming": {
-            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers"
-           }
-          },
-          "source": {
-           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4",
-           "HD": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-           },
-           "HLS": {
-            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8",
-            "9x16": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-            },
-            "HD": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-            },
-            "cmaf": {
-             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8",
-             "9x16": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-             },
-             "cmb": {
-              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-             }
-            },
-            "cmb": {
-             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
-            },
-            "shield": {
-             "href": "https://watch.auth.api.espn.com/video/auth/media/3a252012-938b-4f86-8c86-74ecd137c985/asset"
-            }
-           },
-           "flash": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-           },
-           "full": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-           },
-           "mezzanine": {
-            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
-           }
-          },
-          "sportscenter": {
-           "href": "sportscenter://x-callback-url/showVideo?videoID=50601743&videoDSI=99d23d78703aa"
-          },
-          "web": {
-           "href": "https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
-           "self": {
-            "href": "https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
-            "dsi": {
-             "href": "https://www.espn.com/video/clip?id=99d23d78703aa"
-            }
-           }
-          }
-         }
-        }
-       ]
-      }
-     ]
-    }
-   ],
-   "links": [
-    {
-     "language": "en-US",
-     "rel": [
-      "summary",
-      "desktop",
-      "event"
-     ],
-     "href": "https://www.espn.com/nfl/game/_/gameId/401873079/packers-rams",
-     "text": "Gamecast",
-     "shortText": "Gamecast",
-     "isExternal": false,
-     "isPremium": false
-    },
-    {
-     "language": "en-US",
-     "rel": [
-      "boxscore",
-      "desktop",
-      "event"
-     ],
-     "href": "https://www.espn.com/nfl/boxscore/_/gameId/401873079",
-     "text": "Box Score",
-     "shortText": "Box Score",
-     "isExternal": false,
-     "isPremium": false
-    },
-    {
-     "language": "en-US",
-     "rel": [
-      "highlights",
-      "desktop"
-     ],
-     "href": "https://www.espn.com/nfl/video?gameId=401873079",
-     "text": "Highlights",
-     "shortText": "Highlights",
-     "isExternal": false,
-     "isPremium": false
-    },
-    {
-     "language": "en-US",
-     "rel": [
-      "pbp",
-      "desktop",
-      "event"
-     ],
-     "href": "https://www.espn.com/nfl/playbyplay/_/gameId/401873079",
-     "text": "Play-by-Play",
-     "shortText": "Play-by-Play",
-     "isExternal": false,
-     "isPremium": false
-    },
-    {
-     "language": "en-US",
-     "rel": [
-      "recap",
-      "desktop",
-      "event"
-     ],
-     "href": "https://www.espn.com/nfl/recap?gameId=401873079",
-     "text": "Recap",
-     "shortText": "Recap",
-     "isExternal": false,
-     "isPremium": false
-    }
-   ],
-   "status": {
-    "clock": 0.0,
-    "displayClock": "0:00",
-    "period": 4,
-    "type": {
-     "id": "3",
-     "name": "STATUS_FINAL",
-     "state": "post",
-     "completed": true,
-     "description": "Final",
-     "detail": "Final",
-     "shortDetail": "Final"
-    }
-   }
-  },
-  {
    "id": "401873081",
    "uid": "s:20~l:28~e:401873081",
    "date": "2026-11-26T18:00Z",
@@ -1822,7 +996,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $262",
-       "numberAvailable": 3256,
+       "numberAvailable": 3247,
        "links": [
         {
          "href": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-1-2026/production/6489807?wsUser=717"
@@ -2180,7 +1354,7 @@
      "rel": [
       "48226"
      ],
-     "href": "http://www.accuweather.com/en/us/ford-field-mi/48226/hourly-weather-forecast/43021_poi?day=2&hbhhour=13&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/ford-field-mi/48226/hourly-weather-forecast/43021_poi?day=1&hbhhour=13&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -2987,7 +2161,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-448",
+          "odds": "-447",
           "link": {
            "language": "en-US",
            "rel": [
@@ -3980,8 +3154,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $206",
-       "numberAvailable": 1321,
+       "summary": "Tickets as low as $215",
+       "numberAvailable": 1297,
        "links": [
         {
          "href": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-6-2026/production/6488364?wsUser=717"
@@ -4338,7 +3512,7 @@
      "rel": [
       "14127"
      ],
-     "href": "http://www.accuweather.com/en/us/highmark-stadium-ny/14127/hourly-weather-forecast/43037_poi?day=2&hbhhour=20&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/highmark-stadium-ny/14127/hourly-weather-forecast/43037_poi?day=1&hbhhour=20&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -4357,6 +3531,832 @@
      "description": "Scheduled",
      "detail": "Thu, November 26th at 8:20 PM EST",
      "shortDetail": "11/26 - 8:20 PM EST"
+    }
+   }
+  },
+  {
+   "id": "401873079",
+   "uid": "s:20~l:28~e:401873079",
+   "date": "2026-11-26T01:00Z",
+   "name": "Green Bay Packers at Los Angeles Rams",
+   "shortName": "GB @ LAR",
+   "season": {
+    "year": 2026,
+    "type": 2,
+    "slug": "regular-season"
+   },
+   "week": {
+    "number": 12
+   },
+   "competitions": [
+    {
+     "id": "401873079",
+     "uid": "s:20~l:28~e:401873079~c:401873079",
+     "date": "2026-11-26T01:00Z",
+     "attendance": 75211,
+     "type": {
+      "id": "1",
+      "abbreviation": "STD"
+     },
+     "timeValid": true,
+     "neutralSite": false,
+     "conferenceCompetition": false,
+     "playByPlayAvailable": true,
+     "recent": true,
+     "venue": {
+      "id": "7065",
+      "fullName": "SoFi Stadium",
+      "address": {
+       "city": "Inglewood",
+       "state": "CA",
+       "country": "USA"
+      },
+      "indoor": false
+     },
+     "competitors": [
+      {
+       "id": "14",
+       "uid": "s:20~l:28~t:14",
+       "type": "team",
+       "order": 0,
+       "homeAway": "home",
+       "winner": true,
+       "team": {
+        "id": "14",
+        "uid": "s:20~l:28~t:14",
+        "location": "Los Angeles",
+        "name": "Rams",
+        "abbreviation": "LAR",
+        "displayName": "Los Angeles Rams",
+        "shortDisplayName": "Rams",
+        "color": "003594",
+        "alternateColor": "ffd100",
+        "isActive": true,
+        "venue": {
+         "id": "477"
+        },
+        "links": [
+         {
+          "rel": [
+           "clubhouse",
+           "desktop",
+           "team"
+          ],
+          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams",
+          "text": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "roster",
+           "desktop",
+           "team"
+          ],
+          "href": "https://www.espn.com/nfl/team/roster/_/name/lar/los-angeles-rams",
+          "text": "Roster",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "roster",
+           "sportscenter",
+           "app",
+           "team"
+          ],
+          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:14&section=roster",
+          "text": "Roster",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "stats",
+           "desktop",
+           "team"
+          ],
+          "href": "https://www.espn.com/nfl/team/stats/_/name/lar/los-angeles-rams",
+          "text": "Statistics",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "stats",
+           "sportscenter",
+           "app",
+           "team"
+          ],
+          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:14&section=stats",
+          "text": "Statistics",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "schedule",
+           "desktop",
+           "team"
+          ],
+          "href": "https://www.espn.com/nfl/team/schedule/_/name/lar",
+          "text": "Schedule",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "schedule",
+           "sportscenter",
+           "app",
+           "team"
+          ],
+          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:14&section=scores",
+          "text": "Schedule",
+          "isExternal": false,
+          "isPremium": false
+         }
+        ],
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
+        "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/lar.png"
+       },
+       "score": "26",
+       "linescores": [
+        {
+         "value": 6.0,
+         "displayValue": "6",
+         "period": 1
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 2
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 3
+        },
+        {
+         "value": 6.0,
+         "displayValue": "6",
+         "period": 4
+        }
+       ],
+       "statistics": [],
+       "curatedRank": {
+        "current": 99
+       },
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Game",
+         "type": "total",
+         "summary": "7-4"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "3-3"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "4-1"
+        }
+       ]
+      },
+      {
+       "id": "9",
+       "uid": "s:20~l:28~t:9",
+       "type": "team",
+       "order": 1,
+       "homeAway": "away",
+       "winner": false,
+       "team": {
+        "id": "9",
+        "uid": "s:20~l:28~t:9",
+        "location": "Green Bay",
+        "name": "Packers",
+        "abbreviation": "GB",
+        "displayName": "Green Bay Packers",
+        "shortDisplayName": "Packers",
+        "color": "204e32",
+        "alternateColor": "ffb612",
+        "isActive": true,
+        "venue": {
+         "id": "3798"
+        },
+        "links": [
+         {
+          "rel": [
+           "clubhouse",
+           "desktop",
+           "team"
+          ],
+          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers",
+          "text": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "roster",
+           "desktop",
+           "team"
+          ],
+          "href": "https://www.espn.com/nfl/team/roster/_/name/gb/green-bay-packers",
+          "text": "Roster",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "roster",
+           "sportscenter",
+           "app",
+           "team"
+          ],
+          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:9&section=roster",
+          "text": "Roster",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "stats",
+           "desktop",
+           "team"
+          ],
+          "href": "https://www.espn.com/nfl/team/stats/_/name/gb/green-bay-packers",
+          "text": "Statistics",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "stats",
+           "sportscenter",
+           "app",
+           "team"
+          ],
+          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:9&section=stats",
+          "text": "Statistics",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "schedule",
+           "desktop",
+           "team"
+          ],
+          "href": "https://www.espn.com/nfl/team/schedule/_/name/gb",
+          "text": "Schedule",
+          "isExternal": false,
+          "isPremium": false
+         },
+         {
+          "rel": [
+           "schedule",
+           "sportscenter",
+           "app",
+           "team"
+          ],
+          "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:9&section=scores",
+          "text": "Schedule",
+          "isExternal": false,
+          "isPremium": false
+         }
+        ],
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
+        "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/gb.png"
+       },
+       "score": "13",
+       "linescores": [
+        {
+         "value": 3.0,
+         "displayValue": "3",
+         "period": 1
+        },
+        {
+         "value": 10.0,
+         "displayValue": "10",
+         "period": 2
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 3
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 4
+        }
+       ],
+       "statistics": [],
+       "curatedRank": {
+        "current": 99
+       },
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Game",
+         "type": "total",
+         "summary": "6-5"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "3-2"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "3-3"
+        }
+       ]
+      }
+     ],
+     "notes": [],
+     "status": {
+      "clock": 0.0,
+      "displayClock": "0:00",
+      "period": 4,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      },
+      "isTBDFlex": false
+     },
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "Netflix"
+       ]
+      }
+     ],
+     "leaders": [
+      {
+       "name": "passingYards",
+       "displayName": "Passing Leader",
+       "shortDisplayName": "PASS",
+       "abbreviation": "PYDS",
+       "leaders": [
+        {
+         "displayValue": "17/29, 198 YDS, 1 TD, 2 INT",
+         "value": 198.0,
+         "athlete": {
+          "id": "4036378",
+          "fullName": "Jordan Love",
+          "displayName": "Jordan Love",
+          "shortName": "J. Love",
+          "links": [
+           {
+            "rel": [
+             "playercard",
+             "desktop",
+             "athlete"
+            ],
+            "href": "https://www.espn.com/nfl/player/_/id/4036378/jordan-love"
+           }
+          ],
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4036378.png",
+          "jersey": "10",
+          "position": {
+           "abbreviation": "QB"
+          },
+          "team": {
+           "id": "9"
+          },
+          "active": true
+         },
+         "team": {
+          "id": "9"
+         }
+        }
+       ]
+      },
+      {
+       "name": "rushingYards",
+       "displayName": "Rushing Leader",
+       "shortDisplayName": "RUSH",
+       "abbreviation": "RYDS",
+       "leaders": [
+        {
+         "displayValue": "32 CAR, 184 YDS, 1 TD",
+         "value": 184.0,
+         "athlete": {
+          "id": "4429096",
+          "fullName": "Blake Corum",
+          "displayName": "Blake Corum",
+          "shortName": "B. Corum",
+          "links": [
+           {
+            "rel": [
+             "playercard",
+             "desktop",
+             "athlete"
+            ],
+            "href": "https://www.espn.com/nfl/player/_/id/4429096/blake-corum"
+           }
+          ],
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429096.png",
+          "jersey": "24",
+          "position": {
+           "abbreviation": "RB"
+          },
+          "team": {
+           "id": "14"
+          },
+          "active": true
+         },
+         "team": {
+          "id": "14"
+         }
+        }
+       ]
+      },
+      {
+       "name": "receivingYards",
+       "displayName": "Receiving Leader",
+       "shortDisplayName": "REC",
+       "abbreviation": "RECYDS",
+       "leaders": [
+        {
+         "displayValue": "4 REC, 69 YDS",
+         "value": 69.0,
+         "athlete": {
+          "id": "4710855",
+          "fullName": "Konata Mumpfield",
+          "displayName": "Konata Mumpfield",
+          "shortName": "K. Mumpfield",
+          "links": [
+           {
+            "rel": [
+             "playercard",
+             "desktop",
+             "athlete"
+            ],
+            "href": "https://www.espn.com/nfl/player/_/id/4710855/konata-mumpfield"
+           }
+          ],
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4710855.png",
+          "jersey": "4",
+          "position": {
+           "abbreviation": "WR"
+          },
+          "team": {
+           "id": "14"
+          },
+          "active": true
+         },
+         "team": {
+          "id": "14"
+         }
+        }
+       ]
+      }
+     ],
+     "format": {
+      "regulation": {
+       "periods": 4
+      },
+      "overtime": {
+       "periods": 1
+      }
+     },
+     "startDate": "2026-11-26T01:00Z",
+     "broadcast": "Netflix",
+     "geoBroadcasts": [
+      {
+       "type": {
+        "id": "4",
+        "shortName": "Streaming"
+       },
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "Netflix"
+       },
+       "lang": "en",
+       "region": "us"
+      }
+     ],
+     "headlines": [
+      {
+       "type": "Recap",
+       "description": "\u2014 Blake Corum rushed for a career-high 184 yards and a touchdown, Kyren Williams ran for another score and the Los Angeles Rams used a relentless ground game to pound out their fifth consecutive...",
+       "shortLinkText": "Blake Corum leads Rams' dominant rushing attack in their 5th straight win, 26-13 over Packers",
+       "video": [
+        {
+         "id": 50601743,
+         "source": "espn",
+         "headline": "Rams pick up important home win over the Packers",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.jpg",
+         "duration": 80,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261126_NFL_rams_pick_up_important_home_win_over_the_packers",
+          "trackingName": "COM_NFL Highlight (Rams pick up important home win over the Packers) 2026/11/26 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/3a252012-938b-4f86-8c86-74ecd137c985"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50601743"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50601743"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/3a252012-938b-4f86-8c86-74ecd137c985/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50601743&videoDSI=99d23d78703aa"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=99d23d78703aa"
+            }
+           }
+          }
+         }
+        }
+       ]
+      }
+     ],
+     "highlights": [
+      {
+       "id": 50601743,
+       "cerebroId": "6b07b938e0b9b66f46f95ab5",
+       "source": "espn",
+       "headline": "Rams pick up important home win over the Packers",
+       "description": "Rams pick up important home win over the Packers",
+       "lastModified": "2026-11-26T04:46:32Z",
+       "originalPublishDate": "2026-11-26T04:44:40Z",
+       "duration": 80,
+       "timeRestrictions": {
+        "embargoDate": "2026-11-26T04:44:38Z",
+        "expirationDate": "2026-11-28T04:44:38Z"
+       },
+       "deviceRestrictions": {
+        "devices": [
+         "settop",
+         "tablet",
+         "handset",
+         "ipad",
+         "desktop"
+        ],
+        "type": "whitelist"
+       },
+       "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.jpg",
+       "links": {
+        "api": {
+         "artwork": {
+          "href": "https://artwork.api.espn.com/artwork/collections/media/3a252012-938b-4f86-8c86-74ecd137c985"
+         },
+         "self": {
+          "href": "https://content.core.api.espn.com/v1/video/clips/50601743"
+         }
+        },
+        "mobile": {
+         "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
+         "alert": {
+          "href": "https://m.espn.com/general/video/videoAlert?vid=50601743"
+         },
+         "progressiveDownload": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers"
+         },
+         "source": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+         },
+         "streaming": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3a252012-938b-4f86-8c86-74ecd137c985/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers"
+         }
+        },
+        "source": {
+         "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4",
+         "HD": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+         },
+         "HLS": {
+          "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8",
+          "9x16": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+          },
+          "HD": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+          },
+          "cmaf": {
+           "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8",
+           "9x16": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+           },
+           "cmb": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+           }
+          },
+          "cmb": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7/playlist.m3u8"
+          },
+          "shield": {
+           "href": "https://watch.auth.api.espn.com/video/auth/media/3a252012-938b-4f86-8c86-74ecd137c985/asset"
+          }
+         },
+         "flash": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+         },
+         "full": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+         },
+         "mezzanine": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/125366bf-f501-4d3d-9ed7-13ce1273d9e7/125366bf-f501-4d3d-9ed7-13ce1273d9e7.mp4"
+         }
+        },
+        "sportscenter": {
+         "href": "sportscenter://x-callback-url/showVideo?videoID=50601743&videoDSI=99d23d78703aa"
+        },
+        "web": {
+         "href": "https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
+         "self": {
+          "href": "https://www.espn.com/video/clip/_/id/50601743/rams-pick-important-home-win-packers",
+          "dsi": {
+           "href": "https://www.espn.com/video/clip?id=99d23d78703aa"
+          }
+         }
+        }
+       },
+       "ad": {
+        "bundle": "nfl_one_plays",
+        "sport": "nfl"
+       },
+       "tracking": {
+        "coverageType": "Final Game Highlight",
+        "leagueName": "NFL",
+        "program": "espnnfl",
+        "sportName": "football",
+        "trackingId": "dm_20261126_NFL_rams_pick_up_important_home_win_over_the_packers",
+        "trackingName": "COM_NFL Highlight (Rams pick up important home win over the Packers) 2026/11/26 ESHEET"
+       }
+      }
+     ]
+    }
+   ],
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873079/packers-rams",
+     "text": "Gamecast",
+     "shortText": "Gamecast",
+     "isExternal": false,
+     "isPremium": false
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "boxscore",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/boxscore/_/gameId/401873079",
+     "text": "Box Score",
+     "shortText": "Box Score",
+     "isExternal": false,
+     "isPremium": false
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "highlights",
+      "desktop"
+     ],
+     "href": "https://www.espn.com/nfl/video?gameId=401873079",
+     "text": "Highlights",
+     "shortText": "Highlights",
+     "isExternal": false,
+     "isPremium": false
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "pbp",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/playbyplay/_/gameId/401873079",
+     "text": "Play-by-Play",
+     "shortText": "Play-by-Play",
+     "isExternal": false,
+     "isPremium": false
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "recap",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/recap?gameId=401873079",
+     "text": "Recap",
+     "shortText": "Recap",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "state": "post",
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "shortDetail": "Final"
     }
    }
   },
@@ -5145,7 +5145,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+171",
+          "odds": "+170",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5177,7 +5177,7 @@
         },
         "away": {
          "close": {
-          "odds": "-204",
+          "odds": "-203",
           "link": {
            "language": "en-US",
            "rel": [
@@ -5417,7 +5417,7 @@
      "rel": [
       "15212"
      ],
-     "href": "http://www.accuweather.com/en/us/acrisure-stadium-pa/15219/hourly-weather-forecast/53633_poi?day=3&hbhhour=15&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/acrisure-stadium-pa/15219/hourly-weather-forecast/53633_poi?day=2&hbhhour=15&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -6224,7 +6224,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-536",
+          "odds": "-558",
           "link": {
            "language": "en-US",
            "rel": [
@@ -6256,7 +6256,7 @@
         },
         "away": {
          "close": {
-          "odds": "+407",
+          "odds": "+420",
           "link": {
            "language": "en-US",
            "rel": [
@@ -6496,7 +6496,7 @@
      "rel": [
       "45202"
      ],
-     "href": "http://www.accuweather.com/en/us/paycor-stadium-oh/45212/hourly-weather-forecast/53622_poi?day=5&hbhhour=13&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/paycor-stadium-oh/45212/hourly-weather-forecast/53622_poi?day=4&hbhhour=13&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -7575,7 +7575,7 @@
      "rel": [
       "46225"
      ],
-     "href": "http://www.accuweather.com/en/us/lucas-oil-stadium-in/46204/hourly-weather-forecast/53571_poi?day=5&hbhhour=13&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/lucas-oil-stadium-in/46204/hourly-weather-forecast/53571_poi?day=4&hbhhour=13&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -8297,7 +8297,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $44",
-       "numberAvailable": 3882,
+       "numberAvailable": 3865,
        "links": [
         {
          "href": "https://www.vividseats.com/miami-dolphins-tickets-miami-gardens-hard-rock-stadium-3-3-2026/production/6492064?wsUser=717"
@@ -8382,7 +8382,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+180",
+          "odds": "+181",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8414,7 +8414,7 @@
         },
         "away": {
          "close": {
-          "odds": "-216",
+          "odds": "-217",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8654,7 +8654,7 @@
      "rel": [
       "33056"
      ],
-     "href": "http://www.accuweather.com/en/us/hard-rock-stadium-fl/33056/hourly-weather-forecast/53559_poi?day=5&hbhhour=13&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/hard-rock-stadium-fl/33056/hourly-weather-forecast/53559_poi?day=4&hbhhour=13&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -10455,7 +10455,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $115",
-       "numberAvailable": 1789,
+       "numberAvailable": 1774,
        "links": [
         {
          "href": "https://www.vividseats.com/jacksonville-jaguars-tickets-jacksonville-everbank-stadium-3-3-2026/production/6490146?wsUser=717"
@@ -10812,7 +10812,7 @@
      "rel": [
       "32202"
      ],
-     "href": "http://www.accuweather.com/en/us/everbank-stadium-fl/32202/hourly-weather-forecast/53553_poi?day=5&hbhhour=13&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/everbank-stadium-fl/32202/hourly-weather-forecast/53553_poi?day=4&hbhhour=13&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -13692,7 +13692,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $27",
-       "numberAvailable": 3877,
+       "numberAvailable": 3832,
        "links": [
         {
          "href": "https://www.vividseats.com/arizona-cardinals-tickets-glendale-state-farm-stadium-3-2-2026/production/6486969?wsUser=717"
@@ -13809,7 +13809,7 @@
         },
         "away": {
          "close": {
-          "odds": "-325",
+          "odds": "-324",
           "link": {
            "language": "en-US",
            "rel": [
@@ -14771,7 +14771,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $216",
-       "numberAvailable": 4558,
+       "numberAvailable": 4539,
        "links": [
         {
          "href": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-3-2027/production/6495879?wsUser=717"
@@ -16207,7 +16207,7 @@
      "rel": [
       "44114"
      ],
-     "href": "http://www.accuweather.com/en/us/huntington-bank-field-oh/44113/hourly-weather-forecast/41494_poi?day=5&hbhhour=20&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/huntington-bank-field-oh/44113/hourly-weather-forecast/41494_poi?day=4&hbhhour=20&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
@@ -16929,7 +16929,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $40",
-       "numberAvailable": 5640,
+       "numberAvailable": 5616,
        "links": [
         {
          "href": "https://www.vividseats.com/tampa-bay-buccaneers-tickets-tampa-raymond-james-stadium-3-2-2027/production/6496258?wsUser=717"
@@ -17288,7 +17288,7 @@
      "rel": [
       "33607"
      ],
-     "href": "http://www.accuweather.com/en/us/raymond-james-stadium-fl/33602/hourly-weather-forecast/53558_poi?day=6&hbhhour=20&lang=en-us",
+     "href": "http://www.accuweather.com/en/us/raymond-james-stadium-fl/33602/hourly-weather-forecast/53558_poi?day=5&hbhhour=20&lang=en-us",
      "text": "Weather",
      "shortText": "Weather",
      "isExternal": true,
