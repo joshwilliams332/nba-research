@@ -642,84 +642,61 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730793663",
+       "id": "4018730794073",
        "type": {
-        "id": "3",
-        "text": "Pass Incompletion"
+        "id": "75",
+        "text": "Two-minute warning",
+        "abbreviation": "2Min Warn"
        },
-       "text": " (No Huddle, Shotgun) J.Love pass incomplete short middle to T.Kraft.",
+       "text": "Two-Minute Warning",
        "scoreValue": 0,
        "team": {
-        "id": "9"
+        "id": "14"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.9645,
-        "awayWinPercentage": 0.035499999999999976,
+        "homeWinPercentage": 0.999,
+        "awayWinPercentage": 0.0010000000000000009,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "3 plays, 13 yards, 0:52",
+        "description": "6 plays, 67 yards, 1:39",
         "start": {
-         "yardLine": 77,
-         "text": "GB 23"
+         "yardLine": 27,
+         "text": "LAR 27"
         },
         "timeElapsed": {
-         "displayValue": "0:52"
+         "displayValue": "1:39"
         }
        },
        "start": {
-        "yardLine": 64,
+        "yardLine": 94,
         "team": {
-         "id": "9"
+         "id": "14"
         }
        },
        "end": {
-        "yardLine": 64,
+        "yardLine": 94,
         "team": {
-         "id": "9"
+         "id": "14"
         }
-       },
-       "athletesInvolved": [
-        {
-         "id": "4572680",
-         "fullName": "Tucker Kraft",
-         "displayName": "Tucker Kraft",
-         "shortName": "T. Kraft",
-         "links": [
-          {
-           "rel": [
-            "playercard",
-            "desktop",
-            "athlete"
-           ],
-           "href": "https://www.espn.com/nfl/player/_/id/4572680/tucker-kraft"
-          }
-         ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4572680.png",
-         "jersey": "85",
-         "position": "TE",
-         "team": {
-          "id": "9"
-         }
-        }
-       ]
+       }
       },
       "down": 2,
-      "yardLine": 64,
-      "distance": 10,
-      "downDistanceText": "2nd & 10 at GB 36",
-      "shortDownDistanceText": "2nd & 10",
-      "possessionText": "GB 36",
-      "isRedZone": false,
-      "homeTimeouts": 2,
-      "awayTimeouts": 3,
-      "possession": "9"
+      "yardLine": 94,
+      "distance": 1,
+      "downDistanceText": "2nd & 1 at GB 6",
+      "shortDownDistanceText": "2nd & 1",
+      "possessionText": "GB 6",
+      "isRedZone": true,
+      "homeTimeouts": 0,
+      "awayTimeouts": 0,
+      "possession": "14"
      },
      "status": {
-      "clock": 321.0,
-      "displayClock": "5:21",
+      "clock": 120.0,
+      "displayClock": "2:00",
       "period": 4,
       "type": {
        "id": "2",
@@ -727,8 +704,8 @@
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "5:21 - 4th Quarter",
-       "shortDetail": "5:21 - 4th"
+       "detail": "2:00 - 4th Quarter",
+       "shortDetail": "2:00 - 4th"
       },
       "isTBDFlex": false
      },
@@ -748,8 +725,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "15/26, 175 YDS, 1 TD, 1 INT",
-         "value": 175.0,
+         "displayValue": "17/29, 198 YDS, 1 TD, 2 INT",
+         "value": 198.0,
          "athlete": {
           "id": "4036378",
           "fullName": "Jordan Love",
@@ -788,8 +765,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "27 CAR, 131 YDS, 1 TD",
-         "value": 131.0,
+         "displayValue": "32 CAR, 184 YDS, 1 TD",
+         "value": 184.0,
          "athlete": {
           "id": "4429096",
           "fullName": "Blake Corum",
@@ -951,8 +928,8 @@
     }
    },
    "status": {
-    "clock": 321.0,
-    "displayClock": "5:21",
+    "clock": 120.0,
+    "displayClock": "2:00",
     "period": 4,
     "type": {
      "id": "2",
@@ -960,8 +937,8 @@
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "5:21 - 4th Quarter",
-     "shortDetail": "5:21 - 4th"
+     "detail": "2:00 - 4th Quarter",
+     "shortDetail": "2:00 - 4th"
     }
    }
   },
@@ -1665,7 +1642,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $262",
-       "numberAvailable": 3415,
+       "numberAvailable": 3278,
        "links": [
         {
          "href": "https://www.vividseats.com/detroit-lions-tickets-detroit-ford-field-3-1-2026/production/6489807?wsUser=717"
@@ -2830,7 +2807,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-471",
+          "odds": "-450",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2862,7 +2839,7 @@
         },
         "away": {
          "close": {
-          "odds": "+364",
+          "odds": "+350",
           "link": {
            "language": "en-US",
            "rel": [
@@ -3876,7 +3853,7 @@
         ]
        },
        "details": "BUF -3",
-       "overUnder": 46.5,
+       "overUnder": 45.5,
        "spread": -3.0,
        "awayTeamOdds": {
         "favorite": false,
@@ -4049,8 +4026,8 @@
         "shortDisplayName": "Total",
         "over": {
          "close": {
-          "line": "o46.5",
-          "odds": "-105",
+          "line": "o45.5",
+          "odds": "-114",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4058,7 +4035,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642O4650_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642O4550_1",
            "text": "Over Odds",
            "shortText": "Over Odds",
            "isExternal": true,
@@ -4071,7 +4048,7 @@
              "gameId": 401873082,
              "betSide": "over",
              "betType": "straight",
-             "betDetails": "Over:46.5"
+             "betDetails": "Over:45.5"
             }
            }
           }
@@ -4083,8 +4060,8 @@
         },
         "under": {
          "close": {
-          "line": "u46.5",
-          "odds": "-115",
+          "line": "u45.5",
+          "odds": "-106",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4092,7 +4069,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642U4650_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642U4550_3",
            "text": "Under Odds",
            "shortText": "Under Odds",
            "isExternal": true,
@@ -4105,7 +4082,7 @@
              "gameId": 401873082,
              "betSide": "under",
              "betType": "straight",
-             "betDetails": "Under:46.5"
+             "betDetails": "Under:45.5"
             }
            }
           }
@@ -7146,7 +7123,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+235",
+          "odds": "+236",
           "link": {
            "language": "en-US",
            "rel": [
@@ -7178,7 +7155,7 @@
         },
         "away": {
          "close": {
-          "odds": "-286",
+          "odds": "-287",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8140,7 +8117,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $44",
-       "numberAvailable": 3910,
+       "numberAvailable": 3898,
        "links": [
         {
          "href": "https://www.vividseats.com/miami-dolphins-tickets-miami-gardens-hard-rock-stadium-3-3-2026/production/6492064?wsUser=717"
@@ -10298,7 +10275,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $115",
-       "numberAvailable": 1772,
+       "numberAvailable": 1789,
        "links": [
         {
          "href": "https://www.vividseats.com/jacksonville-jaguars-tickets-jacksonville-everbank-stadium-3-3-2026/production/6490146?wsUser=717"
@@ -11078,24 +11055,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "4-7"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "1-4"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "3-3"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -11216,6 +11175,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "4-7"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "1-4"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "3-3"
         }
        ]
       }
