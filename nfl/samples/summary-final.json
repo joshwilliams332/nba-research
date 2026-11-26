@@ -21974,7 +21974,68 @@
    "injuries": [
     {
      "status": "Questionable",
-     "date": "2026-11-25T20:44Z",
+     "date": "2026-11-26T00:44Z",
+     "athlete": {
+      "id": "4037361",
+      "uid": "s:20~l:28~a:4037361",
+      "guid": "f7a5bacd-6839-3572-debe-1296fc7aeb1c",
+      "lastName": "Ward",
+      "fullName": "Charvarius Ward",
+      "displayName": "Charvarius Ward",
+      "shortName": "C. Ward",
+      "links": [
+       {
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/4037361/charvarius-ward",
+        "text": "Player Card"
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/4037361.png",
+       "alt": "Charvarius Ward"
+      },
+      "jersey": "7",
+      "position": {
+       "name": "Cornerback",
+       "displayName": "Cornerback",
+       "abbreviation": "CB"
+      },
+      "collegeAthlete": {
+       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/4037361?lang=en&region=us"
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE",
+       "displayDescription": "Questionable"
+      },
+      "type": "Knee",
+      "location": "Leg",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-11-29"
+     }
+    },
+    {
+     "status": "Questionable",
+     "date": "2026-11-26T00:37Z",
      "athlete": {
       "id": "4722908",
       "uid": "s:20~l:28~a:4722908",
@@ -22210,67 +22271,6 @@
       "type": "Concussion",
       "location": "Head",
       "detail": "Concussion",
-      "side": "Not Specified",
-      "returnDate": "2026-11-29"
-     }
-    },
-    {
-     "status": "Questionable",
-     "date": "2026-11-24T12:39Z",
-     "athlete": {
-      "id": "3863182",
-      "uid": "s:20~l:28~a:3863182",
-      "guid": "585cbba0-d1d7-cfd6-cd6f-b36ac06d43d5",
-      "lastName": "Tillery",
-      "fullName": "Jerry Tillery",
-      "displayName": "Jerry Tillery",
-      "shortName": "J. Tillery",
-      "links": [
-       {
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/3863182/jerry-tillery",
-        "text": "Player Card"
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/3863182.png",
-       "alt": "Jerry Tillery"
-      },
-      "jersey": "94",
-      "position": {
-       "name": "Defensive Tackle",
-       "displayName": "Defensive Tackle",
-       "abbreviation": "DT"
-      },
-      "collegeAthlete": {
-       "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/college-football/athletes/3863182?lang=en&region=us"
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE",
-       "displayDescription": "Questionable"
-      },
-      "type": "Calf",
-      "location": "Leg",
-      "detail": "Not Specified",
       "side": "Not Specified",
       "returnDate": "2026-11-29"
      }
@@ -23645,6 +23645,142 @@
      },
      "web": {
       "href": "http://www.espn.com/nfl/preview?gameId=401873087"
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50599365,
+    "nowId": "1-50599365",
+    "contentKey": "50599365-1-6-1",
+    "dataSourceIdentifier": "0d3f24494140a",
+    "type": "Story",
+    "headline": "Rams vs. Packers: Week 12 NFL game highlights",
+    "description": "Our two team reporters are at SoFi Stadium and they're keeping you updated on all the biggest plays and highlights.",
+    "lastModified": "2026-11-26T00:49:57Z",
+    "published": "2026-11-26T00:49:57Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "4b16cf023c616",
+      "id": 50599584,
+      "type": "header",
+      "name": "Micah Parsons pregame [1296x729]",
+      "credit": "AP Photo/Ryan Sun",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1126/r1751435_1296x729_16-9.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1519,
+      "type": "team",
+      "uid": "s:20~l:28~t:14",
+      "guid": "2e1473b2-e269-fd7a-1137-c1edacb85986",
+      "description": "Los Angeles Rams",
+      "sportId": 28,
+      "teamId": 14,
+      "team": {
+       "id": 14,
+       "description": "Los Angeles Rams",
+       "abbreviation": "LAR",
+       "shortDisplayName": "Rams",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/lar/los-angeles-rams"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1861,
+      "type": "team",
+      "uid": "s:20~l:28~t:9",
+      "guid": "06cd3bcf-7a86-53d4-28e7-aa049dd36261",
+      "description": "Green Bay Packers",
+      "sportId": 28,
+      "teamId": 9,
+      "team": {
+       "id": 9,
+       "description": "Green Bay Packers",
+       "abbreviation": "GB",
+       "shortDisplayName": "Packers",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/gb/green-bay-packers"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 700448,
+      "type": "contributor",
+      "guid": "037de313-2fe3-3e3c-a5f6-da543b98e5d2",
+      "description": "NFL Nation",
+      "slug": "nfl-nation",
+      "contributor": {
+       "id": 3824,
+       "description": "NFL Nation"
+      }
+     }
+    ],
+    "byline": "NFL Nation",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50599365"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50599365"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50599365"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50599365/nfl-week-12-highlights-touchdowns-plays"
      }
     },
     "premium": false
@@ -25026,223 +25162,6 @@
      },
      "web": {
       "href": "https://www.espn.com/nfl/story/_/id/50588078/nfl-week-12-fashionable-arrivals"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50598979,
-    "nowId": "1-50598979",
-    "contentKey": "50598979-1-22-1",
-    "dataSourceIdentifier": "b0138ebe84858",
-    "type": "Preview",
-    "headline": "Dolphins playing host to Jets, as the NFL's youngest team remains mindful of rookie wall",
-    "description": "\u2014 The Miami Dolphins have a visible opponent this week. They're playing host to the rival New York Jets on Sunday.",
-    "lastModified": "2026-11-25T23:48:34Z",
-    "published": "2026-11-25T23:48:34Z",
-    "images": [
-     {
-      "type": "stitcher",
-      "name": "espn.applewatch.awayhome.1",
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.applewatch.awayhome.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.applewatch.homeaway.1",
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.applewatch.homeaway.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.16x9.1",
-      "ratio": "16x9",
-      "height": 173,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.awayhome.16x9.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.16x9.1",
-      "ratio": "16x9",
-      "height": 173,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.homeaway.16x9.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.1x1.1",
-      "ratio": "1x1",
-      "height": 308,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.awayhome.1x1.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.1x1.1",
-      "ratio": "1x1",
-      "height": 308,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.homeaway.1x1.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.5x2.1",
-      "ratio": "5x2",
-      "height": 124,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.awayhome.5x2.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.5x2.1",
-      "ratio": "5x2",
-      "height": 124,
-      "width": 308,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.homeaway.5x2.1"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.16x9.2",
-      "ratio": "16x9",
-      "height": 353,
-      "width": 628,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.awayhome.16x9.2"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.16x9.2",
-      "ratio": "16x9",
-      "height": 353,
-      "width": 628,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.homeaway.16x9.2"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.awayhome.5x2.2",
-      "ratio": "5x2",
-      "height": 251,
-      "width": 628,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.awayhome.5x2.2"
-     },
-     {
-      "type": "stitcher",
-      "name": "espn.all.homeaway.5x2.2",
-      "ratio": "5x2",
-      "height": 251,
-      "width": 628,
-      "url": "https://s.espncdn.com/stitcher/sports/football/nfl/events/401873089.png?templateId=espn.all.homeaway.5x2.2"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2258,
-      "type": "team",
-      "uid": "s:20~l:28~t:15",
-      "guid": "af33088b-1e19-d27d-dbc0-354fd7151703",
-      "description": "Miami Dolphins",
-      "sportId": 28,
-      "teamId": 15,
-      "team": {
-       "id": 15,
-       "description": "Miami Dolphins",
-       "abbreviation": "MIA",
-       "shortDisplayName": "Dolphins",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/mia/miami-dolphins"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2378,
-      "type": "team",
-      "uid": "s:20~l:28~t:20",
-      "guid": "732d3caf-b350-1e34-48c6-b7cebb4a0d88",
-      "description": "New York Jets",
-      "sportId": 28,
-      "teamId": 20,
-      "team": {
-       "id": 20,
-       "description": "New York Jets",
-       "abbreviation": "NYJ",
-       "shortDisplayName": "Jets",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyj/new-york-jets"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/nyj/new-york-jets"
-         }
-        }
-       }
-      }
-     },
-     {
-      "type": "event",
-      "uid": "s:20~l:28~e:401873089",
-      "guid": "8433d6a6-875d-3915-893a-cf3320971115",
-      "description": "New York Jets @ Miami Dolphins",
-      "eventId": 401873089,
-      "event": {
-       "id": 401873089,
-       "sport": "football",
-       "league": "nfl",
-       "description": "New York Jets @ Miami Dolphins"
-      }
-     }
-    ],
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50598979"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50598979"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50598979"
-     },
-     "web": {
-      "href": "http://www.espn.com/nfl/preview?gameId=401873089"
      }
     },
     "premium": false
