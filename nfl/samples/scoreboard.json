@@ -441,7 +441,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/dal.png"
        },
-       "score": "28",
+       "score": "31",
        "linescores": [
         {
          "value": 14.0,
@@ -454,9 +454,14 @@
          "period": 2
         },
         {
+         "value": 3.0,
+         "displayValue": "3",
+         "period": 3
+        },
+        {
          "value": 0.0,
          "displayValue": "0",
-         "period": 3
+         "period": 4
         }
        ],
        "statistics": [],
@@ -587,7 +592,7 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/phi.png"
        },
-       "score": "10",
+       "score": "24",
        "linescores": [
         {
          "value": 0.0,
@@ -600,9 +605,14 @@
          "period": 2
         },
         {
-         "value": 0.0,
-         "displayValue": "0",
+         "value": 7.0,
+         "displayValue": "7",
          "period": 3
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 4
         }
        ],
        "statistics": [],
@@ -632,75 +642,90 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730802611",
+       "id": "-516087",
        "type": {
-        "id": "74",
-        "text": "Official Timeout",
-        "abbreviation": "Off TO"
+        "id": "61",
+        "text": "Extra Point Good",
+        "abbreviation": "XP"
        },
-       "text": "Official Timeout at 09:44.",
-       "scoreValue": 0,
+       "text": "(Jake Elliott Kick)",
+       "scoreValue": 1,
        "team": {
         "id": "21"
        },
-       "probability": {
-        "tiePercentage": 0.0,
-        "homeWinPercentage": 0.9798,
-        "awayWinPercentage": 0.020199999999999996,
-        "secondsLeft": 0
-       },
        "statYardage": 0,
        "drive": {
-        "description": "5 plays, 16 yards, 3:33",
+        "description": "3 plays, 4 yards, 1:29",
         "start": {
-         "yardLine": 21,
-         "text": "DAL 21"
+         "yardLine": 26,
+         "text": "DAL 26"
         },
         "end": {
-         "yardLine": 37,
-         "text": "DAL 37"
+         "yardLine": 30,
+         "text": "DAL 30"
         },
         "timeElapsed": {
-         "displayValue": "3:33"
+         "displayValue": "1:29"
         },
-        "result": "PUNT"
+        "result": "BLOCKED PUNT TD"
        },
        "start": {
-        "yardLine": 79,
+        "yardLine": 15,
         "team": {
          "id": "21"
         }
        },
        "end": {
-        "yardLine": 79,
+        "yardLine": 65,
         "team": {
          "id": "21"
         }
-       }
+       },
+       "athletesInvolved": [
+        {
+         "id": "4218312",
+         "fullName": "Kenny Moore II",
+         "displayName": "Kenny Moore II",
+         "shortName": "K. Moore II",
+         "links": [
+          {
+           "rel": [
+            "playercard",
+            "desktop",
+            "athlete"
+           ],
+           "href": "https://www.espn.com/nfl/player/_/id/4218312/kenny-moore-ii"
+          }
+         ],
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4218312.png",
+         "jersey": "23",
+         "position": "CB",
+         "team": {
+          "id": "21"
+         }
+        }
+       ]
       },
       "down": 1,
-      "yardLine": 79,
+      "yardLine": 65,
       "distance": 10,
-      "downDistanceText": "1st & 10 at PHI 21",
-      "shortDownDistanceText": "1st & 10",
-      "possessionText": "PHI 21",
       "isRedZone": false,
       "homeTimeouts": 3,
       "awayTimeouts": 3,
       "possession": "21"
      },
      "status": {
-      "clock": 584.0,
-      "displayClock": "9:44",
-      "period": 3,
+      "clock": 826.0,
+      "displayClock": "13:46",
+      "period": 4,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "9:44 - 3rd Quarter",
-       "shortDetail": "9:44 - 3rd"
+       "detail": "13:46 - 4th Quarter",
+       "shortDetail": "13:46 - 4th"
       },
       "isTBDFlex": false
      },
@@ -720,13 +745,13 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "10/15, 181 YDS, 2 TD",
-         "value": 181.0,
+         "displayValue": "13/18, 220 YDS, 2 TD",
+         "value": 220.0,
          "athlete": {
-          "id": "2577417",
-          "fullName": "Dak Prescott",
-          "displayName": "Dak Prescott",
-          "shortName": "D. Prescott",
+          "id": "4360698",
+          "fullName": "Joe Milton",
+          "displayName": "Joe Milton",
+          "shortName": "J. Milton",
           "links": [
            {
             "rel": [
@@ -734,21 +759,21 @@
              "desktop",
              "athlete"
             ],
-            "href": "https://www.espn.com/nfl/player/_/id/2577417/dak-prescott"
+            "href": "https://www.espn.com/nfl/player/_/id/4360698/joe-milton"
            }
           ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2577417.png",
-          "jersey": "4",
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360698.png",
+          "jersey": "14",
           "position": {
            "abbreviation": "QB"
           },
           "team": {
-           "id": "6"
+           "id": "21"
           },
           "active": true
          },
          "team": {
-          "id": "6"
+          "id": "21"
          }
         }
        ]
@@ -760,8 +785,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "17 CAR, 61 YDS, 2 TD",
-         "value": 61.0,
+         "displayValue": "20 CAR, 72 YDS, 2 TD",
+         "value": 72.0,
          "athlete": {
           "id": "4361579",
           "fullName": "Javonte Williams",
@@ -800,8 +825,8 @@
        "abbreviation": "RECYDS",
        "leaders": [
         {
-         "displayValue": "5 REC, 100 YDS, 1 TD",
-         "value": 100.0,
+         "displayValue": "7 REC, 159 YDS, 2 TD",
+         "value": 159.0,
          "athlete": {
           "id": "4241478",
           "fullName": "DeVonta Smith",
@@ -907,8 +932,8 @@
    ],
    "weather": {
     "displayValue": "33",
-    "temperature": 50,
-    "highTemperature": 50,
+    "temperature": 49,
+    "highTemperature": 49,
     "conditionId": "Clear",
     "link": {
      "language": "en-US",
@@ -923,17 +948,17 @@
     }
    },
    "status": {
-    "clock": 584.0,
-    "displayClock": "9:44",
-    "period": 3,
+    "clock": 826.0,
+    "displayClock": "13:46",
+    "period": 4,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "9:44 - 3rd Quarter",
-     "shortDetail": "9:44 - 3rd"
+     "detail": "13:46 - 4th Quarter",
+     "shortDetail": "13:46 - 4th"
     }
    }
   },
@@ -1455,12 +1480,229 @@
        "region": "us"
       }
      ],
-     "highlights": [],
+     "highlights": [
+      {
+       "id": 50606402,
+       "cerebroId": "6b08aaa27f6a5e2e363d8f4f",
+       "source": "espn",
+       "headline": "Chicago Bears vs. Detroit Lions: Game Highlights",
+       "description": "Chicago Bears vs. Detroit Lions: Game Highlights",
+       "lastModified": "2026-11-27T00:25:00Z",
+       "originalPublishDate": "2026-11-26T21:54:42Z",
+       "duration": 96,
+       "timeRestrictions": {
+        "embargoDate": "2026-11-26T21:54:40Z",
+        "expirationDate": "2026-11-28T21:54:40Z"
+       },
+       "deviceRestrictions": {
+        "devices": [
+         "settop",
+         "tablet",
+         "handset",
+         "ipad",
+         "desktop"
+        ],
+        "type": "whitelist"
+       },
+       "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.jpg",
+       "links": {
+        "api": {
+         "artwork": {
+          "href": "https://artwork.api.espn.com/artwork/collections/media/a374c091-f524-462f-97d0-8eb4a15a3c99"
+         },
+         "self": {
+          "href": "https://content.core.api.espn.com/v1/video/clips/50606402"
+         }
+        },
+        "mobile": {
+         "href": "https://watch.auth.api.espn.com/video/auth/brightcove/a374c091-f524-462f-97d0-8eb4a15a3c99/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50606402/game-highlights",
+         "alert": {
+          "href": "https://m.espn.com/general/video/videoAlert?vid=50606402"
+         },
+         "progressiveDownload": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/a374c091-f524-462f-97d0-8eb4a15a3c99/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50606402/game-highlights"
+         },
+         "source": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+         },
+         "streaming": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/a374c091-f524-462f-97d0-8eb4a15a3c99/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50606402/game-highlights"
+         }
+        },
+        "source": {
+         "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4",
+         "HD": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+         },
+         "HLS": {
+          "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8",
+          "9x16": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+          },
+          "HD": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+          },
+          "cmaf": {
+           "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8",
+           "9x16": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+           },
+           "cmb": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+           }
+          },
+          "cmb": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+          },
+          "shield": {
+           "href": "https://watch.auth.api.espn.com/video/auth/media/a374c091-f524-462f-97d0-8eb4a15a3c99/asset"
+          }
+         },
+         "flash": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+         },
+         "full": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+         },
+         "mezzanine": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+         }
+        },
+        "sportscenter": {
+         "href": "sportscenter://x-callback-url/showVideo?videoID=50606402&videoDSI=824bcdca42cdc"
+        },
+        "web": {
+         "href": "https://www.espn.com/video/clip/_/id/50606402/game-highlights",
+         "self": {
+          "href": "https://www.espn.com/video/clip/_/id/50606402/game-highlights",
+          "dsi": {
+           "href": "https://www.espn.com/video/clip?id=824bcdca42cdc"
+          }
+         }
+        }
+       },
+       "ad": {
+        "bundle": "sportscenter",
+        "sport": "nfl"
+       },
+       "tracking": {
+        "coverageType": "Final Game Highlight",
+        "leagueName": "NFL",
+        "program": "espnnfl",
+        "sportName": "football",
+        "trackingId": "dm_20261126_NFL_chicago_bears_vs_detroit_lions_game_highlights",
+        "trackingName": "COM_NFL Highlight (Chicago Bears vs. Detroit Lions: Game Highlights) 2026/11/26 ESHEET"
+       }
+      }
+     ],
      "headlines": [
       {
        "type": "Recap",
        "description": "\u2014 Caleb Williams took a shotgun snap, dropped back, looked left and threw a perfect pass to the back, right corner of the end zone where only Rome Odunze could catch it.",
-       "shortLinkText": "Caleb Williams' TD pass with 3 seconds left gives Bears 39-35 win over Lions"
+       "shortLinkText": "Caleb Williams' TD pass with 3 seconds left gives Bears 39-35 win over Lions",
+       "video": [
+        {
+         "id": 50606402,
+         "source": "espn",
+         "headline": "Chicago Bears vs. Detroit Lions: Game Highlights",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.jpg",
+         "duration": 96,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261126_NFL_chicago_bears_vs_detroit_lions_game_highlights",
+          "trackingName": "COM_NFL Highlight (Chicago Bears vs. Detroit Lions: Game Highlights) 2026/11/26 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/a374c091-f524-462f-97d0-8eb4a15a3c99"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50606402"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/a374c091-f524-462f-97d0-8eb4a15a3c99/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50606402/game-highlights",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50606402"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/a374c091-f524-462f-97d0-8eb4a15a3c99/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50606402/game-highlights"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/a374c091-f524-462f-97d0-8eb4a15a3c99/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50606402/game-highlights"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/a374c091-f524-462f-97d0-8eb4a15a3c99/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1126/e3a81111-c9e1-4bc7-9206-3650c546a1a6/e3a81111-c9e1-4bc7-9206-3650c546a1a6.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50606402&videoDSI=824bcdca42cdc"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50606402/game-highlights",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50606402/game-highlights",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=824bcdca42cdc"
+            }
+           }
+          }
+         }
+        }
+       ]
       }
      ]
     }
@@ -2245,8 +2487,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $173",
-       "numberAvailable": 1323,
+       "summary": "Tickets as low as $177",
+       "numberAvailable": 1452,
        "links": [
         {
          "href": "https://www.vividseats.com/buffalo-bills-tickets-orchard-park-highmark-stadium-3-6-2026/production/6488364?wsUser=717"
@@ -2299,7 +2541,7 @@
         "displayName": "DraftKings"
        },
        "details": "BUF -3",
-       "overUnder": 45.5,
+       "overUnder": 46.5,
        "spread": -3.0,
        "awayTeamOdds": {
         "favorite": false,
@@ -2332,7 +2574,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "-156",
+          "odds": "-157",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2472,8 +2714,8 @@
         "shortDisplayName": "Total",
         "over": {
          "close": {
-          "line": "o45.5",
-          "odds": "-111",
+          "line": "o46.5",
+          "odds": "-105",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2481,7 +2723,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642O4550_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642O4650_1",
            "text": "Over Odds",
            "shortText": "Over Odds",
            "isExternal": true,
@@ -2494,7 +2736,7 @@
              "gameId": 401873082,
              "betSide": "over",
              "betType": "straight",
-             "betDetails": "Over:45.5"
+             "betDetails": "Over:46.5"
             }
            }
           }
@@ -2506,8 +2748,8 @@
         },
         "under": {
          "close": {
-          "line": "u45.5",
-          "odds": "-108",
+          "line": "u46.5",
+          "odds": "-115",
           "link": {
            "language": "en-US",
            "rel": [
@@ -2515,7 +2757,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642U4550_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118209%3Foutcomes%3D0OU84695642U4650_3",
            "text": "Under Odds",
            "shortText": "Under Odds",
            "isExternal": true,
@@ -2528,7 +2770,7 @@
              "gameId": 401873082,
              "betSide": "under",
              "betType": "straight",
-             "betDetails": "Under:45.5"
+             "betDetails": "Under:46.5"
             }
            }
           }
@@ -4151,8 +4393,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $98",
-       "numberAvailable": 834,
+       "summary": "Tickets as low as $107",
+       "numberAvailable": 804,
        "links": [
         {
          "href": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-6-2027/production/6495152?wsUser=717"
@@ -4203,9 +4445,9 @@
          }
         ]
        },
-       "details": "DEN -4.5",
+       "details": "DEN -5.5",
        "overUnder": 36.5,
-       "spread": 4.5,
+       "spread": 5.5,
        "awayTeamOdds": {
         "favorite": true,
         "underdog": false,
@@ -4237,7 +4479,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+211",
+          "odds": "+207",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4269,7 +4511,7 @@
         },
         "away": {
          "close": {
-          "odds": "-257",
+          "odds": "-251",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4305,8 +4547,8 @@
         "shortDisplayName": "Spread",
         "home": {
          "close": {
-          "line": "+4.5",
-          "odds": "+101",
+          "line": "+5.5",
+          "odds": "-122",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4314,7 +4556,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118077%3Foutcomes%3D0HC84695510P450_1",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118077%3Foutcomes%3D0HC84695510P550_1",
            "text": "Home Point Spread",
            "shortText": "Home Point Spread",
            "isExternal": true,
@@ -4327,7 +4569,7 @@
              "gameId": 401873083,
              "betSide": "none",
              "betType": "straight",
-             "betDetails": "Spread:PIT+4.5"
+             "betDetails": "Spread:PIT+5.5"
             }
            }
           }
@@ -4339,8 +4581,8 @@
         },
         "away": {
          "close": {
-          "line": "-4.5",
-          "odds": "-122",
+          "line": "-5.5",
+          "odds": "+101",
           "link": {
            "language": "en-US",
            "rel": [
@@ -4348,7 +4590,7 @@
             "desktop",
             "bets"
            ],
-           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118077%3Foutcomes%3D0HC84695510N450_3",
+           "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118077%3Foutcomes%3D0HC84695510N550_3",
            "text": "Away Point Spread",
            "shortText": "Away Point Spread",
            "isExternal": true,
@@ -4361,7 +4603,7 @@
              "gameId": 401873083,
              "betSide": "none",
              "betType": "straight",
-             "betDetails": "Spread:DEN-4.5"
+             "betDetails": "Spread:DEN-5.5"
             }
            }
           }
@@ -5231,7 +5473,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $86",
-       "numberAvailable": 3403,
+       "numberAvailable": 3406,
        "links": [
         {
          "href": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717"
@@ -6395,7 +6637,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+235",
+          "odds": "+236",
           "link": {
            "language": "en-US",
            "rel": [
@@ -6427,7 +6669,7 @@
         },
         "away": {
          "close": {
-          "odds": "-286",
+          "odds": "-287",
           "link": {
            "language": "en-US",
            "rel": [
@@ -7389,7 +7631,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $37",
-       "numberAvailable": 3759,
+       "numberAvailable": 3758,
        "links": [
         {
          "href": "https://www.vividseats.com/miami-dolphins-tickets-miami-gardens-hard-rock-stadium-3-3-2026/production/6492064?wsUser=717"
@@ -7474,7 +7716,7 @@
         "shortDisplayName": "ML",
         "home": {
          "close": {
-          "odds": "+200",
+          "odds": "+201",
           "link": {
            "language": "en-US",
            "rel": [
@@ -7506,7 +7748,7 @@
         },
         "away": {
          "close": {
-          "odds": "-241",
+          "odds": "-243",
           "link": {
            "language": "en-US",
            "rel": [
@@ -8467,8 +8709,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $77",
-       "numberAvailable": 4217,
+       "summary": "Tickets as low as $78",
+       "numberAvailable": 4201,
        "links": [
         {
          "href": "https://www.vividseats.com/minnesota-vikings-tickets-minneapolis-us-bank-stadium-3-7-2027/production/6492314?wsUser=717"
@@ -9547,7 +9789,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $118",
-       "numberAvailable": 1763,
+       "numberAvailable": 1759,
        "links": [
         {
          "href": "https://www.vividseats.com/jacksonville-jaguars-tickets-jacksonville-everbank-stadium-3-3-2026/production/6490146?wsUser=717"
@@ -10626,7 +10868,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $68",
-       "numberAvailable": 2983,
+       "numberAvailable": 2981,
        "links": [
         {
          "href": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717"
@@ -11704,8 +11946,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $58",
-       "numberAvailable": 3573,
+       "summary": "Tickets as low as $57",
+       "numberAvailable": 3543,
        "links": [
         {
          "href": "https://www.vividseats.com/los-angeles-chargers-tickets-inglewood-sofi-stadium-3-5-2026/production/6491361?wsUser=717"
@@ -13863,7 +14105,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $198",
-       "numberAvailable": 4409,
+       "numberAvailable": 4329,
        "links": [
         {
          "href": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-3-2027/production/6495879?wsUser=717"
@@ -14392,6 +14634,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "6-4"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "4-0"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-4"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -14512,24 +14772,6 @@
            }
           }
          ]
-        }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "6-4"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "4-0"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-4"
         }
        ]
       },
@@ -14942,7 +15184,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $46",
-       "numberAvailable": 5510,
+       "numberAvailable": 5474,
        "links": [
         {
          "href": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-8-2026/production/6489440?wsUser=717"
@@ -16021,7 +16263,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $47",
-       "numberAvailable": 5568,
+       "numberAvailable": 5644,
        "links": [
         {
          "href": "https://www.vividseats.com/tampa-bay-buccaneers-tickets-tampa-raymond-james-stadium-3-2-2027/production/6496258?wsUser=717"
