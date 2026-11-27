@@ -642,52 +642,51 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "4018730803758",
+       "id": "4018730803931",
        "type": {
-        "id": "5",
-        "text": "Rush",
-        "abbreviation": "RUSH"
+        "id": "3",
+        "text": "Pass Incompletion"
        },
-       "text": " J.Williams up the middle to DAL 26 for 6 yards (J.Trotter).",
+       "text": "(Shotgun) J.Milton pass incomplete deep left to D.Smith (M.Hooker). PHI-D.Smith was injured during the play.",
        "scoreValue": 0,
        "team": {
-        "id": "6"
+        "id": "21"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.9321,
-        "awayWinPercentage": 0.06789999999999996,
+        "homeWinPercentage": 0.9001,
+        "awayWinPercentage": 0.09989999999999999,
         "secondsLeft": 0
        },
-       "statYardage": 6,
+       "statYardage": 0,
        "drive": {
-        "description": "1 play, 6 yards, 0:00",
+        "description": "1 play, 0 yards, 0:05",
         "start": {
-         "yardLine": 20,
-         "text": "DAL 20"
+         "yardLine": 49,
+         "text": "DAL 49"
         },
         "timeElapsed": {
-         "displayValue": "0:00"
+         "displayValue": "0:05"
         }
        },
        "start": {
-        "yardLine": 20,
+        "yardLine": 49,
         "team": {
-         "id": "6"
+         "id": "21"
         }
        },
        "end": {
-        "yardLine": 26,
+        "yardLine": 49,
         "team": {
-         "id": "6"
+         "id": "21"
         }
        },
        "athletesInvolved": [
         {
-         "id": "4361579",
-         "fullName": "Javonte Williams",
-         "displayName": "Javonte Williams",
-         "shortName": "J. Williams",
+         "id": "4241478",
+         "fullName": "DeVonta Smith",
+         "displayName": "DeVonta Smith",
+         "shortName": "D. Smith",
          "links": [
           {
            "rel": [
@@ -695,32 +694,32 @@
             "desktop",
             "athlete"
            ],
-           "href": "https://www.espn.com/nfl/player/_/id/4361579/javonte-williams"
+           "href": "https://www.espn.com/nfl/player/_/id/4241478/devonta-smith"
           }
          ],
-         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361579.png",
-         "jersey": "33",
-         "position": "RB",
+         "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241478.png",
+         "jersey": "6",
+         "position": "WR",
          "team": {
-          "id": "6"
+          "id": "21"
          }
         }
        ]
       },
       "down": 2,
-      "yardLine": 26,
-      "distance": 4,
-      "downDistanceText": "2nd & 4 at DAL 26",
-      "shortDownDistanceText": "2nd & 4",
-      "possessionText": "DAL 26",
+      "yardLine": 49,
+      "distance": 10,
+      "downDistanceText": "2nd & 10 at DAL 49",
+      "shortDownDistanceText": "2nd & 10",
+      "possessionText": "DAL 49",
       "isRedZone": false,
-      "homeTimeouts": 3,
+      "homeTimeouts": 2,
       "awayTimeouts": 3,
-      "possession": "6"
+      "possession": "21"
      },
      "status": {
-      "clock": 512.0,
-      "displayClock": "8:32",
+      "clock": 457.0,
+      "displayClock": "7:37",
       "period": 4,
       "type": {
        "id": "2",
@@ -728,8 +727,8 @@
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "8:32 - 4th Quarter",
-       "shortDetail": "8:32 - 4th"
+       "detail": "7:37 - 4th Quarter",
+       "shortDetail": "7:37 - 4th"
       },
       "isTBDFlex": false
      },
@@ -749,8 +748,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "15/22, 254 YDS, 2 TD",
-         "value": 254.0,
+         "displayValue": "16/24, 258 YDS, 2 TD",
+         "value": 258.0,
          "athlete": {
           "id": "2577417",
           "fullName": "Dak Prescott",
@@ -952,8 +951,8 @@
     }
    },
    "status": {
-    "clock": 512.0,
-    "displayClock": "8:32",
+    "clock": 457.0,
+    "displayClock": "7:37",
     "period": 4,
     "type": {
      "id": "2",
@@ -961,8 +960,8 @@
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "8:32 - 4th Quarter",
-     "shortDetail": "8:32 - 4th"
+     "detail": "7:37 - 4th Quarter",
+     "shortDetail": "7:37 - 4th"
     }
    }
   },
@@ -2193,24 +2192,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "8-2"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "5-0"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "3-2"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -2331,6 +2312,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "8-2"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "5-0"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "3-2"
         }
        ]
       }
@@ -3848,24 +3847,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "6-4"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "4-0"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-4"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -3986,6 +3967,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "6-4"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "4-0"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-4"
         }
        ]
       },
@@ -5477,7 +5476,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $86",
-       "numberAvailable": 3406,
+       "numberAvailable": 3397,
        "links": [
         {
          "href": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717"
@@ -6257,24 +6256,6 @@
         "current": 99
        },
        "statistics": [],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "6-3-1"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "4-2"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-1-1"
-        }
-       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -6395,6 +6376,24 @@
            }
           }
          ]
+        }
+       ],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "6-3-1"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "4-2"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-1-1"
         }
        ]
       }
@@ -6556,7 +6555,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $23",
-       "numberAvailable": 2871,
+       "numberAvailable": 2869,
        "links": [
         {
          "href": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717"
@@ -8415,6 +8414,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "3-7"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "1-5"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-2"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -8535,24 +8552,6 @@
            }
           }
          ]
-        }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "3-7"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "1-5"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-2"
         }
        ]
       }
@@ -8713,8 +8712,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $78",
-       "numberAvailable": 4201,
+       "summary": "Tickets as low as $81",
+       "numberAvailable": 4138,
        "links": [
         {
          "href": "https://www.vividseats.com/minnesota-vikings-tickets-minneapolis-us-bank-stadium-3-7-2027/production/6492314?wsUser=717"
@@ -10871,8 +10870,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $68",
-       "numberAvailable": 2981,
+       "summary": "Tickets as low as $69",
+       "numberAvailable": 2950,
        "links": [
         {
          "href": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717"
@@ -11950,8 +11949,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $57",
-       "numberAvailable": 3543,
+       "summary": "Tickets as low as $58",
+       "numberAvailable": 3725,
        "links": [
         {
          "href": "https://www.vividseats.com/los-angeles-chargers-tickets-inglewood-sofi-stadium-3-5-2026/production/6491361?wsUser=717"
@@ -14109,7 +14108,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $198",
-       "numberAvailable": 4329,
+       "numberAvailable": 4430,
        "links": [
         {
          "href": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-3-2027/production/6495879?wsUser=717"
@@ -14638,6 +14637,24 @@
         "current": 99
        },
        "statistics": [],
+       "records": [
+        {
+         "name": "overall",
+         "abbreviation": "Any",
+         "type": "total",
+         "summary": "6-4"
+        },
+        {
+         "name": "Home",
+         "type": "home",
+         "summary": "4-0"
+        },
+        {
+         "name": "Road",
+         "type": "road",
+         "summary": "2-4"
+        }
+       ],
        "leaders": [
         {
          "name": "passingLeader",
@@ -14758,24 +14775,6 @@
            }
           }
          ]
-        }
-       ],
-       "records": [
-        {
-         "name": "overall",
-         "abbreviation": "Any",
-         "type": "total",
-         "summary": "6-4"
-        },
-        {
-         "name": "Home",
-         "type": "home",
-         "summary": "4-0"
-        },
-        {
-         "name": "Road",
-         "type": "road",
-         "summary": "2-4"
         }
        ]
       },
@@ -15187,8 +15186,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $46",
-       "numberAvailable": 5474,
+       "summary": "Tickets as low as $44",
+       "numberAvailable": 5496,
        "links": [
         {
          "href": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-8-2026/production/6489440?wsUser=717"
