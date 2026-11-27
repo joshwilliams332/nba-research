@@ -1,5 +1,5 @@
 {
- "timestamp": "2026-11-27T03:46:09Z",
+ "timestamp": "2026-11-27T04:16:04Z",
  "status": "success",
  "season": {
   "year": 2026,
@@ -121880,6 +121880,7 @@
       "type": "Back",
       "location": "Torso",
       "detail": "Spasms",
+      "side": "Not Specified",
       "returnDate": "2026-12-07"
      }
     },
@@ -227421,11 +227422,11 @@
    "displayName": "Kansas City Chiefs",
    "injuries": [
     {
-     "id": "650064",
-     "longComment": "Royals appeared to tweak his ankle early in the third quarter, and he's being evaluated by medical staff to determine whether he can return to Thursday's game. Emmett Johnson, Josh Downs and Cyrus Allen are all candidates to see more work as returners on kickoffs for as long as Royals is sidelined.",
-     "shortComment": "Royals (ankle) is questionable to return to Thursday's game against the Bills.",
-     "status": "Questionable",
-     "date": "2026-11-27T03:21Z",
+     "id": "-2085169",
+     "longComment": "out",
+     "shortComment": "out",
+     "status": "Out",
+     "date": "2026-11-27T03:53Z",
      "athlete": {
       "firstName": "Jalen",
       "lastName": "Royals",
@@ -227994,14 +227995,14 @@
       "notes": {
        "items": [
         {
-         "id": "650065",
+         "id": "-2085169",
          "type": "news",
-         "date": "2026-11-27T03:36Z",
-         "headline": "Royals (ankle) has been ruled out for the rest of Thursday's game against the Bills.",
-         "text": "With Royals done for the night due to an ankle injury, the Chiefs will turn to Emmett Johnson, Josh Downs and Cyrus Allen to handle return duties on kickoffs, and Allen and Andrew Armstrong are both an line for a small uptick in offensive snaps. Royals will aim to work his way back in time for the Chiefs' Week 13 road tilt against the Rams on Thursday, Dec. 3.",
+         "date": "2026-11-27T03:53Z",
+         "headline": "out",
+         "text": "out",
          "source": "RotoWire",
          "injury": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/athletes/5082630/injuries/650065?lang=en&region=us"
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/athletes/5082630/injuries/-2085169?lang=en&region=us"
          }
         }
        ]
@@ -228019,18 +228020,20 @@
       "state": "basic"
      },
      "type": {
-      "id": "2",
-      "name": "INJURY_STATUS_QUESTIONABLE",
-      "description": "questionable",
-      "abbreviation": "Q"
+      "id": "4",
+      "name": "INJURY_STATUS_OUT",
+      "description": "out",
+      "abbreviation": "O"
      },
      "details": {
       "fantasyStatus": {
-       "description": "QUESTIONABLE",
-       "abbreviation": "QUESTIONABLE"
+       "description": "OUT",
+       "abbreviation": "OUT"
       },
       "type": "Ankle",
       "location": "Leg",
+      "detail": "Not Specified",
+      "side": "Not Specified",
       "returnDate": "2026-12-03"
      }
     },
@@ -379040,6 +379043,622 @@
    "displayName": "Philadelphia Eagles",
    "injuries": [
     {
+     "id": "-2085178",
+     "longComment": "questionable",
+     "shortComment": "questionable",
+     "status": "Questionable",
+     "date": "2026-11-27T04:04Z",
+     "athlete": {
+      "firstName": "Marcus",
+      "lastName": "Epps",
+      "displayName": "Marcus Epps",
+      "shortName": "M. Epps",
+      "links": [
+       {
+        "language": "en-US",
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/3139368/marcus-epps",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/stats/_/id/3139368/marcus-epps",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "sportscenter",
+         "app",
+         "athlete"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368&section=stats",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "splits",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/splits/_/id/3139368/marcus-epps",
+        "text": "Splits",
+        "shortText": "Splits",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "gamelog",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/gamelog/_/id/3139368/marcus-epps",
+        "text": "Game Log",
+        "shortText": "Game Log",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "gamelog",
+         "sportscenter",
+         "app",
+         "athlete"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368&section=gamelog",
+        "text": "Game Log",
+        "shortText": "Game Log",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "news",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/news/_/id/3139368/marcus-epps",
+        "text": "News",
+        "shortText": "News",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "news",
+         "sportscenter",
+         "app",
+         "athlete"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368&section=news",
+        "text": "News",
+        "shortText": "News",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "bio",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/bio/_/id/3139368/marcus-epps",
+        "text": "Bio",
+        "shortText": "Bio",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "bio",
+         "sportscenter",
+         "app",
+         "athlete"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368&section=bio",
+        "text": "Bio",
+        "shortText": "Bio",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "overview",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nfl/player/_/id/3139368/marcus-epps",
+        "text": "Overview",
+        "shortText": "Overview",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "overview",
+         "sportscenter",
+         "app",
+         "athlete"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368",
+        "text": "Overview",
+        "shortText": "Overview",
+        "isExternal": false,
+        "isPremium": false
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/3139368.png",
+       "alt": "Marcus Epps"
+      },
+      "position": {
+       "id": "36",
+       "name": "Safety",
+       "displayName": "Safety",
+       "abbreviation": "S",
+       "leaf": true
+      },
+      "team": {
+       "id": "21",
+       "uid": "s:20~l:28~t:21",
+       "slug": "philadelphia-eagles",
+       "name": "Eagles",
+       "abbreviation": "PHI",
+       "displayName": "Philadelphia Eagles",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T18:55Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/phi.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T18:56Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T18:56Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/phi.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T18:56Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/grayscale.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "grayscale"
+         ],
+         "lastUpdated": "2026-03-31T12:53Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "primary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_on_white_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_white_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_on_black_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_black_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_on_primary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_primary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_on_secondary_color.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_on_secondary_color"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_black.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_black"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        },
+        {
+         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_white.png",
+         "width": 4096,
+         "height": 4096,
+         "alt": "",
+         "rel": [
+          "full",
+          "secondary_logo_white"
+         ],
+         "lastUpdated": "2026-07-22T20:30Z"
+        }
+       ],
+       "links": [
+        {
+         "language": "en-US",
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles",
+         "text": "Clubhouse",
+         "shortText": "Clubhouse",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/roster/_/name/phi/philadelphia-eagles",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "sportscenter",
+          "app",
+          "team"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:21&section=roster",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "stats",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/stats/_/name/phi/philadelphia-eagles",
+         "text": "Statistics",
+         "shortText": "Statistics",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "stats",
+          "sportscenter",
+          "app",
+          "team"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:21&section=stats",
+         "text": "Statistics",
+         "shortText": "Statistics",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "schedule",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/schedule/_/name/phi",
+         "text": "Schedule",
+         "shortText": "Schedule",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "schedule",
+          "sportscenter",
+          "app",
+          "team"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:21&section=scores",
+         "text": "Schedule",
+         "shortText": "Schedule",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "photos",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/photos/_/name/phi",
+         "text": "photos",
+         "shortText": "photos",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "tickets",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.vividseats.com/philadelphia-eagles-tickets--sports-nfl-football/performer/669?wsUser=717",
+         "text": "Tickets",
+         "shortText": "Tickets",
+         "isExternal": true,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "draftpicks",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/draft/teams/_/name/phi/philadelphia-eagles",
+         "text": "Draft Picks",
+         "shortText": "Draft Picks",
+         "isExternal": false,
+         "isPremium": true
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "transactions",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/transactions/_/name/phi",
+         "text": "Transactions",
+         "shortText": "Transactions",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "injuries",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/injuries/_/name/phi",
+         "text": "Injuries",
+         "shortText": "Injuries",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "depthchart",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nfl/team/depth/_/name/phi",
+         "text": "Depth Chart",
+         "shortText": "Depth Chart",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "depthchart",
+          "sportscenter",
+          "app",
+          "team"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:21&section=depthchart",
+         "text": "Depth Chart",
+         "shortText": "Depth Chart",
+         "isExternal": false,
+         "isPremium": false
+        }
+       ]
+      },
+      "notes": {
+       "items": [
+        {
+         "id": "-2085178",
+         "type": "news",
+         "date": "2026-11-27T04:04Z",
+         "headline": "questionable",
+         "text": "questionable",
+         "source": "RotoWire",
+         "injury": {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/athletes/3139368/injuries/-2085178?lang=en&region=us"
+         }
+        }
+       ]
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "source": {
+      "id": "1",
+      "description": "basic/manual",
+      "state": "basic"
+     },
+     "type": {
+      "id": "2",
+      "name": "INJURY_STATUS_QUESTIONABLE",
+      "description": "questionable",
+      "abbreviation": "Q"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "QUESTIONABLE",
+       "abbreviation": "QUESTIONABLE"
+      },
+      "type": "Foot",
+      "location": "Leg",
+      "detail": "Not Specified",
+      "side": "Not Specified",
+      "returnDate": "2026-12-06"
+     }
+    },
+    {
      "id": "650062",
      "longComment": "Cooper had a quiet outing despite the win as he finished fourth on the team in both receiving yards and receptions. Across 10 games this season, the 25-year-old has caught 17 passes for 259 yards and four touchdowns, all of which serve as new career highs.",
      "shortComment": "Cooper caught one of his two targets for 14 yards during the Eagles' win over the Cowboys on Thursday.",
@@ -383892,620 +384511,8 @@
       },
       "type": "Wrist",
       "location": "Arm",
-      "returnDate": "2026-11-26"
-     }
-    },
-    {
-     "id": "650025",
-     "longComment": "Epps is done for the day after suffering a foot injury in the third quarter. In his absence, Kenny Moore has taken over at safety.",
-     "shortComment": "Epps (foot) has been ruled out for the remainder of Philadelphia's matchup versus the Cowboys on Thursday, Mike Kaye of ESPN.com reports.",
-     "status": "Out",
-     "date": "2026-11-27T00:13Z",
-     "athlete": {
-      "firstName": "Marcus",
-      "lastName": "Epps",
-      "displayName": "Marcus Epps",
-      "shortName": "M. Epps",
-      "links": [
-       {
-        "language": "en-US",
-        "rel": [
-         "playercard",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/3139368/marcus-epps",
-        "text": "Player Card",
-        "shortText": "Player Card",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "stats",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/stats/_/id/3139368/marcus-epps",
-        "text": "Stats",
-        "shortText": "Stats",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "stats",
-         "sportscenter",
-         "app",
-         "athlete"
-        ],
-        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368&section=stats",
-        "text": "Stats",
-        "shortText": "Stats",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "splits",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/splits/_/id/3139368/marcus-epps",
-        "text": "Splits",
-        "shortText": "Splits",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "gamelog",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/gamelog/_/id/3139368/marcus-epps",
-        "text": "Game Log",
-        "shortText": "Game Log",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "gamelog",
-         "sportscenter",
-         "app",
-         "athlete"
-        ],
-        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368&section=gamelog",
-        "text": "Game Log",
-        "shortText": "Game Log",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "news",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/news/_/id/3139368/marcus-epps",
-        "text": "News",
-        "shortText": "News",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "news",
-         "sportscenter",
-         "app",
-         "athlete"
-        ],
-        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368&section=news",
-        "text": "News",
-        "shortText": "News",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "bio",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/bio/_/id/3139368/marcus-epps",
-        "text": "Bio",
-        "shortText": "Bio",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "bio",
-         "sportscenter",
-         "app",
-         "athlete"
-        ],
-        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368&section=bio",
-        "text": "Bio",
-        "shortText": "Bio",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "overview",
-         "desktop",
-         "athlete"
-        ],
-        "href": "https://www.espn.com/nfl/player/_/id/3139368/marcus-epps",
-        "text": "Overview",
-        "shortText": "Overview",
-        "isExternal": false,
-        "isPremium": false
-       },
-       {
-        "language": "en-US",
-        "rel": [
-         "overview",
-         "sportscenter",
-         "app",
-         "athlete"
-        ],
-        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:3139368",
-        "text": "Overview",
-        "shortText": "Overview",
-        "isExternal": false,
-        "isPremium": false
-       }
-      ],
-      "headshot": {
-       "href": "https://a.espncdn.com/i/headshots/nfl/players/full/3139368.png",
-       "alt": "Marcus Epps"
-      },
-      "position": {
-       "id": "36",
-       "name": "Safety",
-       "displayName": "Safety",
-       "abbreviation": "S",
-       "leaf": true
-      },
-      "team": {
-       "id": "21",
-       "uid": "s:20~l:28~t:21",
-       "slug": "philadelphia-eagles",
-       "name": "Eagles",
-       "abbreviation": "PHI",
-       "displayName": "Philadelphia Eagles",
-       "logos": [
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "default"
-         ],
-         "lastUpdated": "2024-06-25T18:55Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/phi.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:56Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard"
-         ],
-         "lastUpdated": "2024-06-25T18:56Z"
-        },
-        {
-         "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/phi.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "scoreboard",
-          "dark"
-         ],
-         "lastUpdated": "2024-06-25T18:56Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/grayscale.png",
-         "width": 500,
-         "height": 500,
-         "alt": "",
-         "rel": [
-          "full",
-          "grayscale"
-         ],
-         "lastUpdated": "2026-03-31T12:53Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/primary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "primary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_on_white_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_white_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_on_black_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_black_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_on_primary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_primary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_on_secondary_color.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_on_secondary_color"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_black.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_black"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        },
-        {
-         "href": "https://a.espncdn.com/guid/d1a9b001-1df7-fbd7-ae4c-6ca7065286ec/logos/secondary_logo_white.png",
-         "width": 4096,
-         "height": 4096,
-         "alt": "",
-         "rel": [
-          "full",
-          "secondary_logo_white"
-         ],
-         "lastUpdated": "2026-07-22T20:30Z"
-        }
-       ],
-       "links": [
-        {
-         "language": "en-US",
-         "rel": [
-          "clubhouse",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles",
-         "text": "Clubhouse",
-         "shortText": "Clubhouse",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "roster",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/roster/_/name/phi/philadelphia-eagles",
-         "text": "Roster",
-         "shortText": "Roster",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "roster",
-          "sportscenter",
-          "app",
-          "team"
-         ],
-         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:21&section=roster",
-         "text": "Roster",
-         "shortText": "Roster",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "stats",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/stats/_/name/phi/philadelphia-eagles",
-         "text": "Statistics",
-         "shortText": "Statistics",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "stats",
-          "sportscenter",
-          "app",
-          "team"
-         ],
-         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:21&section=stats",
-         "text": "Statistics",
-         "shortText": "Statistics",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "schedule",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/schedule/_/name/phi",
-         "text": "Schedule",
-         "shortText": "Schedule",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "schedule",
-          "sportscenter",
-          "app",
-          "team"
-         ],
-         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:21&section=scores",
-         "text": "Schedule",
-         "shortText": "Schedule",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "photos",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/photos/_/name/phi",
-         "text": "photos",
-         "shortText": "photos",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "tickets",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.vividseats.com/philadelphia-eagles-tickets--sports-nfl-football/performer/669?wsUser=717",
-         "text": "Tickets",
-         "shortText": "Tickets",
-         "isExternal": true,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "draftpicks",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/draft/teams/_/name/phi/philadelphia-eagles",
-         "text": "Draft Picks",
-         "shortText": "Draft Picks",
-         "isExternal": false,
-         "isPremium": true
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "transactions",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/transactions/_/name/phi",
-         "text": "Transactions",
-         "shortText": "Transactions",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "injuries",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/injuries/_/name/phi",
-         "text": "Injuries",
-         "shortText": "Injuries",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "depthchart",
-          "desktop",
-          "team"
-         ],
-         "href": "https://www.espn.com/nfl/team/depth/_/name/phi",
-         "text": "Depth Chart",
-         "shortText": "Depth Chart",
-         "isExternal": false,
-         "isPremium": false
-        },
-        {
-         "language": "en-US",
-         "rel": [
-          "depthchart",
-          "sportscenter",
-          "app",
-          "team"
-         ],
-         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:21&section=depthchart",
-         "text": "Depth Chart",
-         "shortText": "Depth Chart",
-         "isExternal": false,
-         "isPremium": false
-        }
-       ]
-      },
-      "notes": {
-       "items": [
-        {
-         "id": "650025",
-         "type": "news",
-         "date": "2026-11-27T00:13Z",
-         "headline": "Epps (foot) has been ruled out for the remainder of Philadelphia's matchup versus the Cowboys on Thursday, Mike Kaye of ESPN.com reports.",
-         "text": "Epps is done for the day after suffering a foot injury in the third quarter. In his absence, Kenny Moore has taken over at safety.",
-         "source": "RotoWire",
-         "injury": {
-          "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/athletes/3139368/injuries/650025?lang=en&region=us"
-         }
-        }
-       ]
-      },
-      "status": {
-       "id": "1",
-       "name": "Active",
-       "type": "active",
-       "abbreviation": "Active"
-      }
-     },
-     "source": {
-      "id": "1",
-      "description": "basic/manual",
-      "state": "basic"
-     },
-     "type": {
-      "id": "4",
-      "name": "INJURY_STATUS_OUT",
-      "description": "out",
-      "abbreviation": "O"
-     },
-     "details": {
-      "fantasyStatus": {
-       "description": "OUT",
-       "abbreviation": "OUT"
-      },
-      "type": "Foot",
-      "location": "Leg",
+      "detail": "Not Specified",
+      "side": "Not Specified",
       "returnDate": "2026-12-06"
      }
     },
