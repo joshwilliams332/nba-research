@@ -441,12 +441,17 @@
         "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
         "logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/buf.png"
        },
-       "score": "0",
+       "score": "7",
        "linescores": [
         {
          "value": 0.0,
          "displayValue": "0",
          "period": 1
+        },
+        {
+         "value": 7.0,
+         "displayValue": "7",
+         "period": 2
         }
        ],
        "statistics": [],
@@ -583,6 +588,11 @@
          "value": 0.0,
          "displayValue": "0",
          "period": 1
+        },
+        {
+         "value": 0.0,
+         "displayValue": "0",
+         "period": 2
         }
        ],
        "statistics": [],
@@ -612,75 +622,72 @@
      "notes": [],
      "situation": {
       "lastPlay": {
-       "id": "401873082348",
+       "id": "401873082901",
        "type": {
         "id": "74",
         "text": "Official Timeout",
         "abbreviation": "Off TO"
        },
-       "text": "Official Timeout at 08:54.",
+       "text": "Official Timeout at 14:32.",
        "scoreValue": 0,
        "team": {
         "id": "2"
        },
        "probability": {
         "tiePercentage": 0.0,
-        "homeWinPercentage": 0.5532,
-        "awayWinPercentage": 0.4468,
+        "homeWinPercentage": 0.6988,
+        "awayWinPercentage": 0.3012,
         "secondsLeft": 0
        },
        "statYardage": 0,
        "drive": {
-        "description": "3 plays, 7 yards, 2:02",
+        "description": "11 plays, 49 yards, 6:08",
         "start": {
-         "yardLine": 80,
-         "text": "KC 20"
+         "yardLine": 51,
+         "text": "KC 49"
         },
         "end": {
-         "yardLine": 73,
-         "text": "KC 27"
+         "yardLine": 100,
+         "text": "KC 0"
         },
         "timeElapsed": {
-         "displayValue": "2:02"
+         "displayValue": "6:08"
         },
-        "result": "PUNT"
+        "result": "TD"
        },
        "start": {
-        "yardLine": 31,
+        "yardLine": 35,
         "team": {
          "id": "2"
         }
        },
        "end": {
-        "yardLine": 31,
+        "yardLine": 35,
         "team": {
          "id": "2"
         }
        }
       },
-      "down": 1,
-      "yardLine": 31,
-      "distance": 10,
-      "downDistanceText": "1st & 10 at BUF 31",
-      "shortDownDistanceText": "1st & 10",
-      "possessionText": "BUF 31",
-      "isRedZone": false,
+      "down": -1,
+      "yardLine": 35,
+      "distance": 0,
+      "isRedZone": true,
       "homeTimeouts": 3,
       "awayTimeouts": 3,
       "possession": "2"
      },
      "status": {
-      "clock": 534.0,
-      "displayClock": "8:54",
-      "period": 1,
+      "clock": 872.0,
+      "displayClock": "14:32",
+      "period": 2,
       "type": {
        "id": "2",
        "name": "STATUS_IN_PROGRESS",
        "state": "in",
        "completed": false,
        "description": "In Progress",
-       "detail": "8:54 - 1st Quarter",
-       "shortDetail": "8:54 - 1st"
+       "detail": "14:32 - 2nd Quarter",
+       "shortDetail": "14:32 - 2nd"
       },
       "isTBDFlex": false
      },
@@ -700,8 +707,8 @@
        "abbreviation": "PYDS",
        "leaders": [
         {
-         "displayValue": "1/3, 8 YDS",
-         "value": 8.0,
+         "displayValue": "3/6, 30 YDS",
+         "value": 30.0,
          "athlete": {
           "id": "3918298",
           "fullName": "Josh Allen",
@@ -740,48 +747,8 @@
        "abbreviation": "RYDS",
        "leaders": [
         {
-         "displayValue": "1 CAR, 10 YDS",
-         "value": 10.0,
-         "athlete": {
-          "id": "3918298",
-          "fullName": "Josh Allen",
-          "displayName": "Josh Allen",
-          "shortName": "J. Allen",
-          "links": [
-           {
-            "rel": [
-             "playercard",
-             "desktop",
-             "athlete"
-            ],
-            "href": "https://www.espn.com/nfl/player/_/id/3918298/josh-allen"
-           }
-          ],
-          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3918298.png",
-          "jersey": "17",
-          "position": {
-           "abbreviation": "QB"
-          },
-          "team": {
-           "id": "2"
-          },
-          "active": true
-         },
-         "team": {
-          "id": "2"
-         }
-        }
-       ]
-      },
-      {
-       "name": "receivingYards",
-       "displayName": "Receiving Leader",
-       "shortDisplayName": "REC",
-       "abbreviation": "RECYDS",
-       "leaders": [
-        {
-         "displayValue": "1 REC, 8 YDS",
-         "value": 8.0,
+         "displayValue": "13 CAR, 42 YDS, 1 TD",
+         "value": 42.0,
          "athlete": {
           "id": "4379399",
           "fullName": "James Cook III",
@@ -801,6 +768,46 @@
           "jersey": "4",
           "position": {
            "abbreviation": "RB"
+          },
+          "team": {
+           "id": "2"
+          },
+          "active": true
+         },
+         "team": {
+          "id": "2"
+         }
+        }
+       ]
+      },
+      {
+       "name": "receivingYards",
+       "displayName": "Receiving Leader",
+       "shortDisplayName": "REC",
+       "abbreviation": "RECYDS",
+       "leaders": [
+        {
+         "displayValue": "1 REC, 17 YDS",
+         "value": 17.0,
+         "athlete": {
+          "id": "4373678",
+          "fullName": "Khalil Shakir",
+          "displayName": "Khalil Shakir",
+          "shortName": "K. Shakir",
+          "links": [
+           {
+            "rel": [
+             "playercard",
+             "desktop",
+             "athlete"
+            ],
+            "href": "https://www.espn.com/nfl/player/_/id/4373678/khalil-shakir"
+           }
+          ],
+          "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4373678.png",
+          "jersey": "10",
+          "position": {
+           "abbreviation": "WR"
           },
           "team": {
            "id": "2"
@@ -903,17 +910,17 @@
     }
    },
    "status": {
-    "clock": 534.0,
-    "displayClock": "8:54",
-    "period": 1,
+    "clock": 872.0,
+    "displayClock": "14:32",
+    "period": 2,
     "type": {
      "id": "2",
      "name": "STATUS_IN_PROGRESS",
      "state": "in",
      "completed": false,
      "description": "In Progress",
-     "detail": "8:54 - 1st Quarter",
-     "shortDetail": "8:54 - 1st"
+     "detail": "14:32 - 2nd Quarter",
+     "shortDetail": "14:32 - 2nd"
     }
    }
   },
@@ -2261,12 +2268,229 @@
        "region": "us"
       }
      ],
-     "highlights": [],
+     "highlights": [
+      {
+       "id": 50607884,
+       "cerebroId": "6b08e23de0b9b66f46f9e0c9",
+       "source": "espn",
+       "headline": "Eagles stun Cowboys with largest-ever Thanksgiving game comeback",
+       "description": "Eagles stun Cowboys with largest-ever Thanksgiving game comeback",
+       "lastModified": "2026-11-27T01:58:17Z",
+       "originalPublishDate": "2026-11-27T01:51:58Z",
+       "duration": 85,
+       "timeRestrictions": {
+        "embargoDate": "2026-11-27T01:51:54Z",
+        "expirationDate": "2026-11-29T01:51:00Z"
+       },
+       "deviceRestrictions": {
+        "devices": [
+         "settop",
+         "tablet",
+         "handset",
+         "ipad",
+         "desktop"
+        ],
+        "type": "whitelist"
+       },
+       "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.jpg",
+       "links": {
+        "api": {
+         "artwork": {
+          "href": "https://artwork.api.espn.com/artwork/collections/media/1636ca4a-6105-482c-8324-368936fb6dc1"
+         },
+         "self": {
+          "href": "https://content.core.api.espn.com/v1/video/clips/50607884"
+         }
+        },
+        "mobile": {
+         "href": "https://watch.auth.api.espn.com/video/auth/brightcove/1636ca4a-6105-482c-8324-368936fb6dc1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback",
+         "alert": {
+          "href": "https://m.espn.com/general/video/videoAlert?vid=50607884"
+         },
+         "progressiveDownload": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/1636ca4a-6105-482c-8324-368936fb6dc1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback"
+         },
+         "source": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+         },
+         "streaming": {
+          "href": "https://watch.auth.api.espn.com/video/auth/brightcove/1636ca4a-6105-482c-8324-368936fb6dc1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback"
+         }
+        },
+        "source": {
+         "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4",
+         "HD": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+         },
+         "HLS": {
+          "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8",
+          "9x16": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+          },
+          "HD": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+          },
+          "cmaf": {
+           "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8",
+           "9x16": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+           },
+           "cmb": {
+            "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+           }
+          },
+          "cmb": {
+           "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+          },
+          "shield": {
+           "href": "https://watch.auth.api.espn.com/video/auth/media/1636ca4a-6105-482c-8324-368936fb6dc1/asset"
+          }
+         },
+         "flash": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+         },
+         "full": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+         },
+         "mezzanine": {
+          "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+         }
+        },
+        "sportscenter": {
+         "href": "sportscenter://x-callback-url/showVideo?videoID=50607884&videoDSI=24107ba4cdcc6"
+        },
+        "web": {
+         "href": "https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback",
+         "self": {
+          "href": "https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback",
+          "dsi": {
+           "href": "https://www.espn.com/video/clip?id=24107ba4cdcc6"
+          }
+         }
+        }
+       },
+       "ad": {
+        "bundle": "sportscenter",
+        "sport": "nfl"
+       },
+       "tracking": {
+        "coverageType": "Final Game Highlight",
+        "leagueName": "NFL",
+        "program": "espnnfl",
+        "sportName": "football",
+        "trackingId": "dm_20261126_NFL_eagles_stun_cowboys_with_largestever_thanksgiving_game_comeback",
+        "trackingName": "COM_NFL Highlight (Eagles stun Cowboys with largest-ever Thanksgiving game comeback) 2026/11/26 ESHEET"
+       }
+      }
+     ],
      "headlines": [
       {
        "type": "Recap",
-       "description": "\u2014 Jake Elliott kicked a 60-yard field with 2 seconds remaining, and the Philadelphia Eagles stunned the Dallas Cowboys by rallying for a 39-38 Thanksgiving victory on Thursday.",
-       "shortLinkText": "Jake Elliott's 60-yard field goal with 2 seconds left gives Eagles stunning 39-38 win over Cowboys"
+       "description": "\u2014 Jake Elliott kicked a 59-yard field with 2 seconds remaining, and the Philadelphia Eagles stunned the Dallas Cowboys by rallying for a 39-38 Thanksgiving victory on Thursday.",
+       "shortLinkText": "Jake Elliott's 59-yard field goal with 2 seconds left gives Eagles stunning 39-38 win over Cowboys",
+       "video": [
+        {
+         "id": 50607884,
+         "source": "espn",
+         "headline": "Eagles stun Cowboys with largest-ever Thanksgiving game comeback",
+         "thumbnail": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.jpg",
+         "duration": 85,
+         "tracking": {
+          "coverageType": "Final Game Highlight",
+          "leagueName": "NFL",
+          "program": "espnnfl",
+          "sportName": "football",
+          "trackingId": "dm_20261126_NFL_eagles_stun_cowboys_with_largestever_thanksgiving_game_comeback",
+          "trackingName": "COM_NFL Highlight (Eagles stun Cowboys with largest-ever Thanksgiving game comeback) 2026/11/26 ESHEET"
+         },
+         "deviceRestrictions": {
+          "devices": [
+           "settop",
+           "tablet",
+           "handset",
+           "ipad",
+           "desktop"
+          ],
+          "type": "whitelist"
+         },
+         "links": {
+          "api": {
+           "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/1636ca4a-6105-482c-8324-368936fb6dc1"
+           },
+           "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/50607884"
+           }
+          },
+          "mobile": {
+           "href": "https://watch.auth.api.espn.com/video/auth/brightcove/1636ca4a-6105-482c-8324-368936fb6dc1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback",
+           "alert": {
+            "href": "https://m.espn.com/general/video/videoAlert?vid=50607884"
+           },
+           "progressiveDownload": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/1636ca4a-6105-482c-8324-368936fb6dc1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback"
+           },
+           "source": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+           },
+           "streaming": {
+            "href": "https://watch.auth.api.espn.com/video/auth/brightcove/1636ca4a-6105-482c-8324-368936fb6dc1/asset?UMADPARAMreferer=https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback"
+           }
+          },
+          "source": {
+           "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4",
+           "HD": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+           },
+           "HLS": {
+            "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8",
+            "9x16": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/9x16/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+            },
+            "HD": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+            },
+            "cmaf": {
+             "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8",
+             "9x16": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/9x16/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+             },
+             "cmb": {
+              "href": "https://cmp-espn.media.dssott.com/opp/cmaf/espn/cmb/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+             }
+            },
+            "cmb": {
+             "href": "https://cmp-espn.media.dssott.com/opp/hls/espn/cmb/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/playlist.m3u8"
+            },
+            "shield": {
+             "href": "https://watch.auth.api.espn.com/video/auth/media/1636ca4a-6105-482c-8324-368936fb6dc1/asset"
+            }
+           },
+           "flash": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+           },
+           "full": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+           },
+           "mezzanine": {
+            "href": "https://espnmedia-cdn.akamaized.net/espn/media/16x9/wsc/2026/1127/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1/452c2dab-cd99-4b19-a7b6-f7dfeb3668e1.mp4"
+           }
+          },
+          "sportscenter": {
+           "href": "sportscenter://x-callback-url/showVideo?videoID=50607884&videoDSI=24107ba4cdcc6"
+          },
+          "web": {
+           "href": "https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback",
+           "self": {
+            "href": "https://www.espn.com/video/clip/_/id/50607884/eagles-stun-cowboys-largest-ever-thanksgiving-game-comeback",
+            "dsi": {
+             "href": "https://www.espn.com/video/clip?id=24107ba4cdcc6"
+            }
+           }
+          }
+         }
+        }
+       ]
       }
      ]
     }
@@ -3877,8 +4101,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $108",
-       "numberAvailable": 798,
+       "summary": "Tickets as low as $112",
+       "numberAvailable": 768,
        "links": [
         {
          "href": "https://www.vividseats.com/pittsburgh-steelers-tickets-pittsburgh-acrisure-stadium-3-6-2027/production/6495152?wsUser=717"
@@ -6037,7 +6261,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $23",
-       "numberAvailable": 2868,
+       "numberAvailable": 2833,
        "links": [
         {
          "href": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-8-2026/production/6490123?wsUser=717"
@@ -7116,7 +7340,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $37",
-       "numberAvailable": 3755,
+       "numberAvailable": 3758,
        "links": [
         {
          "href": "https://www.vividseats.com/miami-dolphins-tickets-miami-gardens-hard-rock-stadium-3-3-2026/production/6492064?wsUser=717"
@@ -9274,7 +9498,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $118",
-       "numberAvailable": 1743,
+       "numberAvailable": 1739,
        "links": [
         {
          "href": "https://www.vividseats.com/jacksonville-jaguars-tickets-jacksonville-everbank-stadium-3-3-2026/production/6490146?wsUser=717"
@@ -10353,7 +10577,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $65",
-       "numberAvailable": 2928,
+       "numberAvailable": 2925,
        "links": [
         {
          "href": "https://www.vividseats.com/houston-texans-tickets-houston-nrg-stadium-3-4-2026/production/6490020?wsUser=717"
@@ -11432,7 +11656,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $57",
-       "numberAvailable": 3721,
+       "numberAvailable": 3714,
        "links": [
         {
          "href": "https://www.vividseats.com/los-angeles-chargers-tickets-inglewood-sofi-stadium-3-5-2026/production/6491361?wsUser=717"
@@ -12511,7 +12735,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $24",
-       "numberAvailable": 3682,
+       "numberAvailable": 3674,
        "links": [
         {
          "href": "https://www.vividseats.com/arizona-cardinals-tickets-glendale-state-farm-stadium-3-2-2026/production/6486969?wsUser=717"
@@ -13590,7 +13814,7 @@
      "tickets": [
       {
        "summary": "Tickets as low as $198",
-       "numberAvailable": 4423,
+       "numberAvailable": 4409,
        "links": [
         {
          "href": "https://www.vividseats.com/san-francisco-49ers-tickets-santa-clara-levis-stadium-3-3-2027/production/6495879?wsUser=717"
@@ -14668,8 +14892,8 @@
      },
      "tickets": [
       {
-       "summary": "Tickets as low as $45",
-       "numberAvailable": 5445,
+       "summary": "Tickets as low as $44",
+       "numberAvailable": 5434,
        "links": [
         {
          "href": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-8-2026/production/6489440?wsUser=717"
