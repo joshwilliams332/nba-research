@@ -284,6 +284,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "33",
       "uid": "s:20~l:28~t:33",
@@ -348,9 +350,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png"
     },
     {
      "id": "401873031",
@@ -798,6 +798,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "19",
       "uid": "s:20~l:28~t:19",
@@ -862,9 +864,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
     },
     {
      "id": "401873011",
@@ -887,8 +887,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "23",
       "uid": "s:20~l:28~t:23",
@@ -953,7 +951,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873039",
@@ -1065,8 +1065,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "29",
       "uid": "s:20~l:28~t:29",
@@ -1131,7 +1129,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873071",
@@ -2676,7 +2676,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "Draft Kings",
+    "name": "DraftKings",
     "priority": 1,
     "logos": [
      {
@@ -2727,7 +2727,7 @@
       "home",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118135%3Foutcomes%3D0ML84695568_1",
      "text": "Home Bet",
@@ -2751,7 +2751,7 @@
       "away",
       "desktop",
       "bets",
-      "draft-kings"
+      "draftkings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118135%3Foutcomes%3D0ML84695568_3",
      "text": "Away Bet",
@@ -2891,7 +2891,7 @@
         "home",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118135%3Foutcomes%3D0ML84695568_1",
        "text": "Home Bet",
@@ -2923,7 +2923,7 @@
         "away",
         "desktop",
         "bets",
-        "draft-kings"
+        "draftkings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118135%3Foutcomes%3D0ML84695568_3",
        "text": "Away Bet",
@@ -3255,6 +3255,18 @@
    "records": []
   }
  ],
+ "winprobability": [],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "4",
+   "gameProjection": "80.7"
+  },
+  "awayTeam": {
+   "id": "18",
+   "gameProjection": "19.1"
+  }
+ },
  "news": {
   "header": "NFL News",
   "link": {
@@ -3271,6 +3283,260 @@
    "isPremium": false
   },
   "articles": [
+   {
+    "id": 50621729,
+    "nowId": "1-50621729",
+    "contentKey": "50621729-1-293-1",
+    "dataSourceIdentifier": "8ce91d6cf23f7",
+    "type": "Media",
+    "headline": "Shane Steichen discusses blocking out job speculation",
+    "description": "Shane Steichen discusses blocking out job speculation",
+    "lastModified": "2026-11-28T16:14:53Z",
+    "published": "2026-11-28T16:14:53Z",
+    "images": [
+     {
+      "name": "Shane Steichen discusses blocking out job speculation",
+      "caption": "Shane Steichen discusses blocking out job speculation",
+      "alt": "",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1128/ss_20261128_110753392_3764901/ss_20261128_110753392_3764901.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 711827,
+      "type": "editorialindicator",
+      "guid": "26380a67-7938-32a0-9c82-33abab9f7ad4",
+      "description": "3 Star Rating"
+     },
+     {
+      "id": 2942,
+      "type": "team",
+      "uid": "s:20~l:28~t:11",
+      "guid": "582d14eb-da61-e505-cc40-d972a1b60ed1",
+      "description": "Indianapolis Colts",
+      "sportId": 28,
+      "teamId": 11,
+      "team": {
+       "id": 11,
+       "description": "Indianapolis Colts",
+       "abbreviation": "IND",
+       "shortDisplayName": "Colts",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 730035,
+      "type": "editorialindicator",
+      "guid": "765b3968-7a2d-3d80-bded-8ba8b1e1cc03",
+      "description": "Verts - Exclude Content"
+     }
+    ],
+    "links": {
+     "api": {
+      "artwork": {
+       "href": "https://artwork.api.espn.com/artwork/collections/media/f1a06c56-092f-4f16-a8dc-e59d7d69c774"
+      },
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/video/clips/50621729"
+      }
+     },
+     "sportscenter": {
+      "href": "sportscenter://x-callback-url/showVideo?videoID=50621729&videoDSI=8ce91d6cf23f7"
+     },
+     "web": {
+      "href": "https://www.espn.com/video/clip/_/id/50621729/shane-steichen-discusses-blocking-job-speculation",
+      "self": {
+       "href": "https://www.espn.com/video/clip/_/id/50621729/shane-steichen-discusses-blocking-job-speculation",
+       "dsi": {
+        "href": "https://www.espn.com/video/clip?id=8ce91d6cf23f7"
+       }
+      }
+     }
+    },
+    "premium": false
+   },
+   {
+    "id": 50621182,
+    "nowId": "1-50621182",
+    "contentKey": "50621182-1-6-1",
+    "dataSourceIdentifier": "9365aeb84385e",
+    "type": "Story",
+    "headline": "Why Bengals' 2025 first-rounder Stewart can't crack lineup",
+    "description": "Stewart hasn't seen action in three games this season despite being healthy enough to play.",
+    "lastModified": "2026-11-28T15:11:48Z",
+    "published": "2026-11-28T15:11:48Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "5f71f9ab1a629",
+      "id": 50621187,
+      "type": "header",
+      "name": "Shemar Stewart [1296x729]",
+      "caption": "Shemar Stewart has had a bumpy beginning to his NFL career, but Bengals coaches maintain he's doing the right things to be in position to play.",
+      "credit": "Peter Joneleit/Icon Sportswire",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1128/r1752422_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Tee Higgins questionable vs. Saints with hamstring injury",
+      "caption": "Ben Baby reports on Higgins missing Friday's practice and Zac Taylor's optimism about his availability for Sunday.",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1128/dm_261128_Watchfolder_Bengalsfe/dm_261128_Watchfolder_Bengalsfe.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 2664,
+      "type": "team",
+      "uid": "s:20~l:28~t:4",
+      "guid": "75b8623b-8926-b411-0476-3d3602b78523",
+      "description": "Cincinnati Bengals",
+      "sportId": 28,
+      "teamId": 4,
+      "team": {
+       "id": 4,
+       "description": "Cincinnati Bengals",
+       "abbreviation": "CIN",
+       "shortDisplayName": "Bengals",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 543377,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4685562",
+      "guid": "ee8dca16-7ec4-3fa6-8c10-6cc028cd1802",
+      "description": "Shemar Stewart",
+      "sportId": 28,
+      "athleteId": 4685562,
+      "athlete": {
+       "id": 4685562,
+       "description": "Shemar Stewart",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4685562/shemar-stewart"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4685562/shemar-stewart"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 698667,
+      "type": "contributor",
+      "guid": "5ba7177a-701a-3abe-bdcd-f4d70f8c4cb0",
+      "description": "Ben Baby",
+      "slug": "ben-baby",
+      "contributor": {
+       "id": 3821,
+       "description": "Ben Baby"
+      }
+     }
+    ],
+    "byline": "Ben Baby",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50621182"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50621182"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50621182"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50621182/bengals-shemar-stewart-playing"
+     }
+    },
+    "premium": false
+   },
    {
     "id": 50573832,
     "nowId": "1-50573832",
@@ -4176,573 +4442,8 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50596874,
-    "nowId": "1-50596874",
-    "contentKey": "50596874-1-6-1",
-    "dataSourceIdentifier": "7ffe3cd65a99f",
-    "type": "Story",
-    "headline": "How has Fernando Mendoza played in his first two starts?",
-    "description": "We took a look at what Raiders' Fernando Mendoza did well -- and not so well -- in his first two starts.",
-    "lastModified": "2026-11-28T11:00:10Z",
-    "published": "2026-11-28T11:00:10Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "226e22dea60b2",
-      "id": 50597604,
-      "type": "header",
-      "name": "Fernando Mendoza lead [608x342]",
-      "credit": "Isaiah J. Downing-Imagn Images",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1125/r1751326_608x342_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "644702202163c",
-      "id": 50597656,
-      "type": "header",
-      "name": "Fernando Mendoza 2 [608x342]",
-      "caption": "\"I'm super confident that Fernando is going to be a really good quarterback in this league,\" fullback Connor Heyward said.",
-      "credit": "Christopher Trim-Imagn Images",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1125/r1751329_608x342_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "The good and bad of Fernando Mendoza's 2nd start",
-      "caption": "Ryan McFadden analyzes Mendoza's last two starts and what they mean for his future as Las Vegas' franchise QB.",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1123/dm_261123_11-23_Raiders_IA/dm_261123_11-23_Raiders_IA.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2553,
-      "type": "team",
-      "uid": "s:20~l:28~t:13",
-      "guid": "b18540eb-6f2b-534c-e7f9-9bd930518da9",
-      "description": "Las Vegas Raiders",
-      "sportId": 28,
-      "teamId": 13,
-      "team": {
-       "id": 13,
-       "description": "Las Vegas Raiders",
-       "abbreviation": "LV",
-       "shortDisplayName": "Raiders",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lv/las-vegas-raiders"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 542097,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4837248",
-      "guid": "2d69f2b3-fc07-332b-bd84-8793a3a1b74a",
-      "description": "Fernando Mendoza",
-      "sportId": 28,
-      "athleteId": 4837248,
-      "athlete": {
-       "id": 4837248,
-       "description": "Fernando Mendoza",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4837248/fernando-mendoza"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4837248/fernando-mendoza"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 704689,
-      "type": "contributor",
-      "guid": "b01f248b-d634-36a1-95d7-36c479b8a8b6",
-      "description": "Ryan McFadden",
-      "slug": "ryan-mcfadden",
-      "contributor": {
-       "id": 4152,
-       "description": "Ryan McFadden"
-      }
-     }
-    ],
-    "byline": "Ryan McFadden",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50596874"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50596874"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50596874"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50596874/las-vegas-raiders-quarterback-fernando-mendoza-first-two-starts"
-     }
-    },
-    "premium": false
-   },
-   {
-    "id": 50608001,
-    "nowId": "1-50608001",
-    "contentKey": "50608001-1-6-1",
-    "dataSourceIdentifier": "0d8735ed2a763",
-    "type": "Story",
-    "headline": "A must-listen: KC Concepcion's powerful message on stuttering",
-    "description": "There's more to the story for this Browns rookie receiver: \"Me being able to inspire people all over the world, it just means everything.\"",
-    "lastModified": "2026-11-28T11:00:04Z",
-    "published": "2026-11-28T11:00:04Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "391ca70ced0ec",
-      "id": 50617915,
-      "type": "header",
-      "name": "KC Concepcion Browns [608x342]",
-      "alt": "KC Concepcion Browns",
-      "credit": "Lauren Leigh Bacho/Getty Images",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1128/r1752323_608x342_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "123482101e689",
-      "id": 50618116,
-      "type": "header",
-      "name": "KC Concepcion father brother [608x342]",
-      "caption": "Kevin Concepcion Sr. enjoyed coaching football to his kids, including his eldest son, KC (left), and Keyon.",
-      "alt": "KC Concepcion",
-      "credit": "Courtesy the Concepcion family",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1128/r1752329_608x342_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "eb187375fac43",
-      "id": 50618013,
-      "type": "header",
-      "name": "KC Concepcion draft family [608x342]",
-      "caption": "KC Concepcion holds his new Browns team jersey with his family and girlfriend Lemyah Hylton (right), father Kevin Sr. and mom Arriel on April 24, 2026, in Berea, Ohio.",
-      "alt": "KC Concepcion",
-      "credit": "Phil Long/AP Photo",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1128/r1752327_608x342_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "0797a3038bfc8",
-      "id": 50618231,
-      "type": "header",
-      "name": "KC Concepcion school [608x342]",
-      "caption": "KC Concepcion works to bring awareness of stuttering, including talking to students because he can relate to when he was a kid facing challenges with his own speech impediment.",
-      "alt": "KC Concepcion",
-      "credit": "Courtesy Cleveland Browns",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/1128/r1752333_608x342_16-9.jpg"
-     },
-     {
-      "dataSourceIdentifier": "8e86fcd836baa",
-      "id": 48431414,
-      "type": "header",
-      "name": "KC Concepcion [608x342]",
-      "caption": "The Browns selected receiver Texas A&M's KC Concepcion with the No. 24 pick in this year's draft.",
-      "alt": "KC Concepcion",
-      "credit": "Julio Cortez/AP Photo",
-      "height": 342,
-      "width": 608,
-      "url": "https://a.espncdn.com/photo/2026/0408/r1640535_608x342_16-9.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "KC Concepcion's special cleats",
-      "caption": "Daniel Oyefusi details the cleats KC Concepcion is wearing as part of My Cause My Cleats.",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1126/dm_261126_KC_Concepcions_special_cleats/dm_261126_KC_Concepcions_special_cleats.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2719,
-      "type": "team",
-      "uid": "s:20~l:28~t:5",
-      "guid": "539babc5-e5fb-753b-8ae1-c15032a91ef4",
-      "description": "Cleveland Browns",
-      "sportId": 28,
-      "teamId": 5,
-      "team": {
-       "id": 5,
-       "description": "Cleveland Browns",
-       "abbreviation": "CLE",
-       "shortDisplayName": "Browns",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cle/cleveland-browns"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/cle/cleveland-browns"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 607902,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4870653",
-      "guid": "0385d73f-aa41-3619-868a-98942554ba97",
-      "description": "KC Concepcion",
-      "sportId": 28,
-      "athleteId": 4870653,
-      "athlete": {
-       "id": 4870653,
-       "description": "KC Concepcion",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4870653/kc-concepcion"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4870653/kc-concepcion"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 696247,
-      "type": "contributor",
-      "guid": "48ff5193-afea-319f-914b-89b575869d5a",
-      "description": "Daniel Oyefusi",
-      "slug": "daniel-oyefusi",
-      "contributor": {
-       "id": 4053,
-       "description": "Daniel Oyefusi"
-      }
-     }
-    ],
-    "byline": "Daniel Oyefusi",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50608001"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50608001"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50608001"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50608001/cleveland-browns-kc-concepcion-message-stuttering"
-     }
-    },
-    "premium": false
    }
   ]
- },
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "4",
-   "gameProjection": "80.7"
-  },
-  "awayTeam": {
-   "id": "18",
-   "gameProjection": "19.1"
-  }
- },
- "winprobability": [],
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Bengals Tickets",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/29 vs Saints 3340 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/6 @ Browns 6086 tickets left",
-    "ticketLink": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-2-2026/production/6489423?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 vs Chiefs 3365 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-8-2026/production/6489069?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 @ Panthers 3899 tickets left",
-    "ticketLink": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-7-2026/production/6488725?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/27 @ Colts 2924 tickets left",
-    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-5-2026/production/6490117?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/31 vs Ravens 4227 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-1-2026/production/6488960?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Browns 6369 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-2-2026/production/6488992?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Saints",
-   "currentTeamName": "Bengals",
-   "venueName": "Paycor Stadium",
-   "summary": "Tickets as low as $58",
-   "date": "2026-11-29T18:00Z",
-   "dateDay": "Sun",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717",
-   "venueLink": "https://www.vividseats.com/paul-brown-stadium-tickets/venue/1942?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
-   "timeValid": true
-  }
- },
- "article": {
-  "id": 50599475,
-  "nowId": "1-50599475",
-  "contentKey": "50599475-1-22-1",
-  "dataSourceIdentifier": "3e7d1a1cb50b8",
-  "publishedkey": "nfl401873087",
-  "type": "Preview",
-  "gameId": "401873087",
-  "headline": "Bengals look to get back on track when they host the Saints on a short week",
-  "description": "Most coaches don't like coming off a Monday night game the week of Thanksgiving because of changes to the practice schedule and a short week of preparation becoming even more condensed.",
-  "title": "Bengals look to get back on track when they host the Saints on a short week",
-  "linkText": "Bengals look to get back on track when they host the Saints on a short week",
-  "categorized": "2026-11-26T00:37:33Z",
-  "originallyPosted": "2026-11-26T00:37:32Z",
-  "lastModified": "2026-11-26T00:37:33Z",
-  "published": "2026-11-26T00:37:32Z",
-  "root": "nfl",
-  "section": "NFL",
-  "source": "AP",
-  "images": [],
-  "video": [],
-  "categories": [
-   {
-    "id": 9572,
-    "type": "league",
-    "uid": "s:20~l:28",
-    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-    "description": "NFL",
-    "sportId": 28,
-    "leagueId": 28,
-    "league": {
-     "id": 28,
-     "description": "NFL",
-     "abbreviation": "NFL",
-     "links": {
-      "mobile": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      },
-      "web": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2664,
-    "type": "team",
-    "uid": "s:20~l:28~t:4",
-    "guid": "75b8623b-8926-b411-0476-3d3602b78523",
-    "description": "Cincinnati Bengals",
-    "sportId": 28,
-    "teamId": 4,
-    "team": {
-     "id": 4,
-     "description": "Cincinnati Bengals",
-     "abbreviation": "CIN",
-     "shortDisplayName": "Bengals",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2035,
-    "type": "team",
-    "uid": "s:20~l:28~t:18",
-    "guid": "97d2f6c9-2f22-459c-306a-046941ccab2a",
-    "description": "New Orleans Saints",
-    "sportId": 28,
-    "teamId": 18,
-    "team": {
-     "id": 18,
-     "description": "New Orleans Saints",
-     "abbreviation": "NO",
-     "shortDisplayName": "Saints",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-       }
-      }
-     }
-    }
-   },
-   {
-    "type": "event",
-    "uid": "s:20~l:28~e:401873087",
-    "guid": "a86e3654-f19f-3c34-a29a-b161469f16fd",
-    "description": "New Orleans Saints @ Cincinnati Bengals",
-    "eventId": 401873087,
-    "event": {
-     "id": 401873087,
-     "sport": "football",
-     "league": "nfl",
-     "description": "New Orleans Saints @ Cincinnati Bengals"
-    }
-   }
-  ],
-  "keywords": [
-   "NFL",
-   "Cincinnati Bengals",
-   "New Orleans Saints",
-   "New Orleans Saints @ Cincinnati Bengals"
-  ],
-  "story": "Most coaches don't like coming off a Monday night game the week of Thanksgiving because of changes to the practice schedule and a short week of preparation becoming even more condensed.\n\n\r\n              <a href=\"http://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals\">Cincinnati Bengals</a> coach Zac Taylor is welcoming it, especially after his squad <a href=\"https://apnews.com/article/bengals-commanders-score-48443bd54b10c334344a4bb983369e01\">lost 22-20 at Washington</a> on Monday night to end a five-game winning streak.\n\n\r\n              \u201cWe had a good stretch there, almost two months without losing a game, and then you get one and you remember what losing feels like. So you want to get back on track. I\u2019m thankful we have a short week so we don\u2019t have a lot of time to think about it,\u201d Taylor said. \u201cI think it\u2019s a great opportunity for us to have a short week, get back on the field and go find ourselves a win and get back in that mindset.\u201d\n\n\r\n              The Bengals (7-3) have a one-game lead over Cleveland and Pittsburgh in the AFC North. According to the NFL's Next Gen Stats, they have a 79% chance to win the division and 97% shot to make the playoffs. A loss on Sunday, though, along with a Browns win against the Raiders, would even the division race with Cincinnati visiting Cleveland on Dec. 6.\n\n\r\n              The Saints (3-7) have struggled this season, but they are 2-1 against the AFC North, including a win at Baltimore in Week 2.\n\n\r\n              Even though most of the focus will be on quarterbacks <a href=\"http://www.espn.com/nfl/player/_/id/3915511/joe-burrow\">Joe Burrow</a> and Tyler Slough, the game does feature two of the better pass rush groups in the league. Cincinnati is tied for seventh in the league with 29 sacks and New Orleans is 10th with 28.\n\n\r\n              Bengals defensive end <a href=\"http://www.espn.com/nfl/player/_/id/4240754/boye-mafe\">Boye Mafe</a> is third in the league with a career-high 9 1/2 sacks, including three against Washington. New Orleans edge rushers <a href=\"http://www.espn.com/nfl/player/_/id/3918310/carl-granderson\">Carl Granderson</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4241986/chase-young\">Chase Young</a> are also in the top 10 in sacks. Granderson is tied for sixth at 8 1/2 and Young has eight, which is tied for eighth.\n\n\r\n              Burrow has done a better job moving up in the pocket and scrambling during the last two games, which could benefit him against the Saints' talented duo.\n\n\r\n              \u201cIt\u2019s very similar (to Washington). They\u2019ve got good linebackers that are good rushers and they play to their strengths. I\u2019ve got respect for these guys. So we\u2019ll have our work cut out for us for sure,\u201d Burrow said.\n\n\r\n              Cincinnati is giving up 10.7 yards per scramble run, second most in the league. Shough has 204 yards on 25 scrambles.\n\n\r\n              \u201cThey do a good job of creating one-on-ones. We have to do a really good job just from a protection standpoint and then obviously go playing and going out there and attacking too. So they\u2019re one of the better teams and they\u2019re obviously playing at a really high level right now,\u201d Shough said.\n\n\r\n              <hl2>Need to know</hl2>\r\n              New Orleans (3-7) at Cincinnati (7-3).\n\n\r\n              When/where to watch: Sunday, 1 p.m. EST, CBS.\n\n\r\n              Latest odds: Bengals by 10.\n\n\r\n              Against the spread: Saints 4-6; Bengals 5-5.\n\n\r\n              Last week: Saints lost to Bears 21-13; Bengals lost to Commanders 22-20.\n\n\r\n              Last meeting: Bengals beat Saints 30-26 on Oct. 16, 2022, in New Orleans.\n\n\r\n              Series record: Bengals lead 8-7.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Bengals TE <a href=\"http://www.espn.com/nfl/player/_/id/3116164/mike-gesicki\">Mike Gesicki</a> versus Saints safety <a href=\"http://www.espn.com/nfl/player/_/id/3931399/justin-reid\">Justin Reid</a>. Gesicki has six touchdown catches, tied for third among tight ends, and is averaging a career-high 9.9 yards per target. Reid has allowed three touchdowns when covering tight ends, most among NFL safeties, and 11.8 yards per target.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 The Bengals have won two of the past three in the series.\n\n\r\n              \u2014 This is a matchup of two of the better red-zone offenses in the league. Cincinnati has scored a TD on 28 of 39 trips, and its 71.8% conversion rate is third in the league. New Orleans is fourth at 71%, with TDs on 22 of 31 drives.\n\n\r\n              \u2014 Shough has completed at least 25 passes in a league-best seven games this season and has a TD pass in five straight games.\n\n\r\n              \u2014 Saints WR <a href=\"http://www.espn.com/nfl/player/_/id/4361370/chris-olave\">Chris Olave</a> is sixth in the league with 886 receiving yards. He has five games with at least nine catches, including nine for 102 yards against Chicago last week.\n\n\r\n              \u2014 Burrow leads the league with 3,095 passing yards, 29 touchdown passes and a 74.2% completion rate. He is just the fourth player in league history, and first since Drew Brees in 2016, to have at least 3,000 passing yards, 25 TD passes and a 70% completion rate through the first 10 games of a season.\n\n\r\n              \u2014 Bengals WRs <a href=\"http://www.espn.com/nfl/player/_/id/4362628/ja'marr-chase\">Ja'Marr Chase</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4239993/tee-higgins\">Tee Higgins</a> are on pace to become just the fourth teammate duo since 1966 to each rank in the top five in both receiving yards and touchdowns in a season. Both are tied for fourth with seven receiving scores while Chase is fourth with 909 receiving yards and Higgins is fifth with 867. Wes Chandler and Kellen Winslow of the 1982 Chargers were the last to do it.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Brett Martel in New Orleans contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
-  "allowContentReactions": false,
-  "allowSearch": true,
-  "isLiveBlog": false,
-  "links": {
-   "api": {
-    "self": {
-     "href": "https://content.core.api.espn.com/v1/sports/news/50599475"
-    }
-   },
-   "app": {
-    "sportscenter": {
-     "href": "sportscenter://x-callback-url/showStory?uid=50599475"
-    }
-   },
-   "mobile": {
-    "href": "http://m.espn.go.com/nfl/story?storyId=50599475"
-   },
-   "web": {
-    "href": "http://www.espn.com/nfl/preview?gameId=401873087"
-   }
-  },
-  "premium": false
  },
  "header": {
   "id": "401873087",
@@ -5819,7 +5520,216 @@
    ]
   }
  },
+ "article": {
+  "id": 50599475,
+  "nowId": "1-50599475",
+  "contentKey": "50599475-1-22-1",
+  "dataSourceIdentifier": "3e7d1a1cb50b8",
+  "publishedkey": "nfl401873087",
+  "type": "Preview",
+  "gameId": "401873087",
+  "headline": "Bengals look to get back on track when they host the Saints on a short week",
+  "description": "Most coaches don't like coming off a Monday night game the week of Thanksgiving because of changes to the practice schedule and a short week of preparation becoming even more condensed.",
+  "title": "Bengals look to get back on track when they host the Saints on a short week",
+  "linkText": "Bengals look to get back on track when they host the Saints on a short week",
+  "categorized": "2026-11-26T00:37:33Z",
+  "originallyPosted": "2026-11-26T00:37:32Z",
+  "lastModified": "2026-11-26T00:37:33Z",
+  "published": "2026-11-26T00:37:32Z",
+  "root": "nfl",
+  "section": "NFL",
+  "source": "AP",
+  "images": [],
+  "video": [],
+  "categories": [
+   {
+    "id": 9572,
+    "type": "league",
+    "uid": "s:20~l:28",
+    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+    "description": "NFL",
+    "sportId": 28,
+    "leagueId": 28,
+    "league": {
+     "id": 28,
+     "description": "NFL",
+     "abbreviation": "NFL",
+     "links": {
+      "mobile": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      },
+      "web": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2664,
+    "type": "team",
+    "uid": "s:20~l:28~t:4",
+    "guid": "75b8623b-8926-b411-0476-3d3602b78523",
+    "description": "Cincinnati Bengals",
+    "sportId": 28,
+    "teamId": 4,
+    "team": {
+     "id": 4,
+     "description": "Cincinnati Bengals",
+     "abbreviation": "CIN",
+     "shortDisplayName": "Bengals",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2035,
+    "type": "team",
+    "uid": "s:20~l:28~t:18",
+    "guid": "97d2f6c9-2f22-459c-306a-046941ccab2a",
+    "description": "New Orleans Saints",
+    "sportId": 28,
+    "teamId": 18,
+    "team": {
+     "id": 18,
+     "description": "New Orleans Saints",
+     "abbreviation": "NO",
+     "shortDisplayName": "Saints",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "event",
+    "uid": "s:20~l:28~e:401873087",
+    "guid": "a86e3654-f19f-3c34-a29a-b161469f16fd",
+    "description": "New Orleans Saints @ Cincinnati Bengals",
+    "eventId": 401873087,
+    "event": {
+     "id": 401873087,
+     "sport": "football",
+     "league": "nfl",
+     "description": "New Orleans Saints @ Cincinnati Bengals"
+    }
+   }
+  ],
+  "keywords": [
+   "NFL",
+   "Cincinnati Bengals",
+   "New Orleans Saints",
+   "New Orleans Saints @ Cincinnati Bengals"
+  ],
+  "story": "Most coaches don't like coming off a Monday night game the week of Thanksgiving because of changes to the practice schedule and a short week of preparation becoming even more condensed.\n\n\r\n              <a href=\"http://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals\">Cincinnati Bengals</a> coach Zac Taylor is welcoming it, especially after his squad <a href=\"https://apnews.com/article/bengals-commanders-score-48443bd54b10c334344a4bb983369e01\">lost 22-20 at Washington</a> on Monday night to end a five-game winning streak.\n\n\r\n              \u201cWe had a good stretch there, almost two months without losing a game, and then you get one and you remember what losing feels like. So you want to get back on track. I\u2019m thankful we have a short week so we don\u2019t have a lot of time to think about it,\u201d Taylor said. \u201cI think it\u2019s a great opportunity for us to have a short week, get back on the field and go find ourselves a win and get back in that mindset.\u201d\n\n\r\n              The Bengals (7-3) have a one-game lead over Cleveland and Pittsburgh in the AFC North. According to the NFL's Next Gen Stats, they have a 79% chance to win the division and 97% shot to make the playoffs. A loss on Sunday, though, along with a Browns win against the Raiders, would even the division race with Cincinnati visiting Cleveland on Dec. 6.\n\n\r\n              The Saints (3-7) have struggled this season, but they are 2-1 against the AFC North, including a win at Baltimore in Week 2.\n\n\r\n              Even though most of the focus will be on quarterbacks <a href=\"http://www.espn.com/nfl/player/_/id/3915511/joe-burrow\">Joe Burrow</a> and Tyler Slough, the game does feature two of the better pass rush groups in the league. Cincinnati is tied for seventh in the league with 29 sacks and New Orleans is 10th with 28.\n\n\r\n              Bengals defensive end <a href=\"http://www.espn.com/nfl/player/_/id/4240754/boye-mafe\">Boye Mafe</a> is third in the league with a career-high 9 1/2 sacks, including three against Washington. New Orleans edge rushers <a href=\"http://www.espn.com/nfl/player/_/id/3918310/carl-granderson\">Carl Granderson</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4241986/chase-young\">Chase Young</a> are also in the top 10 in sacks. Granderson is tied for sixth at 8 1/2 and Young has eight, which is tied for eighth.\n\n\r\n              Burrow has done a better job moving up in the pocket and scrambling during the last two games, which could benefit him against the Saints' talented duo.\n\n\r\n              \u201cIt\u2019s very similar (to Washington). They\u2019ve got good linebackers that are good rushers and they play to their strengths. I\u2019ve got respect for these guys. So we\u2019ll have our work cut out for us for sure,\u201d Burrow said.\n\n\r\n              Cincinnati is giving up 10.7 yards per scramble run, second most in the league. Shough has 204 yards on 25 scrambles.\n\n\r\n              \u201cThey do a good job of creating one-on-ones. We have to do a really good job just from a protection standpoint and then obviously go playing and going out there and attacking too. So they\u2019re one of the better teams and they\u2019re obviously playing at a really high level right now,\u201d Shough said.\n\n\r\n              <hl2>Need to know</hl2>\r\n              New Orleans (3-7) at Cincinnati (7-3).\n\n\r\n              When/where to watch: Sunday, 1 p.m. EST, CBS.\n\n\r\n              Latest odds: Bengals by 10.\n\n\r\n              Against the spread: Saints 4-6; Bengals 5-5.\n\n\r\n              Last week: Saints lost to Bears 21-13; Bengals lost to Commanders 22-20.\n\n\r\n              Last meeting: Bengals beat Saints 30-26 on Oct. 16, 2022, in New Orleans.\n\n\r\n              Series record: Bengals lead 8-7.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Bengals TE <a href=\"http://www.espn.com/nfl/player/_/id/3116164/mike-gesicki\">Mike Gesicki</a> versus Saints safety <a href=\"http://www.espn.com/nfl/player/_/id/3931399/justin-reid\">Justin Reid</a>. Gesicki has six touchdown catches, tied for third among tight ends, and is averaging a career-high 9.9 yards per target. Reid has allowed three touchdowns when covering tight ends, most among NFL safeties, and 11.8 yards per target.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 The Bengals have won two of the past three in the series.\n\n\r\n              \u2014 This is a matchup of two of the better red-zone offenses in the league. Cincinnati has scored a TD on 28 of 39 trips, and its 71.8% conversion rate is third in the league. New Orleans is fourth at 71%, with TDs on 22 of 31 drives.\n\n\r\n              \u2014 Shough has completed at least 25 passes in a league-best seven games this season and has a TD pass in five straight games.\n\n\r\n              \u2014 Saints WR <a href=\"http://www.espn.com/nfl/player/_/id/4361370/chris-olave\">Chris Olave</a> is sixth in the league with 886 receiving yards. He has five games with at least nine catches, including nine for 102 yards against Chicago last week.\n\n\r\n              \u2014 Burrow leads the league with 3,095 passing yards, 29 touchdown passes and a 74.2% completion rate. He is just the fourth player in league history, and first since Drew Brees in 2016, to have at least 3,000 passing yards, 25 TD passes and a 70% completion rate through the first 10 games of a season.\n\n\r\n              \u2014 Bengals WRs <a href=\"http://www.espn.com/nfl/player/_/id/4362628/ja'marr-chase\">Ja'Marr Chase</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4239993/tee-higgins\">Tee Higgins</a> are on pace to become just the fourth teammate duo since 1966 to each rank in the top five in both receiving yards and touchdowns in a season. Both are tied for fourth with seven receiving scores while Chase is fourth with 909 receiving yards and Higgins is fifth with 867. Wes Chandler and Kellen Winslow of the 1982 Chargers were the last to do it.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Brett Martel in New Orleans contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
+  "allowContentReactions": false,
+  "allowSearch": true,
+  "isLiveBlog": false,
+  "links": {
+   "api": {
+    "self": {
+     "href": "https://content.core.api.espn.com/v1/sports/news/50599475"
+    }
+   },
+   "app": {
+    "sportscenter": {
+     "href": "sportscenter://x-callback-url/showStory?uid=50599475"
+    }
+   },
+   "mobile": {
+    "href": "http://m.espn.go.com/nfl/story?storyId=50599475"
+   },
+   "web": {
+    "href": "http://www.espn.com/nfl/preview?gameId=401873087"
+   }
+  },
+  "premium": false
+ },
  "wallclockAvailable": false,
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Bengals Tickets",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/29 vs Saints 3334 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/6 @ Browns 6078 tickets left",
+    "ticketLink": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-2-2026/production/6489423?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 vs Chiefs 3374 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-8-2026/production/6489069?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 @ Panthers 3879 tickets left",
+    "ticketLink": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-7-2026/production/6488725?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/27 @ Colts 2898 tickets left",
+    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-5-2026/production/6490117?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/31 vs Ravens 4227 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-1-2026/production/6488960?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Browns 6369 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-2-2026/production/6488992?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Saints",
+   "currentTeamName": "Bengals",
+   "venueName": "Paycor Stadium",
+   "summary": "Tickets as low as $53",
+   "date": "2026-11-29T18:00Z",
+   "dateDay": "Sun",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717",
+   "venueLink": "https://www.vividseats.com/paul-brown-stadium-tickets/venue/1942?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
+   "timeValid": true
+  }
+ },
  "meta": {
   "gp_topic": "gp-football-nfl-401873087",
   "gameSwitcherEnabled": true,
