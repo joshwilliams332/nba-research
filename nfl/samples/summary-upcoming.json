@@ -373,8 +373,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "10",
       "uid": "s:20~l:28~t:10",
@@ -439,7 +437,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873038",
@@ -462,8 +462,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "1",
       "uid": "s:20~l:28~t:1",
@@ -528,7 +526,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873064",
@@ -798,8 +798,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "19",
       "uid": "s:20~l:28~t:19",
@@ -864,7 +862,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873011",
@@ -887,8 +887,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "23",
       "uid": "s:20~l:28~t:23",
@@ -953,7 +951,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873039",
@@ -976,6 +976,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "5",
       "uid": "s:20~l:28~t:5",
@@ -1040,9 +1042,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
     },
     {
      "id": "401873055",
@@ -2676,7 +2676,7 @@
   {
    "provider": {
     "id": "100",
-    "name": "DraftKings",
+    "name": "Draft Kings",
     "priority": 1,
     "logos": [
      {
@@ -2701,7 +2701,7 @@
    "awayTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 429,
+    "moneyLine": 430,
     "spreadOdds": -105.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/18?lang=en&region=us"
@@ -2712,7 +2712,7 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -569,
+    "moneyLine": -571,
     "spreadOdds": -115.0,
     "team": {
      "$ref": "http://sports.core.api.espn.pvt/v2/sports/football/leagues/nfl/seasons/2026/teams/4?lang=en&region=us"
@@ -2727,7 +2727,7 @@
       "home",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118135%3Foutcomes%3D0ML84695568_1",
      "text": "Home Bet",
@@ -2751,7 +2751,7 @@
       "away",
       "desktop",
       "bets",
-      "draftkings"
+      "draft-kings"
      ],
      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118135%3Foutcomes%3D0ML84695568_3",
      "text": "Away Bet",
@@ -2884,14 +2884,14 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "-569",
+      "odds": "-571",
       "link": {
        "language": "en-US",
        "rel": [
         "home",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118135%3Foutcomes%3D0ML84695568_1",
        "text": "Home Bet",
@@ -2916,14 +2916,14 @@
     },
     "away": {
      "close": {
-      "odds": "+429",
+      "odds": "+430",
       "link": {
        "language": "en-US",
        "rel": [
         "away",
         "desktop",
         "bets",
-        "draftkings"
+        "draft-kings"
        ],
        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34118135%3Foutcomes%3D0ML84695568_3",
        "text": "Away Bet",
@@ -3255,6 +3255,18 @@
    "records": []
   }
  ],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "4",
+   "gameProjection": "80.4"
+  },
+  "awayTeam": {
+   "id": "18",
+   "gameProjection": "19.4"
+  }
+ },
+ "winprobability": [],
  "news": {
   "header": "NFL News",
   "link": {
@@ -3272,6 +3284,200 @@
   },
   "articles": [
    {
+    "id": 50618212,
+    "nowId": "1-50618212",
+    "contentKey": "50618212-1-5-1",
+    "dataSourceIdentifier": "39c6b9f51b56b",
+    "type": "HeadlineNews",
+    "headline": "Singled out in NFL officiating video, Bears' Simmons draws false-start ire from Lions",
+    "description": "Bears DT Jeffery Simmons was the subject of controversy during Chicago's win at Detroit on Thanksgiving day.",
+    "lastModified": "2026-11-28T04:13:03Z",
+    "published": "2026-11-28T04:13:03Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "1b17ddc36a07c",
+      "id": 50618508,
+      "type": "header",
+      "name": "Jeffery Simmons [600x400]",
+      "credit": "Photo by Joseph Weiser/Icon Sportswire",
+      "height": 400,
+      "width": 600,
+      "url": "https://a.espncdn.com/photo/2026/1128/r1752336_600x400_3-2.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1750,
+      "type": "team",
+      "uid": "s:20~l:28~t:3",
+      "guid": "19d73366-b5a5-cca2-a176-a2c024ce0bb3",
+      "description": "Chicago Bears",
+      "sportId": 28,
+      "teamId": 3,
+      "team": {
+       "id": 3,
+       "description": "Chicago Bears",
+       "abbreviation": "CHI",
+       "shortDisplayName": "Bears",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409224,
+      "type": "topic",
+      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+      "description": "news",
+      "sportId": 0,
+      "topicId": 781
+     },
+     {
+      "id": 379823,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4035369",
+      "guid": "3d2c970c-ba26-bcf9-3e98-bd833dd57be6",
+      "description": "Jeffery Simmons",
+      "sportId": 28,
+      "athleteId": 4035369,
+      "athlete": {
+       "id": 4035369,
+       "description": "Jeffery Simmons",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4035369/jeffery-simmons"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4035369/jeffery-simmons"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 218094,
+      "type": "athlete",
+      "uid": "s:20~l:28~a:4361425",
+      "guid": "46af8338-cabd-ada3-cffb-5b2e2eb232ca",
+      "description": "Juice Scruggs",
+      "sportId": 28,
+      "athleteId": 4361425,
+      "athlete": {
+       "id": 4361425,
+       "description": "Juice Scruggs",
+       "links": {
+        "mobile": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4361425/juice-scruggs"
+         }
+        },
+        "web": {
+         "athletes": {
+          "href": "https://www.espn.com/nfl/player/_/id/4361425/juice-scruggs"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 1805,
+      "type": "team",
+      "uid": "s:20~l:28~t:8",
+      "guid": "56caffee-178d-f6f2-a076-b277486b8c32",
+      "description": "Detroit Lions",
+      "sportId": 28,
+      "teamId": 8,
+      "team": {
+       "id": 8,
+       "description": "Detroit Lions",
+       "abbreviation": "DET",
+       "shortDisplayName": "Lions",
+       "links": {
+        "mobile": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/det/detroit-lions"
+         }
+        },
+        "web": {
+         "teams": {
+          "href": "https://www.espn.com/nfl/team/_/name/det/detroit-lions"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 699408,
+      "type": "contributor",
+      "guid": "0a0579bc-cfda-354e-8492-66b2834ed765",
+      "description": "Kalyn Kahler",
+      "slug": "kalyn-kahler",
+      "contributor": {
+       "id": 4143,
+       "description": "Kalyn Kahler"
+      }
+     }
+    ],
+    "byline": "Kalyn Kahler",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50618212"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50618212"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/nfl/story?storyId=50618212"
+     },
+     "web": {
+      "href": "https://www.espn.com/nfl/story/_/id/50618212/singled-nfl-officiating-video-bears-simmons-draws-false-start-ire-lions"
+     }
+    },
+    "premium": false
+   },
+   {
     "id": 50618077,
     "nowId": "1-50618077",
     "contentKey": "50618077-1-5-1",
@@ -3279,8 +3485,8 @@
     "type": "HeadlineNews",
     "headline": "Steelers, fueled by jabs over Aaron Rodgers drama, 'come together' to rout Broncos",
     "description": "Turned into a national punchline following Aaron Rodgers' release, the Steelers played with a sense of \"urgency\" and \"anger\" Friday night in a 27-5 win over Denver.",
-    "lastModified": "2026-11-28T03:50:37Z",
-    "published": "2026-11-28T03:50:37Z",
+    "lastModified": "2026-11-28T04:12:36Z",
+    "published": "2026-11-28T04:12:36Z",
     "images": [
      {
       "dataSourceIdentifier": "183d081898e02",
@@ -4815,419 +5021,9 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50615818,
-    "nowId": "1-50615818",
-    "contentKey": "50615818-1-5-1",
-    "dataSourceIdentifier": "8e8c45b2fa2b8",
-    "type": "HeadlineNews",
-    "headline": "DJ Uiagalelei to start for Chargers with Justin Herbert in concussion protocol",
-    "description": "Chargers quarterback Justin Herbert was ruled out for Sunday as he remains in concussion protocol, coach Jim Harbaugh said Friday, meaning DJ Uiagalelei will start against Tommy DeVito and the Patriots.",
-    "lastModified": "2026-11-28T00:13:16Z",
-    "published": "2026-11-28T00:13:16Z",
-    "images": [
-     {
-      "dataSourceIdentifier": "bad70ccb21526",
-      "id": 50615893,
-      "type": "header",
-      "name": "DJ Uiagalelei  [600x400]",
-      "credit": "Karl Anderson/Icon Sportswire",
-      "height": 400,
-      "width": 600,
-      "url": "https://a.espncdn.com/photo/2026/1127/r1752259_600x400_3-2.jpg"
-     },
-     {
-      "type": "Media",
-      "name": "DJ Uiagalelei trying to not overthink first NFL start",
-      "caption": "DJ Uiagalelei trying to not overthink first NFL start",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1127/a380a9a5-b60b-4ad1-bbb7-2df5fb8208b8/a380a9a5-b60b-4ad1-bbb7-2df5fb8208b8.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 409224,
-      "type": "topic",
-      "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-      "description": "news",
-      "sportId": 0,
-      "topicId": 781
-     },
-     {
-      "id": 435043,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4038941",
-      "guid": "ec880cbc-1490-cdae-548f-f844104974ae",
-      "description": "Justin Herbert",
-      "sportId": 28,
-      "athleteId": 4038941,
-      "athlete": {
-       "id": 4038941,
-       "description": "Justin Herbert",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4038941/justin-herbert"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 439817,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4429020",
-      "guid": "7767104d-2d12-34e6-bc32-cca7b544f572",
-      "description": "DJ Uiagalelei",
-      "sportId": 28,
-      "athleteId": 4429020,
-      "athlete": {
-       "id": 4429020,
-       "description": "DJ Uiagalelei",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4429020/dj-uiagalelei"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4429020/dj-uiagalelei"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 227632,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4240391",
-      "guid": "6902e0f6-2223-d48b-2eb7-e8bdd2f9ce96",
-      "description": "Tommy DeVito",
-      "sportId": 28,
-      "athleteId": 4240391,
-      "athlete": {
-       "id": 4240391,
-       "description": "Tommy DeVito",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4240391/tommy-devito"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4240391/tommy-devito"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 490129,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4431452",
-      "guid": "2fbd2f9e-624d-3e63-9bb5-9bb965782b68",
-      "description": "Drake Maye",
-      "sportId": 28,
-      "athleteId": 4431452,
-      "athlete": {
-       "id": 4431452,
-       "description": "Drake Maye",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4431452/drake-maye"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4431452/drake-maye"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2610,
-      "type": "team",
-      "uid": "s:20~l:28~t:24",
-      "guid": "84caf62b-c753-71ea-a787-44fd224a4294",
-      "description": "Los Angeles Chargers",
-      "sportId": 28,
-      "teamId": 24,
-      "team": {
-       "id": 24,
-       "description": "Los Angeles Chargers",
-       "abbreviation": "LAC",
-       "shortDisplayName": "Chargers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/lac/los-angeles-chargers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2321,
-      "type": "team",
-      "uid": "s:20~l:28~t:17",
-      "guid": "0078f353-fe3e-67ed-a42c-43cca0568e21",
-      "description": "New England Patriots",
-      "sportId": 28,
-      "teamId": 17,
-      "team": {
-       "id": 17,
-       "description": "New England Patriots",
-       "abbreviation": "NE",
-       "shortDisplayName": "Patriots",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 696440,
-      "type": "contributor",
-      "guid": "bdee10fe-a1a2-3ced-87dd-43089bf47931",
-      "description": "Mike Reiss",
-      "slug": "mike-reiss",
-      "contributor": {
-       "id": 1800,
-       "description": "Mike Reiss"
-      }
-     }
-    ],
-    "byline": "Mike Reiss",
-    "links": {
-     "api": {
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/sports/news/50615818"
-      }
-     },
-     "app": {
-      "sportscenter": {
-       "href": "sportscenter://x-callback-url/showStory?uid=50615818"
-      }
-     },
-     "mobile": {
-      "href": "http://m.espn.go.com/nfl/story?storyId=50615818"
-     },
-     "web": {
-      "href": "https://www.espn.com/nfl/story/_/id/50615818/qb-dj-uiagalelei-start-chargers-justin-herbert-concussion-protocol"
-     }
-    },
-    "premium": false
    }
   ]
  },
- "article": {
-  "id": 50599475,
-  "nowId": "1-50599475",
-  "contentKey": "50599475-1-22-1",
-  "dataSourceIdentifier": "3e7d1a1cb50b8",
-  "publishedkey": "nfl401873087",
-  "type": "Preview",
-  "gameId": "401873087",
-  "headline": "Bengals look to get back on track when they host the Saints on a short week",
-  "description": "Most coaches don't like coming off a Monday night game the week of Thanksgiving because of changes to the practice schedule and a short week of preparation becoming even more condensed.",
-  "title": "Bengals look to get back on track when they host the Saints on a short week",
-  "linkText": "Bengals look to get back on track when they host the Saints on a short week",
-  "categorized": "2026-11-26T00:37:33Z",
-  "originallyPosted": "2026-11-26T00:37:32Z",
-  "lastModified": "2026-11-26T00:37:33Z",
-  "published": "2026-11-26T00:37:32Z",
-  "root": "nfl",
-  "section": "NFL",
-  "source": "AP",
-  "images": [],
-  "video": [],
-  "categories": [
-   {
-    "id": 9572,
-    "type": "league",
-    "uid": "s:20~l:28",
-    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-    "description": "NFL",
-    "sportId": 28,
-    "leagueId": 28,
-    "league": {
-     "id": 28,
-     "description": "NFL",
-     "abbreviation": "NFL",
-     "links": {
-      "mobile": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      },
-      "web": {
-       "leagues": {
-        "href": "https://www.espn.com/nfl/"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2664,
-    "type": "team",
-    "uid": "s:20~l:28~t:4",
-    "guid": "75b8623b-8926-b411-0476-3d3602b78523",
-    "description": "Cincinnati Bengals",
-    "sportId": 28,
-    "teamId": 4,
-    "team": {
-     "id": 4,
-     "description": "Cincinnati Bengals",
-     "abbreviation": "CIN",
-     "shortDisplayName": "Bengals",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
-       }
-      }
-     }
-    }
-   },
-   {
-    "id": 2035,
-    "type": "team",
-    "uid": "s:20~l:28~t:18",
-    "guid": "97d2f6c9-2f22-459c-306a-046941ccab2a",
-    "description": "New Orleans Saints",
-    "sportId": 28,
-    "teamId": 18,
-    "team": {
-     "id": 18,
-     "description": "New Orleans Saints",
-     "abbreviation": "NO",
-     "shortDisplayName": "Saints",
-     "links": {
-      "mobile": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-       }
-      },
-      "web": {
-       "teams": {
-        "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
-       }
-      }
-     }
-    }
-   },
-   {
-    "type": "event",
-    "uid": "s:20~l:28~e:401873087",
-    "guid": "a86e3654-f19f-3c34-a29a-b161469f16fd",
-    "description": "New Orleans Saints @ Cincinnati Bengals",
-    "eventId": 401873087,
-    "event": {
-     "id": 401873087,
-     "sport": "football",
-     "league": "nfl",
-     "description": "New Orleans Saints @ Cincinnati Bengals"
-    }
-   }
-  ],
-  "keywords": [
-   "NFL",
-   "Cincinnati Bengals",
-   "New Orleans Saints",
-   "New Orleans Saints @ Cincinnati Bengals"
-  ],
-  "story": "Most coaches don't like coming off a Monday night game the week of Thanksgiving because of changes to the practice schedule and a short week of preparation becoming even more condensed.\n\n\r\n              <a href=\"http://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals\">Cincinnati Bengals</a> coach Zac Taylor is welcoming it, especially after his squad <a href=\"https://apnews.com/article/bengals-commanders-score-48443bd54b10c334344a4bb983369e01\">lost 22-20 at Washington</a> on Monday night to end a five-game winning streak.\n\n\r\n              \u201cWe had a good stretch there, almost two months without losing a game, and then you get one and you remember what losing feels like. So you want to get back on track. I\u2019m thankful we have a short week so we don\u2019t have a lot of time to think about it,\u201d Taylor said. \u201cI think it\u2019s a great opportunity for us to have a short week, get back on the field and go find ourselves a win and get back in that mindset.\u201d\n\n\r\n              The Bengals (7-3) have a one-game lead over Cleveland and Pittsburgh in the AFC North. According to the NFL's Next Gen Stats, they have a 79% chance to win the division and 97% shot to make the playoffs. A loss on Sunday, though, along with a Browns win against the Raiders, would even the division race with Cincinnati visiting Cleveland on Dec. 6.\n\n\r\n              The Saints (3-7) have struggled this season, but they are 2-1 against the AFC North, including a win at Baltimore in Week 2.\n\n\r\n              Even though most of the focus will be on quarterbacks <a href=\"http://www.espn.com/nfl/player/_/id/3915511/joe-burrow\">Joe Burrow</a> and Tyler Slough, the game does feature two of the better pass rush groups in the league. Cincinnati is tied for seventh in the league with 29 sacks and New Orleans is 10th with 28.\n\n\r\n              Bengals defensive end <a href=\"http://www.espn.com/nfl/player/_/id/4240754/boye-mafe\">Boye Mafe</a> is third in the league with a career-high 9 1/2 sacks, including three against Washington. New Orleans edge rushers <a href=\"http://www.espn.com/nfl/player/_/id/3918310/carl-granderson\">Carl Granderson</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4241986/chase-young\">Chase Young</a> are also in the top 10 in sacks. Granderson is tied for sixth at 8 1/2 and Young has eight, which is tied for eighth.\n\n\r\n              Burrow has done a better job moving up in the pocket and scrambling during the last two games, which could benefit him against the Saints' talented duo.\n\n\r\n              \u201cIt\u2019s very similar (to Washington). They\u2019ve got good linebackers that are good rushers and they play to their strengths. I\u2019ve got respect for these guys. So we\u2019ll have our work cut out for us for sure,\u201d Burrow said.\n\n\r\n              Cincinnati is giving up 10.7 yards per scramble run, second most in the league. Shough has 204 yards on 25 scrambles.\n\n\r\n              \u201cThey do a good job of creating one-on-ones. We have to do a really good job just from a protection standpoint and then obviously go playing and going out there and attacking too. So they\u2019re one of the better teams and they\u2019re obviously playing at a really high level right now,\u201d Shough said.\n\n\r\n              <hl2>Need to know</hl2>\r\n              New Orleans (3-7) at Cincinnati (7-3).\n\n\r\n              When/where to watch: Sunday, 1 p.m. EST, CBS.\n\n\r\n              Latest odds: Bengals by 10.\n\n\r\n              Against the spread: Saints 4-6; Bengals 5-5.\n\n\r\n              Last week: Saints lost to Bears 21-13; Bengals lost to Commanders 22-20.\n\n\r\n              Last meeting: Bengals beat Saints 30-26 on Oct. 16, 2022, in New Orleans.\n\n\r\n              Series record: Bengals lead 8-7.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Bengals TE <a href=\"http://www.espn.com/nfl/player/_/id/3116164/mike-gesicki\">Mike Gesicki</a> versus Saints safety <a href=\"http://www.espn.com/nfl/player/_/id/3931399/justin-reid\">Justin Reid</a>. Gesicki has six touchdown catches, tied for third among tight ends, and is averaging a career-high 9.9 yards per target. Reid has allowed three touchdowns when covering tight ends, most among NFL safeties, and 11.8 yards per target.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 The Bengals have won two of the past three in the series.\n\n\r\n              \u2014 This is a matchup of two of the better red-zone offenses in the league. Cincinnati has scored a TD on 28 of 39 trips, and its 71.8% conversion rate is third in the league. New Orleans is fourth at 71%, with TDs on 22 of 31 drives.\n\n\r\n              \u2014 Shough has completed at least 25 passes in a league-best seven games this season and has a TD pass in five straight games.\n\n\r\n              \u2014 Saints WR <a href=\"http://www.espn.com/nfl/player/_/id/4361370/chris-olave\">Chris Olave</a> is sixth in the league with 886 receiving yards. He has five games with at least nine catches, including nine for 102 yards against Chicago last week.\n\n\r\n              \u2014 Burrow leads the league with 3,095 passing yards, 29 touchdown passes and a 74.2% completion rate. He is just the fourth player in league history, and first since Drew Brees in 2016, to have at least 3,000 passing yards, 25 TD passes and a 70% completion rate through the first 10 games of a season.\n\n\r\n              \u2014 Bengals WRs <a href=\"http://www.espn.com/nfl/player/_/id/4362628/ja'marr-chase\">Ja'Marr Chase</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4239993/tee-higgins\">Tee Higgins</a> are on pace to become just the fourth teammate duo since 1966 to each rank in the top five in both receiving yards and touchdowns in a season. Both are tied for fourth with seven receiving scores while Chase is fourth with 909 receiving yards and Higgins is fifth with 867. Wes Chandler and Kellen Winslow of the 1982 Chargers were the last to do it.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Brett Martel in New Orleans contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
-  "allowContentReactions": false,
-  "allowSearch": true,
-  "isLiveBlog": false,
-  "links": {
-   "api": {
-    "self": {
-     "href": "https://content.core.api.espn.com/v1/sports/news/50599475"
-    }
-   },
-   "app": {
-    "sportscenter": {
-     "href": "sportscenter://x-callback-url/showStory?uid=50599475"
-    }
-   },
-   "mobile": {
-    "href": "http://m.espn.go.com/nfl/story?storyId=50599475"
-   },
-   "web": {
-    "href": "http://www.espn.com/nfl/preview?gameId=401873087"
-   }
-  },
-  "premium": false
- },
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "4",
-   "gameProjection": "80.4"
-  },
-  "awayTeam": {
-   "id": "18",
-   "gameProjection": "19.4"
-  }
- },
- "winprobability": [],
  "header": {
   "id": "401873087",
   "uid": "s:20~l:28~e:401873087",
@@ -5745,7 +5541,7 @@
       "awayTeamOdds": {
        "favorite": false,
        "underdog": true,
-       "moneyLine": 429,
+       "moneyLine": 430,
        "spreadOdds": -105.0,
        "open": {
         "favorite": false,
@@ -5784,12 +5580,12 @@
          "american": "-105"
         },
         "moneyLine": {
-         "value": 5.29,
-         "displayValue": "429/100",
-         "alternateDisplayValue": "+429",
-         "decimal": 5.29,
-         "fraction": "429/100",
-         "american": "+429"
+         "value": 5.3,
+         "displayValue": "43/10",
+         "alternateDisplayValue": "+430",
+         "decimal": 5.3,
+         "fraction": "43/10",
+         "american": "+430"
         }
        },
        "team": {
@@ -5799,7 +5595,7 @@
       "homeTeamOdds": {
        "favorite": true,
        "underdog": false,
-       "moneyLine": -569,
+       "moneyLine": -571,
        "spreadOdds": -115.0,
        "open": {
         "favorite": true,
@@ -5839,11 +5635,11 @@
         },
         "moneyLine": {
          "value": 1.17,
-         "displayValue": "100/569",
-         "alternateDisplayValue": "-569",
+         "displayValue": "100/571",
+         "alternateDisplayValue": "-571",
          "decimal": 1.17,
-         "fraction": "100/569",
-         "american": "-569"
+         "fraction": "100/571",
+         "american": "-571"
         }
        },
        "team": {
@@ -6303,13 +6099,153 @@
    ]
   }
  },
- "wallclockAvailable": false,
- "meta": {
-  "gp_topic": "gp-football-nfl-401873087",
-  "gameSwitcherEnabled": true,
-  "picker_topic": "picker-football-nfl",
-  "gameState": "pre"
+ "article": {
+  "id": 50599475,
+  "nowId": "1-50599475",
+  "contentKey": "50599475-1-22-1",
+  "dataSourceIdentifier": "3e7d1a1cb50b8",
+  "publishedkey": "nfl401873087",
+  "type": "Preview",
+  "gameId": "401873087",
+  "headline": "Bengals look to get back on track when they host the Saints on a short week",
+  "description": "Most coaches don't like coming off a Monday night game the week of Thanksgiving because of changes to the practice schedule and a short week of preparation becoming even more condensed.",
+  "title": "Bengals look to get back on track when they host the Saints on a short week",
+  "linkText": "Bengals look to get back on track when they host the Saints on a short week",
+  "categorized": "2026-11-26T00:37:33Z",
+  "originallyPosted": "2026-11-26T00:37:32Z",
+  "lastModified": "2026-11-26T00:37:33Z",
+  "published": "2026-11-26T00:37:32Z",
+  "root": "nfl",
+  "section": "NFL",
+  "source": "AP",
+  "images": [],
+  "video": [],
+  "categories": [
+   {
+    "id": 9572,
+    "type": "league",
+    "uid": "s:20~l:28",
+    "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+    "description": "NFL",
+    "sportId": 28,
+    "leagueId": 28,
+    "league": {
+     "id": 28,
+     "description": "NFL",
+     "abbreviation": "NFL",
+     "links": {
+      "mobile": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      },
+      "web": {
+       "leagues": {
+        "href": "https://www.espn.com/nfl/"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2664,
+    "type": "team",
+    "uid": "s:20~l:28~t:4",
+    "guid": "75b8623b-8926-b411-0476-3d3602b78523",
+    "description": "Cincinnati Bengals",
+    "sportId": 28,
+    "teamId": 4,
+    "team": {
+     "id": 4,
+     "description": "Cincinnati Bengals",
+     "abbreviation": "CIN",
+     "shortDisplayName": "Bengals",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+       }
+      }
+     }
+    }
+   },
+   {
+    "id": 2035,
+    "type": "team",
+    "uid": "s:20~l:28~t:18",
+    "guid": "97d2f6c9-2f22-459c-306a-046941ccab2a",
+    "description": "New Orleans Saints",
+    "sportId": 28,
+    "teamId": 18,
+    "team": {
+     "id": 18,
+     "description": "New Orleans Saints",
+     "abbreviation": "NO",
+     "shortDisplayName": "Saints",
+     "links": {
+      "mobile": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
+       }
+      },
+      "web": {
+       "teams": {
+        "href": "https://www.espn.com/nfl/team/_/name/no/new-orleans-saints"
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "event",
+    "uid": "s:20~l:28~e:401873087",
+    "guid": "a86e3654-f19f-3c34-a29a-b161469f16fd",
+    "description": "New Orleans Saints @ Cincinnati Bengals",
+    "eventId": 401873087,
+    "event": {
+     "id": 401873087,
+     "sport": "football",
+     "league": "nfl",
+     "description": "New Orleans Saints @ Cincinnati Bengals"
+    }
+   }
+  ],
+  "keywords": [
+   "NFL",
+   "Cincinnati Bengals",
+   "New Orleans Saints",
+   "New Orleans Saints @ Cincinnati Bengals"
+  ],
+  "story": "Most coaches don't like coming off a Monday night game the week of Thanksgiving because of changes to the practice schedule and a short week of preparation becoming even more condensed.\n\n\r\n              <a href=\"http://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals\">Cincinnati Bengals</a> coach Zac Taylor is welcoming it, especially after his squad <a href=\"https://apnews.com/article/bengals-commanders-score-48443bd54b10c334344a4bb983369e01\">lost 22-20 at Washington</a> on Monday night to end a five-game winning streak.\n\n\r\n              \u201cWe had a good stretch there, almost two months without losing a game, and then you get one and you remember what losing feels like. So you want to get back on track. I\u2019m thankful we have a short week so we don\u2019t have a lot of time to think about it,\u201d Taylor said. \u201cI think it\u2019s a great opportunity for us to have a short week, get back on the field and go find ourselves a win and get back in that mindset.\u201d\n\n\r\n              The Bengals (7-3) have a one-game lead over Cleveland and Pittsburgh in the AFC North. According to the NFL's Next Gen Stats, they have a 79% chance to win the division and 97% shot to make the playoffs. A loss on Sunday, though, along with a Browns win against the Raiders, would even the division race with Cincinnati visiting Cleveland on Dec. 6.\n\n\r\n              The Saints (3-7) have struggled this season, but they are 2-1 against the AFC North, including a win at Baltimore in Week 2.\n\n\r\n              Even though most of the focus will be on quarterbacks <a href=\"http://www.espn.com/nfl/player/_/id/3915511/joe-burrow\">Joe Burrow</a> and Tyler Slough, the game does feature two of the better pass rush groups in the league. Cincinnati is tied for seventh in the league with 29 sacks and New Orleans is 10th with 28.\n\n\r\n              Bengals defensive end <a href=\"http://www.espn.com/nfl/player/_/id/4240754/boye-mafe\">Boye Mafe</a> is third in the league with a career-high 9 1/2 sacks, including three against Washington. New Orleans edge rushers <a href=\"http://www.espn.com/nfl/player/_/id/3918310/carl-granderson\">Carl Granderson</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4241986/chase-young\">Chase Young</a> are also in the top 10 in sacks. Granderson is tied for sixth at 8 1/2 and Young has eight, which is tied for eighth.\n\n\r\n              Burrow has done a better job moving up in the pocket and scrambling during the last two games, which could benefit him against the Saints' talented duo.\n\n\r\n              \u201cIt\u2019s very similar (to Washington). They\u2019ve got good linebackers that are good rushers and they play to their strengths. I\u2019ve got respect for these guys. So we\u2019ll have our work cut out for us for sure,\u201d Burrow said.\n\n\r\n              Cincinnati is giving up 10.7 yards per scramble run, second most in the league. Shough has 204 yards on 25 scrambles.\n\n\r\n              \u201cThey do a good job of creating one-on-ones. We have to do a really good job just from a protection standpoint and then obviously go playing and going out there and attacking too. So they\u2019re one of the better teams and they\u2019re obviously playing at a really high level right now,\u201d Shough said.\n\n\r\n              <hl2>Need to know</hl2>\r\n              New Orleans (3-7) at Cincinnati (7-3).\n\n\r\n              When/where to watch: Sunday, 1 p.m. EST, CBS.\n\n\r\n              Latest odds: Bengals by 10.\n\n\r\n              Against the spread: Saints 4-6; Bengals 5-5.\n\n\r\n              Last week: Saints lost to Bears 21-13; Bengals lost to Commanders 22-20.\n\n\r\n              Last meeting: Bengals beat Saints 30-26 on Oct. 16, 2022, in New Orleans.\n\n\r\n              Series record: Bengals lead 8-7.\n\n\r\n              <hl2>Matchup to watch</hl2>\r\n              Bengals TE <a href=\"http://www.espn.com/nfl/player/_/id/3116164/mike-gesicki\">Mike Gesicki</a> versus Saints safety <a href=\"http://www.espn.com/nfl/player/_/id/3931399/justin-reid\">Justin Reid</a>. Gesicki has six touchdown catches, tied for third among tight ends, and is averaging a career-high 9.9 yards per target. Reid has allowed three touchdowns when covering tight ends, most among NFL safeties, and 11.8 yards per target.\n\n\r\n              <hl2>Stats and stuff</hl2>\r\n              \u2014 The Bengals have won two of the past three in the series.\n\n\r\n              \u2014 This is a matchup of two of the better red-zone offenses in the league. Cincinnati has scored a TD on 28 of 39 trips, and its 71.8% conversion rate is third in the league. New Orleans is fourth at 71%, with TDs on 22 of 31 drives.\n\n\r\n              \u2014 Shough has completed at least 25 passes in a league-best seven games this season and has a TD pass in five straight games.\n\n\r\n              \u2014 Saints WR <a href=\"http://www.espn.com/nfl/player/_/id/4361370/chris-olave\">Chris Olave</a> is sixth in the league with 886 receiving yards. He has five games with at least nine catches, including nine for 102 yards against Chicago last week.\n\n\r\n              \u2014 Burrow leads the league with 3,095 passing yards, 29 touchdown passes and a 74.2% completion rate. He is just the fourth player in league history, and first since Drew Brees in 2016, to have at least 3,000 passing yards, 25 TD passes and a 70% completion rate through the first 10 games of a season.\n\n\r\n              \u2014 Bengals WRs <a href=\"http://www.espn.com/nfl/player/_/id/4362628/ja'marr-chase\">Ja'Marr Chase</a> and <a href=\"http://www.espn.com/nfl/player/_/id/4239993/tee-higgins\">Tee Higgins</a> are on pace to become just the fourth teammate duo since 1966 to each rank in the top five in both receiving yards and touchdowns in a season. Both are tied for fourth with seven receiving scores while Chase is fourth with 909 receiving yards and Higgins is fifth with 867. Wes Chandler and Kellen Winslow of the 1982 Chargers were the last to do it.\n\n\r\n              ------\n\n\r\n              AP Sports Writer Brett Martel in New Orleans contributed to this report.\n\n\r\n              ------\n\n\r\n              \r\n                <a href=\"https://apnews.com/hub/nfl\">See AP\u2019s full NFL coverage here</a>",
+  "allowContentReactions": false,
+  "allowSearch": true,
+  "isLiveBlog": false,
+  "links": {
+   "api": {
+    "self": {
+     "href": "https://content.core.api.espn.com/v1/sports/news/50599475"
+    }
+   },
+   "app": {
+    "sportscenter": {
+     "href": "sportscenter://x-callback-url/showStory?uid=50599475"
+    }
+   },
+   "mobile": {
+    "href": "http://m.espn.go.com/nfl/story?storyId=50599475"
+   },
+   "web": {
+    "href": "http://www.espn.com/nfl/preview?gameId=401873087"
+   }
+  },
+  "premium": false
  },
+ "wallclockAvailable": false,
  "ticketsInfo": {
   "tickets": [
    {
@@ -6323,12 +6259,12 @@
     "type": "team"
    },
    {
-    "ticketName": "11/29 vs Saints 3392 tickets left",
+    "ticketName": "11/29 vs Saints 3370 tickets left",
     "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717",
     "type": "event"
    },
    {
-    "ticketName": "12/6 @ Browns 6125 tickets left",
+    "ticketName": "12/6 @ Browns 6084 tickets left",
     "ticketLink": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-2-2026/production/6489423?wsUser=717",
     "type": "event"
    },
@@ -6338,7 +6274,7 @@
     "type": "event"
    },
    {
-    "ticketName": "12/20 @ Panthers 3991 tickets left",
+    "ticketName": "12/20 @ Panthers 3971 tickets left",
     "ticketLink": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-7-2026/production/6488725?wsUser=717",
     "type": "event"
    },
@@ -6362,7 +6298,7 @@
    "opponentTeamName": "Saints",
    "currentTeamName": "Bengals",
    "venueName": "Paycor Stadium",
-   "summary": "Tickets as low as $61",
+   "summary": "Tickets as low as $59",
    "date": "2026-11-29T18:00Z",
    "dateDay": "Sun",
    "homeAway": "home",
@@ -6372,6 +6308,12 @@
    "teamLink": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
    "timeValid": true
   }
+ },
+ "meta": {
+  "gp_topic": "gp-football-nfl-401873087",
+  "gameSwitcherEnabled": true,
+  "picker_topic": "picker-football-nfl",
+  "gameState": "pre"
  },
  "standings": {
   "fullViewLink": {
