@@ -284,6 +284,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "33",
       "uid": "s:20~l:28~t:33",
@@ -348,9 +350,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png"
     },
     {
      "id": "401873031",
@@ -551,6 +551,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "23",
       "uid": "s:20~l:28~t:23",
@@ -615,9 +617,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png"
     },
     {
      "id": "401873078",
@@ -798,6 +798,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "19",
       "uid": "s:20~l:28~t:19",
@@ -862,9 +864,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
     },
     {
      "id": "401873011",
@@ -887,6 +887,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "23",
       "uid": "s:20~l:28~t:23",
@@ -951,9 +953,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png"
     },
     {
      "id": "401873039",
@@ -976,8 +976,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "W",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "5",
       "uid": "s:20~l:28~t:5",
@@ -1042,7 +1040,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     },
     {
      "id": "401873055",
@@ -1065,6 +1065,8 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "29",
       "uid": "s:20~l:28~t:29",
@@ -1129,9 +1131,7 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png"
     },
     {
      "id": "401873071",
@@ -1154,8 +1154,6 @@
      "homeShootoutScore": "0",
      "awayShootoutScore": "0",
      "gameResult": "L",
-     "leagueName": "National Football League",
-     "leagueAbbreviation": "NFL",
      "opponent": {
       "id": "3",
       "uid": "s:20~l:28~t:3",
@@ -1220,7 +1218,9 @@
        }
       ]
      },
-     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png"
+     "opponentLogo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+     "leagueName": "National Football League",
+     "leagueAbbreviation": "NFL"
     }
    ]
   }
@@ -3255,6 +3255,17 @@
    "records": []
   }
  ],
+ "predictor": {
+  "header": "Matchup Predictor",
+  "homeTeam": {
+   "id": "4",
+   "gameProjection": "80.4"
+  },
+  "awayTeam": {
+   "id": "18",
+   "gameProjection": "19.4"
+  }
+ },
  "winprobability": [],
  "news": {
   "header": "NFL News",
@@ -3273,15 +3284,155 @@
   },
   "articles": [
    {
+    "id": 50595780,
+    "nowId": "1-50595780",
+    "contentKey": "50595780-1-6-1",
+    "dataSourceIdentifier": "58cd824e7e603",
+    "type": "Story",
+    "headline": "Fantasy football Week 12 inactives: Who's in and who's out?",
+    "description": "Updated inactives and analysis based on the latest reports and official announcements leading up to kickoff.",
+    "lastModified": "2026-11-28T00:10:30Z",
+    "published": "2026-11-28T00:10:30Z",
+    "images": [
+     {
+      "dataSourceIdentifier": "7d5952a6234ff",
+      "id": 50615981,
+      "type": "header",
+      "name": "Brock Purdy [1296x729]",
+      "caption": "Brock Purdy of the San Francisco 49ers will not play on Sunday.",
+      "credit": "Agustin Cuevas/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1127/r1752261_1296x729_16-9.jpg"
+     },
+     {
+      "dataSourceIdentifier": "f020b3a4c9aad",
+      "id": 50616199,
+      "type": "header",
+      "name": "Brock Bowers [1296x729]",
+      "caption": "Brock Bowers of the Las Vegas Raiders is questionable to play on Sunday night.",
+      "credit": "Brooke Sutton/Getty Images",
+      "height": 729,
+      "width": 1296,
+      "url": "https://a.espncdn.com/photo/2026/1127/r1752269_1296x729_16-9.jpg"
+     },
+     {
+      "type": "Media",
+      "name": "Dopp, Yates face off over Jeanty vs. Skattebo in Week 12",
+      "caption": "Dopp, Yates face off over Jeanty vs. Skattebo in Week 12",
+      "height": 324,
+      "width": 576,
+      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/2026/1124/ss_20261124_125126873_3759354805/ss_20261124_125126873_3759354805.jpg"
+     }
+    ],
+    "categories": [
+     {
+      "id": 141870,
+      "type": "topic",
+      "guid": "ca127063-3a37-f49a-a3fc-0eeb89492361",
+      "description": "news - fantasy",
+      "sportId": 0,
+      "topicId": 240
+     },
+     {
+      "id": 152381,
+      "type": "topic",
+      "guid": "dfe97910-82fd-48e0-fe79-12aaa66fd4f2",
+      "description": "news - fantasy football",
+      "sportId": 0,
+      "topicId": 401
+     },
+     {
+      "id": 12024,
+      "type": "league",
+      "uid": "s:20~l:3080",
+      "guid": "a472a0eb-d630-3568-bf2a-59572429de6c",
+      "description": "Fantasy NFL",
+      "sportId": 3080,
+      "leagueId": 3080,
+      "league": {
+       "id": 3080,
+       "description": "Fantasy NFL",
+       "abbreviation": "NFLFD"
+      }
+     },
+     {
+      "id": 9572,
+      "type": "league",
+      "uid": "s:20~l:28",
+      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+      "description": "NFL",
+      "sportId": 28,
+      "leagueId": 28,
+      "league": {
+       "id": 28,
+       "description": "NFL",
+       "abbreviation": "NFL",
+       "links": {
+        "mobile": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        },
+        "web": {
+         "leagues": {
+          "href": "https://www.espn.com/nfl/"
+         }
+        }
+       }
+      }
+     },
+     {
+      "id": 409228,
+      "type": "topic",
+      "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d",
+      "description": "fantasy",
+      "sportId": 0,
+      "topicId": 785
+     },
+     {
+      "id": 848862,
+      "type": "contributor",
+      "guid": "3de9fce6-6aa7-3562-b497-2b4f5d90d27a",
+      "description": "Michael F Florio",
+      "slug": "michael-f-florio",
+      "contributor": {
+       "id": 4414,
+       "description": "Michael F Florio"
+      }
+     }
+    ],
+    "byline": "Michael F. Florio",
+    "links": {
+     "api": {
+      "self": {
+       "href": "https://content.core.api.espn.com/v1/sports/news/50595780"
+      }
+     },
+     "app": {
+      "sportscenter": {
+       "href": "sportscenter://x-callback-url/showStory?uid=50595780"
+      }
+     },
+     "mobile": {
+      "href": "http://m.espn.go.com/wireless/story?storyId=50595780"
+     },
+     "web": {
+      "href": "https://www.espn.com/fantasy/football/story/_/page/FFSundayInactives-50595780/fantasy-football-injuries-nfl-week-12-inactive-active"
+     }
+    },
+    "premium": false
+   },
+   {
     "id": 50615818,
     "nowId": "1-50615818",
     "contentKey": "50615818-1-5-1",
     "dataSourceIdentifier": "8e8c45b2fa2b8",
     "type": "HeadlineNews",
     "headline": "DJ Uiagalelei to start for Chargers with Justin Herbert in concussion protocol",
-    "description": "Chargers quarterback Justin Herbert was ruled out for Sunday as he remains in concussion protocol, coach Jim Harbaugh said Friday, meaning DJ Uiagalelei will get the start against Tommy DeVito and the Patriots.",
-    "lastModified": "2026-11-27T23:36:10Z",
-    "published": "2026-11-27T23:36:10Z",
+    "description": "Chargers quarterback Justin Herbert was ruled out for Sunday as he remains in concussion protocol, coach Jim Harbaugh said Friday, meaning DJ Uiagalelei will start against Tommy DeVito and the Patriots.",
+    "lastModified": "2026-11-28T00:13:16Z",
+    "published": "2026-11-28T00:13:16Z",
     "images": [
      {
       "dataSourceIdentifier": "bad70ccb21526",
@@ -4323,8 +4474,8 @@
     "type": "HeadlineNews",
     "headline": "49ers rule QB Brock Purdy (ankle) out; Mac Jones to start vs. Seahawks",
     "description": "49ers quarterback Brock Purdy (ankle) will not play on Sunday against the Seahawks, according to coach Kyle Shanahan, paving the way for Mac Jones to start vs. Seattle.",
-    "lastModified": "2026-11-27T23:58:05Z",
-    "published": "2026-11-27T23:58:05Z",
+    "lastModified": "2026-11-28T00:02:12Z",
+    "published": "2026-11-28T00:02:12Z",
     "images": [
      {
       "dataSourceIdentifier": "a1bd646d775ce",
@@ -4491,345 +4642,8 @@
      }
     },
     "premium": false
-   },
-   {
-    "id": 50615648,
-    "nowId": "1-50615648",
-    "contentKey": "50615648-1-293-1",
-    "dataSourceIdentifier": "612084d073cc8",
-    "type": "Media",
-    "headline": "Denver Broncos vs. Pittsburgh Steelers: Game Highlights",
-    "description": "Denver Broncos vs. Pittsburgh Steelers: Game Highlights",
-    "lastModified": "2026-11-27T23:06:39Z",
-    "published": "2026-11-27T23:06:39Z",
-    "images": [
-     {
-      "name": "Denver Broncos vs. Pittsburgh Steelers: Game Highlights",
-      "caption": "Denver Broncos vs. Pittsburgh Steelers: Game Highlights",
-      "alt": "",
-      "height": 324,
-      "width": 576,
-      "url": "https://espnmedia-cdn.akamaized.net/espn/media/common/wsc/2026/1127/9e2209f2-1d50-469c-a1ac-6a5cf587a5c1/9e2209f2-1d50-469c-a1ac-6a5cf587a5c1.jpg"
-     }
-    ],
-    "categories": [
-     {
-      "id": 2432,
-      "type": "team",
-      "uid": "s:20~l:28~t:7",
-      "guid": "51042145-e3c1-0694-ae0d-f720342ff8fc",
-      "description": "Denver Broncos",
-      "sportId": 28,
-      "teamId": 7,
-      "team": {
-       "id": 7,
-       "description": "Denver Broncos",
-       "abbreviation": "DEN",
-       "shortDisplayName": "Broncos",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/den/denver-broncos"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/den/denver-broncos"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 152835,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:3045373",
-      "guid": "a5623fce-1fb1-d273-2b6e-61ac583303c3",
-      "description": "Jalen Ramsey",
-      "sportId": 28,
-      "athleteId": 3045373,
-      "athlete": {
-       "id": 3045373,
-       "description": "Jalen Ramsey",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3045373/jalen-ramsey"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3045373/jalen-ramsey"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 9572,
-      "type": "league",
-      "uid": "s:20~l:28",
-      "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
-      "description": "NFL",
-      "sportId": 28,
-      "leagueId": 28,
-      "league": {
-       "id": 28,
-       "description": "NFL",
-       "abbreviation": "NFL",
-       "links": {
-        "mobile": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        },
-        "web": {
-         "leagues": {
-          "href": "https://www.espn.com/nfl/"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 537149,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4685327",
-      "guid": "c4f37108-302c-3730-b2eb-a6926cdb02bc",
-      "description": "Daylen Everette",
-      "sportId": 28,
-      "athleteId": 4685327,
-      "athlete": {
-       "id": 4685327,
-       "description": "Daylen Everette",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4685327/daylen-everette"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4685327/daylen-everette"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 166884,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:3045282",
-      "guid": "fa239d3e-e2c0-2e06-6856-2a52abea3f2c",
-      "description": "TJ Watt",
-      "sportId": 28,
-      "athleteId": 3045282,
-      "athlete": {
-       "id": 3045282,
-       "description": "TJ Watt",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3045282/tj-watt"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/3045282/tj-watt"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 2776,
-      "type": "team",
-      "uid": "s:20~l:28~t:23",
-      "guid": "debcd592-8d53-71f1-fc15-5c8b8ef9df6e",
-      "description": "Pittsburgh Steelers",
-      "sportId": 28,
-      "teamId": 23,
-      "team": {
-       "id": 23,
-       "description": "Pittsburgh Steelers",
-       "abbreviation": "PIT",
-       "shortDisplayName": "Steelers",
-       "links": {
-        "mobile": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
-         }
-        },
-        "web": {
-         "teams": {
-          "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 380063,
-      "type": "athlete",
-      "uid": "s:20~l:28~a:4047650",
-      "guid": "c6727be7-1ac0-315c-437d-e281fe9a2e84",
-      "description": "DK Metcalf",
-      "sportId": 28,
-      "athleteId": 4047650,
-      "athlete": {
-       "id": 4047650,
-       "description": "DK Metcalf",
-       "links": {
-        "mobile": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4047650/dk-metcalf"
-         }
-        },
-        "web": {
-         "athletes": {
-          "href": "https://www.espn.com/nfl/player/_/id/4047650/dk-metcalf"
-         }
-        }
-       }
-      }
-     },
-     {
-      "id": 711824,
-      "type": "editorialindicator",
-      "guid": "d348c764-47d9-3e31-bd75-d39dfde52c26",
-      "description": "SC4U  - Eligible"
-     },
-     {
-      "id": 711821,
-      "type": "editorialindicator",
-      "guid": "f3e05446-8d07-3064-a239-c10c32884ea2",
-      "description": "SC4U - Full Highlight"
-     },
-     {
-      "type": "event",
-      "uid": "s:20~l:28~e:401873083",
-      "guid": "fa839431-7fb1-3db2-9463-47d9ccbefbc6",
-      "description": "Denver Broncos @ Pittsburgh Steelers",
-      "eventId": 401873083,
-      "event": {
-       "id": 401873083,
-       "sport": "football",
-       "league": "nfl",
-       "description": "Denver Broncos @ Pittsburgh Steelers",
-       "links": {
-        "mobile": {
-         "event": {
-          "href": "https://www.espn.com/nfl/game/_/gameId/401873083"
-         }
-        },
-        "web": {
-         "event": {
-          "href": "https://www.espn.com/nfl/game/_/gameId/401873083"
-         }
-        }
-       }
-      }
-     }
-    ],
-    "links": {
-     "api": {
-      "artwork": {
-       "href": "https://artwork.api.espn.com/artwork/collections/media/95703f04-661f-4bac-aa0d-cb39556985de"
-      },
-      "self": {
-       "href": "https://content.core.api.espn.com/v1/video/clips/50615648"
-      }
-     },
-     "sportscenter": {
-      "href": "sportscenter://x-callback-url/showVideo?videoID=50615648&videoDSI=612084d073cc8"
-     },
-     "web": {
-      "href": "https://www.espn.com/video/clip/_/id/50615648/game-highlights",
-      "self": {
-       "href": "https://www.espn.com/video/clip/_/id/50615648/game-highlights",
-       "dsi": {
-        "href": "https://www.espn.com/video/clip?id=612084d073cc8"
-       }
-      }
-     }
-    },
-    "premium": false
    }
   ]
- },
- "predictor": {
-  "header": "Matchup Predictor",
-  "homeTeam": {
-   "id": "4",
-   "gameProjection": "80.4"
-  },
-  "awayTeam": {
-   "id": "18",
-   "gameProjection": "19.4"
-  }
- },
- "ticketsInfo": {
-  "tickets": [
-   {
-    "ticketName": "All NFL Tickets",
-    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
-    "type": "league"
-   },
-   {
-    "ticketName": "All Bengals Tickets",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
-    "type": "team"
-   },
-   {
-    "ticketName": "11/29 vs Saints 3350 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/6 @ Browns 6091 tickets left",
-    "ticketLink": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-2-2026/production/6489423?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/13 vs Chiefs 3455 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-8-2026/production/6489069?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/20 @ Panthers 4003 tickets left",
-    "ticketLink": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-7-2026/production/6488725?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/27 @ Colts 3047 tickets left",
-    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-5-2026/production/6490117?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "12/31 vs Ravens 4275 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-1-2026/production/6488960?wsUser=717",
-    "type": "event"
-   },
-   {
-    "ticketName": "1/10 vs Browns 6382 tickets left",
-    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-2-2026/production/6488992?wsUser=717",
-    "type": "event"
-   }
-  ],
-  "seatSituation": {
-   "opponentTeamName": "Saints",
-   "currentTeamName": "Bengals",
-   "venueName": "Paycor Stadium",
-   "summary": "Tickets as low as $62",
-   "date": "2026-11-29T18:00Z",
-   "dateDay": "Sun",
-   "homeAway": "home",
-   "eventLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717",
-   "venueLink": "https://www.vividseats.com/paul-brown-stadium-tickets/venue/1942?wsUser=717",
-   "genericLink": "https://www.vividseats.com/?wsUser=717",
-   "teamLink": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
-   "timeValid": true
-  }
  },
  "header": {
   "id": "401873087",
@@ -5904,6 +5718,69 @@
      ]
     }
    ]
+  }
+ },
+ "ticketsInfo": {
+  "tickets": [
+   {
+    "ticketName": "All NFL Tickets",
+    "ticketLink": "https://www.vividseats.com/nfl/?wsUser=717",
+    "type": "league"
+   },
+   {
+    "ticketName": "All Bengals Tickets",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
+    "type": "team"
+   },
+   {
+    "ticketName": "11/29 vs Saints 3383 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/6 @ Browns 6131 tickets left",
+    "ticketLink": "https://www.vividseats.com/cleveland-browns-tickets-cleveland-huntington-bank-field-3-2-2026/production/6489423?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/13 vs Chiefs 3462 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-8-2026/production/6489069?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/20 @ Panthers 4000 tickets left",
+    "ticketLink": "https://www.vividseats.com/carolina-panthers-tickets-charlotte-bank-of-america-stadium-3-7-2026/production/6488725?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/27 @ Colts 3047 tickets left",
+    "ticketLink": "https://www.vividseats.com/indianapolis-colts-tickets-indianapolis-lucas-oil-stadium-3-5-2026/production/6490117?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "12/31 vs Ravens 4275 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-1-2026/production/6488960?wsUser=717",
+    "type": "event"
+   },
+   {
+    "ticketName": "1/10 vs Browns 6382 tickets left",
+    "ticketLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-2-2026/production/6488992?wsUser=717",
+    "type": "event"
+   }
+  ],
+  "seatSituation": {
+   "opponentTeamName": "Saints",
+   "currentTeamName": "Bengals",
+   "venueName": "Paycor Stadium",
+   "summary": "Tickets as low as $60",
+   "date": "2026-11-29T18:00Z",
+   "dateDay": "Sun",
+   "homeAway": "home",
+   "eventLink": "https://www.vividseats.com/cincinnati-bengals-tickets-cincinnati-paycor-stadium-3-6-2026/production/6489044?wsUser=717",
+   "venueLink": "https://www.vividseats.com/paul-brown-stadium-tickets/venue/1942?wsUser=717",
+   "genericLink": "https://www.vividseats.com/?wsUser=717",
+   "teamLink": "https://www.vividseats.com/cincinnati-bengals-tickets--sports-nfl-football/performer/172?wsUser=717",
+   "timeValid": true
   }
  },
  "article": {
